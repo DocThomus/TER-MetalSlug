@@ -8,6 +8,9 @@ PATH_LIB = lib
 PATH_SRC = src
 PATH_OBJ = obj
 
+#Directories
+OBJ_DIR = obj obj/model obj/controller obj/view
+
 # SFML
 PATH_SFML = $(PATH_LIB)/SFML
 LIB_SFML  = -lsfml-audio-s -lsfml-network-s -lsfml-graphics-s -lsfml-window-s -lsfml-system-s
@@ -31,9 +34,12 @@ $(EXEC) : $(OBJ)
 	@echo "\033[31mLinking $(EXEC)\033[00m"
 	@$(COMPILO) -std=c++11 -o $@ -Wl,-Bstatic $^ -L$(PATH_SFML) $(LIB_SFML) -Wl,-Bdynamic $(LIB_DEP)
 
-$(PATH_OBJ)/%.o: $(PATH_SRC)/%.cpp
+$(PATH_OBJ)/%.o: $(PATH_SRC)/%.cpp init
 	@echo "\033[32mBuild $@\033[00m"
 	@$(COMPILO) -o $@ -c $< -I$(PATH_INC)
+
+init :
+	@mkdir -p obj obj/model obj/controller obj/view
 
 clean :
 	@echo "Suppression des .o"
