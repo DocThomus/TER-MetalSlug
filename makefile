@@ -38,3 +38,8 @@ clean :
 
 install : 
 	sudo apt-get install g++ build-essential udev libudev-dev libpthread-stubs0-dev libgl1-mesa-dev libx11-dev libxrandr-dev libfreetype6-dev libglew-dev libjpeg-dev libsndfile1-dev libopenal-dev
+
+commit :
+	git add *
+	git commit -a
+	git push
