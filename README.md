@@ -1,1 +1,1 @@
-# TER-MetalSlug
+# TER L3 INFO - METAL SLUG
