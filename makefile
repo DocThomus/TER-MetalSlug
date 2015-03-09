@@ -1,5 +1,5 @@
 #Makefile Linux
-EXEC = buildXML
+EXEC = Game
 COMPILO = g++
 
 #Path
