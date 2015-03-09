@@ -5,9 +5,11 @@ Ammo::Ammo(Int2 pos, Int2 siz, int z, int m, Int2 movement)
 {}
 
 
+
 Ammo::Ammo()
 :ObjetPhysique()
-{
+{}
+
 
 Ammo::~Ammo()
 {}
