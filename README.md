@@ -6,10 +6,10 @@ Si vous n'avez jamais compilé avec la SFML : make install.
 
 ## Contenu
 
--src : code source
--include : headers
--lib : les libs externes
--obj : les .o issus de la compilation
+* src : code source
+* include : headers
+* lib : les libs externes
+* obj : les .o issus de la compilation
 
 ## Utilisation
 
