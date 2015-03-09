@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 
-#include <Player.h>
+#include <model/Player.h>
 
 using namespace std;
 
@@ -29,8 +29,8 @@ int main()
 	balles[0]->animate(200);
 	balles[1]->animate(100);
 
-	for(int i=0; i<balles.size(); ++i)
-		cout << "===== Ammo " << i+1 << " =====" << endl << balles[i]->toString() << endl;
+	//for(int i=0; i<balles.size(); ++i)
+		//cout << "===== Ammo " << i+1 << " =====" << endl << balles[i]->toString() << endl;
 
 	return 0;
 }
