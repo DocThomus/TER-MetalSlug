@@ -4,7 +4,6 @@ Ammo::Ammo(Int2 pos, Int2 siz, int z, int m, Int2 movement)
 :ObjetPhysique(pos,siz,z,m), movement(movement)
 {}
 
-tete de con jésus
 
 Ammo::Ammo()
 :ObjetPhysique()
