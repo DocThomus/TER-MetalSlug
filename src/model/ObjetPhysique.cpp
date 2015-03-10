@@ -33,3 +33,20 @@ void ObjetPhysique::addMovement(Int2 v)
 }
 
 
+void ObjetPhysique::print(ostream& os) const  
+{  
+    os << "===ObjetPhysique===" << endl;
+    os << "=== Position  : " << position << endl;  
+    os << "=== Taille    : " << size << endl;  
+    os << "=== Z-index   : " << z << endl;  
+    os << "=== Masse     : " << mass << endl;  
+    os << "=== Mouvement : " << movement << endl;
+    os << "==================";
+} 
+
+
+ostream& operator << (ostream& os, const ObjetPhysique& obj)  
+{  
+    obj.print(os);  
+    return os;  
+} 

@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <sstream>
+#include <stdlib.h>
 
 #include <model/ObjetPhysique.h>
 #include <model/Player.h>
@@ -14,6 +15,8 @@ using namespace std;
 class Player;
 class Ammo;
 
+enum TypeWeapon {PISTOL,SMG,SHOTGUN,ROCKET_LAUNCHER,GRENADE_LAUNCHER,CANARDATOR};
+enum StateWeapon {GROUND,OWNED};
 
 class Weapon : public ObjetPhysique
 {
@@ -24,23 +27,23 @@ class Weapon : public ObjetPhysique
 
 		Player* owner;
 
-		int max_munitions;
-		int munitions;
-		int mass_munitions; // masse des projectils produits par l'arme
-		Int2 size_munitions;
+		Int2 ammos;
+		
+		TypeWeapon type;
+		StateWeapon state;
 
 
 	public :
 
-		enum State {GROUND,OWNED};
-		State state;
 		
-		Weapon(Int2 pos, Int2 siz, int z, int m, int max_mun, int mass_mun);
-		Weapon(Player* p, int max_mun, int mass_mun);
+		
+		
+		Weapon(Int2 pos, Int2 siz, int z, int m, Player* p, TypeWeapon type, int max_mun);
+		Weapon(Player* p, TypeWeapon type, int max_mun);
 		Weapon();
 		~Weapon();
 
-		string toString();
+		void print(ostream& os) const;
 
 		void shoot(vector<Ammo*>* air);	
 

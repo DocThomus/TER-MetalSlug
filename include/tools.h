@@ -28,7 +28,11 @@ class Int2 {
 		Int2(const Int2& u);
 		~Int2();
 
-		string toString();
+		inline friend std::ostream& operator << (std::ostream& os, const Int2& i)
+		{
+			os << "(" << i.x << "," << i.y << ")";
+			return os; 
+		};  
 };	
 
 

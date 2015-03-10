@@ -32,7 +32,7 @@ class Enemy : public ObjetPhysique
 		Enemy();
 		~Enemy();
 
-		string toString();	
+		void print(ostream& os) const;	
 
 		void decreaseHealth(int s);
 		void increaseHealth(int s);

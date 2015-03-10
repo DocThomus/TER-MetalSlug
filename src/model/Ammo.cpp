@@ -1,13 +1,21 @@
 #include "model/Ammo.h"
 
-Ammo::Ammo(Int2 pos, Int2 siz, int z, int m, Int2 movement)
-:ObjetPhysique(pos,siz,z,m), movement(movement)
-{}
+Ammo::Ammo(Int2 pos, Int2 siz, int z, int m, TypeAmmo type, Int2 movement)
+:ObjetPhysique(pos,siz,z,m), type(type)
+{
+	addMovement(movement);
+}
 
+
+Ammo::Ammo(TypeAmmo type, Int2 move)
+:ObjetPhysique(), type(type)
+{
+	movement = move;
+}
 
 
 Ammo::Ammo()
-:ObjetPhysique()
+:ObjetPhysique(), type(BULLET)
 {}
 
 
@@ -15,12 +23,10 @@ Ammo::~Ammo()
 {}
 
 
-string Ammo::toString()
+void Ammo::print(ostream& os) const 
 {
-	stringstream ss;
-	ss << "Position  : " << position.toString() << endl;
-	ss << "Mouvement : " << movement.toString();
-	return ss.str();
+	os << "Position  : " << position << endl;
+	os << "Mouvement : " << movement;
 }
 
 

@@ -17,32 +17,37 @@ class Ammo;
 
 
 
+enum StatePosition {WAIT,RUN,SAUT,DASH,ROLL};
+enum StateBattle {NORMAL,DEAD,KNIFE,STAR};
+
 class Player : public ObjetPhysique
 {
 	
 	protected :
 
-		int max_health;
-		int health;
+		Int2 health;
+
+		StatePosition state_p;
+		StateBattle state_b;
 		
 		vector<Weapon*> armes;
 		int current_weapon;
 
+		int star_cpt;
+
 
 	public :
-
-		enum State {SAUT,INVINCIBLE,DASH,ROLL,SHOOT,DEAD,STRIKE};
-		State state;
 		
 		Player(Int2 pos, Int2 siz, int z, int m, int max_h);
 		Player();
 		~Player();
 
-		string toString();	
+		void print(ostream& os) const;
 
 		void decreaseHealth(int s);
 		void increaseHealth(int s);
 		void addWeapon(Weapon* w);
+		void setInvicibility(int seconds);
 
 		void animate(int dt);
 		void shoot(vector<Ammo*>* air);

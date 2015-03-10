@@ -34,12 +34,12 @@ $(EXEC) : $(OBJ)
 	@echo "\033[31mLinking $(EXEC)\033[00m"
 	@$(COMPILO) -std=c++11 -o $@ -Wl,-Bstatic $^ -L$(PATH_SFML) $(LIB_SFML) -Wl,-Bdynamic $(LIB_DEP)
 
-$(PATH_OBJ)/%.o: $(PATH_SRC)/%.cpp init
+$(PATH_OBJ)/%.o: $(PATH_SRC)/%.cpp
 	@echo "\033[32mBuild $@\033[00m"
 	@$(COMPILO) -o $@ -c $< -I$(PATH_INC)
 
 init :
-	@mkdir -p obj obj/model obj/controller obj/view
+	mkdir -p obj obj/model obj/controller obj/view
 
 clean :
 	@echo "Suppression des .o"
@@ -51,3 +51,6 @@ install :
 commit :
 	git commit -a
 	git push
+
+add :
+	@git add . --verbose

@@ -1,13 +1,21 @@
 #include "model/Player.h"
 
 Player::Player(Int2 pos, Int2 siz, int z, int m, int max_h)
-:ObjetPhysique(pos,siz,z,m), max_health(max_h), health(max_h)
-{}
+:ObjetPhysique(pos,siz,z,m)
+{
+	health = Int2(max_h,max_h);
+	state_p = WAIT;
+	state_b = NORMAL;
+}
 
 
 Player::Player()
-:ObjetPhysique(), max_health(100), health(100)
-{}
+:ObjetPhysique()
+{
+	health = Int2(100,100);
+	state_p = WAIT;
+	state_b = NORMAL;
+}
 
 
 Player::~Player()
@@ -16,25 +24,26 @@ Player::~Player()
 }
 
 
-string Player::toString()
-{
-	stringstream ss;
-	ss << " Position : " << position.x << "," << position.y << endl;
-	ss << "   Taille : " << size.x << "," << size.y << endl;
-	ss << "  Index z : " << z << endl;
-	ss << "    Santé : " << health << "/" << max_health << endl;
-	ss << "    Masse : " << mass << endl;
-	ss << "Mouvement : " << movement.x << "," << movement.y;
-	return ss.str();
-}
+
+void Player::print(ostream& os) const  
+{  
+    os << "======Player======" << endl;
+    os << "=== Position  : " << position << endl;  
+    os << "=== Taille    : " << size << endl;  
+    os << "=== Z-index   : " << z << endl;  
+    os << "=== Masse     : " << mass << endl;  
+    os << "=== Mouvement : " << movement << endl;
+    os << "=== Santé     : " << health << endl;
+    os << "==================";
+} 
 
 
 void Player::decreaseHealth(int s)
 {
-	health -= s;
-	if(health <= 0)
+	health.x -= s;
+	if(health.x <= 0)
 	{
-		health = 0;
+		health.x = 0;
 		die();
 	}
 }
@@ -42,9 +51,9 @@ void Player::decreaseHealth(int s)
 
 void Player::increaseHealth(int s)
 {
-	health += s;
-	if(health > max_health)
-		health = max_health;
+	health.x += s;
+	if(health.x > health.y)
+		health.x = health.y;
 }
 
 
@@ -52,6 +61,13 @@ void Player::addWeapon(Weapon* w)
 {
 	armes.push_back(w);
 	current_weapon = armes.size()-1;
+}
+
+
+void Player::setInvicibility(int seconds)
+{
+	state_b = STAR;
+	star_cpt = seconds*90;
 }
 
 
@@ -64,7 +80,7 @@ void Player::shoot(vector<Ammo*>* air)
 
 void Player::die()
 {
-	state = DEAD;
+	state_b = DEAD;
 	cout << "Je suis mort." << endl;
 }
 

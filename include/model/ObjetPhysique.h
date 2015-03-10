@@ -8,6 +8,8 @@ using namespace std;
 
 class ObjetPhysique
 {
+	friend ostream& operator << (ostream& os, const ObjetPhysique& obj);
+
 	protected :
 
 		Int2 position;
@@ -20,7 +22,7 @@ class ObjetPhysique
 
 	public :
 
-		ObjetPhysique(Int2 pos,Int2 siz, int z, int m);
+		ObjetPhysique(Int2 pos,Int2 siz, int z, int m=0);
 		ObjetPhysique();
 		~ObjetPhysique();
 
@@ -28,8 +30,10 @@ class ObjetPhysique
 
 		void addMovement(Int2 v);
 
-
-
+		virtual void print(ostream& os) const;
+		
 };
+
+
 
 #endif

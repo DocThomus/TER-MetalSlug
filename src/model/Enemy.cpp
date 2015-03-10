@@ -21,11 +21,9 @@ Enemy::~Enemy()
 }
 
 
-string Enemy::toString()
+void Enemy::print(ostream& os) const 
 {
-	stringstream ss;
 
-	return ss.str();
 }
 
 

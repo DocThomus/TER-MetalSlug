@@ -26,9 +26,3 @@ Int2::Int2(const Int2& u)
 Int2::~Int2()
 {}
 
-string Int2::toString()
-{
-	stringstream ss;
-	ss << x << "," << y;
-	return ss.str();
-}
