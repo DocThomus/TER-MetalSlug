@@ -14,8 +14,8 @@ Avant la première compilation : make init.
 
 ## Utilisation
 
-make : compilation + execution
-make install : installe toutes les dépendances nécessaires
-make clean : efface les .o issus de la compilation
-make init : crée les dossiers de destination des .o
-make commit : fait un commit (lol), vous devez d'abord configurer git.
+* make : compilation + execution
+* make install : installe toutes les dépendances nécessaires
+* make clean : efface les .o issus de la compilation
+* make init : crée les dossiers de destination des .o
+* make commit : fait un commit (lol), vous devez d'abord configurer git.
