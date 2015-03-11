@@ -7,8 +7,10 @@
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 
-#include <model/Level.h>
+#include <controller/Config.h>
+#include <controller/Level.h>
 #include <model/Player.h>
 #include <model/Enemy.h>
 
@@ -26,10 +28,14 @@ class Game
 	
 	private :
 
+		Config* config;
+
 		Level level;
 		Player player;
 		list<Enemy> enemies;
 		list<Ammo> ammo;
+
+		vector<Texture*> textures;
 
 
 	public :
@@ -39,10 +45,15 @@ class Game
 
 		void update(Time dt);
 		void display(RenderWindow* window);
+		void checkEvents(RenderWindow* window);
 		void checkCollisions();
 
+		void applyConfig(RenderWindow* window);
+		void setConfig(Config* c);
 		void setLevel(Level);
 		void setPlayer(Player);
+
+		void loadLevel();
 
 };
 

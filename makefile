@@ -1,6 +1,7 @@
 #Makefile Linux
 EXEC = Game
 COMPILO = g++
+OPTION = -Wall -Wno-switch
 
 #Path
 PATH_INC = include
@@ -32,11 +33,11 @@ all : $(EXEC)
 
 $(EXEC) : $(OBJ)
 	@echo "\033[31mLinking $(EXEC)\033[00m"
-	@$(COMPILO) -std=c++11 -o $@ -Wl,-Bstatic $^ -L$(PATH_SFML) $(LIB_SFML) -Wl,-Bdynamic $(LIB_DEP)
+	@$(COMPILO) $(OPTION) -std=c++11 -o $@ -Wl,-Bstatic $^ -L$(PATH_SFML) $(LIB_SFML) -Wl,-Bdynamic $(LIB_DEP)
 
 $(PATH_OBJ)/%.o: $(PATH_SRC)/%.cpp
 	@echo "\033[32mBuild $@\033[00m"
-	@$(COMPILO) -o $@ -c $< -I$(PATH_INC)
+	@$(COMPILO) $(OPTION) -o $@ -c $< -I$(PATH_INC)
 
 init :
 	mkdir -p obj obj/model obj/controller obj/view

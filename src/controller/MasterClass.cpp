@@ -14,8 +14,9 @@ MasterClass::~MasterClass()
 
 void MasterClass::initGame()
 {
-	window = new RenderWindow(sf::VideoMode(400, 400), "SFML works!");
-	window->setFramerateLimit(60);
+	window = new RenderWindow();
+    game.setConfig(&config);
+    game.applyConfig(window);
 }
 
 
@@ -24,21 +25,17 @@ void MasterClass::initGame()
 
 void MasterClass::playGame()
 {
-	Clock clock;
+    Clock clock;
 
 	while (window->isOpen())
     {
-        Event event;
-        while (window->pollEvent(event))
-        {
-            if (event.type == Event::Closed)
-                window->close();
-        }
-
+        window->clear();
+        
+        game.checkEvents(window);
         game.update(clock.restart());
+        game.checkCollisions();
         game.display(window);
 
-        window->clear();
         window->display();
     }
 }

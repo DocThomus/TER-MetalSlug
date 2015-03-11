@@ -2,7 +2,7 @@
 
 
 Enemy::Enemy(Int2 pos, Int2 siz, int z, int m, int max_h, bool AI, int pow)
-:ObjetPhysique(pos,siz,z,m), power(pow), haveAI(AI)
+:ObjetPhysique(pos,siz,z,m), haveAI(AI), power(pow)
 {
 	health = Int2(max_h,max_h);
 }

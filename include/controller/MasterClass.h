@@ -37,6 +37,7 @@ class MasterClass
 		void initGame();
 		void playGame();
 
+
 };
 
 

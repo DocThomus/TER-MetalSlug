@@ -15,11 +15,12 @@ class Config
 		enum Difficulty {EASY,NORMAL,HARD,HARDEST,HARDESTEST};
 		Difficulty difficulty;
 
+		bool fullscreen;
 		Int2 resolution;
-
 		int luminosity;
 
-
+	
+	public :
 
 		Config();
 		~Config();

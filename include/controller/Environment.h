@@ -1,13 +1,18 @@
 #include <iostream>
 #include <list>
 
-#include <model/Decor.h>
+#include <SFML/System.hpp>
+#include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
+
+#include <view/DecorView.h>
 #include <model/Platform.h>
 
 using namespace std;
 
 class Decor;
-class PLatform;
+class Platform;
 
 
 class Environment
@@ -15,7 +20,7 @@ class Environment
 
 	private :
 
-		list<Decor> decors;
+		list<DecorView> decors;
 		list<Platform> platforms;
 		//list<Destructible> destructibles;
 		
@@ -26,4 +31,8 @@ class Environment
 		Environment(string filename);
 		~Environment();
 
+		void display(RenderWindow* window);
+
+		void addDecor(Texture* tex);
+		
 };
