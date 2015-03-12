@@ -7,6 +7,11 @@ Animation::Animation()
 }
 
 
+Animation::Animation(vector<Frame*> v)
+{
+	frames = v;
+}
+
 
 Animation::~Animation()
 {}
@@ -15,7 +20,10 @@ Animation::~Animation()
 
 Frame* Animation::getFrame()
 {
-	return &frames[current];
+	if(frames.size()>0)
+		return frames[current];
+	else
+		return NULL;
 }
 
 
@@ -24,4 +32,11 @@ void Animation::setNextFrame()
 	current++;
 	if(current>=int(frames.size()))
 		current = 0;
+}
+
+
+
+void Animation::addFrame(Frame* f)
+{
+	frames.push_back(f);
 }

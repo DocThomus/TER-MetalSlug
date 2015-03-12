@@ -2,6 +2,7 @@
 #define MYDRAWABLE_H
 
 #include <iostream>
+#include <vector>
 
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
@@ -18,11 +19,12 @@ using namespace sf;
 class MyDrawable
 {
 
-	private :
+	protected :
 
-		vector<Animation> animations;
+		RectangleShape rectangle;
+		vector<Animation*> animations;
 		int current_anim;
-
+		Texture* tex;
 
 	public :
 		
@@ -31,10 +33,13 @@ class MyDrawable
 
 		virtual void display(RenderWindow* window)=0;
 
-		void addAnimation(Animation a);
+		void addAnimation(Animation* a);
+		void addAnimations(vector<Animation*> v);
 		void changeAnimation(int i);
 		Frame* getFrame();
 		void setNextFrame();
+		void setTexture(Texture* tex);
+		virtual void updateIntRect();
 
 };
 

@@ -7,7 +7,7 @@
 #include <SFML/Audio.hpp>
 
 #include <view/DecorView.h>
-#include <model/Platform.h>
+#include <view/PlatformView.h>
 
 using namespace std;
 
@@ -21,7 +21,7 @@ class Environment
 	private :
 
 		list<DecorView> decors;
-		list<Platform> platforms;
+		list<PlatformView> platforms;
 		//list<Destructible> destructibles;
 		
 
@@ -34,5 +34,6 @@ class Environment
 		void display(RenderWindow* window);
 
 		void addDecor(Texture* tex);
+		void addPlatform(Int2 pos, Int2 siz, int z, int wl, Texture* tex=NULL);
 		
 };

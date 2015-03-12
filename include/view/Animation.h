@@ -19,16 +19,21 @@ class Animation
 
 	private :
 
-		vector<Frame> frames;
+		vector<Frame*> frames;
 		int current;
 
 
 	public :
+		
 		Animation();
+		Animation(vector<Frame*> v);
 		~Animation();
 
-		Frame* getFrame();
+		void addFrame(Frame* f);
 		void setNextFrame();
+
+		Frame* getFrame();
+		
 
 };
 

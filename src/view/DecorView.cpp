@@ -26,10 +26,3 @@ void DecorView::display(RenderWindow* window)
 	window->draw(rectangle);
 }
 
-
-void DecorView::setTexture(Texture* tex)
-{
-	Vector2u size = tex->getSize();
-	rectangle.setTexture(tex);
-	rectangle.setTextureRect(IntRect(0,0,size.x,360));
-}

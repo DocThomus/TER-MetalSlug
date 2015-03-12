@@ -22,7 +22,38 @@ ObjetPhysique::~ObjetPhysique()
 
 void ObjetPhysique::animate(int dt)
 {
-	// A FAIRE
+    int dx = (dt*movement.x*mass)/1000;
+	int dy = (dt*movement.y*mass)/1000;
+    movement.x -= dx;
+    movement.y -= dy;
+    position.x += dx;
+    position.y += dy;
+}
+
+
+void ObjetPhysique::setPosition(Int2 pos)
+{
+    position.x = pos.x;
+    position.y = pos.y;
+}
+
+
+void ObjetPhysique::setSize(Int2 siz)
+{
+    size.x = siz.x;
+    size.y = siz.y;
+}
+
+
+void ObjetPhysique::setZ(int z)
+{
+    z = z;
+}
+
+
+void ObjetPhysique::setMass(int m)
+{
+    mass = m;
 }
 
 

@@ -29,6 +29,8 @@ class Player : public ObjetPhysique
 
 		StatePosition state_p;
 		StateBattle state_b;
+
+		int walkway;
 		
 		vector<Weapon*> armes;
 		int current_weapon;
@@ -44,14 +46,16 @@ class Player : public ObjetPhysique
 
 		void print(ostream& os) const;
 
+		virtual void animate(int dt);
+
 		void decreaseHealth(int s);
 		void increaseHealth(int s);
 		void addWeapon(Weapon* w);
 		void setInvicibility(int seconds);
 
-		void animate(int dt);
 		void shoot(vector<Ammo*>* air);
 		void die();
+		virtual void walk(int way);
 
 };
 

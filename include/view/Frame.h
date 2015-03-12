@@ -8,7 +8,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
-#include <tools.h>
+#include <tools/tools.h>
 
 using namespace std;
 using namespace sf;
@@ -24,8 +24,13 @@ class Frame
 
 
 	public :
+		
 		Frame();
+		Frame(Int2 pos, Int2 siz);
 		~Frame();
+
+		Int2 getPosition();
+		Int2 getSize();
 
 };
 

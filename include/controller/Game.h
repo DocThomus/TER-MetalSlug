@@ -3,24 +3,32 @@
 
 #include <iostream>
 #include <list>
+#include <vector>
 
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
+#include <tools/XMLtools.h>
+
 #include <controller/Config.h>
 #include <controller/Level.h>
 #include <model/Player.h>
 #include <model/Enemy.h>
+#include <view/Animation.h>
+#include <view/Frame.h>
+#include <view/PlayerView.h>
 
 using namespace std;
 using namespace sf;
 
+
 class Level;
-class Player;
 class Enemy;
 
+class Animation;
+class PlayerView;
 
 
 class Game
@@ -31,7 +39,7 @@ class Game
 		Config* config;
 
 		Level level;
-		Player player;
+		PlayerView player;
 		list<Enemy> enemies;
 		list<Ammo> ammo;
 
@@ -51,9 +59,11 @@ class Game
 		void applyConfig(RenderWindow* window);
 		void setConfig(Config* c);
 		void setLevel(Level);
-		void setPlayer(Player);
+		void setPlayer(PlayerView);
 
 		void loadLevel();
+
+		vector<Animation*> loadSpriteFromFile(string filename);
 
 };
 

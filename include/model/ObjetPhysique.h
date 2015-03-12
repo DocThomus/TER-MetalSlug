@@ -2,7 +2,7 @@
 #define OBJETPHYSIQUE_H
 
 #include <iostream>
-#include <tools.h>
+#include <tools/tools.h>
 
 using namespace std;
 
@@ -27,6 +27,11 @@ class ObjetPhysique
 		~ObjetPhysique();
 
 		virtual void animate(int dt);
+
+		void setPosition(Int2 pos);
+		void setSize(Int2 siz);
+		void setZ(int z);
+		void setMass(int m);
 
 		void addMovement(Int2 v);
 

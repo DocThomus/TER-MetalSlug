@@ -31,3 +31,9 @@ void Level::addDecor(Texture* tex)
 {
 	environment.addDecor(tex);
 }
+
+
+void Level::addPlatform(Int2 pos, Int2 siz, int z, int wl, Texture* tex)
+{
+	environment.addPlatform(pos,siz,z,wl,tex);
+}

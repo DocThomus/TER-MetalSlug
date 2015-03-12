@@ -6,6 +6,7 @@ Player::Player(Int2 pos, Int2 siz, int z, int m, int max_h)
 	health = Int2(max_h,max_h);
 	state_p = WAIT;
 	state_b = NORMAL;
+	walkway = 11;
 }
 
 
@@ -15,6 +16,7 @@ Player::Player()
 	health = Int2(100,100);
 	state_p = WAIT;
 	state_b = NORMAL;
+	walkway = 1;
 }
 
 
@@ -87,5 +89,22 @@ void Player::die()
 
 void Player::animate(int dt)
 {
-	
+	ObjetPhysique::animate(dt);
+
+	/* COURIR */
+	if(state_p == RUN)
+		position.x += dt*walkway/mass*2;
+
+}
+
+
+void Player::walk(int way)
+{
+	if(way != 0)
+	{
+		state_p = RUN;
+		walkway = way;
+	}
+	else
+		state_p = WAIT;
 }

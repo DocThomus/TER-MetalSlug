@@ -1,5 +1,5 @@
-#ifndef DECORVIEW_H
-#define DECORVIEW_H
+#ifndef PLAYERVIEW_H
+#define PLAYERVIEW_H
 
 #include <iostream>
 
@@ -8,28 +8,32 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
-#include <model/Decor.h>
+#include <model/Player.h>
 #include <view/MyDrawable.h>
 
 using namespace std;
 using namespace sf;
 
 
-class DecorView : public Decor, public MyDrawable
+class PlayerView : public Player, public MyDrawable
 {
 
 	private :
 
 
-
 	public :
 		
-		DecorView(Int2 pos, Int2 siz, int z);
-		DecorView();
-		~DecorView();
+		PlayerView(Int2 pos, Int2 siz, int z, int m, int max_h);
+		PlayerView();
+		~PlayerView();
 
 		void display(RenderWindow* window);
 
+		void animate(int dt);
+
+		void updateIntRect();
+
+		void walk(int way);
 };
 
 

@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-#include <tools.h>
+#include <tools/tools.h>
 
 using namespace std;
 

@@ -1,5 +1,5 @@
-#ifndef DECORVIEW_H
-#define DECORVIEW_H
+#ifndef PLATFORMVIEW_H
+#define PLATFORMVIEW_H
 
 #include <iostream>
 
@@ -8,25 +8,24 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
-#include <model/Decor.h>
+#include <model/Platform.h>
 #include <view/MyDrawable.h>
 
 using namespace std;
 using namespace sf;
 
 
-class DecorView : public Decor, public MyDrawable
+class PlatformView : public Platform, public MyDrawable
 {
 
 	private :
 
 
-
 	public :
 		
-		DecorView(Int2 pos, Int2 siz, int z);
-		DecorView();
-		~DecorView();
+		PlatformView(Int2 pos, Int2 siz, int z, int wl);
+		PlatformView();
+		~PlatformView();
 
 		void display(RenderWindow* window);
 
