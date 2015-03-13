@@ -29,7 +29,10 @@ void Character::animate(int dt)
     position.y += dy;
 }
 
-
+void Character::jump(int h) 
+{
+    movement.y = -500;
+}
 
 
 void Character::print(ostream& os) const  

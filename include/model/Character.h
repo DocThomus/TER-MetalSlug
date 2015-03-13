@@ -14,7 +14,6 @@ class Character : public ObjetPhysique
 	protected :
 
 		Int2 health;
-
 		int walkway;
 
 	public :
