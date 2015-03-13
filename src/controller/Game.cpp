@@ -61,6 +61,8 @@ void Game::checkEvents(RenderWindow* window)
                     player.walk(-1);
                     break;
 
+                case Keyboard::Space :
+                    break;
             }
 
         if(!Keyboard::isKeyPressed(Keyboard::Right) && !Keyboard::isKeyPressed(Keyboard::Left)) // arreter de marcher
