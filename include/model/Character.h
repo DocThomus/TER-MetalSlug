@@ -25,7 +25,6 @@ class Character : public ObjetPhysique
 		StateBattle state_b;
 
 		Int2 health;
-
 		int walkway;
 
 		int star_cpt;
