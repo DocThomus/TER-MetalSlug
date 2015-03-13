@@ -1,6 +1,4 @@
 #include "model/Ammo.h"
-#include <model/Weapon.h>
-#include <model/Enemy.h>
 
 Ammo::Ammo(Int2 pos, Int2 siz, int z, int m, TypeAmmo type, Int2 movement)
 :ObjetPhysique(pos,siz,z,m), type(type)

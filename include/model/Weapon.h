@@ -8,6 +8,7 @@
 
 #include <model/ObjetPhysique.h>
 #include <model/Ammo.h>
+#include <model/Player.h>
 
 using namespace std;
 

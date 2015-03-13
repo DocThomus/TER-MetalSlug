@@ -1,5 +1,4 @@
 #include "model/Weapon.h"
-#include <model/Player.h>
 
 Weapon::Weapon(Int2 pos, Int2 siz, int z, int m, Player* p, TypeWeapon type, int max_mun)
 :ObjetPhysique(pos,siz,z,m), owner(p), type(type)

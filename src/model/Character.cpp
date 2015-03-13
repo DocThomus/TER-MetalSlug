@@ -1,5 +1,4 @@
 #include "model/Character.h"
-#include <model/Ammo.h>
 
 Character::Character(Int2 pos, Int2 siz, int z, int m, int max_h)
 :ObjetPhysique(pos,siz,z,m)

@@ -3,9 +3,11 @@
 
 #include <iostream>
 #include <sstream>
+#include <vector>
 #include <tools/tools.h>
 
 #include <model/ObjetPhysique.h>
+#include <model/Ammo.h>
 
 using namespace std;
 
