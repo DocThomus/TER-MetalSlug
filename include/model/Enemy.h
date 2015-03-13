@@ -6,14 +6,11 @@
 #include <vector>
 
 #include <model/Character.h>
-#include <model/Ammo.h>
 
 using namespace std;
 
-class Ammo;
 
-
-class Enemy : public Character
+class Enemy : public Character 
 {
 	
 	protected :

@@ -1,18 +1,17 @@
 #include "model/Player.h"
 
+
+using namespace std;
+
 Player::Player(Int2 pos, Int2 siz, int z, int m, int max_h)
 :Character(pos,siz,z,m,max_h)
 {
-	state_p = WAIT;
-	state_b = NORMAL;
 }
 
 
 Player::Player()
 :Character()
 {
-	state_p = WAIT;
-	state_b = NORMAL;
 }
 
 
@@ -36,24 +35,6 @@ void Player::print(ostream& os) const
 } 
 
 
-void Player::decreaseHealth(int s)
-{
-	health.x -= s;
-	if(health.x <= 0)
-	{
-		health.x = 0;
-		die();
-	}
-}
-
-
-void Player::increaseHealth(int s)
-{
-	health.x += s;
-	if(health.x > health.y)
-		health.x = health.y;
-}
-
 
 void Player::addWeapon(Weapon* w)
 {
@@ -61,12 +42,6 @@ void Player::addWeapon(Weapon* w)
 	current_weapon = armes.size()-1;
 }
 
-
-void Player::setInvicibility(int seconds)
-{
-	state_b = STAR;
-	star_cpt = seconds*90;
-}
 
 
 void Player::shoot(vector<Ammo*>* air)

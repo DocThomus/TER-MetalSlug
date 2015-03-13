@@ -5,11 +5,11 @@
 #include <sstream>
 
 #include <model/ObjetPhysique.h>
-#include <model/Weapon.h>
 
 using namespace std;
 
 class Weapon;
+class Enemy;
 
 
 enum TypeAmmo {BULLET,ROCKET,GRENADE,LASER};
@@ -17,6 +17,7 @@ enum TypeAmmo {BULLET,ROCKET,GRENADE,LASER};
 class Ammo : public ObjetPhysique
 {
 	friend class Weapon;
+	friend class Enemy;
 
 	protected :
 

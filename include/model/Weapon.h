@@ -4,9 +4,9 @@
 #include <iostream>
 #include <sstream>
 #include <stdlib.h>
+#include <vector>
 
 #include <model/ObjetPhysique.h>
-#include <model/Player.h>
 #include <model/Ammo.h>
 
 using namespace std;

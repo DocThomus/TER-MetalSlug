@@ -14,7 +14,6 @@
 
 #include <controller/Config.h>
 #include <controller/Level.h>
-#include <model/Player.h>
 #include <model/Enemy.h>
 #include <view/Animation.h>
 #include <view/Frame.h>

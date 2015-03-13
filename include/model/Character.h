@@ -2,20 +2,34 @@
 #define CHARACTER_H
 
 #include <iostream>
+#include <sstream>
 #include <tools/tools.h>
 
 #include <model/ObjetPhysique.h>
 
 using namespace std;
 
+class Ammo;
+
+
+enum StatePosition {WAIT,RUN,JUMP,FALL};
+enum StateBattle {NORMAL,DEAD,KNIFE,STAR};
+
+
 class Character : public ObjetPhysique
 {
 
 	protected :
 
+		StatePosition state_p;
+		StateBattle state_b;
+
 		Int2 health;
 
 		int walkway;
+
+		int star_cpt;
+
 
 	public :
 
@@ -24,10 +38,17 @@ class Character : public ObjetPhysique
 		~Character();
 
 		virtual void animate(int dt);
-
 		virtual void jump(int h);
-
 		virtual void print(ostream& os) const;
+
+		void decreaseHealth(int s);
+		void increaseHealth(int s);
+
+		virtual void setInvicibility(int seconds);
+
+		virtual void shoot(vector<Ammo*>* air);
+		virtual void die();
+		virtual void walk(int way);
 		
 };
 
