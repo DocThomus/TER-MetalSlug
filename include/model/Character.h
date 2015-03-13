@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <sstream>
-#include <vector>
+#include <list>
 #include <tools/tools.h>
 
 #include <model/ObjetPhysique.h>
@@ -47,7 +47,7 @@ class Character : public ObjetPhysique
 
 		virtual void setInvicibility(int seconds);
 
-		virtual void shoot(vector<Ammo*>* air);
+		virtual void shoot(list<Ammo*>* air, Float2 angle = Float2(1.,0.));
 		virtual void die();
 		virtual void walk(int way);
 		

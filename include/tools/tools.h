@@ -16,7 +16,7 @@ template <typename T> string toString(const T& t);
 
 
 
-/*============== CLASSE UINT2 ==============*/
+/*============== CLASSE INT2 ==============*/
 class Int2 {
 
 	public :
@@ -35,6 +35,27 @@ class Int2 {
 		};  
 };	
 
+
+
+/*============== CLASSE FLOAT2 ==============*/
+class Float2 {
+
+	public :
+	
+		float x;
+		float y;
+		
+		Float2(float i=0,float j=0);
+		Float2(const Float2& u);
+		Float2(const Int2& u);
+		~Float2();
+
+		inline friend std::ostream& operator << (std::ostream& os, const Float2& i)
+		{
+			os << "(" << i.x << "," << i.y << ")";
+			return os; 
+		};  
+};	
 
 
 

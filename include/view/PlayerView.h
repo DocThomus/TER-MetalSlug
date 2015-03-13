@@ -10,6 +10,7 @@
 
 #include <model/Player.h>
 #include <view/MyDrawable.h>
+#include <view/AmmoView.h>
 
 using namespace std;
 using namespace sf;
@@ -34,6 +35,8 @@ class PlayerView : public Player, public MyDrawable
 		void updateIntRect();
 
 		void walk(int way);
+
+		virtual void shoot(list<AmmoView*>* ammos, Int2 angle = Int2(1,0), Texture* tex=NULL);
 };
 
 

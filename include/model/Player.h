@@ -4,6 +4,7 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
+#include <list>
 
 #include <model/Character.h>
 #include <model/Weapon.h>
@@ -35,14 +36,18 @@ class Player : public Character
 
 		void print(ostream& os) const;
 
+		Int2 getPosition();
+		Int2 getSize();
+
 		virtual void animate(int dt);
 
-		virtual void shoot(vector<Ammo*>* air);
+		virtual void walk(int way);
 		virtual void die();
+		virtual void reload(int nb);
+		virtual void shoot(list<Ammo*>*, Float2 angle = Float2(1,0));
 
 		void addWeapon(Weapon* w);
-
-		virtual void walk(int way);
+		void setWeapon(int w);
 
 };
 

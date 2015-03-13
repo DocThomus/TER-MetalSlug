@@ -77,3 +77,19 @@ void PlayerView::walk(int way)
 	Player::walk(way);
 	updateIntRect();
 }
+
+
+
+void PlayerView::shoot(list<AmmoView*>* air, Int2 angle, Texture* tex)
+{
+	list<Ammo*> tmp;
+	Player::shoot(&tmp,angle);
+	AmmoView* av;
+	for(list<Ammo*>::iterator a = tmp.begin(); a != tmp.end(); a++)
+    {
+    	av = new AmmoView(**a);
+    	if(tex!=NULL)
+    		av->setTexture(tex);
+    	air->push_back(av);
+    }
+}

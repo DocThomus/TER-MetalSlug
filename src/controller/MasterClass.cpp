@@ -17,6 +17,7 @@ void MasterClass::initGame()
 	window = new RenderWindow();
     game.setConfig(&config);
     game.applyConfig(window);
+    game.init();
 }
 
 

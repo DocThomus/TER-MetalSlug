@@ -58,7 +58,7 @@ void MyDrawable::setTexture(Texture* tex)
 {
 	Vector2u size = tex->getSize();
 	rectangle.setTexture(tex);
-	rectangle.setTextureRect(IntRect(0,0,size.x*0.5,size.y));
+	rectangle.setTextureRect(IntRect(0,0,size.x,size.y));
 	updateIntRect();
 }
 

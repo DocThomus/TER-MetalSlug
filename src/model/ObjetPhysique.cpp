@@ -57,7 +57,7 @@ void ObjetPhysique::setMass(int m)
 }
 
 
-void ObjetPhysique::addMovement(Int2 v)
+void ObjetPhysique::addMovement(Float2 v)
 {
 	movement.x += v.x;
 	movement.y += v.y;

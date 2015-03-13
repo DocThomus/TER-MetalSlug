@@ -12,7 +12,7 @@ template <typename T> string toString(const T& t) {
 } 
 
 
-/*============== CLASSE UINT2 ==============*/
+/*============== CLASSE INT2 ==============*/
 Int2::Int2(int x, int y)
 :x(x),y(y)
 {}
@@ -24,5 +24,26 @@ Int2::Int2(const Int2& u)
 };
 
 Int2::~Int2()
+{}
+
+
+/*============== CLASSE FLOAT2 ==============*/
+Float2::Float2(float x, float y)
+:x(x),y(y)
+{}
+
+Float2::Float2(const Float2& u) 
+{
+	x = u.x;
+	y = u.y;
+};
+
+Float2::Float2(const Int2& u) 
+{
+	x = float(u.x);
+	y = float(u.y);
+};
+
+Float2::~Float2()
 {}
 

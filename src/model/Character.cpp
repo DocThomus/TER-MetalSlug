@@ -81,7 +81,7 @@ void Character::setInvicibility(int seconds)
 }
 
 
-void Character::shoot(vector<Ammo*>* air)
+void Character::shoot(list<Ammo*>* air, Float2 angle)
 {
     
 }

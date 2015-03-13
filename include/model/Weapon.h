@@ -4,7 +4,7 @@
 #include <iostream>
 #include <sstream>
 #include <stdlib.h>
-#include <vector>
+#include <list>
 
 #include <model/ObjetPhysique.h>
 #include <model/Ammo.h>
@@ -46,7 +46,8 @@ class Weapon : public ObjetPhysique
 
 		void print(ostream& os) const;
 
-		void shoot(vector<Ammo*>* air);	
+		void shoot(list<Ammo*>* air, Float2 angle);	
+		void reload(int nb);
 
 
 };

@@ -36,6 +36,18 @@ void Player::print(ostream& os) const
 
 
 
+Int2 Player::getPosition()
+{
+	return position;
+}
+
+
+Int2 Player::getSize()
+{
+	return size;
+}
+
+
 void Player::addWeapon(Weapon* w)
 {
 	armes.push_back(w);
@@ -44,10 +56,17 @@ void Player::addWeapon(Weapon* w)
 
 
 
-void Player::shoot(vector<Ammo*>* air)
+void Player::setWeapon(int w)
+{
+	current_weapon = (w >= int(armes.size()) ? armes.size()-1 : w);
+}
+
+
+
+void Player::shoot(list<Ammo*>* air, Float2 angle)
 {
 	if(armes.size()>0)
-		armes[current_weapon]->shoot(air);
+		armes[current_weapon]->shoot(air,angle);
 }
 
 
@@ -57,6 +76,10 @@ void Player::die()
 	cout << "Je suis mort." << endl;
 }
 
+void Player::reload(int nb)
+{
+	armes[current_weapon]->reload(nb);
+}
 
 void Player::animate(int dt)
 {

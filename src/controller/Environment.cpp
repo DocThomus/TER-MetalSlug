@@ -34,7 +34,7 @@ void Environment::display(RenderWindow* window)
 
 void Environment::addDecor(Texture* tex)
 {
-	DecorView tmp(Int2(0,0),Int2(1366,768),-4);
+	DecorView tmp(Int2(0,0),Int2(1366*2,768),-4);
 	tmp.setTexture(tex);
 	decors.push_back(tmp);
 }

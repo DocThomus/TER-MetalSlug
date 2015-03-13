@@ -1,22 +1,22 @@
 #include "model/Ammo.h"
 
-Ammo::Ammo(Int2 pos, Int2 siz, int z, int m, TypeAmmo type, Int2 movement)
+Ammo::Ammo(Int2 pos, Int2 siz, int z, int m, TypeAmmo type, Float2 movement)
 :ObjetPhysique(pos,siz,z,m), type(type)
 {
 	addMovement(movement);
+	
+	if(type == BULLET)
+		size = Int2(40,8);
 }
 
 
-Ammo::Ammo(TypeAmmo type, Int2 move)
-:ObjetPhysique(), type(type)
-{
-	movement = move;
-}
 
 
 Ammo::Ammo()
 :ObjetPhysique(), type(BULLET)
-{}
+{
+	addMovement(Int2(0,0));
+}
 
 
 Ammo::~Ammo()
@@ -32,6 +32,10 @@ void Ammo::print(ostream& os) const
 
 void Ammo::animate(int dt)
 {
-	position.x += movement.x;
-	position.y += movement.y;
+	if(type==BULLET)
+	{
+		position.x += movement.x*20;
+		position.y += movement.y*20;
+	}
 }
+

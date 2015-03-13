@@ -18,6 +18,7 @@
 #include <view/Animation.h>
 #include <view/Frame.h>
 #include <view/PlayerView.h>
+#include <view/AmmoView.h>
 
 using namespace std;
 using namespace sf;
@@ -40,7 +41,7 @@ class Game
 		Level level;
 		PlayerView player;
 		list<Enemy> enemies;
-		list<Ammo> ammo;
+		list<AmmoView*> ammo;
 
 		vector<Texture*> textures;
 
@@ -57,6 +58,7 @@ class Game
 
 		void applyConfig(RenderWindow* window);
 		void setConfig(Config* c);
+		void init();
 		void setLevel(Level);
 		void setPlayer(PlayerView);
 

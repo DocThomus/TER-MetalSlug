@@ -36,37 +36,69 @@ void Weapon::print(ostream& os) const
 
 
 
-void Weapon::shoot(vector<Ammo*>* air)
+void Weapon::shoot(list<Ammo*>* air, Float2 angle)
 {
 	if(ammos.x>0)
 	{
-		ammos.x--;
 
-		Int2 tmp;
+		/* POSITION DES BALLES */
+		Int2 pos = owner->getPosition();
+		Int2 siz = owner->getSize();
+		// X
+		if(angle.x > 0)
+			pos.x += siz.x;
+		else if(angle.x == 0)
+			pos.x += siz.x/2;
+		// Y
+		if(angle.y > 0)
+			pos.y += siz.y;
+		else if(angle.y == 0)
+			pos.y += siz.y/2;
 
+
+		/* CREATION DES BALLES */
 		switch(type)
 		{
 			case PISTOL :
-				tmp = Int2(angle.x*10,angle.y*10);
-				air->push_back(new Ammo(BULLET,tmp));
+				air->push_back(new Ammo(pos,size,z+1,0,BULLET,angle));
+				ammos.x--;
 				break;
 
 			case SMG :
-				srand (time(NULL));
-				tmp = Int2(angle.x*10,angle.y*10+rand()%10+1);
-				air->push_back(new Ammo(BULLET,angle));
+				air->push_back(new Ammo(pos,size,z+1,0,BULLET,angle));
+				ammos.x--;
 				break;
 
 			case SHOTGUN :
-				for(int i=-2; i<=2; ++i)
+				float deb = -0.2;
+				float fin = 0.2;
+				for(float i=deb; i<=fin && ammos.x>0; i+=0.1)
 				{
-					tmp = Int2(angle.x*10,angle.y*10+i);
-					air->push_back(new Ammo(BULLET,angle));
+					Float2 tmp = angle;
+					if(angle.x!=0)
+						tmp.y+=i;
+					if(angle.y!=0)
+						tmp.x+=i;
+					if(angle.x<0 && angle.y<0)
+						tmp.x-=i*2;
+					if(angle.x>0 && angle.y>0)
+						tmp.x-=i*2;
+					air->push_back(new Ammo(pos,size,z+1,0,BULLET,tmp));
+					ammos.x--;
 				}
 				break;
 		}
 
+		//cout << "Il reste " << ammos.x << " munitions" << endl;
 
 	}
 }
 
+
+
+void Weapon::reload(int nb)
+{
+	ammos.x += nb;
+	if(ammos.x>ammos.y)
+		ammos.x = ammos.y;
+}

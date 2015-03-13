@@ -17,7 +17,7 @@ class ObjetPhysique
 		int z;
 
 		int mass;
-		Int2 movement;
+		Float2 movement;
 
 
 	public :
@@ -33,7 +33,7 @@ class ObjetPhysique
 		void setZ(int z);
 		void setMass(int m);
 
-		void addMovement(Int2 v);
+		void addMovement(Float2 v);
 
 		virtual void print(ostream& os) const;
 		
