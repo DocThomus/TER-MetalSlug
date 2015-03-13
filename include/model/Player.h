@@ -5,7 +5,7 @@
 #include <sstream>
 #include <vector>
 
-#include <model/ObjetPhysique.h>
+#include <model/Character.h>
 #include <model/Weapon.h>
 #include <model/Ammo.h>
 
@@ -20,17 +20,13 @@ class Ammo;
 enum StatePosition {WAIT,RUN,SAUT,DASH,ROLL};
 enum StateBattle {NORMAL,DEAD,KNIFE,STAR};
 
-class Player : public ObjetPhysique
+class Player : public Character
 {
 	
 	protected :
 
-		Int2 health;
-
 		StatePosition state_p;
 		StateBattle state_b;
-
-		int walkway;
 		
 		vector<Weapon*> armes;
 		int current_weapon;

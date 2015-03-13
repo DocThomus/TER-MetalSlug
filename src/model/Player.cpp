@@ -1,22 +1,18 @@
 #include "model/Player.h"
 
 Player::Player(Int2 pos, Int2 siz, int z, int m, int max_h)
-:ObjetPhysique(pos,siz,z,m)
+:Character(pos,siz,z,m,max_h)
 {
-	health = Int2(max_h,max_h);
 	state_p = WAIT;
 	state_b = NORMAL;
-	walkway = 11;
 }
 
 
 Player::Player()
-:ObjetPhysique()
+:Character()
 {
-	health = Int2(100,100);
 	state_p = WAIT;
 	state_b = NORMAL;
-	walkway = 1;
 }
 
 

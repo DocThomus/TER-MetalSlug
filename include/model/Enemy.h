@@ -5,7 +5,7 @@
 #include <sstream>
 #include <vector>
 
-#include <model/ObjetPhysique.h>
+#include <model/Character.h>
 #include <model/Ammo.h>
 
 using namespace std;
@@ -13,7 +13,7 @@ using namespace std;
 class Ammo;
 
 
-class Enemy : public ObjetPhysique
+class Enemy : public Character
 {
 	
 	protected :
