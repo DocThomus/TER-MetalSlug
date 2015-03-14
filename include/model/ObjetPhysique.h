@@ -28,7 +28,11 @@ class ObjetPhysique
 
 		virtual void animate(int dt);
 
+		Int2 getPosition();
+		Int2 getSize();
+
 		void setPosition(Int2 pos);
+		void setPositionY(int posY);
 		void setSize(Int2 siz);
 		void setZ(int z);
 		void setMass(int m);

@@ -27,19 +27,17 @@ Character::~Character()
 
 void Character::animate(int dt)
 {
+    // Deplacement en fonction du mouvement
     int dx = (dt*movement.x*mass)/1000;
-	int dy = (dt*movement.y*mass)/1000;
+    int dy = (dt*movement.y*mass)/1000;
     movement.x -= dx;
     movement.y -= dy;
     position.x += dx;
     position.y += dy;
-}
 
-void Character::jump(int h) 
-{
-    movement.y = -500;
+    // Ajustement du mouvement en fonction du poids
+    movement.y += mass*10;
 }
-
 
 void Character::print(ostream& os) const  
 {  
@@ -96,4 +94,17 @@ void Character::die()
 void Character::walk(int way)
 {
     walkway = way;
+}
+
+void Character::jump(int h) 
+{
+    if (state_p == WAIT || state_p == RUN) 
+    {
+        movement.y = -h;
+        state_p = FALL;
+    }
+}
+
+void Character::wait() {
+    state_p = WAIT;
 }

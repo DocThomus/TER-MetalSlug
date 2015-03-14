@@ -14,6 +14,8 @@ class Environment;
 class Level
 {
 
+	friend class Game; 
+
 	private :
 
 		Environment environment;
@@ -23,6 +25,8 @@ class Level
 		Level();
 		Level(string filename);
 		~Level();
+
+		Environment getEnvironment() const;
 
 		void display(RenderWindow* window);
 

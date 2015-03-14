@@ -17,6 +17,7 @@ class Platform;
 
 class Environment
 {
+	friend class Game;
 
 	private :
 
@@ -30,6 +31,8 @@ class Environment
 		Environment();
 		Environment(string filename);
 		~Environment();
+
+		list<PlatformView> getPlatforms();
 
 		void display(RenderWindow* window);
 

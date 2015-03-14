@@ -15,9 +15,12 @@ Platform::~Platform()
 {
 }
 
+int Platform::getWalkline() const {
+	return walkline;
+}
+
 
 void Platform::print(ostream& os) const 
 {
 
 }
-

@@ -19,6 +19,9 @@ Level::Level(string filename)
 Level::~Level()
 {}
 
+Environment Level::getEnvironment() const {
+	return environment;
+}
 
 
 void Level::display(RenderWindow* window)

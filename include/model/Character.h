@@ -40,6 +40,7 @@ class Character : public ObjetPhysique
 
 		virtual void animate(int dt);
 		virtual void jump(int h);
+		virtual void wait();
 		virtual void print(ostream& os) const;
 
 		void decreaseHealth(int s);

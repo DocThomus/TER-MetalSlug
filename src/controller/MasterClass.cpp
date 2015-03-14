@@ -33,7 +33,7 @@ void MasterClass::playGame()
         
         game.checkEvents(window);
         game.update(clock.restart());
-        game.checkCollisions();
+        game.checkAllCollisions();
         game.display(window);
 
         window->display();

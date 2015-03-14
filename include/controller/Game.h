@@ -31,8 +31,7 @@ class PlayerView;
 
 
 class Game
-{
-	
+{	
 	private :
 
 		Config* config;
@@ -53,7 +52,8 @@ class Game
 		void update(Time dt);
 		void display(RenderWindow* window);
 		void checkEvents(RenderWindow* window);
-		void checkCollisions();
+		void checkAllCollisions();
+		bool checkCollision(ObjetPhysique, ObjetPhysique);
 
 		void applyConfig(RenderWindow* window);
 		void setConfig(Config* c);

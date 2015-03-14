@@ -62,6 +62,7 @@ void Game::checkEvents(RenderWindow* window)
                     break;
 
                 case Keyboard::Space :
+                    player.jump(100);
                     break;
             }
 
@@ -72,9 +73,37 @@ void Game::checkEvents(RenderWindow* window)
 }	
 
 
-void Game::checkCollisions()
-{
+void Game::checkAllCollisions()
+{ 
+// ---- Vérifie les collisions entre tous les objets ----
+// ex : En cas de collision entre le joueur et une plateforme, récupère le bords de la plateforme, et le set chez le joueur.
+// Entre le joueur et l'environnement :
+    for(list<PlatformView>::iterator it = level.environment.platforms.begin(); it != level.environment.platforms.end(); it++) {
+        if(checkCollision(player, (*it))) { // Si collision avec une plateforme...
+            int niveauplateforme = (*it).getWalkline();
+            int niveauJoueur = player.getPosition().y + player.getPosition().y;
+            if (niveauJoueur < niveauplateforme + 10) { // Si le joueur est "au nvieau" de la plateforme,
+                player.setPositionY(niveauplateforme - player.getPosition().y); // On place le joueur dessus
+                player.wait(); // et on change son état pour wait
+            }
+        }
+    }
+}
 
+bool Game::checkCollision(ObjetPhysique o1, ObjetPhysique o2) {
+    int o1gauche = o1.getPosition().x;
+    int o1droite = o1.getPosition().x + o1.getSize().x;
+    int o1haut = o1.getPosition().y;
+    int o1bas = o1.getPosition().y + o1.getSize().y;
+    int o2gauche = o2.getPosition().x;
+    int o2droite = o2.getPosition().x + o2.getSize().x;
+    int o2haut = o2.getPosition().y;
+    int o2bas = o2.getPosition().y + o2.getSize().y;
+
+    return(((o2gauche < o1gauche) && (o1gauche < o2droite) && (o2haut < o1haut) && (o1haut < o2bas))   // coin haut gauche   de o1 dans o2
+        || ((o2gauche < o1droite) && (o1droite < o2droite) && (o2haut < o1haut) && (o1haut < o2bas))   // coin haut droite   de o1 dans o2
+        || ((o2gauche < o1gauche) && (o1gauche < o2droite) && (o2haut < o1bas ) && (o1bas  < o2bas))   // coin bas gauche    de o1 dans o2
+        || ((o2gauche < o1droite) && (o1droite < o2droite) && (o2haut < o1bas ) && (o1bas  < o2bas))); // coin bas droite    de o1 dans o2
 }
 
 
@@ -134,7 +163,7 @@ void Game::loadLevel()
     textures.push_back(t);
     level.addDecor(textures[textures.size()-1]);
     
-    level.addPlatform(Int2(-10,650),Int2(10000,0),4,0);
+    level.addPlatform(Int2(-10,650),Int2(10000,1),4,0);
 
 
     /* PLAYER */

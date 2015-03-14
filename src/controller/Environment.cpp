@@ -20,6 +20,10 @@ Environment::~Environment()
 {}
 
 
+list<PlatformView> Environment::getPlatforms() {
+	return platforms;
+}
+
 
 void Environment::display(RenderWindow* window)
 {

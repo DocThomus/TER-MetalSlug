@@ -65,7 +65,7 @@ void Player::animate(int dt)
 	/* COURIR */
 	if(state_p == RUN)
 		position.x += dt*walkway/mass*2;
-
+	
 }
 
 

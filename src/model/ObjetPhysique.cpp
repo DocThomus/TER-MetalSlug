@@ -30,11 +30,23 @@ void ObjetPhysique::animate(int dt)
     position.y += dy;
 }
 
+Int2 ObjetPhysique::getPosition() {
+    return position;
+}
+
+Int2 ObjetPhysique::getSize() {
+    return size;
+}
 
 void ObjetPhysique::setPosition(Int2 pos)
 {
     position.x = pos.x;
     position.y = pos.y;
+}
+
+void ObjetPhysique::setPositionY(int posY)
+{
+    position.y = posY;
 }
 
 

@@ -25,6 +25,8 @@ class Platform : public ObjetPhysique
 		Platform();
 		~Platform();
 
+		int getWalkline() const;
+
 		void print(ostream& os) const;
 
 
