@@ -34,8 +34,8 @@ void Ammo::animate(int dt)
 {
 	if(type==BULLET)
 	{
-		position.x += movement.x*20;
-		position.y += movement.y*20;
+		position.x += movement.x*30;
+		position.y += movement.y*30;
 	}
 }
 

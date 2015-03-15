@@ -1,6 +1,7 @@
 #include "view/AmmoView.h"
 
 
+
 AmmoView::AmmoView()
 :Ammo(),MyDrawable()
 {

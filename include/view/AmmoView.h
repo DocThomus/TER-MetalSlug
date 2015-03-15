@@ -21,8 +21,6 @@ class AmmoView : public Ammo, public MyDrawable
 {
 
 	protected :
-
-
 		
 
 	public :

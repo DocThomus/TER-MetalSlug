@@ -4,7 +4,6 @@
 PlayerView::PlayerView(Int2 pos, Int2 siz, int z, int m, int max_h)
 :Player(pos,siz,z,m,max_h)
 {
-
 }
 
 
@@ -82,6 +81,7 @@ void PlayerView::walk(int way)
 
 void PlayerView::shoot(list<AmmoView*>* air, Int2 angle, Texture* tex)
 {
+	shootSound();
 	list<Ammo*> tmp;
 	Player::shoot(&tmp,angle);
 	AmmoView* av;
@@ -92,4 +92,11 @@ void PlayerView::shoot(list<AmmoView*>* air, Int2 angle, Texture* tex)
     		av->setTexture(tex);
     	air->push_back(av);
     }
+}
+
+
+void PlayerView::shootSound()
+{
+	WeaponView* tmp = (WeaponView*)(armes[current_weapon]);
+	tmp->shootSound();
 }
