@@ -2,7 +2,7 @@
 
 ## Installation
 
-Si vous n'avez jamais compilé avec la SFML : make install.
+Si vous n'avez jamais compilé avec la SFML : make install.  
 Avant la première compilation : make init.
 
 ## Contenu
