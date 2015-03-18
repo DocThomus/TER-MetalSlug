@@ -94,40 +94,40 @@ void Game::checkEvents(RenderWindow* window)
 
                 /* TIRER */
                 case Keyboard::Right :
-                    if(Keyboard::isKeyPressed(Keyboard::Up))
-                        player.shoot(&ammo,Int2(1,-1), textures[textures.size()-1]);
-                    else if(Keyboard::isKeyPressed(Keyboard::Down))
-                        player.shoot(&ammo, Int2(1,1), textures[textures.size()-1]);
-                    else
+                    // if(Keyboard::isKeyPressed(Keyboard::Up))
+                    //     player.shoot(&ammo,Int2(1,-1), textures[textures.size()-1]);
+                    // else if(Keyboard::isKeyPressed(Keyboard::Down))
+                    //     player.shoot(&ammo, Int2(1,1), textures[textures.size()-1]);
+                    // else
                         player.shoot(&ammo, Int2(1,0), textures[textures.size()-1]);
                     break;
 
                 case Keyboard::Left :
-                    if(Keyboard::isKeyPressed(Keyboard::Up))
-                        player.shoot(&ammo,Int2(-1,-1), textures[textures.size()-1]);
-                    else if(Keyboard::isKeyPressed(Keyboard::Down))
-                        player.shoot(&ammo, Int2(-1,1), textures[textures.size()-1]);
-                    else
+                    // if(Keyboard::isKeyPressed(Keyboard::Up))
+                    //     player.shoot(&ammo,Int2(-1,-1), textures[textures.size()-1]);
+                    // else if(Keyboard::isKeyPressed(Keyboard::Down))
+                    //     player.shoot(&ammo, Int2(-1,1), textures[textures.size()-1]);
+                    // else
                         player.shoot(&ammo, Int2(-1,0), textures[textures.size()-1]);
                     break;
 
                 case Keyboard::Up :
-                    if(Keyboard::isKeyPressed(Keyboard::Left))
-                        player.shoot(&ammo,Int2(-1,-1), textures[textures.size()-1]);
-                    else if(Keyboard::isKeyPressed(Keyboard::Right))
-                        player.shoot(&ammo, Int2(1,-1), textures[textures.size()-1]);
-                    else
+                    // if(Keyboard::isKeyPressed(Keyboard::Left))
+                    //     player.shoot(&ammo,Int2(-1,-1), textures[textures.size()-1]);
+                    // else if(Keyboard::isKeyPressed(Keyboard::Right))
+                    //     player.shoot(&ammo, Int2(1,-1), textures[textures.size()-1]);
+                    // else
                         player.shoot(&ammo, Int2(0,-1), textures[textures.size()-1]);
                     break;
 
-                case Keyboard::Down :
-                    if(Keyboard::isKeyPressed(Keyboard::Left))
-                        player.shoot(&ammo,Int2(-1,1), textures[textures.size()-1]);
-                    else if(Keyboard::isKeyPressed(Keyboard::Right))
-                        player.shoot(&ammo, Int2(1,1), textures[textures.size()-1]);
-                    else
-                        player.shoot(&ammo, Int2(0,1), textures[textures.size()-1]);
-                    break;
+                // case Keyboard::Down :
+                //     if(Keyboard::isKeyPressed(Keyboard::Left))
+                //         player.shoot(&ammo,Int2(-1,1), textures[textures.size()-1]);
+                //     else if(Keyboard::isKeyPressed(Keyboard::Right))
+                //         player.shoot(&ammo, Int2(1,1), textures[textures.size()-1]);
+                //     else
+                //         player.shoot(&ammo, Int2(0,1), textures[textures.size()-1]);
+                //     break;
 
 
                 /* RECHARGER */
@@ -235,15 +235,24 @@ void Game::loadLevel()
 
     /* PLAYER */
     t = new Texture();
-    t->loadFromFile("res/tex/player/player.png");
+    t->loadFromFile("res/tex/player/body.png");
     textures.push_back(t);
 
     player.setPosition(Int2(100,530));
     player.setSize(Int2(100,120));
     player.setMass(5);
     player.setTexture(textures[textures.size()-1]);
-    player.addAnimations(loadSpriteFromFile("res/xml/player/player.xml"));
+    player.addAnimations(loadSpriteFromFile("res/xml/player/body.xml"));
 
+    t = new Texture();
+    t->loadFromFile("res/tex/player/legs.png");
+    textures.push_back(t);
+
+    player.legs.setTexture(textures[textures.size()-1]);
+    player.legs.addAnimations(loadSpriteFromFile("res/xml/player/legs.xml"));
+
+    player.init();
+    
 
     /* WEAPON */
     new Weapon(&player,PISTOL,100);

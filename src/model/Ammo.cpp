@@ -6,7 +6,7 @@ Ammo::Ammo(Int2 pos, Int2 siz, int z, int m, TypeAmmo type, Float2 movement)
 	addMovement(movement);
 	
 	if(type == BULLET)
-		size = Int2(40,8);
+		size = Int2(50,12);
 }
 
 
@@ -34,8 +34,8 @@ void Ammo::animate(int dt)
 {
 	if(type==BULLET)
 	{
-		position.x += movement.x*30;
-		position.y += movement.y*30;
+		position.x += movement.x*2*dt;
+		position.y += movement.y*2*dt;
 	}
 }
 

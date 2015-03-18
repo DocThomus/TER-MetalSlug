@@ -5,7 +5,8 @@
 AmmoView::AmmoView()
 :Ammo(),MyDrawable()
 {
-	rectangle.setSize(Vector2f(size.x,size.y));
+	body.setSize(Vector2f(size.x,size.y));
+	body.setOrigin(size.x/2,size.y/2);
 	initPosition();
 }
 
@@ -14,7 +15,8 @@ AmmoView::AmmoView()
 AmmoView::AmmoView(Ammo a)
 :Ammo(a),MyDrawable()
 {
-	rectangle.setSize(Vector2f(size.x,size.y));
+	body.setSize(Vector2f(size.x,size.y));
+	body.setOrigin(size.x/2,size.y/2);
 	initPosition();
 }
 
@@ -28,9 +30,9 @@ AmmoView::~AmmoView()
 
 void AmmoView::display(RenderWindow* window)
 {
-	rectangle.setPosition(Vector2f(position.x,position.y-size.y/2));
+	body.setPosition(Vector2f(position.x,position.y-size.y/2));
 	
-	window->draw(rectangle);
+	window->draw(body);
 }
 
 
@@ -66,5 +68,5 @@ void AmmoView::initPosition()
 	a = atan2(movement.y,movement.x)*180/M_PI;
 	
 
-	rectangle.setRotation(a);
+	body.setRotation(a);
 }

@@ -15,7 +15,7 @@ class Ammo;
 
 
 enum StatePosition {WAIT,RUN,JUMP,FALL};
-enum StateBattle {NORMAL,DEAD,KNIFE,STAR};
+enum StateBattle {NORMAL,SHOOT,DEAD,KNIFE,STAR};
 
 
 class Character : public ObjetPhysique
@@ -27,7 +27,9 @@ class Character : public ObjetPhysique
 		StateBattle state_b;
 
 		Int2 health;
+
 		int walkway;
+		Int2 gunway;
 
 		int star_cpt;
 

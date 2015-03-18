@@ -21,7 +21,7 @@ class MyDrawable
 
 	protected :
 
-		RectangleShape rectangle;
+		RectangleShape body;
 		vector<Animation*> animations;
 		int current_anim;
 		Texture* tex;
@@ -33,11 +33,13 @@ class MyDrawable
 
 		virtual void display(RenderWindow* window)=0;
 
+		void reset();
 		void addAnimation(Animation* a);
 		void addAnimations(vector<Animation*> v);
-		void changeAnimation(int i);
+		bool changeAnimation(int i, bool repeat=true, int next=0);
+		void changeFrame(int i);
 		Frame* getFrame();
-		void setNextFrame();
+		void setNextFrame(int n=1);
 		void setTexture(Texture* tex);
 		virtual void updateIntRect();
 

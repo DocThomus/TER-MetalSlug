@@ -66,7 +66,10 @@ void Player::setWeapon(int w)
 void Player::shoot(list<Ammo*>* air, Float2 angle)
 {
 	if(armes.size()>0)
+	{
 		armes[current_weapon]->shoot(air,angle);
+		state_b = SHOOT;
+	}
 }
 
 

@@ -5,6 +5,8 @@
 #include <sstream>
 #include <stdlib.h>
 #include <list>
+#include <ctime>
+#include <stdio.h>
 
 #include <model/ObjetPhysique.h>
 #include <model/Ammo.h>
@@ -17,7 +19,6 @@ class Player;
 class Ammo;
 
 enum TypeWeapon {PISTOL,SMG,SHOTGUN,ROCKET_LAUNCHER,GRENADE_LAUNCHER,CANARDATOR};
-enum StateWeapon {GROUND,OWNED};
 
 class Weapon : public ObjetPhysique
 {
@@ -31,7 +32,6 @@ class Weapon : public ObjetPhysique
 		Int2 ammos;
 		
 		TypeWeapon type;
-		StateWeapon state;
 
 
 	public :

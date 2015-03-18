@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<document>
+	<animation num="0">
+		<sprite num="0">
+			<position x="31" y="0"/>
+			<size w="30" h="29"/>
+		</sprite>
+		<sprite num="1">
+			<position x="64" y="0"/>
+			<size w="31" h="28"/>
+		</sprite>
+		<sprite num="2">
+			<position x="98" y="0"/>
+			<size w="32" h="28"/>
+		</sprite>
+	</animation>
+	<animation num="1">
+		<!-- <sprite num="2">
+			<position x="98" y="0"/>
+			<size w="32" h="28"/>
+		</sprite> -->
+		<sprite num="3">
+			<position x="1" y="48"/>
+			<size w="51" h="24"/>
+		</sprite>
+		<sprite num="4">
+			<position x="55" y="48"/>
+			<size w="52" h="24"/>
+		</sprite>
+		<sprite num="5">
+			<position x="110" y="48"/>
+			<size w="50" h="24"/>
+		</sprite>
+		<sprite num="6">
+			<position x="163" y="49"/>
+			<size w="38" h="24"/>
+		</sprite>
+		<sprite num="7">
+			<position x="204" y="47"/>
+			<size w="38" h="26"/>
+		</sprite>
+		<sprite num="8">
+			<position x="246" y="46"/>
+			<size w="38" h="26"/>
+		</sprite>
+		<sprite num="9">
+			<position x="289" y="49"/>
+			<size w="38" h="24"/>
+		</sprite>
+		<sprite num="10">
+			<position x="332" y="50"/>
+			<size w="35" h="27"/>
+		</sprite>
+		<sprite num="11">
+			<position x="373" y="49"/>
+			<size w="34" h="28"/>
+		</sprite>
+		<sprite num="12">
+			<position x="413" y="47"/>
+			<size w="33" h="28"/>
+		</sprite>
+	</animation>
+	<animation num="2">
+		<!-- <sprite num="12">
+			<position x="413" y="47"/>
+			<size w="33" h="28"/>
+		</sprite> -->
+		<sprite num="13">
+			<position x="39" y="121"/>
+			<size w="23" h="43"/>
+		</sprite>
+		<sprite num="14">
+			<position x="112" y="117"/>
+			<size w="23" h="40"/>
+		</sprite>
+		<sprite num="15">
+			<position x="146" y="119"/>
+			<size w="26" h="39"/>
+		</sprite>
+		<sprite num="16">
+			<position x="182" y="116"/>
+			<size w="26" h="41"/>
+		</sprite>
+		<sprite num="17">
+			<position x="216" y="115"/>
+			<size w="25" h="42"/>
+		</sprite>
+		<sprite num="18">
+			<position x="254" y="117"/>
+			<size w="27" h="41"/>
+		</sprite>
+		<sprite num="19">
+			<position x="291" y="120"/>
+			<size w="27" h="38"/>
+		</sprite>
+		<sprite num="20">
+			<position x="326" y="128"/>
+			<size w="30" h="28"/>
+		</sprite>
+	</animation>
+</document>
+

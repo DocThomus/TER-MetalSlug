@@ -5,6 +5,7 @@ Character::Character(Int2 pos, Int2 siz, int z, int m, int max_h)
 {
 	health = Int2(max_h,max_h);
     walkway = 1;
+    gunway = Int2(1,0);
     state_p = WAIT;
     state_b = NORMAL;
 
@@ -14,7 +15,8 @@ Character::Character(Int2 pos, Int2 siz, int z, int m, int max_h)
 Character::Character()
 {
     health = Int2(100,100);
-	walkway = 1;
+    walkway = 1;
+	gunway = Int2(1,0);
     state_p = WAIT;
     state_b = NORMAL;
 

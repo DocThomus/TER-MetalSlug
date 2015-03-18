@@ -22,6 +22,9 @@ class Animation
 		vector<Frame*> frames;
 		int current;
 
+		bool repeat;
+		int  next_anim;
+
 
 	public :
 		
@@ -30,7 +33,13 @@ class Animation
 		~Animation();
 
 		void addFrame(Frame* f);
-		void setNextFrame();
+		bool setNextFrame();
+		void changeFrame(int i);
+		void reset();
+
+		void setRepeat(bool r);
+		void setNextAnim(int i);
+		int getNextAnim();
 
 		Frame* getFrame();
 		

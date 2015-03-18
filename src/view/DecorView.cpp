@@ -21,8 +21,8 @@ DecorView::~DecorView()
 
 void DecorView::display(RenderWindow* window)
 {
-	rectangle.setSize(Vector2f(size.x,size.y));
-	rectangle.setPosition(Vector2f(position.x,position.y));
-	window->draw(rectangle);
+	body.setSize(Vector2f(size.x,size.y));
+	body.setPosition(Vector2f(position.x,position.y));
+	window->draw(body);
 }
 
