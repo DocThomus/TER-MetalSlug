@@ -191,6 +191,10 @@ void Game::checkCollisions()
    }
 
 
+   /* PLAYER / ENNEMIS */
+
+        // TODO
+
 }
 
 
