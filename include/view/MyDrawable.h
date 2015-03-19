@@ -36,7 +36,7 @@ class MyDrawable
 		void reset();
 		void addAnimation(Animation* a);
 		void addAnimations(vector<Animation*> v);
-		bool changeAnimation(int i, bool repeat=true, int next=0);
+		bool changeAnimation(int i, bool repeat=true, int next=-1);
 		void changeFrame(int i);
 		Frame* getFrame();
 		void setNextFrame(int n=1);

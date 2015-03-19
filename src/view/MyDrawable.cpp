@@ -98,10 +98,15 @@ void MyDrawable::setNextFrame(int n)
 	Vector2f siz = body.getSize();
 
 	/* SELECTION DE LA FRAME SUIVANTE */
-	for(int i=0; i<n; ++i)
+	bool ok = true;
+	for(int i=0; ok && i<n; ++i)
 	{
 		if(!animations[current_anim]->setNextFrame())
-			current_anim = animations[current_anim]->getNextAnim();
+		{
+			if(animations[current_anim]->getNextAnim() >= 0)
+				current_anim = animations[current_anim]->getNextAnim();
+			ok = false;
+		}
 	}
 
 	/* MISE A JOUR DES PROPORTIONS DU RECTANGLE */

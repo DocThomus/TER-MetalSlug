@@ -68,7 +68,7 @@
 			<size w="19" h="21"/>
 		</sprite>
 	</animation>
-	<animation num="2">
+	<!-- <animation num="2">
 		<sprite num="14">
 			<position x="395" y="7"/>
 			<size w="19" h="21"/>
@@ -141,7 +141,7 @@
 			<position x="746" y="9"/>
 			<size w="22" h="20"/>
 		</sprite>
-	</animation>
+	</animation> -->
 	<animation num="5">
 		<sprite num="28">
 			<position x="746" y="9"/>

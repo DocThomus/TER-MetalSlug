@@ -87,7 +87,9 @@ void PlayerView::animate(int dt)
 	}
 
 	/* CHANGEMENT D'ANIMATION : JAMBES */
-	if(state_p == RUN)
+	if(state_g == AIR)
+		legs.changeAnimation(2,false);
+	else if(state_p == RUN)
 		legs.changeAnimation(1);
 	else
 		legs.changeAnimation(0);
@@ -183,20 +185,12 @@ void PlayerView::shoot(list<AmmoView*>* air, Int2 angle, Texture* tex)
 	
     	/* ANIMATION */
 		gunway = angle;
-		if(gunway.x==0 && changeAnimation(2,false))
-		{
-			reset();
-			updateIntRect();
-		}
-		else if(gunway.x!=0 && changeAnimation(1,false))
-		{
-			reset();
-			updateIntRect();
-		}
-		else 
-		{
-			reset();
-		}
+		if(gunway.x==0)
+			changeAnimation(2,false,0);
+		else if(gunway.x!=0)
+			changeAnimation(1,false,0);
+		reset();
+		updateIntRect();
 		
     }
 }

@@ -5,14 +5,14 @@ Animation::Animation()
 {
 	current = 0;
 	repeat = true;
-	next_anim = 0;
+	next_anim = -1;
 }
 
 
 Animation::Animation(vector<Frame*> v)
 {
 	repeat = true;
-	next_anim = 0;
+	next_anim = -1;
 	frames = v;
 }
 
@@ -38,8 +38,12 @@ bool Animation::setNextFrame()
 	if(current>=int(frames.size()))
 	{
 		if(!repeat)
+		{
+			current--;
 			return false;
-		current = 0;
+		}
+		else
+			current = 0;
 	}
 
 	return true;

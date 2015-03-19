@@ -102,6 +102,6 @@ void Player::walk(int way)
 		state_p = RUN;
 		walkway = way;
 	}
-	else if(state_g == GROUND)
+	else
 		state_p = WAIT;
 }

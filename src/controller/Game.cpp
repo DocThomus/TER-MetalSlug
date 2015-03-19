@@ -176,25 +176,39 @@ void Game::checkCollisions()
 
     /* PLAYER / SOL */
    bool test = true;
-   for(list<PlatformView>::iterator p=pltf->begin(); test && p!=pltf->end(); p++)
+   for(list<PlatformView>::iterator pl=pltf->begin(); test && pl!=pltf->end(); pl++)
    {
-        Int2 pos = (*p).getPosition();
-        Int2 siz = (*p).getSize();
-       
-        if(p_pos.x+p_siz.x > pos.x+siz.x || p_pos.x < p_pos.x)
+        Int2 pos = (*pl).getPosition();
+
+        ObjetPhysique* p_ptr = (ObjetPhysique*)(&player);
+        ObjetPhysique* pl_ptr = (ObjetPhysique*)(&*pl);
+        
+        if(checkCollision(p_ptr,pl_ptr))
         {
+            player.land(pos.y);
             test = false;
-        }
-        else
-        {
-            if(p_pos.y+p_siz.y < pos.y+10 && p_pos.y+p_siz.y > pos.y-10)
-            {
-                player.land(pos.y);
-                test = false;
-            }
         }
    }
 
+
+}
+
+
+
+bool Game::checkCollision(ObjetPhysique* obj1, ObjetPhysique* obj2)
+{
+    Int2 pos1 = obj1->getPosition();
+    Int2 pos2 = obj2->getPosition();
+    Int2 siz1 = obj1->getSize();
+    Int2 siz2 = obj2->getSize();
+
+    if(pos1.x > pos2.x + siz2.x
+    || pos1.x + siz1.x < pos2.x
+    || pos1.y > pos2.y + siz2.y
+    || pos1.y + siz1.y < pos2.y)
+        return false;
+    else
+        return true;
 
 }
 

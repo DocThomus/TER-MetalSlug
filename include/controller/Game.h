@@ -56,6 +56,7 @@ class Game
 		void display(RenderWindow* window);
 		void checkEvents(RenderWindow* window);
 		void checkCollisions();
+		bool checkCollision(ObjetPhysique* obj1, ObjetPhysique* obj2);
 
 		void applyConfig(RenderWindow* window);
 		void setConfig(Config* c);
