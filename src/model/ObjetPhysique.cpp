@@ -24,8 +24,8 @@ void ObjetPhysique::animate(int dt)
 {
     int dx = (dt*movement.x*mass)/1000;
 	int dy = (dt*movement.y*mass)/1000;
-    movement.x -= dx;
-    movement.y -= dy;
+    //movement.x -= dx;
+    //movement.y -= dy;
     position.x += dx;
     position.y += dy;
 }

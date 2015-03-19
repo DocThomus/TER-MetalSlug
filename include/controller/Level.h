@@ -14,6 +14,8 @@ class Environment;
 class Level
 {
 
+	friend class Game;
+
 	private :
 
 		Environment environment;

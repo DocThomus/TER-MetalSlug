@@ -138,6 +138,7 @@ void Game::checkEvents(RenderWindow* window)
 
                 /* SAUTER */
                 case Keyboard::Space :
+                    player.jump(250);
                     break;
             }
         }
@@ -168,6 +169,32 @@ void Game::checkEvents(RenderWindow* window)
 
 void Game::checkCollisions()
 {
+    Int2 p_pos = player.getPosition();
+    Int2 p_siz = player.getSize();
+
+    list<PlatformView>* pltf = &level.environment.platforms;
+
+    /* PLAYER / SOL */
+   bool test = true;
+   for(list<PlatformView>::iterator p=pltf->begin(); test && p!=pltf->end(); p++)
+   {
+        Int2 pos = (*p).getPosition();
+        Int2 siz = (*p).getSize();
+       
+        if(p_pos.x+p_siz.x > pos.x+siz.x || p_pos.x < p_pos.x)
+        {
+            test = false;
+        }
+        else
+        {
+            if(p_pos.y+p_siz.y < pos.y+10 && p_pos.y+p_siz.y > pos.y-10)
+            {
+                player.land(pos.y);
+                test = false;
+            }
+        }
+   }
+
 
 }
 

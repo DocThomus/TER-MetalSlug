@@ -86,11 +86,11 @@ void Player::reload(int nb)
 
 void Player::animate(int dt)
 {
-	ObjetPhysique::animate(dt);
+	Character::animate(dt);
 
 	/* COURIR */
 	if(state_p == RUN)
-		position.x += dt*walkway/mass*2;
+		position.x += dt*walkway/mass*2	;
 
 }
 
@@ -102,6 +102,6 @@ void Player::walk(int way)
 		state_p = RUN;
 		walkway = way;
 	}
-	else
+	else if(state_g == GROUND)
 		state_p = WAIT;
 }

@@ -7,6 +7,7 @@ Character::Character(Int2 pos, Int2 siz, int z, int m, int max_h)
     walkway = 1;
     gunway = Int2(1,0);
     state_p = WAIT;
+    state_g = GROUND;
     state_b = NORMAL;
 
 }
@@ -18,6 +19,7 @@ Character::Character()
     walkway = 1;
 	gunway = Int2(1,0);
     state_p = WAIT;
+    state_g = GROUND;
     state_b = NORMAL;
 
 }
@@ -29,17 +31,32 @@ Character::~Character()
 
 void Character::animate(int dt)
 {
-    int dx = (dt*movement.x*mass)/1000;
-	int dy = (dt*movement.y*mass)/1000;
-    movement.x -= dx;
-    movement.y -= dy;
-    position.x += dx;
-    position.y += dy;
+    ObjetPhysique::animate(dt);
+
+    /* GRAVITÉ */
+    if(state_g == AIR)
+    {
+        int dy = dt*0.15*mass;
+        movement.y += dy;
+    }
 }
+
 
 void Character::jump(int h) 
 {
-    movement.y = -500;
+    if(state_g == GROUND)
+    {
+        state_g = AIR;
+        movement.y = -h;
+    }
+}
+
+
+void Character::land(int h)
+{
+    state_g = GROUND;
+    position.y = h-size.y;
+    movement.y = 0;
 }
 
 
@@ -97,5 +114,6 @@ void Character::die()
 
 void Character::walk(int way)
 {
-    walkway = way;
+    if(state_g == GROUND)
+        walkway = way;
 }

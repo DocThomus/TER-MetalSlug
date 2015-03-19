@@ -177,6 +177,10 @@ void PlayerView::shoot(list<AmmoView*>* air, Int2 angle, Texture* tex)
 
     if(change) // si le joueur a pu tirer
     {
+    	/* SON */
+		WeaponView* wv = (WeaponView*)(armes[current_weapon]);
+		wv->shootSound();
+	
     	/* ANIMATION */
 		gunway = angle;
 		if(gunway.x==0 && changeAnimation(2,false))
@@ -194,10 +198,6 @@ void PlayerView::shoot(list<AmmoView*>* air, Int2 angle, Texture* tex)
 			reset();
 		}
 		
-
-		/* SON */
-		WeaponView* wv = (WeaponView*)(armes[current_weapon]);
-		wv->shootSound();
     }
 }
 

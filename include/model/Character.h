@@ -14,7 +14,8 @@ using namespace std;
 class Ammo;
 
 
-enum StatePosition {WAIT,RUN,JUMP,FALL};
+enum StatePosition {WAIT,RUN};
+enum StateGround {GROUND,AIR};
 enum StateBattle {NORMAL,SHOOT,DEAD,KNIFE,STAR};
 
 
@@ -24,6 +25,7 @@ class Character : public ObjetPhysique
 	protected :
 
 		StatePosition state_p;
+		StateGround state_g;
 		StateBattle state_b;
 
 		Int2 health;
@@ -41,7 +43,6 @@ class Character : public ObjetPhysique
 		~Character();
 
 		virtual void animate(int dt);
-		virtual void jump(int h);
 		virtual void print(ostream& os) const;
 
 		void decreaseHealth(int s);
@@ -49,6 +50,8 @@ class Character : public ObjetPhysique
 
 		virtual void setInvicibility(int seconds);
 
+		virtual void jump(int h);
+		virtual void land(int h);
 		virtual void shoot(list<Ammo*>* air, Float2 angle = Float2(1.,0.));
 		virtual void die();
 		virtual void walk(int way);

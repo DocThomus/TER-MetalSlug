@@ -24,8 +24,8 @@ WeaponView::~WeaponView()
 
 void WeaponView::shootSound()
 {
-	if(ammos.x>0)
-	{
+	// if(ammos.x>0)
+	// {
 		switch(type)
 		{
 			case PISTOL :
@@ -33,7 +33,7 @@ void WeaponView::shootSound()
 				break;
 			case SHOTGUN :
 				sounds[1]->play();
-		}
+	//	}
 	}
 }
 

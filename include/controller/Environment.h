@@ -18,6 +18,8 @@ class Platform;
 class Environment
 {
 
+	friend class Game;
+
 	private :
 
 		list<DecorView> decors;

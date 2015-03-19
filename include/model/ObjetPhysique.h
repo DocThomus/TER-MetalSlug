@@ -28,6 +28,9 @@ class ObjetPhysique
 
 		virtual void animate(int dt);
 
+		inline Int2 getPosition() {return position;};
+		inline Int2 getSize() {return size;};
+
 		void setPosition(Int2 pos);
 		void setSize(Int2 siz);
 		void setZ(int z);
