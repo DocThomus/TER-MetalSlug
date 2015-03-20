@@ -175,8 +175,8 @@ void Game::checkCollisions()
     list<PlatformView>* pltf = &level.environment.platforms;
 
     /* PLAYER / SOL */
-    bool test = true;
-    for(list<PlatformView>::iterator pl=pltf->begin(); test && pl!=pltf->end(); pl++)
+    bool collision = false;
+    for(list<PlatformView>::iterator pl=pltf->begin(); !collision && pl!=pltf->end(); pl++) // On check les collisions avec toutes les plateformes
     {
         Int2 pos = (*pl).getPosition();
 
@@ -186,10 +186,10 @@ void Game::checkCollisions()
         if(checkCollision(p_ptr,pl_ptr))
         {
             player.land(pos.y);
-            test = false;
+            collision = true;
         }
     }
-    if(test) {
+    if(!collision) { // Si il n'y a collision avec aucune plateforme, le personnage est en l'air.
         player.jump(0);
     }
 
