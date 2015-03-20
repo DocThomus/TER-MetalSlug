@@ -175,9 +175,9 @@ void Game::checkCollisions()
     list<PlatformView>* pltf = &level.environment.platforms;
 
     /* PLAYER / SOL */
-   bool test = true;
-   for(list<PlatformView>::iterator pl=pltf->begin(); test && pl!=pltf->end(); pl++)
-   {
+    bool test = true;
+    for(list<PlatformView>::iterator pl=pltf->begin(); test && pl!=pltf->end(); pl++)
+    {
         Int2 pos = (*pl).getPosition();
 
         ObjetPhysique* p_ptr = (ObjetPhysique*)(&player);
@@ -188,10 +188,13 @@ void Game::checkCollisions()
             player.land(pos.y);
             test = false;
         }
-   }
+    }
+    if(test) {
+        player.jump(0);
+    }
 
 
-   /* PLAYER / ENNEMIS */
+    /* PLAYER / ENNEMIS */
 
         // TODO
 
