@@ -276,6 +276,9 @@ void Game::loadLevel()
     level.addDecor(textures[textures.size()-1]);
     
     level.addPlatform(Int2(-10,650),Int2(10000,0),4,0);
+    level.addPlatform(Int2(200,300),Int2(50,50),4,100);
+    level.addPlatform(Int2(500,600),Int2(100,30),4,100);
+
 
 
     /* PLAYER */

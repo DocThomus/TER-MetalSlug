@@ -4,7 +4,7 @@
 PlatformView::PlatformView(Int2 pos, Int2 siz, int z, int wl)
 :Platform(pos,siz,z,wl)
 {
-	body.setFillColor(Color::Black);
+	//body.setFillColor(Color::Black);
 }
 
 
@@ -25,6 +25,8 @@ void PlatformView::display(RenderWindow* window)
 	{
 		body.setSize(Vector2f(size.x,size.y));
 		body.setPosition(Vector2f(position.x,position.y));
+		body.setOutlineThickness(3);
+		body.setOutlineColor(Color::Black);
 		window->draw(body);
 	}
 }
