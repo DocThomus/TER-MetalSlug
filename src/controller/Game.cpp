@@ -176,7 +176,7 @@ void Game::checkCollisions()
 
     /* PLAYER / SOL */
     bool collision = false;
-    for(list<PlatformView>::iterator pl=pltf->begin(); !collision && pl!=pltf->end(); pl++) // On check les collisions avec toutes les plateformes
+    for(list<PlatformView>::iterator pl=pltf->begin(); pl!=pltf->end(); pl++) // On check les collisions avec TOUTES les plateformes (on peut etre en collision avec le sol et un mur...)
     {
         Int2 pos = (*pl).getPosition();
 
@@ -195,7 +195,9 @@ void Game::checkCollisions()
 
 
     /* PLAYER / ENNEMIS */
+        // TODO
 
+    /* ENNEMIS / SOL */
         // TODO
 
 }
@@ -209,10 +211,10 @@ bool Game::checkCollision(ObjetPhysique* obj1, ObjetPhysique* obj2)
     Int2 siz1 = obj1->getSize();
     Int2 siz2 = obj2->getSize();
 
-    if(pos1.x > pos2.x + siz2.x
-    || pos1.x + siz1.x < pos2.x
-    || pos1.y > pos2.y + siz2.y
-    || pos1.y + siz1.y < pos2.y)
+    if(pos1.x > pos2.x + siz2.x  // p1(gauche) a droite de   p2(droite)
+    || pos1.x + siz1.x < pos2.x  // p1(droite) a gauche de   p2(gauche)
+    || pos1.y > pos2.y + siz2.y  // p1(haut)   au dessous de p2(bas)
+    || pos1.y + siz1.y < pos2.y) // p1(bas)    au dessus de  p2(haut) 
         return false;
     else
         return true;
@@ -278,9 +280,9 @@ void Game::loadLevel()
     textures.push_back(t);
     level.addDecor(textures[textures.size()-1]);
     
-    level.addPlatform(Int2(-10,650),Int2(10000,0),4,0);
-    level.addPlatform(Int2(200,300),Int2(50,50),4,100);
-    level.addPlatform(Int2(500,600),Int2(100,30),4,100);
+    level.addPlatform(Int2(-10,650),Int2(10000,0),4,0); // Sol
+    level.addPlatform(Int2(200,300),Int2(50,50),4,100); // Haut
+    level.addPlatform(Int2(500,600),Int2(100,70),4,100); // Bas
 
 
 
