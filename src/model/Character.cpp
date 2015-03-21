@@ -51,6 +51,13 @@ void Character::jump(int h)
     }
 }
 
+void Character::touchePlafond(int plafond) {
+    if(state_g == AIR) {
+        movement.y = 0;
+        position.y = plafond;
+    }
+}
+
 
 void Character::land(int h)
 {
@@ -59,6 +66,17 @@ void Character::land(int h)
     movement.y = 0;
 }
 
+void Character::prendMurGauche(int posMurDroite) {
+    // Le mur est a gauche du perso (le parametre est la droite de ce mur)
+    movement.x = 0;
+    position.x = posMurDroite;
+}
+
+void Character::prendMurDroite(int posMurGauche) {
+    // Le mur est a droite du perso (le parametre est la gauche de ce mur)
+    movement.x = 0;
+    position.x = posMurGauche - size.x; //On prend en compte la taille du perso.
+}
 
 void Character::print(ostream& os) const  
 {  

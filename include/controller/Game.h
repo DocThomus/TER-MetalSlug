@@ -57,6 +57,10 @@ class Game
 		void checkEvents(RenderWindow* window);
 		void checkCollisions();
 		bool checkCollision(ObjetPhysique* obj1, ObjetPhysique* obj2);
+		bool checkCollisionHaut(ObjetPhysique* obj1, ObjetPhysique* obj2);
+		bool checkCollisionBas(ObjetPhysique* obj1, ObjetPhysique* obj2);
+		bool checkCollisionGauche(ObjetPhysique* obj1, ObjetPhysique* obj2);
+		bool checkCollisionDroite(ObjetPhysique* obj1, ObjetPhysique* obj2);
 
 		void applyConfig(RenderWindow* window);
 		void setConfig(Config* c);

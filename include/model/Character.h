@@ -51,7 +51,10 @@ class Character : public ObjetPhysique
 		virtual void setInvicibility(int seconds);
 
 		virtual void jump(int h);
+		virtual void touchePlafond(int plafond);
 		virtual void land(int h);
+		virtual void prendMurGauche(int posMurDroite);
+		virtual void prendMurDroite(int posMurGauche);
 		virtual void shoot(list<Ammo*>* air, Float2 angle = Float2(1.,0.));
 		virtual void die();
 		virtual void walk(int way);
