@@ -27,7 +27,7 @@ class Ammo : public ObjetPhysique
 
 	public :
 
-		Ammo(Int2 pos, Int2 siz, int z, int m, TypeAmmo type, Float2 move);
+		Ammo(Int2 pos, Int2 siz, int m, TypeAmmo type, Float2 move);
 		//Ammo(TypeAmmo type, Int2 movement);
 		Ammo();
 		~Ammo();
@@ -35,6 +35,8 @@ class Ammo : public ObjetPhysique
 		void print(ostream& os) const;
 
 		void animate(int dt);
+
+		int getDamage();
 
 };
 

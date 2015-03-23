@@ -1,7 +1,7 @@
 #include "model/Weapon.h"
 
-Weapon::Weapon(Int2 pos, Int2 siz, int z, int m, Player* p, TypeWeapon type, int max_mun)
-:ObjetPhysique(pos,siz,z,m), owner(p), type(type)
+Weapon::Weapon(Int2 pos, Int2 siz, int m, Player* p, TypeWeapon type, int max_mun)
+:ObjetPhysique(pos,siz,m), owner(p), type(type)
 {
 	ammos = Int2(max_mun,max_mun);
 	p->addWeapon(this);
@@ -74,6 +74,7 @@ void Weapon::shoot(list<Ammo*>* air, Float2 angle)
 		/* POSITION DES BALLES */
 		Int2 pos = owner->getPosition();
 		Int2 siz = owner->getSize();
+		
 		// X
 		if(angle.x > 0)
 			pos.x += siz.x+10;
@@ -81,6 +82,7 @@ void Weapon::shoot(list<Ammo*>* air, Float2 angle)
 			pos.x += siz.x/2;
 		else
 			pos.x -= 10;
+		
 		// Y
 		if(angle.y > 0)
 			pos.y += siz.y;
@@ -89,17 +91,22 @@ void Weapon::shoot(list<Ammo*>* air, Float2 angle)
 		if(angle.x==0 && angle.y<0)
 			pos.y -= 50;
 
+		if(owner->getStatePosition() == KNELT)
+		{
+			pos.y += siz.y/4;
+		}
+
 
 		/* CREATION DES BALLES */
 		switch(type)
 		{
 			case PISTOL :
-				air->push_back(new Ammo(pos,size,z+1,0,BULLET,angle));
+				air->push_back(new Ammo(pos,size,0,BULLET,angle));
 				ammos.x--;
 				break;
 
 			case SMG :
-				air->push_back(new Ammo(pos,size,z+1,0,BULLET,angle));
+				air->push_back(new Ammo(pos,size,0,BULLET,angle));
 				ammos.x--;
 				break;
 
@@ -114,7 +121,7 @@ void Weapon::shoot(list<Ammo*>* air, Float2 angle)
 						tmp.x+=i;
 					if((angle.x<0 && angle.y<0) || (angle.x>0 && angle.y>0))
 						tmp.x-=i*2;
-					air->push_back(new Ammo(pos,size,z+1,0,BULLET,tmp));
+					air->push_back(new Ammo(pos,size,0,BULLET,tmp));
 					ammos.x--;
 				}
 				break;

@@ -58,7 +58,25 @@ class Float2 {
 };	
 
 
+/*============== CLASSE BOOL2 ==============*/
+class Bool2 {
 
+	public :
+	
+		bool x;
+		bool y;
+		
+		Bool2(bool i=0,bool j=0);
+		Bool2(const Bool2& u);
+		Bool2(const Int2& u);
+		~Bool2();
+
+		inline friend std::ostream& operator << (std::ostream& os, const Bool2& i)
+		{
+			os << "(" << i.x << "," << i.y << ")";
+			return os; 
+		};  
+};	
 
 
 

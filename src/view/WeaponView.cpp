@@ -1,6 +1,8 @@
 #include "view/WeaponView.h"
 
+
 vector<Sound*> WeaponView::sounds = loadSounds();
+
 
 
 WeaponView::WeaponView()
@@ -36,6 +38,7 @@ void WeaponView::shootSound()
 	//	}
 	}
 }
+
 
 
 vector<Sound*> WeaponView::loadSounds()

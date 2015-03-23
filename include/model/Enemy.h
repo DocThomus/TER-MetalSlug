@@ -21,18 +21,12 @@ class Enemy : public Character
 
 
 	public :
-
-		enum State {DEAD,JUMP,STRIKE};
-		State state;
 		
-		Enemy(Int2 pos, Int2 siz, int z, int m, int max_h, bool AI, int pow);
+		Enemy(Int2 pos, Int2 siz, int m, int max_h, bool AI, int pow);
 		Enemy();
 		~Enemy();
 
 		void print(ostream& os) const;	
-
-		void decreaseHealth(int s);
-		void increaseHealth(int s);
 
 		void animate (int dt);
 		void attack(vector<Ammo*>* air);

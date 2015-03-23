@@ -29,7 +29,7 @@ class Item : public ObjetPhysique
 
 	public :
 
-		Item(Int2 pos, Int2 siz, int z, int m, TypeItem type);
+		Item(Int2 pos, Int2 siz, int m, TypeItem type);
 		Item();
 		~Item();
 

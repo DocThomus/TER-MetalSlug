@@ -22,7 +22,7 @@ class ObjetPhysique
 
 	public :
 
-		ObjetPhysique(Int2 pos,Int2 siz, int z, int m=0);
+		ObjetPhysique(Int2 pos,Int2 siz, int m=0);
 		ObjetPhysique();
 		~ObjetPhysique();
 
@@ -30,6 +30,7 @@ class ObjetPhysique
 
 		inline Int2 getPosition() {return position;};
 		inline Int2 getSize() {return size;};
+		inline Float2 getMovement() {return movement;};
 
 		void setPosition(Int2 pos);
 		void setSize(Int2 siz);

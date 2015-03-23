@@ -1,5 +1,5 @@
-#ifndef PLAYERVIEW_H
-#define PLAYERVIEW_H
+#ifndef ENEMYVIEW_H
+#define ENEMYVIEW_H
 
 #include <iostream>
 
@@ -10,11 +10,9 @@
 
 #include <tools/tools.h>
 
-#include <model/Player.h>
+#include <model/Enemy.h>
 #include <view/MyDrawable.h>
 #include <view/AmmoView.h>
-#include <view/WeaponView.h>
-#include <view/MemberView.h>
 
 using namespace std;
 using namespace sf;
@@ -22,30 +20,36 @@ using namespace sf;
 class WeaponView;
 
 
-class PlayerView : public Player, public MyDrawable
+class EnemyView : public Enemy, public MyDrawable
 {
 
 	private :
 
+		static vector<Sound*> sounds;
+
 
 	public :
 
-		MemberView legs;
-
 		
-		PlayerView(Int2 pos, Int2 siz, int m, int max_h);
-		PlayerView();
-		~PlayerView();
+		EnemyView(Int2 pos, Int2 siz, int m, int max_h, bool AI, int pow);
+		EnemyView();
+		~EnemyView();
+
+		static vector<Sound*> loadSounds();
 
 		void init();
 
 		void display(RenderWindow* window);
+
 		void animate(int dt);
+
 		void updateIntRect();
 
 		void walk(int way);
-		void kneel(bool);
-		virtual void shoot(list<AmmoView*>* ammos, Int2 angle = Int2(1,0), Texture* tex=NULL);
+		
+		void die();
+
+		void shoot(list<AmmoView*>* ammos, Int2 angle = Int2(1,0), Texture* tex=NULL);
 };
 
 

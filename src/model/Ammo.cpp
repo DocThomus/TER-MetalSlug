@@ -1,7 +1,7 @@
 #include "model/Ammo.h"
 
-Ammo::Ammo(Int2 pos, Int2 siz, int z, int m, TypeAmmo type, Float2 movement)
-:ObjetPhysique(pos,siz,z,m), type(type)
+Ammo::Ammo(Int2 pos, Int2 siz, int m, TypeAmmo type, Float2 movement)
+:ObjetPhysique(pos,siz,m), type(type)
 {
 	addMovement(movement);
 	
@@ -39,3 +39,25 @@ void Ammo::animate(int dt)
 	}
 }
 
+
+int Ammo::getDamage()
+{
+	int d;
+	switch(type)
+	{
+		case BULLET : 
+			d = 10;
+			break;
+		case ROCKET :
+			d = 75;
+			break;
+		case GRENADE :
+			d = 50;
+			break;
+		case LASER :
+			d = 5;
+			break;
+	}
+
+	return d;
+}

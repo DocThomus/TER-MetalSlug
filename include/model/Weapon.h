@@ -39,7 +39,7 @@ class Weapon : public ObjetPhysique
 		
 		
 		
-		Weapon(Int2 pos, Int2 siz, int z, int m, Player* p, TypeWeapon type, int max_mun);
+		Weapon(Int2 pos, Int2 siz, int m, Player* p, TypeWeapon type, int max_mun);
 		Weapon(Player* p, TypeWeapon type, int max_mun);
 		Weapon();
 		~Weapon();

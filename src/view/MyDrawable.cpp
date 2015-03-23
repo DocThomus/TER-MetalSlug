@@ -4,14 +4,12 @@
 MyDrawable::MyDrawable()
 :current_anim(0)
 {
-
 }
 
 
 
 MyDrawable::~MyDrawable()
 {
-
 }
 
 

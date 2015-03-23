@@ -1,7 +1,7 @@
 #include "model/ObjetPhysique.h"
 
-ObjetPhysique::ObjetPhysique(Int2 pos, Int2 siz, int z, int m)
-:position(pos),size(siz),z(z),mass(m)
+ObjetPhysique::ObjetPhysique(Int2 pos, Int2 siz, int m)
+:position(pos),size(siz),mass(m)
 {
 	movement.x = 0; movement.y = 0;
 }

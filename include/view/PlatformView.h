@@ -23,7 +23,7 @@ class PlatformView : public Platform, public MyDrawable
 
 	public :
 		
-		PlatformView(Int2 pos, Int2 siz, int z, int wl);
+		PlatformView(Int2 pos, Int2 siz, int wl);
 		PlatformView();
 		~PlatformView();
 

@@ -30,7 +30,7 @@ class Player : public Character
 
 	public :
 		
-		Player(Int2 pos, Int2 siz, int z, int m, int max_h);
+		Player(Int2 pos, Int2 siz, int m, int max_h);
 		Player();
 		~Player();
 
@@ -42,6 +42,7 @@ class Player : public Character
 		virtual void animate(int dt);
 
 		virtual void walk(int way);
+		virtual void kneel(bool);
 		virtual void die();
 		virtual void reload(int nb);
 		virtual void shoot(list<Ammo*>*, Float2 angle = Float2(1,0));

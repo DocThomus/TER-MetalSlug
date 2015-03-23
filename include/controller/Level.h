@@ -29,5 +29,5 @@ class Level
 		void display(RenderWindow* window);
 
 		void addDecor(Texture* tex);
-		void addPlatform(Int2 pos, Int2 siz, int z, int wl, Texture* tex=NULL);
+		void addPlatform(Int2 pos, Int2 siz, int wl=0, Texture* tex=NULL);
 };
