@@ -1607,6 +1607,13 @@
 			<position x="1000" y="1319"/>
 			<size w="43" h="32"/>
 		</sprite>
+<<<<<<< HEAD
+=======
+		<sprite num="400">
+			<position x="1055" y="1319"/>
+			<size w="43" h="32"/>
+		</sprite>
+>>>>>>> 21eb885ae01b3278b260645f7b7b7f714a7072d1
 	</animation>
 	<animation num="2">
 		<sprite num="400">
@@ -1641,6 +1648,13 @@
 			<position x="1051" y="1372"/>
 			<size w="47" h="29"/>
 		</sprite>
+<<<<<<< HEAD
+=======
+		<sprite num="408">
+			<position x="1" y="1417"/>
+			<size w="50" h="38"/>
+		</sprite>
+>>>>>>> 21eb885ae01b3278b260645f7b7b7f714a7072d1
 	</animation>
 	<animation num="3">
 		<sprite num="408">

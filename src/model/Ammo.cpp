@@ -92,10 +92,13 @@ int Ammo::getDamage()
 	}
 
 	return d;
+<<<<<<< HEAD
 }
 
 
 StateAmmo Ammo::getState()
 {
 	return state_a;
+=======
+>>>>>>> 21eb885ae01b3278b260645f7b7b7f714a7072d1
 }

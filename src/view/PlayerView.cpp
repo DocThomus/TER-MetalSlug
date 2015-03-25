@@ -153,6 +153,21 @@ void PlayerView::walk(int way)
 
 
 void PlayerView::kneel(bool b)
+<<<<<<< HEAD
+=======
+{
+	Player::kneel(b);
+	int i = (b ? 3 : 0);
+	if(current_anim!=4)
+		changeAnimation(i);
+	if(!b && current_anim==4)
+		changeAnimation(0);
+	updateIntRect();
+}
+
+
+void PlayerView::shoot(list<AmmoView*>* air, Int2 angle, Texture* tex)
+>>>>>>> 21eb885ae01b3278b260645f7b7b7f714a7072d1
 {
 	Player::kneel(b);
 	int i = (b ? 3 : 0);
