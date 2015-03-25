@@ -43,8 +43,6 @@ class Ammo : public ObjetPhysique
 		int getDamage();
 		StateAmmo getState();
 
-		int getDamage();
-
 };
 
 #endif

@@ -21,13 +21,9 @@ void Game::update(Time dt)
     player.animate(t);
 
     for(list<EnemyView*>::iterator e = enemies.begin(); e != enemies.end(); e++)
-<<<<<<< HEAD
     {
         (*e)->animate(t);
     }
-=======
-        (*e)->animate(t);
->>>>>>> 21eb885ae01b3278b260645f7b7b7f714a7072d1
 
     for(list<AmmoView*>::iterator a = ammo.begin(); a != ammo.end(); a++)
     {
@@ -117,7 +113,6 @@ void Game::checkEvents(RenderWindow* window)
 
                 /* TIRER */
                 case Keyboard::Right :
-<<<<<<< HEAD
                     player.shoot(&ammo, Int2(1,0)/*, textures[textures.size()-1]*/);
                     break;
 
@@ -127,17 +122,6 @@ void Game::checkEvents(RenderWindow* window)
 
                 case Keyboard::Up :
                     player.shoot(&ammo, Int2(0,-1)/*, textures[textures.size()-1]*/);
-=======
-                    player.shoot(&ammo, Int2(1,0), textures[textures.size()-1]);
-                    break;
-
-                case Keyboard::Left :
-                    player.shoot(&ammo, Int2(-1,0), textures[textures.size()-1]);
-                    break;
-
-                case Keyboard::Up :
-                    player.shoot(&ammo, Int2(0,-1), textures[textures.size()-1]);
->>>>>>> 21eb885ae01b3278b260645f7b7b7f714a7072d1
                     break;
 
 
@@ -224,7 +208,7 @@ void Game::checkCollisions()
     }
 
 
-<<<<<<< HEAD
+
     /* AMMO */
     for(list<AmmoView*>::iterator a = ammo.begin(); a != ammo.end(); a++)
     {
@@ -279,26 +263,6 @@ void Game::checkCollisions()
     }
 
     
-=======
-    /* AMMO / PLATFORM */
-    for(list<AmmoView*>::iterator a = ammo.begin(); a != ammo.end(); a++)
-        for(list<PlatformView>::iterator p = pltf->begin(); p != pltf->end(); p++)
-            if(checkIntersect((ObjetPhysique*)(*a),(ObjetPhysique*)(&*p)))
-            {
-                ammo.erase(a++);
-            }
-
-
-    /* AMMO / ENEMY */
-    for(list<AmmoView*>::iterator a = ammo.begin(); a != ammo.end(); a++)
-        for(list<EnemyView*>::iterator e = enemies.begin(); e != enemies.end(); e++)
-            if(checkIntersect((ObjetPhysique*)(*a),(ObjetPhysique*)(*e)))
-            {
-                (*e)->decreaseHealth((*a)->getDamage());
-                ammo.erase(a++);
-            }
-
->>>>>>> 21eb885ae01b3278b260645f7b7b7f714a7072d1
 
     /* ENNEMIS / SOL */
         // TODO
@@ -461,7 +425,6 @@ void Game::loadLevel()
     level.addDecor(textures[textures.size()-1]);
 
     level.addPlatform(Int2(-10,650),Int2(10000,0),0); // Sol
-<<<<<<< HEAD
 
     t = new Texture();
     t->loadFromFile("res/tex/decor/wall.png");
@@ -471,17 +434,6 @@ void Game::loadLevel()
     level.addPlatform(Int2(500,470),Int2(100,180),0,textures[textures.size()-1]); // Muret
     level.addPlatform(Int2(760,320),Int2(400,40),0,textures[textures.size()-1]);
 
-=======
-
-    t = new Texture();
-    t->loadFromFile("res/tex/decor/wall.png");
-    t->setRepeated(true);
-    textures.push_back(t);
-
-    level.addPlatform(Int2(500,470),Int2(100,180),0,textures[textures.size()-1]); // Muret
-    level.addPlatform(Int2(760,320),Int2(400,40),0,textures[textures.size()-1]);
-
->>>>>>> 21eb885ae01b3278b260645f7b7b7f714a7072d1
     
     /* PLAYER */
     t = new Texture();
@@ -511,28 +463,10 @@ void Game::loadLevel()
 
 
     /* ENNEMI */
-<<<<<<< HEAD
-=======
     t = new Texture();
     t->loadFromFile("res/tex/enemy/rebel.png");
     textures.push_back(t);
 
-    EnemyView* enemy = new EnemyView(Int2(1000,570),Int2(130,80),5,10,false,10);
-
-    enemy->setTexture(textures[textures.size()-1]);
-    enemy->addAnimations(loadSpriteFromFile("res/xml/enemy/rebel.xml"));
-    enemy->changeAnimation(1);
-
-    enemies.push_back(enemy);
-
-
-    /* AMMO */
->>>>>>> 21eb885ae01b3278b260645f7b7b7f714a7072d1
-    t = new Texture();
-    t->loadFromFile("res/tex/enemy/rebel.png");
-    textures.push_back(t);
-
-<<<<<<< HEAD
     EnemyView* enemy = new EnemyView(Int2(1000,570),Int2(130,80),5,10,false,10);
 
     enemy->setTexture(textures[textures.size()-1]);
@@ -548,8 +482,6 @@ void Game::loadLevel()
     // textures.push_back(t);
     AmmoView::loadTextures();
 
-=======
->>>>>>> 21eb885ae01b3278b260645f7b7b7f714a7072d1
 
 }
 

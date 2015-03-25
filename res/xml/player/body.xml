@@ -13,10 +13,6 @@
 			<position x="98" y="0"/>
 			<size w="32" h="28"/>
 		</sprite>
-		<sprite num="3">
-			<position x="1" y="48"/>
-			<size w="51" h="24"/>
-		</sprite>
 	</animation>
 	<animation num="1">
 		<sprite num="3">
@@ -59,10 +55,6 @@
 			<position x="413" y="47"/>
 			<size w="33" h="28"/>
 		</sprite>
-		<sprite num="13">
-			<position x="39" y="121"/>
-			<size w="23" h="43"/>
-		</sprite>
 	</animation>
 	<animation num="2">
 		<sprite num="13">
@@ -97,10 +89,6 @@
 			<position x="326" y="128"/>
 			<size w="30" h="28"/>
 		</sprite>
-		<sprite num="21">
-			<position x="10" y="196"/>
-			<size w="33" h="27"/>
-		</sprite>
 	</animation>
 	<animation num="3">
 		<sprite num="21">
@@ -118,10 +106,6 @@
 		<sprite num="24">
 			<position x="150" y="196"/>
 			<size w="33" h="27"/>
-		</sprite>
-		<sprite num="25">
-			<position x="8" y="236"/>
-			<size w="39" h="28"/>
 		</sprite>
 	</animation>
 	<animation num="4">
