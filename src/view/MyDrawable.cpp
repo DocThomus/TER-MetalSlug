@@ -4,14 +4,12 @@
 MyDrawable::MyDrawable()
 :current_anim(0)
 {
-
 }
 
 
 
 MyDrawable::~MyDrawable()
 {
-
 }
 
 
@@ -37,6 +35,36 @@ void MyDrawable::addAnimations(vector<Animation*> v)
 {
 	for(unsigned int i=0; i<v.size(); ++i)
 		addAnimation(v[i]);
+}
+
+
+
+void MyDrawable::addAnimations(string filename)
+{
+    vector<Int2> anim;
+    vector<Int2> pos;
+    vector<Int2> siz;
+
+    if(!loadSpriteMap(filename,&anim,&pos,&siz))
+    {
+        cerr << "Erreur dans le chargement de l'animation : " << filename << endl;
+        exit(-1);
+    }
+
+    vector<Animation*> ret;
+
+    for(unsigned int i=0; i<anim.size(); ++i)
+    {
+        Animation* a = new Animation();
+        for(int y=anim[i].x; y<=anim[i].y; ++y)
+        {
+            Frame* f = new Frame(pos[y],siz[y]);
+            a->addFrame(f);
+        }
+        ret.push_back(a);
+    }
+
+    addAnimations(ret);
 }
 
 
@@ -92,7 +120,7 @@ Frame* MyDrawable::getFrame()
 }
 
 
-void MyDrawable::setNextFrame(int n)
+bool MyDrawable::setNextFrame(int n)
 {
 	Int2 old = getFrame()->getSize();
 	Vector2f siz = body.getSize();
@@ -105,6 +133,8 @@ void MyDrawable::setNextFrame(int n)
 		{
 			if(animations[current_anim]->getNextAnim() >= 0)
 				current_anim = animations[current_anim]->getNextAnim();
+			else
+				return false;
 			ok = false;
 		}
 	}
@@ -112,6 +142,8 @@ void MyDrawable::setNextFrame(int n)
 	/* MISE A JOUR DES PROPORTIONS DU RECTANGLE */
 	Int2 now = getFrame()->getSize();
 	body.setSize(Vector2f(siz.x*now.x/old.x,siz.y*now.y/old.y));
+
+	return true;
 
 }
 

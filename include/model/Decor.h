@@ -15,7 +15,7 @@ class Decor : public ObjetPhysique
 	
 	protected :
 
-		
+		int z;
 
 
 	public :

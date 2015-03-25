@@ -20,15 +20,29 @@ void Game::update(Time dt)
     
     player.animate(t);
 
+    for(list<EnemyView*>::iterator e = enemies.begin(); e != enemies.end(); e++)
+    {
+        (*e)->animate(t);
+    }
+
     for(list<AmmoView*>::iterator a = ammo.begin(); a != ammo.end(); a++)
+    {
         (*a)->animate(t);
+       // cout << (**a) << endl;
+    }
 }   
 
 
 void Game::display(RenderWindow* window)
 {
 	level.display(window);
+
+    for(list<EnemyView*>::iterator e = enemies.begin(); e != enemies.end(); e++)
+        (*e)->display(window);
+
     player.display(window);
+    // cout << player << endl;
+    
     for(list<AmmoView*>::iterator a = ammo.begin(); a != ammo.end(); a++)
         (*a)->display(window);
 }
@@ -36,6 +50,11 @@ void Game::display(RenderWindow* window)
 
 void Game::checkEvents(RenderWindow* window)
 { 
+
+    if(Keyboard::isKeyPressed(Keyboard::S))
+        player.kneel(true);
+
+
     Event event;
     while (window->pollEvent(event))
     {
@@ -94,40 +113,16 @@ void Game::checkEvents(RenderWindow* window)
 
                 /* TIRER */
                 case Keyboard::Right :
-                    // if(Keyboard::isKeyPressed(Keyboard::Up))
-                    //     player.shoot(&ammo,Int2(1,-1), textures[textures.size()-1]);
-                    // else if(Keyboard::isKeyPressed(Keyboard::Down))
-                    //     player.shoot(&ammo, Int2(1,1), textures[textures.size()-1]);
-                    // else
-                        player.shoot(&ammo, Int2(1,0), textures[textures.size()-1]);
+                    player.shoot(&ammo, Int2(1,0)/*, textures[textures.size()-1]*/);
                     break;
 
                 case Keyboard::Left :
-                    // if(Keyboard::isKeyPressed(Keyboard::Up))
-                    //     player.shoot(&ammo,Int2(-1,-1), textures[textures.size()-1]);
-                    // else if(Keyboard::isKeyPressed(Keyboard::Down))
-                    //     player.shoot(&ammo, Int2(-1,1), textures[textures.size()-1]);
-                    // else
-                        player.shoot(&ammo, Int2(-1,0), textures[textures.size()-1]);
+                    player.shoot(&ammo, Int2(-1,0)/*, textures[textures.size()-1]*/);
                     break;
 
                 case Keyboard::Up :
-                    // if(Keyboard::isKeyPressed(Keyboard::Left))
-                    //     player.shoot(&ammo,Int2(-1,-1), textures[textures.size()-1]);
-                    // else if(Keyboard::isKeyPressed(Keyboard::Right))
-                    //     player.shoot(&ammo, Int2(1,-1), textures[textures.size()-1]);
-                    // else
-                        player.shoot(&ammo, Int2(0,-1), textures[textures.size()-1]);
+                    player.shoot(&ammo, Int2(0,-1)/*, textures[textures.size()-1]*/);
                     break;
-
-                // case Keyboard::Down :
-                //     if(Keyboard::isKeyPressed(Keyboard::Left))
-                //         player.shoot(&ammo,Int2(-1,1), textures[textures.size()-1]);
-                //     else if(Keyboard::isKeyPressed(Keyboard::Right))
-                //         player.shoot(&ammo, Int2(1,1), textures[textures.size()-1]);
-                //     else
-                //         player.shoot(&ammo, Int2(0,1), textures[textures.size()-1]);
-                //     break;
 
 
                 /* RECHARGER */
@@ -139,6 +134,12 @@ void Game::checkEvents(RenderWindow* window)
                 /* SAUTER */
                 case Keyboard::Space :
                     player.jump(250);
+                    break;
+
+
+                /* TEST */
+                case Keyboard::P :
+                    enemies.front()->die();
                     break;
             }
         }
@@ -161,10 +162,14 @@ void Game::checkEvents(RenderWindow* window)
                     else
                         player.walk(0);
                     break;
-            }
 
+                case Keyboard::S :
+                    player.kneel(false);
+                    break;
+            }
     }
-}	
+
+}
 
 
 void Game::checkCollisions()
@@ -174,7 +179,7 @@ void Game::checkCollisions()
 
     list<PlatformView>* pltf = &level.environment.platforms;
 
-    /* PLAYER / SOL */
+    /* PLAYER / PLATFORM */
     bool collision = false;
     for(list<PlatformView>::iterator pl=pltf->begin(); pl!=pltf->end(); pl++) // On check les collisions avec TOUTES les plateformes (on peut etre en collision avec le sol et un mur...)
     {
@@ -184,29 +189,79 @@ void Game::checkCollisions()
         ObjetPhysique* p_ptr = (ObjetPhysique*)(&player);
         ObjetPhysique* pl_ptr = (ObjetPhysique*)(&*pl);
         
-        if(checkCollision(p_ptr,pl_ptr))
+        if(checkIntersect(p_ptr,pl_ptr))
         {
             collision = true; 
-            if(checkCollisionHaut(p_ptr,pl_ptr)) {
+            if(checkCollisionTop(p_ptr,pl_ptr))
                 player.land(pos.y);
-            } else if (checkCollisionBas(p_ptr,pl_ptr)) {
-                player.touchePlafond(pos.y + siz.y);
-            } else if (checkCollisionGauche(p_ptr,pl_ptr)) {
-                //player.land(pos.y); //TMP TODO
-                player.prendMurDroite(pos.x);
-            } else if (checkCollisionDroite(p_ptr,pl_ptr)) {
-                //player.land(pos.y); //TMP TODO
-                player.prendMurGauche(pos.x + siz.x);
-            }            
+            else if (checkCollisionBottom(p_ptr,pl_ptr))
+                player.bumpTop(pos.y + siz.y);
+            else if (checkCollisionLeft(p_ptr,pl_ptr))
+                player.bumpRight(pos.x);
+            else if (checkCollisionRight(p_ptr,pl_ptr))
+                player.bumpLeft(pos.x + siz.x);
+                       
         }
     }
-    if(!collision) { // Si il n'y a collision avec aucune plateforme, le personnage est en l'air.
+    if(!collision) { // Si il n'y a collision avec aucune plateforme, le personnage est en l'air et tombe
         player.jump(0);
     }
 
 
-    /* PLAYER / ENNEMIS */
-        // TODO
+    /* AMMO */
+    for(list<AmmoView*>::iterator a = ammo.begin(); a != ammo.end(); a++)
+    {
+        Int2 a_pos = (*a)->getPosition();
+        Int2 a_siz = (*a)->getSize();
+        Float2 a_mov = (*a)->getMovement();
+
+        /* VS PLATFORM */
+        for(list<PlatformView>::iterator p = pltf->begin(); p != pltf->end(); p++)
+        {
+            if(checkIntersect((ObjetPhysique*)(*a),(ObjetPhysique*)(&*p)))
+            {
+                if((*a)->getState() != GHOST)
+                {
+                    Int2 p_pos = (*p).getPosition();
+                    Int2 p_siz = (*p).getSize();
+                    
+                    Int2 tmp = a_pos;
+                    
+                    if(a_pos.x <= p_pos.x+10)
+                        tmp.x = p_pos.x;
+                    else if(a_pos.x+a_siz.x >= p_pos.x+p_siz.x+10)
+                        tmp.x = p_pos.x+p_siz.x;
+                    else if(a_pos.y <= p_pos.y+10)
+                        tmp.y = p_pos.y;
+                    else
+                        tmp.y = p_pos.y+p_siz.y;
+
+                    (*a)->die(tmp);
+                }
+            }
+        }
+
+        /* VS ENEMY */
+        for(list<EnemyView*>::iterator e = enemies.begin(); e != enemies.end(); e++)
+        {
+            if(checkIntersect((ObjetPhysique*)(*a),(ObjetPhysique*)(*e)))
+            {
+                if((*a)->getState() != GHOST && (*e)->getStateBattle() != DEAD)
+                {
+                    (*e)->decreaseHealth((*a)->getDamage());
+
+                    Int2 e_pos = (*e)->getPosition();
+                    Int2 e_siz = (*e)->getSize();
+                    
+                    Int2 tmp = Int2(e_pos.x+e_siz.x/2,e_pos.y+e_siz.y/2);
+
+                    (*a)->die(tmp);
+                }
+            }
+        }
+    }
+
+    
 
     /* ENNEMIS / SOL */
         // TODO
@@ -215,7 +270,7 @@ void Game::checkCollisions()
 
 
 
-bool Game::checkCollision(ObjetPhysique* obj1, ObjetPhysique* obj2) // Renvoie True si il y a une collision (peu importe de quel côté)
+bool Game::checkIntersect(ObjetPhysique* obj1, ObjetPhysique* obj2) // Renvoie True si il y a une collision (peu importe de quel côté)
 {
     Int2 pos1 = obj1->getPosition();
     Int2 pos2 = obj2->getPosition();
@@ -232,26 +287,28 @@ bool Game::checkCollision(ObjetPhysique* obj1, ObjetPhysique* obj2) // Renvoie T
 
 }
 
-bool Game::checkCollisionHaut(ObjetPhysique* obj1, ObjetPhysique* obj2) {
+bool Game::checkCollisionTop(ObjetPhysique* obj1, ObjetPhysique* obj2) {
     // ex: o1 touche le haut d'une plate-forme o2.
     Int2 pos1 = obj1->getPosition();
     Int2 pos2 = obj2->getPosition();
     Int2 siz1 = obj1->getSize();
     Int2 siz2 = obj2->getSize();
+    Float2 mov1 = obj1->getMovement();
 
     //Si o1 est dans la partie haute de o2, et que la largeur de l'intersection entre o1 et o2 est suppérieure a sa hauteur, alors on a une collision entre o1 et o2 venant du haut
 
     int hauteurIntersect = pos1.y + siz1.y - pos2.y; // la hauteur de la superposition entre le bas de o1 et le haut de o2 (on part du principe que o1 est dans la partie haute de o2)
-    int largeurIntersect = std::min(pos1.x + siz1.x, pos2.x + siz2.x) - std::max(pos1.x, pos2.x); // La largeur de la superposition est égale a la taille de la superposition entre la plus grande des valeurs gauche, et la plus petite des valeurs droites.
+    int largeurIntersect = std::min(pos1.x + siz1.x, pos2.x + siz2.x) - max(pos1.x, pos2.x); // La largeur de la superposition est égale a la taille de la superposition entre la plus grande des valeurs gauche, et la plus petite des valeurs droites.
     if (((hauteurIntersect > 0) && (pos2.y > pos1.y)) // Si o1 est dans la partie haute de o2 (si le bas de o1 est en dessous du haut de o2, et que le haut de o1 est au dessus du haut de o2)
-        && (largeurIntersect > hauteurIntersect)) {
+        && (largeurIntersect > hauteurIntersect) 
+        && mov1.y>=0) {
         return true;
     } else {
         return false;
     }
 }
 
-bool Game::checkCollisionBas(ObjetPhysique* obj1, ObjetPhysique* obj2) {
+bool Game::checkCollisionBottom(ObjetPhysique* obj1, ObjetPhysique* obj2) {
     // ex: o1 touche le bas d'une plate-forme o2.
     Int2 pos1 = obj1->getPosition();
     Int2 pos2 = obj2->getPosition();
@@ -261,7 +318,7 @@ bool Game::checkCollisionBas(ObjetPhysique* obj1, ObjetPhysique* obj2) {
     //Si o1 est dans la partie basse de o2, et que la largeur de l'intersection entre o1 et o2 est suppérieure a sa hauteur, alors on a une collision entre o1 et o2 venant du bas
 
     int hauteurIntersect = pos2.y + siz2.y - pos1.y; // la hauteur de la superposition entre le bas de o2 et le haut de o1 (on part du principe que o1 est dans la partie basse de o2)
-    int largeurIntersect = std::min(pos1.x + siz1.x, pos2.x + siz2.x) - std::max(pos1.x, pos2.x); // La largeur de la superposition est égale a la distance entre la plus grande des valeurs gauche, et la plus petite des valeurs droites.
+    int largeurIntersect = std::min(pos1.x + siz1.x, pos2.x + siz2.x) - max(pos1.x, pos2.x); // La largeur de la superposition est égale a la distance entre la plus grande des valeurs gauche, et la plus petite des valeurs droites.
     if (((hauteurIntersect > 0) && (pos1.y + siz1.y > pos2.y + siz2.y)) // Si o1 est dans la partie basse de o2 (si le haut de o1 est au dessus du bas de o2, et que le bas de o1 est en dessous du bas de o2)
         && (largeurIntersect > hauteurIntersect)) {
         return true;
@@ -270,7 +327,7 @@ bool Game::checkCollisionBas(ObjetPhysique* obj1, ObjetPhysique* obj2) {
     }
 }
 
-bool Game::checkCollisionGauche(ObjetPhysique* obj1, ObjetPhysique* obj2) {
+bool Game::checkCollisionLeft(ObjetPhysique* obj1, ObjetPhysique* obj2) {
     // ex: o1 touche la gauche d'une plate-forme o2.
     Int2 pos1 = obj1->getPosition();
     Int2 pos2 = obj2->getPosition();
@@ -280,7 +337,7 @@ bool Game::checkCollisionGauche(ObjetPhysique* obj1, ObjetPhysique* obj2) {
     //Si o1 est dans la partie gauche de o2, et que la hauteur de l'intersection entre o1 et o2 est suppérieure a sa largeur, alors on a une collision entre o1 et o2 venant de gauche
 
     int largeurIntersect = pos1.x + siz1.x - pos2.x; // la largeur de la superposition entre la gauche de o2 et la droite de o1 (on part du principe que o1 est dans la partie gauche de o2)
-    int hauteurIntersect = std::min(pos1.y + siz1.y, pos2.y + siz2.y) - std::max(pos1.y, pos2.y); // La hauteur de la superposition est égale a la distance entre la plus grande des valeurs haute, et la plus petite des valeurs basses.
+    int hauteurIntersect = std::min(pos1.y + siz1.y, pos2.y + siz2.y) - max(pos1.y, pos2.y); // La hauteur de la superposition est égale a la distance entre la plus grande des valeurs haute, et la plus petite des valeurs basses.
     if (((largeurIntersect > 0) && (pos2.x > pos1.x)) // Si o1 est dans la partie gauche de o2 (si la droite de o1 est a droite de la gauche de o2, et que la gauche de o1 est a gauche de la gauche de o2)
         && (hauteurIntersect > largeurIntersect)) {
         return true;
@@ -289,7 +346,7 @@ bool Game::checkCollisionGauche(ObjetPhysique* obj1, ObjetPhysique* obj2) {
     }
 }
 
-bool Game::checkCollisionDroite(ObjetPhysique* obj1, ObjetPhysique* obj2) {
+bool Game::checkCollisionRight(ObjetPhysique* obj1, ObjetPhysique* obj2) {
     // ex: o1 touche la droite d'une plate-forme o2.
     Int2 pos1 = obj1->getPosition();
     Int2 pos2 = obj2->getPosition();
@@ -299,7 +356,7 @@ bool Game::checkCollisionDroite(ObjetPhysique* obj1, ObjetPhysique* obj2) {
     //Si o1 est dans la partie droite de o2, et que la hauteur de l'intersection entre o1 et o2 est suppérieure a sa largeur, alors on a une collision entre o1 et o2 venant de droite
 
     int largeurIntersect = pos2.x + siz2.x - pos1.x; // la largeur de la superposition entre la gauche de o1 et la droite de o2 (on part du principe que o1 est dans la partie droite de o2)
-    int hauteurIntersect = std::min(pos1.y + siz1.y, pos2.y + siz2.y) - std::max(pos1.y, pos2.y); // La hauteur de la superposition est égale a la distance entre la plus grande des valeurs haute, et la plus petite des valeurs basses.
+    int hauteurIntersect = std::min(pos1.y + siz1.y, pos2.y + siz2.y) - max(pos1.y, pos2.y); // La hauteur de la superposition est égale a la distance entre la plus grande des valeurs haute, et la plus petite des valeurs basses.
     if (((largeurIntersect > 0) && (pos1.x + siz1.x > pos2.x + siz2.x)) // Si o1 est dans la partie droite de o2 (si la gauche de o1 est a gauche de la droite de o2, et que la droite de o1 est a droite de la droite de o2)
         && (hauteurIntersect > largeurIntersect)) {
         return true;
@@ -365,14 +422,18 @@ void Game::loadLevel()
     t->setRepeated(true);
     textures.push_back(t);
     level.addDecor(textures[textures.size()-1]);
+
+    level.addPlatform(Int2(-10,650),Int2(10000,0),0); // Sol
+
+    t = new Texture();
+    t->loadFromFile("res/tex/decor/wall.png");
+    t->setRepeated(true);
+    textures.push_back(t);
+
+    level.addPlatform(Int2(500,470),Int2(100,180),0,textures[textures.size()-1]); // Muret
+    level.addPlatform(Int2(760,320),Int2(400,40),0,textures[textures.size()-1]);
+
     
-    level.addPlatform(Int2(-10,650),Int2(10000,0),4,0); // Sol
-    level.addPlatform(Int2(200,300),Int2(50,50),4,100); // Haut1
-    level.addPlatform(Int2(320,370),Int2(30,30),4,100); // Haut2
-    level.addPlatform(Int2(500,600),Int2(100,70),4,100); // Bas
-
-
-
     /* PLAYER */
     t = new Texture();
     t->loadFromFile("res/tex/player/body.png");
@@ -400,10 +461,26 @@ void Game::loadLevel()
     player.setWeapon(0);
 
 
-    /* AMMO */
+    /* ENNEMI */
     t = new Texture();
-    t->loadFromFile("res/tex/ammo/bullet.png");
+    t->loadFromFile("res/tex/enemy/rebel.png");
     textures.push_back(t);
+
+    EnemyView* enemy = new EnemyView(Int2(1000,570),Int2(130,80),5,10,false,10);
+
+    enemy->setTexture(textures[textures.size()-1]);
+    enemy->addAnimations(loadSpriteFromFile("res/xml/enemy/rebel.xml"));
+    enemy->changeAnimation(1);
+
+    enemies.push_back(enemy);
+
+
+    /* AMMO */
+    // t = new Texture();
+    // t->loadFromFile("res/tex/ammo/bullet.png");
+    // textures.push_back(t);
+    AmmoView::loadTextures();
+
 
 }
 
@@ -427,7 +504,7 @@ vector<Animation*> Game::loadSpriteFromFile(string filename)
     for(unsigned int i=0; i<anim.size(); ++i)
     {
         Animation* a = new Animation();
-        for(int y=anim[i].x; y<anim[i].y; ++y)
+        for(int y=anim[i].x; y<=anim[i].y; ++y)
         {
             Frame* f = new Frame(pos[y],siz[y]);
             a->addFrame(f);

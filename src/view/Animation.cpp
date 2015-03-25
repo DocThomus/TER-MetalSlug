@@ -21,6 +21,11 @@ Animation::~Animation()
 {}
 
 
+int Animation::getNbFrames()
+{
+	return int(frames.size());
+}
+
 
 Frame* Animation::getFrame()
 {

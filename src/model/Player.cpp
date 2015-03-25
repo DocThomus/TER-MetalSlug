@@ -3,8 +3,8 @@
 
 using namespace std;
 
-Player::Player(Int2 pos, Int2 siz, int z, int m, int max_h)
-:Character(pos,siz,z,m,max_h)
+Player::Player(Int2 pos, Int2 siz, int m, int max_h)
+:Character(pos,siz,m,max_h)
 {
 }
 
@@ -25,12 +25,35 @@ Player::~Player()
 void Player::print(ostream& os) const  
 {  
     os << "======Player======" << endl;
-    os << "=== Position  : " << position << endl;  
-    os << "=== Taille    : " << size << endl;  
-    os << "=== Z-index   : " << z << endl;  
-    os << "=== Masse     : " << mass << endl;  
-    os << "=== Mouvement : " << movement << endl;
-    os << "=== Santé     : " << health << endl;
+    // os << "=== Position  : " << position << endl;  
+    // os << "=== Taille    : " << size << endl;  
+    // os << "=== Z-index   : " << z << endl;  
+    // os << "=== Masse     : " << mass << endl;  
+    // os << "=== Mouvement : " << movement << endl;
+    // os << "=== Santé     : " << health << endl;
+    string tmp;
+    switch(state_p)
+    {
+        case WAIT  : tmp = "WAIT"; break;
+        case RUN   : tmp = "RUN"; break;
+        case KNELT : tmp = "KNELT"; break;
+    }
+    os << "=== State Pos  : " << tmp << endl;
+    switch(state_g)
+    {
+        case GROUND : tmp = "GROUND"; break;
+        case AIR    : tmp = "AIR"; break;
+    }
+    os << "=== State Grnd : " << tmp << endl;
+    switch(state_b)
+    {
+        case NORMAL : tmp = "NORMAL"; break;
+        case SHOOT  : tmp = "SHOOT"; break;
+        case DEAD   : tmp = "DEAD"; break;
+        case KNIFE  : tmp = "KNIFE"; break;
+        case STAR   : tmp = "STAR"; break;
+    }
+    os << "=== State Bat : " << tmp << endl;
     os << "==================";
 } 
 
@@ -69,6 +92,8 @@ void Player::shoot(list<Ammo*>* air, Float2 angle)
 	{
 		armes[current_weapon]->shoot(air,angle);
 		state_b = SHOOT;
+		if(state_p == KNELT)
+			walkway = angle.x;
 	}
 }
 
@@ -99,9 +124,16 @@ void Player::walk(int way)
 {
 	if(way != 0)
 	{
+		if(state_p != KNELT)
 		state_p = RUN;
 		walkway = way;
 	}
-	else
+	else if(state_p != KNELT)
 		state_p = WAIT;
+}
+
+
+void Player::kneel(bool b)
+{
+	Character::kneel(b);
 }

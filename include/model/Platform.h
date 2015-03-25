@@ -21,13 +21,13 @@ class Platform : public ObjetPhysique
 
 	public :
 
-		Platform(Int2 pos, Int2 siz, int z, int walkline);
+		Platform(Int2 pos, Int2 siz, int walkline=0);
 		Platform();
 		~Platform();
 
 		void print(ostream& os) const;
 
-
+		int getWalkline();
 
 };
 

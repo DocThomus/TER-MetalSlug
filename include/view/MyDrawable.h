@@ -9,6 +9,8 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
+#include <tools/XMLtools.h>
+
 #include <view/Animation.h>
 #include <view/Frame.h>
 
@@ -36,12 +38,14 @@ class MyDrawable
 		void reset();
 		void addAnimation(Animation* a);
 		void addAnimations(vector<Animation*> v);
+		void addAnimations(string filename);
 		bool changeAnimation(int i, bool repeat=true, int next=-1);
 		void changeFrame(int i);
 		Frame* getFrame();
-		void setNextFrame(int n=1);
+		bool setNextFrame(int n=1);
 		void setTexture(Texture* tex);
 		virtual void updateIntRect();
+
 
 };
 

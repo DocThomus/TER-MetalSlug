@@ -21,6 +21,8 @@ class AmmoView : public Ammo, public MyDrawable
 {
 
 	protected :
+
+		static vector<Texture*> textures;
 		
 
 	public :
@@ -29,7 +31,11 @@ class AmmoView : public Ammo, public MyDrawable
 		AmmoView(Ammo);
 		~AmmoView();
 
+		static void loadTextures();
+
 		virtual void display(RenderWindow* window);
+		virtual void animate(int dt);
+		virtual void die(Int2 pos);
 
 		void initPosition();
 

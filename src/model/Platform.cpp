@@ -1,8 +1,11 @@
 #include "model/Platform.h"
 
-Platform::Platform(Int2 pos, Int2 siz, int z, int wl)
-:ObjetPhysique(pos,siz,z), walkline(wl)
-{}
+Platform::Platform(Int2 pos, Int2 siz, int wl)
+:ObjetPhysique(pos,siz), walkline(wl)
+{
+	if(walkline > siz.y)
+		walkline = siz.y;
+}
 
 
 
@@ -21,3 +24,8 @@ void Platform::print(ostream& os) const
 
 }
 
+
+int Platform::getWalkline()
+{
+	return walkline;
+}

@@ -11,7 +11,7 @@ Level::Level()
 
 Level::Level(string filename)
 {
-		environment = Environment(filename);
+	environment = Environment(filename);
 }
 
 
@@ -33,7 +33,7 @@ void Level::addDecor(Texture* tex)
 }
 
 
-void Level::addPlatform(Int2 pos, Int2 siz, int z, int wl, Texture* tex)
+void Level::addPlatform(Int2 pos, Int2 siz, int wl, Texture* tex)
 {
-	environment.addPlatform(pos,siz,z,wl,tex);
+	environment.addPlatform(pos,siz,wl,tex);
 }

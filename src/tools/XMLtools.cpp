@@ -109,6 +109,6 @@ bool loadSpriteMap(string filename, vector<Int2>* v_anim, vector<Int2>* v_pos, v
         anim.y = v_pos->size()-1;
         v_anim->push_back(anim);
     }
-
+    
     return true;
 }

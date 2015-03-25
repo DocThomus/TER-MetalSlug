@@ -14,10 +14,10 @@
 
 #include <controller/Config.h>
 #include <controller/Level.h>
-#include <model/Enemy.h>
 #include <view/Animation.h>
 #include <view/Frame.h>
 #include <view/PlayerView.h>
+#include <view/EnemyView.h>
 #include <view/AmmoView.h>
 #include <view/WeaponView.h>
 
@@ -26,10 +26,10 @@ using namespace sf;
 
 
 class Level;
-class Enemy;
 
 class Animation;
 class PlayerView;
+class EnnemyView;
 
 
 class Game
@@ -41,7 +41,7 @@ class Game
 
 		Level level;
 		PlayerView player;
-		list<Enemy> enemies;
+		list<EnemyView*> enemies;
 		list<AmmoView*> ammo;
 
 		vector<Texture*> textures;
@@ -56,11 +56,11 @@ class Game
 		void display(RenderWindow* window);
 		void checkEvents(RenderWindow* window);
 		void checkCollisions();
-		bool checkCollision(ObjetPhysique* obj1, ObjetPhysique* obj2);
-		bool checkCollisionHaut(ObjetPhysique* obj1, ObjetPhysique* obj2);
-		bool checkCollisionBas(ObjetPhysique* obj1, ObjetPhysique* obj2);
-		bool checkCollisionGauche(ObjetPhysique* obj1, ObjetPhysique* obj2);
-		bool checkCollisionDroite(ObjetPhysique* obj1, ObjetPhysique* obj2);
+		bool checkIntersect(ObjetPhysique* obj1, ObjetPhysique* obj2);
+		bool checkCollisionTop(ObjetPhysique* obj1, ObjetPhysique* obj2);
+		bool checkCollisionBottom(ObjetPhysique* obj1, ObjetPhysique* obj2);
+		bool checkCollisionLeft(ObjetPhysique* obj1, ObjetPhysique* obj2);
+		bool checkCollisionRight(ObjetPhysique* obj1, ObjetPhysique* obj2);
 
 		void applyConfig(RenderWindow* window);
 		void setConfig(Config* c);

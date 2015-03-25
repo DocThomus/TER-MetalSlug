@@ -1,7 +1,7 @@
 #include "model/Character.h"
 
-Character::Character(Int2 pos, Int2 siz, int z, int m, int max_h)
-:ObjetPhysique(pos,siz,z,m)
+Character::Character(Int2 pos, Int2 siz, int m, int max_h)
+:ObjetPhysique(pos,siz,m)
 {
 	health = Int2(max_h,max_h);
     walkway = 1;
@@ -44,19 +44,15 @@ void Character::animate(int dt)
 
 void Character::jump(int h) 
 {
-    if(state_g == GROUND)
+    if(state_g==GROUND)
     {
+        if(state_p==KNELT)
+            kneel(false);
         state_g = AIR;
         movement.y = -h;
     }
 }
 
-void Character::touchePlafond(int plafond) {
-    if(state_g == AIR) {
-        movement.y = 0;
-        position.y = plafond;
-    }
-}
 
 
 void Character::land(int h)
@@ -66,17 +62,31 @@ void Character::land(int h)
     movement.y = 0;
 }
 
-void Character::prendMurGauche(int posMurDroite) {
+
+
+void Character::bumpTop(int plafond) {
+    if(state_g == AIR) {
+        movement.y = 0;
+        position.y = plafond;
+    }
+}
+
+
+void Character::bumpLeft(int posMurDroite) {
     // Le mur est a gauche du perso (le parametre est la droite de ce mur)
     movement.x = 0;
     position.x = posMurDroite;
 }
 
-void Character::prendMurDroite(int posMurGauche) {
+
+
+void Character::bumpRight(int posMurGauche) {
     // Le mur est a droite du perso (le parametre est la gauche de ce mur)
     movement.x = 0;
     position.x = posMurGauche - size.x; //On prend en compte la taille du perso.
 }
+
+
 
 void Character::print(ostream& os) const  
 {  
@@ -90,15 +100,34 @@ void Character::print(ostream& os) const
 } 
 
 
+StatePosition Character::getStatePosition()
+{
+    return state_p;
+}
+
+
+StateGround Character::getStateGround()
+{
+    return state_g;
+}
+
+
+StateBattle Character::getStateBattle()
+{
+    return state_b;
+}
 
 
 void Character::decreaseHealth(int s)
 {
-    health.x -= s;
-    if(health.x <= 0)
+    if(health.x > 0)
     {
-        health.x = 0;
-        die();
+        health.x -= s;
+        if(health.x <= 0)
+        {
+            health.x = 0;
+            die();
+        }
     }
 }
 
@@ -132,6 +161,13 @@ void Character::die()
 
 void Character::walk(int way)
 {
-    if(state_g == GROUND)
+    if(state_g==GROUND && state_p!=KNELT)
         walkway = way;
+}
+
+
+void Character::kneel(bool b)
+{
+    if(state_g != AIR)
+        state_p = (b ? KNELT : WAIT);
 }

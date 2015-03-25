@@ -47,3 +47,24 @@ Float2::Float2(const Int2& u)
 Float2::~Float2()
 {}
 
+
+
+/*============== CLASSE FLOAT2 ==============*/
+Bool2::Bool2(bool x, bool y)
+:x(x),y(y)
+{}
+
+Bool2::Bool2(const Bool2& u) 
+{
+	x = u.x;
+	y = u.y;
+};
+
+Bool2::Bool2(const Int2& u) 
+{
+	x = bool(u.x);
+	y = bool(u.y);
+};
+
+Bool2::~Bool2()
+{}

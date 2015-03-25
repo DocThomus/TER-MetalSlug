@@ -32,6 +32,8 @@ class Animation
 		Animation(vector<Frame*> v);
 		~Animation();
 
+		int getNbFrames();
+
 		void addFrame(Frame* f);
 		bool setNextFrame();
 		void changeFrame(int i);
