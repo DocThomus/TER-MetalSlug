@@ -6,6 +6,7 @@
 
 using namespace std;
 
+
 class ObjetPhysique
 {
 	friend ostream& operator << (ostream& os, const ObjetPhysique& obj);

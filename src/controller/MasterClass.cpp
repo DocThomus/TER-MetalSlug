@@ -30,11 +30,11 @@ void MasterClass::playGame()
 
 	while (window->isOpen())
     {
-        window->clear();
-        
         game.checkEvents(window);
         game.update(clock.restart());
         game.checkCollisions();
+
+        window->clear();
         game.display(window);
 
         window->display();

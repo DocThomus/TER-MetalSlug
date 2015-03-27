@@ -7,101 +7,69 @@
 		</sprite>
 	</animation>
 	<animation num="1">
-		<sprite num="1">
+		<sprite num="4">
+			<position x="102" y="9"/>
+			<size w="22" h="17"/>
+		</sprite>
+		<sprite num="5">
 			<position x="125" y="5"/>
 			<size w="22" h="21"/>
 		</sprite>
-		<sprite num="2">
+		<sprite num="6">
 			<position x="148" y="4"/>
 			<size w="29" h="21"/>
 		</sprite>
-		<sprite num="3">
+		<sprite num="7">
 			<position x="178" y="8"/>
 			<size w="32" h="17"/>
 		</sprite>
-		<sprite num="4">
+		<sprite num="8">
 			<position x="211" y="5"/>
 			<size w="20" h="21"/>
 		</sprite>
-		<sprite num="5">
+		<sprite num="9">
 			<position x="250" y="6"/>
 			<size w="17" h="21"/>
 		</sprite>
-		<sprite num="6">
+		<sprite num="10">
 			<position x="269" y="7"/>
 			<size w="22" h="21"/>
 		</sprite>
-		<sprite num="7">
+		<sprite num="11">
 			<position x="291" y="8"/>
 			<size w="27" h="21"/>
 		</sprite>
-		<sprite num="8">
+		<sprite num="12">
 			<position x="320" y="10"/>
 			<size w="32" h="17"/>
 		</sprite>
-		<sprite num="9">
-			<position x="353" y="7"/>
-			<size w="21" h="21"/>
-		</sprite>
-		<sprite num="10">
-			<position x="395" y="7"/>
-			<size w="19" h="21"/>
-		</sprite>
 	</animation>
-	<animation num="2">
-		<sprite num="11">
-			<position x="637" y="4"/>
-			<size w="19" h="26"/>
-		</sprite>
-	</animation>
-	<animation num="3">
-		<sprite num="11">
-			<position x="637" y="4"/>
-			<size w="19" h="26"/>
-		</sprite>
-		<sprite num="12">
-			<position x="657" y="6"/>
-			<size w="20" h="26"/>
-		</sprite>
-		<sprite num="13">
-			<position x="678" y="6"/>
-			<size w="21" h="26"/>
-		</sprite>
-		<sprite num="14">
-			<position x="701" y="7"/>
-			<size w="21" h="24"/>
-		</sprite>
-		<sprite num="15">
-			<position x="723" y="9"/>
-			<size w="22" h="21"/>
-		</sprite>
-		<sprite num="16">
+	<animation num="5">
+		<sprite num="28">
 			<position x="746" y="9"/>
 			<size w="22" h="20"/>
 		</sprite>
-	</animation>
-	<animation num="4">
-		<sprite num="17">
+		<sprite num="29">
 			<position x="769" y="7"/>
 			<size w="28" h="23"/>
 		</sprite>
-		<sprite num="18">
+		<sprite num="30">
 			<position x="798" y="7"/>
 			<size w="30" h="21"/>
 		</sprite>
-		<sprite num="19">
+		<sprite num="31">
 			<position x="828" y="9"/>
 			<size w="34" h="19"/>
 		</sprite>
-		<sprite num="20">
+		<sprite num="32">
 			<position x="864" y="10"/>
 			<size w="31" h="15"/>
 		</sprite>
-		<sprite num="21">
+		<sprite num="33">
 			<position x="899" y="11"/>
 			<size w="31" h="16"/>
 		</sprite>
-		<sprite num="22">
+		<sprite num="34">
 			<position x="931" y="10"/>
 			<size w="27" h="17"/>
 		</sprite>

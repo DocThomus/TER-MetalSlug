@@ -14,13 +14,16 @@ using namespace std;
 class Ammo;
 
 
-enum StatePosition {WAIT,RUN,KNELT};
-enum StateGround {GROUND,AIR};
-enum StateBattle {NORMAL,SHOOT,DEAD,KNIFE,STAR};
-
 
 class Character : public ObjetPhysique
 {
+
+	public :
+
+		enum StatePosition {WAIT,RUN,KNELT};
+		enum StateGround {GROUND,AIR};
+		enum StateBattle {NORMAL,SHOOT,DEAD,KNIFE,STAR};
+
 
 	protected :
 

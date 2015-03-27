@@ -13,14 +13,16 @@ class Weapon;
 class Enemy;
 
 
-enum TypeAmmo {BULLET,ROCKET,GRENADE,LASER};
-enum StateAmmo{FLY,STOP,GHOST};
-
-
 class Ammo : public ObjetPhysique
 {
 	friend class Weapon;
 	friend class Enemy;
+
+	public :
+	
+		enum TypeAmmo {BULLET,ROCKET,GRENADE,LASER};
+		enum StateAmmo{FLY,STOP,GHOST};
+
 
 	protected :
 

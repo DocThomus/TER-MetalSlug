@@ -1,7 +1,7 @@
 #include "model/Item.h"
 
 Item::Item(Int2 pos, Int2 siz, int m, TypeItem type)
-:ObjetPhysique(pos,siz,m), type(type), type_weapon(PISTOL)
+:ObjetPhysique(pos,siz,m), type(type), type_weapon(Weapon::PISTOL)
 {}
 
 
@@ -42,7 +42,7 @@ void Item::trigger(Player* p)
 }
 
 
-void Item::setTypeWeapon(TypeWeapon type)
+void Item::setTypeWeapon(Weapon::TypeWeapon type)
 {
 	type_weapon = type;
 }

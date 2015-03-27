@@ -28,7 +28,8 @@ class PlatformView : public Platform, public MyDrawable
 		~PlatformView();
 
 		void display(RenderWindow* window);
-
+		void updateIntRect();
+		
 };
 
 

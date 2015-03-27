@@ -22,8 +22,21 @@ using namespace sf;
 class WeaponView;
 
 
+
 class PlayerView : public Player, public MyDrawable
 {
+	public :
+
+		enum PlayerAnimationsBody
+		{
+			PISTOLRUN, PISTOLSHOOT, PISTOLSHOOTUP, PISTOLKNEE, PISTOLKNEESHOOT
+		};
+
+		enum PlayerAnimationsLegs
+		{
+			STAND, RUN, SLOW, FALL, JUMP
+		};
+
 
 	private :
 

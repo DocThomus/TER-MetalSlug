@@ -34,8 +34,8 @@ void Environment::display(RenderWindow* window)
 
 void Environment::addDecor(Texture* tex)
 {
-	DecorView tmp(Int2(0,0),Int2(1366*2,768),-4);
-	tmp.setTexture(tex);
+	DecorView tmp(Int2(0,0),Int2(1366*10,768),-4);
+	tmp.setTexture(tex,Bool2(true,false));
 	decors.push_back(tmp);
 }
 
@@ -44,6 +44,6 @@ void Environment::addPlatform(Int2 pos, Int2 siz, int wl, Texture* tex)
 {
 	PlatformView tmp(pos,siz,wl);
 	if(tex != NULL)
-		tmp.setTexture(tex);
+		tmp.setTexture(tex,Bool2(true,true));
 	platforms.push_back(tmp);
 }

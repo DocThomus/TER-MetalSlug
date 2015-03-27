@@ -100,19 +100,19 @@ void Character::print(ostream& os) const
 } 
 
 
-StatePosition Character::getStatePosition()
+Character::StatePosition Character::getStatePosition()
 {
     return state_p;
 }
 
 
-StateGround Character::getStateGround()
+Character::StateGround Character::getStateGround()
 {
     return state_g;
 }
 
 
-StateBattle Character::getStateBattle()
+Character::StateBattle Character::getStateBattle()
 {
     return state_b;
 }

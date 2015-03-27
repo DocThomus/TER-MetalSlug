@@ -17,8 +17,12 @@ Game::~Game()
 void Game::update(Time dt)
 {
     int t = dt.asMilliseconds();
+
+    deleteDeadObjects();
     
     player.animate(t);
+
+    updateView(t);
 
     for(list<EnemyView*>::iterator e = enemies.begin(); e != enemies.end(); e++)
     {
@@ -28,13 +32,38 @@ void Game::update(Time dt)
     for(list<AmmoView*>::iterator a = ammo.begin(); a != ammo.end(); a++)
     {
         (*a)->animate(t);
-       // cout << (**a) << endl;
     }
 }   
 
 
+void Game::updateView(int dt)
+{
+    Int2 pos   = view_target->getPosition();
+    Int2 siz   = view_target->getSize();
+    Float2 mov = view_target->getMovement();
+
+    Vector2f v_center = view.getCenter(); 
+    Vector2f v_size   = view.getSize(); 
+
+
+    // if(pos.x+siz.x>v_center.x-100)
+    //     view.move(float(pos.x+siz.x-(v_center.x-100)),0);
+    // else if(pos.x+siz.x>v_center.x-v_size.x/4)
+    //     //view.move(float(pos.x+siz.x-(v_center.x-v_size.x/4)-dt/3),0);
+    //     view.move(dt/10,0);
+
+    if(pos.x+siz.x>v_center.x-v_size.x/5)
+        view.move(float(pos.x+siz.x-(v_center.x-v_size.x/5)-dt/3),0);
+
+}
+
+
+
+
 void Game::display(RenderWindow* window)
 {
+    window->setView(view);
+
 	level.display(window);
 
     for(list<EnemyView*>::iterator e = enemies.begin(); e != enemies.end(); e++)
@@ -46,6 +75,8 @@ void Game::display(RenderWindow* window)
     for(list<AmmoView*>::iterator a = ammo.begin(); a != ammo.end(); a++)
         (*a)->display(window);
 }
+
+
 
 
 void Game::checkEvents(RenderWindow* window)
@@ -177,9 +208,13 @@ void Game::checkCollisions()
     Int2 p_pos = player.getPosition();
     Int2 p_siz = player.getSize();
 
-    list<PlatformView>* pltf = &level.environment.platforms;
+    /* PLAYER / BORD DE L'ECRAN */
+    if(p_pos.x <= view.getCenter().x-view.getSize().x/2)
+        player.bumpLeft(view.getCenter().x-view.getSize().x/2);
+
 
     /* PLAYER / PLATFORM */
+    list<PlatformView>* pltf = &level.environment.platforms;
     bool collision = false;
     for(list<PlatformView>::iterator pl=pltf->begin(); pl!=pltf->end(); pl++) // On check les collisions avec TOUTES les plateformes (on peut etre en collision avec le sol et un mur...)
     {
@@ -221,7 +256,7 @@ void Game::checkCollisions()
         {
             if(checkIntersect((ObjetPhysique*)(*a),(ObjetPhysique*)(&*p)))
             {
-                if((*a)->getState() != GHOST)
+                if((*a)->getState() != Ammo::GHOST)
                 {
                     Int2 p_pos = (*p).getPosition();
                     Int2 p_siz = (*p).getSize();
@@ -247,7 +282,7 @@ void Game::checkCollisions()
         {
             if(checkIntersect((ObjetPhysique*)(*a),(ObjetPhysique*)(*e)))
             {
-                if((*a)->getState() != GHOST && (*e)->getStateBattle() != DEAD)
+                if((*a)->getState() != Ammo::GHOST && (*e)->getStateBattle() != Character::DEAD)
                 {
                     (*e)->decreaseHealth((*a)->getDamage());
 
@@ -367,6 +402,39 @@ bool Game::checkCollisionRight(ObjetPhysique* obj1, ObjetPhysique* obj2) {
 }
 
 
+void Game::deleteDeadObjects()
+{
+    Vector2f v_cen = view.getCenter();
+    Vector2f v_siz = view.getSize();
+
+    for(list<EnemyView*>::iterator e = enemies.begin(); e != enemies.end(); e++)
+    {
+        Int2 e_pos = (*e)->getPosition();
+        Int2 e_siz = (*e)->getSize();
+
+        if(e_pos.x+e_siz.x < v_cen.x-v_siz.x/2)
+            enemies.erase(e++);
+    }
+
+    for(list<AmmoView*>::iterator a = ammo.begin(); a != ammo.end(); a++)
+    {
+        if((*a)->getState() == Ammo::GHOST)
+            ammo.erase(a++);
+        else
+        {
+            Int2 a_pos = (*a)->getPosition();
+            Int2 a_siz = (*a)->getSize();
+
+            if((a_pos.x+a_siz.x < v_cen.x-v_siz.x/2)
+            || (a_pos.x > v_cen.x+v_siz.x/2)
+            || (a_pos.y+a_siz.y < v_cen.y-v_siz.y/2)
+            || (a_pos.y > v_cen.y+v_siz.y/2))
+                ammo.erase(a++);
+        }
+    }
+}
+
+
 void Game::applyConfig(RenderWindow* window)
 {
     VideoMode mode;
@@ -387,6 +455,12 @@ void Game::applyConfig(RenderWindow* window)
     window->create(mode,"Metal Slug !!!",style);
     window->setFramerateLimit(60);
     window->setKeyRepeatEnabled(false);
+
+
+    /* CAMERA */
+    view = View(FloatRect(0, 0, mode.width, mode.height));
+    view_target = (ObjetPhysique*)(&player);
+    window->setView(view);
 }
 
 
@@ -418,21 +492,22 @@ void Game::loadLevel()
     Texture* t;
 
     /* ENVIRONNEMENT */
+    level.addPlatform(Int2(-10,650),Int2(10000,0),0); // Sol
+
     t = new Texture();
     t->loadFromFile("res/tex/decor/city.gif");
     t->setRepeated(true);
     textures.push_back(t);
+    
     level.addDecor(textures[textures.size()-1]);
-
-    level.addPlatform(Int2(-10,650),Int2(10000,0),0); // Sol
 
     t = new Texture();
     t->loadFromFile("res/tex/decor/wall.png");
     t->setRepeated(true);
     textures.push_back(t);
 
-    level.addPlatform(Int2(500,470),Int2(100,180),0,textures[textures.size()-1]); // Muret
-    level.addPlatform(Int2(760,320),Int2(400,40),0,textures[textures.size()-1]);
+    level.addPlatform(Int2(500,470),Int2(100,180),0,textures[textures.size()-1]); // Mur
+    level.addPlatform(Int2(760,320),Int2(400,40),0,textures[textures.size()-1]); // Mur
 
     
     /* PLAYER */
@@ -457,8 +532,8 @@ void Game::loadLevel()
     
 
     /* WEAPON */
-    new Weapon(&player,PISTOL,100);
-    new Weapon(&player,SHOTGUN,100);
+    new Weapon(&player,Weapon::PISTOL,100);
+    new Weapon(&player,Weapon::SHOTGUN,100);
     player.setWeapon(0);
 
 
@@ -482,6 +557,8 @@ void Game::loadLevel()
     // textures.push_back(t);
     AmmoView::loadTextures();
 
+
+    /* CAMERA */
 
 }
 

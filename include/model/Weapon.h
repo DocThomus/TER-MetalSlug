@@ -18,10 +18,15 @@ using namespace std;
 class Player;
 class Ammo;
 
-enum TypeWeapon {PISTOL,SMG,SHOTGUN,ROCKET_LAUNCHER,GRENADE_LAUNCHER,CANARDATOR};
+
 
 class Weapon : public ObjetPhysique
 {
+
+	public:
+		
+		enum TypeWeapon {PISTOL,SMG,SHOTGUN,ROCKET_LAUNCHER,GRENADE_LAUNCHER,CANARDATOR};
+	
 	
 	protected :
 

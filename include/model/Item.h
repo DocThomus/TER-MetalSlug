@@ -15,16 +15,18 @@ class Player;
 class Weapon;
 
 
-enum TypeItem {HEALTH,WEAPON,INVINCIBLE,CHICKEN,INVERT,AMMO};
-
-
 class Item : public ObjetPhysique
 {
+
+	public :
+
+		enum TypeItem {HEALTH,WEAPON,INVINCIBLE,CHICKEN,INVERT,AMMO};
+	
 	
 	protected :
 
 		TypeItem type;
-		TypeWeapon type_weapon;
+		Weapon::TypeWeapon type_weapon;
 
 
 	public :
@@ -36,7 +38,7 @@ class Item : public ObjetPhysique
 		void print(ostream& os) const;
 
 		void trigger(Player* p);
-		void setTypeWeapon(TypeWeapon type);
+		void setTypeWeapon(Weapon::TypeWeapon type);
 
 
 };

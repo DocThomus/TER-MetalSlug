@@ -13,7 +13,7 @@ MyDrawable::~MyDrawable()
 }
 
 
-void MyDrawable::reset()
+void MyDrawable::resetAnim()
 {
 	Int2 old = getFrame()->getSize();
 	Vector2f siz = body.getSize();
@@ -149,11 +149,13 @@ bool MyDrawable::setNextFrame(int n)
 
 
 
-void MyDrawable::setTexture(Texture* tex)
+void MyDrawable::setTexture(Texture* t, Bool2 r)
 {
+	tex = t;
 	Vector2u size = tex->getSize();
 	body.setTexture(tex);
 	body.setTextureRect(IntRect(0,0,size.x,size.y));
+	repeat_tex = r;
 	updateIntRect();
 }
 
@@ -165,6 +167,7 @@ void MyDrawable::updateIntRect()
 		Frame* f = getFrame();
 		Int2 pos = f->getPosition();
 		Int2 siz = f->getSize();
+
 		body.setTextureRect(IntRect(pos.x,pos.y,siz.x,siz.y));
 	}
 }

@@ -21,7 +21,6 @@ class DecorView : public Decor, public MyDrawable
 	private :
 
 
-
 	public :
 		
 		DecorView(Int2 pos, Int2 siz, int z);
@@ -29,6 +28,7 @@ class DecorView : public Decor, public MyDrawable
 		~DecorView();
 
 		void display(RenderWindow* window);
+		void updateIntRect();
 
 };
 

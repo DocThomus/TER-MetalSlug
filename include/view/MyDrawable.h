@@ -27,6 +27,7 @@ class MyDrawable
 		vector<Animation*> animations;
 		int current_anim;
 		Texture* tex;
+		Bool2 repeat_tex;
 
 	public :
 		
@@ -35,7 +36,7 @@ class MyDrawable
 
 		virtual void display(RenderWindow* window)=0;
 
-		void reset();
+		void resetAnim();
 		void addAnimation(Animation* a);
 		void addAnimations(vector<Animation*> v);
 		void addAnimations(string filename);
@@ -43,7 +44,7 @@ class MyDrawable
 		void changeFrame(int i);
 		Frame* getFrame();
 		bool setNextFrame(int n=1);
-		void setTexture(Texture* tex);
+		void setTexture(Texture* tex, Bool2 r=Bool2(false,false));
 		virtual void updateIntRect();
 
 

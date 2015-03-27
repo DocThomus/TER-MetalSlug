@@ -25,7 +25,6 @@ void PlayerView::init()
 {
 	legs.setSize(Int2(size.x*0.68,size.y*0.47));
 	body.setSize(Vector2f(size.x,size.y*0.76));
-	//changeAnimation(1);
 }
 
 
@@ -93,12 +92,12 @@ void PlayerView::animate(int dt)
 	}
 
 	/* CHANGEMENT D'ANIMATION : JAMBES */
-	if(state_g == AIR)
-		legs.changeAnimation(2,false);
-	else if(state_p == RUN)
-		legs.changeAnimation(1);
+	if(state_g == Character::AIR)
+		legs.changeAnimation(JUMP,false);
+	else if(state_p == Character::RUN)
+		legs.changeAnimation(RUN);
 	else
-		legs.changeAnimation(0);
+		legs.changeAnimation(STAND);
 
 	/* CHANGEMENT D'ANIMATION : CORPS */
 	if(state_b == SHOOT)
@@ -107,9 +106,9 @@ void PlayerView::animate(int dt)
 			state_b = NORMAL;
 	}
 	else if(state_p == KNELT)
-		changeAnimation(3);
+		changeAnimation(PISTOLKNEE);
 	else
-		changeAnimation(0);
+		changeAnimation(PISTOLRUN);
 
 	/* MISE A JOUR DE LA SELECTION DE LA TEXTURE */
 	updateIntRect();
@@ -155,12 +154,15 @@ void PlayerView::walk(int way)
 void PlayerView::kneel(bool b)
 {
 	Player::kneel(b);
-	int i = (b ? 3 : 0);
-	if(current_anim!=4)
-		changeAnimation(i);
-	if(!b && current_anim==4)
-		changeAnimation(0);
-	updateIntRect();
+	if(state_g == Character::GROUND)
+	{
+		int i = (b ? PISTOLKNEE : PISTOLRUN);
+		if(current_anim!=PISTOLKNEESHOOT)
+			changeAnimation(i);
+		if(!b && current_anim==PISTOLKNEESHOOT)
+			changeAnimation(PISTOLRUN);
+		updateIntRect();
+	}
 }
 
 
@@ -194,18 +196,17 @@ void PlayerView::shoot(list<AmmoView*>* air, Int2 angle/*, Texture* tex*/)
 		gunway = angle;
 		if(state_p==KNELT)
 		{
-			changeAnimation(4,false,3);
+			changeAnimation(PISTOLKNEESHOOT,false,PISTOLKNEE);
 		}
 		else
 		{
 			if(gunway.x==0)
-				changeAnimation(2,false,0);
+				changeAnimation(PISTOLSHOOTUP,false,PISTOLRUN);
 			else
-				changeAnimation(1,false,0);
+				changeAnimation(PISTOLSHOOT,false,PISTOLRUN);
 		}
-		reset();
-		updateIntRect();
-		
+
+		resetAnim();
     }
 }
 

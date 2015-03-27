@@ -95,7 +95,7 @@ int Ammo::getDamage()
 }
 
 
-StateAmmo Ammo::getState()
+Ammo::StateAmmo Ammo::getState()
 {
 	return state_a;
 }

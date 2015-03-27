@@ -49,7 +49,7 @@ Float2::~Float2()
 
 
 
-/*============== CLASSE FLOAT2 ==============*/
+/*============== CLASSE BOOL2 ==============*/
 Bool2::Bool2(bool x, bool y)
 :x(x),y(y)
 {}
@@ -60,11 +60,6 @@ Bool2::Bool2(const Bool2& u)
 	y = u.y;
 };
 
-Bool2::Bool2(const Int2& u) 
-{
-	x = bool(u.x);
-	y = bool(u.y);
-};
 
 Bool2::~Bool2()
 {}

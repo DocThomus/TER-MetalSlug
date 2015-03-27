@@ -13,6 +13,7 @@
 #include <tools/XMLtools.h>
 
 #include <controller/Config.h>
+#include <controller/Camera.h>
 #include <controller/Level.h>
 #include <view/Animation.h>
 #include <view/Frame.h>
@@ -40,6 +41,10 @@ class Game
 		Config* config;
 
 		Level level;
+
+		View view;
+		ObjetPhysique* view_target;
+
 		PlayerView player;
 		list<EnemyView*> enemies;
 		list<AmmoView*> ammo;
@@ -53,6 +58,7 @@ class Game
 		~Game();
 
 		void update(Time dt);
+		void updateView(int dt);
 		void display(RenderWindow* window);
 		void checkEvents(RenderWindow* window);
 		void checkCollisions();
@@ -61,6 +67,7 @@ class Game
 		bool checkCollisionBottom(ObjetPhysique* obj1, ObjetPhysique* obj2);
 		bool checkCollisionLeft(ObjetPhysique* obj1, ObjetPhysique* obj2);
 		bool checkCollisionRight(ObjetPhysique* obj1, ObjetPhysique* obj2);
+		void deleteDeadObjects();
 
 		void applyConfig(RenderWindow* window);
 		void setConfig(Config* c);
