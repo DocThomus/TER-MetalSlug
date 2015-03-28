@@ -18,6 +18,11 @@ class Game;
 class Config;
 
 
+/**
+ * Déclare la fenêtre de rendu, initialise et lance le jeu.
+ **/
+
+
 class MasterClass
 {
 	

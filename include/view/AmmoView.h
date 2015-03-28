@@ -17,6 +17,14 @@ using namespace std;
 using namespace sf;
 
 
+/***
+* AmmoView -> Ammo -> ObjetPhysique
+*          -> MyDrawable
+* ===========================================================
+* Permet d'afficher un objet Ammo.
+***/
+
+
 class AmmoView : public Ammo, public MyDrawable
 {
 

@@ -9,6 +9,15 @@
 using namespace std;
 
 
+/***
+* Platform -> ObjetPhysique
+* ===========================================================
+* Modélise une plate-forme.
+* C'est un objet simple servant de sol pour les autres objets.
+* Il n'est pas soumis à la gravité.
+***/
+
+
 
 class Platform : public ObjetPhysique
 {

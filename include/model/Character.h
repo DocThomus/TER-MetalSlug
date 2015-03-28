@@ -14,6 +14,14 @@ using namespace std;
 class Ammo;
 
 
+/***
+* Character -> ObjetPhysique
+* ===========================================================
+* Modélise un personnage.
+* Un personnage est caractérisé par sa santé ses mouvements : 
+* il court, saute, tire, peut mourir...
+***/
+
 
 class Character : public ObjetPhysique
 {

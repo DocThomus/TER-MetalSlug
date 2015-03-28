@@ -9,8 +9,17 @@ Game::Game()
 
 Game::~Game()
 {
-	enemies.clear();
-	ammo.clear();
+    for(list<AmmoView*>::iterator a = ammo.begin(); a != ammo.end(); a++)
+        delete(*a);
+    ammo.clear();
+
+    for(list<EnemyView*>::iterator e = enemies.begin(); e != enemies.end(); e++)
+        delete(*e);
+    enemies.clear();
+
+    for(unsigned int i=0; i<textures.size(); ++i)
+        delete textures[i];
+    textures.clear();
 }
 
 
@@ -219,7 +228,7 @@ void Game::checkCollisions()
 
 
     /* PLAYER / PLATFORM */
-    list<PlatformView>* pltf = &level.environment.platforms;
+    list<PlatformView>* pltf = &(level.environment.platforms);
     bool collision = false;
     for(list<PlatformView>::iterator pl=pltf->begin(); pl!=pltf->end(); pl++) // On check les collisions avec TOUTES les plateformes (on peut etre en collision avec le sol et un mur...)
     {
@@ -228,7 +237,7 @@ void Game::checkCollisions()
 
         ObjetPhysique* p_ptr = (ObjetPhysique*)(&player);
         ObjetPhysique* pl_ptr = (ObjetPhysique*)(&*pl);
-        
+
         if(checkIntersect(p_ptr,pl_ptr))
         {
             collision = true; 
@@ -237,9 +246,9 @@ void Game::checkCollisions()
             else if (checkCollisionBottom(p_ptr,pl_ptr))
                 player.bumpTop(pos.y + siz.y);
             else if (checkCollisionLeft(p_ptr,pl_ptr))
-                player.bumpRight(pos.x);
+                player.bumpRight(pos.x + 20);
             else if (checkCollisionRight(p_ptr,pl_ptr))
-                player.bumpLeft(pos.x + siz.x);
+                player.bumpLeft(pos.x + siz.x - 20);
                        
         }
     }
@@ -318,8 +327,8 @@ bool Game::checkIntersect(ObjetPhysique* obj1, ObjetPhysique* obj2) // Renvoie T
     Int2 siz1 = obj1->getSize();
     Int2 siz2 = obj2->getSize();
 
-    if(pos1.x > pos2.x + siz2.x  // p1(gauche) a droite de   p2(droite)
-    || pos1.x + siz1.x < pos2.x  // p1(droite) a gauche de   p2(gauche)
+    if(pos1.x + 20 > pos2.x + siz2.x  // p1(gauche) a droite de   p2(droite)
+    || pos1.x + siz1.x - 20 < pos2.x  // p1(droite) a gauche de   p2(gauche)
     || pos1.y > pos2.y + siz2.y  // p1(haut)   au dessous de p2(bas)
     || pos1.y + siz1.y < pos2.y) // p1(bas)    au dessus de  p2(haut) 
         return false;
@@ -327,6 +336,7 @@ bool Game::checkIntersect(ObjetPhysique* obj1, ObjetPhysique* obj2) // Renvoie T
         return true;
 
 }
+
 
 bool Game::checkCollisionTop(ObjetPhysique* obj1, ObjetPhysique* obj2) {
     // ex: o1 touche le haut d'une plate-forme o2.
@@ -339,7 +349,7 @@ bool Game::checkCollisionTop(ObjetPhysique* obj1, ObjetPhysique* obj2) {
     //Si o1 est dans la partie haute de o2, et que la largeur de l'intersection entre o1 et o2 est suppérieure a sa hauteur, alors on a une collision entre o1 et o2 venant du haut
 
     int hauteurIntersect = pos1.y + siz1.y - pos2.y; // la hauteur de la superposition entre le bas de o1 et le haut de o2 (on part du principe que o1 est dans la partie haute de o2)
-    int largeurIntersect = std::min(pos1.x + siz1.x, pos2.x + siz2.x) - max(pos1.x, pos2.x); // La largeur de la superposition est égale a la taille de la superposition entre la plus grande des valeurs gauche, et la plus petite des valeurs droites.
+    int largeurIntersect = min(pos1.x + siz1.x, pos2.x + siz2.x) - max(pos1.x, pos2.x); // La largeur de la superposition est égale a la taille de la superposition entre la plus grande des valeurs gauche, et la plus petite des valeurs droites.
     if (((hauteurIntersect > 0) && (pos2.y > pos1.y)) // Si o1 est dans la partie haute de o2 (si le bas de o1 est en dessous du haut de o2, et que le haut de o1 est au dessus du haut de o2)
         && (largeurIntersect > hauteurIntersect) 
         && mov1.y>=0) {
@@ -348,6 +358,7 @@ bool Game::checkCollisionTop(ObjetPhysique* obj1, ObjetPhysique* obj2) {
         return false;
     }
 }
+
 
 bool Game::checkCollisionBottom(ObjetPhysique* obj1, ObjetPhysique* obj2) {
     // ex: o1 touche le bas d'une plate-forme o2.
@@ -368,6 +379,7 @@ bool Game::checkCollisionBottom(ObjetPhysique* obj1, ObjetPhysique* obj2) {
     }
 }
 
+
 bool Game::checkCollisionLeft(ObjetPhysique* obj1, ObjetPhysique* obj2) {
     // ex: o1 touche la gauche d'une plate-forme o2.
     Int2 pos1 = obj1->getPosition();
@@ -386,6 +398,7 @@ bool Game::checkCollisionLeft(ObjetPhysique* obj1, ObjetPhysique* obj2) {
         return false;
     }
 }
+
 
 bool Game::checkCollisionRight(ObjetPhysique* obj1, ObjetPhysique* obj2) {
     // ex: o1 touche la droite d'une plate-forme o2.
@@ -497,25 +510,33 @@ void Game::setPlayer(PlayerView p)
 
 void Game::loadLevel()
 {
-    Texture* t;
 
     /* ENVIRONNEMENT */
-    level.addPlatform(Int2(-10,650),Int2(10000,0),0); // Sol
+    //level.loadFromFile("res/xml/level/level1.xml",config->resolution);
+    loadLevelXML("res/xml/level/level1.xml",config,&(level.environment),&textures);
 
-    t = new Texture();
-    t->loadFromFile("res/tex/decor/city.gif");
-    t->setRepeated(true);
-    textures.push_back(t);
+
+
+    Texture* t;
+
+    /* DECOR */
+    // level.addPlatform(Int2(-10,650),Int2(10000,0),0); // Sol
+
+    // t = new Texture();
+    // t->loadFromFile("res/tex/decor/city.gif");
+    // t->setRepeated(true);
+    // textures.push_back(t);
     
-    level.addDecor(config->resolution,textures[textures.size()-1]);
+    // level.addDecor(config->resolution,textures[textures.size()-1]);
 
-    t = new Texture();
-    t->loadFromFile("res/tex/decor/wall.png");
-    t->setRepeated(true);
-    textures.push_back(t);
+    // /* PLATFORMS */
+    // t = new Texture();
+    // t->loadFromFile("res/tex/platform/wall.png");
+    // t->setRepeated(true);
+    // textures.push_back(t);
 
-    level.addPlatform(Int2(500,470),Int2(100,180),0,textures[textures.size()-1]); // Mur
-    level.addPlatform(Int2(760,320),Int2(400,40),0,textures[textures.size()-1]); // Mur
+    // level.addPlatform(Int2(500,470),Int2(100,180),0,textures[textures.size()-1]); // Mur
+    // level.addPlatform(Int2(760,320),Int2(400,40),0,textures[textures.size()-1]); // Mur
 
     
     /* PLAYER */
@@ -565,8 +586,6 @@ void Game::loadLevel()
     // textures.push_back(t);
     AmmoView::loadTextures();
 
-
-    /* CAMERA */
 
 }
 

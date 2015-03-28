@@ -10,6 +10,17 @@
 using namespace std;
 
 
+/***
+* Enemy -> Character -> ObjetPhysique
+* ===============================================================
+* Un Enemy est un Character contrôlé par la machine, opposé à 
+* celui contrôlé par le joueur (Player). Il doit soit obéir à
+* un pattern de mouvement, soit possèder une intelligence
+* très simple.
+***/
+
+
+
 class Enemy : public Character 
 {
 	

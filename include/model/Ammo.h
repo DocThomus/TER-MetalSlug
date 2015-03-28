@@ -13,6 +13,16 @@ class Weapon;
 class Enemy;
 
 
+/***
+* Ammo -> ObjetPhysique
+* ===============================================================
+* Objets modelisant les tirs. Selon leur type, ils peuvent ou non 
+* être soumis à la gravité, être plus ou moins rapide, faire plus
+* ou moins de dégâts... Leur type dépend de l'arme ou de l'ennemi 
+* qui a produit l'objet.
+***/
+
+
 class Ammo : public ObjetPhysique
 {
 	friend class Weapon;
@@ -33,7 +43,6 @@ class Ammo : public ObjetPhysique
 	public :
 
 		Ammo(Int2 pos, Int2 siz, int m, TypeAmmo type, Float2 move);
-		//Ammo(TypeAmmo type, Int2 movement);
 		Ammo();
 		~Ammo();
 

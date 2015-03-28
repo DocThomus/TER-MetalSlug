@@ -20,7 +20,17 @@ class Ammo;
 
 
 
-class Weapon : public ObjetPhysique
+/***
+* Weapon
+* ===============================================================
+* Objet possédé par un Player. Il produit des Ammo lorsque son
+* propriétaire tire. Le type et le nombre de munitions généré
+* est défini en fonction de son type.
+***/
+
+
+
+class Weapon
 {
 
 	public:
@@ -30,12 +40,9 @@ class Weapon : public ObjetPhysique
 	
 	protected :
 
-		Int2 angle;
-
-		Player* owner;
-
 		Int2 ammos;
-		
+		Int2 angle;
+		Player* owner;
 		TypeWeapon type;
 
 

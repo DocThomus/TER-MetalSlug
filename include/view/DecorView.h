@@ -15,6 +15,19 @@ using namespace std;
 using namespace sf;
 
 
+
+/***
+* DecorView -> Decor -> ObjetPhysique
+*           -> MyDrawable
+* ===========================================================
+* Permet d'afficher un objet Decor.
+* La texture est décalée en fonction du mouvement de la vue.
+* L'indice z de Ammo est aussi utilisé pour créer un effet
+* parallaxe.
+***/
+
+
+
 class DecorView : public Decor, public MyDrawable
 {
 

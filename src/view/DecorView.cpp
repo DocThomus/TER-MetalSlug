@@ -60,11 +60,14 @@ void DecorView::animate(int x)
 {
 	Decor::animate(x); // decalage de l'objet
 
-	//cout << z << endl;
 	
 	/* DÉCALAGE DE LA TEXTURE EN PRENANT COMPTE DU Z POUR LE PARALLAXE */
 	IntRect rect = body.getTextureRect();
-	rect.left += (x-tex_x) / -z;
-	body.setTextureRect(rect);
-	tex_x = x;
+	int offset = x-tex_x;
+	if(offset > 0)
+	{
+		rect.left += (x-tex_x) / -z;
+		body.setTextureRect(rect);
+		tex_x = x;
+	}
 }

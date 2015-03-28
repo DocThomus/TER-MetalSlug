@@ -5,6 +5,8 @@ PlayerView::PlayerView(Int2 pos, Int2 siz, int m, int max_h)
 :Player(pos,siz,m,max_h)
 {
 	//body.setOrigin(size.x/2,size.y/2);
+	// test.setOutlineThickness(3);
+	// test.setOutlineColor(Color::Black);
 }
 
 
@@ -60,10 +62,13 @@ void PlayerView::display(RenderWindow* window)
 	}
 
 
+
 	/* DESSIN */
 	if(state_p != KNELT)
 		legs.display(window);
 	window->draw(body);
+
+	//window->draw(test);
 }
 
 
@@ -112,6 +117,9 @@ void PlayerView::animate(int dt)
 
 	/* MISE A JOUR DE LA SELECTION DE LA TEXTURE */
 	updateIntRect();
+
+	// test.setPosition(Vector2f(position.x,position.y));
+	// test.setSize(Vector2f(size.x,size.y));
 }
 
 

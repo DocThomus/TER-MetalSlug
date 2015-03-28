@@ -11,6 +11,15 @@ using namespace std;
 
 class Environment;
 
+
+/**
+ * Stocke les objets composant un niveau : 
+ * - Environment
+ * - Events (Dialog,Enemy,Checkpoint...) (TODO)
+ **/
+
+
+
 class Level
 {
 

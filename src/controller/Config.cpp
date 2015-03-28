@@ -1,7 +1,9 @@
 #include "controller/Config.h"
 
 
-
+/**
+ * Constructeur
+ */
 Config::Config()
 {
 	fullscreen = true;

@@ -3,7 +3,7 @@
 
 
 Weapon::Weapon(Int2 pos, Int2 siz, int m, Player* p, TypeWeapon type, int max_mun)
-:ObjetPhysique(pos,siz,m), owner(p), type(type)
+:owner(p), type(type)
 {
 	ammos = Int2(max_mun,max_mun);
 	p->addWeapon(this);
@@ -19,13 +19,12 @@ Weapon::Weapon(Player* p, TypeWeapon type, int max_mun)
 
 
 Weapon::Weapon()
-:ObjetPhysique()
 {}
 
 
 Weapon::~Weapon()
 {
-	// armes.clear();
+
 }
 
 
@@ -103,12 +102,12 @@ void Weapon::shoot(list<Ammo*>* air, Float2 angle)
 		switch(type)
 		{
 			case PISTOL :
-				air->push_back(new Ammo(pos,size,0,Ammo::BULLET,angle));
+				air->push_back(new Ammo(pos,siz,0,Ammo::BULLET,angle));
 				ammos.x--;
 				break;
 
 			case SMG :
-				air->push_back(new Ammo(pos,size,0,Ammo::BULLET,angle));
+				air->push_back(new Ammo(pos,siz,0,Ammo::BULLET,angle));
 				ammos.x--;
 				break;
 
@@ -123,7 +122,7 @@ void Weapon::shoot(list<Ammo*>* air, Float2 angle)
 						tmp.x+=i;
 					if((angle.x<0 && angle.y<0) || (angle.x>0 && angle.y>0))
 						tmp.x-=i*2;
-					air->push_back(new Ammo(pos,size,0,Ammo::BULLET,tmp));
+					air->push_back(new Ammo(pos,siz,0,Ammo::BULLET,tmp));
 					ammos.x--;
 				}
 				break;

@@ -44,11 +44,6 @@ void ObjetPhysique::setSize(Int2 siz)
 }
 
 
-void ObjetPhysique::setZ(int z)
-{
-    z = z;
-}
-
 
 void ObjetPhysique::setMass(int m)
 {

@@ -7,12 +7,16 @@
 using namespace std;
 
 
+/***
+* Outils divers
+***/
+
+
+
 /*============== FONCTIONS UTILES ==============*/
 
 /* CONVERSION VERS STRING */
 template <typename T> string toString(const T& t); 
-
-
 
 
 

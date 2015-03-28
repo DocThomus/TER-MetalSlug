@@ -14,6 +14,14 @@ using namespace std;
 using namespace sf;
 
 
+/***
+* Frame
+* ===========================================================
+* Contient la position et la taille d'une frame dans une 
+* texture.
+***/
+
+
 class Frame
 {
 

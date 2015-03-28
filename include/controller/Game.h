@@ -13,7 +13,6 @@
 #include <tools/XMLtools.h>
 
 #include <controller/Config.h>
-#include <controller/Camera.h>
 #include <controller/Level.h>
 #include <view/Animation.h>
 #include <view/Frame.h>
@@ -31,6 +30,18 @@ class Level;
 class Animation;
 class PlayerView;
 class EnnemyView;
+
+
+/**
+ * Gère les objets du jeu :
+ * - Application de la configuration
+ * - Animation des objets
+ * - Gestion des collisions
+ * - Gestion des événements (clavier, souris...)
+ * - Destruction des objets devenus inutiles
+ * - Affichage des objets
+ **/
+
 
 
 class Game

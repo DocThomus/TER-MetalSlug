@@ -22,6 +22,13 @@ using namespace sf;
 class WeaponView;
 
 
+/***
+* PlayerView -> Player -> Character -> ObjetPhysique
+*           -> MyDrawable
+* ===========================================================
+* Permet d'afficher un objet Player avec diverses animations.
+***/
+
 
 class PlayerView : public Player, public MyDrawable
 {
@@ -44,6 +51,7 @@ class PlayerView : public Player, public MyDrawable
 	public :
 
 		MemberView legs;
+		//RectangleShape test;
 
 		
 		PlayerView(Int2 pos, Int2 siz, int m, int max_h);
@@ -58,7 +66,7 @@ class PlayerView : public Player, public MyDrawable
 
 		void walk(int way);
 		void kneel(bool);
-		virtual void shoot(list<AmmoView*>* ammos, Int2 angle = Int2(1,0)/*, Texture* tex=NULL*/);
+		virtual void shoot(list<AmmoView*>* ammos, Int2 angle = Int2(1,0));
 };
 
 

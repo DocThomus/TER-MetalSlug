@@ -20,6 +20,15 @@ using namespace sf;
 class WeaponView;
 
 
+/***
+* EnemyView -> Enemy -> Character -> ObjetPhysique
+*           -> MyDrawable
+* ===========================================================
+* Permet d'afficher un objet Enemy avec diverses animations.
+***/
+
+
+
 class EnemyView : public Enemy, public MyDrawable
 {
 

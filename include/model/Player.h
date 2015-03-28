@@ -19,6 +19,15 @@ class Ammo;
 
 
 
+/***
+* Player -> Character -> ObjetPhysique
+* ===============================================================
+* Un Player est un Character contrôlé par le joueur. Il peut
+* posséder différents types d'armes.
+***/
+
+
+
 class Player : public Character
 {
 	

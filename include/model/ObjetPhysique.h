@@ -7,6 +7,14 @@
 using namespace std;
 
 
+/***
+* ObjetPhysique
+* ===========================================================
+* Modélise un objet physique simple sur lequel on peut 
+* appliquer des forces.
+***/
+
+
 class ObjetPhysique
 {
 	friend ostream& operator << (ostream& os, const ObjetPhysique& obj);
@@ -34,7 +42,6 @@ class ObjetPhysique
 
 		void setPosition(Int2 pos);
 		void setSize(Int2 siz);
-		void setZ(int z);
 		void setMass(int m);
 
 		void addMovement(Float2 v);

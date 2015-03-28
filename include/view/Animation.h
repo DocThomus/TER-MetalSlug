@@ -14,6 +14,17 @@ using namespace std;
 using namespace sf;
 
 
+/***
+* Animation
+* ===========================================================
+* Stocke un ensemble de Frame.
+* Trois type d'animations sont possible : 
+* - Animation répétée
+* - Animation non-répétée bloquante (reste bloquée sur la dernière frame)
+* - Animation non-répétée enchaînée (enchaîne sur une autre animaition)
+***/
+
+
 class Animation
 {
 

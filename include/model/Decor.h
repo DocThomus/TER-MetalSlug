@@ -9,6 +9,14 @@
 using namespace std;
 
 
+/***
+* Decor -> ObjetPhysique
+* ===============================================================
+* Objet simple modélisant un arrière-plan. Son attribut z permet
+* de simuler un effet d'éloignement grâce à l'effet parallaxe.
+***/
+
+
 
 class Decor : public ObjetPhysique
 {

@@ -18,6 +18,16 @@ using namespace std;
 using namespace sf;
 
 
+/***
+* MyDrawable
+* ===========================================================
+* Permet d'afficher un rectangle à lequel on associe une
+* texture. Si l'objet est animé, on peut aussi lui associer
+* une ou plusieurs animations.
+***/
+
+
+
 class MyDrawable
 {
 

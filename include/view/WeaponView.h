@@ -17,6 +17,19 @@ using namespace sf;
 
 class PlayerView;
 
+
+/***
+* WeaponView -> Weapon -> ObjetPhysique
+*            -> MyDrawable
+* ===========================================================
+* Permet de jouer des sons lorsque on tire avec une arme.
+* ===========================================================
+* TODO : déplacer la gestion des sons dans AmmoView et 
+* supprimer cette classe....
+***/
+
+
+
 class WeaponView : public Weapon
 {
 

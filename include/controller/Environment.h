@@ -15,6 +15,14 @@ class Decor;
 class Platform;
 
 
+/**
+ * Stocke les objets de l'environnement :
+ * - Decor
+ * - Platform
+ * - Destructible (TODO)
+ **/
+
+
 class Environment
 {
 
@@ -24,7 +32,7 @@ class Environment
 
 		list<DecorView> decors;
 		list<PlatformView> platforms;
-		//list<Destructible> destructibles;
+		//list<Destructible> destructibles; // TODO
 		
 
 	public :
@@ -37,5 +45,5 @@ class Environment
 
 		void addDecor(Int2 siz, Texture* tex, int z);
 		void addPlatform(Int2 pos, Int2 siz, int wl, Texture* tex=NULL);
-		
+		//void addDestructible(); // TODO
 };

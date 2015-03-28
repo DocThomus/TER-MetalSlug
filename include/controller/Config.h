@@ -1,12 +1,22 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
+/*!
+ * \file Config.h
+ * \author Jules
+ * \version 0.1
+ */
+
 #include <iostream>
 
 #include <tools/tools.h>
 
 using namespace std;
 
+
+/*! \class Config
+ * \brief Stocke la configuration du jeu
+ **/
 
 class Config
 {
@@ -17,7 +27,6 @@ class Config
 
 		bool fullscreen;
 		Int2 resolution;
-		int luminosity;
 
 	
 	public :
@@ -25,8 +34,8 @@ class Config
 		Config();
 		~Config();
 
-		bool loadFromXML(string);
-		bool saveToXML(string);
+		bool loadFromXML(string);  // TODO
+		bool saveToXML(string);  // TODO
 
 };
 

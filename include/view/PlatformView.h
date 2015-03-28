@@ -15,6 +15,18 @@ using namespace std;
 using namespace sf;
 
 
+
+/***
+* PlatformView -> Platform -> ObjetPhysique
+*              -> MyDrawable
+* ===========================================================
+* Permet d'afficher un objet Platform. Si la plateforme a
+* une hauteur nulle, on ne l'affiche pas (c'est une plateforme
+* invisible).
+***/
+
+
+
 class PlatformView : public Platform, public MyDrawable
 {
 

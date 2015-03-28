@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<document>
+	<level num="1">
+		<environment>
+			<decors>
+				<decor z="0">city.gif</decor>
+			</decors>
+			<platforms>
+				<platform num="0">
+					<position x="-10" y="650"/>
+					<size w="10000" h="0"/>
+				</platform>
+				<platform num="1">
+					<position x="500" y="470"/>
+					<size w="100" h="180"/>
+					<sprite>wall.png</sprite>
+				</platform>
+				<platform num="2">
+					<position x="760" y="320"/>
+					<size w="400" h="40"/>
+					<sprite>wall.png</sprite>
+				</platform>
+			</platforms>
+			<!-- ITEMS -->
+		</environment>
+		<events>
+
+		</events>
+	</level>
+</document>

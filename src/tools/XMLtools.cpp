@@ -1,4 +1,5 @@
 #include <tools/XMLtools.h>
+#include <controller/MasterClass.h>
 
 
 /* CONVERSION VERS STRING */
@@ -69,6 +70,14 @@ bool buildSpriteMap(string filename, vector<Int2> anim, vector<Int2> pos, vector
 }
 
 
+
+
+
+
+
+
+
+
 /* CHARGE UN FICHIER XML DE DESCRIPTION DES SPRITES */
 bool loadSpriteMap(string filename, vector<Int2>* v_anim, vector<Int2>* v_pos, vector<Int2>* v_size)
 {
@@ -108,6 +117,114 @@ bool loadSpriteMap(string filename, vector<Int2>* v_anim, vector<Int2>* v_pos, v
 
         anim.y = v_pos->size()-1;
         v_anim->push_back(anim);
+    }
+    
+    return true;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+bool loadLevelXML(string filename, Config* conf, Environment* env, vector<Texture*>* tex)
+{   
+    xml_document<> doc;
+
+    /* CHARGEMENT FICHIER */
+    ifstream file(filename.c_str());
+
+    if(!file)
+        return false;
+
+
+    /* INITIALISATION */
+    stringstream buffer;
+    buffer << file.rdbuf();
+    string content(buffer.str());
+
+    file.close();
+   
+    doc.parse<0>(&content[0]);
+
+
+    /* NOEUX PRINCIPAUX */
+    xml_node<> *document    = doc.first_node();
+    xml_node<> *level      = document->first_node("level");
+    xml_node<> *environment = level->first_node("environment");
+    xml_node<> *decors      = environment->first_node("decors");
+    xml_node<> *platforms   = environment->first_node("platforms");
+
+
+    /* DECORS */
+    for(xml_node<> *decor=decors->first_node("decor"); decor; decor=decor->next_sibling())
+    {
+        // déclaration
+        int tmp_z;
+        string tmp_file;
+        Texture* tmp_tex;
+
+        // récupération des données
+        xml_attribute<> *zAttr = decor->first_attribute("z");
+        tmp_z = atoi(zAttr->value());
+        tmp_file = decor->value();
+
+        // construction texture
+        tmp_tex = new Texture();
+        tmp_tex->loadFromFile("res/tex/decor/"+tmp_file);
+        tmp_tex->setRepeated(true);
+        tex->push_back(tmp_tex);
+
+        // construction de l'objet
+        env->addDecor(conf->resolution,tmp_tex,tmp_z);
+    }
+
+
+    /* PLATFORMS */
+    for(xml_node<> *platform=platforms->first_node("platform"); platform; platform=platform->next_sibling())
+    {
+        // déclaration
+        Int2 tmp_pos;
+        Int2 tmp_siz;
+        string tmp_file;
+        bool have_tex = false;
+        Texture* tmp_tex;
+
+        // récupération des données
+        xml_node<> *position = platform->first_node("position");
+        xml_attribute<> *xAttr = position->first_attribute("x");
+        xml_attribute<> *yAttr = position->first_attribute("y");
+        tmp_pos = Int2(atoi(xAttr->value()),atoi(yAttr->value()));
+        xml_node<> *size = platform->first_node("size");
+        xml_attribute<> *wAttr = size->first_attribute("w");
+        xml_attribute<> *hAttr = size->first_attribute("h");
+        tmp_siz = Int2(atoi(wAttr->value()),atoi(hAttr->value()));
+        xml_node<> *sprite;
+        if((sprite=platform->first_node("sprite")))
+            have_tex = true;
+        if(have_tex)
+            tmp_file = sprite->value();
+
+        // construction texture
+        if(have_tex)
+        {
+            tmp_tex = new Texture();
+            tmp_tex->loadFromFile("res/tex/platform/"+tmp_file);
+            tmp_tex->setRepeated(true);
+            tex->push_back(tmp_tex);
+        }
+        else
+            tmp_tex = NULL;
+
+        // construction de l'objet
+        env->addPlatform(tmp_pos,tmp_siz,0,tmp_tex);
     }
     
     return true;

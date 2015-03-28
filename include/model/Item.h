@@ -15,6 +15,16 @@ class Player;
 class Weapon;
 
 
+/***
+* Item -> ObjetPhysique
+* ===========================================================
+* Modélise un item.
+* Objet posé sur le sol qui contient un bonus, un malus ou
+* même une arme.
+***/
+
+
+
 class Item : public ObjetPhysique
 {
 
