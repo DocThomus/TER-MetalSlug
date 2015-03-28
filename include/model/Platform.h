@@ -1,6 +1,14 @@
 #ifndef PLATFORM_H
 #define PLATFORM_H
 
+/*!
+ * \file Platform.h
+ * \author Jules
+ * \brief Déclaration de la classe Platform
+ * \addtogroup Model 
+ * @{
+ */
+
 #include <iostream>
 #include <sstream>
 
@@ -39,5 +47,8 @@ class Platform : public ObjetPhysique
 		int getWalkline();
 
 };
+
+
+/** @}*/
 
 #endif

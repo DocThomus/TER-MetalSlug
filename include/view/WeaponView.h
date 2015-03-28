@@ -1,6 +1,14 @@
 #ifndef WEAPONVIEW_H
 #define WEAPONVIEW_H
 
+/*!
+ * \file WeaponView.h
+ * \author Jules
+ * \brief Déclaration de la classe WeaponView
+ * \addtogroup View
+ * @{
+ */
+
 #include <iostream>
 #include <vector>
 
@@ -50,5 +58,7 @@ class WeaponView : public Weapon
 
 };
 
+
+/** @}*/
 
 #endif

@@ -1,6 +1,14 @@
 #ifndef ENEMY_H
 #define ENEMY_H
 
+/*!
+ * \file Enemy.h
+ * \author Jules
+ * \brief Déclaration de la classe Enemy
+ * \addtogroup Model 
+ * @{
+ */
+
 #include <iostream>
 #include <sstream>
 #include <vector>
@@ -44,5 +52,8 @@ class Enemy : public Character
 		void die();
 
 };
+
+
+/** @}*/
 
 #endif

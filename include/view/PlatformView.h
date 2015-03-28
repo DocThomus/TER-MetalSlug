@@ -1,6 +1,14 @@
 #ifndef PLATFORMVIEW_H
 #define PLATFORMVIEW_H
 
+/*!
+ * \file PlateformView.h
+ * \author Jules
+ * \brief Déclaration de la classe PlateformView
+ * \addtogroup View
+ * @{
+ */
+
 #include <iostream>
 
 #include <SFML/System.hpp>
@@ -44,5 +52,7 @@ class PlatformView : public Platform, public MyDrawable
 		
 };
 
+
+/** @}*/
 
 #endif

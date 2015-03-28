@@ -1,6 +1,14 @@
 #ifndef DECOR_H
 #define DECOR_H
 
+/*!
+ * \file Decor.h
+ * \author Jules
+ * \brief Déclaration de la classe Decor
+ * \addtogroup Model 
+ * @{
+ */
+
 #include <iostream>
 #include <sstream>
 
@@ -37,5 +45,9 @@ class Decor : public ObjetPhysique
 		virtual void animate(int x);
 
 };
+
+
+
+/** @}*/
 
 #endif

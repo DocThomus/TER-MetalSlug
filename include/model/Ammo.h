@@ -1,6 +1,14 @@
 #ifndef AMMO_H
 #define AMMO_H
 
+/*!
+ * \file Ammo.h
+ * \author Jules
+ * \brief Déclaration de la classe Ammo
+ * \addtogroup Model 
+ * @{
+ */
+
 #include <iostream>
 #include <sstream>
 
@@ -55,5 +63,9 @@ class Ammo : public ObjetPhysique
 		StateAmmo getState();
 
 };
+
+
+
+/** @}*/
 
 #endif

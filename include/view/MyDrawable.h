@@ -1,6 +1,14 @@
 #ifndef MYDRAWABLE_H
 #define MYDRAWABLE_H
 
+/*!
+ * \file MyDrawable.h
+ * \author Jules
+ * \brief Déclaration de la classe MyDrawable
+ * \addtogroup View
+ * @{
+ */
+
 #include <iostream>
 #include <vector>
 
@@ -60,5 +68,7 @@ class MyDrawable
 
 };
 
+
+/** @}*/
 
 #endif

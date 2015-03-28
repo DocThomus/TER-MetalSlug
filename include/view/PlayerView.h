@@ -1,6 +1,14 @@
 #ifndef PLAYERVIEW_H
 #define PLAYERVIEW_H
 
+/*!
+ * \file PlayerView.h
+ * \author Jules
+ * \brief Déclaration de la classe PlayerView
+ * \addtogroup View
+ * @{
+ */
+
 #include <iostream>
 
 #include <SFML/System.hpp>
@@ -69,5 +77,7 @@ class PlayerView : public Player, public MyDrawable
 		virtual void shoot(list<AmmoView*>* ammos, Int2 angle = Int2(1,0));
 };
 
+
+/** @}*/
 
 #endif

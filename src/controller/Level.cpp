@@ -9,12 +9,6 @@ Level::Level()
 
 
 
-Level::Level(string filename)
-{
-	environment = Environment(filename);
-}
-
-
 
 Level::~Level()
 {}

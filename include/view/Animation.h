@@ -1,6 +1,14 @@
 #ifndef ANIMATION_H
 #define ANIMATION_H
 
+/*!
+ * \file Animation.h
+ * \author Jules
+ * \brief Déclaration de la classe Animation
+ * \addtogroup View
+ * @{
+ */
+
 #include <iostream>
 
 #include <SFML/System.hpp>
@@ -59,5 +67,7 @@ class Animation
 
 };
 
+
+/** @}*/
 
 #endif

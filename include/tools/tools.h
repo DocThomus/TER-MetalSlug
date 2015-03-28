@@ -1,6 +1,16 @@
 #ifndef STRUCTS_H
 #define STRUCTS_H
 
+
+/*!
+ * \file tools.h
+ * \author Jules
+ * \brief Déclaration des outils
+ * \addtogroup Tools 
+ * @{
+ */
+
+
 #include <iostream>
 #include <sstream>
 
@@ -83,5 +93,8 @@ class Bool2 {
 };	
 
 
+
+
+/** @}*/
 
 #endif

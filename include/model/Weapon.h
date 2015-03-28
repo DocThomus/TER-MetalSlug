@@ -1,6 +1,14 @@
 #ifndef WEAPON_H
 #define WEAPON_H
 
+/*!
+ * \file Weapon.h
+ * \author Jules
+ * \brief Déclaration de la classe Weapon
+ * \addtogroup Model 
+ * @{
+ */
+
 #include <iostream>
 #include <sstream>
 #include <stdlib.h>
@@ -63,5 +71,9 @@ class Weapon
 
 
 };
+
+
+
+/** @}*/
 
 #endif

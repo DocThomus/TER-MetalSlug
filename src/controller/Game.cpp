@@ -496,17 +496,6 @@ void Game::init()
 }
 
 
-void Game::setLevel(Level l)
-{
-	level = l;
-}
-
-
-void Game::setPlayer(PlayerView p)
-{
-	player = p;
-}
-
 
 void Game::loadLevel()
 {

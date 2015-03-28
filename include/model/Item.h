@@ -1,6 +1,14 @@
 #ifndef ITEM_H
 #define ITEM_H
 
+/*!
+ * \file Item.h
+ * \author Jules
+ * \brief Déclaration de la classe Item
+ * \addtogroup Model 
+ * @{
+ */
+
 #include <iostream>
 #include <sstream>
 
@@ -52,5 +60,8 @@ class Item : public ObjetPhysique
 
 
 };
+
+
+/** @}*/
 
 #endif

@@ -1,6 +1,14 @@
 #ifndef MEMBERVIEW_H
 #define MEMBERVIEW_H
 
+/*!
+ * \file MemberView.h
+ * \author Jules
+ * \brief Déclaration de la classe MemberView
+ * \addtogroup View
+ * @{
+ */
+
 #include <iostream>
 
 #include <SFML/System.hpp>
@@ -42,5 +50,8 @@ class MemberView : public MyDrawable
 		void setTextureRect(IntRect);
 
 };
+
+
+/** @}*/
 
 #endif

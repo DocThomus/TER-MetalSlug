@@ -1,6 +1,14 @@
 #ifndef DECORVIEW_H
 #define DECORVIEW_H
 
+/*!
+ * \file DecorView.h
+ * \author Jules
+ * \brief Déclaration de la classe DecorView
+ * \addtogroup View
+ * @{
+ */
+
 #include <iostream>
 
 #include <SFML/System.hpp>
@@ -49,5 +57,7 @@ class DecorView : public Decor, public MyDrawable
 
 };
 
+
+/** @}*/
 
 #endif

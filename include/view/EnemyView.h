@@ -1,6 +1,14 @@
 #ifndef ENEMYVIEW_H
 #define ENEMYVIEW_H
 
+/*!
+ * \file EnemyView.h
+ * \author Jules
+ * \brief Déclaration de la classe EnemyView
+ * \addtogroup View
+ * @{
+ */
+
 #include <iostream>
 
 #include <SFML/System.hpp>
@@ -61,5 +69,7 @@ class EnemyView : public Enemy, public MyDrawable
 		void shoot(list<AmmoView*>* ammos, Int2 angle = Int2(1,0), Texture* tex=NULL);
 };
 
+
+/** @}*/
 
 #endif

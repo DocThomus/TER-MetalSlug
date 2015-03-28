@@ -1,6 +1,14 @@
 #ifndef AMMOVIEW_H
 #define AMMOVIEW_H
 
+/*!
+ * \file AmmoView.h
+ * \author Jules
+ * \brief Déclaration de la classe AmmoView
+ * \addtogroup View
+ * @{
+ */
+
 #include <iostream>
 #include <vector>
 #include <math.h>
@@ -49,5 +57,7 @@ class AmmoView : public Ammo, public MyDrawable
 
 };
 
+
+/** @}*/
 
 #endif

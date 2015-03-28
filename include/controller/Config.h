@@ -4,7 +4,9 @@
 /*!
  * \file Config.h
  * \author Jules
- * \version 0.1
+ * \brief Déclaration de la classe Config
+ * \addtogroup Controller 
+ * @{
  */
 
 #include <iostream>
@@ -14,30 +16,58 @@
 using namespace std;
 
 
-/*! \class Config
+/*!\class Config
  * \brief Stocke la configuration du jeu
- **/
-
+ */
 class Config
 {
 	public :
 
+		/*!\enum Difficulty
+		 * \brief Enumération des difficultés 
+		 */
 		enum Difficulty {EASY,NORMAL,HARD,HARDEST,HARDESTEST};
-		Difficulty difficulty;
+		Difficulty difficulty; /*!< \brief Difficulté du jeu */
 
-		bool fullscreen;
-		Int2 resolution;
+		bool fullscreen; /*!< \brief Vrai si le jeu est en plein écran */
+		Int2 resolution; /*!< \brief Résolution de l'écran */
 
 	
 	public :
 
+		/*!
+	     *  \brief Constructeur
+	     *
+	     *  Constructeur par défaut de la classe Config
+	     */
 		Config();
+
+		/*!
+	     *  \brief Destructeur
+	     *
+	     *  Destructeur de la classe Config
+	     */
 		~Config();
 
-		bool loadFromXML(string);  // TODO
-		bool saveToXML(string);  // TODO
+
+		/*!
+	     *  \brief Loader
+	     *
+	     *  Charger une configuration à partir d'un fichier XML.
+	     *  \param filename : nom du fichier XML
+	     */
+		bool loadFromXML(string filename);  // TODO
+
+		/*!
+	     *  \brief Saver
+	     *
+	     *  Enregistre une configuration dans un fichier XML.
+	     *  \param filename : nom du fichier XML
+	     */
+		bool saveToXML(string filename);  // TODO
 
 };
 
+/** @}*/
 
 #endif

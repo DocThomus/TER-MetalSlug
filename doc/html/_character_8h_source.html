@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Metal Slug:  Fichier source de include/model/Character.h</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Metal Slug
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Un clone de Metal Slug</div>
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Généré par Doxygen 1.7.6.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('_character_8h.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">include/model/Character.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_character_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef CHARACTER_H</span>
+<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define CHARACTER_H</span>
+<a name="l00003"></a>00003 <span class="preprocessor"></span>
+<a name="l00012"></a>00012 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00013"></a>00013 <span class="preprocessor">#include &lt;sstream&gt;</span>
+<a name="l00014"></a>00014 <span class="preprocessor">#include &lt;list&gt;</span>
+<a name="l00015"></a>00015 <span class="preprocessor">#include &lt;<a class="code" href="tools_8h.html" title="Déclaration des outils.">tools/tools.h</a>&gt;</span>
+<a name="l00016"></a>00016 
+<a name="l00017"></a>00017 <span class="preprocessor">#include &lt;<a class="code" href="_objet_physique_8h.html" title="Déclaration de la classe ObjetPhysique.">model/ObjetPhysique.h</a>&gt;</span>
+<a name="l00018"></a>00018 <span class="preprocessor">#include &lt;<a class="code" href="_ammo_8h.html" title="Déclaration de la classe Ammo.">model/Ammo.h</a>&gt;</span>
+<a name="l00019"></a>00019 
+<a name="l00020"></a>00020 <span class="keyword">using namespace </span>std;
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022 <span class="keyword">class </span><a class="code" href="class_ammo.html">Ammo</a>;
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="comment">/***</span>
+<a name="l00026"></a>00026 <span class="comment">* Character -&gt; ObjetPhysique</span>
+<a name="l00027"></a>00027 <span class="comment">* ===========================================================</span>
+<a name="l00028"></a>00028 <span class="comment">* Modélise un personnage.</span>
+<a name="l00029"></a>00029 <span class="comment">* Un personnage est caractérisé par sa santé ses mouvements : </span>
+<a name="l00030"></a>00030 <span class="comment">* il court, saute, tire, peut mourir...</span>
+<a name="l00031"></a>00031 <span class="comment">***/</span>
+<a name="l00032"></a>00032 
+<a name="l00033"></a>00033 
+<a name="l00034"></a><a class="code" href="class_character.html">00034</a> <span class="keyword">class </span><a class="code" href="class_character.html">Character</a> : <span class="keyword">public</span> <a class="code" href="class_objet_physique.html">ObjetPhysique</a>
+<a name="l00035"></a>00035 {
+<a name="l00036"></a>00036 
+<a name="l00037"></a>00037         <span class="keyword">public</span> :
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039                 <span class="keyword">enum</span> StatePosition {WAIT,RUN,KNELT};
+<a name="l00040"></a>00040                 <span class="keyword">enum</span> StateGround {GROUND,AIR};
+<a name="l00041"></a>00041                 <span class="keyword">enum</span> StateBattle {NORMAL,SHOOT,DEAD,KNIFE,STAR};
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044         <span class="keyword">protected</span> :
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046                 StatePosition state_p;
+<a name="l00047"></a>00047                 StateGround state_g;
+<a name="l00048"></a>00048                 StateBattle state_b;
+<a name="l00049"></a>00049 
+<a name="l00050"></a>00050                 <a class="code" href="class_int2.html">Int2</a> health;
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052                 <span class="keywordtype">int</span> walkway;
+<a name="l00053"></a>00053                 <a class="code" href="class_int2.html">Int2</a> gunway;
+<a name="l00054"></a>00054 
+<a name="l00055"></a>00055                 <span class="keywordtype">int</span> star_cpt;
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058         <span class="keyword">public</span> :
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060                 <a class="code" href="class_character.html">Character</a>(<a class="code" href="class_int2.html">Int2</a> pos,<a class="code" href="class_int2.html">Int2</a> siz, <span class="keywordtype">int</span> m, <span class="keywordtype">int</span> max_h);
+<a name="l00061"></a>00061                 <a class="code" href="class_character.html">Character</a>();
+<a name="l00062"></a>00062                 ~<a class="code" href="class_character.html">Character</a>();
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> animate(<span class="keywordtype">int</span> dt);
+<a name="l00065"></a>00065                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> print(ostream&amp; os) <span class="keyword">const</span>;
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067                 StatePosition getStatePosition();
+<a name="l00068"></a>00068                 StateGround   getStateGround();
+<a name="l00069"></a>00069                 StateBattle   getStateBattle();
+<a name="l00070"></a>00070 
+<a name="l00071"></a>00071                 <span class="keywordtype">void</span> decreaseHealth(<span class="keywordtype">int</span> s);
+<a name="l00072"></a>00072                 <span class="keywordtype">void</span> increaseHealth(<span class="keywordtype">int</span> s);
+<a name="l00073"></a>00073 
+<a name="l00074"></a>00074                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> setInvicibility(<span class="keywordtype">int</span> seconds);
+<a name="l00075"></a>00075 
+<a name="l00076"></a>00076                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> jump(<span class="keywordtype">int</span> h);
+<a name="l00077"></a>00077                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> land(<span class="keywordtype">int</span> h);
+<a name="l00078"></a>00078                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> bumpTop(<span class="keywordtype">int</span> plafond);
+<a name="l00079"></a>00079                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> bumpLeft(<span class="keywordtype">int</span> posMurDroite);
+<a name="l00080"></a>00080                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> bumpRight(<span class="keywordtype">int</span> posMurGauche);
+<a name="l00081"></a>00081                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> shoot(list&lt;Ammo*&gt;* air, <a class="code" href="class_float2.html">Float2</a> angle = <a class="code" href="class_float2.html">Float2</a>(1.,0.));
+<a name="l00082"></a>00082                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> die();
+<a name="l00083"></a>00083                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> walk(<span class="keywordtype">int</span> way);
+<a name="l00084"></a>00084                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> kneel(<span class="keywordtype">bool</span>);
+<a name="l00085"></a>00085                 
+<a name="l00086"></a>00086 };
+<a name="l00087"></a>00087 
+<a name="l00088"></a>00088 
+<a name="l00089"></a>00089 
+<a name="l00092"></a>00092 <span class="preprocessor">#endif</span>
+</pre></div></div><!-- contents -->
+</div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><a class="el" href="_character_8h.html">Character.h</a>      </li>
+
+    <li class="footer">Généré le Samedi Mars 28 2015 18:14:07 pour Metal Slug par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
+   </ul>
+ </div>
+
+
+</body>
+</html>

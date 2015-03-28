@@ -1,6 +1,14 @@
 #ifndef XMLTOOLS_H
 #define XMLTOOLS_H
 
+/*!
+ * \file XMLtools.h
+ * \author Jules
+ * \brief Déclaration des outils XML
+ * \addtogroup Tools 
+ * @{
+ */
+
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -35,5 +43,9 @@ bool loadSpriteMap(string filename,vector<Int2>*animations, vector<Int2>* positi
 
 /* LEVEL */
 bool loadLevelXML(string filename, Config* conf, Environment* env, vector<Texture*>* tex);
+
+
+
+/** @}*/
 
 #endif

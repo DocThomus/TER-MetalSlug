@@ -1,6 +1,14 @@
 #ifndef FRAME_H
 #define FRAME_H
 
+/*!
+ * \file Frame.h
+ * \author Jules
+ * \brief Déclaration de la classe Frame
+ * \addtogroup View
+ * @{
+ */
+
 #include <iostream>
 
 #include <SFML/System.hpp>
@@ -42,5 +50,7 @@ class Frame
 
 };
 
+
+/** @}*/
 
 #endif

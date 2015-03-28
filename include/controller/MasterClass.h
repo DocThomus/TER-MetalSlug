@@ -1,6 +1,14 @@
 #ifndef MASTERCLASS_H
 #define MASTERCLASS_H
 
+/*!
+ * \file MasterClass.h
+ * \author Jules
+ * \brief Déclaration de la classe MasterClass
+ * \addtogroup Controller 
+ * @{
+ */
+
 #include <iostream>
 #include <list>
 
@@ -18,11 +26,11 @@ class Game;
 class Config;
 
 
-/**
+/*! \class MasterClass
+ * \brief Initialisation du jeu
+ *
  * Déclare la fenêtre de rendu, initialise et lance le jeu.
- **/
-
-
+ */
 class MasterClass
 {
 	
@@ -45,5 +53,6 @@ class MasterClass
 
 };
 
+/** @}*/
 
 #endif

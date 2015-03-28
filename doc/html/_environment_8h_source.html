@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Metal Slug:  Fichier source de include/controller/Environment.h</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Metal Slug
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Un clone de Metal Slug</div>
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Généré par Doxygen 1.7.6.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('_environment_8h.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">include/controller/Environment.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_environment_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef ENVIRONMENT_H</span>
+<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define ENVIRONMENT_H</span>
+<a name="l00003"></a>00003 <span class="preprocessor"></span>
+<a name="l00012"></a>00012 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00013"></a>00013 <span class="preprocessor">#include &lt;list&gt;</span>
+<a name="l00014"></a>00014 
+<a name="l00015"></a>00015 <span class="preprocessor">#include &lt;SFML/System.hpp&gt;</span>
+<a name="l00016"></a>00016 <span class="preprocessor">#include &lt;SFML/Window.hpp&gt;</span>
+<a name="l00017"></a>00017 <span class="preprocessor">#include &lt;SFML/Graphics.hpp&gt;</span>
+<a name="l00018"></a>00018 <span class="preprocessor">#include &lt;SFML/Audio.hpp&gt;</span>
+<a name="l00019"></a>00019 
+<a name="l00020"></a>00020 <span class="preprocessor">#include &lt;<a class="code" href="_decor_view_8h.html" title="Déclaration de la classe DecorView.">view/DecorView.h</a>&gt;</span>
+<a name="l00021"></a>00021 <span class="preprocessor">#include &lt;view/PlatformView.h&gt;</span>
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023 <span class="keyword">using namespace </span>std;
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="keyword">class </span><a class="code" href="class_decor.html">Decor</a>;
+<a name="l00026"></a>00026 <span class="keyword">class </span><a class="code" href="class_platform.html">Platform</a>;
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029 
+<a name="l00035"></a><a class="code" href="class_environment.html">00035</a> <span class="keyword">class </span><a class="code" href="class_environment.html" title="Stocke l&#39;environnement.">Environment</a>
+<a name="l00036"></a>00036 {
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038         <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_game.html" title="Gère le jeu.">Game</a>;
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040         <span class="keyword">private</span> :
+<a name="l00041"></a>00041 
+<a name="l00042"></a><a class="code" href="class_environment.html#a04e014286725b97704888d626f088faa">00042</a>                 list&lt;DecorView&gt; <a class="code" href="class_environment.html#a04e014286725b97704888d626f088faa" title="Liste des décors de l&#39;environnement.">decors</a>; 
+<a name="l00043"></a><a class="code" href="class_environment.html#aa2c58fda55d8068ac4c506f374d69b45">00043</a>                 list&lt;PlatformView&gt; <a class="code" href="class_environment.html#aa2c58fda55d8068ac4c506f374d69b45" title="Liste des plate-formes de l&#39;environnement.">platforms</a>; 
+<a name="l00044"></a>00044                 <span class="comment">//list&lt;Destructible&gt; destructibles; /*!&lt; \brief Liste des éléments destructibles de l&#39;environnement*/ // TODO</span>
+<a name="l00045"></a>00045                 
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047         <span class="keyword">public</span> :
+<a name="l00048"></a>00048 
+<a name="l00054"></a>00054                 <a class="code" href="class_environment.html" title="Stocke l&#39;environnement.">Environment</a>();
+<a name="l00055"></a>00055 
+<a name="l00061"></a>00061                 ~<a class="code" href="class_environment.html" title="Stocke l&#39;environnement.">Environment</a>();
+<a name="l00062"></a>00062 
+<a name="l00070"></a>00070                 <span class="keywordtype">void</span> <a class="code" href="class_game.html#ab268789fc559218dc907e82d34dcf970" title="Affichage.">display</a>(RenderWindow* window);
+<a name="l00071"></a>00071 
+<a name="l00081"></a>00081                 <span class="keywordtype">void</span> addDecor(<a class="code" href="class_int2.html">Int2</a> siz, Texture* tex, <span class="keywordtype">int</span> z);
+<a name="l00082"></a>00082 
+<a name="l00093"></a>00093                 <span class="keywordtype">void</span> addPlatform(<a class="code" href="class_int2.html">Int2</a> pos, <a class="code" href="class_int2.html">Int2</a> siz, <span class="keywordtype">int</span> wl, Texture* tex=NULL);
+<a name="l00094"></a>00094                 
+<a name="l00095"></a>00095 
+<a name="l00096"></a>00096                 <span class="comment">//void addDestructible(); // TODO</span>
+<a name="l00097"></a>00097 };
+<a name="l00098"></a>00098 
+<a name="l00101"></a>00101 <span class="preprocessor">#endif</span>
+</pre></div></div><!-- contents -->
+</div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><a class="el" href="_environment_8h.html">Environment.h</a>      </li>
+
+    <li class="footer">Généré le Samedi Mars 28 2015 18:14:07 pour Metal Slug par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
+   </ul>
+ </div>
+
+
+</body>
+</html>

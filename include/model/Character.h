@@ -1,6 +1,14 @@
 #ifndef CHARACTER_H
 #define CHARACTER_H
 
+/*!
+ * \file Character.h
+ * \author Jules
+ * \brief Déclaration de la classe Character
+ * \addtogroup Model 
+ * @{
+ */
+
 #include <iostream>
 #include <sstream>
 #include <list>
@@ -78,5 +86,7 @@ class Character : public ObjetPhysique
 };
 
 
+
+/** @}*/
 
 #endif

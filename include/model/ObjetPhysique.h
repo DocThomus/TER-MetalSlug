@@ -1,6 +1,14 @@
 #ifndef OBJETPHYSIQUE_H
 #define OBJETPHYSIQUE_H
 
+/*!
+ * \file ObjetPhysique.h
+ * \author Jules
+ * \brief Déclaration de la classe ObjetPhysique
+ * \addtogroup Model 
+ * @{
+ */
+
 #include <iostream>
 #include <tools/tools.h>
 
@@ -51,5 +59,7 @@ class ObjetPhysique
 };
 
 
+
+/** @}*/
 
 #endif

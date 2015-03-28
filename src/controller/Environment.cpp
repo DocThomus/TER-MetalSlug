@@ -9,12 +9,6 @@ Environment::Environment()
 
 
 
-Environment::Environment(string filename)
-{
-	
-}
-
-
 
 Environment::~Environment()
 {}

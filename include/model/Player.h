@@ -1,6 +1,14 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
+/*!
+ * \file Player.h
+ * \author Jules
+ * \brief Déclaration de la classe Player
+ * \addtogroup Model 
+ * @{
+ */
+
 #include <iostream>
 #include <sstream>
 #include <vector>
@@ -60,5 +68,8 @@ class Player : public Character
 		void setWeapon(int w);
 
 };
+
+
+/** @}*/
 
 #endif
