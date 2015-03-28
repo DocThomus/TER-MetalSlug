@@ -2,16 +2,16 @@
 
 
 DecorView::DecorView(Int2 pos, Int2 siz, int z)
-:Decor(pos,siz,z)
+:Decor(pos,siz,z), tex_x(0)
 {
-
 }
 
 
 
 DecorView::DecorView()
-:Decor()
-{}
+:Decor(), tex_x(0)
+{	
+}
 
 
 DecorView::~DecorView()
@@ -34,9 +34,6 @@ void DecorView::updateIntRect()
 		Vector2u t_siz = tex->getSize();
 		Float2 siz(t_siz.x,t_siz.y);
 
-		// cout << siz.x << "   " << siz.y << endl;
-		// cout << size.x << "   " << size.y << endl;
-
 		if(repeat_tex.x)
 		{
 			if(!repeat_tex.y)
@@ -55,3 +52,19 @@ void DecorView::updateIntRect()
 	}
 }
 
+
+
+
+
+void DecorView::animate(int x)
+{
+	Decor::animate(x); // decalage de l'objet
+
+	//cout << z << endl;
+	
+	/* DÉCALAGE DE LA TEXTURE EN PRENANT COMPTE DU Z POUR LE PARALLAXE */
+	IntRect rect = body.getTextureRect();
+	rect.left += (x-tex_x) / -z;
+	body.setTextureRect(rect);
+	tex_x = x;
+}

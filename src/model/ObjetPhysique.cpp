@@ -11,7 +11,6 @@ ObjetPhysique::ObjetPhysique()
 {
 	position.x = 0; position.y = 0;
 	size.x = 0;     size.y = 0;
-	z = 0;
 	movement.x = 0; movement.y = 0;
 }
 
@@ -69,7 +68,6 @@ void ObjetPhysique::print(ostream& os) const
     os << "===ObjetPhysique===" << endl;
     os << "=== Position  : " << position << endl;  
     os << "=== Taille    : " << size << endl;  
-    os << "=== Z-index   : " << z << endl;  
     os << "=== Masse     : " << mass << endl;  
     os << "=== Mouvement : " << movement << endl;
     os << "==================";

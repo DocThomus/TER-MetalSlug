@@ -20,6 +20,8 @@ class DecorView : public Decor, public MyDrawable
 
 	private :
 
+		int tex_x;
+
 
 	public :
 		
@@ -29,6 +31,8 @@ class DecorView : public Decor, public MyDrawable
 
 		void display(RenderWindow* window);
 		void updateIntRect();
+
+		void animate(int x);
 
 };
 

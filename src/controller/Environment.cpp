@@ -32,9 +32,9 @@ void Environment::display(RenderWindow* window)
 
 
 
-void Environment::addDecor(Texture* tex)
+void Environment::addDecor(Int2 siz, Texture* tex, int z)
 {
-	DecorView tmp(Int2(0,0),Int2(1366*10,768),-4);
+	DecorView tmp(Int2(0,0),siz,z);
 	tmp.setTexture(tex,Bool2(true,false));
 	decors.push_back(tmp);
 }

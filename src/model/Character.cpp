@@ -92,8 +92,7 @@ void Character::print(ostream& os) const
 {  
     os << "===Character===" << endl;
     os << "=== Position  : " << position << endl;  
-    os << "=== Taille    : " << size << endl;  
-    os << "=== Z-index   : " << z << endl;  
+    os << "=== Taille    : " << size << endl; 
     os << "=== Masse     : " << mass << endl;  
     os << "=== Mouvement : " << movement << endl;
     os << "==================";

@@ -27,9 +27,9 @@ void Level::display(RenderWindow* window)
 }
 
 
-void Level::addDecor(Texture* tex)
+void Level::addDecor(Int2 siz, Texture* tex, int z)
 {
-	environment.addDecor(tex);
+	environment.addDecor(siz,tex,z);
 }
 
 

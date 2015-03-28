@@ -15,7 +15,6 @@ class ObjetPhysique
 
 		Int2 position;
 		Int2 size;
-		int z;
 
 		int mass;
 		Float2 movement;

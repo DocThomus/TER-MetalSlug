@@ -16,22 +16,27 @@ Game::~Game()
 
 void Game::update(Time dt)
 {
-    int t = dt.asMilliseconds();
+    int t = dt.asMilliseconds(); // temps écoulé
 
-    deleteDeadObjects();
+    deleteDeadObjects(); // suppression des objets hors de l'écran ou "morts"
     
-    player.animate(t);
+    player.animate(t); // animation du player
 
-    updateView(t);
+    updateView(t); // mise a jour de la vue
+
+    for(list<DecorView>::iterator d = level.environment.decors.begin(); d != level.environment.decors.end(); d++)
+    {
+        (*d).animate(int(view.getCenter().x-view.getSize().x/2)); // déplacement des décors
+    }
 
     for(list<EnemyView*>::iterator e = enemies.begin(); e != enemies.end(); e++)
     {
-        (*e)->animate(t);
+        (*e)->animate(t); // animation des ennemis
     }
 
     for(list<AmmoView*>::iterator a = ammo.begin(); a != ammo.end(); a++)
     {
-        (*a)->animate(t);
+        (*a)->animate(t); // animation des amos
     }
 }   
 
@@ -457,6 +462,9 @@ void Game::applyConfig(RenderWindow* window)
     window->setKeyRepeatEnabled(false);
 
 
+    /* CONFIG */
+    config->resolution = Int2(mode.width,mode.height);
+
     /* CAMERA */
     view = View(FloatRect(0, 0, mode.width, mode.height));
     view_target = (ObjetPhysique*)(&player);
@@ -499,7 +507,7 @@ void Game::loadLevel()
     t->setRepeated(true);
     textures.push_back(t);
     
-    level.addDecor(textures[textures.size()-1]);
+    level.addDecor(config->resolution,textures[textures.size()-1]);
 
     t = new Texture();
     t->loadFromFile("res/tex/decor/wall.png");

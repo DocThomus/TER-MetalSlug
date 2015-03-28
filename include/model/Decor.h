@@ -26,7 +26,7 @@ class Decor : public ObjetPhysique
 
 		void print(ostream& os) const;
 
-
+		virtual void animate(int x);
 
 };
 
