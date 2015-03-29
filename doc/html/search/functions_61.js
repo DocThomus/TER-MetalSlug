@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['addanimation',['addAnimation',['../class_my_drawable.html#a5c09f4efabebff6ca204786b40582341',1,'MyDrawable']]],
+  ['addanimations',['addAnimations',['../class_my_drawable.html#a2f4426bbae3d6afaa9a52756a110c9fc',1,'MyDrawable::addAnimations(vector&lt; Animation * &gt; v)'],['../class_my_drawable.html#aa8a1d18c3480e2e55205d0ec0e27f8dc',1,'MyDrawable::addAnimations(string filename)']]],
   ['adddecor',['addDecor',['../class_environment.html#a0be12abd292318011bdaecd40756cbf5',1,'Environment::addDecor()'],['../class_level.html#a03d2bce4cb198bcd9f16136561fedddf',1,'Level::addDecor()']]],
   ['addframe',['addFrame',['../class_animation.html#a749d856eb93c79dd39230ca75af32f29',1,'Animation']]],
   ['addmovement',['addMovement',['../class_objet_physique.html#a34eb4c570856c55dd4a5c3aea3dd2d08',1,'ObjetPhysique']]],

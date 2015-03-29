@@ -119,58 +119,56 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00027"></a>00027 <span class="keyword">using namespace </span>std;
 <a name="l00028"></a>00028 <span class="keyword">using namespace </span>sf;
 <a name="l00029"></a>00029 
-<a name="l00030"></a>00030 <span class="keyword">class </span><a class="code" href="class_weapon_view.html">WeaponView</a>;
+<a name="l00030"></a>00030 <span class="keyword">class </span><a class="code" href="class_weapon_view.html" title="Un objet Weapon permettant de joueur des sons.">WeaponView</a>;
 <a name="l00031"></a>00031 
 <a name="l00032"></a>00032 
-<a name="l00033"></a>00033 <span class="comment">/***</span>
-<a name="l00034"></a>00034 <span class="comment">* PlayerView -&gt; Player -&gt; Character -&gt; ObjetPhysique</span>
-<a name="l00035"></a>00035 <span class="comment">*           -&gt; MyDrawable</span>
-<a name="l00036"></a>00036 <span class="comment">* ===========================================================</span>
-<a name="l00037"></a>00037 <span class="comment">* Permet d&#39;afficher un objet Player avec diverses animations.</span>
-<a name="l00038"></a>00038 <span class="comment">***/</span>
-<a name="l00039"></a>00039 
+<a name="l00033"></a>00033 
+<a name="l00037"></a><a class="code" href="class_player_view.html">00037</a> <span class="keyword">class </span><a class="code" href="class_player_view.html" title="Un objet Player affichable.">PlayerView</a> : <span class="keyword">public</span> <a class="code" href="class_player.html" title="Modélise le joueur.">Player</a>, <span class="keyword">public</span> <a class="code" href="class_my_drawable.html" title="Un rectangle affichable.">MyDrawable</a>
+<a name="l00038"></a>00038 {
+<a name="l00039"></a>00039         <span class="keyword">public</span> :
 <a name="l00040"></a>00040 
-<a name="l00041"></a><a class="code" href="class_player_view.html">00041</a> <span class="keyword">class </span><a class="code" href="class_player_view.html">PlayerView</a> : <span class="keyword">public</span> <a class="code" href="class_player.html" title="Modélise le joueur.">Player</a>, <span class="keyword">public</span> <a class="code" href="class_my_drawable.html">MyDrawable</a>
-<a name="l00042"></a>00042 {
-<a name="l00043"></a>00043         <span class="keyword">public</span> :
-<a name="l00044"></a>00044 
 <a name="l00045"></a>00045                 <span class="keyword">enum</span> PlayerAnimationsBody
 <a name="l00046"></a>00046                 {
 <a name="l00047"></a>00047                         PISTOLRUN, PISTOLSHOOT, PISTOLSHOOTUP, PISTOLKNEE, PISTOLKNEESHOOT
 <a name="l00048"></a>00048                 };
 <a name="l00049"></a>00049 
-<a name="l00050"></a>00050                 <span class="keyword">enum</span> PlayerAnimationsLegs
-<a name="l00051"></a>00051                 {
-<a name="l00052"></a>00052                         STAND, RUN, SLOW, FALL, JUMP
-<a name="l00053"></a>00053                 };
-<a name="l00054"></a>00054 
-<a name="l00055"></a>00055 
-<a name="l00056"></a>00056         <span class="keyword">private</span> :
-<a name="l00057"></a>00057 
+<a name="l00054"></a>00054                 <span class="keyword">enum</span> PlayerAnimationsLegs
+<a name="l00055"></a>00055                 {
+<a name="l00056"></a>00056                         STAND, RUN, SLOW, FALL, JUMP
+<a name="l00057"></a>00057                 };
 <a name="l00058"></a>00058 
-<a name="l00059"></a>00059         <span class="keyword">public</span> :
-<a name="l00060"></a>00060 
-<a name="l00061"></a>00061                 <a class="code" href="class_member_view.html">MemberView</a> legs;
-<a name="l00062"></a>00062                 <span class="comment">//RectangleShape test;</span>
-<a name="l00063"></a>00063 
-<a name="l00064"></a>00064                 
-<a name="l00065"></a>00065                 <a class="code" href="class_player_view.html">PlayerView</a>(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> pos, <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> siz, <span class="keywordtype">int</span> m, <span class="keywordtype">int</span> max_h);
-<a name="l00066"></a>00066                 <a class="code" href="class_player_view.html">PlayerView</a>();
-<a name="l00067"></a>00067                 ~<a class="code" href="class_player_view.html">PlayerView</a>();
-<a name="l00068"></a>00068 
-<a name="l00069"></a>00069                 <span class="keywordtype">void</span> init();
-<a name="l00070"></a>00070 
-<a name="l00071"></a>00071                 <span class="keywordtype">void</span> display(RenderWindow* window);
-<a name="l00072"></a>00072                 <span class="keywordtype">void</span> animate(<span class="keywordtype">int</span> dt);
-<a name="l00073"></a>00073                 <span class="keywordtype">void</span> updateIntRect();
-<a name="l00074"></a>00074 
-<a name="l00075"></a>00075                 <span class="keywordtype">void</span> walk(<span class="keywordtype">int</span> way);
-<a name="l00076"></a>00076                 <span class="keywordtype">void</span> kneel(<span class="keywordtype">bool</span>);
-<a name="l00077"></a>00077                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> shoot(list&lt;AmmoView*&gt;* ammos, <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> angle = <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a>(1,0));
-<a name="l00078"></a>00078 };
-<a name="l00079"></a>00079 
-<a name="l00080"></a>00080 
-<a name="l00083"></a>00083 <span class="preprocessor">#endif</span>
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060         <span class="keyword">private</span> :
+<a name="l00061"></a>00061 
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063         <span class="keyword">public</span> :
+<a name="l00064"></a>00064 
+<a name="l00065"></a><a class="code" href="class_player_view.html#ae7a4f3448d524b3981e59e7c4b3ca627">00065</a>                 <a class="code" href="class_member_view.html" title="Un membre d&#39;un character destiné à être affiché.">MemberView</a> <a class="code" href="class_player_view.html#ae7a4f3448d524b3981e59e7c4b3ca627" title="L&#39;objet symbolisant les jambes du joueur.">legs</a>; 
+<a name="l00066"></a>00066                 <span class="comment">//RectangleShape test;</span>
+<a name="l00067"></a>00067 
+<a name="l00077"></a>00077                 <a class="code" href="class_player_view.html" title="Un objet Player affichable.">PlayerView</a>(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> pos, <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> siz, <span class="keywordtype">int</span> m, <span class="keywordtype">int</span> max_h);
+<a name="l00078"></a>00078 
+<a name="l00084"></a>00084                 <a class="code" href="class_player_view.html" title="Un objet Player affichable.">PlayerView</a>();
+<a name="l00085"></a>00085 
+<a name="l00091"></a>00091                 ~<a class="code" href="class_player_view.html" title="Un objet Player affichable.">PlayerView</a>();
+<a name="l00092"></a>00092 
+<a name="l00098"></a>00098                 <span class="keywordtype">void</span> init();
+<a name="l00099"></a>00099 
+<a name="l00106"></a>00106                 <span class="keywordtype">void</span> display(RenderWindow* window);
+<a name="l00107"></a>00107 
+<a name="l00114"></a>00114                 <span class="keywordtype">void</span> animate(<span class="keywordtype">int</span> dt);
+<a name="l00115"></a>00115 
+<a name="l00119"></a>00119                 <span class="keywordtype">void</span> updateIntRect();
+<a name="l00120"></a>00120 
+<a name="l00127"></a>00127                 <span class="keywordtype">void</span> walk(<span class="keywordtype">int</span> way);
+<a name="l00128"></a>00128 
+<a name="l00136"></a>00136                 <span class="keywordtype">void</span> kneel(<span class="keywordtype">bool</span>);
+<a name="l00137"></a>00137 
+<a name="l00144"></a>00144                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> shoot(list&lt;AmmoView*&gt;* ammos, <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> angle = <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a>(1,0));
+<a name="l00145"></a>00145 };
+<a name="l00146"></a>00146 
+<a name="l00147"></a>00147 
+<a name="l00150"></a>00150 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -191,7 +189,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul>
       <li class="navelem"><a class="el" href="_player_view_8h.html">PlayerView.h</a>      </li>
 
-    <li class="footer">Généré le Dimanche Mars 29 2015 16:50:36 pour Metal Slug par
+    <li class="footer">Généré le Dimanche Mars 29 2015 23:07:17 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

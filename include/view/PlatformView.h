@@ -24,17 +24,14 @@ using namespace sf;
 
 
 
-/***
-* PlatformView -> Platform -> ObjetPhysique
-*              -> MyDrawable
-* ===========================================================
-* Permet d'afficher un objet Platform. Si la plateforme a
-* une hauteur nulle, on ne l'affiche pas (c'est une plateforme
-* invisible).
-***/
 
-
-
+/*!\class PlatformView
+ * \brief Un objet Plateform affichable.
+ *
+ * Permet d'afficher un objet Platform. Si la plateforme a
+ * une hauteur nulle, on ne l'affiche pas (c'est une plateforme
+ * invisible).
+ */
 class PlatformView : public Platform, public MyDrawable
 {
 
@@ -43,11 +40,41 @@ class PlatformView : public Platform, public MyDrawable
 
 	public :
 		
+		/*!
+	     * \brief Constructeur
+	     *
+	     * Constructeur de la classe PlatformView.
+	     * \param pos : Position de la plate-forme.
+	     * \param siz : Taille de la plate-forme.
+	     * \param z : Hauteur du sol de la plate-forme.
+	     */
 		PlatformView(Int2 pos, Int2 siz, int wl);
+
+		/*!
+	     * \brief Constructeur
+	     *
+	     * Constructeur par défaut de la classe PlateformView.
+	     */
 		PlatformView();
+
+		/*!
+	     * \brief Destructeur
+	     *
+	     * Destructeur de la classe PlateformView
+	     */
 		~PlatformView();
 
+		/*!
+	     * \brief Affichage
+	     *
+	     * Affiche l'objet dans une fenêtre de rendu.
+	     * \param window : Fenêtre d'affichage
+	     */
 		void display(RenderWindow* window);
+
+		/*!
+	     * \brief Mise à jour du rectangle de selection de la texture.
+	     */
 		void updateIntRect();
 		
 };

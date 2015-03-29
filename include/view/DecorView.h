@@ -24,7 +24,7 @@ using namespace sf;
 
 
 
-/*!\class AmmoView
+/*!\class DecorView
  * \brief Un objet Decor affichable.
  *
  * La texture est décalée en fonction du mouvement de la vue.
@@ -44,7 +44,7 @@ class DecorView : public Decor, public MyDrawable
 		/*!
 	     * \brief Constructeur
 	     *
-	     * Constructeur de la classe DecorVIew.
+	     * Constructeur de la classe DecorView.
 	     * \param pos : Position initiale du décor.
 	     * \param siz : Taille initiale du décor.
 	     * \param z : Indice d'éloignement du décor.
@@ -54,7 +54,7 @@ class DecorView : public Decor, public MyDrawable
 		/*!
 	     * \brief Constructeur
 	     *
-	     * Constructeur par défaut de la classe DecorVIew.
+	     * Constructeur par défaut de la classe DecorView.
 	     */
 		DecorView();
 

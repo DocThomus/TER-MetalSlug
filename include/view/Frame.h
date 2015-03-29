@@ -29,23 +29,52 @@ using namespace sf;
 * texture.
 ***/
 
-
+/*!\class Frame
+ * \brief Une frame d'une feuille de sprite.
+ *
+ * Contient la position et la taille d'une frame dans une 
+* texture.
+ */
 class Frame
 {
 
 	private :
 
-		Int2 position;
-		Int2 size;
+		Int2 position; /*!< \brief Position de la frame. */
+		Int2 size; /*!< \brief Taille de la frame. */
 
 
 	public :
 		
+		/*!
+	     * \brief Constructeur
+	     *
+	     * Constructeur par défaut de la classe Frame, initialisée à 0.
+	     */
 		Frame();
+
+		/*!
+	     * \brief Constructeur
+	     *
+	     * Constructeur de la classe Animation.
+	     */
 		Frame(Int2 pos, Int2 siz);
+
+		/*!
+	     * \brief Destructeur
+	     *
+	     * Destructeur de la classe Animation
+	     */
 		~Frame();
 
+		/*!
+	     * \brief Retourne la position de la frame.
+	     */
 		Int2 getPosition();
+
+		/*!
+	     * \brief Retourne la taille de la frame.
+	     */
 		Int2 getSize();
 
 };

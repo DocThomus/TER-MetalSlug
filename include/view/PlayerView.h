@@ -30,23 +30,27 @@ using namespace sf;
 class WeaponView;
 
 
-/***
-* PlayerView -> Player -> Character -> ObjetPhysique
-*           -> MyDrawable
-* ===========================================================
-* Permet d'afficher un objet Player avec diverses animations.
-***/
 
-
+/*!\class PlayerView
+ * \brief Un objet Player affichable.
+ */
 class PlayerView : public Player, public MyDrawable
 {
 	public :
 
+		/*!
+	     * \enum PlayerAnimationBody
+	     * \brief Différentes animations du corps du joueur.
+	     */
 		enum PlayerAnimationsBody
 		{
 			PISTOLRUN, PISTOLSHOOT, PISTOLSHOOTUP, PISTOLKNEE, PISTOLKNEESHOOT
 		};
 
+		/*!
+	     * \enum PlayerAnimationLegs
+	     * \brief Différentes animations des jambes du joueur.
+	     */
 		enum PlayerAnimationsLegs
 		{
 			STAND, RUN, SLOW, FALL, JUMP
@@ -58,22 +62,85 @@ class PlayerView : public Player, public MyDrawable
 
 	public :
 
-		MemberView legs;
+		MemberView legs; /*!< \brief L'objet symbolisant les jambes du joueur. */
 		//RectangleShape test;
 
-		
+		/*!
+	     * \brief Constructeur
+	     *
+	     * Constructeur de la classe PlayerView.
+	     * \param pos : Position initiale du joueur.
+	     * \param siz : Taille initiale du joueur.
+	     * \param m : Masse du joueur.
+	     * \param max_h : Santé maximale du joueur.
+	     */
 		PlayerView(Int2 pos, Int2 siz, int m, int max_h);
+
+		/*!
+	     * \brief Constructeur
+	     *
+	     * Constructeur par défaut de la classe PlayerView
+	     */
 		PlayerView();
+
+		/*!
+	     * \brief Destructeur
+	     *
+	     * Destructeur de la classe PlayerView
+	     */
 		~PlayerView();
 
+		/*!
+	     * \brief Initialisation
+	     *
+	     * Initialise l'affichage du joueur.
+	     */
 		void init();
 
+		/*!
+	     * \brief Affichage
+	     *
+	     * Affiche le joueur dans une fenêtre de rendu.
+	     * \param window : Fenêtre d'affichage
+	     */
 		void display(RenderWindow* window);
+
+		/*!
+	     * \brief Animer
+	     *
+	     * Déplace le joueur en fonction du temps.
+	     * \param dt : Temps écoulé depuis le dernier appel de la fonction.
+	     */
 		void animate(int dt);
+
+		/*!
+	     * \brief Mise à jour du rectangle de selection de la texture.
+	     */
 		void updateIntRect();
 
+		/*!
+	     * \brief Courir
+	     *
+	     * Fait courir le joueur dans une direction passée en paramètre.
+	     * Change l'animation du joueur en conséquence.
+	     */
 		void walk(int way);
+
+		/*!
+	     * \brief À genoux.
+	     *
+	     * Fait se mettre à genoux le joueur (ou se lever).
+	     * Change l'animation du joueur en conséquence.
+	     * \param b : Vrai si le joueur doit se mettre à genoux, Faux s'il doit se lever.
+	     */
 		void kneel(bool);
+
+		/*!
+	     * \brief Tirer.
+	     *
+	     * \param air : Pointeur sur un vecteur d'AmmoView destiné à contenir les projectiles du jeu.
+	     * \param angle : Direction dans laquelle le personnage tire.
+	     */
 		virtual void shoot(list<AmmoView*>* ammos, Int2 angle = Int2(1,0));
 };
 

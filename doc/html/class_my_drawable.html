@@ -103,18 +103,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="title">Référence de la classe MyDrawable<div class="ingroups"><a class="el" href="group___view.html">View</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="MyDrawable" --><div class="dynheader">
+<!-- doxytag: class="MyDrawable" -->
+<p>Un rectangle affichable.  
+ <a href="class_my_drawable.html#details">Plus de détails...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_my_drawable_8h_source.html">MyDrawable.h</a>&gt;</code></p>
+<div class="dynheader">
 Graphe d'héritage de MyDrawable:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_my_drawable.png" usemap="#MyDrawable_map" alt=""/>
   <map id="MyDrawable_map" name="MyDrawable_map">
 <area href="class_ammo_view.html" title="Un objet Ammo affichable." alt="AmmoView" shape="rect" coords="0,56,86,80"/>
-<area href="class_decor_view.html" alt="DecorView" shape="rect" coords="96,56,182,80"/>
+<area href="class_decor_view.html" title="Un objet Decor affichable." alt="DecorView" shape="rect" coords="96,56,182,80"/>
 <area href="class_enemy_view.html" title="Un objet Enemy affichable." alt="EnemyView" shape="rect" coords="192,56,278,80"/>
-<area href="class_member_view.html" alt="MemberView" shape="rect" coords="288,56,374,80"/>
-<area href="class_platform_view.html" alt="PlatformView" shape="rect" coords="384,56,470,80"/>
-<area href="class_player_view.html" alt="PlayerView" shape="rect" coords="480,56,566,80"/>
+<area href="class_member_view.html" title="Un membre d&#39;un character destiné à être affiché." alt="MemberView" shape="rect" coords="288,56,374,80"/>
+<area href="class_platform_view.html" title="Un objet Plateform affichable." alt="PlatformView" shape="rect" coords="384,56,470,80"/>
+<area href="class_player_view.html" title="Un objet Player affichable." alt="PlayerView" shape="rect" coords="480,56,566,80"/>
 </map>
  </div></div>
 
@@ -122,41 +127,255 @@ Graphe d'héritage de MyDrawable:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7833de40ca86a4b164f844e50d13c76f"></a><!-- doxytag: member="MyDrawable::display" ref="a7833de40ca86a4b164f844e50d13c76f" args="(RenderWindow *window)=0" -->
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>display</b> (RenderWindow *window)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_drawable.html#af42e8a1ccb99662f5e35c40e7afeb7ab">MyDrawable</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#af42e8a1ccb99662f5e35c40e7afeb7ab"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_drawable.html#ad4816e6eef9fab896da498c82b7860f3">~MyDrawable</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur.  <a href="#ad4816e6eef9fab896da498c82b7860f3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_drawable.html#a7833de40ca86a4b164f844e50d13c76f">display</a> (RenderWindow *window)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Affichage.  <a href="#a7833de40ca86a4b164f844e50d13c76f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a530329a40bbb3497ac94a40006a3e4e9"></a><!-- doxytag: member="MyDrawable::resetAnim" ref="a530329a40bbb3497ac94a40006a3e4e9" args="()" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>resetAnim</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_drawable.html#a530329a40bbb3497ac94a40006a3e4e9">resetAnim</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Remet l'animation courante au début. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5c09f4efabebff6ca204786b40582341"></a><!-- doxytag: member="MyDrawable::addAnimation" ref="a5c09f4efabebff6ca204786b40582341" args="(Animation *a)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addAnimation</b> (<a class="el" href="class_animation.html">Animation</a> *a)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_drawable.html#a5c09f4efabebff6ca204786b40582341">addAnimation</a> (<a class="el" href="class_animation.html">Animation</a> *a)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute une animation à l'objet. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2f4426bbae3d6afaa9a52756a110c9fc"></a><!-- doxytag: member="MyDrawable::addAnimations" ref="a2f4426bbae3d6afaa9a52756a110c9fc" args="(vector&lt; Animation * &gt; v)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addAnimations</b> (vector&lt; <a class="el" href="class_animation.html">Animation</a> * &gt; v)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_drawable.html#a2f4426bbae3d6afaa9a52756a110c9fc">addAnimations</a> (vector&lt; <a class="el" href="class_animation.html">Animation</a> * &gt; v)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute plusieurs animations à l'objet. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa8a1d18c3480e2e55205d0ec0e27f8dc"></a><!-- doxytag: member="MyDrawable::addAnimations" ref="aa8a1d18c3480e2e55205d0ec0e27f8dc" args="(string filename)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addAnimations</b> (string filename)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaa74ca318869c1125c180405c25a1070"></a><!-- doxytag: member="MyDrawable::changeAnimation" ref="aaa74ca318869c1125c180405c25a1070" args="(int i, bool repeat=true, int next=&#45;1)" -->
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>changeAnimation</b> (int i, bool repeat=true, int next=-1)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_drawable.html#aa8a1d18c3480e2e55205d0ec0e27f8dc">addAnimations</a> (string filename)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute des animations chargées à partir d"un fichier XML. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_drawable.html#aaa74ca318869c1125c180405c25a1070">changeAnimation</a> (int i, bool repeat=true, int next=-1)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Changement d'animation.  <a href="#aaa74ca318869c1125c180405c25a1070"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abbb1eebda623f481dcaab8f0da21e7b8"></a><!-- doxytag: member="MyDrawable::changeFrame" ref="abbb1eebda623f481dcaab8f0da21e7b8" args="(int i)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>changeFrame</b> (int i)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_drawable.html#abbb1eebda623f481dcaab8f0da21e7b8">changeFrame</a> (int i)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Change la frame courante de l'animation courante. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae214cacfd929774d1b4a67949f0f5098"></a><!-- doxytag: member="MyDrawable::getFrame" ref="ae214cacfd929774d1b4a67949f0f5098" args="()" -->
-<a class="el" href="class_frame.html">Frame</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getFrame</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac71129db833c8d46d303e7fed4150df0"></a><!-- doxytag: member="MyDrawable::setNextFrame" ref="ac71129db833c8d46d303e7fed4150df0" args="(int n=1)" -->
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>setNextFrame</b> (int n=1)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa832819817385495698bdd8c5f01a3a4"></a><!-- doxytag: member="MyDrawable::setTexture" ref="aa832819817385495698bdd8c5f01a3a4" args="(Texture *tex, Bool2 r=Bool2(false, false))" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setTexture</b> (Texture *tex, <a class="el" href="class_bool2.html">Bool2</a> r=<a class="el" href="class_bool2.html">Bool2</a>(false, false))</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a55c982fee9a5d08fe66910aafd3910ac"></a><!-- doxytag: member="MyDrawable::updateIntRect" ref="a55c982fee9a5d08fe66910aafd3910ac" args="()" -->
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>updateIntRect</b> ()</td></tr>
+<a class="el" href="class_frame.html">Frame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_drawable.html#ae214cacfd929774d1b4a67949f0f5098">getFrame</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne la frame courante de l'animation courante. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_drawable.html#ac71129db833c8d46d303e7fed4150df0">setNextFrame</a> (int n=1)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Changement de frame.  <a href="#ac71129db833c8d46d303e7fed4150df0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_drawable.html#aa832819817385495698bdd8c5f01a3a4">setTexture</a> (Texture *<a class="el" href="class_my_drawable.html#a0cf32fc0c746e45076e86f8a31cc75c2">tex</a>, <a class="el" href="class_bool2.html">Bool2</a> r=<a class="el" href="class_bool2.html">Bool2</a>(false, false))</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Définition de la texture.  <a href="#aa832819817385495698bdd8c5f01a3a4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_drawable.html#a55c982fee9a5d08fe66910aafd3910ac">updateIntRect</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Mise à jour de la texture.  <a href="#a55c982fee9a5d08fe66910aafd3910ac"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Attributs protégés</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa29e17ceff6fc13cfe239736aa2bd2e8"></a><!-- doxytag: member="MyDrawable::body" ref="aa29e17ceff6fc13cfe239736aa2bd2e8" args="" -->
-RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><b>body</b></td></tr>
+RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_drawable.html#aa29e17ceff6fc13cfe239736aa2bd2e8">body</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Rectangle à afficher. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7bcab73b05aa76533ade1b18e4e2dfd3"></a><!-- doxytag: member="MyDrawable::animations" ref="a7bcab73b05aa76533ade1b18e4e2dfd3" args="" -->
-vector&lt; <a class="el" href="class_animation.html">Animation</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>animations</b></td></tr>
+vector&lt; <a class="el" href="class_animation.html">Animation</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_drawable.html#a7bcab73b05aa76533ade1b18e4e2dfd3">animations</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Liste des animations de l'objet. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1e3baf6b086958918246e64c918cea07"></a><!-- doxytag: member="MyDrawable::current_anim" ref="a1e3baf6b086958918246e64c918cea07" args="" -->
-int&#160;</td><td class="memItemRight" valign="bottom"><b>current_anim</b></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_drawable.html#a1e3baf6b086958918246e64c918cea07">current_anim</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_animation.html" title="Stockage d&#39;une animation.">Animation</a> courante. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0cf32fc0c746e45076e86f8a31cc75c2"></a><!-- doxytag: member="MyDrawable::tex" ref="a0cf32fc0c746e45076e86f8a31cc75c2" args="" -->
-Texture *&#160;</td><td class="memItemRight" valign="bottom"><b>tex</b></td></tr>
+Texture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_drawable.html#a0cf32fc0c746e45076e86f8a31cc75c2">tex</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Texture à appliquer au rectangle. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a049b0e03ea369c98b9473dd4c0fdab90"></a><!-- doxytag: member="MyDrawable::repeat_tex" ref="a049b0e03ea369c98b9473dd4c0fdab90" args="" -->
-<a class="el" href="class_bool2.html">Bool2</a>&#160;</td><td class="memItemRight" valign="bottom"><b>repeat_tex</b></td></tr>
+<a class="el" href="class_bool2.html">Bool2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_drawable.html#a049b0e03ea369c98b9473dd4c0fdab90">repeat_tex</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si la texture doit être répétée horizontalement et/ou verticalement. <br/></td></tr>
 </table>
+<hr/><a name="details" id="details"></a><h2>Description détaillée</h2>
+<div class="textblock"><p>Un rectangle affichable. </p>
+<p>L'objet contient un rectangle et une texture à lui appliquer. La texture peut être répétée ou affichée. Il est aussi possible de lui définir une animation. </p>
+</div><hr/><h2>Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="af42e8a1ccb99662f5e35c40e7afeb7ab"></a><!-- doxytag: member="MyDrawable::MyDrawable" ref="af42e8a1ccb99662f5e35c40e7afeb7ab" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_my_drawable.html#af42e8a1ccb99662f5e35c40e7afeb7ab">MyDrawable::MyDrawable</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructeur. </p>
+<p>Constructeur par défaut de la classe <a class="el" href="class_my_drawable.html" title="Un rectangle affichable.">MyDrawable</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad4816e6eef9fab896da498c82b7860f3"></a><!-- doxytag: member="MyDrawable::~MyDrawable" ref="ad4816e6eef9fab896da498c82b7860f3" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_my_drawable.html#ad4816e6eef9fab896da498c82b7860f3">MyDrawable::~MyDrawable</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructeur. </p>
+<p>Destructeur de la classe <a class="el" href="class_my_drawable.html" title="Un rectangle affichable.">MyDrawable</a>. </p>
+
+</div>
+</div>
+<hr/><h2>Documentation des fonctions membres</h2>
+<a class="anchor" id="aaa74ca318869c1125c180405c25a1070"></a><!-- doxytag: member="MyDrawable::changeAnimation" ref="aaa74ca318869c1125c180405c25a1070" args="(int i, bool repeat=true, int next=&#45;1)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_my_drawable.html#aaa74ca318869c1125c180405c25a1070">MyDrawable::changeAnimation</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>repeat</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>next</em> = <code>-1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Changement d'animation. </p>
+<p>Change l'animation courante de l'objet. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>: Indice de l'animation. </td></tr>
+    <tr><td class="paramname">repeat</td><td>: Indique si l'animation doit se répéter ou non. </td></tr>
+    <tr><td class="paramname">next</td><td>: Si l'animation n'est pas répétée, next est l'indice de l'application qui sera lue ensuite. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7833de40ca86a4b164f844e50d13c76f"></a><!-- doxytag: member="MyDrawable::display" ref="a7833de40ca86a4b164f844e50d13c76f" args="(RenderWindow *window)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="class_my_drawable.html#a7833de40ca86a4b164f844e50d13c76f">MyDrawable::display</a> </td>
+          <td>(</td>
+          <td class="paramtype">RenderWindow *&#160;</td>
+          <td class="paramname"><em>window</em></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Affichage. </p>
+<p>Affiche l'objet dans une fenêtre de rendu. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>: Fenêtre d'affichage </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implémenté dans <a class="el" href="class_player_view.html#a0efbd8ed8178e7ca08b39a821c0e330f">PlayerView</a>, <a class="el" href="class_enemy_view.html#a356c5c35510ac5f4beb7a3181d5d1cf3">EnemyView</a>, <a class="el" href="class_ammo_view.html#a351f5630a29e0bb6b7e7afe05018d177">AmmoView</a>, <a class="el" href="class_decor_view.html#aa073c1f24d1c05ad1bf96a75e0a25f80">DecorView</a>, <a class="el" href="class_platform_view.html#a10ee06c6ce87dbabd2de37bed9ca7388">PlatformView</a>, et <a class="el" href="class_member_view.html#af4b8c4c426c7cee7eb8f6da99a1ea18d">MemberView</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac71129db833c8d46d303e7fed4150df0"></a><!-- doxytag: member="MyDrawable::setNextFrame" ref="ac71129db833c8d46d303e7fed4150df0" args="(int n=1)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_my_drawable.html#ac71129db833c8d46d303e7fed4150df0">MyDrawable::setNextFrame</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em> = <code>1</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Changement de frame. </p>
+<p>Indique à l'animation courante qu'elle doit passer à le frame suivante. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>: nombre de frames à passer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa832819817385495698bdd8c5f01a3a4"></a><!-- doxytag: member="MyDrawable::setTexture" ref="aa832819817385495698bdd8c5f01a3a4" args="(Texture *tex, Bool2 r=Bool2(false, false))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_my_drawable.html#aa832819817385495698bdd8c5f01a3a4">MyDrawable::setTexture</a> </td>
+          <td>(</td>
+          <td class="paramtype">Texture *&#160;</td>
+          <td class="paramname"><em>tex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_bool2.html">Bool2</a>&#160;</td>
+          <td class="paramname"><em>r</em> = <code><a class="el" href="class_bool2.html">Bool2</a>(false,&#160;false)</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Définition de la texture. </p>
+<p>Indique à l'objet quelle texture il doit appliquer à son rectangle. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tex</td><td>: Texture à appliquer. </td></tr>
+    <tr><td class="paramname">r</td><td>: Indique si la texture doit être ou non répétée horizontalement/verticalement. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a55c982fee9a5d08fe66910aafd3910ac"></a><!-- doxytag: member="MyDrawable::updateIntRect" ref="a55c982fee9a5d08fe66910aafd3910ac" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="class_my_drawable.html#a55c982fee9a5d08fe66910aafd3910ac">MyDrawable::updateIntRect</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Mise à jour de la texture. </p>
+<p>Met à jour la zone de la texture qui doit être appliquée au rectangle. </p>
+
+<p>Réimplémentée dans <a class="el" href="class_player_view.html#a7cdc999be1ee9fbf4c3c2c24635b63ce">PlayerView</a>, <a class="el" href="class_enemy_view.html#a1b225f456235e3bac12e02865b980405">EnemyView</a>, <a class="el" href="class_decor_view.html#ac6faa7f2053acc5325c9caa5010128c6">DecorView</a>, et <a class="el" href="class_platform_view.html#a99da0a19c08f39006baca5238e113d2e">PlatformView</a>.</p>
+
+</div>
+</div>
 <hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
 <li>include/view/<a class="el" href="_my_drawable_8h_source.html">MyDrawable.h</a></li>
 </ul>
@@ -180,7 +399,7 @@ Texture *&#160;</td><td class="memItemRight" valign="bottom"><b>tex</b></td></tr
     <ul>
       <li class="navelem"><a class="el" href="class_my_drawable.html">MyDrawable</a>      </li>
 
-    <li class="footer">Généré le Dimanche Mars 29 2015 16:50:37 pour Metal Slug par
+    <li class="footer">Généré le Dimanche Mars 29 2015 23:07:17 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

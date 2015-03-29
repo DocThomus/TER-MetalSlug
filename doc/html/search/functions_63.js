@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['changeframe',['changeFrame',['../class_animation.html#a7135e18ba575274108d66a91bf663d0c',1,'Animation']]],
+  ['changeanimation',['changeAnimation',['../class_my_drawable.html#aaa74ca318869c1125c180405c25a1070',1,'MyDrawable']]],
+  ['changeframe',['changeFrame',['../class_animation.html#a7135e18ba575274108d66a91bf663d0c',1,'Animation::changeFrame()'],['../class_my_drawable.html#abbb1eebda623f481dcaab8f0da21e7b8',1,'MyDrawable::changeFrame()']]],
   ['character',['Character',['../class_character.html#a0a2a5141c82d4938f3a6e70ab4edfd67',1,'Character::Character(Int2 pos, Int2 siz, int m, int max_h)'],['../class_character.html#adc27bdd255876169bad2ed0bae0cffb5',1,'Character::Character()']]],
   ['checkcollisionbottom',['checkCollisionBottom',['../class_game.html#a58775d7501843b4e455b582a9e15207f',1,'Game']]],
   ['checkcollisionleft',['checkCollisionLeft',['../class_game.html#a89555bc2a4c38cec721216228cf87fb7',1,'Game']]],

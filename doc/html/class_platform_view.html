@@ -102,14 +102,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="title">Référence de la classe PlatformView<div class="ingroups"><a class="el" href="group___view.html">View</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="PlatformView" --><!-- doxytag: inherits="Platform,MyDrawable" --><div class="dynheader">
+<!-- doxytag: class="PlatformView" --><!-- doxytag: inherits="Platform,MyDrawable" -->
+<p>Un objet Plateform affichable.  
+ <a href="class_platform_view.html#details">Plus de détails...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_platform_view_8h_source.html">PlatformView.h</a>&gt;</code></p>
+<div class="dynheader">
 Graphe d'héritage de PlatformView:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_platform_view.png" usemap="#PlatformView_map" alt=""/>
   <map id="PlatformView_map" name="PlatformView_map">
 <area href="class_platform.html" title="Modélise une plate-forme." alt="Platform" shape="rect" coords="0,56,93,80"/>
-<area href="class_my_drawable.html" alt="MyDrawable" shape="rect" coords="103,56,196,80"/>
+<area href="class_my_drawable.html" title="Un rectangle affichable." alt="MyDrawable" shape="rect" coords="103,56,196,80"/>
 <area href="class_objet_physique.html" title="Modélise un objet physique." alt="ObjetPhysique" shape="rect" coords="0,0,93,24"/>
 </map>
  </div></div>
@@ -118,13 +123,133 @@ Graphe d'héritage de PlatformView:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8c777b6c94c069eeb3335cfc5ceb03d1"></a><!-- doxytag: member="PlatformView::PlatformView" ref="a8c777b6c94c069eeb3335cfc5ceb03d1" args="(Int2 pos, Int2 siz, int wl)" -->
-&#160;</td><td class="memItemRight" valign="bottom"><b>PlatformView</b> (<a class="el" href="class_int2.html">Int2</a> pos, <a class="el" href="class_int2.html">Int2</a> siz, int wl)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a10ee06c6ce87dbabd2de37bed9ca7388"></a><!-- doxytag: member="PlatformView::display" ref="a10ee06c6ce87dbabd2de37bed9ca7388" args="(RenderWindow *window)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>display</b> (RenderWindow *window)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_platform_view.html#a8c777b6c94c069eeb3335cfc5ceb03d1">PlatformView</a> (<a class="el" href="class_int2.html">Int2</a> pos, <a class="el" href="class_int2.html">Int2</a> siz, int wl)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#a8c777b6c94c069eeb3335cfc5ceb03d1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_platform_view.html#acece1f4f9f6813a2dc5a389fc6869f3b">PlatformView</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#acece1f4f9f6813a2dc5a389fc6869f3b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_platform_view.html#a113995938de5b1009cd2608e3be78345">~PlatformView</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur.  <a href="#a113995938de5b1009cd2608e3be78345"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_platform_view.html#a10ee06c6ce87dbabd2de37bed9ca7388">display</a> (RenderWindow *window)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Affichage.  <a href="#a10ee06c6ce87dbabd2de37bed9ca7388"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a99da0a19c08f39006baca5238e113d2e"></a><!-- doxytag: member="PlatformView::updateIntRect" ref="a99da0a19c08f39006baca5238e113d2e" args="()" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>updateIntRect</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_platform_view.html#a99da0a19c08f39006baca5238e113d2e">updateIntRect</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Mise à jour du rectangle de selection de la texture. <br/></td></tr>
 </table>
+<hr/><a name="details" id="details"></a><h2>Description détaillée</h2>
+<div class="textblock"><p>Un objet Plateform affichable. </p>
+<p>Permet d'afficher un objet <a class="el" href="class_platform.html" title="Modélise une plate-forme.">Platform</a>. Si la plateforme a une hauteur nulle, on ne l'affiche pas (c'est une plateforme invisible). </p>
+</div><hr/><h2>Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="a8c777b6c94c069eeb3335cfc5ceb03d1"></a><!-- doxytag: member="PlatformView::PlatformView" ref="a8c777b6c94c069eeb3335cfc5ceb03d1" args="(Int2 pos, Int2 siz, int wl)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_platform_view.html#a8c777b6c94c069eeb3335cfc5ceb03d1">PlatformView::PlatformView</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_int2.html">Int2</a>&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_int2.html">Int2</a>&#160;</td>
+          <td class="paramname"><em>siz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>wl</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructeur. </p>
+<p>Constructeur de la classe <a class="el" href="class_platform_view.html" title="Un objet Plateform affichable.">PlatformView</a>. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>: Position de la plate-forme. </td></tr>
+    <tr><td class="paramname">siz</td><td>: Taille de la plate-forme. </td></tr>
+    <tr><td class="paramname">z</td><td>: Hauteur du sol de la plate-forme. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="acece1f4f9f6813a2dc5a389fc6869f3b"></a><!-- doxytag: member="PlatformView::PlatformView" ref="acece1f4f9f6813a2dc5a389fc6869f3b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_platform_view.html#a8c777b6c94c069eeb3335cfc5ceb03d1">PlatformView::PlatformView</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructeur. </p>
+<p>Constructeur par défaut de la classe PlateformView. </p>
+
+</div>
+</div>
+<a class="anchor" id="a113995938de5b1009cd2608e3be78345"></a><!-- doxytag: member="PlatformView::~PlatformView" ref="a113995938de5b1009cd2608e3be78345" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_platform_view.html#a113995938de5b1009cd2608e3be78345">PlatformView::~PlatformView</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructeur. </p>
+<p>Destructeur de la classe PlateformView </p>
+
+</div>
+</div>
+<hr/><h2>Documentation des fonctions membres</h2>
+<a class="anchor" id="a10ee06c6ce87dbabd2de37bed9ca7388"></a><!-- doxytag: member="PlatformView::display" ref="a10ee06c6ce87dbabd2de37bed9ca7388" args="(RenderWindow *window)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_platform_view.html#a10ee06c6ce87dbabd2de37bed9ca7388">PlatformView::display</a> </td>
+          <td>(</td>
+          <td class="paramtype">RenderWindow *&#160;</td>
+          <td class="paramname"><em>window</em></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Affichage. </p>
+<p>Affiche l'objet dans une fenêtre de rendu. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>: Fenêtre d'affichage </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implémente <a class="el" href="class_my_drawable.html#a7833de40ca86a4b164f844e50d13c76f">MyDrawable</a>.</p>
+
+</div>
+</div>
 <hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
 <li>include/view/<a class="el" href="_platform_view_8h_source.html">PlatformView.h</a></li>
 </ul>
@@ -148,7 +273,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>updateIntRect</b> ()<
     <ul>
       <li class="navelem"><a class="el" href="class_platform_view.html">PlatformView</a>      </li>
 
-    <li class="footer">Généré le Dimanche Mars 29 2015 16:50:37 pour Metal Slug par
+    <li class="footer">Généré le Dimanche Mars 29 2015 23:07:17 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -10,11 +10,17 @@ var searchData=
   ['_7eenemy',['~Enemy',['../class_enemy.html#ac0eec4755e28c02688065f9657150ac3',1,'Enemy']]],
   ['_7eenemyview',['~EnemyView',['../class_enemy_view.html#ac846d5bd0d6d91e1cbc1fbd3e90bcd07',1,'EnemyView']]],
   ['_7eenvironment',['~Environment',['../class_environment.html#a8e294735187880dd3d59be10c425b29d',1,'Environment']]],
+  ['_7eframe',['~Frame',['../class_frame.html#abec8c7bccdfc88cb4da137caae9f73d6',1,'Frame']]],
   ['_7egame',['~Game',['../class_game.html#ae3d112ca6e0e55150d2fdbc704474530',1,'Game']]],
   ['_7elevel',['~Level',['../class_level.html#a249eac1e8f19ff44134efa5e986feaca',1,'Level']]],
   ['_7emasterclass',['~MasterClass',['../class_master_class.html#ad94c0f235d990dadd0475801c5658180',1,'MasterClass']]],
+  ['_7ememberview',['~MemberView',['../class_member_view.html#a3bad69a3cab3ec6eebaaae6bddb92703',1,'MemberView']]],
+  ['_7emydrawable',['~MyDrawable',['../class_my_drawable.html#ad4816e6eef9fab896da498c82b7860f3',1,'MyDrawable']]],
   ['_7eobjetphysique',['~ObjetPhysique',['../class_objet_physique.html#aa9e349c3dce60cf112b2093466843c09',1,'ObjetPhysique']]],
   ['_7eplatform',['~Platform',['../class_platform.html#a13b5e4ef946b8a2fe38d22014145ab68',1,'Platform']]],
+  ['_7eplatformview',['~PlatformView',['../class_platform_view.html#a113995938de5b1009cd2608e3be78345',1,'PlatformView']]],
   ['_7eplayer',['~Player',['../class_player.html#a749d2c00e1fe0f5c2746f7505a58c062',1,'Player']]],
-  ['_7eweapon',['~Weapon',['../class_weapon.html#a420e7ba3d2017e6de3e93eb579cfd3fa',1,'Weapon']]]
+  ['_7eplayerview',['~PlayerView',['../class_player_view.html#a95cb7fade4bd8f33b2ac20671048cc40',1,'PlayerView']]],
+  ['_7eweapon',['~Weapon',['../class_weapon.html#a420e7ba3d2017e6de3e93eb579cfd3fa',1,'Weapon']]],
+  ['_7eweaponview',['~WeaponView',['../class_weapon_view.html#ad6ea43400babcd6205bc7a47ec20008d',1,'WeaponView']]]
 ];
