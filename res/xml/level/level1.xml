@@ -20,6 +20,11 @@
 					<size w="400" h="40"/>
 					<sprite>wall.png</sprite>
 				</platform>
+				<platform num="3">
+					<position x="1260" y="320"/>
+					<size w="400" h="40"/>
+					<sprite>wall.png</sprite>
+				</platform>
 			</platforms>
 			<!-- ITEMS -->
 		</environment>

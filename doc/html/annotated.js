@@ -11,6 +11,7 @@ var annotated =
     [ "Enemy", "class_enemy.html", "class_enemy" ],
     [ "EnemyView", "class_enemy_view.html", "class_enemy_view" ],
     [ "Environment", "class_environment.html", "class_environment" ],
+    [ "Event", "class_event.html", "class_event" ],
     [ "Float2", "class_float2.html", "class_float2" ],
     [ "Frame", "class_frame.html", "class_frame" ],
     [ "Game", "class_game.html", "class_game" ],

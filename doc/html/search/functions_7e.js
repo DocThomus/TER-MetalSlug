@@ -10,6 +10,7 @@ var searchData=
   ['_7eenemy',['~Enemy',['../class_enemy.html#ac0eec4755e28c02688065f9657150ac3',1,'Enemy']]],
   ['_7eenemyview',['~EnemyView',['../class_enemy_view.html#ac846d5bd0d6d91e1cbc1fbd3e90bcd07',1,'EnemyView']]],
   ['_7eenvironment',['~Environment',['../class_environment.html#a8e294735187880dd3d59be10c425b29d',1,'Environment']]],
+  ['_7eevent',['~Event',['../class_event.html#a7704ec01ce91e673885792054214b3d2',1,'Event']]],
   ['_7eframe',['~Frame',['../class_frame.html#abec8c7bccdfc88cb4da137caae9f73d6',1,'Frame']]],
   ['_7egame',['~Game',['../class_game.html#ae3d112ca6e0e55150d2fdbc704474530',1,'Game']]],
   ['_7elevel',['~Level',['../class_level.html#a249eac1e8f19ff44134efa5e986feaca',1,'Level']]],

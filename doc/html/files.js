@@ -9,6 +9,7 @@ var files =
     [ "include/model/Character.h", "_character_8h.html", null ],
     [ "include/model/Decor.h", "_decor_8h.html", null ],
     [ "include/model/Enemy.h", "_enemy_8h.html", null ],
+    [ "include/model/Event.h", "_event_8h.html", null ],
     [ "include/model/Item.h", "_item_8h.html", null ],
     [ "include/model/ObjetPhysique.h", "_objet_physique_8h.html", null ],
     [ "include/model/Platform.h", "_platform_8h.html", null ],
@@ -23,7 +24,7 @@ var files =
     [ "include/view/Frame.h", "_frame_8h.html", null ],
     [ "include/view/MemberView.h", "_member_view_8h.html", null ],
     [ "include/view/MyDrawable.h", "_my_drawable_8h.html", null ],
-    [ "include/view/PlatformView.h", null, null ],
+    [ "include/view/PlatformView.h", "_platform_view_8h.html", null ],
     [ "include/view/PlayerView.h", "_player_view_8h.html", null ],
     [ "include/view/WeaponView.h", "_weapon_view_8h.html", null ]
 ];

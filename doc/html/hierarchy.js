@@ -4,6 +4,7 @@ var hierarchy =
     [ "Bool2", "class_bool2.html", null ],
     [ "Config", "class_config.html", null ],
     [ "Environment", "class_environment.html", null ],
+    [ "Event", "class_event.html", null ],
     [ "Float2", "class_float2.html", null ],
     [ "Frame", "class_frame.html", null ],
     [ "Game", "class_game.html", null ],

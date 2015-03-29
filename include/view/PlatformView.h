@@ -2,9 +2,9 @@
 #define PLATFORMVIEW_H
 
 /*!
- * \file PlateformView.h
+ * \file PlatformView.h
  * \author Jules
- * \brief Déclaration de la classe PlateformView
+ * \brief Déclaration de la classe PlatformView
  * \addtogroup View
  * @{
  */
