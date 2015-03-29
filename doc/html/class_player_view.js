@@ -9,7 +9,7 @@ var class_player_view =
     [ "display", "class_player_view.html#a0efbd8ed8178e7ca08b39a821c0e330f", null ],
     [ "init", "class_player_view.html#a397bdf416e488c3785186b197ad7555a", null ],
     [ "kneel", "class_player_view.html#a5bf2e9064a584768cd50ca675564c1b6", null ],
-    [ "shoot", "class_player_view.html#a6b565650a56507bf8d4bce4e0f34d21c", null ],
+    [ "shoot", "class_player_view.html#ae800078f161e1adef9793e93cb21dab5", null ],
     [ "updateIntRect", "class_player_view.html#a7cdc999be1ee9fbf4c3c2c24635b63ce", null ],
     [ "walk", "class_player_view.html#a047bc57a2ad872a028464889fdc46e8c", null ],
     [ "legs", "class_player_view.html#ae7a4f3448d524b3981e59e7c4b3ca627", null ]

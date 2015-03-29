@@ -7,9 +7,9 @@ var class_enemy_view =
     [ "die", "class_enemy_view.html#aac9438ba6a30071e7dc4236f71425667", null ],
     [ "display", "class_enemy_view.html#a356c5c35510ac5f4beb7a3181d5d1cf3", null ],
     [ "init", "class_enemy_view.html#adda9d50c3ee2eae496ac62a9ff0ad8f4", null ],
-    [ "loadSounds", "class_enemy_view.html#a826fe63adce19c119f2c5f3efa456d18", null ],
+    [ "loadSounds", "class_enemy_view.html#ad387a7eb55752e23d78fef63b0430ca3", null ],
     [ "shoot", "class_enemy_view.html#a55ae4c4342f5d61dd6ba6d0ad8d22eb6", null ],
     [ "updateIntRect", "class_enemy_view.html#a1b225f456235e3bac12e02865b980405", null ],
     [ "walk", "class_enemy_view.html#a51f6486de640df3a25d4ba7e42849505", null ],
-    [ "sounds", "class_enemy_view.html#acce2b327b0e14786e21da2ec6921292a", null ]
+    [ "sounds", "class_enemy_view.html#aea3cb584316432d9de40235f8a6faf78", null ]
 ];

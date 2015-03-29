@@ -59,16 +59,6 @@ void Player::print(ostream& os) const
 
 
 
-Int2 Player::getPosition()
-{
-	return position;
-}
-
-
-Int2 Player::getSize()
-{
-	return size;
-}
 
 
 void Player::addWeapon(Weapon* w)

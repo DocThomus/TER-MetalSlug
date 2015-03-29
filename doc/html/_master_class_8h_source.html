@@ -76,6 +76,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
     </ul>
   </div>
 </div>
@@ -113,7 +114,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00022"></a>00022 <span class="keyword">using namespace </span>std;
 <a name="l00023"></a>00023 <span class="keyword">using namespace </span>sf;
 <a name="l00024"></a>00024 
-<a name="l00025"></a>00025 <span class="keyword">class </span><a class="code" href="class_game.html" title="Gère le jeu.">Game</a>;
+<a name="l00025"></a>00025 <span class="keyword">class </span><a class="code" href="class_game.html" title="Gère le jeu lolu.">Game</a>;
 <a name="l00026"></a>00026 <span class="keyword">class </span><a class="code" href="class_config.html" title="Stocke la configuration du jeu.">Config</a>;
 <a name="l00027"></a>00027 
 <a name="l00028"></a>00028 
@@ -122,24 +123,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00036"></a>00036         
 <a name="l00037"></a>00037         <span class="keyword">private</span> :
 <a name="l00038"></a>00038 
-<a name="l00039"></a>00039                 <a class="code" href="class_game.html" title="Gère le jeu.">Game</a> game;
-<a name="l00040"></a>00040                 <a class="code" href="class_config.html" title="Stocke la configuration du jeu.">Config</a> config;
-<a name="l00041"></a>00041 
-<a name="l00042"></a>00042                 RenderWindow* window;
-<a name="l00043"></a>00043 
-<a name="l00044"></a>00044 
+<a name="l00039"></a><a class="code" href="class_master_class.html#a4d78420d19f0d12d1611aa913d05a35c">00039</a>                 <a class="code" href="class_game.html" title="Gère le jeu lolu.">Game</a> <a class="code" href="class_master_class.html#a4d78420d19f0d12d1611aa913d05a35c" title="Objet de gestion du jeu.">game</a>; 
+<a name="l00040"></a><a class="code" href="class_master_class.html#a1b5e05561e168c27462612b6e41aeaae">00040</a>                 <a class="code" href="class_config.html" title="Stocke la configuration du jeu.">Config</a> <a class="code" href="class_master_class.html#a1b5e05561e168c27462612b6e41aeaae" title="Stockage de la configuration.">config</a>; 
+<a name="l00042"></a><a class="code" href="class_master_class.html#ad6b5bc862f84e303619ac1bfb207e6d5">00042</a>                 RenderWindow* <a class="code" href="class_master_class.html#ad6b5bc862f84e303619ac1bfb207e6d5" title="Fenêtre de rendu.">window</a>; 
 <a name="l00045"></a>00045         <span class="keyword">public</span> :
 <a name="l00046"></a>00046 
-<a name="l00047"></a>00047                 <a class="code" href="class_master_class.html" title="Initialisation du jeu.">MasterClass</a>();
-<a name="l00048"></a>00048                 ~<a class="code" href="class_master_class.html" title="Initialisation du jeu.">MasterClass</a>();
-<a name="l00049"></a>00049 
-<a name="l00050"></a>00050                 <span class="keywordtype">void</span> initGame();
-<a name="l00051"></a>00051                 <span class="keywordtype">void</span> playGame();
-<a name="l00052"></a>00052 
+<a name="l00052"></a>00052                 <a class="code" href="class_master_class.html" title="Initialisation du jeu.">MasterClass</a>();
 <a name="l00053"></a>00053 
-<a name="l00054"></a>00054 };
-<a name="l00055"></a>00055 
-<a name="l00058"></a>00058 <span class="preprocessor">#endif</span>
+<a name="l00059"></a>00059                 ~<a class="code" href="class_master_class.html" title="Initialisation du jeu.">MasterClass</a>();
+<a name="l00060"></a>00060 
+<a name="l00066"></a>00066                 <span class="keywordtype">void</span> initGame();
+<a name="l00067"></a>00067 
+<a name="l00073"></a>00073                 <span class="keywordtype">void</span> playGame();
+<a name="l00074"></a>00074 
+<a name="l00075"></a>00075 
+<a name="l00076"></a>00076 };
+<a name="l00077"></a>00077 
+<a name="l00080"></a>00080 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -160,7 +160,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul>
       <li class="navelem"><a class="el" href="_master_class_8h.html">MasterClass.h</a>      </li>
 
-    <li class="footer">Généré le Samedi Mars 28 2015 18:14:07 pour Metal Slug par
+    <li class="footer">Généré le Dimanche Mars 29 2015 16:50:36 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

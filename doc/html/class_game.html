@@ -104,7 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="Game" -->
-<p>Gère le jeu.  
+<p>Gère le jeu lolu.  
  <a href="class_game.html#details">Plus de détails...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_game_8h_source.html">Game.h</a>&gt;</code></p>
@@ -147,8 +147,8 @@ Fonctions membres publiques</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialisation du jeu.  <a href="#a6f3a33940524b6ba9d83f627ccb14bbf"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a9713f011d2d0d3ef4a37aa07d7951947">loadLevel</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Chargement d'un niveau.  <a href="#a9713f011d2d0d3ef4a37aa07d7951947"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_animation.html">Animation</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a353658c29f095eaa7a9c424539a7d1c5">loadSpriteFromFile</a> (string filename)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Chargement d'une animation.  <a href="#a353658c29f095eaa7a9c424539a7d1c5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_animation.html">Animation</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#aaf66d28cbb0ee85c1db276eeb0db6bae">loadSpriteFromFile</a> (string filename)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Chargement d'une animation.  <a href="#aaf66d28cbb0ee85c1db276eeb0db6bae"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Attributs privés</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4d66eaa503343894c4c11a39f7577dff"></a><!-- doxytag: member="Game::config" ref="a4d66eaa503343894c4c11a39f7577dff" args="" -->
@@ -177,11 +177,11 @@ vector&lt; Texture * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a 
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Stockage des textures utilisée par les objets du jeu pour suppression à la fin du niveau. <br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Description détaillée</h2>
-<div class="textblock"><p>Gère le jeu. </p>
+<div class="textblock"><p>Gère le jeu lolu. </p>
 <p>Gère les objets du jeu :</p>
 <ul>
 <li>Application de la configuration</li>
-<li><a class="el" href="class_animation.html">Animation</a> des objets</li>
+<li><a class="el" href="class_animation.html" title="Stockage d&#39;une animation.">Animation</a> des objets</li>
 <li>Gestion des collisions</li>
 <li>Gestion des événements (clavier, souris...)</li>
 <li>Destruction des objets devenus inutiles</li>
@@ -203,7 +203,7 @@ vector&lt; Texture * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a 
 <div class="memdoc">
 
 <p>Constructeur. </p>
-<p>Constructeur par défaut de la classe <a class="el" href="class_game.html" title="Gère le jeu.">Game</a> </p>
+<p>Constructeur par défaut de la classe <a class="el" href="class_game.html" title="Gère le jeu lolu.">Game</a> </p>
 
 </div>
 </div>
@@ -222,7 +222,7 @@ vector&lt; Texture * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a 
 <div class="memdoc">
 
 <p>Destructeur. </p>
-<p>Destructeur de la classe <a class="el" href="class_game.html" title="Gère le jeu.">Game</a> </p>
+<p>Destructeur de la classe <a class="el" href="class_game.html" title="Gère le jeu lolu.">Game</a> </p>
 
 </div>
 </div>
@@ -381,9 +381,9 @@ vector&lt; Texture * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a 
 <p>Gestion des collisions. </p>
 <p>Vérification des différentes collisions du jeu :</p>
 <ul>
-<li><a class="el" href="class_character.html">Character</a> / <a class="el" href="class_platform.html">Platform</a></li>
-<li><a class="el" href="class_character.html">Character</a> / <a class="el" href="class_ammo.html">Ammo</a></li>
-<li><a class="el" href="class_ammo.html">Ammo</a> / <a class="el" href="class_platform.html">Platform</a></li>
+<li><a class="el" href="class_character.html" title="Modélise un personnage.">Character</a> / <a class="el" href="class_platform.html" title="Modélise une plate-forme.">Platform</a></li>
+<li><a class="el" href="class_character.html" title="Modélise un personnage.">Character</a> / <a class="el" href="class_ammo.html" title="Modélise un projectile.">Ammo</a></li>
+<li><a class="el" href="class_ammo.html" title="Modélise un projectile.">Ammo</a> / <a class="el" href="class_platform.html" title="Modélise une plate-forme.">Platform</a></li>
 <li>... </li>
 </ul>
 
@@ -478,7 +478,7 @@ vector&lt; Texture * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a 
 <div class="memdoc">
 
 <p>Vérification de l'intersection. </p>
-<p>Vérifie si deux <a class="el" href="class_objet_physique.html">ObjetPhysique</a> s'intersectent. </p>
+<p>Vérifie si deux <a class="el" href="class_objet_physique.html" title="Modélise un objet physique.">ObjetPhysique</a> s'intersectent. </p>
 <dl class="params"><dt><b>Paramètres:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">obj1</td><td>: Objet 1 </td></tr>
@@ -572,12 +572,12 @@ vector&lt; Texture * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a 
 
 </div>
 </div>
-<a class="anchor" id="a353658c29f095eaa7a9c424539a7d1c5"></a><!-- doxytag: member="Game::loadSpriteFromFile" ref="a353658c29f095eaa7a9c424539a7d1c5" args="(string filename)" -->
+<a class="anchor" id="aaf66d28cbb0ee85c1db276eeb0db6bae"></a><!-- doxytag: member="Game::loadSpriteFromFile" ref="aaf66d28cbb0ee85c1db276eeb0db6bae" args="(string filename)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; <a class="el" href="class_animation.html">Animation</a> * &gt; <a class="el" href="class_game.html#a353658c29f095eaa7a9c424539a7d1c5">Game::loadSpriteFromFile</a> </td>
+          <td class="memname">vector&lt;<a class="el" href="class_animation.html">Animation</a>*&gt; <a class="el" href="class_game.html#aaf66d28cbb0ee85c1db276eeb0db6bae">Game::loadSpriteFromFile</a> </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>filename</em></td><td>)</td>
@@ -608,7 +608,7 @@ vector&lt; Texture * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a 
 <div class="memdoc">
 
 <p>Définition d'une configuration. </p>
-<p>Défini une configuration au <a class="el" href="class_game.html" title="Gère le jeu.">Game</a>. </p>
+<p>Défini une configuration au <a class="el" href="class_game.html" title="Gère le jeu lolu.">Game</a>. </p>
 
 </div>
 </div>
@@ -664,9 +664,8 @@ vector&lt; Texture * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a 
 
 </div>
 </div>
-<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
 <li>include/controller/<a class="el" href="_game_8h_source.html">Game.h</a></li>
-<li>src/controller/Game.cpp</li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -688,7 +687,7 @@ vector&lt; Texture * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a 
     <ul>
       <li class="navelem"><a class="el" href="class_game.html">Game</a>      </li>
 
-    <li class="footer">Généré le Samedi Mars 28 2015 18:14:07 pour Metal Slug par
+    <li class="footer">Généré le Dimanche Mars 29 2015 16:50:36 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

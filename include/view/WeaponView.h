@@ -49,7 +49,7 @@ class WeaponView : public Weapon
 	public :
 		
 		WeaponView();
-		WeaponView(PlayerView* p, TypeWeapon type, int max_mun);
+		WeaponView(PlayerView* p, TypeWeapon type);
 		~WeaponView();
 
 		static vector<Sound*> loadSounds();

@@ -21,16 +21,11 @@ class Weapon;
 class Enemy;
 
 
-/***
-* Ammo -> ObjetPhysique
-* ===============================================================
-* Objets modelisant les tirs. Selon leur type, ils peuvent ou non 
-* être soumis à la gravité, être plus ou moins rapide, faire plus
-* ou moins de dégâts... Leur type dépend de l'arme ou de l'ennemi 
-* qui a produit l'objet.
-***/
-
-
+/*!\class Ammo
+ * \brief Modélise un projectile.
+ *
+ * Le projectile peut être de différents type, soumis ou non à la gravité...
+ */
 class Ammo : public ObjetPhysique
 {
 	friend class Weapon;
@@ -38,28 +33,89 @@ class Ammo : public ObjetPhysique
 
 	public :
 	
+		/*!
+	     * \enum TypeAmmo
+	     * \brief Types possibles de l'objet Ammo.
+	     */
 		enum TypeAmmo {BULLET,ROCKET,GRENADE,LASER};
+
+		/*!
+	     * \enum StateAmmo
+	     * \brief États possibles de l'objet Ammo.
+	     */
 		enum StateAmmo{FLY,STOP,GHOST};
 
 
 	protected :
 
-		StateAmmo state_a;
-		TypeAmmo type;
+		StateAmmo state_a; /*!< \brief État du projectile. */
+		TypeAmmo type; /*!< \brief Type du projectile. */
 
 
 	public :
 
+		/*!
+	     * \brief Constructeur
+	     *
+	     * Constructeur de la classe Ammo.
+	     * \param pos : Position initiale du projectile.
+	     * \param siz : Taille initiale du projectile (inutile car l'objet est ensuite redimensionné en fonction de son type).
+	     * \param m : Masse du projectile (inutile car la masse de l'objet est redéfinie en fonction de son type).
+	     * \param type : Type du projectile.
+	     * \param move : Vecteur de direction.
+	     */
 		Ammo(Int2 pos, Int2 siz, int m, TypeAmmo type, Float2 move);
+
+		/*!
+	     * \brief Constructeur
+	     *
+	     * Constructeur par défaut de la classe Ammo
+	     */
 		Ammo();
+
+		/*!
+	     * \brief Destructeur
+	     *
+	     * Destructeur de la classe Ammo
+	     */
 		~Ammo();
 
+		/*!
+	     * \brief Debug
+	     *
+	     * Affiche des informations sur l'objet.
+	     * \param os : Flux sur lequel afficher.
+	     */
 		void print(ostream& os) const;
 
+		/*!
+	     * \brief Animer
+	     *
+	     * Déplace le projectile en fonction du temps.
+	     * \param dt : Temps écoulé depuis le dernier appel de la fonction.
+	     */
 		virtual void animate(int dt);
+
+		/*!
+	     * \brief Projectile stoppé
+	     *
+	     * Le projectile "meurt" (il explose, disparait...).
+	     * \param pos : Position d'arrêt de l'objet.
+	     */
 		virtual void die(Int2 pos);
 
+		/*!
+	     * \brief Dégâts
+	     *
+	     * Renvoie le nombre de point de dégâts qu'inflique le projectile en fonction de son type.
+	     */
 		int getDamage();
+
+		/*!
+	     * \brief État
+	     *
+	     * Renvoie l'état de la munition.
+	     */
 		StateAmmo getState();
 
 };

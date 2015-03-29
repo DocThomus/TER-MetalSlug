@@ -14,7 +14,7 @@ var class_game =
     [ "display", "class_game.html#ab268789fc559218dc907e82d34dcf970", null ],
     [ "init", "class_game.html#a6f3a33940524b6ba9d83f627ccb14bbf", null ],
     [ "loadLevel", "class_game.html#a9713f011d2d0d3ef4a37aa07d7951947", null ],
-    [ "loadSpriteFromFile", "class_game.html#a353658c29f095eaa7a9c424539a7d1c5", null ],
+    [ "loadSpriteFromFile", "class_game.html#aaf66d28cbb0ee85c1db276eeb0db6bae", null ],
     [ "setConfig", "class_game.html#a5f58f15f1ef2638e719b2a8b7a0ed946", null ],
     [ "update", "class_game.html#a6f2a5505fd8934ba86b49cbff275de78", null ],
     [ "updateView", "class_game.html#a8a46a3024a807dd03ab0576867318f52", null ],

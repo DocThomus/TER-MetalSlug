@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['g',['g',['../classsf_1_1_color.html#a591daf9c3c55dea830c76c962d6ba1a5',1,'sf::Color']]],
-  ['green',['Green',['../classsf_1_1_color.html#a95629b30de8c6856aa7d3afed12eb865',1,'sf::Color']]]
+  ['game',['game',['../class_master_class.html#a4d78420d19f0d12d1611aa913d05a35c',1,'MasterClass']]],
+  ['gunway',['gunway',['../class_character.html#a24d2b958ff3168646af13858641ae3fe',1,'Character']]]
 ];

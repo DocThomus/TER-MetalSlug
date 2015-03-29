@@ -31,7 +31,7 @@ void Item::trigger(Player* p)
 			break;
 
 		case WEAPON :
-			p->addWeapon(new Weapon(p,type_weapon,100));
+			p->addWeapon(new Weapon(p,type_weapon));
 			break;
 
 		case INVINCIBLE :

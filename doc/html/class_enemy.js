@@ -8,6 +8,5 @@ var class_enemy =
     [ "die", "class_enemy.html#a04c451624958712b36546037fc25c601", null ],
     [ "print", "class_enemy.html#ad8c8e48b7fc9ac2b62482516a742e1a4", null ],
     [ "haveAI", "class_enemy.html#a544944c62e4be948574a090f55002e54", null ],
-    [ "health", "class_enemy.html#ab17779c71584dcefa3c1dfe3ada6eee3", null ],
     [ "power", "class_enemy.html#a81af68c2c35ebba124036e880b19cbfe", null ]
 ];

@@ -1,11 +1,10 @@
 var searchData=
 [
-  ['samplecount',['sampleCount',['../structsf_1_1_sound_stream_1_1_chunk.html#af47f5d94012acf8b11f056ba77aff97a',1,'sf::SoundStream::Chunk']]],
-  ['samples',['samples',['../structsf_1_1_sound_stream_1_1_chunk.html#aa3b84d69adbe663a17a7671626076df4',1,'sf::SoundStream::Chunk']]],
-  ['sensor',['sensor',['../classsf_1_1_event.html#acdeacbb321655b962e27d08eeec5a190',1,'sf::Event']]],
-  ['shader',['shader',['../classsf_1_1_render_states.html#ad4f79ecdd0c60ed0d24fbe555b221bd8',1,'sf::RenderStates']]],
-  ['shift',['shift',['../structsf_1_1_event_1_1_key_event.html#a776af1a3ca79abeeec18ebf1c0065aa9',1,'sf::Event::KeyEvent']]],
-  ['size',['size',['../classsf_1_1_event.html#a85dae56a377eeffd39183c3f6fc96cb9',1,'sf::Event']]],
-  ['stencilbits',['stencilBits',['../structsf_1_1_context_settings.html#ac2e788c201ca20e84fd38a28071abd29',1,'sf::ContextSettings']]],
-  ['system',['system',['../structsf_1_1_event_1_1_key_event.html#ac0557f7edc2a608ec65175fdd843afc5',1,'sf::Event::KeyEvent']]]
+  ['size',['size',['../class_objet_physique.html#a8b560415dc0a1f38e8cf3e8a24b1c9aa',1,'ObjetPhysique']]],
+  ['sounds',['sounds',['../class_enemy_view.html#aea3cb584316432d9de40235f8a6faf78',1,'EnemyView']]],
+  ['star_5fcpt',['star_cpt',['../class_character.html#ad8c4d05547d5de6c3b4796803cb004ef',1,'Character']]],
+  ['state_5fa',['state_a',['../class_ammo.html#af51f34636337b30b28babbfbca07609b',1,'Ammo']]],
+  ['state_5fb',['state_b',['../class_character.html#aedc1f0aca3aad0427052dd934cf4d849',1,'Character']]],
+  ['state_5fg',['state_g',['../class_character.html#a8da74e8541c2181f8253b35d8a4eb845',1,'Character']]],
+  ['state_5fp',['state_p',['../class_character.html#a0148c0bd360d714612b7c36d0a2a0c1b',1,'Character']]]
 ];

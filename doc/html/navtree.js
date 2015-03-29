@@ -7,14 +7,18 @@ var NAVTREE =
       [ "Index des classes", "classes.html", null ],
       [ "Hiérarchie des classes", "hierarchy.html", "hierarchy" ],
       [ "Membres de classe", "functions.html", [
-        [ "Tout", "functions.html", null ],
+        [ "Tout", "functions.html", "functions_dup" ],
         [ "Fonctions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ],
         [ "Énumérations", "functions_enum.html", null ]
       ] ]
     ] ],
     [ "Fichiers", null, [
-      [ "Liste des fichiers", "files.html", "files" ]
+      [ "Liste des fichiers", "files.html", "files" ],
+      [ "Membres de fichier", "globals.html", [
+        [ "Tout", "globals.html", null ],
+        [ "Fonctions", "globals_func.html", null ]
+      ] ]
     ] ]
   ] ]
 ];

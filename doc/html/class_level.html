@@ -114,16 +114,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5fc89ffc7a85afb624f80ebe18721d49"></a><!-- doxytag: member="Level::display" ref="a5fc89ffc7a85afb624f80ebe18721d49" args="(RenderWindow *window)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>display</b> (RenderWindow *window)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a03d2bce4cb198bcd9f16136561fedddf"></a><!-- doxytag: member="Level::addDecor" ref="a03d2bce4cb198bcd9f16136561fedddf" args="(Int2 siz, Texture *tex, int z=0)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addDecor</b> (<a class="el" href="class_int2.html">Int2</a> siz, Texture *tex, int z=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9c3c5ef07cc8a8c5f82a0b2c702499d2"></a><!-- doxytag: member="Level::addPlatform" ref="a9c3c5ef07cc8a8c5f82a0b2c702499d2" args="(Int2 pos, Int2 siz, int wl=0, Texture *tex=NULL)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addPlatform</b> (<a class="el" href="class_int2.html">Int2</a> pos, <a class="el" href="class_int2.html">Int2</a> siz, int wl=0, Texture *tex=NULL)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_level.html#a7a696c928ca5d5354db6e50e46d0f67d">Level</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#a7a696c928ca5d5354db6e50e46d0f67d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_level.html#a249eac1e8f19ff44134efa5e986feaca">~Level</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur.  <a href="#a249eac1e8f19ff44134efa5e986feaca"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_level.html#a5fc89ffc7a85afb624f80ebe18721d49">display</a> (RenderWindow *window)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Affichage.  <a href="#a5fc89ffc7a85afb624f80ebe18721d49"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_level.html#a03d2bce4cb198bcd9f16136561fedddf">addDecor</a> (<a class="el" href="class_int2.html">Int2</a> siz, Texture *tex, int z=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajout d'un décor.  <a href="#a03d2bce4cb198bcd9f16136561fedddf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_level.html#a9c3c5ef07cc8a8c5f82a0b2c702499d2">addPlatform</a> (<a class="el" href="class_int2.html">Int2</a> pos, <a class="el" href="class_int2.html">Int2</a> siz, int wl=0, Texture *tex=NULL)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajout d'une plate-forme.  <a href="#a9c3c5ef07cc8a8c5f82a0b2c702499d2"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Attributs privés</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a34659a8c8da9d3102344baa4f02ab6b1"></a><!-- doxytag: member="Level::environment" ref="a34659a8c8da9d3102344baa4f02ab6b1" args="" -->
-<a class="el" href="class_environment.html">Environment</a>&#160;</td><td class="memItemRight" valign="bottom"><b>environment</b></td></tr>
+<a class="el" href="class_environment.html">Environment</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_level.html#a34659a8c8da9d3102344baa4f02ab6b1">environment</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Environnement du niveau (<a class="el" href="class_platform.html" title="Modélise une plate-forme.">Platform</a>, <a class="el" href="class_decor.html" title="Modélise un decor.">Decor</a>, Destructible). <br/></td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
 Amis</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa2fab026580d6f14280c2ffb8063a314"></a><!-- doxytag: member="Level::Game" ref="aa2fab026580d6f14280c2ffb8063a314" args="" -->
@@ -134,11 +139,171 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Game</b></td></tr>
 <p>Stocke les objets du niveau :</p>
 <ul>
 <li>Environement</li>
-<li>Event(Dialog,<a class="el" href="class_enemy.html">Enemy</a>,Checkpoint...) </li>
+<li>Event(Dialog,<a class="el" href="class_enemy.html" title="Modélise un ennemi.">Enemy</a>,Checkpoint...) </li>
 </ul>
-</div><hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+</div><hr/><h2>Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="a7a696c928ca5d5354db6e50e46d0f67d"></a><!-- doxytag: member="Level::Level" ref="a7a696c928ca5d5354db6e50e46d0f67d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_level.html#a7a696c928ca5d5354db6e50e46d0f67d">Level::Level</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructeur. </p>
+<p>Constructeur par défaut de la classe <a class="el" href="class_level.html" title="Stocke les données du niveau.">Level</a> </p>
+
+</div>
+</div>
+<a class="anchor" id="a249eac1e8f19ff44134efa5e986feaca"></a><!-- doxytag: member="Level::~Level" ref="a249eac1e8f19ff44134efa5e986feaca" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_level.html#a249eac1e8f19ff44134efa5e986feaca">Level::~Level</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructeur. </p>
+<p>Destructeur de la classe <a class="el" href="class_level.html" title="Stocke les données du niveau.">Level</a> </p>
+
+</div>
+</div>
+<hr/><h2>Documentation des fonctions membres</h2>
+<a class="anchor" id="a03d2bce4cb198bcd9f16136561fedddf"></a><!-- doxytag: member="Level::addDecor" ref="a03d2bce4cb198bcd9f16136561fedddf" args="(Int2 siz, Texture *tex, int z=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_level.html#a03d2bce4cb198bcd9f16136561fedddf">Level::addDecor</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_int2.html">Int2</a>&#160;</td>
+          <td class="paramname"><em>siz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Texture *&#160;</td>
+          <td class="paramname"><em>tex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>z</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Ajout d'un décor. </p>
+<p>Ajoute un objet <a class="el" href="class_decor.html" title="Modélise un decor.">Decor</a> dans l'environnement. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">siz</td><td>: Taille de la fenêtre pour que le decor la recouvre. </td></tr>
+    <tr><td class="paramname">tex</td><td>: Texture à appliquer au décor. </td></tr>
+    <tr><td class="paramname">z</td><td>: Indice z faculatif, utile pour l'effet parallaxe. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a9c3c5ef07cc8a8c5f82a0b2c702499d2"></a><!-- doxytag: member="Level::addPlatform" ref="a9c3c5ef07cc8a8c5f82a0b2c702499d2" args="(Int2 pos, Int2 siz, int wl=0, Texture *tex=NULL)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_level.html#a9c3c5ef07cc8a8c5f82a0b2c702499d2">Level::addPlatform</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_int2.html">Int2</a>&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_int2.html">Int2</a>&#160;</td>
+          <td class="paramname"><em>siz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>wl</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Texture *&#160;</td>
+          <td class="paramname"><em>tex</em> = <code>NULL</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Ajout d'une plate-forme. </p>
+<p>Ajoute un objet <a class="el" href="class_platform.html" title="Modélise une plate-forme.">Platform</a> dans l'environnement. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>: Position de la plate-forme. </td></tr>
+    <tr><td class="paramname">siz</td><td>: Taille de la plate-forme. </td></tr>
+    <tr><td class="paramname">wl</td><td>: Hauteur du sol de la plate-forme. </td></tr>
+    <tr><td class="paramname">tex</td><td>: texture à appliquer à la plate-forme, facultatif. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a5fc89ffc7a85afb624f80ebe18721d49"></a><!-- doxytag: member="Level::display" ref="a5fc89ffc7a85afb624f80ebe18721d49" args="(RenderWindow *window)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_level.html#a5fc89ffc7a85afb624f80ebe18721d49">Level::display</a> </td>
+          <td>(</td>
+          <td class="paramtype">RenderWindow *&#160;</td>
+          <td class="paramname"><em>window</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Affichage. </p>
+<p>Affichage des objets du niveau </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>: Fenêtre de rendu dans laquelle afficher les objets </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
 <li>include/controller/<a class="el" href="_level_8h_source.html">Level.h</a></li>
-<li>src/controller/Level.cpp</li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -160,7 +325,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Game</b></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_level.html">Level</a>      </li>
 
-    <li class="footer">Généré le Samedi Mars 28 2015 18:14:07 pour Metal Slug par
+    <li class="footer">Généré le Dimanche Mars 29 2015 16:50:37 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

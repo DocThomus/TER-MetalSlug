@@ -41,7 +41,7 @@ class EnnemyView;
 
 
 /*! \class Game
- * \brief Gère le jeu.
+ * \brief Gère le jeu lolu.
  *
  * Gère les objets du jeu : 
  * - Application de la configuration

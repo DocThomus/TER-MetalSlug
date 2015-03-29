@@ -28,44 +28,104 @@ using namespace sf;
 class WeaponView;
 
 
-/***
-* EnemyView -> Enemy -> Character -> ObjetPhysique
-*           -> MyDrawable
-* ===========================================================
-* Permet d'afficher un objet Enemy avec diverses animations.
-***/
 
-
-
+/*!\class EnemyView
+ * \brief Un objet Enemy affichable.
+ */
 class EnemyView : public Enemy, public MyDrawable
 {
 
 	private :
 
-		static vector<Sound*> sounds;
+		static vector<Sound*> sounds; /*!< \brief Variable de classe contenant les différents sont nécessaires aux ennemis. */
 
 
 	public :
 
-		
+		/*!
+	     * \brief Constructeur
+	     *
+	     * Constructeur de la classe EnemyView.
+	     * \param pos : Position initiale de l'ennemi.
+	     * \param siz : Taille initiale de l'ennemi.
+	     * \param m : Masse de l'ennemi.
+	     * \param max_h : Santé maximale de l'ennemi.
+	     * \param AI : Indique si l'ennemi doit être "intelligent" ou non.
+	     * \param pow : La puissance de l'ennemi.
+	     */
 		EnemyView(Int2 pos, Int2 siz, int m, int max_h, bool AI, int pow);
+
+		/*!
+	     * \brief Constructeur
+	     *
+	     * Constructeur par défaut de la classe EnemyView
+	     */
 		EnemyView();
+
+		/*!
+	     * \brief Destructeur
+	     *
+	     * Destructeur de la classe EnemyView
+	     */
 		~EnemyView();
 
+		/*!
+	     * \brief Chargement des sons
+	     *
+	     * Methode statique permettant de charger les sons des ennemis.
+	     * ATTENTION : Cette méthode doit impérativement être appelée avant d'afficher des ennemis !
+	     */
 		static vector<Sound*> loadSounds();
 
+		/*!
+	     * \brief Initialisation
+	     *
+	     * Initialise l'affichage de l'ennemi.
+	     */
 		void init();
 
+		/*!
+	     * \brief Affichage
+	     *
+	     * Affiche l'objet dans une fenêtre de rendu.
+	     * \param window : Fenêtre d'affichage
+	     */
 		void display(RenderWindow* window);
 
+		/*!
+	     * \brief Animer
+	     *
+	     * Déplace l'ennemi en fonction du temps.
+	     * \param dt : Temps écoulé depuis le dernier appel de la fonction.
+	     */
 		void animate(int dt);
 
+		/*!
+	     * \brief Mise à jour du rectangle de selection de la texture.
+	     */
 		void updateIntRect();
 
+		/*!
+	     * \brief Courir
+	     *
+	     * Fait courir l'ennemi dans une direction passée en paramètre.
+	     */
 		void walk(int way);
 		
+		/*!
+	     * \brief Mourir
+	     *
+	     * L'ennemi meurt, méthode déclenchée lorsque sa santé atteint 0.
+	     * Déclenchement d'une animation et d'un son.
+	     */
 		void die();
 
+		/*!
+	     * \brief Tirer.
+	     *
+	     * \param air : Pointeur sur un vecteur d'Ammo destiné à contenir les projectiles du jeu.
+	     * \param angle : Direction dans laquelle le personnage tire.
+	     */
 		void shoot(list<AmmoView*>* ammos, Int2 angle = Int2(1,0), Texture* tex=NULL);
 };
 

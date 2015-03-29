@@ -110,10 +110,10 @@ Graphe d'héritage de PlayerView:</div>
  <div class="center">
   <img src="class_player_view.png" usemap="#PlayerView_map" alt=""/>
   <map id="PlayerView_map" name="PlayerView_map">
-<area href="class_player.html" alt="Player" shape="rect" coords="0,112,93,136"/>
+<area href="class_player.html" title="Modélise le joueur." alt="Player" shape="rect" coords="0,112,93,136"/>
 <area href="class_my_drawable.html" alt="MyDrawable" shape="rect" coords="103,112,196,136"/>
-<area href="class_character.html" alt="Character" shape="rect" coords="0,56,93,80"/>
-<area href="class_objet_physique.html" alt="ObjetPhysique" shape="rect" coords="0,0,93,24"/>
+<area href="class_character.html" title="Modélise un personnage." alt="Character" shape="rect" coords="0,56,93,80"/>
+<area href="class_objet_physique.html" title="Modélise un objet physique." alt="ObjetPhysique" shape="rect" coords="0,0,93,24"/>
 </map>
  </div></div>
 
@@ -147,24 +147,108 @@ Fonctions membres publiques</h2></td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>init</b> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0efbd8ed8178e7ca08b39a821c0e330f"></a><!-- doxytag: member="PlayerView::display" ref="a0efbd8ed8178e7ca08b39a821c0e330f" args="(RenderWindow *window)" -->
 void&#160;</td><td class="memItemRight" valign="bottom"><b>display</b> (RenderWindow *window)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7077a695549cedcfc5fd2a9e1d311c0e"></a><!-- doxytag: member="PlayerView::animate" ref="a7077a695549cedcfc5fd2a9e1d311c0e" args="(int dt)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>animate</b> (int dt)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_view.html#a7077a695549cedcfc5fd2a9e1d311c0e">animate</a> (int dt)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Animer.  <a href="#a7077a695549cedcfc5fd2a9e1d311c0e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7cdc999be1ee9fbf4c3c2c24635b63ce"></a><!-- doxytag: member="PlayerView::updateIntRect" ref="a7cdc999be1ee9fbf4c3c2c24635b63ce" args="()" -->
 void&#160;</td><td class="memItemRight" valign="bottom"><b>updateIntRect</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a047bc57a2ad872a028464889fdc46e8c"></a><!-- doxytag: member="PlayerView::walk" ref="a047bc57a2ad872a028464889fdc46e8c" args="(int way)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>walk</b> (int way)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5bf2e9064a584768cd50ca675564c1b6"></a><!-- doxytag: member="PlayerView::kneel" ref="a5bf2e9064a584768cd50ca675564c1b6" args="(bool)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>kneel</b> (bool)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6b565650a56507bf8d4bce4e0f34d21c"></a><!-- doxytag: member="PlayerView::shoot" ref="a6b565650a56507bf8d4bce4e0f34d21c" args="(list&lt; AmmoView * &gt; *ammos, Int2 angle=Int2(1, 0))" -->
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_view.html#a047bc57a2ad872a028464889fdc46e8c">walk</a> (int way)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Courir.  <a href="#a047bc57a2ad872a028464889fdc46e8c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_view.html#a5bf2e9064a584768cd50ca675564c1b6">kneel</a> (bool)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">À genoux.  <a href="#a5bf2e9064a584768cd50ca675564c1b6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae800078f161e1adef9793e93cb21dab5"></a><!-- doxytag: member="PlayerView::shoot" ref="ae800078f161e1adef9793e93cb21dab5" args="(list&lt; AmmoView * &gt; *ammos, Int2 angle=Int2(1, 0))" -->
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>shoot</b> (list&lt; <a class="el" href="class_ammo_view.html">AmmoView</a> * &gt; *ammos, <a class="el" href="class_int2.html">Int2</a> angle=<a class="el" href="class_int2.html">Int2</a>(1, 0))</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Attributs publics</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae7a4f3448d524b3981e59e7c4b3ca627"></a><!-- doxytag: member="PlayerView::legs" ref="ae7a4f3448d524b3981e59e7c4b3ca627" args="" -->
 <a class="el" href="class_member_view.html">MemberView</a>&#160;</td><td class="memItemRight" valign="bottom"><b>legs</b></td></tr>
 </table>
-<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<hr/><h2>Documentation des fonctions membres</h2>
+<a class="anchor" id="a7077a695549cedcfc5fd2a9e1d311c0e"></a><!-- doxytag: member="PlayerView::animate" ref="a7077a695549cedcfc5fd2a9e1d311c0e" args="(int dt)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_player_view.html#a7077a695549cedcfc5fd2a9e1d311c0e">PlayerView::animate</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dt</em></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Animer. </p>
+<p>Déplace le joueur en fonction du temps. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dt</td><td>: Temps écoulé depuis le dernier appel de la fonction. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Réimplémentée à partir de <a class="el" href="class_player.html#a7a4cd01baf9751a32129da6160ee8684">Player</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5bf2e9064a584768cd50ca675564c1b6"></a><!-- doxytag: member="PlayerView::kneel" ref="a5bf2e9064a584768cd50ca675564c1b6" args="(bool)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_player_view.html#a5bf2e9064a584768cd50ca675564c1b6">PlayerView::kneel</a> </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>À genoux. </p>
+<p>Fait se mettre à genoux le joueur (ou se lever). </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">b</td><td>: Vrai si le joueur doit se mettre à genoux, Faux s'il doit se lever. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Réimplémentée à partir de <a class="el" href="class_player.html#af3be77bda1f1915c2bddfe5b4dee699c">Player</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a047bc57a2ad872a028464889fdc46e8c"></a><!-- doxytag: member="PlayerView::walk" ref="a047bc57a2ad872a028464889fdc46e8c" args="(int way)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_player_view.html#a047bc57a2ad872a028464889fdc46e8c">PlayerView::walk</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>way</em></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Courir. </p>
+<p>Fait courir le joueur. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">way</td><td>: Sens dans lequel le joueur doit se déplacer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Réimplémentée à partir de <a class="el" href="class_player.html#ad7ec5bcfae66e275785603eced6bc768">Player</a>.</p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
 <li>include/view/<a class="el" href="_player_view_8h_source.html">PlayerView.h</a></li>
-<li>src/view/PlayerView.cpp</li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -186,7 +270,7 @@ Attributs publics</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_player_view.html">PlayerView</a>      </li>
 
-    <li class="footer">Généré le Samedi Mars 28 2015 18:14:07 pour Metal Slug par
+    <li class="footer">Généré le Dimanche Mars 29 2015 16:50:37 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

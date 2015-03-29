@@ -11,8 +11,8 @@ WeaponView::WeaponView()
 }
 
 
-WeaponView::WeaponView(PlayerView* p, TypeWeapon type, int max_mun)
-:Weapon(p,type,max_mun)
+WeaponView::WeaponView(PlayerView* p, TypeWeapon type)
+:Weapon(p,type)
 {
 	//p->addWeapon(this);
 }

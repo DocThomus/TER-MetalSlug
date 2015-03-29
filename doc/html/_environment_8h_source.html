@@ -76,6 +76,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
     </ul>
   </div>
 </div>
@@ -113,15 +114,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00022"></a>00022 
 <a name="l00023"></a>00023 <span class="keyword">using namespace </span>std;
 <a name="l00024"></a>00024 
-<a name="l00025"></a>00025 <span class="keyword">class </span><a class="code" href="class_decor.html">Decor</a>;
-<a name="l00026"></a>00026 <span class="keyword">class </span><a class="code" href="class_platform.html">Platform</a>;
+<a name="l00025"></a>00025 <span class="keyword">class </span><a class="code" href="class_decor.html" title="Modélise un decor.">Decor</a>;
+<a name="l00026"></a>00026 <span class="keyword">class </span><a class="code" href="class_platform.html" title="Modélise une plate-forme.">Platform</a>;
 <a name="l00027"></a>00027 
 <a name="l00028"></a>00028 
 <a name="l00029"></a>00029 
 <a name="l00035"></a><a class="code" href="class_environment.html">00035</a> <span class="keyword">class </span><a class="code" href="class_environment.html" title="Stocke l&#39;environnement.">Environment</a>
 <a name="l00036"></a>00036 {
 <a name="l00037"></a>00037 
-<a name="l00038"></a>00038         <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_game.html" title="Gère le jeu.">Game</a>;
+<a name="l00038"></a>00038         <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_game.html" title="Gère le jeu lolu.">Game</a>;
 <a name="l00039"></a>00039 
 <a name="l00040"></a>00040         <span class="keyword">private</span> :
 <a name="l00041"></a>00041 
@@ -138,9 +139,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00062"></a>00062 
 <a name="l00070"></a>00070                 <span class="keywordtype">void</span> <a class="code" href="class_game.html#ab268789fc559218dc907e82d34dcf970" title="Affichage.">display</a>(RenderWindow* window);
 <a name="l00071"></a>00071 
-<a name="l00081"></a>00081                 <span class="keywordtype">void</span> addDecor(<a class="code" href="class_int2.html">Int2</a> siz, Texture* tex, <span class="keywordtype">int</span> z);
+<a name="l00081"></a>00081                 <span class="keywordtype">void</span> addDecor(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> siz, Texture* tex, <span class="keywordtype">int</span> z);
 <a name="l00082"></a>00082 
-<a name="l00093"></a>00093                 <span class="keywordtype">void</span> addPlatform(<a class="code" href="class_int2.html">Int2</a> pos, <a class="code" href="class_int2.html">Int2</a> siz, <span class="keywordtype">int</span> wl, Texture* tex=NULL);
+<a name="l00093"></a>00093                 <span class="keywordtype">void</span> addPlatform(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> pos, <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> siz, <span class="keywordtype">int</span> wl, Texture* tex=NULL);
 <a name="l00094"></a>00094                 
 <a name="l00095"></a>00095 
 <a name="l00096"></a>00096                 <span class="comment">//void addDestructible(); // TODO</span>
@@ -167,7 +168,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul>
       <li class="navelem"><a class="el" href="_environment_8h.html">Environment.h</a>      </li>
 
-    <li class="footer">Généré le Samedi Mars 28 2015 18:14:07 pour Metal Slug par
+    <li class="footer">Généré le Dimanche Mars 29 2015 16:50:36 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

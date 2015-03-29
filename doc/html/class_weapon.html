@@ -104,7 +104,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="title">Référence de la classe Weapon<div class="ingroups"><a class="el" href="group___model.html">Model</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="Weapon" --><div class="dynheader">
+<!-- doxytag: class="Weapon" -->
+<p>Modélise une arme.  
+ <a href="class_weapon.html#details">Plus de détails...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_weapon_8h_source.html">Weapon.h</a>&gt;</code></p>
+<div class="dynheader">
 Graphe d'héritage de Weapon:</div>
 <div class="dyncontent">
  <div class="center">
@@ -130,30 +135,178 @@ Types publics</h2></td></tr>
  }</td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adb2935dd259495beb503ae5a65fc5c3a"></a><!-- doxytag: member="Weapon::Weapon" ref="adb2935dd259495beb503ae5a65fc5c3a" args="(Int2 pos, Int2 siz, int m, Player *p, TypeWeapon type, int max_mun)" -->
-&#160;</td><td class="memItemRight" valign="bottom"><b>Weapon</b> (<a class="el" href="class_int2.html">Int2</a> pos, <a class="el" href="class_int2.html">Int2</a> siz, int m, <a class="el" href="class_player.html">Player</a> *p, TypeWeapon type, int max_mun)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8426ae7b2725c827cd5f0449c5424b5d"></a><!-- doxytag: member="Weapon::Weapon" ref="a8426ae7b2725c827cd5f0449c5424b5d" args="(Player *p, TypeWeapon type, int max_mun)" -->
-&#160;</td><td class="memItemRight" valign="bottom"><b>Weapon</b> (<a class="el" href="class_player.html">Player</a> *p, TypeWeapon type, int max_mun)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acef9a0a663b75874d86d7f96a4645d40"></a><!-- doxytag: member="Weapon::print" ref="acef9a0a663b75874d86d7f96a4645d40" args="(ostream &amp;os) const " -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>print</b> (ostream &amp;os) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0fb8fea33ea5d0f12a3f863afc552935"></a><!-- doxytag: member="Weapon::shoot" ref="a0fb8fea33ea5d0f12a3f863afc552935" args="(list&lt; Ammo * &gt; *air, Float2 angle)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>shoot</b> (list&lt; <a class="el" href="class_ammo.html">Ammo</a> * &gt; *air, <a class="el" href="class_float2.html">Float2</a> angle)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#a7f35e78fac0eac7186d1b0cee304aa82">Weapon</a> (<a class="el" href="class_player.html">Player</a> *p, TypeWeapon <a class="el" href="class_weapon.html#aa7201d49cac2fdc61403446c4545320f">type</a>)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#a7f35e78fac0eac7186d1b0cee304aa82"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#a42dbc46dd70319a24763992c4ebbd396">Weapon</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#a42dbc46dd70319a24763992c4ebbd396"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#a420e7ba3d2017e6de3e93eb579cfd3fa">~Weapon</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur.  <a href="#a420e7ba3d2017e6de3e93eb579cfd3fa"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#acef9a0a663b75874d86d7f96a4645d40">print</a> (ostream &amp;os) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug.  <a href="#acef9a0a663b75874d86d7f96a4645d40"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#a0fb8fea33ea5d0f12a3f863afc552935">shoot</a> (list&lt; <a class="el" href="class_ammo.html">Ammo</a> * &gt; *air, <a class="el" href="class_float2.html">Float2</a> <a class="el" href="class_weapon.html#ae646c3907ab4b7102661040405927ac6">angle</a>)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Tirer.  <a href="#a0fb8fea33ea5d0f12a3f863afc552935"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a078790938444a5f755dc30e301f8a2aa"></a><!-- doxytag: member="Weapon::reload" ref="a078790938444a5f755dc30e301f8a2aa" args="(int nb)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>reload</b> (int nb)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#a078790938444a5f755dc30e301f8a2aa">reload</a> (int nb)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Recharger (sera sûrement retiré...) <br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Attributs protégés</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adb7178dacdc194ac5b45eaeca2f4b3b6"></a><!-- doxytag: member="Weapon::ammos" ref="adb7178dacdc194ac5b45eaeca2f4b3b6" args="" -->
-<a class="el" href="class_int2.html">Int2</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ammos</b></td></tr>
+<a class="el" href="class_int2.html">Int2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#adb7178dacdc194ac5b45eaeca2f4b3b6">ammos</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Nombre de munitions restantes. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae646c3907ab4b7102661040405927ac6"></a><!-- doxytag: member="Weapon::angle" ref="ae646c3907ab4b7102661040405927ac6" args="" -->
-<a class="el" href="class_int2.html">Int2</a>&#160;</td><td class="memItemRight" valign="bottom"><b>angle</b></td></tr>
+<a class="el" href="class_int2.html">Int2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#ae646c3907ab4b7102661040405927ac6">angle</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Angle dans lequel l'arme vise (inutile pour le moment...). <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a506ede273542bfb832b6a0d979141c24"></a><!-- doxytag: member="Weapon::owner" ref="a506ede273542bfb832b6a0d979141c24" args="" -->
-<a class="el" href="class_player.html">Player</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>owner</b></td></tr>
+<a class="el" href="class_player.html">Player</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#a506ede273542bfb832b6a0d979141c24">owner</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Joueur possédant l'arme. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa7201d49cac2fdc61403446c4545320f"></a><!-- doxytag: member="Weapon::type" ref="aa7201d49cac2fdc61403446c4545320f" args="" -->
-TypeWeapon&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td></tr>
+TypeWeapon&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#aa7201d49cac2fdc61403446c4545320f">type</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Type de l'arme. <br/></td></tr>
 </table>
-<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<hr/><a name="details" id="details"></a><h2>Description détaillée</h2>
+<div class="textblock"><p>Modélise une arme. </p>
+<p>Objet possédé par un <a class="el" href="class_player.html" title="Modélise le joueur.">Player</a>. Il produit des <a class="el" href="class_ammo.html" title="Modélise un projectile.">Ammo</a> lorsque son propriétaire tire. Le type et le nombre de munitions généré est défini en fonction de son type. </p>
+</div><hr/><h2>Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="a7f35e78fac0eac7186d1b0cee304aa82"></a><!-- doxytag: member="Weapon::Weapon" ref="a7f35e78fac0eac7186d1b0cee304aa82" args="(Player *p, TypeWeapon type)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_weapon.html#a7f35e78fac0eac7186d1b0cee304aa82">Weapon::Weapon</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_player.html">Player</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TypeWeapon&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructeur. </p>
+<p>Constructeur de la classe <a class="el" href="class_weapon.html" title="Modélise une arme.">Weapon</a>. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>: <a class="el" href="class_player.html" title="Modélise le joueur.">Player</a> destiné à posséder l'arme. </td></tr>
+    <tr><td class="paramname">type</td><td>: Type de l'arme </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a42dbc46dd70319a24763992c4ebbd396"></a><!-- doxytag: member="Weapon::Weapon" ref="a42dbc46dd70319a24763992c4ebbd396" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_weapon.html#a7f35e78fac0eac7186d1b0cee304aa82">Weapon::Weapon</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructeur. </p>
+<p>Constructeur par défaut de la classe <a class="el" href="class_weapon.html" title="Modélise une arme.">Weapon</a> </p>
+
+</div>
+</div>
+<a class="anchor" id="a420e7ba3d2017e6de3e93eb579cfd3fa"></a><!-- doxytag: member="Weapon::~Weapon" ref="a420e7ba3d2017e6de3e93eb579cfd3fa" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_weapon.html#a420e7ba3d2017e6de3e93eb579cfd3fa">Weapon::~Weapon</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructeur. </p>
+<p>Destructeur de la classe <a class="el" href="class_ammo.html" title="Modélise un projectile.">Ammo</a> </p>
+
+</div>
+</div>
+<hr/><h2>Documentation des fonctions membres</h2>
+<a class="anchor" id="acef9a0a663b75874d86d7f96a4645d40"></a><!-- doxytag: member="Weapon::print" ref="acef9a0a663b75874d86d7f96a4645d40" args="(ostream &amp;os) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_weapon.html#acef9a0a663b75874d86d7f96a4645d40">Weapon::print</a> </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Debug. </p>
+<p>Affiche des informations sur l'objet. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>: Flux sur lequel afficher. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a0fb8fea33ea5d0f12a3f863afc552935"></a><!-- doxytag: member="Weapon::shoot" ref="a0fb8fea33ea5d0f12a3f863afc552935" args="(list&lt; Ammo * &gt; *air, Float2 angle)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_weapon.html#a0fb8fea33ea5d0f12a3f863afc552935">Weapon::shoot</a> </td>
+          <td>(</td>
+          <td class="paramtype">list&lt; <a class="el" href="class_ammo.html">Ammo</a> * &gt; *&#160;</td>
+          <td class="paramname"><em>air</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_float2.html">Float2</a>&#160;</td>
+          <td class="paramname"><em>angle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Tirer. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">air</td><td>: Vecteur dans lequel insérer les <a class="el" href="class_ammo.html" title="Modélise un projectile.">Ammo</a> générées par l'arme. </td></tr>
+    <tr><td class="paramname">angle</td><td>: Vecteur du/des direction du projectile à générer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
 <li>include/model/<a class="el" href="_weapon_8h_source.html">Weapon.h</a></li>
-<li>src/model/Weapon.cpp</li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -175,7 +328,7 @@ TypeWeapon&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td></
     <ul>
       <li class="navelem"><a class="el" href="class_weapon.html">Weapon</a>      </li>
 
-    <li class="footer">Généré le Samedi Mars 28 2015 18:14:07 pour Metal Slug par
+    <li class="footer">Généré le Dimanche Mars 29 2015 16:50:37 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

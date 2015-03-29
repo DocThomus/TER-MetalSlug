@@ -76,6 +76,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
     </ul>
   </div>
 </div>
@@ -114,58 +115,46 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00023"></a>00023 <span class="keyword">using namespace </span>std;
 <a name="l00024"></a>00024 
 <a name="l00025"></a>00025 
-<a name="l00026"></a>00026 <span class="keyword">class </span><a class="code" href="class_player.html">Player</a>;
-<a name="l00027"></a>00027 <span class="keyword">class </span><a class="code" href="class_ammo.html">Ammo</a>;
+<a name="l00026"></a>00026 <span class="keyword">class </span><a class="code" href="class_player.html" title="Modélise le joueur.">Player</a>;
+<a name="l00027"></a>00027 <span class="keyword">class </span><a class="code" href="class_ammo.html" title="Modélise un projectile.">Ammo</a>;
 <a name="l00028"></a>00028 
 <a name="l00029"></a>00029 
 <a name="l00030"></a>00030 
-<a name="l00031"></a>00031 <span class="comment">/***</span>
-<a name="l00032"></a>00032 <span class="comment">* Weapon</span>
-<a name="l00033"></a>00033 <span class="comment">* ===============================================================</span>
-<a name="l00034"></a>00034 <span class="comment">* Objet possédé par un Player. Il produit des Ammo lorsque son</span>
-<a name="l00035"></a>00035 <span class="comment">* propriétaire tire. Le type et le nombre de munitions généré</span>
-<a name="l00036"></a>00036 <span class="comment">* est défini en fonction de son type.</span>
-<a name="l00037"></a>00037 <span class="comment">***/</span>
-<a name="l00038"></a>00038 
-<a name="l00039"></a>00039 
-<a name="l00040"></a>00040 
-<a name="l00041"></a><a class="code" href="class_weapon.html">00041</a> <span class="keyword">class </span><a class="code" href="class_weapon.html">Weapon</a>
-<a name="l00042"></a>00042 {
-<a name="l00043"></a>00043 
-<a name="l00044"></a>00044         <span class="keyword">public</span>:
-<a name="l00045"></a>00045                 
-<a name="l00046"></a>00046                 <span class="keyword">enum</span> TypeWeapon {PISTOL,SMG,SHOTGUN,ROCKET_LAUNCHER,GRENADE_LAUNCHER,CANARDATOR};
-<a name="l00047"></a>00047         
-<a name="l00048"></a>00048         
-<a name="l00049"></a>00049         <span class="keyword">protected</span> :
-<a name="l00050"></a>00050 
-<a name="l00051"></a>00051                 <a class="code" href="class_int2.html">Int2</a> ammos;
-<a name="l00052"></a>00052                 <a class="code" href="class_int2.html">Int2</a> angle;
-<a name="l00053"></a>00053                 <a class="code" href="class_player.html">Player</a>* owner;
-<a name="l00054"></a>00054                 TypeWeapon type;
-<a name="l00055"></a>00055 
-<a name="l00056"></a>00056 
-<a name="l00057"></a>00057         <span class="keyword">public</span> :
-<a name="l00058"></a>00058 
-<a name="l00059"></a>00059                 
-<a name="l00060"></a>00060                 
-<a name="l00061"></a>00061                 
-<a name="l00062"></a>00062                 <a class="code" href="class_weapon.html">Weapon</a>(<a class="code" href="class_int2.html">Int2</a> pos, <a class="code" href="class_int2.html">Int2</a> siz, <span class="keywordtype">int</span> m, <a class="code" href="class_player.html">Player</a>* p, TypeWeapon type, <span class="keywordtype">int</span> max_mun);
-<a name="l00063"></a>00063                 <a class="code" href="class_weapon.html">Weapon</a>(<a class="code" href="class_player.html">Player</a>* p, TypeWeapon type, <span class="keywordtype">int</span> max_mun);
-<a name="l00064"></a>00064                 <a class="code" href="class_weapon.html">Weapon</a>();
-<a name="l00065"></a>00065                 ~<a class="code" href="class_weapon.html">Weapon</a>();
-<a name="l00066"></a>00066 
-<a name="l00067"></a>00067                 <span class="keywordtype">void</span> print(ostream&amp; os) <span class="keyword">const</span>;
-<a name="l00068"></a>00068 
-<a name="l00069"></a>00069                 <span class="keywordtype">void</span> shoot(list&lt;Ammo*&gt;* air, <a class="code" href="class_float2.html">Float2</a> angle);     
-<a name="l00070"></a>00070                 <span class="keywordtype">void</span> reload(<span class="keywordtype">int</span> nb);
-<a name="l00071"></a>00071 
-<a name="l00072"></a>00072 
-<a name="l00073"></a>00073 };
-<a name="l00074"></a>00074 
-<a name="l00075"></a>00075 
+<a name="l00031"></a>00031 
+<a name="l00039"></a><a class="code" href="class_weapon.html">00039</a> <span class="keyword">class </span><a class="code" href="class_weapon.html" title="Modélise une arme.">Weapon</a>
+<a name="l00040"></a>00040 {
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042         <span class="keyword">public</span>:
+<a name="l00043"></a>00043                 
+<a name="l00048"></a>00048                 <span class="keyword">enum</span> TypeWeapon {PISTOL,SMG,SHOTGUN,ROCKET_LAUNCHER,GRENADE_LAUNCHER,CANARDATOR};
+<a name="l00049"></a>00049         
+<a name="l00050"></a>00050         
+<a name="l00051"></a>00051         <span class="keyword">protected</span> :
+<a name="l00052"></a>00052 
+<a name="l00053"></a><a class="code" href="class_weapon.html#adb7178dacdc194ac5b45eaeca2f4b3b6">00053</a>                 <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> <a class="code" href="class_weapon.html#adb7178dacdc194ac5b45eaeca2f4b3b6" title="Nombre de munitions restantes.">ammos</a>; 
+<a name="l00054"></a><a class="code" href="class_weapon.html#ae646c3907ab4b7102661040405927ac6">00054</a>                 <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> <a class="code" href="class_weapon.html#ae646c3907ab4b7102661040405927ac6" title="Angle dans lequel l&#39;arme vise (inutile pour le moment...).">angle</a>; 
+<a name="l00055"></a><a class="code" href="class_weapon.html#a506ede273542bfb832b6a0d979141c24">00055</a>                 <a class="code" href="class_player.html" title="Modélise le joueur.">Player</a>* <a class="code" href="class_weapon.html#a506ede273542bfb832b6a0d979141c24" title="Joueur possédant l&#39;arme.">owner</a>; 
+<a name="l00056"></a><a class="code" href="class_weapon.html#aa7201d49cac2fdc61403446c4545320f">00056</a>                 TypeWeapon <a class="code" href="class_weapon.html#aa7201d49cac2fdc61403446c4545320f" title="Type de l&#39;arme.">type</a>;
+<a name="l00059"></a>00059         <span class="keyword">public</span> :
+<a name="l00060"></a>00060 
+<a name="l00068"></a>00068                 <a class="code" href="class_weapon.html" title="Modélise une arme.">Weapon</a>(<a class="code" href="class_player.html" title="Modélise le joueur.">Player</a>* p, TypeWeapon type);
+<a name="l00069"></a>00069 
+<a name="l00075"></a>00075                 <a class="code" href="class_weapon.html" title="Modélise une arme.">Weapon</a>();
 <a name="l00076"></a>00076 
-<a name="l00079"></a>00079 <span class="preprocessor">#endif</span>
+<a name="l00082"></a>00082                 ~<a class="code" href="class_weapon.html" title="Modélise une arme.">Weapon</a>();
+<a name="l00083"></a>00083 
+<a name="l00090"></a>00090                 <span class="keywordtype">void</span> print(ostream&amp; os) <span class="keyword">const</span>;
+<a name="l00091"></a>00091 
+<a name="l00097"></a>00097                 <span class="keywordtype">void</span> shoot(list&lt;Ammo*&gt;* air, <a class="code" href="class_float2.html" title="Stockage de deux flottants.">Float2</a> angle);
+<a name="l00098"></a>00098 
+<a name="l00099"></a>00099 
+<a name="l00103"></a>00103                 <span class="keywordtype">void</span> reload(<span class="keywordtype">int</span> nb);
+<a name="l00104"></a>00104 
+<a name="l00105"></a>00105 };
+<a name="l00106"></a>00106 
+<a name="l00107"></a>00107 
+<a name="l00108"></a>00108 
+<a name="l00111"></a>00111 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -186,7 +175,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul>
       <li class="navelem"><a class="el" href="_weapon_8h.html">Weapon.h</a>      </li>
 
-    <li class="footer">Généré le Samedi Mars 28 2015 18:14:07 pour Metal Slug par
+    <li class="footer">Généré le Dimanche Mars 29 2015 16:50:36 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

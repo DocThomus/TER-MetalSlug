@@ -38,16 +38,51 @@ class Level
 
 	private :
 
-		Environment environment;
+		Environment environment; /*!< \brief Environnement du niveau (Platform, Decor, Destructible). */
 
 	public :
 
+		/*!
+	     * \brief Constructeur
+	     *
+	     * Constructeur par défaut de la classe Level
+	     */
 		Level();
+
+		/*!
+	     * \brief Destructeur
+	     *
+	     * Destructeur de la classe Level
+	     */
 		~Level();
 
+		/*!
+	     * \brief Affichage
+	     *
+	     * Affichage des objets du niveau
+	     * \param window : Fenêtre de rendu dans laquelle afficher les objets
+	     */
 		void display(RenderWindow* window);
 
+		/*!
+	     * \brief Ajout d'un décor
+	     *
+	     * Ajoute un objet Decor dans l'environnement.
+	     * \param siz : Taille de la fenêtre pour que le decor la recouvre.
+	     * \param tex : Texture à appliquer au décor.
+	     * \param z : Indice z faculatif, utile pour l'effet parallaxe.
+	     */
 		void addDecor(Int2 siz, Texture* tex, int z=0);
+
+		/*!
+	     * \brief Ajout d'une plate-forme
+	     *
+	     * Ajoute un objet Platform dans l'environnement.
+	     * \param pos : Position de la plate-forme.
+	     * \param siz : Taille de la plate-forme.
+	     * \param wl : Hauteur du sol de la plate-forme.
+	     * \param tex : texture à appliquer à la plate-forme, facultatif.
+	     */
 		void addPlatform(Int2 pos, Int2 siz, int wl=0, Texture* tex=NULL);
 };
 

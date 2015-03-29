@@ -76,6 +76,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
     </ul>
   </div>
 </div>
@@ -113,7 +114,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00022"></a>00022 <span class="preprocessor">#include &quot;rapidxml/rapidxml_print.hpp&quot;</span>
 <a name="l00023"></a>00023 <span class="preprocessor">#include &quot;rapidxml/rapidxml_utils.hpp&quot;</span>
 <a name="l00024"></a>00024 
-<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="tools_8h.html" title="Déclaration des outils.">tools.h</a>&quot;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="tools_8h.html" title="Outils de programmation (classes,fonctions...)">tools.h</a>&quot;</span>
 <a name="l00026"></a>00026 
 <a name="l00027"></a>00027 <span class="keyword">using namespace </span>std;
 <a name="l00028"></a>00028 <span class="keyword">using namespace </span>sf;
@@ -128,16 +129,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00037"></a>00037 <span class="comment">***/</span>
 <a name="l00038"></a>00038 
 <a name="l00039"></a>00039 
-<a name="l00040"></a>00040 <span class="comment">/* SPRITE MAP */</span>
-<a name="l00041"></a>00041 <span class="keywordtype">bool</span> buildSpriteMap(<span class="keywordtype">string</span> filename,vector&lt;Int2&gt;animations, vector&lt;Int2&gt; positions, vector&lt;Int2&gt; tailles);
-<a name="l00042"></a>00042 <span class="keywordtype">bool</span> loadSpriteMap(<span class="keywordtype">string</span> filename,vector&lt;Int2&gt;*animations, vector&lt;Int2&gt;* positions, vector&lt;Int2&gt;* tailles);
-<a name="l00043"></a>00043 
-<a name="l00044"></a>00044 <span class="comment">/* LEVEL */</span>
-<a name="l00045"></a>00045 <span class="keywordtype">bool</span> loadLevelXML(<span class="keywordtype">string</span> filename, <a class="code" href="class_config.html" title="Stocke la configuration du jeu.">Config</a>* conf, <a class="code" href="class_environment.html" title="Stocke l&#39;environnement.">Environment</a>* env, vector&lt;Texture*&gt;* tex);
-<a name="l00046"></a>00046 
-<a name="l00047"></a>00047 
-<a name="l00048"></a>00048 
-<a name="l00051"></a>00051 <span class="preprocessor">#endif</span>
+<a name="l00040"></a>00040 <span class="comment">/* === SPRITE MAP === */</span>
+<a name="l00041"></a>00041 
+<a name="l00051"></a>00051 <span class="keywordtype">bool</span> <a class="code" href="group___tools.html#gaa5e7f899837783646961bf7235e09af6" title="Construire spritemap.">buildSpriteMap</a>(<span class="keywordtype">string</span> filename, vector&lt;Int2&gt;animations, vector&lt;Int2&gt; positions, vector&lt;Int2&gt; tailles);
+<a name="l00052"></a>00052 
+<a name="l00062"></a>00062 <span class="keywordtype">bool</span> <a class="code" href="group___tools.html#ga9685824cecb97faef2840844aad37155" title="Charger spritemap.">loadSpriteMap</a>(<span class="keywordtype">string</span> filename, vector&lt;Int2&gt;*animations, vector&lt;Int2&gt;* positions, vector&lt;Int2&gt;* tailles);
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067 <span class="comment">/* === LEVEL === */</span>
+<a name="l00068"></a>00068 
+<a name="l00078"></a>00078 <span class="keywordtype">bool</span> <a class="code" href="group___tools.html#ga25dbb5a660a8c50f89214862d178aca6" title="Chargement d&#39;un Level.">loadLevelXML</a>(<span class="keywordtype">string</span> filename, <a class="code" href="class_config.html" title="Stocke la configuration du jeu.">Config</a>* conf, <a class="code" href="class_environment.html" title="Stocke l&#39;environnement.">Environment</a>* env, vector&lt;Texture*&gt;* tex);
+<a name="l00079"></a>00079 
+<a name="l00080"></a>00080 
+<a name="l00081"></a>00081 
+<a name="l00084"></a>00084 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -158,7 +165,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul>
       <li class="navelem"><a class="el" href="_x_m_ltools_8h.html">XMLtools.h</a>      </li>
 
-    <li class="footer">Généré le Samedi Mars 28 2015 18:14:07 pour Metal Slug par
+    <li class="footer">Généré le Dimanche Mars 29 2015 16:50:36 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

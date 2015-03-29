@@ -103,14 +103,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="title">Référence de la classe Player<div class="ingroups"><a class="el" href="group___model.html">Model</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="Player" --><!-- doxytag: inherits="Character" --><div class="dynheader">
+<!-- doxytag: class="Player" --><!-- doxytag: inherits="Character" -->
+<p>Modélise le joueur.  
+ <a href="class_player.html#details">Plus de détails...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_player_8h_source.html">Player.h</a>&gt;</code></p>
+<div class="dynheader">
 Graphe d'héritage de Player:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_player.png" usemap="#Player_map" alt=""/>
   <map id="Player_map" name="Player_map">
-<area href="class_character.html" alt="Character" shape="rect" coords="0,56,93,80"/>
-<area href="class_objet_physique.html" alt="ObjetPhysique" shape="rect" coords="0,0,93,24"/>
+<area href="class_character.html" title="Modélise un personnage." alt="Character" shape="rect" coords="0,56,93,80"/>
+<area href="class_objet_physique.html" title="Modélise un objet physique." alt="ObjetPhysique" shape="rect" coords="0,0,93,24"/>
 <area href="class_player_view.html" alt="PlayerView" shape="rect" coords="0,168,93,192"/>
 </map>
  </div></div>
@@ -119,40 +124,344 @@ Graphe d'héritage de Player:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afa2bc2cc2a64d438ed40534beff4af62"></a><!-- doxytag: member="Player::Player" ref="afa2bc2cc2a64d438ed40534beff4af62" args="(Int2 pos, Int2 siz, int m, int max_h)" -->
-&#160;</td><td class="memItemRight" valign="bottom"><b>Player</b> (<a class="el" href="class_int2.html">Int2</a> pos, <a class="el" href="class_int2.html">Int2</a> siz, int m, int max_h)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7a337e9b2394c4c3edd90d8e99832a7c"></a><!-- doxytag: member="Player::print" ref="a7a337e9b2394c4c3edd90d8e99832a7c" args="(ostream &amp;os) const " -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>print</b> (ostream &amp;os) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af3968890e87fef91e0ade725fa9b7c21"></a><!-- doxytag: member="Player::getPosition" ref="af3968890e87fef91e0ade725fa9b7c21" args="()" -->
-<a class="el" href="class_int2.html">Int2</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getPosition</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a437cf32d42c5dbabe300ac59bb52d0fc"></a><!-- doxytag: member="Player::getSize" ref="a437cf32d42c5dbabe300ac59bb52d0fc" args="()" -->
-<a class="el" href="class_int2.html">Int2</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getSize</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3174eb3e7673676de777fa6a106c3b24"></a><!-- doxytag: member="Player::animate" ref="a3174eb3e7673676de777fa6a106c3b24" args="(int dt)" -->
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>animate</b> (int dt)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0ce182ffdfc365cbbd398e24db6b3608"></a><!-- doxytag: member="Player::walk" ref="a0ce182ffdfc365cbbd398e24db6b3608" args="(int way)" -->
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>walk</b> (int way)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad4218271274aad4310dfadb256fc98b0"></a><!-- doxytag: member="Player::kneel" ref="ad4218271274aad4310dfadb256fc98b0" args="(bool)" -->
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>kneel</b> (bool)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1e4b3e6ef91fc400ff2c6c26b1370f8c"></a><!-- doxytag: member="Player::die" ref="a1e4b3e6ef91fc400ff2c6c26b1370f8c" args="()" -->
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>die</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4bd28a035eb6e3dc569524eb6ac17a4f"></a><!-- doxytag: member="Player::reload" ref="a4bd28a035eb6e3dc569524eb6ac17a4f" args="(int nb)" -->
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>reload</b> (int nb)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9c3b3139c0be047e6f4a1dc009b16431"></a><!-- doxytag: member="Player::shoot" ref="a9c3b3139c0be047e6f4a1dc009b16431" args="(list&lt; Ammo * &gt; *, Float2 angle=Float2(1, 0))" -->
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>shoot</b> (list&lt; <a class="el" href="class_ammo.html">Ammo</a> * &gt; *, <a class="el" href="class_float2.html">Float2</a> angle=<a class="el" href="class_float2.html">Float2</a>(1, 0))</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3681caeccf7046368d65dc8f430925c0"></a><!-- doxytag: member="Player::addWeapon" ref="a3681caeccf7046368d65dc8f430925c0" args="(Weapon *w)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addWeapon</b> (<a class="el" href="class_weapon.html">Weapon</a> *w)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abe9c24068a098ee6d529032d8f582608"></a><!-- doxytag: member="Player::setWeapon" ref="abe9c24068a098ee6d529032d8f582608" args="(int w)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setWeapon</b> (int w)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#afa2bc2cc2a64d438ed40534beff4af62">Player</a> (<a class="el" href="class_int2.html">Int2</a> pos, <a class="el" href="class_int2.html">Int2</a> siz, int m, int max_h)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#afa2bc2cc2a64d438ed40534beff4af62"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#affe0cc3cb714f6deb4e62f0c0d3f1fd8">Player</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#affe0cc3cb714f6deb4e62f0c0d3f1fd8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a749d2c00e1fe0f5c2746f7505a58c062">~Player</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur.  <a href="#a749d2c00e1fe0f5c2746f7505a58c062"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a7a337e9b2394c4c3edd90d8e99832a7c">print</a> (ostream &amp;os) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug.  <a href="#a7a337e9b2394c4c3edd90d8e99832a7c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a7a4cd01baf9751a32129da6160ee8684">animate</a> (int dt)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Animer.  <a href="#a7a4cd01baf9751a32129da6160ee8684"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#ad7ec5bcfae66e275785603eced6bc768">walk</a> (int way)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Courir.  <a href="#ad7ec5bcfae66e275785603eced6bc768"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#af3be77bda1f1915c2bddfe5b4dee699c">kneel</a> (bool)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">À genoux.  <a href="#af3be77bda1f1915c2bddfe5b4dee699c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a78337a7b31308fd517809111249a268d"></a><!-- doxytag: member="Player::die" ref="a78337a7b31308fd517809111249a268d" args="()" -->
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a78337a7b31308fd517809111249a268d">die</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Le personnage meurt. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9b8265a19fd07e246f8e9c052f291e81"></a><!-- doxytag: member="Player::reload" ref="a9b8265a19fd07e246f8e9c052f291e81" args="(int nb)" -->
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a9b8265a19fd07e246f8e9c052f291e81">reload</a> (int nb)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Recharge son arme courante (sera non utilisé...). <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#afd14b5091c75777cb45953fa2f0cc027">shoot</a> (list&lt; <a class="el" href="class_ammo.html">Ammo</a> * &gt; *air, <a class="el" href="class_float2.html">Float2</a> angle=<a class="el" href="class_float2.html">Float2</a>(1, 0))</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Tirer.  <a href="#afd14b5091c75777cb45953fa2f0cc027"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a3681caeccf7046368d65dc8f430925c0">addWeapon</a> (<a class="el" href="class_weapon.html">Weapon</a> *w)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute une arme au joueur.  <a href="#a3681caeccf7046368d65dc8f430925c0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#abe9c24068a098ee6d529032d8f582608">setWeapon</a> (int w)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie l'arme courante.  <a href="#abe9c24068a098ee6d529032d8f582608"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Attributs protégés</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a61c808d878e98b6c54c84c9c8654559a"></a><!-- doxytag: member="Player::armes" ref="a61c808d878e98b6c54c84c9c8654559a" args="" -->
-vector&lt; <a class="el" href="class_weapon.html">Weapon</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>armes</b></td></tr>
+vector&lt; <a class="el" href="class_weapon.html">Weapon</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a61c808d878e98b6c54c84c9c8654559a">armes</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Armes possédées par le joueur. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a03b7de11c2e6a4540bf62563b70f77dd"></a><!-- doxytag: member="Player::current_weapon" ref="a03b7de11c2e6a4540bf62563b70f77dd" args="" -->
-int&#160;</td><td class="memItemRight" valign="bottom"><b>current_weapon</b></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a03b7de11c2e6a4540bf62563b70f77dd">current_weapon</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Indice de l'arme en cours d'utilisation. <br/></td></tr>
 </table>
-<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<hr/><a name="details" id="details"></a><h2>Description détaillée</h2>
+<div class="textblock"><p>Modélise le joueur. </p>
+<p>Un <a class="el" href="class_player.html" title="Modélise le joueur.">Player</a> est un <a class="el" href="class_character.html" title="Modélise un personnage.">Character</a> contrôlé par le joueur. Il peut posséder différents types d'armes. </p>
+</div><hr/><h2>Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="afa2bc2cc2a64d438ed40534beff4af62"></a><!-- doxytag: member="Player::Player" ref="afa2bc2cc2a64d438ed40534beff4af62" args="(Int2 pos, Int2 siz, int m, int max_h)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_player.html#afa2bc2cc2a64d438ed40534beff4af62">Player::Player</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_int2.html">Int2</a>&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_int2.html">Int2</a>&#160;</td>
+          <td class="paramname"><em>siz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>max_h</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructeur. </p>
+<p>Constructeur de la classe <a class="el" href="class_player.html" title="Modélise le joueur.">Player</a>. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>: Position initiale du joueur. </td></tr>
+    <tr><td class="paramname">siz</td><td>: Taille initiale du joueur. </td></tr>
+    <tr><td class="paramname">m</td><td>: Masse du joueur. </td></tr>
+    <tr><td class="paramname">max_h</td><td>: Nombre maximal de points de santé. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="affe0cc3cb714f6deb4e62f0c0d3f1fd8"></a><!-- doxytag: member="Player::Player" ref="affe0cc3cb714f6deb4e62f0c0d3f1fd8" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_player.html#afa2bc2cc2a64d438ed40534beff4af62">Player::Player</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructeur. </p>
+<p>Constructeur par défaut de la classe <a class="el" href="class_player.html" title="Modélise le joueur.">Player</a> </p>
+
+</div>
+</div>
+<a class="anchor" id="a749d2c00e1fe0f5c2746f7505a58c062"></a><!-- doxytag: member="Player::~Player" ref="a749d2c00e1fe0f5c2746f7505a58c062" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_player.html#a749d2c00e1fe0f5c2746f7505a58c062">Player::~Player</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructeur. </p>
+<p>Destructeur de la classe <a class="el" href="class_player.html" title="Modélise le joueur.">Player</a> </p>
+
+</div>
+</div>
+<hr/><h2>Documentation des fonctions membres</h2>
+<a class="anchor" id="a3681caeccf7046368d65dc8f430925c0"></a><!-- doxytag: member="Player::addWeapon" ref="a3681caeccf7046368d65dc8f430925c0" args="(Weapon *w)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_player.html#a3681caeccf7046368d65dc8f430925c0">Player::addWeapon</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_weapon.html">Weapon</a> *&#160;</td>
+          <td class="paramname"><em>w</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Ajoute une arme au joueur. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">:</td><td>Arme à ajouter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7a4cd01baf9751a32129da6160ee8684"></a><!-- doxytag: member="Player::animate" ref="a7a4cd01baf9751a32129da6160ee8684" args="(int dt)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="class_player.html#a7a4cd01baf9751a32129da6160ee8684">Player::animate</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dt</em></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Animer. </p>
+<p>Déplace le joueur en fonction du temps. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dt</td><td>: Temps écoulé depuis le dernier appel de la fonction. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Réimplémentée à partir de <a class="el" href="class_character.html#abc8b0f2d5d69cd9a5cdd1634e69b10f3">Character</a>.</p>
+
+<p>Réimplémentée dans <a class="el" href="class_player_view.html#a7077a695549cedcfc5fd2a9e1d311c0e">PlayerView</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af3be77bda1f1915c2bddfe5b4dee699c"></a><!-- doxytag: member="Player::kneel" ref="af3be77bda1f1915c2bddfe5b4dee699c" args="(bool)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="class_player.html#af3be77bda1f1915c2bddfe5b4dee699c">Player::kneel</a> </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>À genoux. </p>
+<p>Fait se mettre à genoux le joueur (ou se lever). </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">b</td><td>: Vrai si le joueur doit se mettre à genoux, Faux s'il doit se lever. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Réimplémentée à partir de <a class="el" href="class_character.html#aa2c2f00f7f1c5be7b692949f216db8e6">Character</a>.</p>
+
+<p>Réimplémentée dans <a class="el" href="class_player_view.html#a5bf2e9064a584768cd50ca675564c1b6">PlayerView</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7a337e9b2394c4c3edd90d8e99832a7c"></a><!-- doxytag: member="Player::print" ref="a7a337e9b2394c4c3edd90d8e99832a7c" args="(ostream &amp;os) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_player.html#a7a337e9b2394c4c3edd90d8e99832a7c">Player::print</a> </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em></td><td>)</td>
+          <td> const<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Debug. </p>
+<p>Affiche des informations sur l'objet. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>: Flux sur lequel afficher. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Réimplémentée à partir de <a class="el" href="class_character.html#a933630a522b20aaaf5e411c2c3642124">Character</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abe9c24068a098ee6d529032d8f582608"></a><!-- doxytag: member="Player::setWeapon" ref="abe9c24068a098ee6d529032d8f582608" args="(int w)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_player.html#abe9c24068a098ee6d529032d8f582608">Player::setWeapon</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>w</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Modifie l'arme courante. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Indice</td><td>de l'arme à selectionner. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="afd14b5091c75777cb45953fa2f0cc027"></a><!-- doxytag: member="Player::shoot" ref="afd14b5091c75777cb45953fa2f0cc027" args="(list&lt; Ammo * &gt; *air, Float2 angle=Float2(1, 0))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="class_player.html#afd14b5091c75777cb45953fa2f0cc027">Player::shoot</a> </td>
+          <td>(</td>
+          <td class="paramtype">list&lt; <a class="el" href="class_ammo.html">Ammo</a> * &gt; *&#160;</td>
+          <td class="paramname"><em>air</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_float2.html">Float2</a>&#160;</td>
+          <td class="paramname"><em>angle</em> = <code><a class="el" href="class_float2.html">Float2</a>(1,&#160;0)</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Tirer. </p>
+<p>Le joueur tire avec son arme courante. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">air</td><td>: Vecteur dans lequel insérer les projectiles générés. </td></tr>
+    <tr><td class="paramname">angle</td><td>: Vecteur de la direction dans laquelle les projectiles doivent être propulsés. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Réimplémentée à partir de <a class="el" href="class_character.html#a201f7c26a1637d4604b28a2c128b9309">Character</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad7ec5bcfae66e275785603eced6bc768"></a><!-- doxytag: member="Player::walk" ref="ad7ec5bcfae66e275785603eced6bc768" args="(int way)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="class_player.html#ad7ec5bcfae66e275785603eced6bc768">Player::walk</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>way</em></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Courir. </p>
+<p>Fait courir le joueur. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">way</td><td>: Sens dans lequel le joueur doit se déplacer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Réimplémentée à partir de <a class="el" href="class_character.html#a211bbf81a9ef429793cc00dfa8d15c4c">Character</a>.</p>
+
+<p>Réimplémentée dans <a class="el" href="class_player_view.html#a047bc57a2ad872a028464889fdc46e8c">PlayerView</a>.</p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
 <li>include/model/<a class="el" href="_player_8h_source.html">Player.h</a></li>
-<li>src/model/Player.cpp</li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -174,7 +483,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>current_weapon</b></td
     <ul>
       <li class="navelem"><a class="el" href="class_player.html">Player</a>      </li>
 
-    <li class="footer">Généré le Samedi Mars 28 2015 18:14:07 pour Metal Slug par
+    <li class="footer">Généré le Dimanche Mars 29 2015 16:50:37 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

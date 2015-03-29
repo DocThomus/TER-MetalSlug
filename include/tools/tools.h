@@ -5,7 +5,7 @@
 /*!
  * \file tools.h
  * \author Jules
- * \brief Déclaration des outils
+ * \brief Outils de programmation (classes,fonctions...)
  * \addtogroup Tools 
  * @{
  */
@@ -25,12 +25,21 @@ using namespace std;
 
 /*============== FONCTIONS UTILES ==============*/
 
-/* CONVERSION VERS STRING */
+/*!
+ * \brief Conversion d'une variable quelconque en string
+ */
 template <typename T> string toString(const T& t); 
 
 
 
 /*============== CLASSE INT2 ==============*/
+
+ /*!\class Int2
+ *  \brief Stockage de deux entiers
+ *
+ * Stocke deux entiers, permet un accès plus intuitif qu'avec un simple tableau.
+ * Utilse pour stocker une position ou une taille.
+ */
 class Int2 {
 
 	public :
@@ -52,6 +61,13 @@ class Int2 {
 
 
 /*============== CLASSE FLOAT2 ==============*/
+
+/*!\class Float2
+ *  \brief Stockage de deux flottants
+ *
+ * Stocke deux flottants, permet un accès plus intuitif qu'avec un simple tableau.
+ * Utilse pour stocker une position ou une taille.
+ */
 class Float2 {
 
 	public :
@@ -73,6 +89,12 @@ class Float2 {
 
 
 /*============== CLASSE BOOL2 ==============*/
+
+/*!\class Bool2
+ *  \brief Stockage de deux booléens
+ *
+ * Stocke deux booléens, permet un accès plus intuitif qu'avec un simple tableau.
+ */
 class Bool2 {
 
 	public :

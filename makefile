@@ -58,3 +58,6 @@ commit :
 
 add :
 	@git add . --verbose
+
+documentation :
+	doxygen

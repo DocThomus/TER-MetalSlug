@@ -76,6 +76,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
     </ul>
   </div>
 </div>
@@ -110,50 +111,40 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00019"></a>00019 
 <a name="l00020"></a>00020 <span class="keyword">using namespace </span>std;
 <a name="l00021"></a>00021 
-<a name="l00022"></a>00022 <span class="keyword">class </span><a class="code" href="class_player.html">Player</a>;
-<a name="l00023"></a>00023 <span class="keyword">class </span><a class="code" href="class_weapon.html">Weapon</a>;
+<a name="l00022"></a>00022 <span class="keyword">class </span><a class="code" href="class_player.html" title="Modélise le joueur.">Player</a>;
+<a name="l00023"></a>00023 <span class="keyword">class </span><a class="code" href="class_weapon.html" title="Modélise une arme.">Weapon</a>;
 <a name="l00024"></a>00024 
 <a name="l00025"></a>00025 
-<a name="l00026"></a>00026 <span class="comment">/***</span>
-<a name="l00027"></a>00027 <span class="comment">* Item -&gt; ObjetPhysique</span>
-<a name="l00028"></a>00028 <span class="comment">* ===========================================================</span>
-<a name="l00029"></a>00029 <span class="comment">* Modélise un item.</span>
-<a name="l00030"></a>00030 <span class="comment">* Objet posé sur le sol qui contient un bonus, un malus ou</span>
-<a name="l00031"></a>00031 <span class="comment">* même une arme.</span>
-<a name="l00032"></a>00032 <span class="comment">***/</span>
-<a name="l00033"></a>00033 
-<a name="l00034"></a>00034 
+<a name="l00026"></a>00026 
+<a name="l00033"></a><a class="code" href="class_item.html">00033</a> <span class="keyword">class </span><a class="code" href="class_item.html" title="Modélise un item.">Item</a> : <span class="keyword">public</span> <a class="code" href="class_objet_physique.html" title="Modélise un objet physique.">ObjetPhysique</a>
+<a name="l00034"></a>00034 {
 <a name="l00035"></a>00035 
-<a name="l00036"></a><a class="code" href="class_item.html">00036</a> <span class="keyword">class </span><a class="code" href="class_item.html">Item</a> : <span class="keyword">public</span> <a class="code" href="class_objet_physique.html">ObjetPhysique</a>
-<a name="l00037"></a>00037 {
-<a name="l00038"></a>00038 
-<a name="l00039"></a>00039         <span class="keyword">public</span> :
-<a name="l00040"></a>00040 
-<a name="l00041"></a>00041                 <span class="keyword">enum</span> TypeItem {HEALTH,WEAPON,INVINCIBLE,CHICKEN,INVERT,AMMO};
-<a name="l00042"></a>00042         
+<a name="l00036"></a>00036         <span class="keyword">public</span> :
+<a name="l00037"></a>00037 
+<a name="l00042"></a><a class="code" href="class_item.html#a3636d9623ed7b945c9de6a2a8e032676">00042</a>                 <span class="keyword">enum</span> <a class="code" href="class_item.html#a3636d9623ed7b945c9de6a2a8e032676" title="Types possibles de l&#39;objet Item.">TypeItem</a> {HEALTH,WEAPON,INVINCIBLE,CHICKEN,INVERT,AMMO};
 <a name="l00043"></a>00043         
-<a name="l00044"></a>00044         <span class="keyword">protected</span> :
-<a name="l00045"></a>00045 
-<a name="l00046"></a>00046                 TypeItem type;
-<a name="l00047"></a>00047                 Weapon::TypeWeapon type_weapon;
-<a name="l00048"></a>00048 
-<a name="l00049"></a>00049 
-<a name="l00050"></a>00050         <span class="keyword">public</span> :
-<a name="l00051"></a>00051 
-<a name="l00052"></a>00052                 <a class="code" href="class_item.html">Item</a>(<a class="code" href="class_int2.html">Int2</a> pos, <a class="code" href="class_int2.html">Int2</a> siz, <span class="keywordtype">int</span> m, TypeItem type);
-<a name="l00053"></a>00053                 <a class="code" href="class_item.html">Item</a>();
-<a name="l00054"></a>00054                 ~<a class="code" href="class_item.html">Item</a>();
-<a name="l00055"></a>00055 
-<a name="l00056"></a>00056                 <span class="keywordtype">void</span> print(ostream&amp; os) <span class="keyword">const</span>;
+<a name="l00044"></a>00044         
+<a name="l00045"></a>00045         <span class="keyword">protected</span> :
+<a name="l00046"></a>00046 
+<a name="l00047"></a><a class="code" href="class_item.html#ae92dc62097380acdf02ca1dda7766395">00047</a>                 <a class="code" href="class_item.html#a3636d9623ed7b945c9de6a2a8e032676" title="Types possibles de l&#39;objet Item.">TypeItem</a> <a class="code" href="class_item.html#ae92dc62097380acdf02ca1dda7766395" title="Type de l&#39;item.">type</a>; 
+<a name="l00048"></a><a class="code" href="class_item.html#ab2031aa97673760e2a3a3c90fee03e15">00048</a>                 Weapon::TypeWeapon <a class="code" href="class_item.html#ab2031aa97673760e2a3a3c90fee03e15" title="Type de l&#39;arme donnée par l&#39;item.">type_weapon</a>; 
+<a name="l00051"></a>00051         <span class="keyword">public</span> :
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053                 
+<a name="l00054"></a>00054                 <a class="code" href="class_item.html" title="Modélise un item.">Item</a>(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> pos, <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> siz, <span class="keywordtype">int</span> m, <a class="code" href="class_item.html#a3636d9623ed7b945c9de6a2a8e032676" title="Types possibles de l&#39;objet Item.">TypeItem</a> type);
+<a name="l00055"></a>00055                 <a class="code" href="class_item.html" title="Modélise un item.">Item</a>();
+<a name="l00056"></a>00056                 ~<a class="code" href="class_item.html" title="Modélise un item.">Item</a>();
 <a name="l00057"></a>00057 
-<a name="l00058"></a>00058                 <span class="keywordtype">void</span> trigger(<a class="code" href="class_player.html">Player</a>* p);
-<a name="l00059"></a>00059                 <span class="keywordtype">void</span> setTypeWeapon(Weapon::TypeWeapon type);
-<a name="l00060"></a>00060 
-<a name="l00061"></a>00061 
-<a name="l00062"></a>00062 };
+<a name="l00058"></a>00058                 <span class="keywordtype">void</span> print(ostream&amp; os) <span class="keyword">const</span>;
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060                 <span class="keywordtype">void</span> trigger(<a class="code" href="class_player.html" title="Modélise le joueur.">Player</a>* p);
+<a name="l00061"></a>00061                 <span class="keywordtype">void</span> setTypeWeapon(Weapon::TypeWeapon type);
+<a name="l00062"></a>00062 
 <a name="l00063"></a>00063 
-<a name="l00064"></a>00064 
-<a name="l00067"></a>00067 <span class="preprocessor">#endif</span>
+<a name="l00064"></a>00064 };
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066 
+<a name="l00069"></a>00069 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -174,7 +165,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul>
       <li class="navelem"><a class="el" href="_item_8h.html">Item.h</a>      </li>
 
-    <li class="footer">Généré le Samedi Mars 28 2015 18:14:07 pour Metal Slug par
+    <li class="footer">Généré le Dimanche Mars 29 2015 16:50:36 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -76,6 +76,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
     </ul>
   </div>
 </div>
@@ -118,24 +119,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00034"></a><a class="code" href="class_level.html">00034</a> <span class="keyword">class </span><a class="code" href="class_level.html" title="Stocke les données du niveau.">Level</a>
 <a name="l00035"></a>00035 {
 <a name="l00036"></a>00036 
-<a name="l00037"></a>00037         <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_game.html" title="Gère le jeu.">Game</a>;
+<a name="l00037"></a>00037         <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_game.html" title="Gère le jeu lolu.">Game</a>;
 <a name="l00038"></a>00038 
 <a name="l00039"></a>00039         <span class="keyword">private</span> :
 <a name="l00040"></a>00040 
-<a name="l00041"></a>00041                 <a class="code" href="class_environment.html" title="Stocke l&#39;environnement.">Environment</a> environment;
-<a name="l00042"></a>00042 
+<a name="l00041"></a><a class="code" href="class_level.html#a34659a8c8da9d3102344baa4f02ab6b1">00041</a>                 <a class="code" href="class_environment.html" title="Stocke l&#39;environnement.">Environment</a> <a class="code" href="class_level.html#a34659a8c8da9d3102344baa4f02ab6b1" title="Environnement du niveau (Platform, Decor, Destructible).">environment</a>; 
 <a name="l00043"></a>00043         <span class="keyword">public</span> :
 <a name="l00044"></a>00044 
-<a name="l00045"></a>00045                 <a class="code" href="class_level.html" title="Stocke les données du niveau.">Level</a>();
-<a name="l00046"></a>00046                 ~<a class="code" href="class_level.html" title="Stocke les données du niveau.">Level</a>();
-<a name="l00047"></a>00047 
-<a name="l00048"></a>00048                 <span class="keywordtype">void</span> <a class="code" href="class_game.html#ab268789fc559218dc907e82d34dcf970" title="Affichage.">display</a>(RenderWindow* window);
-<a name="l00049"></a>00049 
-<a name="l00050"></a>00050                 <span class="keywordtype">void</span> addDecor(<a class="code" href="class_int2.html">Int2</a> siz, Texture* tex, <span class="keywordtype">int</span> z=0);
-<a name="l00051"></a>00051                 <span class="keywordtype">void</span> addPlatform(<a class="code" href="class_int2.html">Int2</a> pos, <a class="code" href="class_int2.html">Int2</a> siz, <span class="keywordtype">int</span> wl=0, Texture* tex=NULL);
-<a name="l00052"></a>00052 };
-<a name="l00053"></a>00053 
-<a name="l00056"></a>00056 <span class="preprocessor">#endif</span>
+<a name="l00050"></a>00050                 <a class="code" href="class_level.html" title="Stocke les données du niveau.">Level</a>();
+<a name="l00051"></a>00051 
+<a name="l00057"></a>00057                 ~<a class="code" href="class_level.html" title="Stocke les données du niveau.">Level</a>();
+<a name="l00058"></a>00058 
+<a name="l00065"></a>00065                 <span class="keywordtype">void</span> <a class="code" href="class_game.html#ab268789fc559218dc907e82d34dcf970" title="Affichage.">display</a>(RenderWindow* window);
+<a name="l00066"></a>00066 
+<a name="l00075"></a>00075                 <span class="keywordtype">void</span> addDecor(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> siz, Texture* tex, <span class="keywordtype">int</span> z=0);
+<a name="l00076"></a>00076 
+<a name="l00086"></a>00086                 <span class="keywordtype">void</span> addPlatform(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> pos, <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> siz, <span class="keywordtype">int</span> wl=0, Texture* tex=NULL);
+<a name="l00087"></a>00087 };
+<a name="l00088"></a>00088 
+<a name="l00091"></a>00091 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -156,7 +158,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul>
       <li class="navelem"><a class="el" href="_level_8h.html">Level.h</a>      </li>
 
-    <li class="footer">Généré le Samedi Mars 28 2015 18:14:07 pour Metal Slug par
+    <li class="footer">Généré le Dimanche Mars 29 2015 16:50:36 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

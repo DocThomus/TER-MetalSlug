@@ -76,6 +76,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
     </ul>
   </div>
 </div>
@@ -101,57 +102,53 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define OBJETPHYSIQUE_H</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
 <a name="l00012"></a>00012 <span class="preprocessor">#include &lt;iostream&gt;</span>
-<a name="l00013"></a>00013 <span class="preprocessor">#include &lt;<a class="code" href="tools_8h.html" title="Déclaration des outils.">tools/tools.h</a>&gt;</span>
+<a name="l00013"></a>00013 <span class="preprocessor">#include &lt;<a class="code" href="tools_8h.html" title="Outils de programmation (classes,fonctions...)">tools/tools.h</a>&gt;</span>
 <a name="l00014"></a>00014 
 <a name="l00015"></a>00015 <span class="keyword">using namespace </span>std;
 <a name="l00016"></a>00016 
 <a name="l00017"></a>00017 
-<a name="l00018"></a>00018 <span class="comment">/***</span>
-<a name="l00019"></a>00019 <span class="comment">* ObjetPhysique</span>
-<a name="l00020"></a>00020 <span class="comment">* ===========================================================</span>
-<a name="l00021"></a>00021 <span class="comment">* Modélise un objet physique simple sur lequel on peut </span>
-<a name="l00022"></a>00022 <span class="comment">* appliquer des forces.</span>
-<a name="l00023"></a>00023 <span class="comment">***/</span>
-<a name="l00024"></a>00024 
-<a name="l00025"></a>00025 
-<a name="l00026"></a><a class="code" href="class_objet_physique.html">00026</a> <span class="keyword">class </span><a class="code" href="class_objet_physique.html">ObjetPhysique</a>
-<a name="l00027"></a>00027 {
-<a name="l00028"></a>00028         <span class="keyword">friend</span> ostream&amp; operator &lt;&lt; (ostream&amp; os, <span class="keyword">const</span> <a class="code" href="class_objet_physique.html">ObjetPhysique</a>&amp; obj);
+<a name="l00018"></a>00018 
+<a name="l00024"></a><a class="code" href="class_objet_physique.html">00024</a> <span class="keyword">class </span><a class="code" href="class_objet_physique.html" title="Modélise un objet physique.">ObjetPhysique</a>
+<a name="l00025"></a>00025 {
+<a name="l00026"></a>00026         <span class="keyword">friend</span> ostream&amp; operator &lt;&lt; (ostream&amp; os, <span class="keyword">const</span> <a class="code" href="class_objet_physique.html" title="Modélise un objet physique.">ObjetPhysique</a>&amp; obj);
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028         <span class="keyword">protected</span> :
 <a name="l00029"></a>00029 
-<a name="l00030"></a>00030         <span class="keyword">protected</span> :
-<a name="l00031"></a>00031 
-<a name="l00032"></a>00032                 <a class="code" href="class_int2.html">Int2</a> position;
-<a name="l00033"></a>00033                 <a class="code" href="class_int2.html">Int2</a> size;
-<a name="l00034"></a>00034 
-<a name="l00035"></a>00035                 <span class="keywordtype">int</span> mass;
-<a name="l00036"></a>00036                 <a class="code" href="class_float2.html">Float2</a> movement;
-<a name="l00037"></a>00037 
+<a name="l00030"></a><a class="code" href="class_objet_physique.html#adaff4b21f7ce9e9f0740f5e56a7fb48f">00030</a>                 <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> <a class="code" href="class_objet_physique.html#adaff4b21f7ce9e9f0740f5e56a7fb48f" title="Position de l&#39;objet.">position</a>; 
+<a name="l00031"></a><a class="code" href="class_objet_physique.html#a8b560415dc0a1f38e8cf3e8a24b1c9aa">00031</a>                 <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> <a class="code" href="class_objet_physique.html#a8b560415dc0a1f38e8cf3e8a24b1c9aa" title="Taille de l&#39;objet.">size</a>; 
+<a name="l00033"></a><a class="code" href="class_objet_physique.html#ad9aecb9f29d4bf704d8a536d32081664">00033</a>                 <span class="keywordtype">int</span> <a class="code" href="class_objet_physique.html#ad9aecb9f29d4bf704d8a536d32081664" title="Masse de l&#39;objet.">mass</a>; 
+<a name="l00034"></a><a class="code" href="class_objet_physique.html#abca9fd07d93028f52251d5a9bbad0f50">00034</a>                 <a class="code" href="class_float2.html" title="Stockage de deux flottants.">Float2</a> <a class="code" href="class_objet_physique.html#abca9fd07d93028f52251d5a9bbad0f50" title="Mouvement de l&#39;objet.">movement</a>; 
+<a name="l00037"></a>00037         <span class="keyword">public</span> :
 <a name="l00038"></a>00038 
-<a name="l00039"></a>00039         <span class="keyword">public</span> :
-<a name="l00040"></a>00040 
-<a name="l00041"></a>00041                 <a class="code" href="class_objet_physique.html">ObjetPhysique</a>(<a class="code" href="class_int2.html">Int2</a> pos,<a class="code" href="class_int2.html">Int2</a> siz, <span class="keywordtype">int</span> m=0);
-<a name="l00042"></a>00042                 <a class="code" href="class_objet_physique.html">ObjetPhysique</a>();
-<a name="l00043"></a>00043                 ~<a class="code" href="class_objet_physique.html">ObjetPhysique</a>();
-<a name="l00044"></a>00044 
-<a name="l00045"></a>00045                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> animate(<span class="keywordtype">int</span> dt);
-<a name="l00046"></a>00046 
-<a name="l00047"></a>00047                 <span class="keyword">inline</span> <a class="code" href="class_int2.html">Int2</a> getPosition() {<span class="keywordflow">return</span> position;};
-<a name="l00048"></a>00048                 <span class="keyword">inline</span> <a class="code" href="class_int2.html">Int2</a> getSize() {<span class="keywordflow">return</span> size;};
-<a name="l00049"></a>00049                 <span class="keyword">inline</span> <a class="code" href="class_float2.html">Float2</a> getMovement() {<span class="keywordflow">return</span> movement;};
-<a name="l00050"></a>00050 
-<a name="l00051"></a>00051                 <span class="keywordtype">void</span> setPosition(<a class="code" href="class_int2.html">Int2</a> pos);
-<a name="l00052"></a>00052                 <span class="keywordtype">void</span> setSize(<a class="code" href="class_int2.html">Int2</a> siz);
-<a name="l00053"></a>00053                 <span class="keywordtype">void</span> setMass(<span class="keywordtype">int</span> m);
-<a name="l00054"></a>00054 
-<a name="l00055"></a>00055                 <span class="keywordtype">void</span> addMovement(<a class="code" href="class_float2.html">Float2</a> v);
-<a name="l00056"></a>00056 
-<a name="l00057"></a>00057                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> print(ostream&amp; os) <span class="keyword">const</span>;
-<a name="l00058"></a>00058                 
-<a name="l00059"></a>00059 };
-<a name="l00060"></a>00060 
-<a name="l00061"></a>00061 
+<a name="l00047"></a>00047                 <a class="code" href="class_objet_physique.html" title="Modélise un objet physique.">ObjetPhysique</a>(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> pos,<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> siz, <span class="keywordtype">int</span> m=0);
+<a name="l00048"></a>00048 
+<a name="l00054"></a>00054                 <a class="code" href="class_objet_physique.html" title="Modélise un objet physique.">ObjetPhysique</a>();
+<a name="l00055"></a>00055 
+<a name="l00061"></a>00061                 ~<a class="code" href="class_objet_physique.html" title="Modélise un objet physique.">ObjetPhysique</a>();
 <a name="l00062"></a>00062 
-<a name="l00065"></a>00065 <span class="preprocessor">#endif</span>
+<a name="l00069"></a>00069                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> animate(<span class="keywordtype">int</span> dt);
+<a name="l00070"></a>00070 
+<a name="l00074"></a><a class="code" href="class_objet_physique.html#ae537adf900a2bb5eb82a9e36195bf4a5">00074</a>                 <span class="keyword">inline</span> <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> <a class="code" href="class_objet_physique.html#ae537adf900a2bb5eb82a9e36195bf4a5" title="Retourne la position de l&#39;objet.">getPosition</a>() {<span class="keywordflow">return</span> position;};
+<a name="l00075"></a>00075 
+<a name="l00079"></a><a class="code" href="class_objet_physique.html#a0e8595a25635537949c301b1bcf62d3f">00079</a>                 <span class="keyword">inline</span> <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> <a class="code" href="class_objet_physique.html#a0e8595a25635537949c301b1bcf62d3f" title="Retourne la taille de l&#39;objet.">getSize</a>() {<span class="keywordflow">return</span> size;};
+<a name="l00080"></a>00080 
+<a name="l00084"></a><a class="code" href="class_objet_physique.html#a7c18118de257e51a3784debad9d62df0">00084</a>                 <span class="keyword">inline</span> <a class="code" href="class_float2.html" title="Stockage de deux flottants.">Float2</a> <a class="code" href="class_objet_physique.html#a7c18118de257e51a3784debad9d62df0" title="Retourne le vecteur de mouvement de l&#39;objet.">getMovement</a>() {<span class="keywordflow">return</span> movement;};
+<a name="l00085"></a>00085 
+<a name="l00089"></a>00089                 <span class="keywordtype">void</span> setPosition(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> pos);
+<a name="l00090"></a>00090 
+<a name="l00094"></a>00094                 <span class="keywordtype">void</span> setSize(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> siz);
+<a name="l00095"></a>00095 
+<a name="l00099"></a>00099                 <span class="keywordtype">void</span> setMass(<span class="keywordtype">int</span> m);
+<a name="l00100"></a>00100 
+<a name="l00107"></a>00107                 <span class="keywordtype">void</span> addMovement(<a class="code" href="class_float2.html" title="Stockage de deux flottants.">Float2</a> v);
+<a name="l00108"></a>00108 
+<a name="l00115"></a>00115                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> print(ostream&amp; os) <span class="keyword">const</span>;
+<a name="l00116"></a>00116                 
+<a name="l00117"></a>00117 };
+<a name="l00118"></a>00118 
+<a name="l00119"></a>00119 
+<a name="l00120"></a>00120 
+<a name="l00123"></a>00123 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -172,7 +169,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul>
       <li class="navelem"><a class="el" href="_objet_physique_8h.html">ObjetPhysique.h</a>      </li>
 
-    <li class="footer">Généré le Samedi Mars 28 2015 18:14:07 pour Metal Slug par
+    <li class="footer">Généré le Dimanche Mars 29 2015 16:50:36 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -109,9 +109,9 @@ Graphe d'héritage de DecorView:</div>
  <div class="center">
   <img src="class_decor_view.png" usemap="#DecorView_map" alt=""/>
   <map id="DecorView_map" name="DecorView_map">
-<area href="class_decor.html" alt="Decor" shape="rect" coords="0,56,93,80"/>
+<area href="class_decor.html" title="Modélise un decor." alt="Decor" shape="rect" coords="0,56,93,80"/>
 <area href="class_my_drawable.html" alt="MyDrawable" shape="rect" coords="103,56,196,80"/>
-<area href="class_objet_physique.html" alt="ObjetPhysique" shape="rect" coords="0,0,93,24"/>
+<area href="class_objet_physique.html" title="Modélise un objet physique." alt="ObjetPhysique" shape="rect" coords="0,0,93,24"/>
 </map>
  </div></div>
 
@@ -119,22 +119,167 @@ Graphe d'héritage de DecorView:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a33af1f4d21ffe41a8d6523f3452b719d"></a><!-- doxytag: member="DecorView::DecorView" ref="a33af1f4d21ffe41a8d6523f3452b719d" args="(Int2 pos, Int2 siz, int z)" -->
-&#160;</td><td class="memItemRight" valign="bottom"><b>DecorView</b> (<a class="el" href="class_int2.html">Int2</a> pos, <a class="el" href="class_int2.html">Int2</a> siz, int z)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa073c1f24d1c05ad1bf96a75e0a25f80"></a><!-- doxytag: member="DecorView::display" ref="aa073c1f24d1c05ad1bf96a75e0a25f80" args="(RenderWindow *window)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>display</b> (RenderWindow *window)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_decor_view.html#a33af1f4d21ffe41a8d6523f3452b719d">DecorView</a> (<a class="el" href="class_int2.html">Int2</a> pos, <a class="el" href="class_int2.html">Int2</a> siz, int <a class="el" href="class_decor.html#adeee1ca29ddc5495a1a472ae0c14b98e">z</a>)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#a33af1f4d21ffe41a8d6523f3452b719d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_decor_view.html#a95859a9b277c8031a16f417aa344f975">DecorView</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#a95859a9b277c8031a16f417aa344f975"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_decor_view.html#a677055bcfabfb374826afb9ed3c3a754">~DecorView</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur.  <a href="#a677055bcfabfb374826afb9ed3c3a754"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_decor_view.html#aa073c1f24d1c05ad1bf96a75e0a25f80">display</a> (RenderWindow *window)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Affichage.  <a href="#aa073c1f24d1c05ad1bf96a75e0a25f80"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_decor_view.html#a3691bf59c55279687164125d58313d26">animate</a> (int x)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Animer.  <a href="#a3691bf59c55279687164125d58313d26"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac6faa7f2053acc5325c9caa5010128c6"></a><!-- doxytag: member="DecorView::updateIntRect" ref="ac6faa7f2053acc5325c9caa5010128c6" args="()" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>updateIntRect</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3691bf59c55279687164125d58313d26"></a><!-- doxytag: member="DecorView::animate" ref="a3691bf59c55279687164125d58313d26" args="(int x)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>animate</b> (int x)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_decor_view.html#ac6faa7f2053acc5325c9caa5010128c6">updateIntRect</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Mise à jour du rectangle de selection de la texture. <br/></td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Attributs privés</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac24419856a27c5f0b837c36074819476"></a><!-- doxytag: member="DecorView::tex_x" ref="ac24419856a27c5f0b837c36074819476" args="" -->
-int&#160;</td><td class="memItemRight" valign="bottom"><b>tex_x</b></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_decor_view.html#ac24419856a27c5f0b837c36074819476">tex_x</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Décalage horizontal de la texture. <br/></td></tr>
 </table>
-<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<hr/><h2>Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="a33af1f4d21ffe41a8d6523f3452b719d"></a><!-- doxytag: member="DecorView::DecorView" ref="a33af1f4d21ffe41a8d6523f3452b719d" args="(Int2 pos, Int2 siz, int z)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_decor_view.html#a33af1f4d21ffe41a8d6523f3452b719d">DecorView::DecorView</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_int2.html">Int2</a>&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_int2.html">Int2</a>&#160;</td>
+          <td class="paramname"><em>siz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>z</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructeur. </p>
+<p>Constructeur de la classe DecorVIew. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>: Position initiale du décor. </td></tr>
+    <tr><td class="paramname">siz</td><td>: Taille initiale du décor. </td></tr>
+    <tr><td class="paramname">z</td><td>: Indice d'éloignement du décor. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a95859a9b277c8031a16f417aa344f975"></a><!-- doxytag: member="DecorView::DecorView" ref="a95859a9b277c8031a16f417aa344f975" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_decor_view.html#a33af1f4d21ffe41a8d6523f3452b719d">DecorView::DecorView</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructeur. </p>
+<p>Constructeur par défaut de la classe DecorVIew. </p>
+
+</div>
+</div>
+<a class="anchor" id="a677055bcfabfb374826afb9ed3c3a754"></a><!-- doxytag: member="DecorView::~DecorView" ref="a677055bcfabfb374826afb9ed3c3a754" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_decor_view.html#a677055bcfabfb374826afb9ed3c3a754">DecorView::~DecorView</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructeur. </p>
+<p>Destructeur de la classe <a class="el" href="class_decor_view.html">DecorView</a> </p>
+
+</div>
+</div>
+<hr/><h2>Documentation des fonctions membres</h2>
+<a class="anchor" id="a3691bf59c55279687164125d58313d26"></a><!-- doxytag: member="DecorView::animate" ref="a3691bf59c55279687164125d58313d26" args="(int x)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_decor_view.html#a3691bf59c55279687164125d58313d26">DecorView::animate</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Animer. </p>
+<p>Déplace le décor en fonction de la distance parcourue dans le niveau. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>: Distance parcourue depuis le début du niveau. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Réimplémentée à partir de <a class="el" href="class_decor.html#a17c8931d7c209a109ae7d538df5654cf">Decor</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa073c1f24d1c05ad1bf96a75e0a25f80"></a><!-- doxytag: member="DecorView::display" ref="aa073c1f24d1c05ad1bf96a75e0a25f80" args="(RenderWindow *window)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_decor_view.html#aa073c1f24d1c05ad1bf96a75e0a25f80">DecorView::display</a> </td>
+          <td>(</td>
+          <td class="paramtype">RenderWindow *&#160;</td>
+          <td class="paramname"><em>window</em></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Affichage. </p>
+<p>Affiche l'objet dans une fenêtre de rendu. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>: Fenêtre d'affichage </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implémente <a class="el" href="class_my_drawable.html">MyDrawable</a>.</p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
 <li>include/view/<a class="el" href="_decor_view_8h_source.html">DecorView.h</a></li>
-<li>src/view/DecorView.cpp</li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -156,7 +301,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>tex_x</b></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_decor_view.html">DecorView</a>      </li>
 
-    <li class="footer">Généré le Samedi Mars 28 2015 18:14:07 pour Metal Slug par
+    <li class="footer">Généré le Dimanche Mars 29 2015 16:50:36 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

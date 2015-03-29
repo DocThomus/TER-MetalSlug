@@ -23,32 +23,34 @@ class Player;
 class Weapon;
 
 
-/***
-* Item -> ObjetPhysique
-* ===========================================================
-* Modélise un item.
-* Objet posé sur le sol qui contient un bonus, un malus ou
-* même une arme.
-***/
 
-
-
+/*!\class Item
+ * \brief Modélise un item.
+ *
+ * Objet posé sur le sol qui contient un bonus, un malus ou
+ * même une arme.
+ */
 class Item : public ObjetPhysique
 {
 
 	public :
 
+		/*!
+	     * \enum TypeItem
+	     * \brief Types possibles de l'objet Item.
+	     */
 		enum TypeItem {HEALTH,WEAPON,INVINCIBLE,CHICKEN,INVERT,AMMO};
 	
 	
 	protected :
 
-		TypeItem type;
-		Weapon::TypeWeapon type_weapon;
+		TypeItem type; /*!< \brief Type de l'item. */
+		Weapon::TypeWeapon type_weapon; /*!< \brief Type de l'arme donnée par l'item. */
 
 
 	public :
 
+		
 		Item(Int2 pos, Int2 siz, int m, TypeItem type);
 		Item();
 		~Item();

@@ -64,26 +64,26 @@ void Character::land(int h)
 
 
 
-void Character::bumpTop(int plafond) {
+void Character::bumpTop(int h) {
     if(state_g == AIR) {
         movement.y = 0;
-        position.y = plafond;
+        position.y = h;
     }
 }
 
 
-void Character::bumpLeft(int posMurDroite) {
+void Character::bumpLeft(int x) {
     // Le mur est a gauche du perso (le parametre est la droite de ce mur)
     movement.x = 0;
-    position.x = posMurDroite;
+    position.x = x;
 }
 
 
 
-void Character::bumpRight(int posMurGauche) {
+void Character::bumpRight(int x) {
     // Le mur est a droite du perso (le parametre est la gauche de ce mur)
     movement.x = 0;
-    position.x = posMurGauche - size.x; //On prend en compte la taille du perso.
+    position.x = x - size.x; //On prend en compte la taille du perso.
 }
 
 
@@ -95,6 +95,7 @@ void Character::print(ostream& os) const
     os << "=== Taille    : " << size << endl; 
     os << "=== Masse     : " << mass << endl;  
     os << "=== Mouvement : " << movement << endl;
+    os << "=== Santé     : " << health << endl;
     os << "==================";
 } 
 

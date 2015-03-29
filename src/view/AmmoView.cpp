@@ -3,12 +3,13 @@
 
 vector<Texture*> AmmoView::textures;
 
+
 AmmoView::AmmoView()
 :Ammo(),MyDrawable()
 {
 	body.setSize(Vector2f(size.x,size.y));
 	body.setOrigin(size.x/2,size.y/2);
-	initPosition();
+	initRotation();
 
 	switch(type)
 	{
@@ -29,7 +30,7 @@ AmmoView::AmmoView(Ammo a)
 {
 	body.setSize(Vector2f(size.x,size.y));
 	body.setOrigin(size.x/2,size.y/2);
-	initPosition();
+	initRotation();
 
 	switch(type)
 	{
@@ -96,12 +97,10 @@ void AmmoView::die(Int2 pos)
 }
 
 
-void AmmoView::initPosition()
+void AmmoView::initRotation()
 {
 	float a = 0;
-	
 	a = atan2(movement.y,movement.x)*180/M_PI;
-
 	body.setRotation(a);
 }
 

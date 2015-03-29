@@ -4,7 +4,7 @@
 /*!
  * \file XMLtools.h
  * \author Jules
- * \brief Déclaration des outils XML
+ * \brief Fonction de sauvegarde et de chargement de données au format XML
  * \addtogroup Tools 
  * @{
  */
@@ -37,11 +37,44 @@ class Environment;
 ***/
 
 
-/* SPRITE MAP */
-bool buildSpriteMap(string filename,vector<Int2>animations, vector<Int2> positions, vector<Int2> tailles);
-bool loadSpriteMap(string filename,vector<Int2>*animations, vector<Int2>* positions, vector<Int2>* tailles);
+/* === SPRITE MAP === */
 
-/* LEVEL */
+/*!
+ * \brief Construire spritemap
+ *
+ * Génère un fichier XML contenant le mapping d'une feuille de sprite.
+ * \param filename : Nom du fichier à génèrer.
+ * \param animations : Liste des animations par indices.
+ * \param positions : Liste des positions des frames.
+ * \param tailles : Liste des tailles des frames.
+ */
+bool buildSpriteMap(string filename, vector<Int2>animations, vector<Int2> positions, vector<Int2> tailles);
+
+/*!
+ * \brief Charger spritemap
+ *
+ * Charge le mapping d'une feuille de sprite à partir d'un fichier XML.
+ * \param filename : Nom du fichier à charger.
+ * \param animations : Vecteur d'animations par indice à remplir.
+ * \param positions : Vecteur de positions à remplir.
+ * \param tailles : Vecteur de tailles à remplir.
+ */
+bool loadSpriteMap(string filename, vector<Int2>*animations, vector<Int2>* positions, vector<Int2>* tailles);
+
+
+
+
+/* === LEVEL === */
+
+/*!
+ * \brief Chargement d'un Level
+ *
+ * Charge le contenu d'un niveau décrit dans un fichier xml
+ * \param filename : Nom du fichier à charger.
+ * \param conf : Configuration de la fenêtre à respecter
+ * \param env : Environnement à complèter
+ * \param tex : Conteneur pour les textures
+ */
 bool loadLevelXML(string filename, Config* conf, Environment* env, vector<Texture*>* tex);
 
 

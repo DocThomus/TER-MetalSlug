@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['memory_5fpool',['memory_pool',['../classrapidxml_1_1memory__pool.html#a0b609da81dff28a19ebd704400788429',1,'rapidxml::memory_pool']]]
+  ['masterclass',['MasterClass',['../class_master_class.html#acc64da8f4d59496e02e8c2d44258cf84',1,'MasterClass']]]
 ];

@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['status',['Status',['../classsf_1_1_sound_source.html#ac43af72c98c077500b239bc75b812f03',1,'sf::SoundSource::Status()'],['../classsf_1_1_ftp_1_1_response.html#af81738f06b6f571761696291276acb3b',1,'sf::Ftp::Response::Status()'],['../classsf_1_1_http_1_1_response.html#a663e071978e30fbbeb20ed045be874d8',1,'sf::Http::Response::Status()'],['../classsf_1_1_socket.html#a51bf0fd51057b98a10fbb866246176dc',1,'sf::Socket::Status()']]],
-  ['style',['Style',['../classsf_1_1_text.html#aa8add4aef484c6e6b20faff07452bd82',1,'sf::Text']]]
+  ['stateammo',['StateAmmo',['../class_ammo.html#ab1e5316640ed98513039385b82ef4b07',1,'Ammo']]],
+  ['statebattle',['StateBattle',['../class_character.html#a8251340f461ab396f975b18dce58229d',1,'Character']]],
+  ['stateground',['StateGround',['../class_character.html#a13feb8dcd3af1c802c2b1f545c955561',1,'Character']]],
+  ['stateposition',['StatePosition',['../class_character.html#a0504a5097fb6ff7679bb4f5408386bf2',1,'Character']]]
 ];

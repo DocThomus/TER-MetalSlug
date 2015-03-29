@@ -1,8 +1,7 @@
 var class_weapon =
 [
     [ "TypeWeapon", "class_weapon.html#a78ff2a715d795667cd901ef7487f805b", null ],
-    [ "Weapon", "class_weapon.html#adb2935dd259495beb503ae5a65fc5c3a", null ],
-    [ "Weapon", "class_weapon.html#a8426ae7b2725c827cd5f0449c5424b5d", null ],
+    [ "Weapon", "class_weapon.html#a7f35e78fac0eac7186d1b0cee304aa82", null ],
     [ "Weapon", "class_weapon.html#a42dbc46dd70319a24763992c4ebbd396", null ],
     [ "~Weapon", "class_weapon.html#a420e7ba3d2017e6de3e93eb579cfd3fa", null ],
     [ "print", "class_weapon.html#acef9a0a663b75874d86d7f96a4645d40", null ],

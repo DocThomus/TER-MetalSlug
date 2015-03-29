@@ -5,7 +5,7 @@ var class_animation =
     [ "~Animation", "class_animation.html#a401b68793d4fbf48d481c030ee4b2a16", null ],
     [ "addFrame", "class_animation.html#a749d856eb93c79dd39230ca75af32f29", null ],
     [ "changeFrame", "class_animation.html#a7135e18ba575274108d66a91bf663d0c", null ],
-    [ "getFrame", "class_animation.html#a3191f01136213e808dddd7a762ec55ec", null ],
+    [ "getFrame", "class_animation.html#ac090410bdb50afac307594f1d73b5023", null ],
     [ "getNbFrames", "class_animation.html#a5c7511bb9328f94a5a990f2fc479222a", null ],
     [ "getNextAnim", "class_animation.html#a0c2b44a6b4593b9d2e147e9c2ec6f632", null ],
     [ "reset", "class_animation.html#a903eb4b61b8c7bc72bbedbdba4cbb501", null ],

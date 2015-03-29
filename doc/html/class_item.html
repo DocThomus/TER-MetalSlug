@@ -104,13 +104,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="title">Référence de la classe Item<div class="ingroups"><a class="el" href="group___model.html">Model</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="Item" --><!-- doxytag: inherits="ObjetPhysique" --><div class="dynheader">
+<!-- doxytag: class="Item" --><!-- doxytag: inherits="ObjetPhysique" -->
+<p>Modélise un item.  
+ <a href="class_item.html#details">Plus de détails...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_item_8h_source.html">Item.h</a>&gt;</code></p>
+<div class="dynheader">
 Graphe d'héritage de Item:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_item.png" usemap="#Item_map" alt=""/>
   <map id="Item_map" name="Item_map">
-<area href="class_objet_physique.html" alt="ObjetPhysique" shape="rect" coords="0,0,93,24"/>
+<area href="class_objet_physique.html" title="Modélise un objet physique." alt="ObjetPhysique" shape="rect" coords="0,0,93,24"/>
 </map>
  </div></div>
 
@@ -118,7 +123,7 @@ Graphe d'héritage de Item:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-types"></a>
 Types publics</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><b>TypeItem</b> { <br/>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#a3636d9623ed7b945c9de6a2a8e032676">TypeItem</a> { <br/>
 &#160;&#160;<b>HEALTH</b>, 
 <b>WEAPON</b>, 
 <b>INVINCIBLE</b>, 
@@ -128,26 +133,60 @@ Types publics</h2></td></tr>
 <b>AMMO</b>
 <br/>
  }</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Types possibles de l'objet <a class="el" href="class_item.html" title="Modélise un item.">Item</a>. <br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a99a38f4888e8e347db1faff7f139a7e8"></a><!-- doxytag: member="Item::Item" ref="a99a38f4888e8e347db1faff7f139a7e8" args="(Int2 pos, Int2 siz, int m, TypeItem type)" -->
-&#160;</td><td class="memItemRight" valign="bottom"><b>Item</b> (<a class="el" href="class_int2.html">Int2</a> pos, <a class="el" href="class_int2.html">Int2</a> siz, int m, TypeItem type)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9580371a5512b74dc4178f1cd74d0f00"></a><!-- doxytag: member="Item::print" ref="a9580371a5512b74dc4178f1cd74d0f00" args="(ostream &amp;os) const " -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>print</b> (ostream &amp;os) const </td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Item</b> (<a class="el" href="class_int2.html">Int2</a> pos, <a class="el" href="class_int2.html">Int2</a> siz, int m, <a class="el" href="class_item.html#a3636d9623ed7b945c9de6a2a8e032676">TypeItem</a> <a class="el" href="class_item.html#ae92dc62097380acdf02ca1dda7766395">type</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#a9580371a5512b74dc4178f1cd74d0f00">print</a> (ostream &amp;os) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug.  <a href="#a9580371a5512b74dc4178f1cd74d0f00"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab596e007031a85aad5c9903af5e8473c"></a><!-- doxytag: member="Item::trigger" ref="ab596e007031a85aad5c9903af5e8473c" args="(Player *p)" -->
 void&#160;</td><td class="memItemRight" valign="bottom"><b>trigger</b> (<a class="el" href="class_player.html">Player</a> *p)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0ef1f1b5f066c14225d2af49795d566b"></a><!-- doxytag: member="Item::setTypeWeapon" ref="a0ef1f1b5f066c14225d2af49795d566b" args="(Weapon::TypeWeapon type)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setTypeWeapon</b> (Weapon::TypeWeapon type)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setTypeWeapon</b> (Weapon::TypeWeapon <a class="el" href="class_item.html#ae92dc62097380acdf02ca1dda7766395">type</a>)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Attributs protégés</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae92dc62097380acdf02ca1dda7766395"></a><!-- doxytag: member="Item::type" ref="ae92dc62097380acdf02ca1dda7766395" args="" -->
-TypeItem&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td></tr>
+<a class="el" href="class_item.html#a3636d9623ed7b945c9de6a2a8e032676">TypeItem</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#ae92dc62097380acdf02ca1dda7766395">type</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Type de l'item. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab2031aa97673760e2a3a3c90fee03e15"></a><!-- doxytag: member="Item::type_weapon" ref="ab2031aa97673760e2a3a3c90fee03e15" args="" -->
-Weapon::TypeWeapon&#160;</td><td class="memItemRight" valign="bottom"><b>type_weapon</b></td></tr>
+Weapon::TypeWeapon&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#ab2031aa97673760e2a3a3c90fee03e15">type_weapon</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Type de l'arme donnée par l'item. <br/></td></tr>
 </table>
-<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<hr/><a name="details" id="details"></a><h2>Description détaillée</h2>
+<div class="textblock"><p>Modélise un item. </p>
+<p>Objet posé sur le sol qui contient un bonus, un malus ou même une arme. </p>
+</div><hr/><h2>Documentation des fonctions membres</h2>
+<a class="anchor" id="a9580371a5512b74dc4178f1cd74d0f00"></a><!-- doxytag: member="Item::print" ref="a9580371a5512b74dc4178f1cd74d0f00" args="(ostream &amp;os) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_item.html#a9580371a5512b74dc4178f1cd74d0f00">Item::print</a> </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em></td><td>)</td>
+          <td> const<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Debug. </p>
+<p>Affiche des informations sur l'objet. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>: Flux sur lequel afficher. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Réimplémentée à partir de <a class="el" href="class_objet_physique.html#ae5977008611c34aafb655e6424978978">ObjetPhysique</a>.</p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
 <li>include/model/<a class="el" href="_item_8h_source.html">Item.h</a></li>
-<li>src/model/Item.cpp</li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -169,7 +208,7 @@ Weapon::TypeWeapon&#160;</td><td class="memItemRight" valign="bottom"><b>type_we
     <ul>
       <li class="navelem"><a class="el" href="class_item.html">Item</a>      </li>
 
-    <li class="footer">Généré le Samedi Mars 28 2015 18:14:07 pour Metal Slug par
+    <li class="footer">Généré le Dimanche Mars 29 2015 16:50:36 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

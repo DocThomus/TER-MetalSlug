@@ -105,14 +105,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="title">Référence de la classe Ammo<div class="ingroups"><a class="el" href="group___model.html">Model</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="Ammo" --><!-- doxytag: inherits="ObjetPhysique" --><div class="dynheader">
+<!-- doxytag: class="Ammo" --><!-- doxytag: inherits="ObjetPhysique" -->
+<p>Modélise un projectile.  
+ <a href="class_ammo.html#details">Plus de détails...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_ammo_8h_source.html">Ammo.h</a>&gt;</code></p>
+<div class="dynheader">
 Graphe d'héritage de Ammo:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_ammo.png" usemap="#Ammo_map" alt=""/>
   <map id="Ammo_map" name="Ammo_map">
-<area href="class_objet_physique.html" alt="ObjetPhysique" shape="rect" coords="0,0,93,24"/>
-<area href="class_ammo_view.html" alt="AmmoView" shape="rect" coords="0,112,93,136"/>
+<area href="class_objet_physique.html" title="Modélise un objet physique." alt="ObjetPhysique" shape="rect" coords="0,0,93,24"/>
+<area href="class_ammo_view.html" title="Un objet Ammo affichable." alt="AmmoView" shape="rect" coords="0,112,93,136"/>
 </map>
  </div></div>
 
@@ -120,35 +125,43 @@ Graphe d'héritage de Ammo:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-types"></a>
 Types publics</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><b>TypeAmmo</b> { <b>BULLET</b>, 
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ammo.html#af8e34cdcc780ef90b0708f097fc7acea">TypeAmmo</a> { <b>BULLET</b>, 
 <b>ROCKET</b>, 
 <b>GRENADE</b>, 
 <b>LASER</b>
  }</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><b>StateAmmo</b> { <b>FLY</b>, 
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Types possibles de l'objet <a class="el" href="class_ammo.html" title="Modélise un projectile.">Ammo</a>. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ammo.html#ab1e5316640ed98513039385b82ef4b07">StateAmmo</a> { <b>FLY</b>, 
 <b>STOP</b>, 
 <b>GHOST</b>
  }</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">États possibles de l'objet <a class="el" href="class_ammo.html" title="Modélise un projectile.">Ammo</a>. <br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1fbffb139eacb1dbf35000d938bbfa17"></a><!-- doxytag: member="Ammo::Ammo" ref="a1fbffb139eacb1dbf35000d938bbfa17" args="(Int2 pos, Int2 siz, int m, TypeAmmo type, Float2 move)" -->
-&#160;</td><td class="memItemRight" valign="bottom"><b>Ammo</b> (<a class="el" href="class_int2.html">Int2</a> pos, <a class="el" href="class_int2.html">Int2</a> siz, int m, TypeAmmo type, <a class="el" href="class_float2.html">Float2</a> move)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1ebdc43a62c3ed0207cf01602caf9a6f"></a><!-- doxytag: member="Ammo::print" ref="a1ebdc43a62c3ed0207cf01602caf9a6f" args="(ostream &amp;os) const " -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>print</b> (ostream &amp;os) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae0e5cfa5f7d731e67dee6f0be521d10c"></a><!-- doxytag: member="Ammo::animate" ref="ae0e5cfa5f7d731e67dee6f0be521d10c" args="(int dt)" -->
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>animate</b> (int dt)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac8880a287b598a443b1f7e47b7bdbe64"></a><!-- doxytag: member="Ammo::die" ref="ac8880a287b598a443b1f7e47b7bdbe64" args="(Int2 pos)" -->
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>die</b> (<a class="el" href="class_int2.html">Int2</a> pos)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa70ceafd9b113751bb3aec8ea151c252"></a><!-- doxytag: member="Ammo::getDamage" ref="aa70ceafd9b113751bb3aec8ea151c252" args="()" -->
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getDamage</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a06908ad18e6951f9f117e4bcbcf98141"></a><!-- doxytag: member="Ammo::getState" ref="a06908ad18e6951f9f117e4bcbcf98141" args="()" -->
-StateAmmo&#160;</td><td class="memItemRight" valign="bottom"><b>getState</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ammo.html#a1fbffb139eacb1dbf35000d938bbfa17">Ammo</a> (<a class="el" href="class_int2.html">Int2</a> pos, <a class="el" href="class_int2.html">Int2</a> siz, int m, <a class="el" href="class_ammo.html#af8e34cdcc780ef90b0708f097fc7acea">TypeAmmo</a> <a class="el" href="class_ammo.html#a33bf445c93551e3eff75f352a4a6ae38">type</a>, <a class="el" href="class_float2.html">Float2</a> move)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#a1fbffb139eacb1dbf35000d938bbfa17"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ammo.html#a6745bf955cceda43c50dc15c76157e64">Ammo</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#a6745bf955cceda43c50dc15c76157e64"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ammo.html#a90602c6481c6a66d4747306f90a3ebc7">~Ammo</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur.  <a href="#a90602c6481c6a66d4747306f90a3ebc7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ammo.html#a1ebdc43a62c3ed0207cf01602caf9a6f">print</a> (ostream &amp;os) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug.  <a href="#a1ebdc43a62c3ed0207cf01602caf9a6f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ammo.html#aa113df3aff05c38ee4813d2762d2a2ae">animate</a> (int dt)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Animer.  <a href="#aa113df3aff05c38ee4813d2762d2a2ae"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ammo.html#a4c84539dc7dad8187d2586155eb8f9bb">die</a> (<a class="el" href="class_int2.html">Int2</a> pos)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Projectile stoppé  <a href="#a4c84539dc7dad8187d2586155eb8f9bb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ammo.html#aa70ceafd9b113751bb3aec8ea151c252">getDamage</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Dégâts.  <a href="#aa70ceafd9b113751bb3aec8ea151c252"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ammo.html#ab1e5316640ed98513039385b82ef4b07">StateAmmo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ammo.html#a5553e8de086d171880433f611716c34a">getState</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">État.  <a href="#a5553e8de086d171880433f611716c34a"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Attributs protégés</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af51f34636337b30b28babbfbca07609b"></a><!-- doxytag: member="Ammo::state_a" ref="af51f34636337b30b28babbfbca07609b" args="" -->
-StateAmmo&#160;</td><td class="memItemRight" valign="bottom"><b>state_a</b></td></tr>
+<a class="el" href="class_ammo.html#ab1e5316640ed98513039385b82ef4b07">StateAmmo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ammo.html#af51f34636337b30b28babbfbca07609b">state_a</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">État du projectile. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a33bf445c93551e3eff75f352a4a6ae38"></a><!-- doxytag: member="Ammo::type" ref="a33bf445c93551e3eff75f352a4a6ae38" args="" -->
-TypeAmmo&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td></tr>
+<a class="el" href="class_ammo.html#af8e34cdcc780ef90b0708f097fc7acea">TypeAmmo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ammo.html#a33bf445c93551e3eff75f352a4a6ae38">type</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Type du projectile. <br/></td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
 Amis</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab356dbee0f1e915287732c65e8ef61e1"></a><!-- doxytag: member="Ammo::Weapon" ref="ab356dbee0f1e915287732c65e8ef61e1" args="" -->
@@ -156,9 +169,233 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Weapon</b></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9ba957cf9e4de656159d394db64f7086"></a><!-- doxytag: member="Ammo::Enemy" ref="a9ba957cf9e4de656159d394db64f7086" args="" -->
 class&#160;</td><td class="memItemRight" valign="bottom"><b>Enemy</b></td></tr>
 </table>
-<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<hr/><a name="details" id="details"></a><h2>Description détaillée</h2>
+<div class="textblock"><p>Modélise un projectile. </p>
+<p>Le projectile peut être de différents type, soumis ou non à la gravité... </p>
+</div><hr/><h2>Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="a1fbffb139eacb1dbf35000d938bbfa17"></a><!-- doxytag: member="Ammo::Ammo" ref="a1fbffb139eacb1dbf35000d938bbfa17" args="(Int2 pos, Int2 siz, int m, TypeAmmo type, Float2 move)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ammo.html#a1fbffb139eacb1dbf35000d938bbfa17">Ammo::Ammo</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_int2.html">Int2</a>&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_int2.html">Int2</a>&#160;</td>
+          <td class="paramname"><em>siz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_ammo.html#af8e34cdcc780ef90b0708f097fc7acea">TypeAmmo</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_float2.html">Float2</a>&#160;</td>
+          <td class="paramname"><em>move</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructeur. </p>
+<p>Constructeur de la classe <a class="el" href="class_ammo.html" title="Modélise un projectile.">Ammo</a>. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>: Position initiale du projectile. </td></tr>
+    <tr><td class="paramname">siz</td><td>: Taille initiale du projectile (inutile car l'objet est ensuite redimensionné en fonction de son type). </td></tr>
+    <tr><td class="paramname">m</td><td>: Masse du projectile (inutile car la masse de l'objet est redéfinie en fonction de son type). </td></tr>
+    <tr><td class="paramname">type</td><td>: Type du projectile. </td></tr>
+    <tr><td class="paramname">move</td><td>: Vecteur de direction. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a6745bf955cceda43c50dc15c76157e64"></a><!-- doxytag: member="Ammo::Ammo" ref="a6745bf955cceda43c50dc15c76157e64" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ammo.html#a1fbffb139eacb1dbf35000d938bbfa17">Ammo::Ammo</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructeur. </p>
+<p>Constructeur par défaut de la classe <a class="el" href="class_ammo.html" title="Modélise un projectile.">Ammo</a> </p>
+
+</div>
+</div>
+<a class="anchor" id="a90602c6481c6a66d4747306f90a3ebc7"></a><!-- doxytag: member="Ammo::~Ammo" ref="a90602c6481c6a66d4747306f90a3ebc7" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ammo.html#a90602c6481c6a66d4747306f90a3ebc7">Ammo::~Ammo</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructeur. </p>
+<p>Destructeur de la classe <a class="el" href="class_ammo.html" title="Modélise un projectile.">Ammo</a> </p>
+
+</div>
+</div>
+<hr/><h2>Documentation des fonctions membres</h2>
+<a class="anchor" id="aa113df3aff05c38ee4813d2762d2a2ae"></a><!-- doxytag: member="Ammo::animate" ref="aa113df3aff05c38ee4813d2762d2a2ae" args="(int dt)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="class_ammo.html#aa113df3aff05c38ee4813d2762d2a2ae">Ammo::animate</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dt</em></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Animer. </p>
+<p>Déplace le projectile en fonction du temps. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dt</td><td>: Temps écoulé depuis le dernier appel de la fonction. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Réimplémentée à partir de <a class="el" href="class_objet_physique.html#a5990e1ae209e40dfefd008947c8c475d">ObjetPhysique</a>.</p>
+
+<p>Réimplémentée dans <a class="el" href="class_ammo_view.html#adf92215e61c41528bc33a9143db2864c">AmmoView</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4c84539dc7dad8187d2586155eb8f9bb"></a><!-- doxytag: member="Ammo::die" ref="a4c84539dc7dad8187d2586155eb8f9bb" args="(Int2 pos)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="class_ammo.html#a4c84539dc7dad8187d2586155eb8f9bb">Ammo::die</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_int2.html">Int2</a>&#160;</td>
+          <td class="paramname"><em>pos</em></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Projectile stoppé </p>
+<p>Le projectile "meurt" (il explose, disparait...). </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>: Position d'arrêt de l'objet. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Réimplémentée dans <a class="el" href="class_ammo_view.html#a801a6a36bb3c88dba8b93fee58de816b">AmmoView</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa70ceafd9b113751bb3aec8ea151c252"></a><!-- doxytag: member="Ammo::getDamage" ref="aa70ceafd9b113751bb3aec8ea151c252" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="class_ammo.html#aa70ceafd9b113751bb3aec8ea151c252">Ammo::getDamage</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Dégâts. </p>
+<p>Renvoie le nombre de point de dégâts qu'inflique le projectile en fonction de son type. </p>
+
+</div>
+</div>
+<a class="anchor" id="a5553e8de086d171880433f611716c34a"></a><!-- doxytag: member="Ammo::getState" ref="a5553e8de086d171880433f611716c34a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ammo.html#ab1e5316640ed98513039385b82ef4b07">StateAmmo</a> <a class="el" href="class_ammo.html#a5553e8de086d171880433f611716c34a">Ammo::getState</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>État. </p>
+<p>Renvoie l'état de la munition. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1ebdc43a62c3ed0207cf01602caf9a6f"></a><!-- doxytag: member="Ammo::print" ref="a1ebdc43a62c3ed0207cf01602caf9a6f" args="(ostream &amp;os) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_ammo.html#a1ebdc43a62c3ed0207cf01602caf9a6f">Ammo::print</a> </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em></td><td>)</td>
+          <td> const<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Debug. </p>
+<p>Affiche des informations sur l'objet. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>: Flux sur lequel afficher. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Réimplémentée à partir de <a class="el" href="class_objet_physique.html#ae5977008611c34aafb655e6424978978">ObjetPhysique</a>.</p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
 <li>include/model/<a class="el" href="_ammo_8h_source.html">Ammo.h</a></li>
-<li>src/model/Ammo.cpp</li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -180,7 +417,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Enemy</b></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_ammo.html">Ammo</a>      </li>
 
-    <li class="footer">Généré le Samedi Mars 28 2015 18:14:07 pour Metal Slug par
+    <li class="footer">Généré le Dimanche Mars 29 2015 16:50:36 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

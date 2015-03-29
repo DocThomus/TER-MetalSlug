@@ -261,53 +261,57 @@ void Game::checkCollisions()
     /* AMMO */
     for(list<AmmoView*>::iterator a = ammo.begin(); a != ammo.end(); a++)
     {
-        Int2 a_pos = (*a)->getPosition();
-        Int2 a_siz = (*a)->getSize();
-        Float2 a_mov = (*a)->getMovement();
-
-        /* VS PLATFORM */
-        for(list<PlatformView>::iterator p = pltf->begin(); p != pltf->end(); p++)
+        if((*a)->getState() != Ammo::GHOST && (*a)->getState() != Ammo::STOP)
         {
-            if(checkIntersect((ObjetPhysique*)(*a),(ObjetPhysique*)(&*p)))
-            {
-                if((*a)->getState() != Ammo::GHOST)
-                {
-                    Int2 p_pos = (*p).getPosition();
-                    Int2 p_siz = (*p).getSize();
-                    
-                    Int2 tmp = a_pos;
-                    
-                    if(a_pos.x <= p_pos.x+10)
-                        tmp.x = p_pos.x;
-                    else if(a_pos.x+a_siz.x >= p_pos.x+p_siz.x+10)
-                        tmp.x = p_pos.x+p_siz.x;
-                    else if(a_pos.y <= p_pos.y+10)
-                        tmp.y = p_pos.y;
-                    else
-                        tmp.y = p_pos.y+p_siz.y;
+            Int2 a_pos = (*a)->getPosition();
+            Int2 a_siz = (*a)->getSize();
+            Float2 a_mov = (*a)->getMovement();
 
-                    (*a)->die(tmp);
+            /* VS PLATFORM */
+            for(list<PlatformView>::iterator p = pltf->begin(); p != pltf->end(); p++)
+            {
+                if(checkIntersect((ObjetPhysique*)(*a),(ObjetPhysique*)(&*p)))
+                {
+                    if((*a)->getState() != Ammo::GHOST)
+                    {
+                        Int2 p_pos = (*p).getPosition();
+                        Int2 p_siz = (*p).getSize();
+                        
+                        Int2 tmp = a_pos;
+                        
+                        if(a_pos.x <= p_pos.x+10)
+                            tmp.x = p_pos.x;
+                        else if(a_pos.x+a_siz.x >= p_pos.x+p_siz.x+10)
+                            tmp.x = p_pos.x+p_siz.x;
+                        else if(a_pos.y <= p_pos.y+10)
+                            tmp.y = p_pos.y;
+                        else
+                            tmp.y = p_pos.y+p_siz.y;
+
+                        (*a)->die(tmp);
+                    }
                 }
             }
-        }
 
-        /* VS ENEMY */
-        for(list<EnemyView*>::iterator e = enemies.begin(); e != enemies.end(); e++)
-        {
-            if(checkIntersect((ObjetPhysique*)(*a),(ObjetPhysique*)(*e)))
+            /* VS ENEMY */
+            for(list<EnemyView*>::iterator e = enemies.begin(); e != enemies.end(); e++)
             {
-                if((*a)->getState() != Ammo::GHOST && (*e)->getStateBattle() != Character::DEAD)
+                if(checkIntersect((ObjetPhysique*)(*a),(ObjetPhysique*)(*e)))
                 {
-                    (*e)->decreaseHealth((*a)->getDamage());
+                    if((*a)->getState() != Ammo::GHOST && (*e)->getStateBattle() != Character::DEAD)
+                    {
+                        (*e)->decreaseHealth((*a)->getDamage());
 
-                    Int2 e_pos = (*e)->getPosition();
-                    Int2 e_siz = (*e)->getSize();
-                    
-                    Int2 tmp = Int2(e_pos.x+e_siz.x/2,e_pos.y+e_siz.y/2);
+                        Int2 e_pos = (*e)->getPosition();
+                        Int2 e_siz = (*e)->getSize();
+                        
+                        Int2 tmp = Int2(e_pos.x+e_siz.x/2,e_pos.y+e_siz.y/2);
 
-                    (*a)->die(tmp);
+                        (*a)->die(tmp);
+                    }
                 }
             }
+
         }
     }
 
@@ -550,8 +554,8 @@ void Game::loadLevel()
     
 
     /* WEAPON */
-    new Weapon(&player,Weapon::PISTOL,100);
-    new Weapon(&player,Weapon::SHOTGUN,100);
+    new Weapon(&player,Weapon::PISTOL);
+    new Weapon(&player,Weapon::SHOTGUN);
     player.setWeapon(0);
 
 
@@ -570,9 +574,6 @@ void Game::loadLevel()
 
 
     /* AMMO */
-    // t = new Texture();
-    // t->loadFromFile("res/tex/ammo/bullet.png");
-    // textures.push_back(t);
     AmmoView::loadTextures();
 
 

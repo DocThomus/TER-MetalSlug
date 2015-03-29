@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['white',['White',['../classsf_1_1_color.html#a4fd874712178d9e206f53226002aa4ca',1,'sf::Color']]],
-  ['width',['width',['../classsf_1_1_rect.html#a4dd5b9d4333bebbc51bd309298fd500f',1,'sf::Rect::width()'],['../structsf_1_1_event_1_1_size_event.html#a20ea1b78c9bb1604432f8f0067bbfd94',1,'sf::Event::SizeEvent::width()'],['../classsf_1_1_video_mode.html#a9b3b2ad2cac6b9c266823fb5ed506d90',1,'sf::VideoMode::width()']]]
+  ['walkline',['walkline',['../class_platform.html#a587bc84e076d24e83d77eac324d494df',1,'Platform']]],
+  ['walkway',['walkway',['../class_character.html#a4ac650b90756ad804b9c6b88c7d9504c',1,'Character']]],
+  ['window',['window',['../class_master_class.html#ad6b5bc862f84e303619ac1bfb207e6d5',1,'MasterClass']]]
 ];

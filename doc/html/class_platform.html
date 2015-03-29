@@ -103,13 +103,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="title">Référence de la classe Platform<div class="ingroups"><a class="el" href="group___model.html">Model</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="Platform" --><!-- doxytag: inherits="ObjetPhysique" --><div class="dynheader">
+<!-- doxytag: class="Platform" --><!-- doxytag: inherits="ObjetPhysique" -->
+<p>Modélise une plate-forme.  
+ <a href="class_platform.html#details">Plus de détails...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_platform_8h_source.html">Platform.h</a>&gt;</code></p>
+<div class="dynheader">
 Graphe d'héritage de Platform:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_platform.png" usemap="#Platform_map" alt=""/>
   <map id="Platform_map" name="Platform_map">
-<area href="class_objet_physique.html" alt="ObjetPhysique" shape="rect" coords="0,0,93,24"/>
+<area href="class_objet_physique.html" title="Modélise un objet physique." alt="ObjetPhysique" shape="rect" coords="0,0,93,24"/>
 <area href="class_platform_view.html" alt="PlatformView" shape="rect" coords="0,112,93,136"/>
 </map>
  </div></div>
@@ -118,20 +123,140 @@ Graphe d'héritage de Platform:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae68e33ce0f8d78ecaf31038c70483186"></a><!-- doxytag: member="Platform::Platform" ref="ae68e33ce0f8d78ecaf31038c70483186" args="(Int2 pos, Int2 siz, int walkline=0)" -->
-&#160;</td><td class="memItemRight" valign="bottom"><b>Platform</b> (<a class="el" href="class_int2.html">Int2</a> pos, <a class="el" href="class_int2.html">Int2</a> siz, int walkline=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a33d0089c956500737b075f72c84ed2b4"></a><!-- doxytag: member="Platform::print" ref="a33d0089c956500737b075f72c84ed2b4" args="(ostream &amp;os) const " -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>print</b> (ostream &amp;os) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_platform.html#ae68e33ce0f8d78ecaf31038c70483186">Platform</a> (<a class="el" href="class_int2.html">Int2</a> pos, <a class="el" href="class_int2.html">Int2</a> siz, int <a class="el" href="class_platform.html#a587bc84e076d24e83d77eac324d494df">walkline</a>=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#ae68e33ce0f8d78ecaf31038c70483186"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_platform.html#a52028ea2984cbfdf8e9f42ee87f66cfe">Platform</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#a52028ea2984cbfdf8e9f42ee87f66cfe"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_platform.html#a13b5e4ef946b8a2fe38d22014145ab68">~Platform</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur.  <a href="#a13b5e4ef946b8a2fe38d22014145ab68"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_platform.html#a33d0089c956500737b075f72c84ed2b4">print</a> (ostream &amp;os) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug.  <a href="#a33d0089c956500737b075f72c84ed2b4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a049044d7556fdc27bbe0714439451058"></a><!-- doxytag: member="Platform::getWalkline" ref="a049044d7556fdc27bbe0714439451058" args="()" -->
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getWalkline</b> ()</td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_platform.html#a049044d7556fdc27bbe0714439451058">getWalkline</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne la hauteur du sol de la plate-forme. <br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Attributs protégés</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a587bc84e076d24e83d77eac324d494df"></a><!-- doxytag: member="Platform::walkline" ref="a587bc84e076d24e83d77eac324d494df" args="" -->
-int&#160;</td><td class="memItemRight" valign="bottom"><b>walkline</b></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_platform.html#a587bc84e076d24e83d77eac324d494df">walkline</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Hauteur du sol de la plate-forme. <br/></td></tr>
 </table>
-<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<hr/><a name="details" id="details"></a><h2>Description détaillée</h2>
+<div class="textblock"><p>Modélise une plate-forme. </p>
+<p>C'est un objet simple servant de sol pour les autres objets. Il n'est pas soumis à la gravité. </p>
+</div><hr/><h2>Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="ae68e33ce0f8d78ecaf31038c70483186"></a><!-- doxytag: member="Platform::Platform" ref="ae68e33ce0f8d78ecaf31038c70483186" args="(Int2 pos, Int2 siz, int walkline=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_platform.html#ae68e33ce0f8d78ecaf31038c70483186">Platform::Platform</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_int2.html">Int2</a>&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_int2.html">Int2</a>&#160;</td>
+          <td class="paramname"><em>siz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>walkline</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructeur. </p>
+<p>Constructeur de la classe <a class="el" href="class_platform.html" title="Modélise une plate-forme.">Platform</a>. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>: Position de la plate-forme. </td></tr>
+    <tr><td class="paramname">siz</td><td>: Taille de la plate-forme. </td></tr>
+    <tr><td class="paramname">walkline</td><td>: Hauteur du sol de la plate-forme. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a52028ea2984cbfdf8e9f42ee87f66cfe"></a><!-- doxytag: member="Platform::Platform" ref="a52028ea2984cbfdf8e9f42ee87f66cfe" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_platform.html#ae68e33ce0f8d78ecaf31038c70483186">Platform::Platform</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructeur. </p>
+<p>Constructeur par défaut de la classe <a class="el" href="class_platform.html" title="Modélise une plate-forme.">Platform</a> </p>
+
+</div>
+</div>
+<a class="anchor" id="a13b5e4ef946b8a2fe38d22014145ab68"></a><!-- doxytag: member="Platform::~Platform" ref="a13b5e4ef946b8a2fe38d22014145ab68" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_platform.html#a13b5e4ef946b8a2fe38d22014145ab68">Platform::~Platform</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructeur. </p>
+<p>Destructeur de la classe <a class="el" href="class_platform.html" title="Modélise une plate-forme.">Platform</a> </p>
+
+</div>
+</div>
+<hr/><h2>Documentation des fonctions membres</h2>
+<a class="anchor" id="a33d0089c956500737b075f72c84ed2b4"></a><!-- doxytag: member="Platform::print" ref="a33d0089c956500737b075f72c84ed2b4" args="(ostream &amp;os) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_platform.html#a33d0089c956500737b075f72c84ed2b4">Platform::print</a> </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em></td><td>)</td>
+          <td> const<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Debug. </p>
+<p>Affiche des informations sur l'objet. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>: Flux sur lequel afficher. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Réimplémentée à partir de <a class="el" href="class_objet_physique.html#ae5977008611c34aafb655e6424978978">ObjetPhysique</a>.</p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
 <li>include/model/<a class="el" href="_platform_8h_source.html">Platform.h</a></li>
-<li>src/model/Platform.cpp</li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -153,7 +278,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>walkline</b></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_platform.html">Platform</a>      </li>
 
-    <li class="footer">Généré le Samedi Mars 28 2015 18:14:07 pour Metal Slug par
+    <li class="footer">Généré le Dimanche Mars 29 2015 16:50:37 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
