@@ -16,9 +16,3 @@ int Event::getPosition()
 	return position;
 }
 
-
-void Event::trigger()
-{
-
-}
-
