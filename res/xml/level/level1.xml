@@ -39,7 +39,8 @@
 
 		<!-- EVENTS -->
 		<events>
-			<event type="enemy" pos="100" enemy_type="REBEL" x="800" y="650"/>
+			<event type="enemy" pos="0" enemy_type="REBEL" x="1000" y="570"/>
+			<event type="enemy" pos="0" enemy_type="REBEL" x="1500" y="240"/>
 		</events>
 
 	</level>

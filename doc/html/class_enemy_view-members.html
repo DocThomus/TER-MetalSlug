@@ -101,13 +101,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </div><!--header-->
 <div class="contents">
 Liste complète des membres de <a class="el" href="class_enemy_view.html">EnemyView</a>, y compris les membres hérités :<table>
-  <tr class="memlist"><td><a class="el" href="class_my_drawable.html#a5c09f4efabebff6ca204786b40582341">addAnimation</a>(Animation *a)</td><td><a class="el" href="class_my_drawable.html">MyDrawable</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_my_drawable.html#a2f4426bbae3d6afaa9a52756a110c9fc">addAnimations</a>(vector&lt; Animation * &gt; v)</td><td><a class="el" href="class_my_drawable.html">MyDrawable</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_my_drawable.html#a8fedbfb6c79723db014f63957339e102">addAnimation</a>(Animation a)</td><td><a class="el" href="class_my_drawable.html">MyDrawable</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_my_drawable.html#aca2d11c16ecd91dc48676f5db45746a7">addAnimations</a>(vector&lt; Animation &gt; v)</td><td><a class="el" href="class_my_drawable.html">MyDrawable</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_my_drawable.html#aa8a1d18c3480e2e55205d0ec0e27f8dc">addAnimations</a>(string filename)</td><td><a class="el" href="class_my_drawable.html">MyDrawable</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#a34eb4c570856c55dd4a5c3aea3dd2d08">addMovement</a>(Float2 v)</td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>AIR</b> valeur énumérée (défini dans <a class="el" href="class_character.html">Character</a>)</td><td><a class="el" href="class_character.html">Character</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_enemy_view.html#a9cddea2cb12e4abd5f9fb27acd00c1d5">animate</a>(int dt)</td><td><a class="el" href="class_enemy_view.html">EnemyView</a></td><td><code> [virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_my_drawable.html#a7bcab73b05aa76533ade1b18e4e2dfd3">animations</a></td><td><a class="el" href="class_my_drawable.html">MyDrawable</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_my_drawable.html#a006145f0c78fb6ab3ba448a778fc42ef">animations</a></td><td><a class="el" href="class_my_drawable.html">MyDrawable</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_enemy_view.html#ae823ab1e84c51fee9ec399c4e5f8eac4">animations_list</a></td><td><a class="el" href="class_enemy_view.html">EnemyView</a></td><td><code> [private, static]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_enemy.html#ae79ae69bc948683ba16d1f6263e90f65">attack</a>(vector&lt; Ammo * &gt; *air)</td><td><a class="el" href="class_enemy.html">Enemy</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_my_drawable.html#aa29e17ceff6fc13cfe239736aa2bd2e8">body</a></td><td><a class="el" href="class_my_drawable.html">MyDrawable</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_character.html#a4e3b1c75b0d7b89d50b45f35b176da0b">bumpLeft</a>(int x)</td><td><a class="el" href="class_character.html">Character</a></td><td><code> [virtual]</code></td></tr>
@@ -146,8 +147,8 @@ Liste complète des membres de <a class="el" href="class_enemy_view.html">EnemyV
   <tr bgcolor="#f0f0f0"><td><b>KNELT</b> valeur énumérée (défini dans <a class="el" href="class_character.html">Character</a>)</td><td><a class="el" href="class_character.html">Character</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>KNIFE</b> valeur énumérée (défini dans <a class="el" href="class_character.html">Character</a>)</td><td><a class="el" href="class_character.html">Character</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_character.html#a5f6cab334d9b7801114878f0b4c8aa85">land</a>(int h)</td><td><a class="el" href="class_character.html">Character</a></td><td><code> [virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_enemy_view.html#ad387a7eb55752e23d78fef63b0430ca3">loadSounds</a>()</td><td><a class="el" href="class_enemy_view.html">EnemyView</a></td><td><code> [static]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_enemy_view.html#a5c1f8691ecb0fe0480031561f48be0c4">loadTexture</a>(TypeEnemy t)</td><td><a class="el" href="class_enemy_view.html">EnemyView</a></td><td><code> [static]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_enemy_view.html#afcf992879ef7e35c3d155b98057d3e0b">loadRessources</a>(TypeEnemy t)</td><td><a class="el" href="class_enemy_view.html">EnemyView</a></td><td><code> [static]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_my_drawable.html#a9842c899ee0a704af6e6c669894479e1">loadSpriteFromFile</a>(string filename)</td><td><a class="el" href="class_my_drawable.html">MyDrawable</a></td><td><code> [static]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#ad9aecb9f29d4bf704d8a536d32081664">mass</a></td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#abca9fd07d93028f52251d5a9bbad0f50">movement</a></td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_my_drawable.html#af42e8a1ccb99662f5e35c40e7afeb7ab">MyDrawable</a>()</td><td><a class="el" href="class_my_drawable.html">MyDrawable</a></td><td></td></tr>
@@ -213,7 +214,7 @@ Liste complète des membres de <a class="el" href="class_enemy_view.html">EnemyV
   <div id="nav-path" class="navpath">
     <ul>
 
-    <li class="footer">Généré le Lundi Mars 30 2015 21:00:54 pour Metal Slug par
+    <li class="footer">Généré le Lundi Mars 30 2015 23:41:52 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

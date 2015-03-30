@@ -9,7 +9,7 @@ Animation::Animation()
 }
 
 
-Animation::Animation(vector<Frame*> v)
+Animation::Animation(vector<Frame> v)
 {
 	repeat = true;
 	next_anim = -1;
@@ -30,7 +30,7 @@ int Animation::getNbFrames()
 Frame* Animation::getFrame()
 {
 	if(int(frames.size())>current)
-		return frames[current];
+		return &frames[current];
 	else
 		return NULL;
 }
@@ -62,7 +62,7 @@ void Animation::changeFrame(int i)
 }
 
 
-void Animation::addFrame(Frame* f)
+void Animation::addFrame(Frame f)
 {
 	frames.push_back(f);
 }

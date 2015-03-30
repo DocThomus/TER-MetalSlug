@@ -99,7 +99,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
   <div class="summary">
 <a href="#pub-types">Types publics</a> &#124;
 <a href="#pub-methods">Fonctions membres publiques</a> &#124;
-<a href="#pub-attribs">Attributs publics</a>  </div>
+<a href="#pub-static-methods">Fonctions membres publiques statiques</a> &#124;
+<a href="#pub-attribs">Attributs publics</a> &#124;
+<a href="#pri-static-attribs">Attributs privés statiques</a>  </div>
   <div class="headertitle">
 <div class="title">Référence de la classe PlayerView<div class="ingroups"><a class="el" href="group___view.html">View</a></div></div>  </div>
 </div><!--header-->
@@ -168,11 +170,26 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">À genoux.  <a href="#a5bf2e9064a584768cd50ca675564c1b6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_view.html#ae800078f161e1adef9793e93cb21dab5">shoot</a> (list&lt; <a class="el" href="class_ammo_view.html">AmmoView</a> * &gt; *ammos, <a class="el" href="class_int2.html">Int2</a> angle=<a class="el" href="class_int2.html">Int2</a>(1, 0))</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Tirer.  <a href="#ae800078f161e1adef9793e93cb21dab5"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pub-static-methods"></a>
+Fonctions membres publiques statiques</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_view.html#aada0cfecd68c54d6a21468c36b347299">loadRessources</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Chargement des ressources.  <a href="#aada0cfecd68c54d6a21468c36b347299"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Attributs publics</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae7a4f3448d524b3981e59e7c4b3ca627"></a><!-- doxytag: member="PlayerView::legs" ref="ae7a4f3448d524b3981e59e7c4b3ca627" args="" -->
 <a class="el" href="class_member_view.html">MemberView</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_view.html#ae7a4f3448d524b3981e59e7c4b3ca627">legs</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">L'objet symbolisant les jambes du joueur. <br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-static-attribs"></a>
+Attributs privés statiques</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2d20d1b64088e6141684493f129c67f6"></a><!-- doxytag: member="PlayerView::sounds" ref="a2d20d1b64088e6141684493f129c67f6" args="" -->
+static vector&lt; Sound * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_view.html#a2d20d1b64088e6141684493f129c67f6">sounds</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable de classe contenant les différents son nécessaires au player. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0b2a510f8f1b5b509ba3fe3448e4feaf"></a><!-- doxytag: member="PlayerView::textures" ref="a0b2a510f8f1b5b509ba3fe3448e4feaf" args="[2]" -->
+static Texture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_view.html#a0b2a510f8f1b5b509ba3fe3448e4feaf">textures</a> [2]</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable de classe contenant les différentes textures nécessaires au player. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a12b2ab03e00e5eb29de4610ebdaa3375"></a><!-- doxytag: member="PlayerView::animations_list" ref="a12b2ab03e00e5eb29de4610ebdaa3375" args="[2]" -->
+static vector&lt; <a class="el" href="class_animation.html">Animation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_view.html#a12b2ab03e00e5eb29de4610ebdaa3375">animations_list</a> [2]</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable de classe contenant les différentes animations nécessaires au player. <br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Description détaillée</h2>
 <div class="textblock"><p>Un objet <a class="el" href="class_player.html" title="Modélise le joueur.">Player</a> affichable. </p>
@@ -370,6 +387,25 @@ Attributs publics</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aada0cfecd68c54d6a21468c36b347299"></a><!-- doxytag: member="PlayerView::loadRessources" ref="aada0cfecd68c54d6a21468c36b347299" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="class_player_view.html#aada0cfecd68c54d6a21468c36b347299">PlayerView::loadRessources</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Chargement des ressources. </p>
+<p>Methode statique permettant de charger les ressources du player. ATTENTION : Cette méthode doit impérativement être appelée avant d'afficher du player ! </p>
+
+</div>
+</div>
 <a class="anchor" id="ae800078f161e1adef9793e93cb21dab5"></a><!-- doxytag: member="PlayerView::shoot" ref="ae800078f161e1adef9793e93cb21dab5" args="(list&lt; AmmoView * &gt; *ammos, Int2 angle=Int2(1, 0))" -->
 <div class="memitem">
 <div class="memproto">
@@ -451,7 +487,7 @@ Attributs publics</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_player_view.html">PlayerView</a>      </li>
 
-    <li class="footer">Généré le Lundi Mars 30 2015 21:00:54 pour Metal Slug par
+    <li class="footer">Généré le Lundi Mars 30 2015 23:41:52 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

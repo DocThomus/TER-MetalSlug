@@ -60,6 +60,10 @@ class PlayerView : public Player, public MyDrawable
 
 	private :
 
+		static vector<Sound*> sounds; /*!< \brief Variable de classe contenant les différents son nécessaires au player. */
+		static Texture* textures[2]; /*!< \brief Variable de classe contenant les différentes textures nécessaires au player. */
+		static vector<Animation> animations_list[2]; /*!< \brief Variable de classe contenant les différentes animations nécessaires au player. */
+
 
 	public :
 
@@ -89,6 +93,14 @@ class PlayerView : public Player, public MyDrawable
 	     * Destructeur de la classe PlayerView
 	     */
 		~PlayerView();
+
+		/*!
+	     * \brief Chargement des ressources
+	     *
+	     * Methode statique permettant de charger les ressources du player.
+	     * ATTENTION : Cette méthode doit impérativement être appelée avant d'afficher du player !
+	     */
+		static void loadRessources();
 
 		/*!
 	     * \brief Initialisation

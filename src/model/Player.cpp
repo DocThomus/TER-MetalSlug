@@ -12,6 +12,9 @@ Player::Player(Int2 pos, Int2 siz, int m, int max_h)
 Player::Player()
 :Character()
 {
+    position = Int2(100,530);
+    size = Int2(100,120);
+    mass = 5;
 }
 
 

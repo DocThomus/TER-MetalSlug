@@ -28,6 +28,18 @@ void Game::update(Time dt)
     int t = dt.asMilliseconds(); // temps écoulé
 
     deleteDeadObjects(); // suppression des objets hors de l'écran ou "morts"
+
+    bool ok = true;
+    for(list<EventGame*>::iterator ev = level.events.begin(); ok && ev != level.events.end(); ev++)
+    {
+        if((*ev)->getPosition() < player.getPosition().x)
+        {
+            (*ev)->trigger(this);
+            level.events.erase(ev++);
+        }
+        else
+            ok = false;
+    }
     
     player.animate(t); // animation du player
 
@@ -93,7 +105,7 @@ void Game::display(RenderWindow* window)
 
 
 
-void Game::checkEvents(RenderWindow* window)
+void Game::checkKeyboardEvents(RenderWindow* window)
 { 
 
     if(Keyboard::isKeyPressed(Keyboard::S))
@@ -508,36 +520,22 @@ void Game::init()
 void Game::loadLevel()
 {
 
-    Texture* t;
-
-
-
-    /* ENVIRONNEMENT */
-    //level.loadFromFile("res/xml/level/level1.xml",config->resolution);
     loadLevelXML("res/xml/level/level1.xml",config,&(level.environment),&(level.events),&textures);
 
 
-    
-    /* PLAYER */
-    t = new Texture();
-    t->loadFromFile("res/tex/player/body.png");
-    textures.push_back(t);
+    /* RESSOURCES PLAYER */
+    PlayerView::loadRessources();
 
-    player.setPosition(Int2(100,530));
-    player.setSize(Int2(100,120));
-    player.setMass(5);
-    player.setTexture(textures[textures.size()-1]);
-    player.addAnimations(loadSpriteFromFile("res/xml/player/body.xml"));
 
-    t = new Texture();
-    t->loadFromFile("res/tex/player/legs.png");
-    textures.push_back(t);
+    /* RESSOURCES ENNEMIS */
+    EventEnemy* tmp = new EventEnemy();
+    for(list<EventGame*>::iterator ev = level.events.begin(); ev != level.events.end(); ev++)
+    {
+        if(typeid(*tmp) == typeid(**ev))
+            EnemyView::loadRessources(Enemy::REBEL);
+    }
+    delete tmp;
 
-    player.legs.setTexture(textures[textures.size()-1]);
-    player.legs.addAnimations(loadSpriteFromFile("res/xml/player/legs.xml"));
-
-    player.init();
-    
 
     /* WEAPON */
     new Weapon(&player,Weapon::PISTOL);
@@ -545,24 +543,15 @@ void Game::loadLevel()
     player.setWeapon(0);
 
 
-    /* ENNEMI */
-    EnemyView::loadTexture(Enemy::REBEL);
-    EnemyView* enemy = new EnemyView(Int2(1000,570),Enemy::REBEL);
-    enemy->addAnimations(loadSpriteFromFile("res/xml/enemy/rebel.xml"));
-    enemy->changeAnimation(1);
-    enemies.push_back(enemy);
-
-
     /* AMMO */
     AmmoView::loadTextures();
-
 
 }
 
 
 
 
-vector<Animation*> Game::loadSpriteFromFile(string filename)
+vector<Animation> Game::loadSpriteFromFile(string filename)
 {
     vector<Int2> anim;
     vector<Int2> pos;
@@ -574,15 +563,15 @@ vector<Animation*> Game::loadSpriteFromFile(string filename)
         exit(-1);
     }
 
-    vector<Animation*> ret;
+    vector<Animation> ret;
 
     for(unsigned int i=0; i<anim.size(); ++i)
     {
-        Animation* a = new Animation();
+        Animation a;
         for(int y=anim[i].x; y<=anim[i].y; ++y)
         {
-            Frame* f = new Frame(pos[y],siz[y]);
-            a->addFrame(f);
+            Frame f(pos[y],siz[y]);
+            a.addFrame(f);
         }
         ret.push_back(a);
     }

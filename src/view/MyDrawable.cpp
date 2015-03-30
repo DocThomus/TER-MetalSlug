@@ -18,20 +18,20 @@ void MyDrawable::resetAnim()
 	Int2 old = getFrame()->getSize();
 	Vector2f siz = body.getSize();
 
-	animations[current_anim]->reset();
+	animations[current_anim].reset();
 
 	Int2 now = getFrame()->getSize();
 	body.setSize(Vector2f(siz.x*now.x/old.x,siz.y*now.y/old.y));
 }
 
 
-void MyDrawable::addAnimation(Animation* a)
+void MyDrawable::addAnimation(Animation a)
 {
 	animations.push_back(a);
 }
 
 
-void MyDrawable::addAnimations(vector<Animation*> v)
+void MyDrawable::addAnimations(vector<Animation> v)
 {
 	for(unsigned int i=0; i<v.size(); ++i)
 		addAnimation(v[i]);
@@ -51,15 +51,15 @@ void MyDrawable::addAnimations(string filename)
         exit(-1);
     }
 
-    vector<Animation*> ret;
+    vector<Animation> ret;
 
     for(unsigned int i=0; i<anim.size(); ++i)
     {
-        Animation* a = new Animation();
+        Animation a;
         for(int y=anim[i].x; y<=anim[i].y; ++y)
         {
-            Frame* f = new Frame(pos[y],siz[y]);
-            a->addFrame(f);
+            Frame f(pos[y],siz[y]);
+            a.addFrame(f);
         }
         ret.push_back(a);
     }
@@ -82,10 +82,10 @@ bool MyDrawable::changeAnimation(int i, bool repeat, int next)
 		else if(current_anim>=int(animations.size()))
 			current_anim = animations.size()-1;
 
-		animations[current_anim]->reset();
-		animations[current_anim]->setRepeat(repeat);
+		animations[current_anim].reset();
+		animations[current_anim].setRepeat(repeat);
 		if(!repeat)
-			animations[current_anim]->setNextAnim(next);
+			animations[current_anim].setNextAnim(next);
 
 		/* MISE A JOUR DES PROPORTIONS DU RECTANGLE */
 		Int2 now = getFrame()->getSize();
@@ -103,7 +103,7 @@ void MyDrawable::changeFrame(int i)
 	// Int2 old = getFrame()->getSize();
 	// Vector2f siz = body.getSize();
 
-	animations[current_anim]->changeFrame(i);
+	animations[current_anim].changeFrame(i);
 
 	// Int2 now = getFrame()->getSize();
 	// 	body.setSize(Vector2f(siz.x*now.x/old.x,siz.y*now.y/old.y));
@@ -114,7 +114,7 @@ void MyDrawable::changeFrame(int i)
 Frame* MyDrawable::getFrame()
 {
 	if(animations.size()>0)
-		return animations[current_anim]->getFrame();
+		return animations[current_anim].getFrame();
 	else
 		return NULL;
 }
@@ -129,10 +129,10 @@ bool MyDrawable::setNextFrame(int n)
 	bool ok = true;
 	for(int i=0; ok && i<n; ++i)
 	{
-		if(!animations[current_anim]->setNextFrame())
+		if(!animations[current_anim].setNextFrame())
 		{
-			if(animations[current_anim]->getNextAnim() >= 0)
-				current_anim = animations[current_anim]->getNextAnim();
+			if(animations[current_anim].getNextAnim() >= 0)
+				current_anim = animations[current_anim].getNextAnim();
 			else
 				return false;
 			ok = false;
@@ -170,4 +170,33 @@ void MyDrawable::updateIntRect()
 
 		body.setTextureRect(IntRect(pos.x,pos.y,siz.x,siz.y));
 	}
+}
+
+
+vector<Animation> MyDrawable::loadSpriteFromFile(string filename)
+{
+    vector<Int2> anim;
+    vector<Int2> pos;
+    vector<Int2> siz;
+
+    if(!loadSpriteMap(filename,&anim,&pos,&siz))
+    {
+        cerr << "Erreur dans le chargement de l'animation : " << filename << endl;
+        exit(-1);
+    }
+
+    vector<Animation> ret;
+
+    for(unsigned int i=0; i<anim.size(); ++i)
+    {
+        Animation a;;
+        for(int y=anim[i].x; y<=anim[i].y; ++y)
+        {
+            Frame f(pos[y],siz[y]);
+            a.addFrame(f);
+        }
+        ret.push_back(a);
+    }
+
+    return ret;
 }

@@ -1,9 +1,11 @@
 #include "view/EnemyView.h"
 
 
-vector<Sound*> EnemyView::sounds = loadSounds();
+vector<Sound*> EnemyView::sounds;
 
 Texture* EnemyView::textures[NB_TYPE_ENEMY];
+
+vector<Animation> EnemyView::animations_list[NB_TYPE_ENEMY];
 
 
 
@@ -19,7 +21,12 @@ EnemyView::EnemyView(Int2 pos, TypeEnemy t)
 {
 	/* REBEL */
 	if(type == REBEL)
+	{
 		setTexture(textures[REBEL]);
+		addAnimations(animations_list[REBEL]);
+		changeAnimation(1);
+		updateIntRect();
+	}
 }
 
 
@@ -128,31 +135,30 @@ void EnemyView::die()
 
 
 
-vector<Sound*> EnemyView::loadSounds()
+
+
+void EnemyView::loadRessources(TypeEnemy t)
 {
-	vector<Sound*> tmp;
+	SoundBuffer* buffer;
+	Sound* s;
 
-	/* DEATH */
-	SoundBuffer* buffer = new SoundBuffer();
-	buffer->loadFromFile("res/snd/enemy/death1.wav");
-    Sound* s = new Sound();
-    s->setBuffer(*buffer);
-    tmp.push_back(s);
-
-
-    return tmp;
-}
-
-
-
-void EnemyView::loadTexture(TypeEnemy t)
-{
 	/* REBEL */
-	if(t == REBEL)
+	if(t == REBEL && textures[REBEL]==NULL)
 	{
+		// texture
 		Texture* tex = new Texture();
 	    tex->loadFromFile("res/tex/enemy/rebel.png");
 	    textures[REBEL] = tex;
+
+	    // animation
+	    animations_list[REBEL] = loadSpriteFromFile("res/xml/enemy/rebel.xml");
+
+	    // death sound
+		buffer = new SoundBuffer();
+		buffer->loadFromFile("res/snd/enemy/death1.wav");
+	    s = new Sound();
+	    s->setBuffer(*buffer);
+	    sounds.push_back(s);
 	}
 
 }

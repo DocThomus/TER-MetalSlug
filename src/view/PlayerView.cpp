@@ -1,10 +1,33 @@
 #include "view/PlayerView.h"
 
 
+
+vector<Sound*> PlayerView::sounds;
+
+Texture* PlayerView::textures[2];
+
+vector<Animation> PlayerView::animations_list[2];
+
+
+
+
 PlayerView::PlayerView(Int2 pos, Int2 siz, int m, int max_h)
 :Player(pos,siz,m,max_h)
 {
-	//body.setOrigin(size.x/2,size.y/2);
+	if(textures[0] == NULL)
+		loadRessources();
+
+	/* BODY */
+	setTexture(textures[0]);
+	addAnimations(animations_list[0]);
+
+	/* LEGS */
+	setTexture(textures[1]);
+	addAnimations(animations_list[1]);
+
+	/* INITIALISATION TAILLES */
+	legs.setSize(Int2(size.x*0.68,size.y*0.47));
+	body.setSize(Vector2f(size.x,size.y*0.76));
 }
 
 
@@ -12,7 +35,20 @@ PlayerView::PlayerView(Int2 pos, Int2 siz, int m, int max_h)
 PlayerView::PlayerView()
 :Player()
 {
-	//body.setOrigin(size.x/2,size.y/2);
+	if(textures[0] == NULL)
+		loadRessources();
+
+	/* BODY */
+	setTexture(textures[0]);
+	addAnimations(animations_list[0]);
+
+	/* LEGS */
+	legs.setTexture(textures[1]);
+	legs.addAnimations(animations_list[1]);
+
+	/* INITIALISATION TAILLES */
+	legs.setSize(Int2(size.x*0.68,size.y*0.47));
+	body.setSize(Vector2f(size.x,size.y*0.76));
 }
 
 
@@ -20,12 +56,6 @@ PlayerView::~PlayerView()
 {
 }
 
-
-void PlayerView::init()
-{
-	legs.setSize(Int2(size.x*0.68,size.y*0.47));
-	body.setSize(Vector2f(size.x,size.y*0.76));
-}
 
 
 void PlayerView::display(RenderWindow* window)
@@ -221,3 +251,20 @@ void PlayerView::shoot(list<AmmoView*>* air, Int2 angle)
     }
 }
 
+
+
+
+
+void PlayerView::loadRessources()
+{
+	Texture* tex = new Texture();
+    tex->loadFromFile("res/tex/player/body.png");
+    textures[0] = tex;
+
+    tex = new Texture();
+    tex->loadFromFile("res/tex/player/legs.png");
+    textures[1] = tex;
+
+    animations_list[0] = loadSpriteFromFile("res/xml/player/body.xml");
+    animations_list[1] = loadSpriteFromFile("res/xml/player/legs.xml");
+}

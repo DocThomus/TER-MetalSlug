@@ -12,6 +12,7 @@
 #include <iostream>
 #include <list>
 #include <vector>
+#include <typeinfo>
 
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
@@ -22,6 +23,8 @@
 
 #include <controller/Config.h>
 #include <controller/Level.h>
+#include <controller/EventGame.h>
+#include <controller/EventEnemy.h>
 #include <view/Animation.h>
 #include <view/Frame.h>
 #include <view/PlayerView.h>
@@ -119,7 +122,7 @@ class Game
 	     * Gère les événements clavier.
 	     * \param window : Fenêtre de rendu pour laquelle on doit vérifier les événements
 	     */
-		void checkEvents(RenderWindow* window);
+		void checkKeyboardEvents(RenderWindow* window);
 
 		/*!
 	     * \brief Gestion des collisions
@@ -219,7 +222,7 @@ class Game
 	     *
 	     * Charge une animation à partir d'un fichier XML (cette fonction doit être déplacée dans "tools").
 	     */
-		vector<Animation*> loadSpriteFromFile(string filename);
+		vector<Animation> loadSpriteFromFile(string filename);
 
 };
 

@@ -37,7 +37,7 @@ class Animation
 
 	private :
 
-		vector<Frame*> frames; /*!< \brief Liste des frames de l'animation. */
+		vector<Frame> frames; /*!< \brief Liste des frames de l'animation. */
 		int current; /*!< \brief Frame courante lue par l'animation. */
 
 		bool repeat; /*!< \brief Indique si l'animation doit se répèter ou non. */
@@ -59,7 +59,7 @@ class Animation
 	     * Construuit une animation contenant les frames passées en paramètre.
 	     * \param : frame à intégrer à l'animation.
 	     */
-		Animation(vector<Frame*> v);
+		Animation(vector<Frame> v);
 
 		/*!
 	     * \brief Destructeur
@@ -76,7 +76,7 @@ class Animation
 		/*!
 	     * \brief Ajout d'une frame à l'animation
 	     */
-		void addFrame(Frame* f);
+		void addFrame(Frame f);
 
 		/*!
 	     * \brief Frame suivante

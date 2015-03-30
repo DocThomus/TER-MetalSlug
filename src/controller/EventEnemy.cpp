@@ -9,7 +9,7 @@ EventEnemy::EventEnemy()
 
 
 EventEnemy::EventEnemy(int pos, Int2 pos_e, Enemy::TypeEnemy t)
-:EventGame(pos), enemy_pos(pos),enemy_type(t)
+:EventGame(pos), enemy_pos(pos_e), enemy_type(t)
 {
 
 }

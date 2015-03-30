@@ -30,7 +30,7 @@ void MasterClass::playGame()
 
 	while (window->isOpen())
     {
-        game.checkEvents(window);
+        game.checkKeyboardEvents(window);
         game.update(clock.restart());
         game.checkCollisions();
 

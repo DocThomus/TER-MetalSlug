@@ -124,8 +124,8 @@ Fonctions membres publiques</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Mise à jour de la vue.  <a href="#a8a46a3024a807dd03ab0576867318f52"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ab268789fc559218dc907e82d34dcf970">display</a> (RenderWindow *window)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Affichage.  <a href="#ab268789fc559218dc907e82d34dcf970"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a5f14522857601dbf3c1d148263db230c">checkEvents</a> (RenderWindow *window)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gestion des événements clavier.  <a href="#a5f14522857601dbf3c1d148263db230c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#af57ecf47190bba6e37edc9cb11522f52">checkKeyboardEvents</a> (RenderWindow *window)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gestion des événements clavier.  <a href="#af57ecf47190bba6e37edc9cb11522f52"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a7e3fb34f2df395a6af6011ff830dae6e">checkCollisions</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gestion des collisions.  <a href="#a7e3fb34f2df395a6af6011ff830dae6e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a13ec8b87405086c617124eedfaba811a">checkIntersect</a> (<a class="el" href="class_objet_physique.html">ObjetPhysique</a> *obj1, <a class="el" href="class_objet_physique.html">ObjetPhysique</a> *obj2)</td></tr>
@@ -148,8 +148,8 @@ Fonctions membres publiques</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialisation du jeu.  <a href="#a6f3a33940524b6ba9d83f627ccb14bbf"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a9713f011d2d0d3ef4a37aa07d7951947">loadLevel</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Chargement d'un niveau.  <a href="#a9713f011d2d0d3ef4a37aa07d7951947"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_animation.html">Animation</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#aaf66d28cbb0ee85c1db276eeb0db6bae">loadSpriteFromFile</a> (string filename)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Chargement d'une animation.  <a href="#aaf66d28cbb0ee85c1db276eeb0db6bae"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_animation.html">Animation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#acc2cb76145d3a86e0cc6c565b3a7a1cc">loadSpriteFromFile</a> (string filename)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Chargement d'une animation.  <a href="#acc2cb76145d3a86e0cc6c565b3a7a1cc"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Attributs privés</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4d66eaa503343894c4c11a39f7577dff"></a><!-- doxytag: member="Game::config" ref="a4d66eaa503343894c4c11a39f7577dff" args="" -->
@@ -433,32 +433,6 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>EventEnemy</b></td><
 
 </div>
 </div>
-<a class="anchor" id="a5f14522857601dbf3c1d148263db230c"></a><!-- doxytag: member="Game::checkEvents" ref="a5f14522857601dbf3c1d148263db230c" args="(RenderWindow *window)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="class_game.html#a5f14522857601dbf3c1d148263db230c">Game::checkEvents</a> </td>
-          <td>(</td>
-          <td class="paramtype">RenderWindow *&#160;</td>
-          <td class="paramname"><em>window</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gestion des événements clavier. </p>
-<p>Gère les événements clavier. </p>
-<dl class="params"><dt><b>Paramètres:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">window</td><td>: Fenêtre de rendu pour laquelle on doit vérifier les événements </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a class="anchor" id="a13ec8b87405086c617124eedfaba811a"></a><!-- doxytag: member="Game::checkIntersect" ref="a13ec8b87405086c617124eedfaba811a" args="(ObjetPhysique *obj1, ObjetPhysique *obj2)" -->
 <div class="memitem">
 <div class="memproto">
@@ -490,6 +464,32 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>EventEnemy</b></td><
   <table class="params">
     <tr><td class="paramname">obj1</td><td>: Objet 1 </td></tr>
     <tr><td class="paramname">obj2</td><td>: Objet 2 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="af57ecf47190bba6e37edc9cb11522f52"></a><!-- doxytag: member="Game::checkKeyboardEvents" ref="af57ecf47190bba6e37edc9cb11522f52" args="(RenderWindow *window)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_game.html#af57ecf47190bba6e37edc9cb11522f52">Game::checkKeyboardEvents</a> </td>
+          <td>(</td>
+          <td class="paramtype">RenderWindow *&#160;</td>
+          <td class="paramname"><em>window</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gestion des événements clavier. </p>
+<p>Gère les événements clavier. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>: Fenêtre de rendu pour laquelle on doit vérifier les événements </td></tr>
   </table>
   </dd>
 </dl>
@@ -579,12 +579,12 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>EventEnemy</b></td><
 
 </div>
 </div>
-<a class="anchor" id="aaf66d28cbb0ee85c1db276eeb0db6bae"></a><!-- doxytag: member="Game::loadSpriteFromFile" ref="aaf66d28cbb0ee85c1db276eeb0db6bae" args="(string filename)" -->
+<a class="anchor" id="acc2cb76145d3a86e0cc6c565b3a7a1cc"></a><!-- doxytag: member="Game::loadSpriteFromFile" ref="acc2cb76145d3a86e0cc6c565b3a7a1cc" args="(string filename)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt;<a class="el" href="class_animation.html">Animation</a>*&gt; <a class="el" href="class_game.html#aaf66d28cbb0ee85c1db276eeb0db6bae">Game::loadSpriteFromFile</a> </td>
+          <td class="memname">vector&lt;<a class="el" href="class_animation.html">Animation</a>&gt; <a class="el" href="class_game.html#acc2cb76145d3a86e0cc6c565b3a7a1cc">Game::loadSpriteFromFile</a> </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>filename</em></td><td>)</td>
@@ -694,7 +694,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>EventEnemy</b></td><
     <ul>
       <li class="navelem"><a class="el" href="class_game.html">Game</a>      </li>
 
-    <li class="footer">Généré le Lundi Mars 30 2015 21:00:54 pour Metal Slug par
+    <li class="footer">Généré le Lundi Mars 30 2015 23:41:52 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

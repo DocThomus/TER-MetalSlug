@@ -34,6 +34,9 @@ all : $(EXEC)
 valgrind : $(EXEC)
 	export LD_LIBRARY_PATH=$(PATH_LIB) && valgrind ./$(EXEC)
 
+debug : $(EXEC)
+	export LD_LIBRARY_PATH=$(PATH_LIB) && gdb ./$(EXEC)
+
 $(EXEC) : $(OBJ)
 	@echo "\033[31m[Link] $(EXEC)\033[00m"
 	@$(COMPILO) $(OPTION) -std=c++11 -o $@ -Wl,-Bstatic $^ -L$(PATH_SFML) $(LIB_SFML) -Wl,-Bdynamic $(LIB_DEP)

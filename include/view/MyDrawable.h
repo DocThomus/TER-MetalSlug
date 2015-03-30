@@ -40,7 +40,7 @@ class MyDrawable
 	protected :
 
 		RectangleShape body; /*!< \brief  Rectangle à afficher */
-		vector<Animation*> animations; /*!< \brief Liste des animations de l'objet. */
+		vector<Animation> animations; /*!< \brief Liste des animations de l'objet. */
 		int current_anim; /*!< \brief Animation courante. */
 		Texture* tex; /*!< \brief Texture à appliquer au rectangle. */
 		Bool2 repeat_tex; /*!< \brief Indique si la texture doit être répétée horizontalement et/ou verticalement. */
@@ -77,12 +77,12 @@ class MyDrawable
 		/*!
 	     * \brief Ajoute une animation à l'objet.
 	     */
-		void addAnimation(Animation* a);
+		void addAnimation(Animation a);
 
 		/*!
 	     * \brief Ajoute plusieurs animations à l'objet.
 	     */
-		void addAnimations(vector<Animation*> v);
+		void addAnimations(vector<Animation> v);
 
 		/*!
 	     * \brief Ajoute des animations chargées à partir d"un fichier XML.
@@ -132,6 +132,13 @@ class MyDrawable
 	     * Met à jour la zone de la texture qui doit être appliquée au rectangle.
 	     */
 		virtual void updateIntRect();
+
+		/*!
+	     * \brief Chargement d'animations
+	     *
+	     * Methode statique permettant de charger des animations à partir d'un fichier.
+	     */
+		static vector<Animation> loadSpriteFromFile(string filename);
 
 
 };

@@ -252,7 +252,7 @@ bool loadLevelXML(string filename, Config* conf, Environment* env, list<EventGam
             string type_e = event->first_attribute("enemy_type")->value();
 
             if(type_e == "REBEL")
-                evts->push_back(new EventEnemy(pos, tmp_pos,Enemy::REBEL));
+                evts->push_back(new EventEnemy(pos, tmp_pos, Enemy::REBEL));
         }
     }
 
