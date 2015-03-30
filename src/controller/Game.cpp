@@ -158,15 +158,15 @@ void Game::checkEvents(RenderWindow* window)
 
                 /* TIRER */
                 case Keyboard::Right :
-                    player.shoot(&ammo, Int2(1,0)/*, textures[textures.size()-1]*/);
+                    player.shoot(&ammo, Int2(1,0));
                     break;
 
                 case Keyboard::Left :
-                    player.shoot(&ammo, Int2(-1,0)/*, textures[textures.size()-1]*/);
+                    player.shoot(&ammo, Int2(-1,0));
                     break;
 
                 case Keyboard::Up :
-                    player.shoot(&ammo, Int2(0,-1)/*, textures[textures.size()-1]*/);
+                    player.shoot(&ammo, Int2(0,-1));
                     break;
 
 
@@ -210,6 +210,10 @@ void Game::checkEvents(RenderWindow* window)
 
                 case Keyboard::S :
                     player.kneel(false);
+                    if(Keyboard::isKeyPressed(Keyboard::Q) && !Keyboard::isKeyPressed(Keyboard::D))
+                        player.walk(-1);
+                    else if(Keyboard::isKeyPressed(Keyboard::D) && !Keyboard::isKeyPressed(Keyboard::Q))
+                        player.walk(1);
                     break;
             }
     }

@@ -5,8 +5,6 @@ PlayerView::PlayerView(Int2 pos, Int2 siz, int m, int max_h)
 :Player(pos,siz,m,max_h)
 {
 	//body.setOrigin(size.x/2,size.y/2);
-	// test.setOutlineThickness(3);
-	// test.setOutlineColor(Color::Black);
 }
 
 
@@ -67,8 +65,6 @@ void PlayerView::display(RenderWindow* window)
 	if(state_p != KNELT)
 		legs.display(window);
 	window->draw(body);
-
-	//window->draw(test);
 }
 
 
@@ -107,7 +103,7 @@ void PlayerView::animate(int dt)
 	/* CHANGEMENT D'ANIMATION : CORPS */
 	if(state_b == SHOOT)
 	{
-		if(current_anim==0 || current_anim==3)
+		if(current_anim==PISTOLRUN || current_anim==PISTOLKNEE)
 			state_b = NORMAL;
 	}
 	else if(state_p == KNELT)
@@ -118,8 +114,8 @@ void PlayerView::animate(int dt)
 	/* MISE A JOUR DE LA SELECTION DE LA TEXTURE */
 	updateIntRect();
 
-	// test.setPosition(Vector2f(position.x,position.y));
-	// test.setSize(Vector2f(size.x,size.y));
+
+	//cout  << "walkway=" << walkway << "     gunway=" << gunway << endl;
 }
 
 
@@ -165,9 +161,9 @@ void PlayerView::kneel(bool b)
 	if(state_g == Character::GROUND)
 	{
 		int i = (b ? PISTOLKNEE : PISTOLRUN);
-		if(current_anim!=PISTOLKNEESHOOT)
+		if(current_anim!=PISTOLKNEESHOOT && current_anim!=PISTOLKNEESHOOTUP)
 			changeAnimation(i);
-		if(!b && current_anim==PISTOLKNEESHOOT)
+		if(!b && (current_anim==PISTOLKNEESHOOT || current_anim==PISTOLKNEESHOOTUP))
 			changeAnimation(PISTOLRUN);
 		updateIntRect();
 	}
@@ -176,7 +172,7 @@ void PlayerView::kneel(bool b)
 
 
 
-void PlayerView::shoot(list<AmmoView*>* air, Int2 angle/*, Texture* tex*/)
+void PlayerView::shoot(list<AmmoView*>* air, Int2 angle)
 {
 	bool change = false;
 
@@ -187,10 +183,7 @@ void PlayerView::shoot(list<AmmoView*>* air, Int2 angle/*, Texture* tex*/)
 	for(list<Ammo*>::iterator a = tmp.begin(); a != tmp.end(); a++)
     {
     	av = new AmmoView(**a);
-    	// if(tex!=NULL)
-    	// 	av->setTexture(tex);
     	air->push_back(av);
-
     	change = true;
     }
 
@@ -202,17 +195,27 @@ void PlayerView::shoot(list<AmmoView*>* air, Int2 angle/*, Texture* tex*/)
 	
     	/* ANIMATION */
 		gunway = angle;
-		if(state_p==KNELT)
+		PlayerAnimationsBody anim_shoot;
+		PlayerAnimationsBody anim_shoot_up;
+		PlayerAnimationsBody anim_after;
+
+		if(state_p == KNELT)
 		{
-			changeAnimation(PISTOLKNEESHOOT,false,PISTOLKNEE);
+			anim_shoot    = PISTOLKNEESHOOT;
+			anim_shoot_up = PISTOLKNEESHOOTUP;
+			anim_after    = PISTOLKNEE;
 		}
 		else
 		{
-			if(gunway.x==0)
-				changeAnimation(PISTOLSHOOTUP,false,PISTOLRUN);
-			else
-				changeAnimation(PISTOLSHOOT,false,PISTOLRUN);
+			anim_shoot    = PISTOLSHOOT;
+			anim_shoot_up = PISTOLSHOOTUP;
+			anim_after    = PISTOLRUN;
 		}
+
+		if(gunway.x==0)
+			changeAnimation(anim_shoot_up,false,anim_after);
+		else
+			changeAnimation(anim_shoot,false,anim_after);	
 
 		resetAnim();
     }

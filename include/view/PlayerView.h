@@ -44,7 +44,8 @@ class PlayerView : public Player, public MyDrawable
 	     */
 		enum PlayerAnimationsBody
 		{
-			PISTOLRUN, PISTOLSHOOT, PISTOLSHOOTUP, PISTOLKNEE, PISTOLKNEESHOOT
+			PISTOLRUN, PISTOLSHOOT, PISTOLSHOOTUP, 
+			PISTOLKNEE, PISTOLKNEESHOOT, PISTOLKNEESHOOTUP
 		};
 
 		/*!
@@ -63,7 +64,6 @@ class PlayerView : public Player, public MyDrawable
 	public :
 
 		MemberView legs; /*!< \brief L'objet symbolisant les jambes du joueur. */
-		//RectangleShape test;
 
 		/*!
 	     * \brief Constructeur

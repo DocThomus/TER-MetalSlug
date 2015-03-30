@@ -82,7 +82,7 @@ void Player::shoot(list<Ammo*>* air, Float2 angle)
 	{
 		armes[current_weapon]->shoot(air,angle);
 		state_b = SHOOT;
-		if(state_p == KNELT)
+		if(state_p == KNELT && angle.x!=0)
 			walkway = angle.x;
 	}
 }
