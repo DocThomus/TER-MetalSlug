@@ -30,6 +30,7 @@ class Event
 
 	public :
 
+
 		/*!
 	     * \brief Constructeur
 	     *
