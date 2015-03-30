@@ -29,9 +29,18 @@ using namespace std;
  */
 class Enemy : public Character 
 {
+
+	public :
+
+		/*!\enum TypeEnemy
+		 * \brief Énumération des différents types d'ennemis.
+		 */
+		enum TypeEnemy{ REBEL, NB_TYPE_ENEMY };
+
 	
 	protected :
 
+		TypeEnemy type;
 		bool haveAI; /*!< \brief Indique si l'ennemi doit posséder une intelligence ou non. */
 		int power; /*!> \brief Indique la puissance des attaques de l'ennemi. */
 
@@ -50,6 +59,15 @@ class Enemy : public Character
 	     * \param pow : La puissance de l'ennemi.
 	     */
 		Enemy(Int2 pos, Int2 siz, int m, int max_h, bool AI, int pow);
+
+		/*!
+	     * \brief Constructeur
+	     *
+	     * Construit un ennemi du type indiqué.
+	     * \param pos : Position initiale de l'ennemi.
+	     * \param t : TYpe de l'ennemi.
+	     */
+		Enemy(Int2 pos, TypeEnemy t);
 
 		/*!
 	     * \brief Constructeur

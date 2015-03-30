@@ -18,6 +18,8 @@ var class_game =
     [ "setConfig", "class_game.html#a5f58f15f1ef2638e719b2a8b7a0ed946", null ],
     [ "update", "class_game.html#a6f2a5505fd8934ba86b49cbff275de78", null ],
     [ "updateView", "class_game.html#a8a46a3024a807dd03ab0576867318f52", null ],
+    [ "EventEnemy", "class_game.html#aaa884353ff6c6ee2e2abdbb3d485814c", null ],
+    [ "EventGame", "class_game.html#af1ff76d0769eb329df83e3b1ea247f89", null ],
     [ "ammo", "class_game.html#a587a6db19201fef9e82559a7e8233663", null ],
     [ "config", "class_game.html#a4d66eaa503343894c4c11a39f7577dff", null ],
     [ "enemies", "class_game.html#ad3050dcb35ca3f41ae61cb0beaedd871", null ],

@@ -2,6 +2,8 @@ var searchData=
 [
   ['savetoxml',['saveToXML',['../class_config.html#ac42f95c68ac875f4069854425ea8be44',1,'Config']]],
   ['setconfig',['setConfig',['../class_game.html#a5f58f15f1ef2638e719b2a8b7a0ed946',1,'Game']]],
+  ['setenemyposition',['setEnemyPosition',['../class_event_enemy.html#aea743d5f74acdd2ff844b1abc738353a',1,'EventEnemy']]],
+  ['setenemytype',['setEnemyType',['../class_event_enemy.html#a7e40fce8a937153c081d5a027869c9d4',1,'EventEnemy']]],
   ['setinvicibility',['setInvicibility',['../class_character.html#ab9f0c66cb8fc37d804e9bf9a568abf97',1,'Character']]],
   ['setmass',['setMass',['../class_objet_physique.html#ac5fe6bbd5c934782aab5e3e87472d506',1,'ObjetPhysique']]],
   ['setnextanim',['setNextAnim',['../class_animation.html#a6e823464e233a158fc86963b2952e565',1,'Animation']]],

@@ -97,6 +97,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Types publics</a> &#124;
 <a href="#pub-methods">Fonctions membres publiques</a> &#124;
 <a href="#pro-attribs">Attributs protégés</a>  </div>
   <div class="headertitle">
@@ -122,10 +123,18 @@ Graphe d'héritage de Enemy:</div>
 
 <p><a href="class_enemy-members.html">Liste de tous les membres</a></p>
 <table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-types"></a>
+Types publics</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a0810e4ccd9dc6845273cb027a1436044">TypeEnemy</a> { <b>REBEL</b>, 
+<b>NB_TYPE_ENEMY</b>
+ }</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Énumération des différents types d'ennemis. <br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a06989122c9391af1d13ee913d137f298">Enemy</a> (<a class="el" href="class_int2.html">Int2</a> pos, <a class="el" href="class_int2.html">Int2</a> siz, int m, int max_h, bool AI, int pow)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique la puissance des attaques de l'ennemi.  <a href="#a06989122c9391af1d13ee913d137f298"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a7017edb12833d56e6d39a5bf574912f6">Enemy</a> (<a class="el" href="class_int2.html">Int2</a> pos, <a class="el" href="class_enemy.html#a0810e4ccd9dc6845273cb027a1436044">TypeEnemy</a> t)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#a7017edb12833d56e6d39a5bf574912f6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a94f30d348b6d2840fd71675472ba38dd">Enemy</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#a94f30d348b6d2840fd71675472ba38dd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#ac0eec4755e28c02688065f9657150ac3">~Enemy</a> ()</td></tr>
@@ -140,6 +149,8 @@ Fonctions membres publiques</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Mourir.  <a href="#a04c451624958712b36546037fc25c601"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Attributs protégés</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a53f4c66c8dbc8213f9273126b67f80cf"></a><!-- doxytag: member="Enemy::type" ref="a53f4c66c8dbc8213f9273126b67f80cf" args="" -->
+<a class="el" href="class_enemy.html#a0810e4ccd9dc6845273cb027a1436044">TypeEnemy</a>&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a544944c62e4be948574a090f55002e54"></a><!-- doxytag: member="Enemy::haveAI" ref="a544944c62e4be948574a090f55002e54" args="" -->
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a544944c62e4be948574a090f55002e54">haveAI</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si l'ennemi doit posséder une intelligence ou non. <br/></td></tr>
@@ -211,6 +222,43 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>power</b></td></tr>
     <tr><td class="paramname">max_h</td><td>: Santé maximale de l'ennemi. </td></tr>
     <tr><td class="paramname">AI</td><td>: Indique si l'ennemi doit être "intelligent" ou non. </td></tr>
     <tr><td class="paramname">pow</td><td>: La puissance de l'ennemi. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7017edb12833d56e6d39a5bf574912f6"></a><!-- doxytag: member="Enemy::Enemy" ref="a7017edb12833d56e6d39a5bf574912f6" args="(Int2 pos, TypeEnemy t)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_enemy.html#a06989122c9391af1d13ee913d137f298">Enemy::Enemy</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_int2.html">Int2</a>&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_enemy.html#a0810e4ccd9dc6845273cb027a1436044">TypeEnemy</a>&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructeur. </p>
+<p>Construit un ennemi du type indiqué.  </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>: Position initiale de l'ennemi.  </td></tr>
+    <tr><td class="paramname">t</td><td>: TYpe de l'ennemi. </td></tr>
   </table>
   </dd>
 </dl>
@@ -386,7 +434,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>power</b></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_enemy.html">Enemy</a>      </li>
 
-    <li class="footer">Généré le Dimanche Mars 29 2015 23:33:11 pour Metal Slug par
+    <li class="footer">Généré le Lundi Mars 30 2015 21:00:54 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

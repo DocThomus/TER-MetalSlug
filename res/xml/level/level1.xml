@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <document>
 	<level num="1">
+
+		<!-- ENVIRONNEMENT -->
 		<environment>
+
+			<!-- DECORS -->
 			<decors>
 				<decor z="0">city.gif</decor>
 			</decors>
+
+			<!-- PLATE-FORMES -->
 			<platforms>
 				<platform num="0">
 					<position x="-10" y="650"/>
@@ -26,10 +32,15 @@
 					<sprite>wall.png</sprite>
 				</platform>
 			</platforms>
-			<!-- ITEMS -->
-		</environment>
-		<events>
 
+			<!-- ITEMS -->
+			<!-- ... -->
+		</environment>
+
+		<!-- EVENTS -->
+		<events>
+			<event type="enemy" pos="100" enemy_type="REBEL" x="800" y="650"/>
 		</events>
+
 	</level>
 </document>

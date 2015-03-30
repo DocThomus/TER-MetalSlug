@@ -53,6 +53,8 @@ class EnnemyView;
  */
 class Game
 {
+	friend class EventGame;
+	friend class EventEnemy;
 	
 	private :
 

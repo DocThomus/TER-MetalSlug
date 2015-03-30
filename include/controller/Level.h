@@ -10,6 +10,7 @@
  */
 
 #include <iostream>
+#include <list>
 
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
@@ -17,11 +18,12 @@
 #include <SFML/Audio.hpp>
 
 #include <controller/Environment.h>
+#include <controller/EventGame.h>
 
 using namespace std;
 
 class Environment;
-
+class EventGame;
 
 
 /*! \class Level
@@ -39,6 +41,8 @@ class Level
 	private :
 
 		Environment environment; /*!< \brief Environnement du niveau (Platform, Decor, Destructible). */
+		list<EventGame*> events; /*!< \brief Liste des événements du niveau. */
+
 
 	public :
 

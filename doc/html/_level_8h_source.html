@@ -102,42 +102,45 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define LEVEL_H</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
 <a name="l00012"></a>00012 <span class="preprocessor">#include &lt;iostream&gt;</span>
-<a name="l00013"></a>00013 
-<a name="l00014"></a>00014 <span class="preprocessor">#include &lt;SFML/System.hpp&gt;</span>
-<a name="l00015"></a>00015 <span class="preprocessor">#include &lt;SFML/Window.hpp&gt;</span>
-<a name="l00016"></a>00016 <span class="preprocessor">#include &lt;SFML/Graphics.hpp&gt;</span>
-<a name="l00017"></a>00017 <span class="preprocessor">#include &lt;SFML/Audio.hpp&gt;</span>
-<a name="l00018"></a>00018 
-<a name="l00019"></a>00019 <span class="preprocessor">#include &lt;<a class="code" href="_environment_8h.html" title="Déclaration de la classe Environment.">controller/Environment.h</a>&gt;</span>
-<a name="l00020"></a>00020 
-<a name="l00021"></a>00021 <span class="keyword">using namespace </span>std;
+<a name="l00013"></a>00013 <span class="preprocessor">#include &lt;list&gt;</span>
+<a name="l00014"></a>00014 
+<a name="l00015"></a>00015 <span class="preprocessor">#include &lt;SFML/System.hpp&gt;</span>
+<a name="l00016"></a>00016 <span class="preprocessor">#include &lt;SFML/Window.hpp&gt;</span>
+<a name="l00017"></a>00017 <span class="preprocessor">#include &lt;SFML/Graphics.hpp&gt;</span>
+<a name="l00018"></a>00018 <span class="preprocessor">#include &lt;SFML/Audio.hpp&gt;</span>
+<a name="l00019"></a>00019 
+<a name="l00020"></a>00020 <span class="preprocessor">#include &lt;<a class="code" href="_environment_8h.html" title="Déclaration de la classe Environment.">controller/Environment.h</a>&gt;</span>
+<a name="l00021"></a>00021 <span class="preprocessor">#include &lt;<a class="code" href="_event_game_8h.html" title="Déclaration de la classe EventGame.">controller/EventGame.h</a>&gt;</span>
 <a name="l00022"></a>00022 
-<a name="l00023"></a>00023 <span class="keyword">class </span><a class="code" href="class_environment.html" title="Stocke l&#39;environnement.">Environment</a>;
+<a name="l00023"></a>00023 <span class="keyword">using namespace </span>std;
 <a name="l00024"></a>00024 
-<a name="l00025"></a>00025 
-<a name="l00026"></a>00026 
-<a name="l00034"></a><a class="code" href="class_level.html">00034</a> <span class="keyword">class </span><a class="code" href="class_level.html" title="Stocke les données du niveau.">Level</a>
-<a name="l00035"></a>00035 {
-<a name="l00036"></a>00036 
-<a name="l00037"></a>00037         <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_game.html" title="Gère le jeu lolu.">Game</a>;
+<a name="l00025"></a>00025 <span class="keyword">class </span><a class="code" href="class_environment.html" title="Stocke l&#39;environnement.">Environment</a>;
+<a name="l00026"></a>00026 <span class="keyword">class </span><a class="code" href="class_event_game.html" title="Un événement à déclencher à une position du niveau.">EventGame</a>;
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028 
+<a name="l00036"></a><a class="code" href="class_level.html">00036</a> <span class="keyword">class </span><a class="code" href="class_level.html" title="Stocke les données du niveau.">Level</a>
+<a name="l00037"></a>00037 {
 <a name="l00038"></a>00038 
-<a name="l00039"></a>00039         <span class="keyword">private</span> :
+<a name="l00039"></a>00039         <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_game.html" title="Gère le jeu lolu.">Game</a>;
 <a name="l00040"></a>00040 
-<a name="l00041"></a><a class="code" href="class_level.html#a34659a8c8da9d3102344baa4f02ab6b1">00041</a>                 <a class="code" href="class_environment.html" title="Stocke l&#39;environnement.">Environment</a> <a class="code" href="class_level.html#a34659a8c8da9d3102344baa4f02ab6b1" title="Environnement du niveau (Platform, Decor, Destructible).">environment</a>; 
-<a name="l00043"></a>00043         <span class="keyword">public</span> :
-<a name="l00044"></a>00044 
-<a name="l00050"></a>00050                 <a class="code" href="class_level.html" title="Stocke les données du niveau.">Level</a>();
-<a name="l00051"></a>00051 
-<a name="l00057"></a>00057                 ~<a class="code" href="class_level.html" title="Stocke les données du niveau.">Level</a>();
-<a name="l00058"></a>00058 
-<a name="l00065"></a>00065                 <span class="keywordtype">void</span> <a class="code" href="class_game.html#ab268789fc559218dc907e82d34dcf970" title="Affichage.">display</a>(RenderWindow* window);
-<a name="l00066"></a>00066 
-<a name="l00075"></a>00075                 <span class="keywordtype">void</span> addDecor(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> siz, Texture* tex, <span class="keywordtype">int</span> z=0);
-<a name="l00076"></a>00076 
-<a name="l00086"></a>00086                 <span class="keywordtype">void</span> addPlatform(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> pos, <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> siz, <span class="keywordtype">int</span> wl=0, Texture* tex=NULL);
-<a name="l00087"></a>00087 };
-<a name="l00088"></a>00088 
-<a name="l00091"></a>00091 <span class="preprocessor">#endif</span>
+<a name="l00041"></a>00041         <span class="keyword">private</span> :
+<a name="l00042"></a>00042 
+<a name="l00043"></a><a class="code" href="class_level.html#a34659a8c8da9d3102344baa4f02ab6b1">00043</a>                 <a class="code" href="class_environment.html" title="Stocke l&#39;environnement.">Environment</a> <a class="code" href="class_level.html#a34659a8c8da9d3102344baa4f02ab6b1" title="Environnement du niveau (Platform, Decor, Destructible).">environment</a>; 
+<a name="l00044"></a><a class="code" href="class_level.html#a34ee580ab4c16cd5b7efb2244bf0551f">00044</a>                 list&lt;EventGame*&gt; <a class="code" href="class_level.html#a34ee580ab4c16cd5b7efb2244bf0551f" title="Liste des événements du niveau.">events</a>; 
+<a name="l00047"></a>00047         <span class="keyword">public</span> :
+<a name="l00048"></a>00048 
+<a name="l00054"></a>00054                 <a class="code" href="class_level.html" title="Stocke les données du niveau.">Level</a>();
+<a name="l00055"></a>00055 
+<a name="l00061"></a>00061                 ~<a class="code" href="class_level.html" title="Stocke les données du niveau.">Level</a>();
+<a name="l00062"></a>00062 
+<a name="l00069"></a>00069                 <span class="keywordtype">void</span> <a class="code" href="class_game.html#ab268789fc559218dc907e82d34dcf970" title="Affichage.">display</a>(RenderWindow* window);
+<a name="l00070"></a>00070 
+<a name="l00079"></a>00079                 <span class="keywordtype">void</span> addDecor(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> siz, Texture* tex, <span class="keywordtype">int</span> z=0);
+<a name="l00080"></a>00080 
+<a name="l00090"></a>00090                 <span class="keywordtype">void</span> addPlatform(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> pos, <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> siz, <span class="keywordtype">int</span> wl=0, Texture* tex=NULL);
+<a name="l00091"></a>00091 };
+<a name="l00092"></a>00092 
+<a name="l00095"></a>00095 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -158,7 +161,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul>
       <li class="navelem"><a class="el" href="_level_8h.html">Level.h</a>      </li>
 
-    <li class="footer">Généré le Dimanche Mars 29 2015 23:33:11 pour Metal Slug par
+    <li class="footer">Généré le Lundi Mars 30 2015 21:00:54 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

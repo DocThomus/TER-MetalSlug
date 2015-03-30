@@ -1,5 +1,7 @@
 #include <tools/XMLtools.h>
 #include <controller/MasterClass.h>
+#include <controller/EventGame.h>
+#include <controller/EventEnemy.h>
 
 
 /* CONVERSION VERS STRING */
@@ -134,7 +136,7 @@ bool loadSpriteMap(string filename, vector<Int2>* v_anim, vector<Int2>* v_pos, v
 
 
 
-bool loadLevelXML(string filename, Config* conf, Environment* env, vector<Texture*>* tex)
+bool loadLevelXML(string filename, Config* conf, Environment* env, list<EventGame*>* evts, vector<Texture*>* tex)
 {   
     xml_document<> doc;
 
@@ -157,10 +159,11 @@ bool loadLevelXML(string filename, Config* conf, Environment* env, vector<Textur
 
     /* NOEUX PRINCIPAUX */
     xml_node<> *document    = doc.first_node();
-    xml_node<> *level      = document->first_node("level");
+    xml_node<> *level       = document->first_node("level");
     xml_node<> *environment = level->first_node("environment");
     xml_node<> *decors      = environment->first_node("decors");
     xml_node<> *platforms   = environment->first_node("platforms");
+    xml_node<> *events      = level->first_node("events");
 
 
     /* DECORS */
@@ -226,6 +229,33 @@ bool loadLevelXML(string filename, Config* conf, Environment* env, vector<Textur
         // construction de l'objet
         env->addPlatform(tmp_pos,tmp_siz,0,tmp_tex);
     }
+
+
+    /* DECORS */
+    for(xml_node<> *event=events->first_node("event"); event; event=event->next_sibling())
+    {
+        // déclaration
+        string type;
+        int pos;
+
+         // récupération des données et construction
+        type = event->first_attribute("type")->value();
+        pos = atoi(event->first_attribute("pos")->value());
+
+        if(type == "enemy")
+        {
+            Int2 tmp_pos(
+                atoi(event->first_attribute("x")->value()),
+                atoi(event->first_attribute("y")->value())
+            );
+
+            string type_e = event->first_attribute("enemy_type")->value();
+
+            if(type_e == "REBEL")
+                evts->push_back(new EventEnemy(pos, tmp_pos,Enemy::REBEL));
+        }
+    }
+
     
     return true;
 }

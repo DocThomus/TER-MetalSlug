@@ -2,6 +2,8 @@ var files =
 [
     [ "include/controller/Config.h", "_config_8h.html", null ],
     [ "include/controller/Environment.h", "_environment_8h.html", null ],
+    [ "include/controller/EventEnemy.h", "_event_enemy_8h.html", null ],
+    [ "include/controller/EventGame.h", "_event_game_8h.html", null ],
     [ "include/controller/Game.h", "_game_8h.html", null ],
     [ "include/controller/Level.h", "_level_8h.html", null ],
     [ "include/controller/MasterClass.h", "_master_class_8h.html", null ],
@@ -9,7 +11,6 @@ var files =
     [ "include/model/Character.h", "_character_8h.html", null ],
     [ "include/model/Decor.h", "_decor_8h.html", null ],
     [ "include/model/Enemy.h", "_enemy_8h.html", null ],
-    [ "include/model/Event.h", "_event_8h.html", null ],
     [ "include/model/Item.h", "_item_8h.html", null ],
     [ "include/model/ObjetPhysique.h", "_objet_physique_8h.html", null ],
     [ "include/model/Platform.h", "_platform_8h.html", null ],

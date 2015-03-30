@@ -508,32 +508,14 @@ void Game::init()
 void Game::loadLevel()
 {
 
-    /* ENVIRONNEMENT */
-    //level.loadFromFile("res/xml/level/level1.xml",config->resolution);
-    loadLevelXML("res/xml/level/level1.xml",config,&(level.environment),&textures);
-
-
-
     Texture* t;
 
-    /* DECOR */
-    // level.addPlatform(Int2(-10,650),Int2(10000,0),0); // Sol
 
-    // t = new Texture();
-    // t->loadFromFile("res/tex/decor/city.gif");
-    // t->setRepeated(true);
-    // textures.push_back(t);
-    
-    // level.addDecor(config->resolution,textures[textures.size()-1]);
 
-    // /* PLATFORMS */
-    // t = new Texture();
-    // t->loadFromFile("res/tex/platform/wall.png");
-    // t->setRepeated(true);
-    // textures.push_back(t);
+    /* ENVIRONNEMENT */
+    //level.loadFromFile("res/xml/level/level1.xml",config->resolution);
+    loadLevelXML("res/xml/level/level1.xml",config,&(level.environment),&(level.events),&textures);
 
-    // level.addPlatform(Int2(500,470),Int2(100,180),0,textures[textures.size()-1]); // Mur
-    // level.addPlatform(Int2(760,320),Int2(400,40),0,textures[textures.size()-1]); // Mur
 
     
     /* PLAYER */
@@ -564,16 +546,10 @@ void Game::loadLevel()
 
 
     /* ENNEMI */
-    t = new Texture();
-    t->loadFromFile("res/tex/enemy/rebel.png");
-    textures.push_back(t);
-
-    EnemyView* enemy = new EnemyView(Int2(1000,570),Int2(130,80),5,10,false,10);
-
-    enemy->setTexture(textures[textures.size()-1]);
+    EnemyView::loadTexture(Enemy::REBEL);
+    EnemyView* enemy = new EnemyView(Int2(1000,570),Enemy::REBEL);
     enemy->addAnimations(loadSpriteFromFile("res/xml/enemy/rebel.xml"));
     enemy->changeAnimation(1);
-
     enemies.push_back(enemy);
 
 

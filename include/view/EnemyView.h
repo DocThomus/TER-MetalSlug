@@ -37,8 +37,9 @@ class EnemyView : public Enemy, public MyDrawable
 
 	private :
 
-		static vector<Sound*> sounds; /*!< \brief Variable de classe contenant les différents sont nécessaires aux ennemis. */
-
+		static vector<Sound*> sounds; /*!< \brief Variable de classe contenant les différents son nécessaires aux ennemis. */
+		
+		static Texture* textures[NB_TYPE_ENEMY]; /*!< \brief Variable de classe contenant les différentes textures nécessaires aux ennemis. */
 
 	public :
 
@@ -54,6 +55,15 @@ class EnemyView : public Enemy, public MyDrawable
 	     * \param pow : La puissance de l'ennemi.
 	     */
 		EnemyView(Int2 pos, Int2 siz, int m, int max_h, bool AI, int pow);
+
+		/*!
+	     * \brief Constructeur
+	     *
+	     * Construit un ennemi du type indiqué.
+	     * \param pos : Position initiale de l'ennemi.
+	     * \param t : TYpe de l'ennemi.
+	     */
+		EnemyView(Int2 pos, TypeEnemy t);
 
 		/*!
 	     * \brief Constructeur
@@ -76,6 +86,14 @@ class EnemyView : public Enemy, public MyDrawable
 	     * ATTENTION : Cette méthode doit impérativement être appelée avant d'afficher des ennemis !
 	     */
 		static vector<Sound*> loadSounds();
+
+		/*!
+	     * \brief Chargement des textures
+	     *
+	     * Methode statique permettant de charger les textures des ennemis.
+	     * ATTENTION : Cette méthode doit impérativement être appelée avant d'afficher des ennemis !
+	     */
+		static void loadTexture(TypeEnemy t);
 
 		/*!
 	     * \brief Initialisation

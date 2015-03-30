@@ -114,6 +114,7 @@ Liste complète des membres de <a class="el" href="class_enemy.html">Enemy</a>, 
   <tr class="memlist"><td><a class="el" href="class_character.html#a83a528ebc631ba0d561302144f6ee870">decreaseHealth</a>(int s)</td><td><a class="el" href="class_character.html">Character</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_enemy.html#a04c451624958712b36546037fc25c601">die</a>()</td><td><a class="el" href="class_enemy.html">Enemy</a></td><td><code> [virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_enemy.html#a06989122c9391af1d13ee913d137f298">Enemy</a>(Int2 pos, Int2 siz, int m, int max_h, bool AI, int pow)</td><td><a class="el" href="class_enemy.html">Enemy</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_enemy.html#a7017edb12833d56e6d39a5bf574912f6">Enemy</a>(Int2 pos, TypeEnemy t)</td><td><a class="el" href="class_enemy.html">Enemy</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_enemy.html#a94f30d348b6d2840fd71675472ba38dd">Enemy</a>()</td><td><a class="el" href="class_enemy.html">Enemy</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#a7c18118de257e51a3784debad9d62df0">getMovement</a>()</td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#ae537adf900a2bb5eb82a9e36195bf4a5">getPosition</a>()</td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td><code> [inline]</code></td></tr>
@@ -133,12 +134,14 @@ Liste complète des membres de <a class="el" href="class_enemy.html">Enemy</a>, 
   <tr class="memlist"><td><a class="el" href="class_character.html#a5f6cab334d9b7801114878f0b4c8aa85">land</a>(int h)</td><td><a class="el" href="class_character.html">Character</a></td><td><code> [virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#ad9aecb9f29d4bf704d8a536d32081664">mass</a></td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#abca9fd07d93028f52251d5a9bbad0f50">movement</a></td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td><code> [protected]</code></td></tr>
+  <tr bgcolor="#f0f0f0"><td><b>NB_TYPE_ENEMY</b> valeur énumérée (défini dans <a class="el" href="class_enemy.html">Enemy</a>)</td><td><a class="el" href="class_enemy.html">Enemy</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>NORMAL</b> valeur énumérée (défini dans <a class="el" href="class_character.html">Character</a>)</td><td><a class="el" href="class_character.html">Character</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#a17540702a3de4f3aaec27eb86d0b9d3a">ObjetPhysique</a>(Int2 pos, Int2 siz, int m=0)</td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#a7c1bcf11f390181223af0173404f6e61">ObjetPhysique</a>()</td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#adaff4b21f7ce9e9f0740f5e56a7fb48f">position</a></td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td><code> [protected]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>power</b> (défini dans <a class="el" href="class_enemy.html">Enemy</a>)</td><td><a class="el" href="class_enemy.html">Enemy</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_enemy.html#ad8c8e48b7fc9ac2b62482516a742e1a4">print</a>(ostream &amp;os) const </td><td><a class="el" href="class_enemy.html">Enemy</a></td><td><code> [virtual]</code></td></tr>
+  <tr bgcolor="#f0f0f0"><td><b>REBEL</b> valeur énumérée (défini dans <a class="el" href="class_enemy.html">Enemy</a>)</td><td><a class="el" href="class_enemy.html">Enemy</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>RUN</b> valeur énumérée (défini dans <a class="el" href="class_character.html">Character</a>)</td><td><a class="el" href="class_character.html">Character</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_character.html#ab9f0c66cb8fc37d804e9bf9a568abf97">setInvicibility</a>(int seconds)</td><td><a class="el" href="class_character.html">Character</a></td><td><code> [virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#ac5fe6bbd5c934782aab5e3e87472d506">setMass</a>(int m)</td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td></td></tr>
@@ -155,6 +158,8 @@ Liste complète des membres de <a class="el" href="class_enemy.html">Enemy</a>, 
   <tr class="memlist"><td><a class="el" href="class_character.html#a8251340f461ab396f975b18dce58229d">StateBattle</a> énumération</td><td><a class="el" href="class_character.html">Character</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_character.html#a13feb8dcd3af1c802c2b1f545c955561">StateGround</a> énumération</td><td><a class="el" href="class_character.html">Character</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_character.html#a0504a5097fb6ff7679bb4f5408386bf2">StatePosition</a> énumération</td><td><a class="el" href="class_character.html">Character</a></td><td></td></tr>
+  <tr bgcolor="#f0f0f0"><td><b>type</b> (défini dans <a class="el" href="class_enemy.html">Enemy</a>)</td><td><a class="el" href="class_enemy.html">Enemy</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_enemy.html#a0810e4ccd9dc6845273cb027a1436044">TypeEnemy</a> énumération</td><td><a class="el" href="class_enemy.html">Enemy</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>WAIT</b> valeur énumérée (défini dans <a class="el" href="class_character.html">Character</a>)</td><td><a class="el" href="class_character.html">Character</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_character.html#a211bbf81a9ef429793cc00dfa8d15c4c">walk</a>(int way)</td><td><a class="el" href="class_character.html">Character</a></td><td><code> [virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_character.html#a4ac650b90756ad804b9c6b88c7d9504c">walkway</a></td><td><a class="el" href="class_character.html">Character</a></td><td><code> [protected]</code></td></tr>
@@ -180,7 +185,7 @@ Liste complète des membres de <a class="el" href="class_enemy.html">Enemy</a>, 
   <div id="nav-path" class="navpath">
     <ul>
 
-    <li class="footer">Généré le Dimanche Mars 29 2015 23:33:11 pour Metal Slug par
+    <li class="footer">Généré le Lundi Mars 30 2015 21:00:54 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

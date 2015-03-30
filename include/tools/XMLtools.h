@@ -13,6 +13,7 @@
 #include <fstream>
 #include <sstream>
 #include <vector>
+#include <list>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -30,6 +31,8 @@ using namespace rapidxml;
 
 class Config;
 class Environment;
+class EventGame;
+class EventEnemy;
 
 
 /***
@@ -75,7 +78,7 @@ bool loadSpriteMap(string filename, vector<Int2>*animations, vector<Int2>* posit
  * \param env : Environnement à complèter
  * \param tex : Conteneur pour les textures
  */
-bool loadLevelXML(string filename, Config* conf, Environment* env, vector<Texture*>* tex);
+bool loadLevelXML(string filename, Config* conf, Environment* env, list<EventGame*>* events, vector<Texture*>* tex);
 
 
 

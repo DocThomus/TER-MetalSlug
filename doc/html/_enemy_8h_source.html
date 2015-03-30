@@ -113,31 +113,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00021"></a>00021 
 <a name="l00030"></a><a class="code" href="class_enemy.html">00030</a> <span class="keyword">class </span><a class="code" href="class_enemy.html" title="Modélise un ennemi.">Enemy</a> : <span class="keyword">public</span> <a class="code" href="class_character.html" title="Modélise un personnage.">Character</a> 
 <a name="l00031"></a>00031 {
-<a name="l00032"></a>00032         
-<a name="l00033"></a>00033         <span class="keyword">protected</span> :
+<a name="l00032"></a>00032 
+<a name="l00033"></a>00033         <span class="keyword">public</span> :
 <a name="l00034"></a>00034 
-<a name="l00035"></a><a class="code" href="class_enemy.html#a544944c62e4be948574a090f55002e54">00035</a>                 <span class="keywordtype">bool</span> <a class="code" href="class_enemy.html#a544944c62e4be948574a090f55002e54" title="Indique si l&#39;ennemi doit posséder une intelligence ou non.">haveAI</a>; 
-<a name="l00036"></a>00036                 <span class="keywordtype">int</span> power; 
-<a name="l00039"></a>00039         <span class="keyword">public</span> :
-<a name="l00040"></a>00040                 
-<a name="l00052"></a>00052                 <a class="code" href="class_enemy.html" title="Modélise un ennemi.">Enemy</a>(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> pos, <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> siz, <span class="keywordtype">int</span> m, <span class="keywordtype">int</span> max_h, <span class="keywordtype">bool</span> AI, <span class="keywordtype">int</span> pow);
-<a name="l00053"></a>00053 
-<a name="l00059"></a>00059                 <a class="code" href="class_enemy.html" title="Modélise un ennemi.">Enemy</a>();
-<a name="l00060"></a>00060 
-<a name="l00066"></a>00066                 ~<a class="code" href="class_enemy.html" title="Modélise un ennemi.">Enemy</a>();
-<a name="l00067"></a>00067 
-<a name="l00074"></a>00074                 <span class="keywordtype">void</span> print(ostream&amp; os) <span class="keyword">const</span>;  
-<a name="l00075"></a>00075 
-<a name="l00082"></a>00082                 <span class="keywordtype">void</span> animate (<span class="keywordtype">int</span> dt);
-<a name="l00083"></a>00083 
-<a name="l00090"></a>00090                 <span class="keywordtype">void</span> attack(vector&lt;Ammo*&gt;* air);
-<a name="l00091"></a>00091 
-<a name="l00097"></a>00097                 <span class="keywordtype">void</span> die();
-<a name="l00098"></a>00098 
-<a name="l00099"></a>00099 };
-<a name="l00100"></a>00100 
+<a name="l00038"></a><a class="code" href="class_enemy.html#a0810e4ccd9dc6845273cb027a1436044">00038</a>                 <span class="keyword">enum</span> <a class="code" href="class_enemy.html#a0810e4ccd9dc6845273cb027a1436044" title="Énumération des différents types d&#39;ennemis.">TypeEnemy</a>{ REBEL, NB_TYPE_ENEMY };
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040         
+<a name="l00041"></a>00041         <span class="keyword">protected</span> :
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043                 TypeEnemy type;
+<a name="l00044"></a><a class="code" href="class_enemy.html#a544944c62e4be948574a090f55002e54">00044</a>                 <span class="keywordtype">bool</span> <a class="code" href="class_enemy.html#a544944c62e4be948574a090f55002e54" title="Indique si l&#39;ennemi doit posséder une intelligence ou non.">haveAI</a>; 
+<a name="l00045"></a>00045                 <span class="keywordtype">int</span> power; 
+<a name="l00048"></a>00048         <span class="keyword">public</span> :
+<a name="l00049"></a>00049                 
+<a name="l00061"></a>00061                 <a class="code" href="class_enemy.html" title="Modélise un ennemi.">Enemy</a>(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> pos, <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> siz, <span class="keywordtype">int</span> m, <span class="keywordtype">int</span> max_h, <span class="keywordtype">bool</span> AI, <span class="keywordtype">int</span> pow);
+<a name="l00062"></a>00062 
+<a name="l00070"></a>00070                 <a class="code" href="class_enemy.html" title="Modélise un ennemi.">Enemy</a>(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> pos, <a class="code" href="class_enemy.html#a0810e4ccd9dc6845273cb027a1436044" title="Énumération des différents types d&#39;ennemis.">TypeEnemy</a> t);
+<a name="l00071"></a>00071 
+<a name="l00077"></a>00077                 <a class="code" href="class_enemy.html" title="Modélise un ennemi.">Enemy</a>();
+<a name="l00078"></a>00078 
+<a name="l00084"></a>00084                 ~<a class="code" href="class_enemy.html" title="Modélise un ennemi.">Enemy</a>();
+<a name="l00085"></a>00085 
+<a name="l00092"></a>00092                 <span class="keywordtype">void</span> print(ostream&amp; os) <span class="keyword">const</span>;  
+<a name="l00093"></a>00093 
+<a name="l00100"></a>00100                 <span class="keywordtype">void</span> animate (<span class="keywordtype">int</span> dt);
 <a name="l00101"></a>00101 
-<a name="l00104"></a>00104 <span class="preprocessor">#endif</span>
+<a name="l00108"></a>00108                 <span class="keywordtype">void</span> attack(vector&lt;Ammo*&gt;* air);
+<a name="l00109"></a>00109 
+<a name="l00115"></a>00115                 <span class="keywordtype">void</span> die();
+<a name="l00116"></a>00116 
+<a name="l00117"></a>00117 };
+<a name="l00118"></a>00118 
+<a name="l00119"></a>00119 
+<a name="l00122"></a>00122 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -158,7 +166,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul>
       <li class="navelem"><a class="el" href="_enemy_8h.html">Enemy.h</a>      </li>
 
-    <li class="footer">Généré le Dimanche Mars 29 2015 23:33:11 pour Metal Slug par
+    <li class="footer">Généré le Lundi Mars 30 2015 21:00:54 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

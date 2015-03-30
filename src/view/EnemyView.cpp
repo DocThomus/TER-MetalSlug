@@ -3,12 +3,23 @@
 
 vector<Sound*> EnemyView::sounds = loadSounds();
 
+Texture* EnemyView::textures[NB_TYPE_ENEMY];
+
 
 
 EnemyView::EnemyView(Int2 pos, Int2 siz, int m, int max_h, bool AI, int pow)
 :Enemy(pos, siz, m, max_h, AI, pow)
 {
 
+}
+
+
+EnemyView::EnemyView(Int2 pos, TypeEnemy t)
+:Enemy(pos,t)
+{
+	/* REBEL */
+	if(type == REBEL)
+		setTexture(textures[REBEL]);
 }
 
 
@@ -130,4 +141,18 @@ vector<Sound*> EnemyView::loadSounds()
 
 
     return tmp;
+}
+
+
+
+void EnemyView::loadTexture(TypeEnemy t)
+{
+	/* REBEL */
+	if(t == REBEL)
+	{
+		Texture* tex = new Texture();
+	    tex->loadFromFile("res/tex/enemy/rebel.png");
+	    textures[REBEL] = tex;
+	}
+
 }

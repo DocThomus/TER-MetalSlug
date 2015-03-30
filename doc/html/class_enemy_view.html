@@ -128,6 +128,8 @@ Graphe d'héritage de EnemyView:</div>
 Fonctions membres publiques</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_view.html#a93ce010ab051b03e64421b2fdd06a1a4">EnemyView</a> (<a class="el" href="class_int2.html">Int2</a> pos, <a class="el" href="class_int2.html">Int2</a> siz, int m, int max_h, bool AI, int pow)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#a93ce010ab051b03e64421b2fdd06a1a4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_view.html#a123d7600ff369389909a9cd2b3962aa0">EnemyView</a> (<a class="el" href="class_int2.html">Int2</a> pos, <a class="el" href="class_enemy.html#a0810e4ccd9dc6845273cb027a1436044">TypeEnemy</a> t)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#a123d7600ff369389909a9cd2b3962aa0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_view.html#a988d6526fc9926e3a34ed2137edc6c25">EnemyView</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#a988d6526fc9926e3a34ed2137edc6c25"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_view.html#ac846d5bd0d6d91e1cbc1fbd3e90bcd07">~EnemyView</a> ()</td></tr>
@@ -151,11 +153,16 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 Fonctions membres publiques statiques</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static vector&lt; Sound * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_view.html#ad387a7eb55752e23d78fef63b0430ca3">loadSounds</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Chargement des sons.  <a href="#ad387a7eb55752e23d78fef63b0430ca3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_view.html#a5c1f8691ecb0fe0480031561f48be0c4">loadTexture</a> (<a class="el" href="class_enemy.html#a0810e4ccd9dc6845273cb027a1436044">TypeEnemy</a> t)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Chargement des textures.  <a href="#a5c1f8691ecb0fe0480031561f48be0c4"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pri-static-attribs"></a>
 Attributs privés statiques</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aea3cb584316432d9de40235f8a6faf78"></a><!-- doxytag: member="EnemyView::sounds" ref="aea3cb584316432d9de40235f8a6faf78" args="" -->
 static vector&lt; Sound * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_view.html#aea3cb584316432d9de40235f8a6faf78">sounds</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable de classe contenant les différents sont nécessaires aux ennemis. <br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable de classe contenant les différents son nécessaires aux ennemis. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa6bd0110d6c761c24251ca3e705f58b3"></a><!-- doxytag: member="EnemyView::textures" ref="aa6bd0110d6c761c24251ca3e705f58b3" args="[NB_TYPE_ENEMY]" -->
+static Texture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_view.html#aa6bd0110d6c761c24251ca3e705f58b3">textures</a> [NB_TYPE_ENEMY]</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable de classe contenant les différentes textures nécessaires aux ennemis. <br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Description détaillée</h2>
 <div class="textblock"><p>Un objet <a class="el" href="class_enemy.html" title="Modélise un ennemi.">Enemy</a> affichable. </p>
@@ -219,6 +226,43 @@ static vector&lt; Sound * &gt;&#160;</td><td class="memItemRight" valign="bottom
     <tr><td class="paramname">max_h</td><td>: Santé maximale de l'ennemi. </td></tr>
     <tr><td class="paramname">AI</td><td>: Indique si l'ennemi doit être "intelligent" ou non. </td></tr>
     <tr><td class="paramname">pow</td><td>: La puissance de l'ennemi. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a123d7600ff369389909a9cd2b3962aa0"></a><!-- doxytag: member="EnemyView::EnemyView" ref="a123d7600ff369389909a9cd2b3962aa0" args="(Int2 pos, TypeEnemy t)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_enemy_view.html#a93ce010ab051b03e64421b2fdd06a1a4">EnemyView::EnemyView</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_int2.html">Int2</a>&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_enemy.html#a0810e4ccd9dc6845273cb027a1436044">TypeEnemy</a>&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructeur. </p>
+<p>Construit un ennemi du type indiqué.  </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>: Position initiale de l'ennemi.  </td></tr>
+    <tr><td class="paramname">t</td><td>: TYpe de l'ennemi. </td></tr>
   </table>
   </dd>
 </dl>
@@ -379,6 +423,26 @@ static vector&lt; Sound * &gt;&#160;</td><td class="memItemRight" valign="bottom
 
 </div>
 </div>
+<a class="anchor" id="a5c1f8691ecb0fe0480031561f48be0c4"></a><!-- doxytag: member="EnemyView::loadTexture" ref="a5c1f8691ecb0fe0480031561f48be0c4" args="(TypeEnemy t)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="class_enemy_view.html#a5c1f8691ecb0fe0480031561f48be0c4">EnemyView::loadTexture</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_enemy.html#a0810e4ccd9dc6845273cb027a1436044">TypeEnemy</a>&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Chargement des textures. </p>
+<p>Methode statique permettant de charger les textures des ennemis. ATTENTION : Cette méthode doit impérativement être appelée avant d'afficher des ennemis ! </p>
+
+</div>
+</div>
 <a class="anchor" id="a55ae4c4342f5d61dd6ba6d0ad8d22eb6"></a><!-- doxytag: member="EnemyView::shoot" ref="a55ae4c4342f5d61dd6ba6d0ad8d22eb6" args="(list&lt; AmmoView * &gt; *ammos, Int2 angle=Int2(1, 0), Texture *tex=NULL)" -->
 <div class="memitem">
 <div class="memproto">
@@ -466,7 +530,7 @@ static vector&lt; Sound * &gt;&#160;</td><td class="memItemRight" valign="bottom
     <ul>
       <li class="navelem"><a class="el" href="class_enemy_view.html">EnemyView</a>      </li>
 
-    <li class="footer">Généré le Dimanche Mars 29 2015 23:33:11 pour Metal Slug par
+    <li class="footer">Généré le Lundi Mars 30 2015 21:00:54 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
