@@ -181,6 +181,10 @@ void Game::checkKeyboardEvents(RenderWindow* window)
                     player.shoot(&ammo, Int2(0,-1));
                     break;
 
+                case Keyboard::Down :
+                    player.shoot(&ammo, Int2(0,1));
+                    break;
+
 
                 /* RECHARGER */
                 case Keyboard::R :
@@ -238,13 +242,15 @@ void Game::checkCollisions()
     Int2 p_pos = player.getPosition();
     Int2 p_siz = player.getSize();
 
+    list<PlatformView>* pltf = &(level.environment.platforms);
+
+
     /* PLAYER / BORD DE L'ECRAN */
     if(p_pos.x <= view.getCenter().x-view.getSize().x/2)
         player.bumpLeft(view.getCenter().x-view.getSize().x/2);
 
 
     /* PLAYER / PLATFORM */
-    list<PlatformView>* pltf = &(level.environment.platforms);
     bool collision = false;
     for(list<PlatformView>::iterator pl=pltf->begin(); pl!=pltf->end(); pl++) // On check les collisions avec TOUTES les plateformes (on peut etre en collision avec le sol et un mur...)
     {
@@ -270,6 +276,29 @@ void Game::checkCollisions()
     }
     if(!collision) { // Si il n'y a collision avec aucune plateforme, le personnage est en l'air et tombe
         player.jump(0);
+    }
+
+
+
+    /* ENNEMIS */
+    for(list<EnemyView*>::iterator e = enemies.begin(); e != enemies.end(); e++)
+    {
+        collision = false;
+        for(list<PlatformView>::iterator pl=pltf->begin(); pl!=pltf->end(); pl++) // On check les collisions avec TOUTES les plateformes (on peut etre en collision avec le sol et un mur...)
+        {
+            ObjetPhysique* e_ptr = (ObjetPhysique*)(*e);
+            ObjetPhysique* pl_ptr = (ObjetPhysique*)(&*pl);
+
+            if(checkIntersect(e_ptr,pl_ptr))
+            {
+                collision = true; 
+                if(checkCollisionTop(e_ptr,pl_ptr))
+                    (*e)->land((*pl).getPosition().y);              
+            }
+        }
+        if(!collision) { // Si il n'y a collision avec aucune plateforme, le personnage est en l'air et tombe
+            (*e)->jump(0);
+        }
     }
 
 
@@ -346,6 +375,7 @@ bool Game::checkIntersect(ObjetPhysique* obj1, ObjetPhysique* obj2) // Renvoie T
     Int2 pos2 = obj2->getPosition();
     Int2 siz1 = obj1->getSize();
     Int2 siz2 = obj2->getSize();
+    Float2 mov1 = obj1->getMovement();
 
     if(pos1.x + 20 > pos2.x + siz2.x  // p1(gauche) a droite de   p2(droite)
     || pos1.x + siz1.x - 20 < pos2.x  // p1(droite) a gauche de   p2(gauche)
@@ -370,13 +400,12 @@ bool Game::checkCollisionTop(ObjetPhysique* obj1, ObjetPhysique* obj2) {
 
     int hauteurIntersect = pos1.y + siz1.y - pos2.y; // la hauteur de la superposition entre le bas de o1 et le haut de o2 (on part du principe que o1 est dans la partie haute de o2)
     int largeurIntersect = min(pos1.x + siz1.x, pos2.x + siz2.x) - max(pos1.x, pos2.x); // La largeur de la superposition est égale a la taille de la superposition entre la plus grande des valeurs gauche, et la plus petite des valeurs droites.
-    if (((hauteurIntersect > 0) && (pos2.y > pos1.y)) // Si o1 est dans la partie haute de o2 (si le bas de o1 est en dessous du haut de o2, et que le haut de o1 est au dessus du haut de o2)
-        && (largeurIntersect > hauteurIntersect) 
-        && mov1.y>=0) {
+    if (mov1.y >= 0 
+        && hauteurIntersect > 0 && pos2.y > pos1.y // Si o1 est dans la partie haute de o2 (si le bas de o1 est en dessous du haut de o2, et que le haut de o1 est au dessus du haut de o2)
+        && largeurIntersect > hauteurIntersect)
         return true;
-    } else {
+    else
         return false;
-    }
 }
 
 
@@ -386,17 +415,18 @@ bool Game::checkCollisionBottom(ObjetPhysique* obj1, ObjetPhysique* obj2) {
     Int2 pos2 = obj2->getPosition();
     Int2 siz1 = obj1->getSize();
     Int2 siz2 = obj2->getSize();
+    Float2 mov1 = obj1->getMovement();
 
     //Si o1 est dans la partie basse de o2, et que la largeur de l'intersection entre o1 et o2 est suppérieure a sa hauteur, alors on a une collision entre o1 et o2 venant du bas
 
     int hauteurIntersect = pos2.y + siz2.y - pos1.y; // la hauteur de la superposition entre le bas de o2 et le haut de o1 (on part du principe que o1 est dans la partie basse de o2)
     int largeurIntersect = std::min(pos1.x + siz1.x, pos2.x + siz2.x) - max(pos1.x, pos2.x); // La largeur de la superposition est égale a la distance entre la plus grande des valeurs gauche, et la plus petite des valeurs droites.
-    if (((hauteurIntersect > 0) && (pos1.y + siz1.y > pos2.y + siz2.y)) // Si o1 est dans la partie basse de o2 (si le haut de o1 est au dessus du bas de o2, et que le bas de o1 est en dessous du bas de o2)
-        && (largeurIntersect > hauteurIntersect)) {
+    if (mov1.y <=0
+        && hauteurIntersect > 0 && pos1.y + siz1.y > pos2.y + siz2.y // Si o1 est dans la partie basse de o2 (si le haut de o1 est au dessus du bas de o2, et que le bas de o1 est en dessous du bas de o2)
+        && (largeurIntersect > hauteurIntersect))
         return true;
-    } else {
+    else
         return false;
-    }
 }
 
 
@@ -412,11 +442,10 @@ bool Game::checkCollisionLeft(ObjetPhysique* obj1, ObjetPhysique* obj2) {
     int largeurIntersect = pos1.x + siz1.x - pos2.x; // la largeur de la superposition entre la gauche de o2 et la droite de o1 (on part du principe que o1 est dans la partie gauche de o2)
     int hauteurIntersect = std::min(pos1.y + siz1.y, pos2.y + siz2.y) - max(pos1.y, pos2.y); // La hauteur de la superposition est égale a la distance entre la plus grande des valeurs haute, et la plus petite des valeurs basses.
     if (((largeurIntersect > 0) && (pos2.x > pos1.x)) // Si o1 est dans la partie gauche de o2 (si la droite de o1 est a droite de la gauche de o2, et que la gauche de o1 est a gauche de la gauche de o2)
-        && (hauteurIntersect > largeurIntersect)) {
+        && (hauteurIntersect > largeurIntersect))
         return true;
-    } else {
+    else
         return false;
-    }
 }
 
 
@@ -432,11 +461,10 @@ bool Game::checkCollisionRight(ObjetPhysique* obj1, ObjetPhysique* obj2) {
     int largeurIntersect = pos2.x + siz2.x - pos1.x; // la largeur de la superposition entre la gauche de o1 et la droite de o2 (on part du principe que o1 est dans la partie droite de o2)
     int hauteurIntersect = std::min(pos1.y + siz1.y, pos2.y + siz2.y) - max(pos1.y, pos2.y); // La hauteur de la superposition est égale a la distance entre la plus grande des valeurs haute, et la plus petite des valeurs basses.
     if (((largeurIntersect > 0) && (pos1.x + siz1.x > pos2.x + siz2.x)) // Si o1 est dans la partie droite de o2 (si la gauche de o1 est a gauche de la droite de o2, et que la droite de o1 est a droite de la droite de o2)
-        && (hauteurIntersect > largeurIntersect)) {
+        && (hauteurIntersect > largeurIntersect))
         return true;
-    } else {
+    else
         return false;
-    }
 }
 
 

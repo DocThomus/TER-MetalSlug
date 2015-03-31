@@ -44,7 +44,7 @@ class PlayerView : public Player, public MyDrawable
 	     */
 		enum PlayerAnimationsBody
 		{
-			PISTOLRUN, PISTOLSHOOT, PISTOLSHOOTUP, 
+			PISTOLRUN, PISTOLSHOOT, PISTOLSHOOTUP, PISTOLSHOOTDOWN,
 			PISTOLKNEE, PISTOLKNEESHOOT, PISTOLKNEESHOOTUP
 		};
 

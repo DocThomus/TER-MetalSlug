@@ -63,33 +63,46 @@ void PlayerView::display(RenderWindow* window)
 	/* JAMBES */
 	Vector2f legs_size = legs.getSize();
 
-	if(walkway>0)
+	if(walkway>0) // marcher à droite
 		legs.setPosition(Int2(position.x-(legs_size.x-size.x)/2,position.y+size.y-legs_size.y));
-	else
+	else // marcher à gauche
 		legs.setPosition(Int2(position.x-(legs_size.x-size.x)/2,position.y+size.y-legs_size.y));
 	
 	/* CORPS */
 	Vector2f body_size = body.getSize();
 	Vector2f legs_pos = legs.getPosition();
-	
-	if(state_p == KNELT)
+
+	if(state_b == SHOOT) // tirer
 	{
-		if(state_b==SHOOT && gunway.x<0)
-			body.setPosition(Vector2f(position.x+size.x-body_size.x,position.y+size.y-body_size.y));
-		else
-			body.setPosition(Vector2f(position.x,position.y+size.y-body_size.y));
-	}
-	else
-	{
-		if(state_b==SHOOT && gunway.x==0) // tire vers le haut
-			body.setPosition(Vector2f(position.x+(walkway>0?15:0),legs_pos.y-body_size.y+15));
-		else if((state_b==SHOOT && gunway.x>0) || (state_b!=SHOOT && walkway>0)) // tire a gauche
+		if(gunway.x > 0 && gunway.y == 0) // tirer à droite
 			body.setPosition(Vector2f(position.x+15,position.y));
-		else // tire a droite ou autre
+		else if(gunway.x < 0 && gunway.y == 0) // tirer à gauche
+			body.setPosition(Vector2f(position.x+size.x-body_size.x-15,position.y));
+		else if(gunway.x == 0 && gunway.y < 0) // tirer en haut
+			body.setPosition(Vector2f(position.x+(walkway>0?15:size.x-body_size.x-15),legs_pos.y-body_size.y+15));
+		else // tirer en bas
+			body.setPosition(Vector2f(position.x+(walkway>0?20:size.x-body_size.x-20),position.y+10));
+	}
+	else // marcher
+	{
+		if(walkway>0) // marcher à droite
+			body.setPosition(Vector2f(position.x+15,position.y));
+		else // marcher à gauche
 			body.setPosition(Vector2f(position.x+size.x-body_size.x-15,position.y));
 	}
 
+	if(state_p == KNELT) // à genoux
+	{
+		Vector2f tmp = body.getPosition();
+		body.setPosition(Vector2f(tmp.x,position.y+size.y-body_size.y));
+	}
 
+
+	/* DEBUG */
+	// body.setOutlineThickness(5);
+	// body.setOutlineColor(Color::Black);
+	// legs.body.setOutlineThickness(5);
+	// legs.body.setOutlineColor(Color::Black);
 
 	/* DESSIN */
 	if(state_p != KNELT)
@@ -227,6 +240,7 @@ void PlayerView::shoot(list<AmmoView*>* air, Int2 angle)
 		gunway = angle;
 		PlayerAnimationsBody anim_shoot;
 		PlayerAnimationsBody anim_shoot_up;
+		PlayerAnimationsBody anim_shoot_down;
 		PlayerAnimationsBody anim_after;
 
 		if(state_p == KNELT)
@@ -237,13 +251,16 @@ void PlayerView::shoot(list<AmmoView*>* air, Int2 angle)
 		}
 		else
 		{
-			anim_shoot    = PISTOLSHOOT;
-			anim_shoot_up = PISTOLSHOOTUP;
-			anim_after    = PISTOLRUN;
+			anim_shoot      = PISTOLSHOOT;
+			anim_shoot_up   = PISTOLSHOOTUP;
+			anim_shoot_down = PISTOLSHOOTDOWN;
+			anim_after      = PISTOLRUN;
 		}
 
-		if(gunway.x==0)
+		if(gunway.y<0)
 			changeAnimation(anim_shoot_up,false,anim_after);
+		else if(gunway.y>0)
+			changeAnimation(anim_shoot_down,false,anim_after);
 		else
 			changeAnimation(anim_shoot,false,anim_after);	
 

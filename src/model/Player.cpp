@@ -81,12 +81,15 @@ void Player::setWeapon(int w)
 
 void Player::shoot(list<Ammo*>* air, Float2 angle)
 {
-	if(armes.size()>0)
+	if(armes.size()>0) // si on a une arme
 	{
-		armes[current_weapon]->shoot(air,angle);
-		state_b = SHOOT;
-		if(state_p == KNELT && angle.x!=0)
-			walkway = angle.x;
+        if(angle.y<=0 || state_g==AIR)
+        {
+    		armes[current_weapon]->shoot(air,angle);
+    		state_b = SHOOT;
+    		if(state_p == KNELT && angle.x!=0)
+    			walkway = angle.x;
+        }
 	}
 }
 
@@ -101,6 +104,7 @@ void Player::reload(int nb)
 {
 	armes[current_weapon]->reload(nb);
 }
+
 
 void Player::animate(int dt)
 {

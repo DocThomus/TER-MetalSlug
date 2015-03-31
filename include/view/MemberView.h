@@ -36,6 +36,8 @@ using namespace sf;
  */
 class MemberView : public MyDrawable
 {
+	friend class PlayerView;
+	friend class EnemyView;
 
 	public :
 		
