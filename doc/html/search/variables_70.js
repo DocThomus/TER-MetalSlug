@@ -2,5 +2,6 @@ var searchData=
 [
   ['platforms',['platforms',['../class_environment.html#aa2c58fda55d8068ac4c506f374d69b45',1,'Environment']]],
   ['player',['player',['../class_game.html#ae5a4d25fa9dc07b3889b4b418a73a136',1,'Game']]],
-  ['position',['position',['../class_event_game.html#adcece572b423aec611c7422c264cc31c',1,'EventGame::position()'],['../class_objet_physique.html#adaff4b21f7ce9e9f0740f5e56a7fb48f',1,'ObjetPhysique::position()'],['../class_frame.html#a321f20f39f6f8e8f3fba5e04bbe97c25',1,'Frame::position()']]]
+  ['position',['position',['../class_event_game.html#adcece572b423aec611c7422c264cc31c',1,'EventGame::position()'],['../class_objet_physique.html#adaff4b21f7ce9e9f0740f5e56a7fb48f',1,'ObjetPhysique::position()'],['../class_frame.html#a321f20f39f6f8e8f3fba5e04bbe97c25',1,'Frame::position()']]],
+  ['power',['power',['../class_enemy.html#a81af68c2c35ebba124036e880b19cbfe',1,'Enemy']]]
 ];

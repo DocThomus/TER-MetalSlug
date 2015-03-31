@@ -13,7 +13,8 @@ var searchData=
   ['setsize',['setSize',['../class_objet_physique.html#a41fa31e44e9fa53f15446865c73a2d43',1,'ObjetPhysique::setSize()'],['../class_member_view.html#ab60c2597c82889176816085d28d0fb94',1,'MemberView::setSize()']]],
   ['settexture',['setTexture',['../class_my_drawable.html#aa832819817385495698bdd8c5f01a3a4',1,'MyDrawable']]],
   ['settexturerect',['setTextureRect',['../class_member_view.html#a6d9a65f4d9626410c31e9b3b699a36fb',1,'MemberView']]],
+  ['setvisible',['setVisible',['../class_platform.html#a9d5fcf032fe16e98c4e745f54cd48ba7',1,'Platform']]],
   ['setweapon',['setWeapon',['../class_player.html#abe9c24068a098ee6d529032d8f582608',1,'Player']]],
-  ['shoot',['shoot',['../class_character.html#a201f7c26a1637d4604b28a2c128b9309',1,'Character::shoot()'],['../class_player.html#afd14b5091c75777cb45953fa2f0cc027',1,'Player::shoot()'],['../class_weapon.html#a0fb8fea33ea5d0f12a3f863afc552935',1,'Weapon::shoot()'],['../class_enemy_view.html#a55ae4c4342f5d61dd6ba6d0ad8d22eb6',1,'EnemyView::shoot()'],['../class_player_view.html#ae800078f161e1adef9793e93cb21dab5',1,'PlayerView::shoot()']]],
+  ['shoot',['shoot',['../class_character.html#a201f7c26a1637d4604b28a2c128b9309',1,'Character::shoot()'],['../class_player.html#afd14b5091c75777cb45953fa2f0cc027',1,'Player::shoot()'],['../class_weapon.html#a0fb8fea33ea5d0f12a3f863afc552935',1,'Weapon::shoot()'],['../class_enemy_view.html#a713f666f8e652285a929412016996c3d',1,'EnemyView::shoot()'],['../class_player_view.html#a983822a41aa3e161675d25ec9c4bc6ad',1,'PlayerView::shoot()']]],
   ['shootsound',['shootSound',['../class_weapon_view.html#a66aaa9ce47ec97b9c96e244923a4f955',1,'WeaponView']]]
 ];

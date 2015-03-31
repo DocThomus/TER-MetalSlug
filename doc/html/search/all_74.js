@@ -6,9 +6,10 @@ var searchData=
   ['tools_2eh',['tools.h',['../tools_8h.html',1,'']]],
   ['tostring',['toString',['../group___tools.html#ga6714a4d8eefdf4e9f9e79033b6919686',1,'tools.h']]],
   ['trigger',['trigger',['../class_event_enemy.html#ab17a295cdae37e47bc1e34369aa6162c',1,'EventEnemy::trigger()'],['../class_event_game.html#a12bf126932bf52073e8e9c378336b6c9',1,'EventGame::trigger()']]],
-  ['type',['type',['../class_ammo.html#a33bf445c93551e3eff75f352a4a6ae38',1,'Ammo::type()'],['../class_item.html#ae92dc62097380acdf02ca1dda7766395',1,'Item::type()'],['../class_weapon.html#aa7201d49cac2fdc61403446c4545320f',1,'Weapon::type()']]],
+  ['type',['type',['../class_ammo.html#a33bf445c93551e3eff75f352a4a6ae38',1,'Ammo::type()'],['../class_enemy.html#a53f4c66c8dbc8213f9273126b67f80cf',1,'Enemy::type()'],['../class_item.html#ae92dc62097380acdf02ca1dda7766395',1,'Item::type()'],['../class_weapon.html#aa7201d49cac2fdc61403446c4545320f',1,'Weapon::type()']]],
   ['type_5fweapon',['type_weapon',['../class_item.html#ab2031aa97673760e2a3a3c90fee03e15',1,'Item']]],
   ['typeammo',['TypeAmmo',['../class_ammo.html#af8e34cdcc780ef90b0708f097fc7acea',1,'Ammo']]],
   ['typeenemy',['TypeEnemy',['../class_enemy.html#a0810e4ccd9dc6845273cb027a1436044',1,'Enemy']]],
-  ['typeitem',['TypeItem',['../class_item.html#a3636d9623ed7b945c9de6a2a8e032676',1,'Item']]]
+  ['typeitem',['TypeItem',['../class_item.html#a3636d9623ed7b945c9de6a2a8e032676',1,'Item']]],
+  ['typeweapon',['TypeWeapon',['../class_weapon.html#a78ff2a715d795667cd901ef7487f805b',1,'Weapon']]]
 ];

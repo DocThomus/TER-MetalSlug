@@ -34,10 +34,11 @@ void Environment::addDecor(Int2 siz, Texture* tex, int z)
 }
 
 
-void Environment::addPlatform(Int2 pos, Int2 siz, int wl, Texture* tex)
+void Environment::addPlatform(Int2 pos, Int2 siz, int wl, bool b, Texture* tex)
 {
 	PlatformView tmp(pos,siz,wl);
 	if(tex != NULL)
 		tmp.setTexture(tex,Bool2(true,true));
+	tmp.setVisible(b);
 	platforms.push_back(tmp);
 }

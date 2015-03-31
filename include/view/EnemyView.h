@@ -136,7 +136,7 @@ class EnemyView : public Enemy, public MyDrawable
 	     * \param air : Pointeur sur un vecteur d'Ammo destiné à contenir les projectiles du jeu.
 	     * \param angle : Direction dans laquelle le personnage tire.
 	     */
-		void shoot(list<AmmoView*>* ammos, Int2 angle = Int2(1,0), Texture* tex=NULL);
+		void shoot(list<AmmoView*>* air, Int2 angle = Int2(1,0));
 };
 
 

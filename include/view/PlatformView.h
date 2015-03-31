@@ -46,7 +46,7 @@ class PlatformView : public Platform, public MyDrawable
 	     * Constructeur de la classe PlatformView.
 	     * \param pos : Position de la plate-forme.
 	     * \param siz : Taille de la plate-forme.
-	     * \param z : Hauteur du sol de la plate-forme.
+	     * \param wl : Hauteur du sol de la plate-forme.
 	     */
 		PlatformView(Int2 pos, Int2 siz, int wl);
 

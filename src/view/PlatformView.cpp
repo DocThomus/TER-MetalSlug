@@ -30,7 +30,7 @@ PlatformView::~PlatformView()
 
 void PlatformView::display(RenderWindow* window)
 {
-	if(size.y!=0) // On affiche que si la plateforme a une hauteur non nulle
+	if(visible && size.y!=0) // On affiche que si la plateforme a une hauteur non nulle
 		window->draw(body);
 }
 

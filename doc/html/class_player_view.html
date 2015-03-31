@@ -128,17 +128,19 @@ Graphe d'héritage de PlayerView:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-types"></a>
 Types publics</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><b>PlayerAnimationsBody</b> { <br/>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_view.html#ae8c3e4edb01eb35daadc796287b657b2">PlayerAnimationsBody</a> { <br/>
 &#160;&#160;<b>PISTOLRUN</b>, 
 <b>PISTOLSHOOT</b>, 
 <b>PISTOLSHOOTUP</b>, 
-<b>PISTOLKNEE</b>, 
+<b>PISTOLSHOOTDOWN</b>, 
 <br/>
-&#160;&#160;<b>PISTOLKNEESHOOT</b>, 
+&#160;&#160;<b>PISTOLKNEE</b>, 
+<b>PISTOLKNEESHOOT</b>, 
 <b>PISTOLKNEESHOOTUP</b>
 <br/>
  }</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><b>PlayerAnimationsLegs</b> { <br/>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Différentes animations du corps du joueur. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_view.html#acda9c4c9f5026135fb2d37800f30c02f">PlayerAnimationsLegs</a> { <br/>
 &#160;&#160;<b>STAND</b>, 
 <b>RUN</b>, 
 <b>SLOW</b>, 
@@ -147,6 +149,7 @@ Types publics</h2></td></tr>
 &#160;&#160;<b>JUMP</b>
 <br/>
  }</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Différentes animations des jambes du joueur. <br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_view.html#a4021268d97e9c23ad14a3ebe5ac4f9d5">PlayerView</a> (<a class="el" href="class_int2.html">Int2</a> pos, <a class="el" href="class_int2.html">Int2</a> siz, int m, int max_h)</td></tr>
@@ -166,10 +169,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Mise à jour du rectangle de selection de la texture. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_view.html#a047bc57a2ad872a028464889fdc46e8c">walk</a> (int way)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Courir.  <a href="#a047bc57a2ad872a028464889fdc46e8c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_view.html#a5bf2e9064a584768cd50ca675564c1b6">kneel</a> (bool)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">À genoux.  <a href="#a5bf2e9064a584768cd50ca675564c1b6"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_view.html#ae800078f161e1adef9793e93cb21dab5">shoot</a> (list&lt; <a class="el" href="class_ammo_view.html">AmmoView</a> * &gt; *ammos, <a class="el" href="class_int2.html">Int2</a> angle=<a class="el" href="class_int2.html">Int2</a>(1, 0))</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Tirer.  <a href="#ae800078f161e1adef9793e93cb21dab5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_view.html#a31f82b674f74195252beadc2183701f5">kneel</a> (bool b)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">À genoux.  <a href="#a31f82b674f74195252beadc2183701f5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_view.html#a983822a41aa3e161675d25ec9c4bc6ad">shoot</a> (list&lt; <a class="el" href="class_ammo_view.html">AmmoView</a> * &gt; *air, <a class="el" href="class_int2.html">Int2</a> angle=<a class="el" href="class_int2.html">Int2</a>(1, 0))</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Tirer.  <a href="#a983822a41aa3e161675d25ec9c4bc6ad"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Fonctions membres publiques statiques</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_view.html#aada0cfecd68c54d6a21468c36b347299">loadRessources</a> ()</td></tr>
@@ -359,15 +362,15 @@ static vector&lt; <a class="el" href="class_animation.html">Animation</a> &gt;&#
 
 </div>
 </div>
-<a class="anchor" id="a5bf2e9064a584768cd50ca675564c1b6"></a><!-- doxytag: member="PlayerView::kneel" ref="a5bf2e9064a584768cd50ca675564c1b6" args="(bool)" -->
+<a class="anchor" id="a31f82b674f74195252beadc2183701f5"></a><!-- doxytag: member="PlayerView::kneel" ref="a31f82b674f74195252beadc2183701f5" args="(bool b)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_player_view.html#a5bf2e9064a584768cd50ca675564c1b6">PlayerView::kneel</a> </td>
+          <td class="memname">void <a class="el" href="class_player_view.html#a31f82b674f74195252beadc2183701f5">PlayerView::kneel</a> </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
           <td><code> [virtual]</code></td>
         </tr>
       </table>
@@ -383,7 +386,7 @@ static vector&lt; <a class="el" href="class_animation.html">Animation</a> &gt;&#
   </dd>
 </dl>
 
-<p>Réimplémentée à partir de <a class="el" href="class_player.html#af3be77bda1f1915c2bddfe5b4dee699c">Player</a>.</p>
+<p>Réimplémentée à partir de <a class="el" href="class_player.html#ac678e7578308bdcf4d5819eb2bdbeb59">Player</a>.</p>
 
 </div>
 </div>
@@ -406,15 +409,15 @@ static vector&lt; <a class="el" href="class_animation.html">Animation</a> &gt;&#
 
 </div>
 </div>
-<a class="anchor" id="ae800078f161e1adef9793e93cb21dab5"></a><!-- doxytag: member="PlayerView::shoot" ref="ae800078f161e1adef9793e93cb21dab5" args="(list&lt; AmmoView * &gt; *ammos, Int2 angle=Int2(1, 0))" -->
+<a class="anchor" id="a983822a41aa3e161675d25ec9c4bc6ad"></a><!-- doxytag: member="PlayerView::shoot" ref="a983822a41aa3e161675d25ec9c4bc6ad" args="(list&lt; AmmoView * &gt; *air, Int2 angle=Int2(1, 0))" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_player_view.html#ae800078f161e1adef9793e93cb21dab5">PlayerView::shoot</a> </td>
+          <td class="memname">virtual void <a class="el" href="class_player_view.html#a983822a41aa3e161675d25ec9c4bc6ad">PlayerView::shoot</a> </td>
           <td>(</td>
           <td class="paramtype">list&lt; <a class="el" href="class_ammo_view.html">AmmoView</a> * &gt; *&#160;</td>
-          <td class="paramname"><em>ammos</em>, </td>
+          <td class="paramname"><em>air</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -487,7 +490,7 @@ static vector&lt; <a class="el" href="class_animation.html">Animation</a> &gt;&#
     <ul>
       <li class="navelem"><a class="el" href="class_player_view.html">PlayerView</a>      </li>
 
-    <li class="footer">Généré le Lundi Mars 30 2015 23:41:52 pour Metal Slug par
+    <li class="footer">Généré le Mardi Mars 31 2015 19:46:39 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

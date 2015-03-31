@@ -57,7 +57,7 @@ class Animation
 	     * \brief Constructeur
 	     *
 	     * Construuit une animation contenant les frames passées en paramètre.
-	     * \param : frame à intégrer à l'animation.
+	     * \param v : vecteur de frames à ajouter à l'animation
 	     */
 		Animation(vector<Frame> v);
 

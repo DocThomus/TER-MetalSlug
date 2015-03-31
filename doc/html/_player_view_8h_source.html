@@ -127,13 +127,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00038"></a>00038 {
 <a name="l00039"></a>00039         <span class="keyword">public</span> :
 <a name="l00040"></a>00040 
-<a name="l00045"></a>00045                 <span class="keyword">enum</span> PlayerAnimationsBody
+<a name="l00045"></a><a class="code" href="class_player_view.html#ae8c3e4edb01eb35daadc796287b657b2">00045</a>                 <span class="keyword">enum</span> <a class="code" href="class_player_view.html#ae8c3e4edb01eb35daadc796287b657b2" title="Différentes animations du corps du joueur.">PlayerAnimationsBody</a>
 <a name="l00046"></a>00046                 {
-<a name="l00047"></a>00047                         PISTOLRUN, PISTOLSHOOT, PISTOLSHOOTUP, 
+<a name="l00047"></a>00047                         PISTOLRUN, PISTOLSHOOT, PISTOLSHOOTUP, PISTOLSHOOTDOWN,
 <a name="l00048"></a>00048                         PISTOLKNEE, PISTOLKNEESHOOT, PISTOLKNEESHOOTUP
 <a name="l00049"></a>00049                 };
 <a name="l00050"></a>00050 
-<a name="l00055"></a>00055                 <span class="keyword">enum</span> PlayerAnimationsLegs
+<a name="l00055"></a><a class="code" href="class_player_view.html#acda9c4c9f5026135fb2d37800f30c02f">00055</a>                 <span class="keyword">enum</span> <a class="code" href="class_player_view.html#acda9c4c9f5026135fb2d37800f30c02f" title="Différentes animations des jambes du joueur.">PlayerAnimationsLegs</a>
 <a name="l00056"></a>00056                 {
 <a name="l00057"></a>00057                         STAND, RUN, SLOW, FALL, JUMP
 <a name="l00058"></a>00058                 };
@@ -165,9 +165,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00132"></a>00132 
 <a name="l00139"></a>00139                 <span class="keywordtype">void</span> walk(<span class="keywordtype">int</span> way);
 <a name="l00140"></a>00140 
-<a name="l00148"></a>00148                 <span class="keywordtype">void</span> kneel(<span class="keywordtype">bool</span>);
+<a name="l00148"></a>00148                 <span class="keywordtype">void</span> kneel(<span class="keywordtype">bool</span> b);
 <a name="l00149"></a>00149 
-<a name="l00156"></a>00156                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> shoot(list&lt;AmmoView*&gt;* ammos, <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> angle = <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a>(1,0));
+<a name="l00156"></a>00156                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> shoot(list&lt;AmmoView*&gt;* air, <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> angle = <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a>(1,0));
 <a name="l00157"></a>00157 };
 <a name="l00158"></a>00158 
 <a name="l00159"></a>00159 
@@ -192,7 +192,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul>
       <li class="navelem"><a class="el" href="_player_view_8h.html">PlayerView.h</a>      </li>
 
-    <li class="footer">Généré le Lundi Mars 30 2015 23:41:52 pour Metal Slug par
+    <li class="footer">Généré le Mardi Mars 31 2015 19:46:39 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

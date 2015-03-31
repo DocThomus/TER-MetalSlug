@@ -30,7 +30,7 @@ class Platform : public ObjetPhysique
 	protected :
 
 		int walkline; /*!< \brief Hauteur du sol de la plate-forme. */
-		
+		bool visible; /*!< \brief Indique si la plateforme est visible ou non. */
 
 
 	public :
@@ -71,6 +71,11 @@ class Platform : public ObjetPhysique
 	     * \brief Retourne la hauteur du sol de la plate-forme.
 	     */
 		int getWalkline();
+
+		/*!
+	     * \brief Définit si la plate-forme est visible ou non.
+	     */
+		void setVisible(bool b);
 
 };
 

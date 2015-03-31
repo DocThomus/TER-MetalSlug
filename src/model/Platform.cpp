@@ -1,7 +1,7 @@
 #include "model/Platform.h"
 
 Platform::Platform(Int2 pos, Int2 siz, int wl)
-:ObjetPhysique(pos,siz), walkline(wl)
+:ObjetPhysique(pos,siz), walkline(wl), visible(true)
 {
 	if(walkline > siz.y)
 		walkline = siz.y;
@@ -10,7 +10,7 @@ Platform::Platform(Int2 pos, Int2 siz, int wl)
 
 
 Platform::Platform()
-:ObjetPhysique()
+:ObjetPhysique(), visible(true)
 {}
 
 
@@ -28,4 +28,10 @@ void Platform::print(ostream& os) const
 int Platform::getWalkline()
 {
 	return walkline;
+}
+
+
+void Platform::setVisible(bool b)
+{
+	visible = b;
 }

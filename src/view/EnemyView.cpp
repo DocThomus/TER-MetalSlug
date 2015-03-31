@@ -118,7 +118,7 @@ void EnemyView::walk(int way)
 
 
 
-void EnemyView::shoot(list<AmmoView*>* air, Int2 angle, Texture* tex)
+void EnemyView::shoot(list<AmmoView*>* air, Int2 angle)
 {
 
 

@@ -9,7 +9,7 @@ var class_enemy_view =
     [ "display", "class_enemy_view.html#a356c5c35510ac5f4beb7a3181d5d1cf3", null ],
     [ "init", "class_enemy_view.html#adda9d50c3ee2eae496ac62a9ff0ad8f4", null ],
     [ "loadRessources", "class_enemy_view.html#afcf992879ef7e35c3d155b98057d3e0b", null ],
-    [ "shoot", "class_enemy_view.html#a55ae4c4342f5d61dd6ba6d0ad8d22eb6", null ],
+    [ "shoot", "class_enemy_view.html#a713f666f8e652285a929412016996c3d", null ],
     [ "updateIntRect", "class_enemy_view.html#a1b225f456235e3bac12e02865b980405", null ],
     [ "walk", "class_enemy_view.html#a51f6486de640df3a25d4ba7e42849505", null ],
     [ "animations_list", "class_enemy_view.html#ae823ab1e84c51fee9ec399c4e5f8eac4", null ],

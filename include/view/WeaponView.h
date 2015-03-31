@@ -56,7 +56,7 @@ class WeaponView : public Weapon
 	     *
 	     * Constructeur de la classe WeaponView.
 	     * \param p : Joueur possèdant l'arme.
-	     * \param : Type de l'arme.
+	     * \param type : Type de l'arme.
 	     */
 		WeaponView(PlayerView* p, TypeWeapon type);
 

@@ -7,5 +7,7 @@ var class_member_view =
     [ "getSize", "class_member_view.html#a2a72a417dae73ffaa4dfcff8cc6f4de6", null ],
     [ "setPosition", "class_member_view.html#a11b0e1d27bc5a9ce4be91900649aa745", null ],
     [ "setSize", "class_member_view.html#ab60c2597c82889176816085d28d0fb94", null ],
-    [ "setTextureRect", "class_member_view.html#a6d9a65f4d9626410c31e9b3b699a36fb", null ]
+    [ "setTextureRect", "class_member_view.html#a6d9a65f4d9626410c31e9b3b699a36fb", null ],
+    [ "EnemyView", "class_member_view.html#a9fde7f7b3c15797d292674e11d02f939", null ],
+    [ "PlayerView", "class_member_view.html#a36d0d08256ae0f7bbba5ca2318999a0e", null ]
 ];

@@ -39,7 +39,7 @@ class PlayerView : public Player, public MyDrawable
 	public :
 
 		/*!
-	     * \enum PlayerAnimationBody
+	     * \enum PlayerAnimationsBody
 	     * \brief Différentes animations du corps du joueur.
 	     */
 		enum PlayerAnimationsBody
@@ -49,7 +49,7 @@ class PlayerView : public Player, public MyDrawable
 		};
 
 		/*!
-	     * \enum PlayerAnimationLegs
+	     * \enum PlayerAnimationsLegs
 	     * \brief Différentes animations des jambes du joueur.
 	     */
 		enum PlayerAnimationsLegs
@@ -145,7 +145,7 @@ class PlayerView : public Player, public MyDrawable
 	     * Change l'animation du joueur en conséquence.
 	     * \param b : Vrai si le joueur doit se mettre à genoux, Faux s'il doit se lever.
 	     */
-		void kneel(bool);
+		void kneel(bool b);
 
 		/*!
 	     * \brief Tirer.
@@ -153,7 +153,7 @@ class PlayerView : public Player, public MyDrawable
 	     * \param air : Pointeur sur un vecteur d'AmmoView destiné à contenir les projectiles du jeu.
 	     * \param angle : Direction dans laquelle le personnage tire.
 	     */
-		virtual void shoot(list<AmmoView*>* ammos, Int2 angle = Int2(1,0));
+		virtual void shoot(list<AmmoView*>* air, Int2 angle = Int2(1,0));
 };
 
 

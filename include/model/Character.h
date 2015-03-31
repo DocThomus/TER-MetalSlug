@@ -73,7 +73,7 @@ class Character : public ObjetPhysique
 	     *
 	     * Constructeur de la classe Character.
 	     * \param pos : Position initiale du personnage.
-	     * \param pos : Taille initiale du personnage.
+	     * \param siz : Taille initiale du personnage.
 	     * \param m : Masse du personnage.
 	     * \param max_h : Santé maximale du personnage.
 	     */
@@ -194,7 +194,7 @@ class Character : public ObjetPhysique
 	     * Fait se mettre à genoux le personnage (ou se lever).
 	     * \param b : Vrai si le personnage doit se mettre à genoux, Faux s'il doit se lever.
 	     */
-		virtual void kneel(bool);
+		virtual void kneel(bool b);
 		
 };
 

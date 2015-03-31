@@ -88,9 +88,10 @@ class Environment
 	     * \param pos : Position de la plate-forme
 	     * \param siz : Taille de la plate-forme
 	     * \param wl : Hauteur du sol de la plateforme (non traité pour le moment)
+	     * \param v : Vrai si la plate-forme doit être affichée, Faux sinon.
 	     * \param tex : Texture à appliquer à la plate-forme
 	     */
-		void addPlatform(Int2 pos, Int2 siz, int wl, Texture* tex=NULL);
+		void addPlatform(Int2 pos, Int2 siz, int wl, bool v=true, Texture* tex=NULL);
 		
 
 		//void addDestructible(); // TODO

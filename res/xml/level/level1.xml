@@ -12,10 +12,12 @@
 
 			<!-- PLATE-FORMES -->
 			<platforms>
-				<platform num="0">
+				<!-- SOL -->
+				<platform num="0" visible="0">
 					<position x="-10" y="650"/>
-					<size w="10000" h="0"/>
+					<size w="10000" h="100"/>
 				</platform>
+				<!-- AUTRES -->
 				<platform num="1">
 					<position x="500" y="470"/>
 					<size w="100" h="180"/>

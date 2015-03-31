@@ -57,6 +57,10 @@ void AmmoView::display(RenderWindow* window)
 	if(state_a == GHOST)
 		return;
 
+	/* DEBUG */
+	// body.setOutlineThickness(3);
+	// body.setOutlineColor(Color::Black);
+
 	body.setPosition(Vector2f(position.x,position.y-size.y/2));
 	window->draw(body);
 }

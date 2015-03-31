@@ -196,8 +196,8 @@ bool loadLevelXML(string filename, Config* conf, Environment* env, list<EventGam
         // déclaration
         Int2 tmp_pos;
         Int2 tmp_siz;
-        string tmp_file;
-        bool have_tex = false;
+        string tmp_file = "";
+        bool visible = true;
         Texture* tmp_tex;
 
         // récupération des données
@@ -209,14 +209,15 @@ bool loadLevelXML(string filename, Config* conf, Environment* env, list<EventGam
         xml_attribute<> *wAttr = size->first_attribute("w");
         xml_attribute<> *hAttr = size->first_attribute("h");
         tmp_siz = Int2(atoi(wAttr->value()),atoi(hAttr->value()));
+        xml_attribute<> *visibleAttr;
+        if((visibleAttr = platform->first_attribute("visible")))
+            visible = atoi(visibleAttr->value());
         xml_node<> *sprite;
         if((sprite=platform->first_node("sprite")))
-            have_tex = true;
-        if(have_tex)
             tmp_file = sprite->value();
 
         // construction texture
-        if(have_tex)
+        if(!tmp_file.empty())
         {
             tmp_tex = new Texture();
             tmp_tex->loadFromFile("res/tex/platform/"+tmp_file);
@@ -227,11 +228,11 @@ bool loadLevelXML(string filename, Config* conf, Environment* env, list<EventGam
             tmp_tex = NULL;
 
         // construction de l'objet
-        env->addPlatform(tmp_pos,tmp_siz,0,tmp_tex);
+        env->addPlatform(tmp_pos,tmp_siz,0,visible,tmp_tex);
     }
 
 
-    /* DECORS */
+    /* EVENEMENTS */
     for(xml_node<> *event=events->first_node("event"); event; event=event->next_sibling())
     {
         // déclaration

@@ -40,9 +40,9 @@ class Enemy : public Character
 	
 	protected :
 
-		TypeEnemy type;
+		TypeEnemy type; /*!< \brief Type de l'ennemi. */
 		bool haveAI; /*!< \brief Indique si l'ennemi doit posséder une intelligence ou non. */
-		int power; /*!> \brief Indique la puissance des attaques de l'ennemi. */
+		int power; /*!< \brief Indique la puissance des attaques de l'ennemi. */
 
 
 	public :

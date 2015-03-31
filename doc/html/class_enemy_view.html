@@ -147,8 +147,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Courir.  <a href="#a51f6486de640df3a25d4ba7e42849505"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_view.html#aac9438ba6a30071e7dc4236f71425667">die</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Mourir.  <a href="#aac9438ba6a30071e7dc4236f71425667"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_view.html#a55ae4c4342f5d61dd6ba6d0ad8d22eb6">shoot</a> (list&lt; <a class="el" href="class_ammo_view.html">AmmoView</a> * &gt; *ammos, <a class="el" href="class_int2.html">Int2</a> angle=<a class="el" href="class_int2.html">Int2</a>(1, 0), Texture *<a class="el" href="class_my_drawable.html#a0cf32fc0c746e45076e86f8a31cc75c2">tex</a>=NULL)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Tirer.  <a href="#a55ae4c4342f5d61dd6ba6d0ad8d22eb6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_view.html#a713f666f8e652285a929412016996c3d">shoot</a> (list&lt; <a class="el" href="class_ammo_view.html">AmmoView</a> * &gt; *air, <a class="el" href="class_int2.html">Int2</a> angle=<a class="el" href="class_int2.html">Int2</a>(1, 0))</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Tirer.  <a href="#a713f666f8e652285a929412016996c3d"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Fonctions membres publiques statiques</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_view.html#afcf992879ef7e35c3d155b98057d3e0b">loadRessources</a> (<a class="el" href="class_enemy.html#a0810e4ccd9dc6845273cb027a1436044">TypeEnemy</a> t)</td></tr>
@@ -425,27 +425,21 @@ static vector&lt; <a class="el" href="class_animation.html">Animation</a> &gt;&#
 
 </div>
 </div>
-<a class="anchor" id="a55ae4c4342f5d61dd6ba6d0ad8d22eb6"></a><!-- doxytag: member="EnemyView::shoot" ref="a55ae4c4342f5d61dd6ba6d0ad8d22eb6" args="(list&lt; AmmoView * &gt; *ammos, Int2 angle=Int2(1, 0), Texture *tex=NULL)" -->
+<a class="anchor" id="a713f666f8e652285a929412016996c3d"></a><!-- doxytag: member="EnemyView::shoot" ref="a713f666f8e652285a929412016996c3d" args="(list&lt; AmmoView * &gt; *air, Int2 angle=Int2(1, 0))" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_enemy_view.html#a55ae4c4342f5d61dd6ba6d0ad8d22eb6">EnemyView::shoot</a> </td>
+          <td class="memname">void <a class="el" href="class_enemy_view.html#a713f666f8e652285a929412016996c3d">EnemyView::shoot</a> </td>
           <td>(</td>
           <td class="paramtype">list&lt; <a class="el" href="class_ammo_view.html">AmmoView</a> * &gt; *&#160;</td>
-          <td class="paramname"><em>ammos</em>, </td>
+          <td class="paramname"><em>air</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="class_int2.html">Int2</a>&#160;</td>
-          <td class="paramname"><em>angle</em> = <code><a class="el" href="class_int2.html">Int2</a>(1,&#160;0)</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Texture *&#160;</td>
-          <td class="paramname"><em>tex</em> = <code>NULL</code>&#160;</td>
+          <td class="paramname"><em>angle</em> = <code><a class="el" href="class_int2.html">Int2</a>(1,&#160;0)</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -512,7 +506,7 @@ static vector&lt; <a class="el" href="class_animation.html">Animation</a> &gt;&#
     <ul>
       <li class="navelem"><a class="el" href="class_enemy_view.html">EnemyView</a>      </li>
 
-    <li class="footer">Généré le Lundi Mars 30 2015 23:41:52 pour Metal Slug par
+    <li class="footer">Généré le Mardi Mars 31 2015 19:46:39 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

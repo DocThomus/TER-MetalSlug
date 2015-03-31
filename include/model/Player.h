@@ -107,7 +107,7 @@ class Player : public Character
 	     * Fait se mettre à genoux le joueur (ou se lever).
 	     * \param b : Vrai si le joueur doit se mettre à genoux, Faux s'il doit se lever.
 	     */
-		virtual void kneel(bool);
+		virtual void kneel(bool b);
 
 		/*!
 	     * \brief Le personnage meurt.
@@ -130,13 +130,13 @@ class Player : public Character
 
 		/*!
 	     * \brief Ajoute une arme au joueur.
-	     * \param : Arme à ajouter.
+	     * \param w : Arme à ajouter.
 	     */
 		void addWeapon(Weapon* w);
 
 		/*!
 	     * \brief Modifie l'arme courante.
-	     * \param Indice de l'arme à selectionner.
+	     * \param w : Indice de l'arme à selectionner.
 	     */
 		void setWeapon(int w);
 };

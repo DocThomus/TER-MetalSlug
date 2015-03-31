@@ -30,8 +30,8 @@ class EventEnemy : public EventGame
 
 	protected :
 
-		Int2 enemy_pos;
-		Enemy::TypeEnemy enemy_type;
+		Int2 enemy_pos; /*!< \brief Position de l'ennemi à générer. */
+		Enemy::TypeEnemy enemy_type; /*!< \brief Type de l'ennemi à générer. */
 
 
 	public :

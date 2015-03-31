@@ -312,28 +312,30 @@ void Game::checkCollisions()
             Int2 a_siz = (*a)->getSize();
             Float2 a_mov = (*a)->getMovement();
 
+            ObjetPhysique* a_ptr = (ObjetPhysique*)(*a);
+
             /* VS PLATFORM */
             for(list<PlatformView>::iterator p = pltf->begin(); p != pltf->end(); p++)
             {
-                if(checkIntersect((ObjetPhysique*)(*a),(ObjetPhysique*)(&*p)))
+                if((*a)->getState() != Ammo::GHOST)
                 {
-                    if((*a)->getState() != Ammo::GHOST)
+                    ObjetPhysique* p_ptr = (ObjetPhysique*)(&*p);
+
+                    if(checkIntersect(a_ptr,p_ptr))
                     {
                         Int2 p_pos = (*p).getPosition();
                         Int2 p_siz = (*p).getSize();
-                        
-                        Int2 tmp = a_pos;
-                        
-                        if(a_pos.x <= p_pos.x+10)
-                            tmp.x = p_pos.x;
-                        else if(a_pos.x+a_siz.x >= p_pos.x+p_siz.x+10)
-                            tmp.x = p_pos.x+p_siz.x;
-                        else if(a_pos.y <= p_pos.y+10)
-                            tmp.y = p_pos.y;
-                        else
-                            tmp.y = p_pos.y+p_siz.y;
 
-                        (*a)->die(tmp);
+                        if(a_mov.x > 0) // vers la droite
+                            a_pos.x = p_pos.x;
+                        else if(a_mov.x < 0) // vers la gauche
+                            a_pos.x = p_pos.x+p_siz.x;
+                        else if(a_mov.y > 0) // vers la bas
+                            a_pos.y = p_pos.y;
+                        else // vers le haut
+                            a_pos.y = p_pos.y+p_siz.y;
+
+                        (*a)->die(a_pos);
                     }
                 }
             }

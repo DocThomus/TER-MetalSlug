@@ -5,5 +5,7 @@ var class_platform =
     [ "~Platform", "class_platform.html#a13b5e4ef946b8a2fe38d22014145ab68", null ],
     [ "getWalkline", "class_platform.html#a049044d7556fdc27bbe0714439451058", null ],
     [ "print", "class_platform.html#a33d0089c956500737b075f72c84ed2b4", null ],
+    [ "setVisible", "class_platform.html#a9d5fcf032fe16e98c4e745f54cd48ba7", null ],
+    [ "visible", "class_platform.html#aa62ce96f8c464dc006d0fef2f90bef9d", null ],
     [ "walkline", "class_platform.html#a587bc84e076d24e83d77eac324d494df", null ]
 ];

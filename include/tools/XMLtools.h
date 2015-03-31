@@ -76,6 +76,7 @@ bool loadSpriteMap(string filename, vector<Int2>*animations, vector<Int2>* posit
  * \param filename : Nom du fichier à charger.
  * \param conf : Configuration de la fenêtre à respecter
  * \param env : Environnement à complèter
+ * \param events : Liste d'événements à remplir
  * \param tex : Conteneur pour les textures
  */
 bool loadLevelXML(string filename, Config* conf, Environment* env, list<EventGame*>* events, vector<Texture*>* tex);
