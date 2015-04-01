@@ -102,7 +102,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="contents">
 Liste complète des membres de <a class="el" href="class_ammo.html">Ammo</a>, y compris les membres hérités :<table>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#a34eb4c570856c55dd4a5c3aea3dd2d08">addMovement</a>(Float2 v)</td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_ammo.html#a1fbffb139eacb1dbf35000d938bbfa17">Ammo</a>(Int2 pos, Int2 siz, int m, TypeAmmo type, Float2 move)</td><td><a class="el" href="class_ammo.html">Ammo</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_ammo.html#a18a5af90b2d0f646404bf1779f6ef11d">Ammo</a>(Int2 pos, Int2 siz, int m, TypeAmmo type, Float2 move, Character *c)</td><td><a class="el" href="class_ammo.html">Ammo</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_ammo.html#a6745bf955cceda43c50dc15c76157e64">Ammo</a>()</td><td><a class="el" href="class_ammo.html">Ammo</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_ammo.html#aa113df3aff05c38ee4813d2762d2a2ae">animate</a>(int dt)</td><td><a class="el" href="class_ammo.html">Ammo</a></td><td><code> [virtual]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>BULLET</b> valeur énumérée (défini dans <a class="el" href="class_ammo.html">Ammo</a>)</td><td><a class="el" href="class_ammo.html">Ammo</a></td><td></td></tr>
@@ -111,16 +111,19 @@ Liste complète des membres de <a class="el" href="class_ammo.html">Ammo</a>, y 
   <tr bgcolor="#f0f0f0"><td><b>FLY</b> valeur énumérée (défini dans <a class="el" href="class_ammo.html">Ammo</a>)</td><td><a class="el" href="class_ammo.html">Ammo</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_ammo.html#aa70ceafd9b113751bb3aec8ea151c252">getDamage</a>()</td><td><a class="el" href="class_ammo.html">Ammo</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#a7c18118de257e51a3784debad9d62df0">getMovement</a>()</td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_ammo.html#a23113ac697aafbe38864f994325881dc">getOwner</a>()</td><td><a class="el" href="class_ammo.html">Ammo</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#ae537adf900a2bb5eb82a9e36195bf4a5">getPosition</a>()</td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#a0e8595a25635537949c301b1bcf62d3f">getSize</a>()</td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_ammo.html#a5553e8de086d171880433f611716c34a">getState</a>()</td><td><a class="el" href="class_ammo.html">Ammo</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>GHOST</b> valeur énumérée (défini dans <a class="el" href="class_ammo.html">Ammo</a>)</td><td><a class="el" href="class_ammo.html">Ammo</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>GRENADE</b> valeur énumérée (défini dans <a class="el" href="class_ammo.html">Ammo</a>)</td><td><a class="el" href="class_ammo.html">Ammo</a></td><td></td></tr>
+  <tr bgcolor="#f0f0f0"><td><b>HEAVY_BULLET</b> valeur énumérée (défini dans <a class="el" href="class_ammo.html">Ammo</a>)</td><td><a class="el" href="class_ammo.html">Ammo</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>LASER</b> valeur énumérée (défini dans <a class="el" href="class_ammo.html">Ammo</a>)</td><td><a class="el" href="class_ammo.html">Ammo</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#ad9aecb9f29d4bf704d8a536d32081664">mass</a></td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#abca9fd07d93028f52251d5a9bbad0f50">movement</a></td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#a17540702a3de4f3aaec27eb86d0b9d3a">ObjetPhysique</a>(Int2 pos, Int2 siz, int m=0)</td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#a7c1bcf11f390181223af0173404f6e61">ObjetPhysique</a>()</td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_ammo.html#a3c9aae634f8c2c16f2e431c65de8e98e">owner</a></td><td><a class="el" href="class_ammo.html">Ammo</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#adaff4b21f7ce9e9f0740f5e56a7fb48f">position</a></td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_ammo.html#a1ebdc43a62c3ed0207cf01602caf9a6f">print</a>(ostream &amp;os) const </td><td><a class="el" href="class_ammo.html">Ammo</a></td><td><code> [virtual]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>ROCKET</b> valeur énumérée (défini dans <a class="el" href="class_ammo.html">Ammo</a>)</td><td><a class="el" href="class_ammo.html">Ammo</a></td><td></td></tr>
@@ -155,7 +158,7 @@ Liste complète des membres de <a class="el" href="class_ammo.html">Ammo</a>, y 
   <div id="nav-path" class="navpath">
     <ul>
 
-    <li class="footer">Généré le Mercredi Avril 1 2015 17:30:51 pour Metal Slug par
+    <li class="footer">Généré le Mercredi Avril 1 2015 20:44:46 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

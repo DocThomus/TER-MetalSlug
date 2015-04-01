@@ -2,23 +2,23 @@
 
 
 vector<Texture*> AmmoView::textures;
+vector<Sound*> AmmoView::sounds;
 
 
 AmmoView::AmmoView()
 :Ammo(),MyDrawable()
 {
+	if(int(textures.size())<=0)
+		loadTextures();
+	
+	if(int(sounds.size())<=0)
+		loadSounds();
+
 	body.setSize(Vector2f(size.x,size.y));
 	body.setOrigin(size.x/2,size.y/2);
 	initRotation();
-
-	switch(type)
-	{
-		case BULLET :
-			setTexture(textures[0]);
-			addAnimations("res/xml/ammo/bullet.xml");
-			changeAnimation(0,false);
-			break;
-	}
+	
+	initRessources();
 
 	updateIntRect();
 }
@@ -28,18 +28,17 @@ AmmoView::AmmoView()
 AmmoView::AmmoView(Ammo a)
 :Ammo(a),MyDrawable()
 {
+	if(int(textures.size())<=0)
+		loadTextures();
+	
+	if(int(sounds.size())<=0)
+		loadSounds();
+
 	body.setSize(Vector2f(size.x,size.y));
 	body.setOrigin(size.x/2,size.y/2);
 	initRotation();
-
-	switch(type)
-	{
-		case BULLET :
-			setTexture(textures[0]);
-			addAnimations("res/xml/ammo/bullet.xml");
-			changeAnimation(0,false);
-			break;
-	}
+	
+	initRessources();
 
 	updateIntRect();
 }
@@ -49,6 +48,27 @@ AmmoView::AmmoView(Ammo a)
 AmmoView::~AmmoView()
 {
 
+}
+
+
+void AmmoView::initRessources()
+{
+	switch(type)
+	{
+		case BULLET :
+			setTexture(textures[BULLET]);
+			addAnimations("res/xml/ammo/bullet.xml");
+			changeAnimation(0,false);
+			sounds[BULLET]->play();
+			break;
+
+		case HEAVY_BULLET :
+			setTexture(textures[BULLET]);
+			addAnimations("res/xml/ammo/bullet.xml");
+			changeAnimation(0,false);
+			sounds[HEAVY_BULLET]->play();
+			break;
+	}
 }
 
 
@@ -64,6 +84,7 @@ void AmmoView::display(RenderWindow* window)
 	body.setPosition(Vector2f(position.x,position.y-size.y/2));
 	window->draw(body);
 }
+
 
 
 void AmmoView::animate(int dt)
@@ -112,12 +133,39 @@ void AmmoView::initRotation()
 
 void AmmoView::loadTextures()
 {
-	vector<Texture*> tmp;
-
 	/* BULLET */
 	Texture* tex = new Texture();
     tex->loadFromFile("res/tex/ammo/bullet.png");
-    tmp.push_back(tex);
+    textures.push_back(tex);
+}
 
-    textures = tmp;
+
+void AmmoView::loadSounds()
+{
+	/* BULLET */
+	SoundBuffer* buffer = new SoundBuffer();
+	buffer->loadFromFile("res/snd/weapon/bullet.wav");
+    Sound* s = new Sound();
+    s->setBuffer(*buffer);
+    sounds.push_back(s);
+
+    /* HEAVY_BULLET */
+    buffer = new SoundBuffer();
+	buffer->loadFromFile("res/snd/weapon/shotgun.wav");
+    s = new Sound();
+    s->setBuffer(*buffer);
+    sounds.push_back(s);
+
+}
+
+
+void AmmoView::deleteRessources()
+{
+	for(vector<Texture*>::iterator t = textures.begin(); t != textures.end(); t++)
+        delete (*t);
+    textures.clear();
+
+    for(vector<Sound*>::iterator s = sounds.begin(); s != sounds.end(); s++)
+        delete (*s);
+    sounds.clear();
 }

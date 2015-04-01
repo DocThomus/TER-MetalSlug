@@ -88,6 +88,13 @@ class EnemyView : public Enemy, public MyDrawable
 		static void loadRessources(TypeEnemy t);
 
 		/*!
+	     * \brief Deletion des ressources 
+	     *
+	     * Methode statique permettant de libérer la mémoire allouée aux ressources de la classe.
+	     */
+		static void deleteRessources();
+
+		/*!
 	     * \brief Initialisation
 	     *
 	     * Initialise l'affichage de l'ennemi.
@@ -133,10 +140,10 @@ class EnemyView : public Enemy, public MyDrawable
 		/*!
 	     * \brief Tirer.
 	     *
-	     * \param air : Pointeur sur un vecteur d'Ammo destiné à contenir les projectiles du jeu.
+	     * \param air : Pointeur sur un vecteur d'AmmoView destiné à contenir les projectiles du jeu.
 	     * \param angle : Direction dans laquelle le personnage tire.
 	     */
-		void shoot(list<AmmoView*>* air, Int2 angle = Int2(1,0));
+		virtual void shoot(list<AmmoView*>* air, Int2 angle = Int2(1,0));
 };
 
 

@@ -244,14 +244,12 @@ void PlayerView::shoot(list<AmmoView*>* air, Int2 angle)
     	av = new AmmoView(**a);
     	air->push_back(av);
     	change = true;
+    	delete *a;
     }
+    tmp.clear();
 
     if(change) // si le joueur a pu tirer
     {
-    	/* SON */
-		WeaponView* wv = (WeaponView*)(armes[current_weapon]);
-		wv->shootSound();
-	
     	/* ANIMATION */
 		gunway = angle;
 		PlayerAnimationsBody anim_shoot;
@@ -316,4 +314,17 @@ void PlayerView::loadRessources()
 
     animations_list[0] = loadSpriteFromFile("res/xml/player/body.xml");
     animations_list[1] = loadSpriteFromFile("res/xml/player/legs.xml");
+}
+
+
+
+
+void PlayerView::deleteRessources()
+{
+	for(vector<Sound*>::iterator s = sounds.begin(); s != sounds.end(); s++)
+        delete (*s);
+    sounds.clear();
+
+    delete textures[0];
+    delete textures[1];
 }

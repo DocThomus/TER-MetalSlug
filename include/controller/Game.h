@@ -30,7 +30,6 @@
 #include <view/PlayerView.h>
 #include <view/EnemyView.h>
 #include <view/AmmoView.h>
-#include <view/WeaponView.h>
 
 using namespace std;
 using namespace sf;

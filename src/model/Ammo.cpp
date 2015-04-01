@@ -1,13 +1,13 @@
 #include "model/Ammo.h"
 
-Ammo::Ammo(Int2 pos, Int2 siz, int m, TypeAmmo type, Float2 movement)
-:ObjetPhysique(pos,siz,m), type(type)
+Ammo::Ammo(Int2 pos, Int2 siz, int m, TypeAmmo type, Float2 movement, Character* c)
+:ObjetPhysique(pos,siz,m), type(type), owner(c)
 {
 	state_a = FLY; 
 
 	addMovement(movement);
 	
-	if(type == BULLET)
+	if(type == BULLET || type == HEAVY_BULLET)
 		size = Int2(50,12);
 }
 
@@ -56,7 +56,7 @@ void Ammo::animate(int dt)
 		// if(timeup <= 0)
 		// 	state_a = GHOST;
 	}
-	else if(type==BULLET)
+	else if(type==BULLET||type==HEAVY_BULLET)
 	{
 		position.x += movement.x*2*dt;
 		position.y += movement.y*2*dt;
@@ -78,6 +78,7 @@ int Ammo::getDamage()
 	switch(type)
 	{
 		case BULLET : 
+		case HEAVY_BULLET : 
 			d = 10;
 			break;
 		case ROCKET :
@@ -98,4 +99,10 @@ int Ammo::getDamage()
 Ammo::StateAmmo Ammo::getState()
 {
 	return state_a;
+}
+
+
+Character* Ammo::getOwner()
+{
+	return owner;
 }

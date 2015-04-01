@@ -100,12 +100,13 @@ class Enemy : public Character
 		void animate (int dt);
 
 		/*!
-	     * \brief Attaquer
+	     * \brief Tirer
 	     *
-	     * L'ennemi execute une attaque.
-	     * \param air : vecteur dans lequel ajouter les projectiles générés par l'attaque.
+	     * L'ennemi tire.
+	     * \param air : Vecteur dans lequel insérer les projectiles générés.
+	     * \param angle : Vecteur de la direction dans laquelle les projectiles doivent être propulsés.
 	     */
-		void attack(vector<Ammo*>* air);
+		virtual void shoot(list<Ammo*>* air, Float2 angle = Float2(1.,0.));
 
 		/*!
 	     * \brief Mourir

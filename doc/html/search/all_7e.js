@@ -27,6 +27,5 @@ var searchData=
   ['_7eplatformview',['~PlatformView',['../class_platform_view.html#a113995938de5b1009cd2608e3be78345',1,'PlatformView']]],
   ['_7eplayer',['~Player',['../class_player.html#a749d2c00e1fe0f5c2746f7505a58c062',1,'Player']]],
   ['_7eplayerview',['~PlayerView',['../class_player_view.html#a95cb7fade4bd8f33b2ac20671048cc40',1,'PlayerView']]],
-  ['_7eweapon',['~Weapon',['../class_weapon.html#a420e7ba3d2017e6de3e93eb579cfd3fa',1,'Weapon']]],
-  ['_7eweaponview',['~WeaponView',['../class_weapon_view.html#ad6ea43400babcd6205bc7a47ec20008d',1,'WeaponView']]]
+  ['_7eweapon',['~Weapon',['../class_weapon.html#a420e7ba3d2017e6de3e93eb579cfd3fa',1,'Weapon']]]
 ];

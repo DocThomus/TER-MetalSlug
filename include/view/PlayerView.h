@@ -21,7 +21,6 @@
 #include <model/Player.h>
 #include <view/MyDrawable.h>
 #include <view/AmmoView.h>
-#include <view/WeaponView.h>
 #include <view/MemberView.h>
 
 using namespace std;
@@ -102,6 +101,13 @@ class PlayerView : public Player, public MyDrawable
 	     * ATTENTION : Cette méthode doit impérativement être appelée avant d'afficher du player !
 	     */
 		static void loadRessources();
+
+		/*!
+	     * \brief Deletion des ressources 
+	     *
+	     * Methode statique permettant de libérer la mémoire allouée aux ressources de la classe.
+	     */
+		static void deleteRessources();
 
 		/*!
 	     * \brief Initialisation

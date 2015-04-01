@@ -119,9 +119,16 @@ void EnemyView::walk(int way)
 
 
 void EnemyView::shoot(list<AmmoView*>* air, Int2 angle)
-{
-
-
+{	
+	list<Ammo*> tmp;
+	Enemy::shoot(&tmp,angle);
+	AmmoView* av;
+	for(list<Ammo*>::iterator a = tmp.begin(); a != tmp.end(); a++)
+    {
+    	av = new AmmoView(**a);
+    	air->push_back(av);
+    	tmp.erase(a++);
+    }
 }
 
 
@@ -161,4 +168,16 @@ void EnemyView::loadRessources(TypeEnemy t)
 	    sounds.push_back(s);
 	}
 
+}
+
+
+void EnemyView::deleteRessources()
+{
+	for(vector<Sound*>::iterator s = sounds.begin(); s != sounds.end(); s++)
+        delete (*s);
+    sounds.clear();
+
+    for(int i=0; i<NB_TYPE_ENEMY; ++i)
+    	if(textures[i] != NULL)
+    		delete textures[i];
 }

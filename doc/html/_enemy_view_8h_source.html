@@ -117,7 +117,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00025"></a>00025 <span class="keyword">using namespace </span>std;
 <a name="l00026"></a>00026 <span class="keyword">using namespace </span>sf;
 <a name="l00027"></a>00027 
-<a name="l00028"></a>00028 <span class="keyword">class </span><a class="code" href="class_weapon_view.html" title="Un objet Weapon permettant de joueur des sons.">WeaponView</a>;
+<a name="l00028"></a>00028 <span class="keyword">class </span>WeaponView;
 <a name="l00029"></a>00029 
 <a name="l00030"></a>00030 
 <a name="l00031"></a>00031 
@@ -141,23 +141,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00081"></a>00081 
 <a name="l00088"></a>00088                 <span class="keyword">static</span> <span class="keywordtype">void</span> loadRessources(<a class="code" href="class_enemy.html#a0810e4ccd9dc6845273cb027a1436044" title="Énumération des différents types d&#39;ennemis.">TypeEnemy</a> t);
 <a name="l00089"></a>00089 
-<a name="l00095"></a>00095                 <span class="keywordtype">void</span> init();
+<a name="l00095"></a>00095                 <span class="keyword">static</span> <span class="keywordtype">void</span> deleteRessources();
 <a name="l00096"></a>00096 
-<a name="l00103"></a>00103                 <span class="keywordtype">void</span> display(RenderWindow* window);
-<a name="l00104"></a>00104 
-<a name="l00111"></a>00111                 <span class="keywordtype">void</span> animate(<span class="keywordtype">int</span> dt);
-<a name="l00112"></a>00112 
-<a name="l00116"></a>00116                 <span class="keywordtype">void</span> updateIntRect();
-<a name="l00117"></a>00117 
-<a name="l00123"></a>00123                 <span class="keywordtype">void</span> walk(<span class="keywordtype">int</span> way);
-<a name="l00124"></a>00124                 
-<a name="l00131"></a>00131                 <span class="keywordtype">void</span> die();
-<a name="l00132"></a>00132 
-<a name="l00139"></a>00139                 <span class="keywordtype">void</span> shoot(list&lt;AmmoView*&gt;* air, <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> angle = <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a>(1,0));
-<a name="l00140"></a>00140 };
-<a name="l00141"></a>00141 
-<a name="l00142"></a>00142 
-<a name="l00145"></a>00145 <span class="preprocessor">#endif</span>
+<a name="l00102"></a>00102                 <span class="keywordtype">void</span> init();
+<a name="l00103"></a>00103 
+<a name="l00110"></a>00110                 <span class="keywordtype">void</span> display(RenderWindow* window);
+<a name="l00111"></a>00111 
+<a name="l00118"></a>00118                 <span class="keywordtype">void</span> animate(<span class="keywordtype">int</span> dt);
+<a name="l00119"></a>00119 
+<a name="l00123"></a>00123                 <span class="keywordtype">void</span> updateIntRect();
+<a name="l00124"></a>00124 
+<a name="l00130"></a>00130                 <span class="keywordtype">void</span> walk(<span class="keywordtype">int</span> way);
+<a name="l00131"></a>00131                 
+<a name="l00138"></a>00138                 <span class="keywordtype">void</span> die();
+<a name="l00139"></a>00139 
+<a name="l00146"></a>00146                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> shoot(list&lt;AmmoView*&gt;* air, <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> angle = <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a>(1,0));
+<a name="l00147"></a>00147 };
+<a name="l00148"></a>00148 
+<a name="l00149"></a>00149 
+<a name="l00152"></a>00152 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -178,7 +180,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul>
       <li class="navelem"><a class="el" href="_enemy_view_8h.html">EnemyView.h</a>      </li>
 
-    <li class="footer">Généré le Mercredi Avril 1 2015 17:30:51 pour Metal Slug par
+    <li class="footer">Généré le Mercredi Avril 1 2015 20:44:46 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

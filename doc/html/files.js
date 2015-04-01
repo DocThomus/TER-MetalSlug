@@ -26,6 +26,5 @@ var files =
     [ "include/view/MemberView.h", "_member_view_8h.html", null ],
     [ "include/view/MyDrawable.h", "_my_drawable_8h.html", null ],
     [ "include/view/PlatformView.h", "_platform_view_8h.html", null ],
-    [ "include/view/PlayerView.h", "_player_view_8h.html", null ],
-    [ "include/view/WeaponView.h", "_weapon_view_8h.html", null ]
+    [ "include/view/PlayerView.h", "_player_view_8h.html", null ]
 ];

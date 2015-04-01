@@ -27,13 +27,6 @@ class Ammo;
 
 
 
-/***
-* Player -> Character -> ObjetPhysique
-* ===============================================================
-* Un Player est un Character contrôlé par le joueur. Il peut
-* posséder différents types d'armes.
-***/
-
 
 /*!\class Player
  * \brief Modélise le joueur.
@@ -126,7 +119,7 @@ class Player : public Character
 	     * \param air : Vecteur dans lequel insérer les projectiles générés.
 	     * \param angle : Vecteur de la direction dans laquelle les projectiles doivent être propulsés.
 	     */
-		virtual void shoot(list<Ammo*>* air, Float2 angle = Float2(1,0));
+		virtual void shoot(list<Ammo*>* air, Float2 angle = Float2(1.,0.));
 
 		/*!
 	     * \brief Attaque au corps à corps.

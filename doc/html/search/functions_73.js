@@ -16,6 +16,5 @@ var searchData=
   ['settypeweapon',['setTypeWeapon',['../class_item.html#a0ef1f1b5f066c14225d2af49795d566b',1,'Item']]],
   ['setvisible',['setVisible',['../class_platform.html#a9d5fcf032fe16e98c4e745f54cd48ba7',1,'Platform']]],
   ['setweapon',['setWeapon',['../class_player.html#abe9c24068a098ee6d529032d8f582608',1,'Player']]],
-  ['shoot',['shoot',['../class_character.html#a201f7c26a1637d4604b28a2c128b9309',1,'Character::shoot()'],['../class_player.html#afd14b5091c75777cb45953fa2f0cc027',1,'Player::shoot()'],['../class_weapon.html#a0fb8fea33ea5d0f12a3f863afc552935',1,'Weapon::shoot()'],['../class_enemy_view.html#a713f666f8e652285a929412016996c3d',1,'EnemyView::shoot()'],['../class_player_view.html#a983822a41aa3e161675d25ec9c4bc6ad',1,'PlayerView::shoot()']]],
-  ['shootsound',['shootSound',['../class_weapon_view.html#a66aaa9ce47ec97b9c96e244923a4f955',1,'WeaponView']]]
+  ['shoot',['shoot',['../class_character.html#a201f7c26a1637d4604b28a2c128b9309',1,'Character::shoot()'],['../class_enemy.html#a944c2d5ebf4d817ea78d7f5363d192ec',1,'Enemy::shoot()'],['../class_player.html#ad055b223f6de1d39092c2fe4258758c8',1,'Player::shoot()'],['../class_weapon.html#a0fb8fea33ea5d0f12a3f863afc552935',1,'Weapon::shoot()'],['../class_enemy_view.html#aba094d7e8568780bd59bc958690c04bb',1,'EnemyView::shoot()'],['../class_player_view.html#a983822a41aa3e161675d25ec9c4bc6ad',1,'PlayerView::shoot()']]]
 ];

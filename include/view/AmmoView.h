@@ -19,6 +19,7 @@
 #include <SFML/Audio.hpp>
 
 #include <model/Ammo.h>
+#include <model/Weapon.h>
 #include <view/MyDrawable.h>
 
 using namespace std;
@@ -27,15 +28,16 @@ using namespace sf;
 
 
 /*!\class AmmoView
- * \brief Un objet Ammo affichable.
+ * \brief Un objet Ammo affichable et sonore.
  */
 class AmmoView : public Ammo, public MyDrawable
 {
-
+	
 	protected :
 
 		static vector<Texture*> textures; /*!< \brief Variable de classe contenant les différentes textures de projectiles. */
-		
+		static vector<Sound*> sounds; /*!< \brief Variable de classe contenant les sons des tirs. */
+
 
 	public :
 		
@@ -51,7 +53,7 @@ class AmmoView : public Ammo, public MyDrawable
 	     *
 	     * Construit un AmmoView à partir d'un Ammo.
 	     */
-		AmmoView(Ammo);
+		AmmoView(Ammo a);
 
 		/*!
 	     * \brief Destructeur
@@ -69,12 +71,33 @@ class AmmoView : public Ammo, public MyDrawable
 		static void loadTextures();
 
 		/*!
+	     * \brief Chargement des sons
+	     *
+	     * Methode statique permettant de charger les sons des projectiles.
+	     * ATTENTION : Cette méthode doit impérativement être appelée avant d'afficher des projectiles !
+	     */
+		static void loadSounds();
+
+		/*!
+	     * \brief Deletion des ressources 
+	     *
+	     * Methode statique permettant de libérer la mémoire allouée aux ressources de la classe.
+	     */
+		static void deleteRessources();
+
+		/*!
+		 * \brief Associe l'ammo aux ressources qui lui correspondent.
+		 */
+		void initRessources();
+
+		/*!
 	     * \brief Affichage
 	     *
 	     * Affiche l'objet dans une fenêtre de rendu.
 	     * \param window : Fenêtre d'affichage
 	     */
 		virtual void display(RenderWindow* window);
+
 
 		/*!
 	     * \brief Animer

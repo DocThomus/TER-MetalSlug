@@ -111,41 +111,50 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00019"></a>00019 <span class="preprocessor">#include &lt;SFML/Audio.hpp&gt;</span>
 <a name="l00020"></a>00020 
 <a name="l00021"></a>00021 <span class="preprocessor">#include &lt;<a class="code" href="_ammo_8h.html" title="Déclaration de la classe Ammo.">model/Ammo.h</a>&gt;</span>
-<a name="l00022"></a>00022 <span class="preprocessor">#include &lt;<a class="code" href="_my_drawable_8h.html" title="Déclaration de la classe MyDrawable.">view/MyDrawable.h</a>&gt;</span>
-<a name="l00023"></a>00023 
-<a name="l00024"></a>00024 <span class="keyword">using namespace </span>std;
-<a name="l00025"></a>00025 <span class="keyword">using namespace </span>sf;
-<a name="l00026"></a>00026 
+<a name="l00022"></a>00022 <span class="preprocessor">#include &lt;<a class="code" href="_weapon_8h.html" title="Déclaration de la classe Weapon.">model/Weapon.h</a>&gt;</span>
+<a name="l00023"></a>00023 <span class="preprocessor">#include &lt;<a class="code" href="_my_drawable_8h.html" title="Déclaration de la classe MyDrawable.">view/MyDrawable.h</a>&gt;</span>
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="keyword">using namespace </span>std;
+<a name="l00026"></a>00026 <span class="keyword">using namespace </span>sf;
 <a name="l00027"></a>00027 
 <a name="l00028"></a>00028 
-<a name="l00032"></a><a class="code" href="class_ammo_view.html">00032</a> <span class="keyword">class </span><a class="code" href="class_ammo_view.html" title="Un objet Ammo affichable.">AmmoView</a> : <span class="keyword">public</span> <a class="code" href="class_ammo.html" title="Modélise un projectile.">Ammo</a>, <span class="keyword">public</span> <a class="code" href="class_my_drawable.html" title="Un rectangle affichable.">MyDrawable</a>
-<a name="l00033"></a>00033 {
-<a name="l00034"></a>00034 
-<a name="l00035"></a>00035         <span class="keyword">protected</span> :
-<a name="l00036"></a>00036 
-<a name="l00037"></a><a class="code" href="class_ammo_view.html#ac3b803c90b1683f1630d6bdb9349e899">00037</a>                 <span class="keyword">static</span> vector&lt;Texture*&gt; <a class="code" href="class_ammo_view.html#ac3b803c90b1683f1630d6bdb9349e899" title="Variable de classe contenant les différentes textures de projectiles.">textures</a>; 
-<a name="l00040"></a>00040         <span class="keyword">public</span> :
-<a name="l00041"></a>00041                 
-<a name="l00047"></a>00047                 <a class="code" href="class_ammo_view.html" title="Un objet Ammo affichable.">AmmoView</a>();
-<a name="l00048"></a>00048 
-<a name="l00054"></a>00054                 <a class="code" href="class_ammo_view.html" title="Un objet Ammo affichable.">AmmoView</a>(<a class="code" href="class_ammo.html" title="Modélise un projectile.">Ammo</a>);
-<a name="l00055"></a>00055 
-<a name="l00061"></a>00061                 ~<a class="code" href="class_ammo_view.html" title="Un objet Ammo affichable.">AmmoView</a>();
-<a name="l00062"></a>00062 
-<a name="l00069"></a>00069                 <span class="keyword">static</span> <span class="keywordtype">void</span> loadTextures();
-<a name="l00070"></a>00070 
-<a name="l00077"></a>00077                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> display(RenderWindow* window);
-<a name="l00078"></a>00078 
-<a name="l00085"></a>00085                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> animate(<span class="keywordtype">int</span> dt);
-<a name="l00086"></a>00086 
-<a name="l00093"></a>00093                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> die(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> pos);
-<a name="l00094"></a>00094 
-<a name="l00100"></a>00100                 <span class="keywordtype">void</span> initRotation();
+<a name="l00029"></a>00029 
+<a name="l00033"></a><a class="code" href="class_ammo_view.html">00033</a> <span class="keyword">class </span><a class="code" href="class_ammo_view.html" title="Un objet Ammo affichable et sonore.">AmmoView</a> : <span class="keyword">public</span> <a class="code" href="class_ammo.html" title="Modélise un projectile.">Ammo</a>, <span class="keyword">public</span> <a class="code" href="class_my_drawable.html" title="Un rectangle affichable.">MyDrawable</a>
+<a name="l00034"></a>00034 {
+<a name="l00035"></a>00035         
+<a name="l00036"></a>00036         <span class="keyword">protected</span> :
+<a name="l00037"></a>00037 
+<a name="l00038"></a><a class="code" href="class_ammo_view.html#ac3b803c90b1683f1630d6bdb9349e899">00038</a>                 <span class="keyword">static</span> vector&lt;Texture*&gt; <a class="code" href="class_ammo_view.html#ac3b803c90b1683f1630d6bdb9349e899" title="Variable de classe contenant les différentes textures de projectiles.">textures</a>; 
+<a name="l00039"></a><a class="code" href="class_ammo_view.html#a3458ee1fe227248689c93850016b2f52">00039</a>                 <span class="keyword">static</span> vector&lt;Sound*&gt; <a class="code" href="class_ammo_view.html#a3458ee1fe227248689c93850016b2f52" title="Variable de classe contenant les sons des tirs.">sounds</a>; 
+<a name="l00042"></a>00042         <span class="keyword">public</span> :
+<a name="l00043"></a>00043                 
+<a name="l00049"></a>00049                 <a class="code" href="class_ammo_view.html" title="Un objet Ammo affichable et sonore.">AmmoView</a>();
+<a name="l00050"></a>00050 
+<a name="l00056"></a>00056                 <a class="code" href="class_ammo_view.html" title="Un objet Ammo affichable et sonore.">AmmoView</a>(<a class="code" href="class_ammo.html" title="Modélise un projectile.">Ammo</a> a);
+<a name="l00057"></a>00057 
+<a name="l00063"></a>00063                 ~<a class="code" href="class_ammo_view.html" title="Un objet Ammo affichable et sonore.">AmmoView</a>();
+<a name="l00064"></a>00064 
+<a name="l00071"></a>00071                 <span class="keyword">static</span> <span class="keywordtype">void</span> loadTextures();
+<a name="l00072"></a>00072 
+<a name="l00079"></a>00079                 <span class="keyword">static</span> <span class="keywordtype">void</span> loadSounds();
+<a name="l00080"></a>00080 
+<a name="l00086"></a>00086                 <span class="keyword">static</span> <span class="keywordtype">void</span> deleteRessources();
+<a name="l00087"></a>00087 
+<a name="l00091"></a>00091                 <span class="keywordtype">void</span> initRessources();
+<a name="l00092"></a>00092 
+<a name="l00099"></a>00099                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> display(RenderWindow* window);
+<a name="l00100"></a>00100 
 <a name="l00101"></a>00101 
-<a name="l00102"></a>00102 };
-<a name="l00103"></a>00103 
-<a name="l00104"></a>00104 
-<a name="l00107"></a>00107 <span class="preprocessor">#endif</span>
+<a name="l00108"></a>00108                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> animate(<span class="keywordtype">int</span> dt);
+<a name="l00109"></a>00109 
+<a name="l00116"></a>00116                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> die(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> pos);
+<a name="l00117"></a>00117 
+<a name="l00123"></a>00123                 <span class="keywordtype">void</span> initRotation();
+<a name="l00124"></a>00124 
+<a name="l00125"></a>00125 };
+<a name="l00126"></a>00126 
+<a name="l00127"></a>00127 
+<a name="l00130"></a>00130 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -166,7 +175,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul>
       <li class="navelem"><a class="el" href="_ammo_view_8h.html">AmmoView.h</a>      </li>
 
-    <li class="footer">Généré le Mercredi Avril 1 2015 17:30:51 pour Metal Slug par
+    <li class="footer">Généré le Mercredi Avril 1 2015 20:44:46 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

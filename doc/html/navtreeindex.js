@@ -35,7 +35,6 @@ var NAVTREEINDEX =
 "class_player.html":[1,0,25],
 "class_player_view.html":[1,0,26],
 "class_weapon.html":[1,0,27],
-"class_weapon_view.html":[1,0,28],
 "classes.html":[1,1],
 "hierarchy.html":[1,2],
 "functions.html":[1,3,0],
@@ -117,7 +116,6 @@ var NAVTREEINDEX =
 "_my_drawable_8h.html":[2,0,24],
 "_platform_view_8h.html":[2,0,25],
 "_player_view_8h.html":[2,0,26],
-"_weapon_view_8h.html":[2,0,27],
 "globals.html":[2,1,0],
 "globals_func.html":[2,1,1]
 };

@@ -11,7 +11,7 @@ var class_player =
     [ "print", "class_player.html#a7a337e9b2394c4c3edd90d8e99832a7c", null ],
     [ "reload", "class_player.html#a9b8265a19fd07e246f8e9c052f291e81", null ],
     [ "setWeapon", "class_player.html#abe9c24068a098ee6d529032d8f582608", null ],
-    [ "shoot", "class_player.html#afd14b5091c75777cb45953fa2f0cc027", null ],
+    [ "shoot", "class_player.html#ad055b223f6de1d39092c2fe4258758c8", null ],
     [ "walk", "class_player.html#ad7ec5bcfae66e275785603eced6bc768", null ],
     [ "armes", "class_player.html#a61c808d878e98b6c54c84c9c8654559a", null ],
     [ "current_weapon", "class_player.html#a03b7de11c2e6a4540bf62563b70f77dd", null ]

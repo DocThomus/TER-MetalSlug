@@ -105,10 +105,10 @@ Liste complète des membres de <a class="el" href="class_ammo_view.html">AmmoVie
   <tr class="memlist"><td><a class="el" href="class_my_drawable.html#aca2d11c16ecd91dc48676f5db45746a7">addAnimations</a>(vector&lt; Animation &gt; v)</td><td><a class="el" href="class_my_drawable.html">MyDrawable</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_my_drawable.html#aa8a1d18c3480e2e55205d0ec0e27f8dc">addAnimations</a>(string filename)</td><td><a class="el" href="class_my_drawable.html">MyDrawable</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#a34eb4c570856c55dd4a5c3aea3dd2d08">addMovement</a>(Float2 v)</td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_ammo.html#a1fbffb139eacb1dbf35000d938bbfa17">Ammo</a>(Int2 pos, Int2 siz, int m, TypeAmmo type, Float2 move)</td><td><a class="el" href="class_ammo.html">Ammo</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_ammo.html#a18a5af90b2d0f646404bf1779f6ef11d">Ammo</a>(Int2 pos, Int2 siz, int m, TypeAmmo type, Float2 move, Character *c)</td><td><a class="el" href="class_ammo.html">Ammo</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_ammo.html#a6745bf955cceda43c50dc15c76157e64">Ammo</a>()</td><td><a class="el" href="class_ammo.html">Ammo</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_ammo_view.html#a14bc7ee5815eb23927c02165ed77c196">AmmoView</a>()</td><td><a class="el" href="class_ammo_view.html">AmmoView</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_ammo_view.html#a8f606e62303a91127d2fdc7700a48b41">AmmoView</a>(Ammo)</td><td><a class="el" href="class_ammo_view.html">AmmoView</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_ammo_view.html#ac09a4f0b1173d995518e5f71a1096c94">AmmoView</a>(Ammo a)</td><td><a class="el" href="class_ammo_view.html">AmmoView</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_ammo_view.html#adf92215e61c41528bc33a9143db2864c">animate</a>(int dt)</td><td><a class="el" href="class_ammo_view.html">AmmoView</a></td><td><code> [virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_my_drawable.html#a006145f0c78fb6ab3ba448a778fc42ef">animations</a></td><td><a class="el" href="class_my_drawable.html">MyDrawable</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_my_drawable.html#aa29e17ceff6fc13cfe239736aa2bd2e8">body</a></td><td><a class="el" href="class_my_drawable.html">MyDrawable</a></td><td><code> [protected]</code></td></tr>
@@ -116,19 +116,24 @@ Liste complète des membres de <a class="el" href="class_ammo_view.html">AmmoVie
   <tr class="memlist"><td><a class="el" href="class_my_drawable.html#aaa74ca318869c1125c180405c25a1070">changeAnimation</a>(int i, bool repeat=true, int next=-1)</td><td><a class="el" href="class_my_drawable.html">MyDrawable</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_my_drawable.html#abbb1eebda623f481dcaab8f0da21e7b8">changeFrame</a>(int i)</td><td><a class="el" href="class_my_drawable.html">MyDrawable</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_my_drawable.html#a1e3baf6b086958918246e64c918cea07">current_anim</a></td><td><a class="el" href="class_my_drawable.html">MyDrawable</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_ammo_view.html#a4e0e0a1ad4b6a17c7553a952359d57d5">deleteRessources</a>()</td><td><a class="el" href="class_ammo_view.html">AmmoView</a></td><td><code> [static]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_ammo_view.html#a801a6a36bb3c88dba8b93fee58de816b">die</a>(Int2 pos)</td><td><a class="el" href="class_ammo_view.html">AmmoView</a></td><td><code> [virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_ammo_view.html#a351f5630a29e0bb6b7e7afe05018d177">display</a>(RenderWindow *window)</td><td><a class="el" href="class_ammo_view.html">AmmoView</a></td><td><code> [virtual]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>FLY</b> valeur énumérée (défini dans <a class="el" href="class_ammo.html">Ammo</a>)</td><td><a class="el" href="class_ammo.html">Ammo</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_ammo.html#aa70ceafd9b113751bb3aec8ea151c252">getDamage</a>()</td><td><a class="el" href="class_ammo.html">Ammo</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_my_drawable.html#ae214cacfd929774d1b4a67949f0f5098">getFrame</a>()</td><td><a class="el" href="class_my_drawable.html">MyDrawable</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#a7c18118de257e51a3784debad9d62df0">getMovement</a>()</td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_ammo.html#a23113ac697aafbe38864f994325881dc">getOwner</a>()</td><td><a class="el" href="class_ammo.html">Ammo</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#ae537adf900a2bb5eb82a9e36195bf4a5">getPosition</a>()</td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#a0e8595a25635537949c301b1bcf62d3f">getSize</a>()</td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_ammo.html#a5553e8de086d171880433f611716c34a">getState</a>()</td><td><a class="el" href="class_ammo.html">Ammo</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>GHOST</b> valeur énumérée (défini dans <a class="el" href="class_ammo.html">Ammo</a>)</td><td><a class="el" href="class_ammo.html">Ammo</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>GRENADE</b> valeur énumérée (défini dans <a class="el" href="class_ammo.html">Ammo</a>)</td><td><a class="el" href="class_ammo.html">Ammo</a></td><td></td></tr>
+  <tr bgcolor="#f0f0f0"><td><b>HEAVY_BULLET</b> valeur énumérée (défini dans <a class="el" href="class_ammo.html">Ammo</a>)</td><td><a class="el" href="class_ammo.html">Ammo</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_ammo_view.html#a6cd4f2ef795a388af31278807275fe7a">initRessources</a>()</td><td><a class="el" href="class_ammo_view.html">AmmoView</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_ammo_view.html#adfcb245219da55d4dee4c8a069dddeff">initRotation</a>()</td><td><a class="el" href="class_ammo_view.html">AmmoView</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>LASER</b> valeur énumérée (défini dans <a class="el" href="class_ammo.html">Ammo</a>)</td><td><a class="el" href="class_ammo.html">Ammo</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_ammo_view.html#a0d0c1da980c6e86d2689dd1d755a49e3">loadSounds</a>()</td><td><a class="el" href="class_ammo_view.html">AmmoView</a></td><td><code> [static]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_my_drawable.html#a9842c899ee0a704af6e6c669894479e1">loadSpriteFromFile</a>(string filename)</td><td><a class="el" href="class_my_drawable.html">MyDrawable</a></td><td><code> [static]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_ammo_view.html#acd24b699c24cd114746fa759f6109a63">loadTextures</a>()</td><td><a class="el" href="class_ammo_view.html">AmmoView</a></td><td><code> [static]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#ad9aecb9f29d4bf704d8a536d32081664">mass</a></td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td><code> [protected]</code></td></tr>
@@ -136,6 +141,7 @@ Liste complète des membres de <a class="el" href="class_ammo_view.html">AmmoVie
   <tr class="memlist"><td><a class="el" href="class_my_drawable.html#af42e8a1ccb99662f5e35c40e7afeb7ab">MyDrawable</a>()</td><td><a class="el" href="class_my_drawable.html">MyDrawable</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#a17540702a3de4f3aaec27eb86d0b9d3a">ObjetPhysique</a>(Int2 pos, Int2 siz, int m=0)</td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#a7c1bcf11f390181223af0173404f6e61">ObjetPhysique</a>()</td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_ammo.html#a3c9aae634f8c2c16f2e431c65de8e98e">owner</a></td><td><a class="el" href="class_ammo.html">Ammo</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#adaff4b21f7ce9e9f0740f5e56a7fb48f">position</a></td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_ammo.html#a1ebdc43a62c3ed0207cf01602caf9a6f">print</a>(ostream &amp;os) const </td><td><a class="el" href="class_ammo.html">Ammo</a></td><td><code> [virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_my_drawable.html#a049b0e03ea369c98b9473dd4c0fdab90">repeat_tex</a></td><td><a class="el" href="class_my_drawable.html">MyDrawable</a></td><td><code> [protected]</code></td></tr>
@@ -147,6 +153,7 @@ Liste complète des membres de <a class="el" href="class_ammo_view.html">AmmoVie
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#a41fa31e44e9fa53f15446865c73a2d43">setSize</a>(Int2 siz)</td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_my_drawable.html#aa832819817385495698bdd8c5f01a3a4">setTexture</a>(Texture *tex, Bool2 r=Bool2(false, false))</td><td><a class="el" href="class_my_drawable.html">MyDrawable</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#a8b560415dc0a1f38e8cf3e8a24b1c9aa">size</a></td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_ammo_view.html#a3458ee1fe227248689c93850016b2f52">sounds</a></td><td><a class="el" href="class_ammo_view.html">AmmoView</a></td><td><code> [protected, static]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_ammo.html#af51f34636337b30b28babbfbca07609b">state_a</a></td><td><a class="el" href="class_ammo.html">Ammo</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_ammo.html#ab1e5316640ed98513039385b82ef4b07">StateAmmo</a> énumération</td><td><a class="el" href="class_ammo.html">Ammo</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>STOP</b> valeur énumérée (défini dans <a class="el" href="class_ammo.html">Ammo</a>)</td><td><a class="el" href="class_ammo.html">Ammo</a></td><td></td></tr>
@@ -178,7 +185,7 @@ Liste complète des membres de <a class="el" href="class_ammo_view.html">AmmoVie
   <div id="nav-path" class="navpath">
     <ul>
 
-    <li class="footer">Généré le Mercredi Avril 1 2015 17:30:51 pour Metal Slug par
+    <li class="footer">Généré le Mercredi Avril 1 2015 20:44:46 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

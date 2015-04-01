@@ -9,12 +9,15 @@ Game::Game()
 
 Game::~Game()
 {
+    AmmoView::deleteRessources();
+    EnemyView::deleteRessources();
+
     for(list<AmmoView*>::iterator a = ammo.begin(); a != ammo.end(); a++)
-        delete(*a);
+        delete (*a);
     ammo.clear();
 
     for(list<EnemyView*>::iterator e = enemies.begin(); e != enemies.end(); e++)
-        delete(*e);
+        delete (*e);
     enemies.clear();
 
     for(unsigned int i=0; i<textures.size(); ++i)
@@ -213,7 +216,7 @@ void Game::checkKeyboardEvents(RenderWindow* window)
 
                 /* TEST */
                 case Keyboard::P :
-                
+                    (*enemies.begin())->shoot(&ammo,Int2(-1,0));
                     break;
             }
         }
@@ -339,14 +342,20 @@ void Game::checkCollisions()
                         Int2 p_pos = (*p).getPosition();
                         Int2 p_siz = (*p).getSize();
 
-                        if(a_mov.x > 0) // vers la droite
-                            a_pos.x = p_pos.x;
-                        else if(a_mov.x < 0) // vers la gauche
-                            a_pos.x = p_pos.x+p_siz.x;
-                        else if(a_mov.y > 0) // vers la bas
-                            a_pos.y = p_pos.y;
-                        else // vers le haut
-                            a_pos.y = p_pos.y+p_siz.y;
+                        if(fabs(a_mov.x) >= fabs(a_mov.y))
+                        {
+                            if(a_mov.x > 0) // vers la droite
+                                a_pos.x = p_pos.x;
+                            else if(a_mov.x < 0) // vers la gauche
+                                a_pos.x = p_pos.x+p_siz.x;
+                        }
+                        else
+                        {
+                            if(a_mov.y > 0) // vers la bas
+                                a_pos.y = p_pos.y;
+                            else // vers le haut
+                                a_pos.y = p_pos.y+p_siz.y;
+                        }
 
                         (*a)->die(a_pos);
                     }
@@ -356,9 +365,9 @@ void Game::checkCollisions()
             /* VS ENEMY */
             for(list<EnemyView*>::iterator e = enemies.begin(); e != enemies.end(); e++)
             {
-                if(checkIntersect((ObjetPhysique*)(*a),(ObjetPhysique*)(*e)))
+                if(checkIntersect((ObjetPhysique*)(*a),(ObjetPhysique*)(*e),-10))
                 {
-                    if((*a)->getState() != Ammo::GHOST && (*e)->getStateBattle() != Character::DEAD)
+                    if((*a)->getOwner() != (*e) && (*e)->getStateBattle() != Character::DEAD)
                     {
                         (*e)->decreaseHealth((*a)->getDamage());
 
@@ -488,7 +497,7 @@ bool Game::checkKnife()
 {
     bool tmp = false;
 
-    for(list<EnemyView*>::iterator e = enemies.begin(); (*e)->getStateBattle()!=Character::DEAD && e!=enemies.end(); e++)
+    for(list<EnemyView*>::iterator e = enemies.begin(); e!=enemies.end() && (*e)->getStateBattle()!=Character::DEAD; e++)
     {
         if(checkIntersect((ObjetPhysique*)(&player),(ObjetPhysique*)(*e),30,30))
         {
@@ -514,13 +523,19 @@ void Game::deleteDeadObjects()
         Int2 e_siz = (*e)->getSize();
 
         if(e_pos.x+e_siz.x < v_cen.x-v_siz.x/2)
+        {
+            delete (*e);
             enemies.erase(e++);
+        }
     }
 
     for(list<AmmoView*>::iterator a = ammo.begin(); a != ammo.end(); a++)
     {
         if((*a)->getState() == Ammo::GHOST)
+        {
+            delete (*a);
             ammo.erase(a++);
+        }
         else
         {
             Int2 a_pos = (*a)->getPosition();
@@ -530,7 +545,10 @@ void Game::deleteDeadObjects()
             || (a_pos.x > v_cen.x+v_siz.x/2)
             || (a_pos.y+a_siz.y < v_cen.y-v_siz.y/2)
             || (a_pos.y > v_cen.y+v_siz.y/2))
+            {
+                delete (*a);
                 ammo.erase(a++);
+            }
         }
     }
 }
@@ -556,6 +574,7 @@ void Game::applyConfig(RenderWindow* window)
     window->create(mode,"Metal Slug !!!",style);
     window->setFramerateLimit(60);
     window->setKeyRepeatEnabled(false);
+    window->setVerticalSyncEnabled(config->vsync);
 
 
     /* CONFIG */

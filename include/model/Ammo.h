@@ -18,6 +18,7 @@
 using namespace std;
 
 class Weapon;
+class Character;
 class Enemy;
 
 
@@ -37,7 +38,7 @@ class Ammo : public ObjetPhysique
 	     * \enum TypeAmmo
 	     * \brief Types possibles de l'objet Ammo.
 	     */
-		enum TypeAmmo {BULLET,ROCKET,GRENADE,LASER};
+		enum TypeAmmo {BULLET, HEAVY_BULLET, ROCKET, GRENADE, LASER};
 
 		/*!
 	     * \enum StateAmmo
@@ -50,6 +51,7 @@ class Ammo : public ObjetPhysique
 
 		StateAmmo state_a; /*!< \brief État du projectile. */
 		TypeAmmo type; /*!< \brief Type du projectile. */
+		Character* owner; /*!< \brief Character qui a tiré le projectile. */
 
 
 	public :
@@ -64,7 +66,7 @@ class Ammo : public ObjetPhysique
 	     * \param type : Type du projectile.
 	     * \param move : Vecteur de direction.
 	     */
-		Ammo(Int2 pos, Int2 siz, int m, TypeAmmo type, Float2 move);
+		Ammo(Int2 pos, Int2 siz, int m, TypeAmmo type, Float2 move, Character* c);
 
 		/*!
 	     * \brief Constructeur
@@ -117,6 +119,13 @@ class Ammo : public ObjetPhysique
 	     * Renvoie l'état de la munition.
 	     */
 		StateAmmo getState();
+
+		/*!
+	     * \brief Tireur
+	     *
+	     * Renvoie un pointeur sur le character qui a tiré le projectile
+	     */
+		Character* getOwner();
 
 };
 

@@ -8,6 +8,7 @@ Config::Config()
 {
 	fullscreen = true;
 	resolution = Int2(800,600);
+	vsync = true;
 }
 
 

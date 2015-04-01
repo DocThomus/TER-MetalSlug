@@ -22,14 +22,6 @@ using namespace std;
 using namespace sf;
 
 
-/***
-* MemberView -> MyDrawable
-* ===========================================================
-* Affichage d'un membre attaché à un Character.
-* EXEMPLE : les jambes du player sont un MemberView car
-* séparées du corps.
-***/
-
 
 /*!\class MemberView
  * \brief Un membre d'un character destiné à être affiché.

@@ -105,7 +105,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="AmmoView" --><!-- doxytag: inherits="Ammo,MyDrawable" -->
-<p>Un objet <a class="el" href="class_ammo.html" title="Modélise un projectile.">Ammo</a> affichable.  
+<p>Un objet <a class="el" href="class_ammo.html" title="Modélise un projectile.">Ammo</a> affichable et sonore.  
  <a href="class_ammo_view.html#details">Plus de détails...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_ammo_view_8h_source.html">AmmoView.h</a>&gt;</code></p>
@@ -127,10 +127,13 @@ Graphe d'héritage de AmmoView:</div>
 Fonctions membres publiques</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ammo_view.html#a14bc7ee5815eb23927c02165ed77c196">AmmoView</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#a14bc7ee5815eb23927c02165ed77c196"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ammo_view.html#a8f606e62303a91127d2fdc7700a48b41">AmmoView</a> (<a class="el" href="class_ammo.html">Ammo</a>)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#a8f606e62303a91127d2fdc7700a48b41"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ammo_view.html#ac09a4f0b1173d995518e5f71a1096c94">AmmoView</a> (<a class="el" href="class_ammo.html">Ammo</a> a)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#ac09a4f0b1173d995518e5f71a1096c94"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ammo_view.html#abbf7070272dc18d85fcef77df9305816">~AmmoView</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur.  <a href="#abbf7070272dc18d85fcef77df9305816"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6cd4f2ef795a388af31278807275fe7a"></a><!-- doxytag: member="AmmoView::initRessources" ref="a6cd4f2ef795a388af31278807275fe7a" args="()" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ammo_view.html#a6cd4f2ef795a388af31278807275fe7a">initRessources</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Associe l'ammo aux ressources qui lui correspondent. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ammo_view.html#a351f5630a29e0bb6b7e7afe05018d177">display</a> (RenderWindow *window)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Affichage.  <a href="#a351f5630a29e0bb6b7e7afe05018d177"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ammo_view.html#adf92215e61c41528bc33a9143db2864c">animate</a> (int dt)</td></tr>
@@ -143,14 +146,21 @@ Fonctions membres publiques</h2></td></tr>
 Fonctions membres publiques statiques</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ammo_view.html#acd24b699c24cd114746fa759f6109a63">loadTextures</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Chargement des textures.  <a href="#acd24b699c24cd114746fa759f6109a63"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ammo_view.html#a0d0c1da980c6e86d2689dd1d755a49e3">loadSounds</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Chargement des sons.  <a href="#a0d0c1da980c6e86d2689dd1d755a49e3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ammo_view.html#a4e0e0a1ad4b6a17c7553a952359d57d5">deleteRessources</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletion des ressources.  <a href="#a4e0e0a1ad4b6a17c7553a952359d57d5"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-static-attribs"></a>
 Attributs protégés statiques</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac3b803c90b1683f1630d6bdb9349e899"></a><!-- doxytag: member="AmmoView::textures" ref="ac3b803c90b1683f1630d6bdb9349e899" args="" -->
 static vector&lt; Texture * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ammo_view.html#ac3b803c90b1683f1630d6bdb9349e899">textures</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable de classe contenant les différentes textures de projectiles. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3458ee1fe227248689c93850016b2f52"></a><!-- doxytag: member="AmmoView::sounds" ref="a3458ee1fe227248689c93850016b2f52" args="" -->
+static vector&lt; Sound * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ammo_view.html#a3458ee1fe227248689c93850016b2f52">sounds</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable de classe contenant les sons des tirs. <br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Description détaillée</h2>
-<div class="textblock"><p>Un objet <a class="el" href="class_ammo.html" title="Modélise un projectile.">Ammo</a> affichable. </p>
+<div class="textblock"><p>Un objet <a class="el" href="class_ammo.html" title="Modélise un projectile.">Ammo</a> affichable et sonore. </p>
 </div><hr/><h2>Documentation des constructeurs et destructeur</h2>
 <a class="anchor" id="a14bc7ee5815eb23927c02165ed77c196"></a><!-- doxytag: member="AmmoView::AmmoView" ref="a14bc7ee5815eb23927c02165ed77c196" args="()" -->
 <div class="memitem">
@@ -167,11 +177,11 @@ static vector&lt; Texture * &gt;&#160;</td><td class="memItemRight" valign="bott
 <div class="memdoc">
 
 <p>Constructeur. </p>
-<p>Constructeur par défaut de la classe <a class="el" href="class_ammo_view.html" title="Un objet Ammo affichable.">AmmoView</a> </p>
+<p>Constructeur par défaut de la classe <a class="el" href="class_ammo_view.html" title="Un objet Ammo affichable et sonore.">AmmoView</a> </p>
 
 </div>
 </div>
-<a class="anchor" id="a8f606e62303a91127d2fdc7700a48b41"></a><!-- doxytag: member="AmmoView::AmmoView" ref="a8f606e62303a91127d2fdc7700a48b41" args="(Ammo)" -->
+<a class="anchor" id="ac09a4f0b1173d995518e5f71a1096c94"></a><!-- doxytag: member="AmmoView::AmmoView" ref="ac09a4f0b1173d995518e5f71a1096c94" args="(Ammo a)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -179,7 +189,7 @@ static vector&lt; Texture * &gt;&#160;</td><td class="memItemRight" valign="bott
           <td class="memname"><a class="el" href="class_ammo_view.html#a14bc7ee5815eb23927c02165ed77c196">AmmoView::AmmoView</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_ammo.html">Ammo</a>&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -187,7 +197,7 @@ static vector&lt; Texture * &gt;&#160;</td><td class="memItemRight" valign="bott
 <div class="memdoc">
 
 <p>Constructeur. </p>
-<p>Construit un <a class="el" href="class_ammo_view.html" title="Un objet Ammo affichable.">AmmoView</a> à partir d'un <a class="el" href="class_ammo.html" title="Modélise un projectile.">Ammo</a>. </p>
+<p>Construit un <a class="el" href="class_ammo_view.html" title="Un objet Ammo affichable et sonore.">AmmoView</a> à partir d'un <a class="el" href="class_ammo.html" title="Modélise un projectile.">Ammo</a>. </p>
 
 </div>
 </div>
@@ -236,6 +246,25 @@ static vector&lt; Texture * &gt;&#160;</td><td class="memItemRight" valign="bott
 </dl>
 
 <p>Réimplémentée à partir de <a class="el" href="class_ammo.html#aa113df3aff05c38ee4813d2762d2a2ae">Ammo</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4e0e0a1ad4b6a17c7553a952359d57d5"></a><!-- doxytag: member="AmmoView::deleteRessources" ref="a4e0e0a1ad4b6a17c7553a952359d57d5" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="class_ammo_view.html#a4e0e0a1ad4b6a17c7553a952359d57d5">AmmoView::deleteRessources</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Deletion des ressources. </p>
+<p>Methode statique permettant de libérer la mémoire allouée aux ressources de la classe. </p>
 
 </div>
 </div>
@@ -314,6 +343,25 @@ static vector&lt; Texture * &gt;&#160;</td><td class="memItemRight" valign="bott
 
 </div>
 </div>
+<a class="anchor" id="a0d0c1da980c6e86d2689dd1d755a49e3"></a><!-- doxytag: member="AmmoView::loadSounds" ref="a0d0c1da980c6e86d2689dd1d755a49e3" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="class_ammo_view.html#a0d0c1da980c6e86d2689dd1d755a49e3">AmmoView::loadSounds</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Chargement des sons. </p>
+<p>Methode statique permettant de charger les sons des projectiles. ATTENTION : Cette méthode doit impérativement être appelée avant d'afficher des projectiles ! </p>
+
+</div>
+</div>
 <a class="anchor" id="acd24b699c24cd114746fa759f6109a63"></a><!-- doxytag: member="AmmoView::loadTextures" ref="acd24b699c24cd114746fa759f6109a63" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -356,7 +404,7 @@ static vector&lt; Texture * &gt;&#160;</td><td class="memItemRight" valign="bott
     <ul>
       <li class="navelem"><a class="el" href="class_ammo_view.html">AmmoView</a>      </li>
 
-    <li class="footer">Généré le Mercredi Avril 1 2015 17:30:51 pour Metal Slug par
+    <li class="footer">Généré le Mercredi Avril 1 2015 20:44:46 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

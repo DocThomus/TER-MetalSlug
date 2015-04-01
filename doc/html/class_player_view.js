@@ -6,6 +6,7 @@ var class_player_view =
     [ "PlayerView", "class_player_view.html#ade41a5861a60299e6fe727a18c2423b6", null ],
     [ "~PlayerView", "class_player_view.html#a95cb7fade4bd8f33b2ac20671048cc40", null ],
     [ "animate", "class_player_view.html#a7077a695549cedcfc5fd2a9e1d311c0e", null ],
+    [ "deleteRessources", "class_player_view.html#a3c85038b826cf8c5f8376ab41ee88332", null ],
     [ "display", "class_player_view.html#a0efbd8ed8178e7ca08b39a821c0e330f", null ],
     [ "init", "class_player_view.html#a397bdf416e488c3785186b197ad7555a", null ],
     [ "jump", "class_player_view.html#a568a964289ab5c348b9674aedec7904a", null ],

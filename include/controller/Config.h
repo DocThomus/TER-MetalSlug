@@ -31,6 +31,7 @@ class Config
 
 		bool fullscreen; /*!< \brief Vrai si le jeu est en plein écran */
 		Int2 resolution; /*!< \brief Résolution de l'écran */
+		bool vsync; /*!< \brief Vrai si la synchronisation verticale est activée. */
 
 	
 	public :

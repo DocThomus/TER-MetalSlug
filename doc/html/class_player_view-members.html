@@ -123,6 +123,7 @@ Liste complète des membres de <a class="el" href="class_player_view.html">Playe
   <tr class="memlist"><td><a class="el" href="class_player.html#a03b7de11c2e6a4540bf62563b70f77dd">current_weapon</a></td><td><a class="el" href="class_player.html">Player</a></td><td><code> [protected]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>DEAD</b> valeur énumérée (défini dans <a class="el" href="class_character.html">Character</a>)</td><td><a class="el" href="class_character.html">Character</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_character.html#a83a528ebc631ba0d561302144f6ee870">decreaseHealth</a>(int s)</td><td><a class="el" href="class_character.html">Character</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_player_view.html#a3c85038b826cf8c5f8376ab41ee88332">deleteRessources</a>()</td><td><a class="el" href="class_player_view.html">PlayerView</a></td><td><code> [static]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_player.html#a78337a7b31308fd517809111249a268d">die</a>()</td><td><a class="el" href="class_player.html">Player</a></td><td><code> [virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_player_view.html#a0efbd8ed8178e7ca08b39a821c0e330f">display</a>(RenderWindow *window)</td><td><a class="el" href="class_player_view.html">PlayerView</a></td><td><code> [virtual]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>FALL</b> valeur énumérée (défini dans <a class="el" href="class_player_view.html">PlayerView</a>)</td><td><a class="el" href="class_player_view.html">PlayerView</a></td><td></td></tr>
@@ -182,9 +183,9 @@ Liste complète des membres de <a class="el" href="class_player_view.html">Playe
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#a41fa31e44e9fa53f15446865c73a2d43">setSize</a>(Int2 siz)</td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_my_drawable.html#aa832819817385495698bdd8c5f01a3a4">setTexture</a>(Texture *tex, Bool2 r=Bool2(false, false))</td><td><a class="el" href="class_my_drawable.html">MyDrawable</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_player.html#abe9c24068a098ee6d529032d8f582608">setWeapon</a>(int w)</td><td><a class="el" href="class_player.html">Player</a></td><td></td></tr>
-  <tr bgcolor="#f0f0f0"><td><b>SHOOT</b> valeur énumérée (défini dans <a class="el" href="class_character.html">Character</a>)</td><td><a class="el" href="class_character.html">Character</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_player_view.html#a983822a41aa3e161675d25ec9c4bc6ad">shoot</a>(list&lt; AmmoView * &gt; *air, Int2 angle=Int2(1, 0))</td><td><a class="el" href="class_player_view.html">PlayerView</a></td><td><code> [virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_player.html#afd14b5091c75777cb45953fa2f0cc027">Player::shoot</a>(list&lt; Ammo * &gt; *air, Float2 angle=Float2(1, 0))</td><td><a class="el" href="class_player.html">Player</a></td><td><code> [virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_player.html#ad055b223f6de1d39092c2fe4258758c8">Player::shoot</a>(list&lt; Ammo * &gt; *air, Float2 angle=Float2(1., 0.))</td><td><a class="el" href="class_player.html">Player</a></td><td><code> [virtual]</code></td></tr>
+  <tr bgcolor="#f0f0f0"><td><b>SHOOT</b> valeur énumérée (défini dans <a class="el" href="class_character.html">Character</a>)</td><td><a class="el" href="class_character.html">Character</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#a8b560415dc0a1f38e8cf3e8a24b1c9aa">size</a></td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td><code> [protected]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>SLOW</b> valeur énumérée (défini dans <a class="el" href="class_player_view.html">PlayerView</a>)</td><td><a class="el" href="class_player_view.html">PlayerView</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_player_view.html#a2d20d1b64088e6141684493f129c67f6">sounds</a></td><td><a class="el" href="class_player_view.html">PlayerView</a></td><td><code> [private, static]</code></td></tr>
@@ -227,7 +228,7 @@ Liste complète des membres de <a class="el" href="class_player_view.html">Playe
   <div id="nav-path" class="navpath">
     <ul>
 
-    <li class="footer">Généré le Mercredi Avril 1 2015 17:30:51 pour Metal Slug par
+    <li class="footer">Généré le Mercredi Avril 1 2015 20:44:46 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

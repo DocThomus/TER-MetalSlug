@@ -27,6 +27,5 @@ var annotated =
     [ "PlatformView", "class_platform_view.html", "class_platform_view" ],
     [ "Player", "class_player.html", "class_player" ],
     [ "PlayerView", "class_player_view.html", "class_player_view" ],
-    [ "Weapon", "class_weapon.html", "class_weapon" ],
-    [ "WeaponView", "class_weapon_view.html", "class_weapon_view" ]
+    [ "Weapon", "class_weapon.html", "class_weapon" ]
 ];

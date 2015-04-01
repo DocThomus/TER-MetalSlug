@@ -108,16 +108,16 @@ void Weapon::shoot(list<Ammo*>* air, Float2 angle)
 		switch(type)
 		{
 			case PISTOL :
-				air->push_back(new Ammo(pos,siz,0,Ammo::BULLET,angle));
+				air->push_back(new Ammo(pos,siz,0,Ammo::BULLET,angle,owner));
 				ammos.x--;
 				break;
 
 			case SMG :
-				air->push_back(new Ammo(pos,siz,0,Ammo::BULLET,angle));
+				air->push_back(new Ammo(pos,siz,0,Ammo::BULLET,angle,owner));
 				ammos.x--;
 				break;
 
-			case SHOTGUN :
+			case SHOTGUN : //  balles 
 				float disp = 0.2;
 				for(float i=-disp; i<=disp && ammos.x>0; i+=disp/2)
 				{
@@ -128,7 +128,7 @@ void Weapon::shoot(list<Ammo*>* air, Float2 angle)
 						tmp.x+=i;
 					if((angle.x<0 && angle.y<0) || (angle.x>0 && angle.y>0))
 						tmp.x-=i*2;
-					air->push_back(new Ammo(pos,siz,0,Ammo::BULLET,tmp));
+					air->push_back(new Ammo(pos,siz,0,Ammo::HEAVY_BULLET,tmp,owner));
 				}
 				ammos.x--;
 				break;

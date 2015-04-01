@@ -143,8 +143,8 @@ Fonctions membres publiques</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug.  <a href="#ad8c8e48b7fc9ac2b62482516a742e1a4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#acebf7090d998b062d9c3c59c49e0627c">animate</a> (int dt)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Animer.  <a href="#acebf7090d998b062d9c3c59c49e0627c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#ae79ae69bc948683ba16d1f6263e90f65">attack</a> (vector&lt; <a class="el" href="class_ammo.html">Ammo</a> * &gt; *air)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Attaquer.  <a href="#ae79ae69bc948683ba16d1f6263e90f65"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a944c2d5ebf4d817ea78d7f5363d192ec">shoot</a> (list&lt; <a class="el" href="class_ammo.html">Ammo</a> * &gt; *air, <a class="el" href="class_float2.html">Float2</a> angle=<a class="el" href="class_float2.html">Float2</a>(1., 0.))</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Tirer.  <a href="#a944c2d5ebf4d817ea78d7f5363d192ec"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a04c451624958712b36546037fc25c601">die</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Mourir.  <a href="#a04c451624958712b36546037fc25c601"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
@@ -334,32 +334,6 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 
 </div>
 </div>
-<a class="anchor" id="ae79ae69bc948683ba16d1f6263e90f65"></a><!-- doxytag: member="Enemy::attack" ref="ae79ae69bc948683ba16d1f6263e90f65" args="(vector&lt; Ammo * &gt; *air)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="class_enemy.html#ae79ae69bc948683ba16d1f6263e90f65">Enemy::attack</a> </td>
-          <td>(</td>
-          <td class="paramtype">vector&lt; <a class="el" href="class_ammo.html">Ammo</a> * &gt; *&#160;</td>
-          <td class="paramname"><em>air</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Attaquer. </p>
-<p>L'ennemi execute une attaque. </p>
-<dl class="params"><dt><b>Paramètres:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">air</td><td>: vecteur dans lequel ajouter les projectiles générés par l'attaque. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a class="anchor" id="a04c451624958712b36546037fc25c601"></a><!-- doxytag: member="Enemy::die" ref="a04c451624958712b36546037fc25c601" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -411,6 +385,45 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 
 </div>
 </div>
+<a class="anchor" id="a944c2d5ebf4d817ea78d7f5363d192ec"></a><!-- doxytag: member="Enemy::shoot" ref="a944c2d5ebf4d817ea78d7f5363d192ec" args="(list&lt; Ammo * &gt; *air, Float2 angle=Float2(1., 0.))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="class_enemy.html#a944c2d5ebf4d817ea78d7f5363d192ec">Enemy::shoot</a> </td>
+          <td>(</td>
+          <td class="paramtype">list&lt; <a class="el" href="class_ammo.html">Ammo</a> * &gt; *&#160;</td>
+          <td class="paramname"><em>air</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_float2.html">Float2</a>&#160;</td>
+          <td class="paramname"><em>angle</em> = <code><a class="el" href="class_float2.html">Float2</a>(1.,&#160;0.)</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Tirer. </p>
+<p>L'ennemi tire. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">air</td><td>: Vecteur dans lequel insérer les projectiles générés. </td></tr>
+    <tr><td class="paramname">angle</td><td>: Vecteur de la direction dans laquelle les projectiles doivent être propulsés. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Réimplémentée à partir de <a class="el" href="class_character.html#a201f7c26a1637d4604b28a2c128b9309">Character</a>.</p>
+
+</div>
+</div>
 <hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
 <li>include/model/<a class="el" href="_enemy_8h_source.html">Enemy.h</a></li>
 </ul>
@@ -434,7 +447,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
     <ul>
       <li class="navelem"><a class="el" href="class_enemy.html">Enemy</a>      </li>
 
-    <li class="footer">Généré le Mercredi Avril 1 2015 17:30:51 pour Metal Slug par
+    <li class="footer">Généré le Mercredi Avril 1 2015 20:44:46 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

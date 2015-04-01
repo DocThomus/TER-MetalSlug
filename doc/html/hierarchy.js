@@ -41,7 +41,5 @@ var hierarchy =
         [ "PlatformView", "class_platform_view.html", null ]
       ] ]
     ] ],
-    [ "Weapon", "class_weapon.html", [
-      [ "WeaponView", "class_weapon_view.html", null ]
-    ] ]
+    [ "Weapon", "class_weapon.html", null ]
 ];

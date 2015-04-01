@@ -109,7 +109,6 @@ Liste complète des membres de <a class="el" href="class_enemy_view.html">EnemyV
   <tr class="memlist"><td><a class="el" href="class_enemy_view.html#a9cddea2cb12e4abd5f9fb27acd00c1d5">animate</a>(int dt)</td><td><a class="el" href="class_enemy_view.html">EnemyView</a></td><td><code> [virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_my_drawable.html#a006145f0c78fb6ab3ba448a778fc42ef">animations</a></td><td><a class="el" href="class_my_drawable.html">MyDrawable</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_enemy_view.html#ae823ab1e84c51fee9ec399c4e5f8eac4">animations_list</a></td><td><a class="el" href="class_enemy_view.html">EnemyView</a></td><td><code> [private, static]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_enemy.html#ae79ae69bc948683ba16d1f6263e90f65">attack</a>(vector&lt; Ammo * &gt; *air)</td><td><a class="el" href="class_enemy.html">Enemy</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_my_drawable.html#aa29e17ceff6fc13cfe239736aa2bd2e8">body</a></td><td><a class="el" href="class_my_drawable.html">MyDrawable</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_character.html#a4e3b1c75b0d7b89d50b45f35b176da0b">bumpLeft</a>(int x)</td><td><a class="el" href="class_character.html">Character</a></td><td><code> [virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_character.html#af8ca6be8037f5f529e00cc2666720fb7">bumpRight</a>(int x)</td><td><a class="el" href="class_character.html">Character</a></td><td><code> [virtual]</code></td></tr>
@@ -121,6 +120,7 @@ Liste complète des membres de <a class="el" href="class_enemy_view.html">EnemyV
   <tr class="memlist"><td><a class="el" href="class_my_drawable.html#a1e3baf6b086958918246e64c918cea07">current_anim</a></td><td><a class="el" href="class_my_drawable.html">MyDrawable</a></td><td><code> [protected]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>DEAD</b> valeur énumérée (défini dans <a class="el" href="class_character.html">Character</a>)</td><td><a class="el" href="class_character.html">Character</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_character.html#a83a528ebc631ba0d561302144f6ee870">decreaseHealth</a>(int s)</td><td><a class="el" href="class_character.html">Character</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_enemy_view.html#af272b52690429a59f7caeac0aaad02ee">deleteRessources</a>()</td><td><a class="el" href="class_enemy_view.html">EnemyView</a></td><td><code> [static]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_enemy_view.html#aac9438ba6a30071e7dc4236f71425667">die</a>()</td><td><a class="el" href="class_enemy_view.html">EnemyView</a></td><td><code> [virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_enemy_view.html#a356c5c35510ac5f4beb7a3181d5d1cf3">display</a>(RenderWindow *window)</td><td><a class="el" href="class_enemy_view.html">EnemyView</a></td><td><code> [virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_enemy.html#a06989122c9391af1d13ee913d137f298">Enemy</a>(Int2 pos, Int2 siz, int m, int max_h, bool AI, int pow)</td><td><a class="el" href="class_enemy.html">Enemy</a></td><td></td></tr>
@@ -170,9 +170,9 @@ Liste complète des membres de <a class="el" href="class_enemy_view.html">EnemyV
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#ad4ab5b9b5e713e1ff8e45abd031106f7">setPosition</a>(Int2 pos)</td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#a41fa31e44e9fa53f15446865c73a2d43">setSize</a>(Int2 siz)</td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_my_drawable.html#aa832819817385495698bdd8c5f01a3a4">setTexture</a>(Texture *tex, Bool2 r=Bool2(false, false))</td><td><a class="el" href="class_my_drawable.html">MyDrawable</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_enemy_view.html#a713f666f8e652285a929412016996c3d">shoot</a>(list&lt; AmmoView * &gt; *air, Int2 angle=Int2(1, 0))</td><td><a class="el" href="class_enemy_view.html">EnemyView</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_character.html#a201f7c26a1637d4604b28a2c128b9309">Enemy::shoot</a>(list&lt; Ammo * &gt; *air, Float2 angle=Float2(1., 0.))</td><td><a class="el" href="class_character.html">Character</a></td><td><code> [virtual]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>SHOOT</b> valeur énumérée (défini dans <a class="el" href="class_character.html">Character</a>)</td><td><a class="el" href="class_character.html">Character</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_enemy_view.html#aba094d7e8568780bd59bc958690c04bb">shoot</a>(list&lt; AmmoView * &gt; *air, Int2 angle=Int2(1, 0))</td><td><a class="el" href="class_enemy_view.html">EnemyView</a></td><td><code> [virtual]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_enemy.html#a944c2d5ebf4d817ea78d7f5363d192ec">Enemy::shoot</a>(list&lt; Ammo * &gt; *air, Float2 angle=Float2(1., 0.))</td><td><a class="el" href="class_enemy.html">Enemy</a></td><td><code> [virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#a8b560415dc0a1f38e8cf3e8a24b1c9aa">size</a></td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_enemy_view.html#aea3cb584316432d9de40235f8a6faf78">sounds</a></td><td><a class="el" href="class_enemy_view.html">EnemyView</a></td><td><code> [private, static]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>STAR</b> valeur énumérée (défini dans <a class="el" href="class_character.html">Character</a>)</td><td><a class="el" href="class_character.html">Character</a></td><td></td></tr>
@@ -215,7 +215,7 @@ Liste complète des membres de <a class="el" href="class_enemy_view.html">EnemyV
   <div id="nav-path" class="navpath">
     <ul>
 
-    <li class="footer">Généré le Mercredi Avril 1 2015 17:30:51 pour Metal Slug par
+    <li class="footer">Généré le Mercredi Avril 1 2015 20:44:46 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -114,42 +114,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00022"></a>00022 <span class="keyword">using namespace </span>sf;
 <a name="l00023"></a>00023 
 <a name="l00024"></a>00024 
-<a name="l00025"></a>00025 <span class="comment">/***</span>
-<a name="l00026"></a>00026 <span class="comment">* MemberView -&gt; MyDrawable</span>
-<a name="l00027"></a>00027 <span class="comment">* ===========================================================</span>
-<a name="l00028"></a>00028 <span class="comment">* Affichage d&#39;un membre attaché à un Character.</span>
-<a name="l00029"></a>00029 <span class="comment">* EXEMPLE : les jambes du player sont un MemberView car</span>
-<a name="l00030"></a>00030 <span class="comment">* séparées du corps.</span>
-<a name="l00031"></a>00031 <span class="comment">***/</span>
-<a name="l00032"></a>00032 
+<a name="l00025"></a>00025 
+<a name="l00029"></a><a class="code" href="class_member_view.html">00029</a> <span class="keyword">class </span><a class="code" href="class_member_view.html" title="Un membre d&#39;un character destiné à être affiché.">MemberView</a> : <span class="keyword">public</span> <a class="code" href="class_my_drawable.html" title="Un rectangle affichable.">MyDrawable</a>
+<a name="l00030"></a>00030 {
+<a name="l00031"></a>00031         <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_player_view.html" title="Un objet Player affichable.">PlayerView</a>;
+<a name="l00032"></a>00032         <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_enemy_view.html" title="Un objet Enemy affichable.">EnemyView</a>;
 <a name="l00033"></a>00033 
-<a name="l00037"></a><a class="code" href="class_member_view.html">00037</a> <span class="keyword">class </span><a class="code" href="class_member_view.html" title="Un membre d&#39;un character destiné à être affiché.">MemberView</a> : <span class="keyword">public</span> <a class="code" href="class_my_drawable.html" title="Un rectangle affichable.">MyDrawable</a>
-<a name="l00038"></a>00038 {
-<a name="l00039"></a>00039         <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_player_view.html" title="Un objet Player affichable.">PlayerView</a>;
-<a name="l00040"></a>00040         <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_enemy_view.html" title="Un objet Enemy affichable.">EnemyView</a>;
-<a name="l00041"></a>00041 
-<a name="l00042"></a>00042         <span class="keyword">public</span> :
-<a name="l00043"></a>00043                 
-<a name="l00049"></a>00049                 <a class="code" href="class_member_view.html" title="Un membre d&#39;un character destiné à être affiché.">MemberView</a>();
-<a name="l00050"></a>00050 
-<a name="l00056"></a>00056                 ~<a class="code" href="class_member_view.html" title="Un membre d&#39;un character destiné à être affiché.">MemberView</a>();
+<a name="l00034"></a>00034         <span class="keyword">public</span> :
+<a name="l00035"></a>00035                 
+<a name="l00041"></a>00041                 <a class="code" href="class_member_view.html" title="Un membre d&#39;un character destiné à être affiché.">MemberView</a>();
+<a name="l00042"></a>00042 
+<a name="l00048"></a>00048                 ~<a class="code" href="class_member_view.html" title="Un membre d&#39;un character destiné à être affiché.">MemberView</a>();
+<a name="l00049"></a>00049 
+<a name="l00056"></a>00056                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_enemy_view.html#a356c5c35510ac5f4beb7a3181d5d1cf3" title="Affichage.">display</a>(RenderWindow* window);
 <a name="l00057"></a>00057 
-<a name="l00064"></a>00064                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_enemy_view.html#a356c5c35510ac5f4beb7a3181d5d1cf3" title="Affichage.">display</a>(RenderWindow* window);
-<a name="l00065"></a>00065 
-<a name="l00069"></a>00069                 <span class="keywordtype">void</span> <a class="code" href="class_objet_physique.html#a41fa31e44e9fa53f15446865c73a2d43" title="Redéfinit la taille de l&#39;objet.">setSize</a>(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> siz);
-<a name="l00070"></a>00070 
-<a name="l00074"></a>00074                 <span class="keywordtype">void</span> <a class="code" href="class_objet_physique.html#ad4ab5b9b5e713e1ff8e45abd031106f7" title="Redéfinit la position de l&#39;objet.">setPosition</a>(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> pos);
-<a name="l00075"></a>00075 
-<a name="l00079"></a>00079                 Vector2f <a class="code" href="class_objet_physique.html#a0e8595a25635537949c301b1bcf62d3f" title="Retourne la taille de l&#39;objet.">getSize</a>();
-<a name="l00080"></a>00080 
-<a name="l00084"></a>00084                 Vector2f <a class="code" href="class_objet_physique.html#ae537adf900a2bb5eb82a9e36195bf4a5" title="Retourne la position de l&#39;objet.">getPosition</a>();
+<a name="l00061"></a>00061                 <span class="keywordtype">void</span> <a class="code" href="class_objet_physique.html#a41fa31e44e9fa53f15446865c73a2d43" title="Redéfinit la taille de l&#39;objet.">setSize</a>(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> siz);
+<a name="l00062"></a>00062 
+<a name="l00066"></a>00066                 <span class="keywordtype">void</span> <a class="code" href="class_objet_physique.html#ad4ab5b9b5e713e1ff8e45abd031106f7" title="Redéfinit la position de l&#39;objet.">setPosition</a>(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> pos);
+<a name="l00067"></a>00067 
+<a name="l00071"></a>00071                 Vector2f <a class="code" href="class_objet_physique.html#a0e8595a25635537949c301b1bcf62d3f" title="Retourne la taille de l&#39;objet.">getSize</a>();
+<a name="l00072"></a>00072 
+<a name="l00076"></a>00076                 Vector2f <a class="code" href="class_objet_physique.html#ae537adf900a2bb5eb82a9e36195bf4a5" title="Retourne la position de l&#39;objet.">getPosition</a>();
+<a name="l00077"></a>00077 
+<a name="l00081"></a>00081                 <span class="keywordtype">void</span> setTextureRect(IntRect);
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083 };
+<a name="l00084"></a>00084 
 <a name="l00085"></a>00085 
-<a name="l00089"></a>00089                 <span class="keywordtype">void</span> setTextureRect(IntRect);
-<a name="l00090"></a>00090 
-<a name="l00091"></a>00091 };
-<a name="l00092"></a>00092 
-<a name="l00093"></a>00093 
-<a name="l00096"></a>00096 <span class="preprocessor">#endif</span>
+<a name="l00088"></a>00088 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -170,7 +162,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul>
       <li class="navelem"><a class="el" href="_member_view_8h.html">MemberView.h</a>      </li>
 
-    <li class="footer">Généré le Mercredi Avril 1 2015 17:30:51 pour Metal Slug par
+    <li class="footer">Généré le Mercredi Avril 1 2015 20:44:46 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
