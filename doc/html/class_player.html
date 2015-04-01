@@ -149,14 +149,17 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a57057617e828c4d1eb453c62abce3660"></a><!-- doxytag: member="Player::knife" ref="a57057617e828c4d1eb453c62abce3660" args="()" -->
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a57057617e828c4d1eb453c62abce3660">knife</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Attaque au corps à corps. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a3681caeccf7046368d65dc8f430925c0">addWeapon</a> (<a class="el" href="class_weapon.html">Weapon</a> *w)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute une arme au joueur.  <a href="#a3681caeccf7046368d65dc8f430925c0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a6da3afb09244a96ae1c47c29da654e36">addWeapon</a> (<a class="el" href="class_weapon.html#a78ff2a715d795667cd901ef7487f805b">Weapon::TypeWeapon</a> t)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute une arme au joueur.  <a href="#a6da3afb09244a96ae1c47c29da654e36"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#abe9c24068a098ee6d529032d8f582608">setWeapon</a> (int w)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie l'arme courante.  <a href="#abe9c24068a098ee6d529032d8f582608"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa6db3b307154a30c4ad3edf77227fcf8"></a><!-- doxytag: member="Player::getTypeWeapon" ref="aa6db3b307154a30c4ad3edf77227fcf8" args="()" -->
+<a class="el" href="class_weapon.html#a78ff2a715d795667cd901ef7487f805b">Weapon::TypeWeapon</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#aa6db3b307154a30c4ad3edf77227fcf8">getTypeWeapon</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie le type de l'arme courante du joueur. <br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Attributs protégés</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a61c808d878e98b6c54c84c9c8654559a"></a><!-- doxytag: member="Player::armes" ref="a61c808d878e98b6c54c84c9c8654559a" args="" -->
-vector&lt; <a class="el" href="class_weapon.html">Weapon</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a61c808d878e98b6c54c84c9c8654559a">armes</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abebadca7f115991934ca776d789ed1d3"></a><!-- doxytag: member="Player::armes" ref="abebadca7f115991934ca776d789ed1d3" args="" -->
+vector&lt; <a class="el" href="class_weapon.html">Weapon</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#abebadca7f115991934ca776d789ed1d3">armes</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Armes possédées par le joueur. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a03b7de11c2e6a4540bf62563b70f77dd"></a><!-- doxytag: member="Player::current_weapon" ref="a03b7de11c2e6a4540bf62563b70f77dd" args="" -->
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player.html#a03b7de11c2e6a4540bf62563b70f77dd">current_weapon</a></td></tr>
@@ -256,15 +259,15 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 </div>
 </div>
 <hr/><h2>Documentation des fonctions membres</h2>
-<a class="anchor" id="a3681caeccf7046368d65dc8f430925c0"></a><!-- doxytag: member="Player::addWeapon" ref="a3681caeccf7046368d65dc8f430925c0" args="(Weapon *w)" -->
+<a class="anchor" id="a6da3afb09244a96ae1c47c29da654e36"></a><!-- doxytag: member="Player::addWeapon" ref="a6da3afb09244a96ae1c47c29da654e36" args="(Weapon::TypeWeapon t)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_player.html#a3681caeccf7046368d65dc8f430925c0">Player::addWeapon</a> </td>
+          <td class="memname">void <a class="el" href="class_player.html#a6da3afb09244a96ae1c47c29da654e36">Player::addWeapon</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_weapon.html">Weapon</a> *&#160;</td>
-          <td class="paramname"><em>w</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_weapon.html#a78ff2a715d795667cd901ef7487f805b">Weapon::TypeWeapon</a>&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -274,7 +277,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <p>Ajoute une arme au joueur. </p>
 <dl class="params"><dt><b>Paramètres:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">w</td><td>: Arme à ajouter. </td></tr>
+    <tr><td class="paramname">t</td><td>: Type de l'arme à ajouter. </td></tr>
   </table>
   </dd>
 </dl>
@@ -486,7 +489,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
     <ul>
       <li class="navelem"><a class="el" href="class_player.html">Player</a>      </li>
 
-    <li class="footer">Généré le Mercredi Avril 1 2015 20:44:46 pour Metal Slug par
+    <li class="footer">Généré le Mercredi Avril 1 2015 23:21:09 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

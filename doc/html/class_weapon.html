@@ -127,8 +127,8 @@ Types publics</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Énumération des différents types d'armes. <br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#a7f35e78fac0eac7186d1b0cee304aa82">Weapon</a> (<a class="el" href="class_player.html">Player</a> *p, <a class="el" href="class_weapon.html#a78ff2a715d795667cd901ef7487f805b">TypeWeapon</a> <a class="el" href="class_weapon.html#aa7201d49cac2fdc61403446c4545320f">type</a>)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#a7f35e78fac0eac7186d1b0cee304aa82"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#a98b040a68f7d83544fe25facbe87ca77">Weapon</a> (<a class="el" href="class_weapon.html#a78ff2a715d795667cd901ef7487f805b">TypeWeapon</a> <a class="el" href="class_weapon.html#aa7201d49cac2fdc61403446c4545320f">type</a>)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#a98b040a68f7d83544fe25facbe87ca77"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#a42dbc46dd70319a24763992c4ebbd396">Weapon</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#a42dbc46dd70319a24763992c4ebbd396"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#a420e7ba3d2017e6de3e93eb579cfd3fa">~Weapon</a> ()</td></tr>
@@ -140,6 +140,12 @@ Fonctions membres publiques</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a078790938444a5f755dc30e301f8a2aa"></a><!-- doxytag: member="Weapon::reload" ref="a078790938444a5f755dc30e301f8a2aa" args="(int nb)" -->
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#a078790938444a5f755dc30e301f8a2aa">reload</a> (int nb)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Recharger (sera sûrement retiré...) <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0373e4d958879e0241361e763a455065"></a><!-- doxytag: member="Weapon::setOwner" ref="a0373e4d958879e0241361e763a455065" args="(Player *p)" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#a0373e4d958879e0241361e763a455065">setOwner</a> (<a class="el" href="class_player.html">Player</a> *p)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit le propriétaire de l'arme. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7bfbe7c0d67d354547b5c01563fef52d"></a><!-- doxytag: member="Weapon::getType" ref="a7bfbe7c0d67d354547b5c01563fef52d" args="()" -->
+<a class="el" href="class_weapon.html#a78ff2a715d795667cd901ef7487f805b">TypeWeapon</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#a7bfbe7c0d67d354547b5c01563fef52d">getType</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le type de l'arme. <br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Attributs protégés</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adb7178dacdc194ac5b45eaeca2f4b3b6"></a><!-- doxytag: member="Weapon::ammos" ref="adb7178dacdc194ac5b45eaeca2f4b3b6" args="" -->
@@ -154,31 +160,24 @@ Attributs protégés</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa7201d49cac2fdc61403446c4545320f"></a><!-- doxytag: member="Weapon::type" ref="aa7201d49cac2fdc61403446c4545320f" args="" -->
 <a class="el" href="class_weapon.html#a78ff2a715d795667cd901ef7487f805b">TypeWeapon</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#aa7201d49cac2fdc61403446c4545320f">type</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Type de l'arme. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae153f8273fb59dd2b119b8049189c5bb"></a><!-- doxytag: member="Weapon::type_ammo" ref="ae153f8273fb59dd2b119b8049189c5bb" args="" -->
+<a class="el" href="class_ammo.html#af8e34cdcc780ef90b0708f097fc7acea">Ammo::TypeAmmo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_weapon.html#ae153f8273fb59dd2b119b8049189c5bb">type_ammo</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Type des projectiles générés par l'arme. <br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Description détaillée</h2>
 <div class="textblock"><p>Modélise une arme. </p>
 <p>Objet possédé par un <a class="el" href="class_player.html" title="Modélise le joueur.">Player</a>. Il produit des <a class="el" href="class_ammo.html" title="Modélise un projectile.">Ammo</a> lorsque son propriétaire tire. Le type et le nombre de munitions généré est défini en fonction de son type. </p>
 </div><hr/><h2>Documentation des constructeurs et destructeur</h2>
-<a class="anchor" id="a7f35e78fac0eac7186d1b0cee304aa82"></a><!-- doxytag: member="Weapon::Weapon" ref="a7f35e78fac0eac7186d1b0cee304aa82" args="(Player *p, TypeWeapon type)" -->
+<a class="anchor" id="a98b040a68f7d83544fe25facbe87ca77"></a><!-- doxytag: member="Weapon::Weapon" ref="a98b040a68f7d83544fe25facbe87ca77" args="(TypeWeapon type)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_weapon.html#a7f35e78fac0eac7186d1b0cee304aa82">Weapon::Weapon</a> </td>
+          <td class="memname"><a class="el" href="class_weapon.html#a98b040a68f7d83544fe25facbe87ca77">Weapon::Weapon</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_player.html">Player</a> *&#160;</td>
-          <td class="paramname"><em>p</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype"><a class="el" href="class_weapon.html#a78ff2a715d795667cd901ef7487f805b">TypeWeapon</a>&#160;</td>
-          <td class="paramname"><em>type</em>&#160;</td>
-        </tr>
-        <tr>
+          <td class="paramname"><em>type</em></td><td>)</td>
           <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div>
@@ -201,7 +200,7 @@ Attributs protégés</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_weapon.html#a7f35e78fac0eac7186d1b0cee304aa82">Weapon::Weapon</a> </td>
+          <td class="memname"><a class="el" href="class_weapon.html#a98b040a68f7d83544fe25facbe87ca77">Weapon::Weapon</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -320,7 +319,7 @@ Attributs protégés</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_weapon.html">Weapon</a>      </li>
 
-    <li class="footer">Généré le Mercredi Avril 1 2015 20:44:46 pour Metal Slug par
+    <li class="footer">Généré le Mercredi Avril 1 2015 23:21:09 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

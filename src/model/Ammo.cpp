@@ -7,7 +7,7 @@ Ammo::Ammo(Int2 pos, Int2 siz, int m, TypeAmmo type, Float2 movement, Character*
 
 	addMovement(movement);
 	
-	if(type == BULLET || type == HEAVY_BULLET)
+	if(type==BULLET || type==HEAVY_BULLET || type==LIGHT_BULLET)
 		size = Int2(50,12);
 }
 
@@ -56,7 +56,7 @@ void Ammo::animate(int dt)
 		// if(timeup <= 0)
 		// 	state_a = GHOST;
 	}
-	else if(type==BULLET||type==HEAVY_BULLET)
+	else if(type==BULLET || type==HEAVY_BULLET || type==LIGHT_BULLET)
 	{
 		position.x += movement.x*2*dt;
 		position.y += movement.y*2*dt;
@@ -77,19 +77,12 @@ int Ammo::getDamage()
 	int d;
 	switch(type)
 	{
-		case BULLET : 
-		case HEAVY_BULLET : 
-			d = 10;
-			break;
-		case ROCKET :
-			d = 75;
-			break;
-		case GRENADE :
-			d = 50;
-			break;
-		case LASER :
-			d = 5;
-			break;
+		case BULLET       :
+		case HEAVY_BULLET : d = 10; break;
+		case LIGHT_BULLET : d = 5;  break;
+		case ROCKET       : d = 75; break;
+		case GRENADE      : d = 50; break;
+		case LASER        : d = 5;  break;
 	}
 
 	return d;

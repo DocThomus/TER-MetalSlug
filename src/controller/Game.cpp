@@ -60,7 +60,7 @@ void Game::update(Time dt)
 
     for(list<AmmoView*>::iterator a = ammo.begin(); a != ammo.end(); a++)
     {
-        (*a)->animate(t); // animation des amos
+        (*a)->animate(t); // animation des ammos
     }
 
 }   
@@ -114,6 +114,43 @@ void Game::checkKeyboardEvents(RenderWindow* window)
 
     if(Keyboard::isKeyPressed(Keyboard::S))
         player.kneel(true);
+
+
+    /* ARMES AUTOMATIQUES */
+    if(player.getTypeWeapon() == Weapon::SMG)
+    {
+        bool have_shoot = false;
+        Int2 tmp_angle;
+
+        if(Keyboard::isKeyPressed(Keyboard::Right))
+        {
+            have_shoot = true;
+            tmp_angle = Int2(1,0);
+        }
+        else if(Keyboard::isKeyPressed(Keyboard::Left))
+        {
+            have_shoot = true;
+            tmp_angle = Int2(-1,0);
+        }
+        else if(Keyboard::isKeyPressed(Keyboard::Up))
+        {
+            have_shoot = true;
+            tmp_angle = Int2(0,-1);
+        }
+        else if(Keyboard::isKeyPressed(Keyboard::Down))
+        {
+            have_shoot = true;
+            tmp_angle = Int2(0,1);
+        }
+
+        if(have_shoot)
+        {
+            if(!checkKnife())
+                player.shoot(&ammo, tmp_angle);
+            else
+                player.knife();
+        }
+    }
 
 
     Event event;
@@ -371,6 +408,8 @@ void Game::checkCollisions()
                     {
                         (*e)->decreaseHealth((*a)->getDamage());
 
+                        //cout << (*a)->getDamage() << endl;
+                       
                         Int2 e_pos = (*e)->getPosition();
                         Int2 e_siz = (*e)->getSize();
                         
@@ -620,8 +659,9 @@ void Game::loadLevel()
 
 
     /* WEAPON */
-    new Weapon(&player,Weapon::PISTOL);
-    new Weapon(&player,Weapon::SHOTGUN);
+    player.addWeapon(Weapon::PISTOL);
+    player.addWeapon(Weapon::SHOTGUN);
+    player.addWeapon(Weapon::SMG);
     player.setWeapon(0);
 
 

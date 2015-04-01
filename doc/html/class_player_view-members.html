@@ -105,12 +105,12 @@ Liste complète des membres de <a class="el" href="class_player_view.html">Playe
   <tr class="memlist"><td><a class="el" href="class_my_drawable.html#aca2d11c16ecd91dc48676f5db45746a7">addAnimations</a>(vector&lt; Animation &gt; v)</td><td><a class="el" href="class_my_drawable.html">MyDrawable</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_my_drawable.html#aa8a1d18c3480e2e55205d0ec0e27f8dc">addAnimations</a>(string filename)</td><td><a class="el" href="class_my_drawable.html">MyDrawable</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#a34eb4c570856c55dd4a5c3aea3dd2d08">addMovement</a>(Float2 v)</td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_player.html#a3681caeccf7046368d65dc8f430925c0">addWeapon</a>(Weapon *w)</td><td><a class="el" href="class_player.html">Player</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_player.html#a6da3afb09244a96ae1c47c29da654e36">addWeapon</a>(Weapon::TypeWeapon t)</td><td><a class="el" href="class_player.html">Player</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>AIR</b> valeur énumérée (défini dans <a class="el" href="class_character.html">Character</a>)</td><td><a class="el" href="class_character.html">Character</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_player_view.html#a7077a695549cedcfc5fd2a9e1d311c0e">animate</a>(int dt)</td><td><a class="el" href="class_player_view.html">PlayerView</a></td><td><code> [virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_my_drawable.html#a006145f0c78fb6ab3ba448a778fc42ef">animations</a></td><td><a class="el" href="class_my_drawable.html">MyDrawable</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_player_view.html#a12b2ab03e00e5eb29de4610ebdaa3375">animations_list</a></td><td><a class="el" href="class_player_view.html">PlayerView</a></td><td><code> [private, static]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_player.html#a61c808d878e98b6c54c84c9c8654559a">armes</a></td><td><a class="el" href="class_player.html">Player</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_player.html#abebadca7f115991934ca776d789ed1d3">armes</a></td><td><a class="el" href="class_player.html">Player</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_my_drawable.html#aa29e17ceff6fc13cfe239736aa2bd2e8">body</a></td><td><a class="el" href="class_my_drawable.html">MyDrawable</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_character.html#a4e3b1c75b0d7b89d50b45f35b176da0b">bumpLeft</a>(int x)</td><td><a class="el" href="class_character.html">Character</a></td><td><code> [virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_character.html#af8ca6be8037f5f529e00cc2666720fb7">bumpRight</a>(int x)</td><td><a class="el" href="class_character.html">Character</a></td><td><code> [virtual]</code></td></tr>
@@ -134,6 +134,7 @@ Liste complète des membres de <a class="el" href="class_player_view.html">Playe
   <tr class="memlist"><td><a class="el" href="class_character.html#a3af9b69041599702685b6867280ba00c">getStateBattle</a>()</td><td><a class="el" href="class_character.html">Character</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_character.html#afb7e6ae7deb4d323a67f857f6e58168d">getStateGround</a>()</td><td><a class="el" href="class_character.html">Character</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_character.html#aa3b9db208793ec001c15c1ea8f13e388">getStatePosition</a>()</td><td><a class="el" href="class_character.html">Character</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_player.html#aa6db3b307154a30c4ad3edf77227fcf8">getTypeWeapon</a>()</td><td><a class="el" href="class_player.html">Player</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>GROUND</b> valeur énumérée (défini dans <a class="el" href="class_character.html">Character</a>)</td><td><a class="el" href="class_character.html">Character</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_character.html#a24d2b958ff3168646af13858641ae3fe">gunway</a></td><td><a class="el" href="class_character.html">Character</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_character.html#a89b23cab52a6d29a0496d07b45004425">health</a></td><td><a class="el" href="class_character.html">Character</a></td><td><code> [protected]</code></td></tr>
@@ -228,7 +229,7 @@ Liste complète des membres de <a class="el" href="class_player_view.html">Playe
   <div id="nav-path" class="navpath">
     <ul>
 
-    <li class="footer">Généré le Mercredi Avril 1 2015 20:44:46 pour Metal Slug par
+    <li class="footer">Généré le Mercredi Avril 1 2015 23:21:09 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

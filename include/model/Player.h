@@ -39,7 +39,7 @@ class Player : public Character
 	
 	protected :
 		
-		vector<Weapon*> armes; /*!< \brief Armes possédées par le joueur. */
+		vector<Weapon> armes; /*!< \brief Armes possédées par le joueur. */
 		int current_weapon; /*!< \brief Indice de l'arme en cours d'utilisation. */
 
 
@@ -128,15 +128,21 @@ class Player : public Character
 		
 		/*!
 	     * \brief Ajoute une arme au joueur.
-	     * \param w : Arme à ajouter.
+	     * \param t : Type de l'arme à ajouter.
 	     */
-		void addWeapon(Weapon* w);
+		void addWeapon(Weapon::TypeWeapon t);
 
 		/*!
 	     * \brief Modifie l'arme courante.
 	     * \param w : Indice de l'arme à selectionner.
 	     */
 		void setWeapon(int w);
+
+		/*!
+	     * \brief Renvoie le type de l'arme courante du joueur.
+	     */
+		Weapon::TypeWeapon getTypeWeapon();
+
 };
 
 

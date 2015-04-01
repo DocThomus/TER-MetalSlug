@@ -14,11 +14,12 @@
 #include <stdlib.h>
 #include <list>
 #include <ctime>
-#include <stdio.h>
+#include <sys/time.h>
+
+#include <SFML/System.hpp>
 
 #include <model/ObjetPhysique.h>
 #include <model/Ammo.h>
-#include <model/Player.h>
 
 using namespace std;
 
@@ -53,7 +54,8 @@ class Weapon
 		Int2 ammos; /*!< \brief Nombre de munitions restantes. */
 		Int2 angle; /*!< \brief Angle dans lequel l'arme vise (inutile pour le moment...). */
 		Player* owner; /*!< \brief Joueur possédant l'arme. */
-		TypeWeapon type;/*!< \brief Type de l'arme. */
+		TypeWeapon type; /*!< \brief Type de l'arme. */
+		Ammo::TypeAmmo type_ammo; /*!< \brief Type des projectiles générés par l'arme. */
 
 
 	public :
@@ -65,7 +67,7 @@ class Weapon
 	     * \param p : Player destiné à posséder l'arme.
 	     * \param type : Type de l'arme
 	     */
-		Weapon(Player* p, TypeWeapon type);
+		Weapon(TypeWeapon type);
 
 		/*!
 	     * \brief Constructeur
@@ -101,6 +103,17 @@ class Weapon
 	     * \brief Recharger (sera sûrement retiré...)
 	     */
 		void reload(int nb);
+
+
+		/*!
+	     * \brief Définit le propriétaire de l'arme.
+	     */
+		void setOwner(Player* p);
+
+		/*!
+	     * \brief Retourne le type de l'arme.
+	     */
+		TypeWeapon getType();
 
 };
 

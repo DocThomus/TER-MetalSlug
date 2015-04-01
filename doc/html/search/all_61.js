@@ -6,7 +6,7 @@ var searchData=
   ['addframe',['addFrame',['../class_animation.html#a87fed97acd9d96a676a7c4bd96a5fe22',1,'Animation']]],
   ['addmovement',['addMovement',['../class_objet_physique.html#a34eb4c570856c55dd4a5c3aea3dd2d08',1,'ObjetPhysique']]],
   ['addplatform',['addPlatform',['../class_environment.html#a5b6405cb5ca5d6e91ca48bf102af311a',1,'Environment::addPlatform()'],['../class_level.html#a9c3c5ef07cc8a8c5f82a0b2c702499d2',1,'Level::addPlatform()']]],
-  ['addweapon',['addWeapon',['../class_player.html#a3681caeccf7046368d65dc8f430925c0',1,'Player']]],
+  ['addweapon',['addWeapon',['../class_player.html#a6da3afb09244a96ae1c47c29da654e36',1,'Player']]],
   ['ammo',['Ammo',['../class_ammo.html',1,'Ammo'],['../class_game.html#a587a6db19201fef9e82559a7e8233663',1,'Game::ammo()'],['../class_ammo.html#a18a5af90b2d0f646404bf1779f6ef11d',1,'Ammo::Ammo(Int2 pos, Int2 siz, int m, TypeAmmo type, Float2 move, Character *c)'],['../class_ammo.html#a6745bf955cceda43c50dc15c76157e64',1,'Ammo::Ammo()']]],
   ['ammo_2eh',['Ammo.h',['../_ammo_8h.html',1,'']]],
   ['ammos',['ammos',['../class_weapon.html#adb7178dacdc194ac5b45eaeca2f4b3b6',1,'Weapon']]],
@@ -19,5 +19,5 @@ var searchData=
   ['animations',['animations',['../class_my_drawable.html#a006145f0c78fb6ab3ba448a778fc42ef',1,'MyDrawable']]],
   ['animations_5flist',['animations_list',['../class_enemy_view.html#ae823ab1e84c51fee9ec399c4e5f8eac4',1,'EnemyView::animations_list()'],['../class_player_view.html#a12b2ab03e00e5eb29de4610ebdaa3375',1,'PlayerView::animations_list()']]],
   ['applyconfig',['applyConfig',['../class_game.html#af68e607c3b163ebf906c19be8c13505d',1,'Game']]],
-  ['armes',['armes',['../class_player.html#a61c808d878e98b6c54c84c9c8654559a',1,'Player']]]
+  ['armes',['armes',['../class_player.html#abebadca7f115991934ca776d789ed1d3',1,'Player']]]
 ];

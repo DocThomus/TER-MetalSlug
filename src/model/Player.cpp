@@ -64,8 +64,10 @@ void Player::print(ostream& os) const
 
 
 
-void Player::addWeapon(Weapon* w)
+void Player::addWeapon(Weapon::TypeWeapon t)
 {
+    Weapon w(t);
+    w.setOwner(this);
 	armes.push_back(w);
 	current_weapon = armes.size()-1;
 }
@@ -78,6 +80,12 @@ void Player::setWeapon(int w)
 }
 
 
+Weapon::TypeWeapon Player::getTypeWeapon()
+{
+    return armes[current_weapon].getType();
+}
+
+
 
 void Player::shoot(list<Ammo*>* air, Float2 angle)
 {
@@ -85,7 +93,7 @@ void Player::shoot(list<Ammo*>* air, Float2 angle)
 	{
         if(angle.y<=0 || state_g==AIR)
         {
-    		armes[current_weapon]->shoot(air,angle);
+    		armes[current_weapon].shoot(air,angle);
     		state_b = SHOOT;
     		if(state_p == KNELT && angle.x!=0)
     			walkway = angle.x;
@@ -106,9 +114,10 @@ void Player::die()
 	cout << "Je suis mort." << endl;
 }
 
+
 void Player::reload(int nb)
 {
-	armes[current_weapon]->reload(nb);
+	armes[current_weapon].reload(nb);
 }
 
 
@@ -140,3 +149,5 @@ void Player::kneel(bool b)
 {
 	Character::kneel(b);
 }
+
+

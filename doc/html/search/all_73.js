@@ -8,6 +8,7 @@ var searchData=
   ['setmass',['setMass',['../class_objet_physique.html#ac5fe6bbd5c934782aab5e3e87472d506',1,'ObjetPhysique']]],
   ['setnextanim',['setNextAnim',['../class_animation.html#a6e823464e233a158fc86963b2952e565',1,'Animation']]],
   ['setnextframe',['setNextFrame',['../class_animation.html#a13611326ffce319134767e04d15265ef',1,'Animation::setNextFrame()'],['../class_my_drawable.html#ac71129db833c8d46d303e7fed4150df0',1,'MyDrawable::setNextFrame()']]],
+  ['setowner',['setOwner',['../class_weapon.html#a0373e4d958879e0241361e763a455065',1,'Weapon']]],
   ['setposition',['setPosition',['../class_objet_physique.html#ad4ab5b9b5e713e1ff8e45abd031106f7',1,'ObjetPhysique::setPosition()'],['../class_member_view.html#a11b0e1d27bc5a9ce4be91900649aa745',1,'MemberView::setPosition()']]],
   ['setrepeat',['setRepeat',['../class_animation.html#aa88e87c6c461f5c858de6c4d1429864c',1,'Animation']]],
   ['setsize',['setSize',['../class_objet_physique.html#a41fa31e44e9fa53f15446865c73a2d43',1,'ObjetPhysique::setSize()'],['../class_member_view.html#ab60c2597c82889176816085d28d0fb94',1,'MemberView::setSize()']]],

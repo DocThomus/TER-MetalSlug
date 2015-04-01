@@ -1,25 +1,33 @@
 #include "model/Weapon.h"
+#include <model/Player.h>
 
 
 
-
-Weapon::Weapon(Player* p, TypeWeapon type)
-:owner(p), type(type)
+Weapon::Weapon(TypeWeapon t)
+:type(t)
 {
-	p->addWeapon(this);
-
-	switch(type)
+	switch(t)
 	{
 		case PISTOL :
 			ammos = Int2(9999999,9999999);
+			type_ammo = Ammo::BULLET;
 			break;
 
 		case SHOTGUN :
 			ammos = Int2(12,12);
+			type_ammo = Ammo::HEAVY_BULLET;
+			break;
+
+		case SMG :
+			ammos = Int2(128,128);
+			type_ammo = Ammo::LIGHT_BULLET;
 			break;
 
 		default :
-			ammos = Int2(100,100);
+			type = PISTOL;
+			ammos = Int2(9999999,9999999);
+			type_ammo = Ammo::BULLET;
+			break;
 	}
 }
 
@@ -49,31 +57,35 @@ void Weapon::shoot(list<Ammo*>* air, Float2 angle)
 	/* CADENCE DE TIR */
 	double cadence;
 
-	switch(type)
+	switch(type) // définir la cadence en millisecondes
 	{
-		case PISTOL :
-			cadence = 0;
-			break;
-
-		case SHOTGUN :
-			cadence = 30;
-			break;
-
-		default :
-			cadence = 0;
-			break;
+		case PISTOL  : cadence = 0;  break;
+		case SHOTGUN : cadence = 500; break;
+		case SMG     : cadence = 60;  break;
+		default      : cadence = 0;  break;
 	}
 
 	bool cadence_ok = true;
 
-	static clock_t start = 0;
+	static int elapsed = -1;	
+	static sf::Clock clock;
 	
-	if(start == 0)
-		start = clock();
-	else if((double)(clock()-start)/(double)(CLOCKS_PER_SEC/double(1000.0)) >= cadence)
-		start = clock();
-	else
-		cadence_ok = false;
+	if(cadence > 0)
+	{
+		if(elapsed == -1)
+		{
+			elapsed = 0;
+			clock.restart();
+		}
+		else
+		{	
+			elapsed = clock.getElapsedTime().asMilliseconds();
+			if(elapsed >= cadence)
+				clock.restart();
+			else
+				cadence_ok = false;
+		}
+	}
 
 
 	if(ammos.x>0 && cadence_ok)
@@ -108,12 +120,12 @@ void Weapon::shoot(list<Ammo*>* air, Float2 angle)
 		switch(type)
 		{
 			case PISTOL :
-				air->push_back(new Ammo(pos,siz,0,Ammo::BULLET,angle,owner));
+				air->push_back(new Ammo(pos,siz,0,type_ammo,angle,owner));
 				ammos.x--;
 				break;
 
 			case SMG :
-				air->push_back(new Ammo(pos,siz,0,Ammo::BULLET,angle,owner));
+				air->push_back(new Ammo(pos,siz,0,type_ammo,angle,owner));
 				ammos.x--;
 				break;
 
@@ -128,7 +140,7 @@ void Weapon::shoot(list<Ammo*>* air, Float2 angle)
 						tmp.x+=i;
 					if((angle.x<0 && angle.y<0) || (angle.x>0 && angle.y>0))
 						tmp.x-=i*2;
-					air->push_back(new Ammo(pos,siz,0,Ammo::HEAVY_BULLET,tmp,owner));
+					air->push_back(new Ammo(pos,siz,0,type_ammo,tmp,owner));
 				}
 				ammos.x--;
 				break;
@@ -146,4 +158,18 @@ void Weapon::reload(int nb)
 	ammos.x += nb;
 	if(ammos.x>ammos.y)
 		ammos.x = ammos.y;
+}
+
+
+
+void Weapon::setOwner(Player* p)
+{
+	owner = p;
+}
+
+
+
+Weapon::TypeWeapon Weapon::getType()
+{
+	return type;
 }

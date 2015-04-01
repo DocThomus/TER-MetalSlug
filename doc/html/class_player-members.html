@@ -102,10 +102,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="contents">
 Liste complète des membres de <a class="el" href="class_player.html">Player</a>, y compris les membres hérités :<table>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#a34eb4c570856c55dd4a5c3aea3dd2d08">addMovement</a>(Float2 v)</td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_player.html#a3681caeccf7046368d65dc8f430925c0">addWeapon</a>(Weapon *w)</td><td><a class="el" href="class_player.html">Player</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_player.html#a6da3afb09244a96ae1c47c29da654e36">addWeapon</a>(Weapon::TypeWeapon t)</td><td><a class="el" href="class_player.html">Player</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>AIR</b> valeur énumérée (défini dans <a class="el" href="class_character.html">Character</a>)</td><td><a class="el" href="class_character.html">Character</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_player.html#a7a4cd01baf9751a32129da6160ee8684">animate</a>(int dt)</td><td><a class="el" href="class_player.html">Player</a></td><td><code> [virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_player.html#a61c808d878e98b6c54c84c9c8654559a">armes</a></td><td><a class="el" href="class_player.html">Player</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_player.html#abebadca7f115991934ca776d789ed1d3">armes</a></td><td><a class="el" href="class_player.html">Player</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_character.html#a4e3b1c75b0d7b89d50b45f35b176da0b">bumpLeft</a>(int x)</td><td><a class="el" href="class_character.html">Character</a></td><td><code> [virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_character.html#af8ca6be8037f5f529e00cc2666720fb7">bumpRight</a>(int x)</td><td><a class="el" href="class_character.html">Character</a></td><td><code> [virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_character.html#ae82bbdcfdf2299c234e9be5e635da55f">bumpTop</a>(int h)</td><td><a class="el" href="class_character.html">Character</a></td><td><code> [virtual]</code></td></tr>
@@ -121,6 +121,7 @@ Liste complète des membres de <a class="el" href="class_player.html">Player</a>
   <tr class="memlist"><td><a class="el" href="class_character.html#a3af9b69041599702685b6867280ba00c">getStateBattle</a>()</td><td><a class="el" href="class_character.html">Character</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_character.html#afb7e6ae7deb4d323a67f857f6e58168d">getStateGround</a>()</td><td><a class="el" href="class_character.html">Character</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_character.html#aa3b9db208793ec001c15c1ea8f13e388">getStatePosition</a>()</td><td><a class="el" href="class_character.html">Character</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_player.html#aa6db3b307154a30c4ad3edf77227fcf8">getTypeWeapon</a>()</td><td><a class="el" href="class_player.html">Player</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>GROUND</b> valeur énumérée (défini dans <a class="el" href="class_character.html">Character</a>)</td><td><a class="el" href="class_character.html">Character</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_character.html#a24d2b958ff3168646af13858641ae3fe">gunway</a></td><td><a class="el" href="class_character.html">Character</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_character.html#a89b23cab52a6d29a0496d07b45004425">health</a></td><td><a class="el" href="class_character.html">Character</a></td><td><code> [protected]</code></td></tr>
@@ -147,8 +148,8 @@ Liste complète des membres de <a class="el" href="class_player.html">Player</a>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#ad4ab5b9b5e713e1ff8e45abd031106f7">setPosition</a>(Int2 pos)</td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#a41fa31e44e9fa53f15446865c73a2d43">setSize</a>(Int2 siz)</td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_player.html#abe9c24068a098ee6d529032d8f582608">setWeapon</a>(int w)</td><td><a class="el" href="class_player.html">Player</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_player.html#ad055b223f6de1d39092c2fe4258758c8">shoot</a>(list&lt; Ammo * &gt; *air, Float2 angle=Float2(1., 0.))</td><td><a class="el" href="class_player.html">Player</a></td><td><code> [virtual]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>SHOOT</b> valeur énumérée (défini dans <a class="el" href="class_character.html">Character</a>)</td><td><a class="el" href="class_character.html">Character</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_player.html#ad055b223f6de1d39092c2fe4258758c8">shoot</a>(list&lt; Ammo * &gt; *air, Float2 angle=Float2(1., 0.))</td><td><a class="el" href="class_player.html">Player</a></td><td><code> [virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#a8b560415dc0a1f38e8cf3e8a24b1c9aa">size</a></td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td><code> [protected]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>STAR</b> valeur énumérée (défini dans <a class="el" href="class_character.html">Character</a>)</td><td><a class="el" href="class_character.html">Character</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_character.html#ad8c4d05547d5de6c3b4796803cb004ef">star_cpt</a></td><td><a class="el" href="class_character.html">Character</a></td><td><code> [protected]</code></td></tr>
@@ -183,7 +184,7 @@ Liste complète des membres de <a class="el" href="class_player.html">Player</a>
   <div id="nav-path" class="navpath">
     <ul>
 
-    <li class="footer">Généré le Mercredi Avril 1 2015 20:44:46 pour Metal Slug par
+    <li class="footer">Généré le Mercredi Avril 1 2015 23:21:09 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

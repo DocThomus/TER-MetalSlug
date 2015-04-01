@@ -14,6 +14,8 @@ var searchData=
   ['getstatebattle',['getStateBattle',['../class_character.html#a3af9b69041599702685b6867280ba00c',1,'Character']]],
   ['getstateground',['getStateGround',['../class_character.html#afb7e6ae7deb4d323a67f857f6e58168d',1,'Character']]],
   ['getstateposition',['getStatePosition',['../class_character.html#aa3b9db208793ec001c15c1ea8f13e388',1,'Character']]],
+  ['gettype',['getType',['../class_weapon.html#a7bfbe7c0d67d354547b5c01563fef52d',1,'Weapon']]],
+  ['gettypeweapon',['getTypeWeapon',['../class_player.html#aa6db3b307154a30c4ad3edf77227fcf8',1,'Player']]],
   ['getwalkline',['getWalkline',['../class_platform.html#a049044d7556fdc27bbe0714439451058',1,'Platform']]],
   ['gunway',['gunway',['../class_character.html#a24d2b958ff3168646af13858641ae3fe',1,'Character']]]
 ];

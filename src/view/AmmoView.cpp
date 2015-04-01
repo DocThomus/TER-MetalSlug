@@ -68,6 +68,13 @@ void AmmoView::initRessources()
 			changeAnimation(0,false);
 			sounds[HEAVY_BULLET]->play();
 			break;
+
+		case LIGHT_BULLET :
+			setTexture(textures[BULLET]);
+			addAnimations("res/xml/ammo/bullet.xml");
+			changeAnimation(0,false);
+			sounds[BULLET]->play();
+			break;
 	}
 }
 
