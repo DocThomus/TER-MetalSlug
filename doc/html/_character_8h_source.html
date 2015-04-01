@@ -119,11 +119,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00033"></a>00033 
 <a name="l00034"></a>00034         <span class="keyword">public</span> :
 <a name="l00035"></a>00035 
-<a name="l00040"></a><a class="code" href="class_character.html#a0504a5097fb6ff7679bb4f5408386bf2">00040</a>                 <span class="keyword">enum</span> <a class="code" href="class_character.html#a0504a5097fb6ff7679bb4f5408386bf2" title="Positions possibles du personnage.">StatePosition</a> {WAIT,RUN,KNELT};
+<a name="l00040"></a><a class="code" href="class_character.html#a0504a5097fb6ff7679bb4f5408386bf2">00040</a>                 <span class="keyword">enum</span> <a class="code" href="class_character.html#a0504a5097fb6ff7679bb4f5408386bf2" title="Positions possibles du personnage.">StatePosition</a> {WAIT, RUN, KNELT};
 <a name="l00041"></a>00041 
-<a name="l00046"></a><a class="code" href="class_character.html#a13feb8dcd3af1c802c2b1f545c955561">00046</a>                 <span class="keyword">enum</span> <a class="code" href="class_character.html#a13feb8dcd3af1c802c2b1f545c955561" title="États du personnage vis-a-vis du sol.">StateGround</a> {GROUND,AIR};
+<a name="l00046"></a><a class="code" href="class_character.html#a13feb8dcd3af1c802c2b1f545c955561">00046</a>                 <span class="keyword">enum</span> <a class="code" href="class_character.html#a13feb8dcd3af1c802c2b1f545c955561" title="États du personnage vis-a-vis du sol.">StateGround</a> {GROUND, AIR};
 <a name="l00047"></a>00047 
-<a name="l00052"></a><a class="code" href="class_character.html#a8251340f461ab396f975b18dce58229d">00052</a>                 <span class="keyword">enum</span> <a class="code" href="class_character.html#a8251340f461ab396f975b18dce58229d" title="Actions pouvant être effectuée par un personnage.">StateBattle</a> {NORMAL,SHOOT,DEAD,KNIFE,STAR};
+<a name="l00052"></a><a class="code" href="class_character.html#a8251340f461ab396f975b18dce58229d">00052</a>                 <span class="keyword">enum</span> <a class="code" href="class_character.html#a8251340f461ab396f975b18dce58229d" title="Actions pouvant être effectuée par un personnage.">StateBattle</a> {NORMAL, SHOOT, DEAD, KNIFE, STAR};
 <a name="l00053"></a>00053 
 <a name="l00054"></a>00054 
 <a name="l00055"></a>00055         <span class="keyword">protected</span> :
@@ -171,17 +171,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00170"></a>00170 
 <a name="l00177"></a>00177                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> shoot(list&lt;Ammo*&gt;* air, <a class="code" href="class_float2.html" title="Stockage de deux flottants.">Float2</a> angle = <a class="code" href="class_float2.html" title="Stockage de deux flottants.">Float2</a>(1.,0.));
 <a name="l00178"></a>00178 
-<a name="l00182"></a>00182                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> die();
+<a name="l00182"></a>00182                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> knife();
 <a name="l00183"></a>00183 
-<a name="l00189"></a>00189                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> walk(<span class="keywordtype">int</span> way);
-<a name="l00190"></a>00190 
-<a name="l00197"></a>00197                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> kneel(<span class="keywordtype">bool</span> b);
-<a name="l00198"></a>00198                 
-<a name="l00199"></a>00199 };
-<a name="l00200"></a>00200 
-<a name="l00201"></a>00201 
-<a name="l00202"></a>00202 
-<a name="l00205"></a>00205 <span class="preprocessor">#endif</span>
+<a name="l00187"></a>00187                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> die();
+<a name="l00188"></a>00188 
+<a name="l00194"></a>00194                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> walk(<span class="keywordtype">int</span> way);
+<a name="l00195"></a>00195 
+<a name="l00202"></a>00202                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> kneel(<span class="keywordtype">bool</span> b);
+<a name="l00203"></a>00203                 
+<a name="l00204"></a>00204 };
+<a name="l00205"></a>00205 
+<a name="l00206"></a>00206 
+<a name="l00207"></a>00207 
+<a name="l00210"></a>00210 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -189,7 +191,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Amis</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -202,7 +204,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul>
       <li class="navelem"><a class="el" href="_character_8h.html">Character.h</a>      </li>
 
-    <li class="footer">Généré le Mardi Mars 31 2015 19:46:39 pour Metal Slug par
+    <li class="footer">Généré le Mercredi Avril 1 2015 17:30:51 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

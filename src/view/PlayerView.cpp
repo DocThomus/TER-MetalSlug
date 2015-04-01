@@ -72,7 +72,9 @@ void PlayerView::display(RenderWindow* window)
 	Vector2f body_size = body.getSize();
 	Vector2f legs_pos = legs.getPosition();
 
-	if(state_b == SHOOT) // tirer
+	if(state_b == KNIFE && current_anim==PISTOLKNIFE2) // corps à corps 
+		body.setPosition(Vector2f(legs_pos.x-((body_size.x-legs_size.x)/2),legs_pos.y-body_size.y+30));
+	else if(state_b == SHOOT) // tirer
 	{
 		if(gunway.x > 0 && gunway.y == 0) // tirer à droite
 			body.setPosition(Vector2f(position.x+15,position.y));
@@ -85,7 +87,7 @@ void PlayerView::display(RenderWindow* window)
 	}
 	else // marcher
 	{
-		if(walkway>0) // marcher à droite
+		if(walkway > 0) // marcher à droite
 			body.setPosition(Vector2f(position.x+15,position.y));
 		else // marcher à gauche
 			body.setPosition(Vector2f(position.x+size.x-body_size.x-15,position.y));
@@ -103,6 +105,7 @@ void PlayerView::display(RenderWindow* window)
 	// body.setOutlineColor(Color::Black);
 	// legs.body.setOutlineThickness(5);
 	// legs.body.setOutlineColor(Color::Black);
+
 
 	/* DESSIN */
 	if(state_p != KNELT)
@@ -135,24 +138,11 @@ void PlayerView::animate(int dt)
 		cpt_l = 0;
 	}
 
-	/* CHANGEMENT D'ANIMATION : JAMBES */
-	if(state_g == Character::AIR)
-		legs.changeAnimation(JUMP,false);
-	else if(state_p == Character::RUN)
-		legs.changeAnimation(RUN);
-	else
-		legs.changeAnimation(STAND);
 
 	/* CHANGEMENT D'ANIMATION : CORPS */
-	if(state_b == SHOOT)
-	{
+	if(state_b == SHOOT || state_b == KNIFE)
 		if(current_anim==PISTOLRUN || current_anim==PISTOLKNEE)
 			state_b = NORMAL;
-	}
-	else if(state_p == KNELT)
-		changeAnimation(PISTOLKNEE);
-	else
-		changeAnimation(PISTOLRUN);
 
 	/* MISE A JOUR DE LA SELECTION DE LA TEXTURE */
 	updateIntRect();
@@ -194,6 +184,32 @@ void PlayerView::updateIntRect()
 void PlayerView::walk(int way)
 {
 	Player::walk(way);
+	if(state_g == GROUND)
+	{
+		if(way == 0)
+			legs.changeAnimation(STAND);
+		else
+			legs.changeAnimation(RUN);
+	}
+	updateIntRect();
+}
+
+
+void PlayerView::jump(int h)
+{
+	Character::jump(h);
+	legs.changeAnimation(JUMP,false);
+	updateIntRect();
+}
+
+
+void PlayerView::land(int h)
+{
+	Character::land(h);
+	if(state_p == WAIT)
+		legs.changeAnimation(STAND);
+	else if(state_p == Character::RUN)
+		legs.changeAnimation(RUN);
 	updateIntRect();
 }
 
@@ -268,6 +284,22 @@ void PlayerView::shoot(list<AmmoView*>* air, Int2 angle)
     }
 }
 
+
+
+void PlayerView::knife()
+{
+    Player::knife();
+
+    PlayerAnimationsBody knife1 = PISTOLKNIFE;
+    PlayerAnimationsBody knife2 = PISTOLKNIFE2;
+
+    srand(time(NULL));
+
+    if(rand()%2)
+    	changeAnimation(knife1,false,PISTOLRUN);
+    else
+    	changeAnimation(knife2,false,PISTOLRUN);
+}
 
 
 

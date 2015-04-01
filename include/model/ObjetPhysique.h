@@ -23,6 +23,9 @@ using namespace std;
  */
 class ObjetPhysique
 {
+	/*!\relates operator <<
+	 * \brief Pour afficher les information d'un objet dans le flux standard.
+	 */
 	friend ostream& operator << (ostream& os, const ObjetPhysique& obj);
 
 	protected :

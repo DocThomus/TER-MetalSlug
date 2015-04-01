@@ -39,7 +39,7 @@ class Item : public ObjetPhysique
 	     * \enum TypeItem
 	     * \brief Types possibles de l'objet Item.
 	     */
-		enum TypeItem {HEALTH,WEAPON,INVINCIBLE,CHICKEN,INVERT,AMMO};
+		enum TypeItem {HEALTH, WEAPON, INVINCIBLE, CHICKEN, INVERT, AMMO};
 	
 	
 	protected :
@@ -50,14 +50,47 @@ class Item : public ObjetPhysique
 
 	public :
 
-		
-		Item(Int2 pos, Int2 siz, int m, TypeItem type);
+		/*!
+	     * \brief Constructeur
+	     *
+	     * Constructeur complet de la classe Item
+	     * \param pos : Position de l'item.
+	     * \param type : TYpe de l'item.
+	     */
+		Item(Int2 pos, TypeItem type);
+
+		/*!
+	     * \brief Constructeur
+	     *
+	     * Constructeur par défaut de la classe Item
+	     */
 		Item();
+
+		/*!
+	     * \brief Destructeur
+	     *
+	     * Destructeur de la classe Item
+	     */
 		~Item();
 
+		/*!
+	     * \brief Debug
+	     *
+	     * Affiche des informations sur l'objet.
+	     * \param os : Flux sur lequel afficher.
+	     */
 		void print(ostream& os) const;
 
+		/*!
+	     * \brief Déclenchement
+	     *
+	     * Applique l'effet de l'item sur le joueur qui le ramasse.
+	     */
 		void trigger(Player* p);
+
+		/*!
+	     * \brief Définit le type d'arme que donne l'item lorsqu'il est de type WEAPON.
+	     */
 		void setTypeWeapon(Weapon::TypeWeapon type);
 
 

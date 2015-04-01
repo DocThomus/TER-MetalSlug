@@ -18,6 +18,7 @@ var class_character =
     [ "increaseHealth", "class_character.html#a4181640e5e5375fa0eb8667f9887bdb3", null ],
     [ "jump", "class_character.html#a03919943ec22c86d4734bfef710a34f0", null ],
     [ "kneel", "class_character.html#ab0bb62cadb18af5a44c965e6b2ef95d8", null ],
+    [ "knife", "class_character.html#afdc7a144f61f53532f8357e5199572b8", null ],
     [ "land", "class_character.html#a5f6cab334d9b7801114878f0b4c8aa85", null ],
     [ "print", "class_character.html#a933630a522b20aaaf5e411c2c3642124", null ],
     [ "setInvicibility", "class_character.html#ab9f0c66cb8fc37d804e9bf9a568abf97", null ],

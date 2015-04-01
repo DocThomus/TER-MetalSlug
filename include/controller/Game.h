@@ -44,7 +44,7 @@ class EnnemyView;
 
 
 /*! \class Game
- * \brief Gère le jeu lolu.
+ * \brief Gère le jeu.
  *
  * Gère les objets du jeu : 
  * - Application de la configuration
@@ -141,8 +141,10 @@ class Game
 	     * Vérifie si deux ObjetPhysique s'intersectent.
 	     * \param obj1 : Objet 1
 	     * \param obj2 : Objet 2
+	     * \param epsilon_x : Intervalle d'erreur horizontal
+	     * \param epsilon_y : Intervalle d'erreur vertical
 	     */
-		bool checkIntersect(ObjetPhysique* obj1, ObjetPhysique* obj2);
+		bool checkIntersect(ObjetPhysique* obj1, ObjetPhysique* obj2, int epsilon_x=0, int epsilon_y=0);
 
 		/*!
 	     * \brief Vérification de la collision haute
@@ -179,6 +181,14 @@ class Game
 	     * \param obj2 : Objet 2
 	     */
 		bool checkCollisionRight(ObjetPhysique* obj1, ObjetPhysique* obj2);
+
+		/*!
+	     * \brief Décision d'attaque
+	     *
+	     * Décide si le player doit attaquer au corps à corps ou au couteau.
+	     * \return TRUE si le joueur attaque au corps à corps, FALSE s'il attaque à distance.
+	     */
+		bool checkKnife();
 
 		/*!
 	     * \brief Suppression des objets obsolète

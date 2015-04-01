@@ -44,14 +44,17 @@ class Int2 {
 
 	public :
 	
-		int x;
-		int y;
+		int x; /*!< \brief Entier 1 */
+		int y; /*!< \brief Entier 2 */
 		
-		Int2(int i=0,int j=0);
-		Int2(const Int2& u);
-		~Int2();
+		Int2(int i=0,int j=0); /*!< \brief Constructeur */
+		Int2(const Int2& u); /*!< \brief Constructeur par copie */
+		~Int2(); /*!< \brief Destructeur */
 
-		inline friend std::ostream& operator << (std::ostream& os, const Int2& i)
+		/*!\relates operator <<
+		 * \brief Pour afficher les information d'un objet dans le flux standard.
+		 */
+		inline friend ostream& operator << (std::ostream& os, const Int2& i)
 		{
 			os << "(" << i.x << "," << i.y << ")";
 			return os; 
@@ -72,14 +75,17 @@ class Float2 {
 
 	public :
 	
-		float x;
-		float y;
+		float x; /*!< \brief Float 1 */
+		float y; /*!< \brief Float 2 */
 		
-		Float2(float i=0,float j=0);
-		Float2(const Float2& u);
-		Float2(const Int2& u);
-		~Float2();
+		Float2(float i=0,float j=0); /*!< \brief Constructeur */
+		Float2(const Float2& u); /*!< \brief Constructeur par copie */
+		Float2(const Int2& u); /*!< \brief Construction à partir d'un Int2 */
+		~Float2(); /*!< \brief Destructeur */
 
+		/*!\relates operator <<
+		 * \brief Pour afficher les information d'un objet dans le flux standard.
+		 */
 		inline friend std::ostream& operator << (std::ostream& os, const Float2& i)
 		{
 			os << "(" << i.x << "," << i.y << ")";
@@ -99,14 +105,17 @@ class Bool2 {
 
 	public :
 	
-		bool x;
-		bool y;
+		bool x; /*!< \brief Booléen 1 */
+		bool y; /*!< \brief Booléen 2 */
 		
-		Bool2(bool i=0,bool j=0);
-		Bool2(const Bool2& u);
-		Bool2(const Int2& u);
-		~Bool2();
+		Bool2(bool i=0,bool j=0); /*!< \brief Constructeur */
+		Bool2(const Bool2& u); /*!< \brief Constructeur par copie*/
+		Bool2(const Int2& u); /*!< \brief Constructeur à partir d'un Int2 */
+		~Bool2(); /*!< \brief Destructeur */
 
+		/*!\relates operator <<
+		 * \brief Pour afficher les information d'un objet dans le flux standard.
+		 */
 		inline friend std::ostream& operator << (std::ostream& os, const Bool2& i)
 		{
 			os << "(" << i.x << "," << i.y << ")";

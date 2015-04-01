@@ -105,7 +105,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="Game" -->
-<p>Gère le jeu lolu.  
+<p>Gère le jeu.  
  <a href="class_game.html#details">Plus de détails...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_game_8h_source.html">Game.h</a>&gt;</code></p>
@@ -128,8 +128,8 @@ Fonctions membres publiques</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gestion des événements clavier.  <a href="#af57ecf47190bba6e37edc9cb11522f52"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a7e3fb34f2df395a6af6011ff830dae6e">checkCollisions</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gestion des collisions.  <a href="#a7e3fb34f2df395a6af6011ff830dae6e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a13ec8b87405086c617124eedfaba811a">checkIntersect</a> (<a class="el" href="class_objet_physique.html">ObjetPhysique</a> *obj1, <a class="el" href="class_objet_physique.html">ObjetPhysique</a> *obj2)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérification de l'intersection.  <a href="#a13ec8b87405086c617124eedfaba811a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#aa3618ff76df0d054fa778fb6ab169cba">checkIntersect</a> (<a class="el" href="class_objet_physique.html">ObjetPhysique</a> *obj1, <a class="el" href="class_objet_physique.html">ObjetPhysique</a> *obj2, int epsilon_x=0, int epsilon_y=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérification de l'intersection.  <a href="#aa3618ff76df0d054fa778fb6ab169cba"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ac50f3539ebb2cccbbc539ec17b111e00">checkCollisionTop</a> (<a class="el" href="class_objet_physique.html">ObjetPhysique</a> *obj1, <a class="el" href="class_objet_physique.html">ObjetPhysique</a> *obj2)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérification de la collision haute.  <a href="#ac50f3539ebb2cccbbc539ec17b111e00"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a58775d7501843b4e455b582a9e15207f">checkCollisionBottom</a> (<a class="el" href="class_objet_physique.html">ObjetPhysique</a> *obj1, <a class="el" href="class_objet_physique.html">ObjetPhysique</a> *obj2)</td></tr>
@@ -138,6 +138,8 @@ Fonctions membres publiques</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérification de la collision gauche.  <a href="#a89555bc2a4c38cec721216228cf87fb7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ace2ed6f23dd20ab62cd56eb473112758">checkCollisionRight</a> (<a class="el" href="class_objet_physique.html">ObjetPhysique</a> *obj1, <a class="el" href="class_objet_physique.html">ObjetPhysique</a> *obj2)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérification de la collision droite.  <a href="#ace2ed6f23dd20ab62cd56eb473112758"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a2dd7c1e94edb0ea51c6164529b141ab5">checkKnife</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Décision d'attaque.  <a href="#a2dd7c1e94edb0ea51c6164529b141ab5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a3d637f57afa75d0932fb303c7b3baa4a">deleteDeadObjects</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Suppression des objets obsolète.  <a href="#a3d637f57afa75d0932fb303c7b3baa4a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#af68e607c3b163ebf906c19be8c13505d">applyConfig</a> (RenderWindow *window)</td></tr>
@@ -184,7 +186,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>EventGame</b></td></
 class&#160;</td><td class="memItemRight" valign="bottom"><b>EventEnemy</b></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Description détaillée</h2>
-<div class="textblock"><p>Gère le jeu lolu. </p>
+<div class="textblock"><p>Gère le jeu. </p>
 <p>Gère les objets du jeu :</p>
 <ul>
 <li>Application de la configuration</li>
@@ -210,7 +212,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>EventEnemy</b></td><
 <div class="memdoc">
 
 <p>Constructeur. </p>
-<p>Constructeur par défaut de la classe <a class="el" href="class_game.html" title="Gère le jeu lolu.">Game</a> </p>
+<p>Constructeur par défaut de la classe <a class="el" href="class_game.html" title="Gère le jeu.">Game</a> </p>
 
 </div>
 </div>
@@ -229,7 +231,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>EventEnemy</b></td><
 <div class="memdoc">
 
 <p>Destructeur. </p>
-<p>Destructeur de la classe <a class="el" href="class_game.html" title="Gère le jeu lolu.">Game</a> </p>
+<p>Destructeur de la classe <a class="el" href="class_game.html" title="Gère le jeu.">Game</a> </p>
 
 </div>
 </div>
@@ -433,12 +435,12 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>EventEnemy</b></td><
 
 </div>
 </div>
-<a class="anchor" id="a13ec8b87405086c617124eedfaba811a"></a><!-- doxytag: member="Game::checkIntersect" ref="a13ec8b87405086c617124eedfaba811a" args="(ObjetPhysique *obj1, ObjetPhysique *obj2)" -->
+<a class="anchor" id="aa3618ff76df0d054fa778fb6ab169cba"></a><!-- doxytag: member="Game::checkIntersect" ref="aa3618ff76df0d054fa778fb6ab169cba" args="(ObjetPhysique *obj1, ObjetPhysique *obj2, int epsilon_x=0, int epsilon_y=0)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="class_game.html#a13ec8b87405086c617124eedfaba811a">Game::checkIntersect</a> </td>
+          <td class="memname">bool <a class="el" href="class_game.html#aa3618ff76df0d054fa778fb6ab169cba">Game::checkIntersect</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_objet_physique.html">ObjetPhysique</a> *&#160;</td>
           <td class="paramname"><em>obj1</em>, </td>
@@ -447,7 +449,19 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>EventEnemy</b></td><
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="class_objet_physique.html">ObjetPhysique</a> *&#160;</td>
-          <td class="paramname"><em>obj2</em>&#160;</td>
+          <td class="paramname"><em>obj2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>epsilon_x</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>epsilon_y</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -464,6 +478,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>EventEnemy</b></td><
   <table class="params">
     <tr><td class="paramname">obj1</td><td>: Objet 1 </td></tr>
     <tr><td class="paramname">obj2</td><td>: Objet 2 </td></tr>
+    <tr><td class="paramname">epsilon_x</td><td>: Intervalle d'erreur horizontal </td></tr>
+    <tr><td class="paramname">epsilon_y</td><td>: Intervalle d'erreur vertical </td></tr>
   </table>
   </dd>
 </dl>
@@ -493,6 +509,26 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>EventEnemy</b></td><
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="a2dd7c1e94edb0ea51c6164529b141ab5"></a><!-- doxytag: member="Game::checkKnife" ref="a2dd7c1e94edb0ea51c6164529b141ab5" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_game.html#a2dd7c1e94edb0ea51c6164529b141ab5">Game::checkKnife</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Décision d'attaque. </p>
+<p>Décide si le player doit attaquer au corps à corps ou au couteau. </p>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>TRUE si le joueur attaque au corps à corps, FALSE s'il attaque à distance. </dd></dl>
 
 </div>
 </div>
@@ -615,7 +651,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>EventEnemy</b></td><
 <div class="memdoc">
 
 <p>Définition d'une configuration. </p>
-<p>Défini une configuration au <a class="el" href="class_game.html" title="Gère le jeu lolu.">Game</a>. </p>
+<p>Défini une configuration au <a class="el" href="class_game.html" title="Gère le jeu.">Game</a>. </p>
 
 </div>
 </div>
@@ -681,7 +717,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>EventEnemy</b></td><
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Amis</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -694,7 +730,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>EventEnemy</b></td><
     <ul>
       <li class="navelem"><a class="el" href="class_game.html">Game</a>      </li>
 
-    <li class="footer">Généré le Mardi Mars 31 2015 19:46:39 pour Metal Slug par
+    <li class="footer">Généré le Mercredi Avril 1 2015 17:30:51 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

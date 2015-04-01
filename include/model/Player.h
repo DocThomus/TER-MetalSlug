@@ -129,6 +129,11 @@ class Player : public Character
 		virtual void shoot(list<Ammo*>* air, Float2 angle = Float2(1,0));
 
 		/*!
+	     * \brief Attaque au corps à corps.
+	     */
+		virtual void knife();
+		
+		/*!
 	     * \brief Ajoute une arme au joueur.
 	     * \param w : Arme à ajouter.
 	     */

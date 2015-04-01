@@ -5,7 +5,7 @@ var searchData=
   ['textures',['textures',['../class_game.html#a95312ba25ca3fcd1298d6b06c7b75f8c',1,'Game::textures()'],['../class_ammo_view.html#ac3b803c90b1683f1630d6bdb9349e899',1,'AmmoView::textures()'],['../class_enemy_view.html#aa6bd0110d6c761c24251ca3e705f58b3',1,'EnemyView::textures()'],['../class_player_view.html#a0b2a510f8f1b5b509ba3fe3448e4feaf',1,'PlayerView::textures()']]],
   ['tools_2eh',['tools.h',['../tools_8h.html',1,'']]],
   ['tostring',['toString',['../group___tools.html#ga6714a4d8eefdf4e9f9e79033b6919686',1,'tools.h']]],
-  ['trigger',['trigger',['../class_event_enemy.html#ab17a295cdae37e47bc1e34369aa6162c',1,'EventEnemy::trigger()'],['../class_event_game.html#a12bf126932bf52073e8e9c378336b6c9',1,'EventGame::trigger()']]],
+  ['trigger',['trigger',['../class_event_enemy.html#ab17a295cdae37e47bc1e34369aa6162c',1,'EventEnemy::trigger()'],['../class_event_game.html#a12bf126932bf52073e8e9c378336b6c9',1,'EventGame::trigger()'],['../class_item.html#ab596e007031a85aad5c9903af5e8473c',1,'Item::trigger()']]],
   ['type',['type',['../class_ammo.html#a33bf445c93551e3eff75f352a4a6ae38',1,'Ammo::type()'],['../class_enemy.html#a53f4c66c8dbc8213f9273126b67f80cf',1,'Enemy::type()'],['../class_item.html#ae92dc62097380acdf02ca1dda7766395',1,'Item::type()'],['../class_weapon.html#aa7201d49cac2fdc61403446c4545320f',1,'Weapon::type()']]],
   ['type_5fweapon',['type_weapon',['../class_item.html#ab2031aa97673760e2a3a3c90fee03e15',1,'Item']]],
   ['typeammo',['TypeAmmo',['../class_ammo.html#af8e34cdcc780ef90b0708f097fc7acea',1,'Ammo']]],

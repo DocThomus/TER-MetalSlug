@@ -121,7 +121,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00035"></a>00035 
 <a name="l00036"></a>00036         <span class="keyword">public</span> :
 <a name="l00037"></a>00037 
-<a name="l00042"></a><a class="code" href="class_item.html#a3636d9623ed7b945c9de6a2a8e032676">00042</a>                 <span class="keyword">enum</span> <a class="code" href="class_item.html#a3636d9623ed7b945c9de6a2a8e032676" title="Types possibles de l&#39;objet Item.">TypeItem</a> {HEALTH,WEAPON,INVINCIBLE,CHICKEN,INVERT,AMMO};
+<a name="l00042"></a><a class="code" href="class_item.html#a3636d9623ed7b945c9de6a2a8e032676">00042</a>                 <span class="keyword">enum</span> <a class="code" href="class_item.html#a3636d9623ed7b945c9de6a2a8e032676" title="Types possibles de l&#39;objet Item.">TypeItem</a> {HEALTH, WEAPON, INVINCIBLE, CHICKEN, INVERT, AMMO};
 <a name="l00043"></a>00043         
 <a name="l00044"></a>00044         
 <a name="l00045"></a>00045         <span class="keyword">protected</span> :
@@ -130,21 +130,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00048"></a><a class="code" href="class_item.html#ab2031aa97673760e2a3a3c90fee03e15">00048</a>                 <a class="code" href="class_weapon.html#a78ff2a715d795667cd901ef7487f805b" title="Énumération des différents types d&#39;armes.">Weapon::TypeWeapon</a> <a class="code" href="class_item.html#ab2031aa97673760e2a3a3c90fee03e15" title="Type de l&#39;arme donnée par l&#39;item.">type_weapon</a>; 
 <a name="l00051"></a>00051         <span class="keyword">public</span> :
 <a name="l00052"></a>00052 
-<a name="l00053"></a>00053                 
-<a name="l00054"></a>00054                 <a class="code" href="class_item.html" title="Modélise un item.">Item</a>(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> pos, <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> siz, <span class="keywordtype">int</span> m, <a class="code" href="class_item.html#a3636d9623ed7b945c9de6a2a8e032676" title="Types possibles de l&#39;objet Item.">TypeItem</a> type);
-<a name="l00055"></a>00055                 <a class="code" href="class_item.html" title="Modélise un item.">Item</a>();
-<a name="l00056"></a>00056                 ~<a class="code" href="class_item.html" title="Modélise un item.">Item</a>();
-<a name="l00057"></a>00057 
-<a name="l00058"></a>00058                 <span class="keywordtype">void</span> print(ostream&amp; os) <span class="keyword">const</span>;
-<a name="l00059"></a>00059 
-<a name="l00060"></a>00060                 <span class="keywordtype">void</span> trigger(<a class="code" href="class_player.html" title="Modélise le joueur.">Player</a>* p);
-<a name="l00061"></a>00061                 <span class="keywordtype">void</span> setTypeWeapon(<a class="code" href="class_weapon.html#a78ff2a715d795667cd901ef7487f805b" title="Énumération des différents types d&#39;armes.">Weapon::TypeWeapon</a> type);
-<a name="l00062"></a>00062 
-<a name="l00063"></a>00063 
-<a name="l00064"></a>00064 };
-<a name="l00065"></a>00065 
-<a name="l00066"></a>00066 
-<a name="l00069"></a>00069 <span class="preprocessor">#endif</span>
+<a name="l00060"></a>00060                 <a class="code" href="class_item.html" title="Modélise un item.">Item</a>(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> pos, <a class="code" href="class_item.html#a3636d9623ed7b945c9de6a2a8e032676" title="Types possibles de l&#39;objet Item.">TypeItem</a> type);
+<a name="l00061"></a>00061 
+<a name="l00067"></a>00067                 <a class="code" href="class_item.html" title="Modélise un item.">Item</a>();
+<a name="l00068"></a>00068 
+<a name="l00074"></a>00074                 ~<a class="code" href="class_item.html" title="Modélise un item.">Item</a>();
+<a name="l00075"></a>00075 
+<a name="l00082"></a>00082                 <span class="keywordtype">void</span> print(ostream&amp; os) <span class="keyword">const</span>;
+<a name="l00083"></a>00083 
+<a name="l00089"></a>00089                 <span class="keywordtype">void</span> trigger(<a class="code" href="class_player.html" title="Modélise le joueur.">Player</a>* p);
+<a name="l00090"></a>00090 
+<a name="l00094"></a>00094                 <span class="keywordtype">void</span> setTypeWeapon(<a class="code" href="class_weapon.html#a78ff2a715d795667cd901ef7487f805b" title="Énumération des différents types d&#39;armes.">Weapon::TypeWeapon</a> type);
+<a name="l00095"></a>00095 
+<a name="l00096"></a>00096 
+<a name="l00097"></a>00097 };
+<a name="l00098"></a>00098 
+<a name="l00099"></a>00099 
+<a name="l00102"></a>00102 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -152,7 +154,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Amis</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -165,7 +167,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul>
       <li class="navelem"><a class="el" href="_item_8h.html">Item.h</a>      </li>
 
-    <li class="footer">Généré le Mardi Mars 31 2015 19:46:39 pour Metal Slug par
+    <li class="footer">Généré le Mercredi Avril 1 2015 17:30:51 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

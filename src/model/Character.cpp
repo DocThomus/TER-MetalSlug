@@ -153,6 +153,13 @@ void Character::shoot(list<Ammo*>* air, Float2 angle)
 }
 
 
+void Character::knife()
+{
+    if(state_b == NORMAL)
+        state_b = KNIFE;
+}
+
+
 void Character::die()
 {
     cout << "Je suis mort." << endl;

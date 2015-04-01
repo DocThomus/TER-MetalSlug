@@ -8,7 +8,8 @@ var searchData=
   ['checkcollisionright',['checkCollisionRight',['../class_game.html#ace2ed6f23dd20ab62cd56eb473112758',1,'Game']]],
   ['checkcollisions',['checkCollisions',['../class_game.html#a7e3fb34f2df395a6af6011ff830dae6e',1,'Game']]],
   ['checkcollisiontop',['checkCollisionTop',['../class_game.html#ac50f3539ebb2cccbbc539ec17b111e00',1,'Game']]],
-  ['checkintersect',['checkIntersect',['../class_game.html#a13ec8b87405086c617124eedfaba811a',1,'Game']]],
+  ['checkintersect',['checkIntersect',['../class_game.html#aa3618ff76df0d054fa778fb6ab169cba',1,'Game']]],
   ['checkkeyboardevents',['checkKeyboardEvents',['../class_game.html#af57ecf47190bba6e37edc9cb11522f52',1,'Game']]],
+  ['checkknife',['checkKnife',['../class_game.html#a2dd7c1e94edb0ea51c6164529b141ab5',1,'Game']]],
   ['config',['Config',['../class_config.html#abd0c571c116924871e30444b192b792a',1,'Config']]]
 ];

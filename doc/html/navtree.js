@@ -10,7 +10,8 @@ var NAVTREE =
         [ "Tout", "functions.html", "functions_dup" ],
         [ "Fonctions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", null ],
-        [ "Énumérations", "functions_enum.html", null ]
+        [ "Énumérations", "functions_enum.html", null ],
+        [ "Fonctions associées", "functions_rela.html", null ]
       ] ]
     ] ],
     [ "Fichiers", null, [

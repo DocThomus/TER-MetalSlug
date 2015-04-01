@@ -59,6 +59,7 @@ void Game::update(Time dt)
     {
         (*a)->animate(t); // animation des amos
     }
+
 }   
 
 
@@ -170,19 +171,31 @@ void Game::checkKeyboardEvents(RenderWindow* window)
 
                 /* TIRER */
                 case Keyboard::Right :
-                    player.shoot(&ammo, Int2(1,0));
+                    if(!checkKnife())
+                        player.shoot(&ammo, Int2(1,0));
+                    else
+                        player.knife();
                     break;
 
                 case Keyboard::Left :
-                    player.shoot(&ammo, Int2(-1,0));
+                    if(!checkKnife())
+                        player.shoot(&ammo, Int2(-1,0));
+                    else
+                        player.knife();
                     break;
 
                 case Keyboard::Up :
-                    player.shoot(&ammo, Int2(0,-1));
+                    if(!checkKnife())
+                        player.shoot(&ammo, Int2(0,-1));
+                    else
+                        player.knife();
                     break;
 
                 case Keyboard::Down :
-                    player.shoot(&ammo, Int2(0,1));
+                    if(!checkKnife())
+                        player.shoot(&ammo, Int2(0,1));
+                    else
+                        player.knife();
                     break;
 
 
@@ -200,7 +213,7 @@ void Game::checkKeyboardEvents(RenderWindow* window)
 
                 /* TEST */
                 case Keyboard::P :
-                    enemies.front()->die();
+                
                     break;
             }
         }
@@ -260,7 +273,7 @@ void Game::checkCollisions()
         ObjetPhysique* p_ptr = (ObjetPhysique*)(&player);
         ObjetPhysique* pl_ptr = (ObjetPhysique*)(&*pl);
 
-        if(checkIntersect(p_ptr,pl_ptr))
+        if(checkIntersect(p_ptr,pl_ptr,-20))
         {
             collision = true; 
             if(checkCollisionTop(p_ptr,pl_ptr))
@@ -371,7 +384,7 @@ void Game::checkCollisions()
 
 
 
-bool Game::checkIntersect(ObjetPhysique* obj1, ObjetPhysique* obj2) // Renvoie True si il y a une collision (peu importe de quel côté)
+bool Game::checkIntersect(ObjetPhysique* obj1, ObjetPhysique* obj2, int epsilon_x, int epsilon_y) // Renvoie True si il y a une collision (peu importe de quel côté)
 {
     Int2 pos1 = obj1->getPosition();
     Int2 pos2 = obj2->getPosition();
@@ -379,10 +392,10 @@ bool Game::checkIntersect(ObjetPhysique* obj1, ObjetPhysique* obj2) // Renvoie T
     Int2 siz2 = obj2->getSize();
     Float2 mov1 = obj1->getMovement();
 
-    if(pos1.x + 20 > pos2.x + siz2.x  // p1(gauche) a droite de   p2(droite)
-    || pos1.x + siz1.x - 20 < pos2.x  // p1(droite) a gauche de   p2(gauche)
-    || pos1.y > pos2.y + siz2.y  // p1(haut)   au dessous de p2(bas)
-    || pos1.y + siz1.y < pos2.y) // p1(bas)    au dessus de  p2(haut) 
+    if(pos1.x - epsilon_x > pos2.x + siz2.x  // p1(gauche) a droite de   p2(droite)
+    || pos1.x + siz1.x < pos2.x - epsilon_x  // p1(droite) a gauche de   p2(gauche)
+    || pos1.y - epsilon_y > pos2.y + siz2.y  // p1(haut)   au dessous de p2(bas)
+    || pos1.y + siz1.y < pos2.y - epsilon_y) // p1(bas)    au dessus de  p2(haut) 
         return false;
     else
         return true;
@@ -468,6 +481,26 @@ bool Game::checkCollisionRight(ObjetPhysique* obj1, ObjetPhysique* obj2) {
     else
         return false;
 }
+
+
+
+bool Game::checkKnife()
+{
+    bool tmp = false;
+
+    for(list<EnemyView*>::iterator e = enemies.begin(); (*e)->getStateBattle()!=Character::DEAD && e!=enemies.end(); e++)
+    {
+        if(checkIntersect((ObjetPhysique*)(&player),(ObjetPhysique*)(*e),30,30))
+        {
+            (*e)->die();
+            tmp = true;
+        }
+    }
+
+    return tmp;
+}
+
+
 
 
 void Game::deleteDeadObjects()

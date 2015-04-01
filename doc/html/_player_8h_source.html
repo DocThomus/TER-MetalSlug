@@ -156,13 +156,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00121"></a>00121 
 <a name="l00129"></a>00129                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> shoot(list&lt;Ammo*&gt;* air, <a class="code" href="class_float2.html" title="Stockage de deux flottants.">Float2</a> angle = <a class="code" href="class_float2.html" title="Stockage de deux flottants.">Float2</a>(1,0));
 <a name="l00130"></a>00130 
-<a name="l00135"></a>00135                 <span class="keywordtype">void</span> addWeapon(<a class="code" href="class_weapon.html" title="Modélise une arme.">Weapon</a>* w);
-<a name="l00136"></a>00136 
-<a name="l00141"></a>00141                 <span class="keywordtype">void</span> setWeapon(<span class="keywordtype">int</span> w);
-<a name="l00142"></a>00142 };
-<a name="l00143"></a>00143 
-<a name="l00144"></a>00144 
-<a name="l00147"></a>00147 <span class="preprocessor">#endif</span>
+<a name="l00134"></a>00134                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> knife();
+<a name="l00135"></a>00135                 
+<a name="l00140"></a>00140                 <span class="keywordtype">void</span> addWeapon(<a class="code" href="class_weapon.html" title="Modélise une arme.">Weapon</a>* w);
+<a name="l00141"></a>00141 
+<a name="l00146"></a>00146                 <span class="keywordtype">void</span> setWeapon(<span class="keywordtype">int</span> w);
+<a name="l00147"></a>00147 };
+<a name="l00148"></a>00148 
+<a name="l00149"></a>00149 
+<a name="l00152"></a>00152 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -170,7 +172,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Amis</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -183,7 +185,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul>
       <li class="navelem"><a class="el" href="_player_8h.html">Player.h</a>      </li>
 
-    <li class="footer">Généré le Mardi Mars 31 2015 19:46:39 pour Metal Slug par
+    <li class="footer">Généré le Mercredi Avril 1 2015 17:30:51 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

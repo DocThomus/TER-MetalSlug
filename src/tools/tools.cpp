@@ -4,7 +4,6 @@
 
 /*============== FONCTIONS UTILES ==============*/
 
-/* CONVERSION VERS STRING */
 template <typename T> string toString(const T& t) { 
     ostringstream os; 
     os<<t; 

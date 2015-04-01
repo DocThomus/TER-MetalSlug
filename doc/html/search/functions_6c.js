@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['land',['land',['../class_character.html#a5f6cab334d9b7801114878f0b4c8aa85',1,'Character']]],
+  ['land',['land',['../class_character.html#a5f6cab334d9b7801114878f0b4c8aa85',1,'Character::land()'],['../class_player_view.html#ab0a40b4af1c890d9f8c4a2391565c8c4',1,'PlayerView::land()']]],
   ['level',['Level',['../class_level.html#a7a696c928ca5d5354db6e50e46d0f67d',1,'Level']]],
   ['loadfromxml',['loadFromXML',['../class_config.html#a90cf27253c0e1ec6a8b6a09d966a9dda',1,'Config']]],
   ['loadlevel',['loadLevel',['../class_game.html#a9713f011d2d0d3ef4a37aa07d7951947',1,'Game']]],

@@ -81,7 +81,7 @@ void Player::setWeapon(int w)
 
 void Player::shoot(list<Ammo*>* air, Float2 angle)
 {
-	if(armes.size()>0) // si on a une arme
+	if(armes.size()>0 && state_b!=KNIFE) // si on a une arme
 	{
         if(angle.y<=0 || state_g==AIR)
         {
@@ -91,6 +91,12 @@ void Player::shoot(list<Ammo*>* air, Float2 angle)
     			walkway = angle.x;
         }
 	}
+}
+
+
+void Player::knife()
+{
+    Character::knife();
 }
 
 

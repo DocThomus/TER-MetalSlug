@@ -37,19 +37,19 @@ class Character : public ObjetPhysique
 	     * \enum StatePosition
 	     * \brief Positions possibles du personnage.
 	     */
-		enum StatePosition {WAIT,RUN,KNELT};
+		enum StatePosition {WAIT, RUN, KNELT};
 
 		/*!
 	     * \enum StateGround
 	     * \brief États du personnage vis-a-vis du sol.
 	     */
-		enum StateGround {GROUND,AIR};
+		enum StateGround {GROUND, AIR};
 
 		/*!
 	     * \enum StateBattle
 	     * \brief Actions pouvant être effectuée par un personnage.
 	     */
-		enum StateBattle {NORMAL,SHOOT,DEAD,KNIFE,STAR};
+		enum StateBattle {NORMAL, SHOOT, DEAD, KNIFE, STAR};
 
 
 	protected :
@@ -175,6 +175,11 @@ class Character : public ObjetPhysique
 	     * \param angle : Direction dans laquelle le personnage tire.
 	     */
 		virtual void shoot(list<Ammo*>* air, Float2 angle = Float2(1.,0.));
+
+		/*!
+	     * \brief Attaque au corps à corps.
+	     */
+		virtual void knife();
 
 		/*!
 	     * \brief Le personnage meurt.

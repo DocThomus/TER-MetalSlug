@@ -7,6 +7,7 @@ var class_player =
     [ "animate", "class_player.html#a7a4cd01baf9751a32129da6160ee8684", null ],
     [ "die", "class_player.html#a78337a7b31308fd517809111249a268d", null ],
     [ "kneel", "class_player.html#ac678e7578308bdcf4d5819eb2bdbeb59", null ],
+    [ "knife", "class_player.html#a57057617e828c4d1eb453c62abce3660", null ],
     [ "print", "class_player.html#a7a337e9b2394c4c3edd90d8e99832a7c", null ],
     [ "reload", "class_player.html#a9b8265a19fd07e246f8e9c052f291e81", null ],
     [ "setWeapon", "class_player.html#abe9c24068a098ee6d529032d8f582608", null ],

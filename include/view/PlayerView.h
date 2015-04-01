@@ -45,6 +45,7 @@ class PlayerView : public Player, public MyDrawable
 		enum PlayerAnimationsBody
 		{
 			PISTOLRUN, PISTOLSHOOT, PISTOLSHOOTUP, PISTOLSHOOTDOWN,
+			PISTOLKNIFE, PISTOLKNIFE2,
 			PISTOLKNEE, PISTOLKNEESHOOT, PISTOLKNEESHOOTUP
 		};
 
@@ -139,6 +140,16 @@ class PlayerView : public Player, public MyDrawable
 		void walk(int way);
 
 		/*!
+	     * \brief Fait sauter le personnage d'une hauteur h.
+	     */
+		virtual void jump(int h);
+
+		/*!
+	     * \brief Fait atterir le personnage sur une position verticale h. 
+	     */
+		virtual void land(int h);
+
+		/*!
 	     * \brief À genoux.
 	     *
 	     * Fait se mettre à genoux le joueur (ou se lever).
@@ -154,6 +165,11 @@ class PlayerView : public Player, public MyDrawable
 	     * \param angle : Direction dans laquelle le personnage tire.
 	     */
 		virtual void shoot(list<AmmoView*>* air, Int2 angle = Int2(1,0));
+
+		/*!
+	     * \brief Attaque au corps à corps.
+	     */
+		virtual void knife();
 };
 
 

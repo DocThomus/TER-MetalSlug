@@ -1,8 +1,12 @@
 #include "model/Item.h"
 
-Item::Item(Int2 pos, Int2 siz, int m, TypeItem type)
-:ObjetPhysique(pos,siz,m), type(type), type_weapon(Weapon::PISTOL)
-{}
+Item::Item(Int2 pos, TypeItem type)
+:ObjetPhysique(), type(type), type_weapon(Weapon::PISTOL)
+{
+	setPosition(pos);
+
+	/* TRAITEMENT EN FONCTION DU TYPE */
+}
 
 
 
