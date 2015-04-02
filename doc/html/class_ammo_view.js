@@ -9,8 +9,7 @@ var class_ammo_view =
     [ "display", "class_ammo_view.html#a351f5630a29e0bb6b7e7afe05018d177", null ],
     [ "initRessources", "class_ammo_view.html#a6cd4f2ef795a388af31278807275fe7a", null ],
     [ "initRotation", "class_ammo_view.html#adfcb245219da55d4dee4c8a069dddeff", null ],
-    [ "loadSounds", "class_ammo_view.html#a0d0c1da980c6e86d2689dd1d755a49e3", null ],
-    [ "loadTextures", "class_ammo_view.html#acd24b699c24cd114746fa759f6109a63", null ],
+    [ "loadRessources", "class_ammo_view.html#aeec183f2c94861457033bbb74ec05acf", null ],
     [ "sounds", "class_ammo_view.html#a3458ee1fe227248689c93850016b2f52", null ],
     [ "textures", "class_ammo_view.html#ac3b803c90b1683f1630d6bdb9349e899", null ]
 ];

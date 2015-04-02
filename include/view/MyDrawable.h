@@ -44,6 +44,7 @@ class MyDrawable
 		int current_anim; /*!< \brief Animation courante. */
 		Texture* tex; /*!< \brief Texture à appliquer au rectangle. */
 		Bool2 repeat_tex; /*!< \brief Indique si la texture doit être répétée horizontalement et/ou verticalement. */
+		int cpt_time; /*!< \brief Compteur du temps écoulé pour le changement de frame. */
 
 	public :
 		

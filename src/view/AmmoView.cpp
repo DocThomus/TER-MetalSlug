@@ -8,12 +8,6 @@ vector<Sound*> AmmoView::sounds;
 AmmoView::AmmoView()
 :Ammo(),MyDrawable()
 {
-	if(int(textures.size())<=0)
-		loadTextures();
-	
-	if(int(sounds.size())<=0)
-		loadSounds();
-
 	body.setSize(Vector2f(size.x,size.y));
 	body.setOrigin(size.x/2,size.y/2);
 	initRotation();
@@ -28,12 +22,6 @@ AmmoView::AmmoView()
 AmmoView::AmmoView(Ammo a)
 :Ammo(a),MyDrawable()
 {
-	if(int(textures.size())<=0)
-		loadTextures();
-	
-	if(int(sounds.size())<=0)
-		loadSounds();
-
 	body.setSize(Vector2f(size.x,size.y));
 	body.setOrigin(size.x/2,size.y/2);
 	initRotation();
@@ -138,18 +126,22 @@ void AmmoView::initRotation()
 
 
 
-void AmmoView::loadTextures()
+void AmmoView::loadRessources()
 {
+	if(textures.size() > 0)
+		return;
+
+	/* === TEXTURES === */
+
 	/* BULLET */
 	Texture* tex = new Texture();
     tex->loadFromFile("res/tex/ammo/bullet.png");
     textures.push_back(tex);
-}
 
+   
+    /* === SONS === */
 
-void AmmoView::loadSounds()
-{
-	/* BULLET */
+    /* BULLET */
 	SoundBuffer* buffer = new SoundBuffer();
 	buffer->loadFromFile("res/snd/weapon/bullet.wav");
     Sound* s = new Sound();
@@ -162,8 +154,8 @@ void AmmoView::loadSounds()
     s = new Sound();
     s->setBuffer(*buffer);
     sounds.push_back(s);
-
 }
+
 
 
 void AmmoView::deleteRessources()

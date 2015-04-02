@@ -24,9 +24,10 @@ EnemyView::EnemyView(Int2 pos, TypeEnemy t)
 	{
 		setTexture(textures[REBEL]);
 		addAnimations(animations_list[REBEL]);
-		changeAnimation(1);
-		updateIntRect();
+		changeAnimation(0);
 	}
+
+	body.setSize(Vector2f(size.x,size.y));
 }
 
 
@@ -45,19 +46,21 @@ EnemyView::~EnemyView()
 
 void EnemyView::init()
 {
-	changeAnimation(0);
 }
 
 
 
 void EnemyView::display(RenderWindow* window)
 {
-	body.setSize(Vector2f(size.x,size.y));
-	body.setPosition(Vector2f(position.x,position.y));
+	Vector2f body_siz = body.getSize();
 
+	body.setPosition(Vector2f(position.x+(size.x-body_siz.x)/2,position.y+size.y-body_siz.y));
+
+	/* DEBUG */
 	// body.setOutlineThickness(5);
 	// body.setOutlineColor(Color::Black);
 
+	/* DESSIN */
 	window->draw(body);
 }
 
@@ -67,31 +70,14 @@ void EnemyView::animate(int dt)
 {
 	Enemy::animate(dt);
 
-	bool change = false;
-
 	/* CHANGEMENT DE FRAME */
-	static int cpt = 0;
-	cpt += dt;
-	if(cpt >= 100)
+	cpt_time += dt;
+	if(cpt_time >= animations[current_anim].getSpeed())
 	{
 		setNextFrame();
-		cpt = 0;
-		change = true;
+		cpt_time = 0;
 	}
 
-
-	/* CHANGEMENT D'ANIMATION */
-	if(state_b == DEAD)
-	{
-		static int cpt_die = 0;
-		cpt_die += dt;
-	}
-
-
-
-	/* MISE A JOUR DE LA SELECTION DE LA TEXTURE */
-	if(change)
-		updateIntRect();
 }
 
 
@@ -135,7 +121,7 @@ void EnemyView::shoot(list<AmmoView*>* air, Int2 angle)
 void EnemyView::die()
 {
 	state_b = DEAD;
-	changeAnimation(2,false);
+	changeAnimation(1,false);
 	sounds[0]->play();
 }
 
@@ -149,20 +135,23 @@ void EnemyView::loadRessources(TypeEnemy t)
 	SoundBuffer* buffer;
 	Sound* s;
 
+	if(textures[t] != NULL)
+		return;
+
 	/* REBEL */
-	if(t == REBEL && textures[REBEL]==NULL)
+	if(t == REBEL)
 	{
-		// texture
+		// TEXTURE
 		Texture* tex = new Texture();
 	    tex->loadFromFile("res/tex/enemy/rebel.png");
 	    textures[REBEL] = tex;
 
-	    // animation
+	    // ANIMATION
 	    animations_list[REBEL] = loadSpriteFromFile("res/xml/enemy/rebel.xml");
 
-	    // death sound
+	    // SOUNDS
 		buffer = new SoundBuffer();
-		buffer->loadFromFile("res/snd/enemy/death1.wav");
+		buffer->loadFromFile("res/snd/enemy/death1.wav"); // DEATH
 	    s = new Sound();
 	    s->setBuffer(*buffer);
 	    sounds.push_back(s);

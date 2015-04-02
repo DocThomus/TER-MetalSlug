@@ -134,27 +134,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00057"></a>00057 
 <a name="l00063"></a>00063                 ~<a class="code" href="class_ammo_view.html" title="Un objet Ammo affichable et sonore.">AmmoView</a>();
 <a name="l00064"></a>00064 
-<a name="l00071"></a>00071                 <span class="keyword">static</span> <span class="keywordtype">void</span> loadTextures();
+<a name="l00071"></a>00071                 <span class="keyword">static</span> <span class="keywordtype">void</span> loadRessources();
 <a name="l00072"></a>00072 
-<a name="l00079"></a>00079                 <span class="keyword">static</span> <span class="keywordtype">void</span> loadSounds();
-<a name="l00080"></a>00080 
-<a name="l00086"></a>00086                 <span class="keyword">static</span> <span class="keywordtype">void</span> deleteRessources();
-<a name="l00087"></a>00087 
-<a name="l00091"></a>00091                 <span class="keywordtype">void</span> initRessources();
+<a name="l00078"></a>00078                 <span class="keyword">static</span> <span class="keywordtype">void</span> deleteRessources();
+<a name="l00079"></a>00079 
+<a name="l00083"></a>00083                 <span class="keywordtype">void</span> initRessources();
+<a name="l00084"></a>00084 
+<a name="l00091"></a>00091                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> display(RenderWindow* window);
 <a name="l00092"></a>00092 
-<a name="l00099"></a>00099                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> display(RenderWindow* window);
-<a name="l00100"></a>00100 
+<a name="l00093"></a>00093 
+<a name="l00100"></a>00100                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> animate(<span class="keywordtype">int</span> dt);
 <a name="l00101"></a>00101 
-<a name="l00108"></a>00108                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> animate(<span class="keywordtype">int</span> dt);
+<a name="l00108"></a>00108                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> die(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> pos);
 <a name="l00109"></a>00109 
-<a name="l00116"></a>00116                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> die(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> pos);
-<a name="l00117"></a>00117 
-<a name="l00123"></a>00123                 <span class="keywordtype">void</span> initRotation();
-<a name="l00124"></a>00124 
-<a name="l00125"></a>00125 };
-<a name="l00126"></a>00126 
-<a name="l00127"></a>00127 
-<a name="l00130"></a>00130 <span class="preprocessor">#endif</span>
+<a name="l00115"></a>00115                 <span class="keywordtype">void</span> initRotation();
+<a name="l00116"></a>00116 
+<a name="l00117"></a>00117 };
+<a name="l00118"></a>00118 
+<a name="l00119"></a>00119 
+<a name="l00122"></a>00122 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -175,7 +173,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul>
       <li class="navelem"><a class="el" href="_ammo_view_8h.html">AmmoView.h</a>      </li>
 
-    <li class="footer">Généré le Mercredi Avril 1 2015 23:21:08 pour Metal Slug par
+    <li class="footer">Généré le Jeudi Avril 2 2015 21:11:57 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

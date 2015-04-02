@@ -1,254 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
 <document>
-	<animation num="0">
-		<sprite num="0">
-			<position x="31" y="0"/>
-			<size w="30" h="29"/>
-		</sprite>
-		<sprite num="1">
-			<position x="64" y="0"/>
-			<size w="31" h="28"/>
-		</sprite>
-		<sprite num="2">
-			<position x="98" y="0"/>
-			<size w="32" h="28"/>
-		</sprite>
+	<!-- PISTOLRUN -->
+	<animation speed="200">
+		<sprite x="0" y="0"  w="28" h="29"/>
+		<sprite x="32" y="0" w="29" h="29"/>
+		<sprite x="65" y="0" w="30" h="28"/>
+		<sprite x="99" y="1" w="31" h="27"/>
 	</animation>
-	<animation num="1">
-		<sprite num="3">
-			<position x="55" y="48"/>
-			<size w="52" h="24"/>
-		</sprite>
-		<sprite num="4">
-			<position x="163" y="49"/>
-			<size w="38" h="24"/>
-		</sprite>
-		<sprite num="5">
-			<position x="204" y="47"/>
-			<size w="38" h="26"/>
-		</sprite>
-		<sprite num="6">
-			<position x="246" y="46"/>
-			<size w="38" h="26"/>
-		</sprite>
-		<sprite num="7">
-			<position x="332" y="50"/>
-			<size w="35" h="27"/>
-		</sprite>
-		<sprite num="8">
-			<position x="373" y="49"/>
-			<size w="34" h="28"/>
-		</sprite>
-		<sprite num="9">
-			<position x="413" y="47"/>
-			<size w="33" h="28"/>
-		</sprite>
+	
+	<!-- PISTOLSHOOT -->
+	<animation speed="60">
+		<sprite x="3" y="34" w="50" h="23"/>
+		<sprite x="57" y="34" w="51" h="23"/>
+		<sprite x="112" y="34" w="49" h="23"/>
+		<sprite x="165" y="35" w="37" h="23"/>
+		<sprite x="206" y="33" w="37" h="25"/>
+		<sprite x="248" y="32" w="37" h="25"/>
+		<sprite x="291" y="35" w="37" h="23"/>
+		<sprite x="334" y="36" w="34" h="26"/>
+		<sprite x="375" y="35" w="33" h="27"/>
+		<sprite x="416" y="33" w="32" h="27"/>
 	</animation>
-	<animation num="2">
-		<sprite num="10">
-			<position x="39" y="121"/>
-			<size w="23" h="43"/>
-		</sprite>
-		<sprite num="11">
-			<position x="112" y="117"/>
-			<size w="23" h="40"/>
-		</sprite>
-		<sprite num="12">
-			<position x="146" y="119"/>
-			<size w="26" h="39"/>
-		</sprite>
-		<sprite num="13">
-			<position x="182" y="116"/>
-			<size w="26" h="41"/>
-		</sprite>
-		<sprite num="14">
-			<position x="216" y="115"/>
-			<size w="25" h="42"/>
-		</sprite>
-		<sprite num="15">
-			<position x="254" y="117"/>
-			<size w="27" h="41"/>
-		</sprite>
-		<sprite num="16">
-			<position x="291" y="120"/>
-			<size w="27" h="38"/>
-		</sprite>
-		<sprite num="17">
-			<position x="326" y="128"/>
-			<size w="30" h="28"/>
-		</sprite>
+
+	<!-- PISTOLSHOOTUP -->
+	<animation>
+		<sprite x="6" y="67" w="22" h="64"/>
+		<sprite x="37" y="68" w="22" h="64"/>
+		<sprite x="73" y="92" w="23" h="40"/>
+		<sprite x="110" y="86" w="22" h="39"/>
+		<sprite x="143" y="88" w="26" h="38"/>
+		<sprite x="180" y="85" w="26" h="40"/>
+		<sprite x="214" y="84" w="24" h="41"/>
+		<sprite x="252" y="86" w="26" h="40"/>
+		<sprite x="289" y="89" w="26" h="37"/>
+		<sprite x="324" y="97" w="29" h="27"/>
 	</animation>
-	<animation num="3">
-		<sprite num="18">
-			<position x="50" y="200"/>
-			<size w="21" h="53"/>
-		</sprite>
-		<sprite num="19">
-			<position x="118" y="200"/>
-			<size w="21" h="32"/>
-		</sprite>
-		<sprite num="20">
-			<position x="156" y="210"/>
-			<size w="24" h="30"/>
-		</sprite>
-		<sprite num="21">
-			<position x="230" y="208"/>
-			<size w="21" h="34"/>
-		</sprite>
+
+	<!-- PISTOLSHOOTDOWN -->
+	<animation>
+		<sprite x="9" y="148" w="20" h="35"/>
+		<sprite x="46" y="142" w="20" h="52"/>
+		<sprite x="81" y="142" w="20" h="52"/>
+		<sprite x="114" y="142" w="20" h="31"/>
+		<sprite x="152" y="152" w="23" h="29"/>
+		<sprite x="189" y="151" w="20" h="31"/>
+		<sprite x="226" y="150" w="20" h="33"/>
 	</animation>
-	<animation num="4">
-		<sprite num="22">
-			<position x="10" y="284"/>
-			<size w="25" h="30"/>
-		</sprite>
-		<sprite num="23">
-			<position x="44" y="287"/>
-			<size w="24" h="27"/>
-		</sprite>
-		<sprite num="24">
-			<position x="76" y="286"/>
-			<size w="27" h="28"/>
-		</sprite>
-		<sprite num="25">
-			<position x="116" y="288"/>
-			<size w="43" h="25"/>
-		</sprite>
-		<sprite num="26">
-			<position x="168" y="284"/>
-			<size w="49" h="29"/>
-		</sprite>
-		<sprite num="27">
-			<position x="228" y="284"/>
-			<size w="49" h="30"/>
-		</sprite>
+
+	<!-- PISTOLKNIFE -->
+	<animation>
+		<sprite x="10" y="215" w="24" h="29"/>
+		<sprite x="44" y="218" w="23" h="26"/>
+		<sprite x="76" y="217" w="26" h="27"/>
+		<sprite x="117" y="220" w="41" h="23"/>
+		<sprite x="168" y="215" w="48" h="28"/>
+		<sprite x="228" y="215" w="48" h="29"/>
 	</animation>
-	<animation num="5">
-		<sprite num="28">
-			<position x="323" y="285"/>
-			<size w="27" h="31"/>
-		</sprite>
-		<sprite num="29">
-			<position x="363" y="283"/>
-			<size w="42" h="34"/>
-		</sprite>
-		<sprite num="30">
-			<position x="417" y="275"/>
-			<size w="43" h="44"/>
-		</sprite>
-		<sprite num="31">
-			<position x="476" y="275"/>
-			<size w="51" h="42"/>
-		</sprite>
-		<sprite num="32">
-			<position x="528" y="269"/>
-			<size w="46" h="46"/>
-		</sprite>
+
+	<!-- PISTOLKNIFE2 -->
+	<animation>
+		<sprite x="12" y="262" w="21" h="30"/>
+		<sprite x="48" y="264" w="26" h="30"/>
+		<sprite x="88" y="262" w="41" h="33"/>
+		<sprite x="142" y="254" w="42" h="43"/>
+		<sprite x="201" y="254" w="50" h="41"/>
+		<sprite x="253" y="248" w="45" h="45"/>
 	</animation>
-	<animation num="6">
-		<sprite num="33">
-			<position x="21" y="359"/>
-			<size w="33" h="27"/>
-		</sprite>
-		<sprite num="34">
-			<position x="67" y="359"/>
-			<size w="32" h="27"/>
-		</sprite>
-		<sprite num="35">
-			<position x="112" y="358"/>
-			<size w="32" h="27"/>
-		</sprite>
-		<sprite num="36">
-			<position x="161" y="359"/>
-			<size w="33" h="27"/>
-		</sprite>
+
+	<!-- PISTOLKNEE -->
+	<animation>
+		<sprite x="14" y="315" w="32" h="26"/>
+		<sprite x="60" y="315" w="31" h="26"/>
+		<sprite x="105" y="314" w="31" h="26"/>
+		<sprite x="154" y="315" w="32" h="26"/>
 	</animation>
-	<animation num="7">
-		<sprite num="37">
-			<position x="19" y="399"/>
-			<size w="39" h="28"/>
-		</sprite>
-		<sprite num="38">
-			<position x="62" y="399"/>
-			<size w="51" h="28"/>
-		</sprite>
-		<sprite num="39">
-			<position x="115" y="399"/>
-			<size w="52" h="28"/>
-		</sprite>
-		<sprite num="40">
-			<position x="169" y="399"/>
-			<size w="38" h="28"/>
-		</sprite>
-		<sprite num="41">
-			<position x="224" y="399"/>
-			<size w="38" h="28"/>
-		</sprite>
-		<sprite num="42">
-			<position x="264" y="397"/>
-			<size w="38" h="30"/>
-		</sprite>
-		<sprite num="43">
-			<position x="304" y="397"/>
-			<size w="38" h="30"/>
-		</sprite>
-		<sprite num="44">
-			<position x="344" y="399"/>
-			<size w="38" h="28"/>
-		</sprite>
-		<sprite num="45">
-			<position x="384" y="399"/>
-			<size w="35" h="28"/>
-		</sprite>
-		<sprite num="46">
-			<position x="421" y="399"/>
-			<size w="34" h="28"/>
-		</sprite>
-		<sprite num="47">
-			<position x="457" y="398"/>
-			<size w="33" h="29"/>
-		</sprite>
-		<sprite num="48">
-			<position x="492" y="399"/>
-			<size w="32" h="28"/>
-		</sprite>
-		<sprite num="49">
-			<position x="526" y="399"/>
-			<size w="32" h="28"/>
-		</sprite>
+
+	<!-- PISTOLKNEESHOOT -->
+	<animation>
+		<sprite x="11" y="359" w="38" h="27"/>
+		<sprite x="54" y="359" w="50" h="27"/>
+		<sprite x="107" y="359" w="51" h="27"/>
+		<sprite x="161" y="359" w="52" h="27"/>
+		<sprite x="216" y="359" w="37" h="27"/>
+		<sprite x="256" y="357" w="37" h="29"/>
+		<sprite x="296" y="357" w="37" h="29"/>
+		<sprite x="336" y="359" w="37" h="27"/>
+		<sprite x="376" y="359" w="34" h="27"/>
+		<sprite x="413" y="359" w="33" h="27"/>
+		<sprite x="449" y="358" w="32" h="28"/>
+		<sprite x="484" y="359" w="31" h="27"/>
+		<sprite x="518" y="359" w="31" h="27"/>
 	</animation>
-	<animation num="8">
-		<sprite num="50">
-			<position x="67" y="473"/>
-			<size w="23" h="51"/>
-		</sprite>
-		<sprite num="51">
-			<position x="145" y="476"/>
-			<size w="23" h="48"/>
-		</sprite>
-		<sprite num="52">
-			<position x="183" y="477"/>
-			<size w="25" h="47"/>
-		</sprite>
-		<sprite num="53">
-			<position x="219" y="475"/>
-			<size w="26" h="49"/>
-		</sprite>
-		<sprite num="54">
-			<position x="257" y="474"/>
-			<size w="25" h="50"/>
-		</sprite>
-		<sprite num="55">
-			<position x="296" y="475"/>
-			<size w="27" h="49"/>
-		</sprite>
-		<sprite num="56">
-			<position x="337" y="478"/>
-			<size w="27" h="46"/>
-		</sprite>
-		<sprite num="57">
-			<position x="381" y="488"/>
-			<size w="30" h="36"/>
-		</sprite>
+
+	<!-- PISTOLKNEESHOOTUP -->
+	<animation>
+		<sprite x="16" y="400" w="22" h="72"/>
+		<sprite x="59" y="400" w="22" h="72"/>
+		<sprite x="99" y="424" w="22" h="48"/>
+		<sprite x="137" y="425" w="22" h="47"/>
+		<sprite x="175" y="426" w="24" h="46"/>
+		<sprite x="211" y="424" w="25" h="48"/>
+		<sprite x="249" y="423" w="24" h="49"/>
+		<sprite x="288" y="424" w="26" h="48"/>
+		<sprite x="329" y="247" w="26" h="45"/>
+		<sprite x="373" y="437" w="29" h="35"/>
 	</animation>
+
+	<!-- SHOTGUNRUN -->
+	<animation>
+		<sprite x="17" y="488" w="37" h="27"/>
+		<sprite x="67" y="487" w="28" h="28"/>
+		<sprite x="117" y="488" w="38" h="29"/>
+		<sprite x="165" y="488" w="38" h="29"/>
+	</animation>
+
+	<!-- SHOTGUNSHOOT -->
+	<animation>
+		<sprite x="18" y="529" w="60" h="27"/>
+		<sprite x="93" y="534" w="60" h="27"/>
+		<sprite x="165" y="531" w="60" h="26"/>
+	</animation>
+
+	<!-- SHOTGUNSHOOTUP -->
+	<animation>
+		<sprite x="23" y="567" w="22" h="69"/>
+		<sprite x="60" y="582" w="22" h="49"/>
+		<sprite x="95" y="582" w="24" h="49"/>
+	</animation>
+
+	<!-- SHOTGUNSHOOTDOWN -->
+	<animation>
+		<sprite x="22" y="652" w="34" h="63"/>
+		<sprite x="73" y="653" w="34" h="62"/>
+		<sprite x="126" y="658" w="33" h="62"/>
+	</animation>
+
+
+
+
+
+	
+	<!-- <animation>
+		<sprite x="" y="" w="" h=""/>
+	</animation> -->
+
 </document>
 

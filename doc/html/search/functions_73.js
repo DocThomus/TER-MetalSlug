@@ -12,6 +12,7 @@ var searchData=
   ['setposition',['setPosition',['../class_objet_physique.html#ad4ab5b9b5e713e1ff8e45abd031106f7',1,'ObjetPhysique::setPosition()'],['../class_member_view.html#a11b0e1d27bc5a9ce4be91900649aa745',1,'MemberView::setPosition()']]],
   ['setrepeat',['setRepeat',['../class_animation.html#aa88e87c6c461f5c858de6c4d1429864c',1,'Animation']]],
   ['setsize',['setSize',['../class_objet_physique.html#a41fa31e44e9fa53f15446865c73a2d43',1,'ObjetPhysique::setSize()'],['../class_member_view.html#ab60c2597c82889176816085d28d0fb94',1,'MemberView::setSize()']]],
+  ['setspeed',['setSpeed',['../class_animation.html#a493570668bfbbcbdb02dbaad5912bd86',1,'Animation']]],
   ['settexture',['setTexture',['../class_my_drawable.html#aa832819817385495698bdd8c5f01a3a4',1,'MyDrawable']]],
   ['settexturerect',['setTextureRect',['../class_member_view.html#a6d9a65f4d9626410c31e9b3b699a36fb',1,'MemberView']]],
   ['settypeweapon',['setTypeWeapon',['../class_item.html#a0ef1f1b5f066c14225d2af49795d566b',1,'Item']]],

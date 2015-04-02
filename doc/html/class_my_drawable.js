@@ -16,6 +16,7 @@ var class_my_drawable =
     [ "updateIntRect", "class_my_drawable.html#a55c982fee9a5d08fe66910aafd3910ac", null ],
     [ "animations", "class_my_drawable.html#a006145f0c78fb6ab3ba448a778fc42ef", null ],
     [ "body", "class_my_drawable.html#aa29e17ceff6fc13cfe239736aa2bd2e8", null ],
+    [ "cpt_time", "class_my_drawable.html#a4531071c63942ddb4922e571b959a08a", null ],
     [ "current_anim", "class_my_drawable.html#a1e3baf6b086958918246e64c918cea07", null ],
     [ "repeat_tex", "class_my_drawable.html#a049b0e03ea369c98b9473dd4c0fdab90", null ],
     [ "tex", "class_my_drawable.html#a0cf32fc0c746e45076e86f8a31cc75c2", null ]

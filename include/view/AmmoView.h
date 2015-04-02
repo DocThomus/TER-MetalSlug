@@ -63,20 +63,12 @@ class AmmoView : public Ammo, public MyDrawable
 		~AmmoView();
 
 		/*!
-	     * \brief Chargement des textures
+	     * \brief Chargement des ressources
 	     *
-	     * Methode statique permettant de charger les textures des projectiles.
+	     * Methode statique permettant de charger les ressources des projectiles.
 	     * ATTENTION : Cette méthode doit impérativement être appelée avant d'afficher des projectiles !
 	     */
-		static void loadTextures();
-
-		/*!
-	     * \brief Chargement des sons
-	     *
-	     * Methode statique permettant de charger les sons des projectiles.
-	     * ATTENTION : Cette méthode doit impérativement être appelée avant d'afficher des projectiles !
-	     */
-		static void loadSounds();
+		static void loadRessources();
 
 		/*!
 	     * \brief Deletion des ressources 

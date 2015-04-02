@@ -100,7 +100,6 @@ void Game::display(RenderWindow* window)
         (*e)->display(window);
 
     player.display(window);
-    // cout << player << endl;
     
     for(list<AmmoView*>::iterator a = ammo.begin(); a != ammo.end(); a++)
         (*a)->display(window);
@@ -111,7 +110,6 @@ void Game::display(RenderWindow* window)
 
 void Game::checkKeyboardEvents(RenderWindow* window)
 { 
-
     if(Keyboard::isKeyPressed(Keyboard::S))
         player.kneel(true);
 
@@ -370,7 +368,7 @@ void Game::checkCollisions()
             /* VS PLATFORM */
             for(list<PlatformView>::iterator p = pltf->begin(); p != pltf->end(); p++)
             {
-                if((*a)->getState() != Ammo::GHOST)
+                if((*a)->getState()!=Ammo::GHOST)
                 {
                     ObjetPhysique* p_ptr = (ObjetPhysique*)(&*p);
 
@@ -378,6 +376,8 @@ void Game::checkCollisions()
                     {
                         Int2 p_pos = (*p).getPosition();
                         Int2 p_siz = (*p).getSize();
+                        
+                        bool ok = true;
 
                         if(fabs(a_mov.x) >= fabs(a_mov.y))
                         {
@@ -391,10 +391,12 @@ void Game::checkCollisions()
                             if(a_mov.y > 0) // vers la bas
                                 a_pos.y = p_pos.y;
                             else // vers le haut
-                                a_pos.y = p_pos.y+p_siz.y;
+                                //a_pos.y = p_pos.y+p_siz.y;
+                                ok = false;
                         }
 
-                        (*a)->die(a_pos);
+                        if(ok)
+                            (*a)->die(a_pos);
                     }
                 }
             }
@@ -611,7 +613,7 @@ void Game::applyConfig(RenderWindow* window)
    
 
     window->create(mode,"Metal Slug !!!",style);
-    window->setFramerateLimit(60);
+    window->setFramerateLimit(50);
     window->setKeyRepeatEnabled(false);
     window->setVerticalSyncEnabled(config->vsync);
 
@@ -666,7 +668,7 @@ void Game::loadLevel()
 
 
     /* AMMO */
-    AmmoView::loadTextures();
+    AmmoView::loadRessources();
 
 }
 
@@ -676,10 +678,11 @@ void Game::loadLevel()
 vector<Animation> Game::loadSpriteFromFile(string filename)
 {
     vector<Int2> anim;
+    vector<int> speed;
     vector<Int2> pos;
     vector<Int2> siz;
 
-    if(!loadSpriteMap(filename,&anim,&pos,&siz))
+    if(!loadSpriteMap(filename,&anim,&speed,&pos,&siz))
     {
         cerr << "Erreur dans le chargement de l'animation : " << filename << endl;
         exit(-1);
@@ -690,6 +693,10 @@ vector<Animation> Game::loadSpriteFromFile(string filename)
     for(unsigned int i=0; i<anim.size(); ++i)
     {
         Animation a;
+
+        if(speed[i]>=0)
+            a.setSpeed(speed[i]);
+
         for(int y=anim[i].x; y<=anim[i].y; ++y)
         {
             Frame f(pos[y],siz[y]);

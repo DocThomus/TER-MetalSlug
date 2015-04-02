@@ -81,7 +81,7 @@ bool buildSpriteMap(string filename, vector<Int2> anim, vector<Int2> pos, vector
 
 
 /* CHARGE UN FICHIER XML DE DESCRIPTION DES SPRITES */
-bool loadSpriteMap(string filename, vector<Int2>* v_anim, vector<Int2>* v_pos, vector<Int2>* v_size)
+bool loadSpriteMap(string filename, vector<Int2>* v_anim, vector<int>* v_speed, vector<Int2>* v_pos, vector<Int2>* v_size)
 {
     xml_document<> doc;
 
@@ -104,16 +104,20 @@ bool loadSpriteMap(string filename, vector<Int2>* v_anim, vector<Int2>* v_pos, v
     {
         Int2 anim(v_pos->size(),0);
 
+        xml_attribute<> *sAttr;
+        if((sAttr = animation->first_attribute("speed")))
+            v_speed->push_back(atoi(sAttr->value()));
+        else
+            v_speed->push_back(-1);
+
         for(xml_node<> *sprite=animation->first_node("sprite"); sprite; sprite=sprite->next_sibling())
         {
-            xml_node<> *position = sprite->first_node("position");
-            xml_attribute<> *xAttr = position->first_attribute("x");
-            xml_attribute<> *yAttr = position->first_attribute("y");
+            xml_attribute<> *xAttr = sprite->first_attribute("x");
+            xml_attribute<> *yAttr = sprite->first_attribute("y");
             v_pos->push_back(Int2(atoi(xAttr->value()),atoi(yAttr->value())));
 
-            xml_node<> *size = sprite->first_node("size");
-            xml_attribute<> *wAttr = size->first_attribute("w");
-            xml_attribute<> *hAttr = size->first_attribute("h");
+            xml_attribute<> *wAttr = sprite->first_attribute("w");
+            xml_attribute<> *hAttr = sprite->first_attribute("h");
             v_size->push_back(Int2(atoi(wAttr->value()),atoi(hAttr->value())));
         }
 

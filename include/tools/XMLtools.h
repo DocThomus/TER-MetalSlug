@@ -45,7 +45,7 @@ class EventEnemy;
 /*!
  * \brief Construire spritemap
  *
- * Génère un fichier XML contenant le mapping d'une feuille de sprite.
+ * Génère un fichier XML contenant le mapping d'une feuille de sprite. A RÉÉCRIRE EN FONCTION DE loadSpriteMap().
  * \param filename : Nom du fichier à génèrer.
  * \param animations : Liste des animations par indices.
  * \param positions : Liste des positions des frames.
@@ -59,10 +59,11 @@ bool buildSpriteMap(string filename, vector<Int2>animations, vector<Int2> positi
  * Charge le mapping d'une feuille de sprite à partir d'un fichier XML.
  * \param filename : Nom du fichier à charger.
  * \param animations : Vecteur d'animations par indice à remplir.
+ * \param speeds : Vitesse respectives des animations.
  * \param positions : Vecteur de positions à remplir.
  * \param tailles : Vecteur de tailles à remplir.
  */
-bool loadSpriteMap(string filename, vector<Int2>*animations, vector<Int2>* positions, vector<Int2>* tailles);
+bool loadSpriteMap(string filename, vector<Int2>*animations, vector<int>*speeds, vector<Int2>* positions, vector<Int2>* tailles);
 
 
 

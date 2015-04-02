@@ -65,6 +65,7 @@ class Ammo : public ObjetPhysique
 	     * \param m : Masse du projectile (inutile car la masse de l'objet est redéfinie en fonction de son type).
 	     * \param type : Type du projectile.
 	     * \param move : Vecteur de direction.
+	     * \param c : Character à l'origine du projectile.
 	     */
 		Ammo(Int2 pos, Int2 siz, int m, TypeAmmo type, Float2 move, Character* c);
 

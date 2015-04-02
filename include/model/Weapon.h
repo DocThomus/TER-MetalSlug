@@ -64,7 +64,6 @@ class Weapon
 	     * \brief Constructeur
 	     *
 	     * Constructeur de la classe Weapon.
-	     * \param p : Player destiné à posséder l'arme.
 	     * \param type : Type de l'arme
 	     */
 		Weapon(TypeWeapon type);

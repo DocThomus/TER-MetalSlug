@@ -1,36 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <document>
-	<animation num="0">
-		<sprite num="0">
-			<position x="396" y="82"/>
-			<size w="104" h="24"/>
-		</sprite>
+
+	<!-- FLY -->
+	<animation>
+		<sprite x="396" y="82" w="104" h="24"/>
 	</animation>
-	<animation num="1">
-		<sprite num="1">
-			<position x="581" y="69"/>
-			<size w="58" h="45"/>
-		</sprite>
-		<sprite num="2">
-			<position x="653" y="66"/>
-			<size w="65" h="51"/>
-		</sprite>
-		<sprite num="3">
-			<position x="736" y="71"/>
-			<size w="58" h="43"/>
-		</sprite>
-		<sprite num="4">
-			<position x="816" y="72"/>
-			<size w="58" h="37"/>
-		</sprite>
-		<sprite num="5">
-			<position x="883" y="71"/>
-			<size w="58" h="37"/>
-		</sprite>
-		<sprite num="6">
-			<position x="1303" y="78"/>
-			<size w="41" h="31"/>
-		</sprite>
+
+	<!-- DEAD -->
+	<animation>
+		<sprite x="581" y="69" w="58" h="45"/>
+		<sprite x="653" y="66" w="65" h="51"/>
+		<sprite x="736" y="71" w="58" h="43"/>
+		<sprite x="816" y="72" w="58" h="37"/>
+		<sprite x="883" y="71" w="58" h="37"/>
+		<sprite x="1303" y="78" w="41" h="31"/>
 	</animation>
+	
 </document>
 

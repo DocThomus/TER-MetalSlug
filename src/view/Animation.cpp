@@ -4,6 +4,7 @@
 Animation::Animation()
 {
 	current = 0;
+	speed = 100;
 	repeat = true;
 	next_anim = -1;
 }
@@ -11,6 +12,8 @@ Animation::Animation()
 
 Animation::Animation(vector<Frame> v)
 {
+	current = 0;
+	speed = 100;
 	repeat = true;
 	next_anim = -1;
 	frames = v;
@@ -85,8 +88,18 @@ void Animation::setNextAnim(int i)
 	next_anim = i;
 }
 
+void Animation::setSpeed(int s)
+{
+	speed = s;
+}
+
 
 int Animation::getNextAnim()
 {
 	return next_anim;
+}
+
+int Animation::getSpeed()
+{
+	return speed;
 }

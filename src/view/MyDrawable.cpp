@@ -4,6 +4,7 @@
 MyDrawable::MyDrawable()
 :current_anim(0)
 {
+	cpt_time = 0;
 }
 
 
@@ -22,6 +23,8 @@ void MyDrawable::resetAnim()
 
 	Int2 now = getFrame()->getSize();
 	body.setSize(Vector2f(siz.x*now.x/old.x,siz.y*now.y/old.y));
+
+	updateIntRect();
 }
 
 
@@ -42,10 +45,11 @@ void MyDrawable::addAnimations(vector<Animation> v)
 void MyDrawable::addAnimations(string filename)
 {
     vector<Int2> anim;
+    vector<int> speed;
     vector<Int2> pos;
     vector<Int2> siz;
 
-    if(!loadSpriteMap(filename,&anim,&pos,&siz))
+    if(!loadSpriteMap(filename,&anim,&speed,&pos,&siz))
     {
         cerr << "Erreur dans le chargement de l'animation : " << filename << endl;
         exit(-1);
@@ -56,6 +60,10 @@ void MyDrawable::addAnimations(string filename)
     for(unsigned int i=0; i<anim.size(); ++i)
     {
         Animation a;
+
+        if(speed[i] >= 0)
+        	a.setSpeed(speed[i]);
+
         for(int y=anim[i].x; y<=anim[i].y; ++y)
         {
             Frame f(pos[y],siz[y]);
@@ -91,6 +99,8 @@ bool MyDrawable::changeAnimation(int i, bool repeat, int next)
 		Int2 now = getFrame()->getSize();
 		body.setSize(Vector2f(siz.x*now.x/old.x,siz.y*now.y/old.y));
 
+		updateIntRect();
+
 		return true;
 	}
 
@@ -100,14 +110,8 @@ bool MyDrawable::changeAnimation(int i, bool repeat, int next)
 
 void MyDrawable::changeFrame(int i)
 {
-	// Int2 old = getFrame()->getSize();
-	// Vector2f siz = body.getSize();
-
 	animations[current_anim].changeFrame(i);
-
-	// Int2 now = getFrame()->getSize();
-	// 	body.setSize(Vector2f(siz.x*now.x/old.x,siz.y*now.y/old.y));
-
+	updateIntRect();
 }
 
 
@@ -143,6 +147,9 @@ bool MyDrawable::setNextFrame(int n)
 	Int2 now = getFrame()->getSize();
 	body.setSize(Vector2f(siz.x*now.x/old.x,siz.y*now.y/old.y));
 
+	/* MISE A JOUR DU RECTANGLESHAPE */
+	updateIntRect();
+
 	return true;
 
 }
@@ -176,10 +183,11 @@ void MyDrawable::updateIntRect()
 vector<Animation> MyDrawable::loadSpriteFromFile(string filename)
 {
     vector<Int2> anim;
+    vector<int> speed;
     vector<Int2> pos;
     vector<Int2> siz;
 
-    if(!loadSpriteMap(filename,&anim,&pos,&siz))
+    if(!loadSpriteMap(filename,&anim,&speed,&pos,&siz))
     {
         cerr << "Erreur dans le chargement de l'animation : " << filename << endl;
         exit(-1);
@@ -189,7 +197,11 @@ vector<Animation> MyDrawable::loadSpriteFromFile(string filename)
 
     for(unsigned int i=0; i<anim.size(); ++i)
     {
-        Animation a;;
+        Animation a;
+
+        if(speed[i] > 0)
+        	a.setSpeed(speed[i]);
+
         for(int y=anim[i].x; y<=anim[i].y; ++y)
         {
             Frame f(pos[y],siz[y]);

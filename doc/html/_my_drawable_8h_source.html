@@ -129,41 +129,42 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00044"></a><a class="code" href="class_my_drawable.html#a1e3baf6b086958918246e64c918cea07">00044</a>                 <span class="keywordtype">int</span> <a class="code" href="class_my_drawable.html#a1e3baf6b086958918246e64c918cea07" title="Animation courante.">current_anim</a>; 
 <a name="l00045"></a><a class="code" href="class_my_drawable.html#a0cf32fc0c746e45076e86f8a31cc75c2">00045</a>                 Texture* <a class="code" href="class_my_drawable.html#a0cf32fc0c746e45076e86f8a31cc75c2" title="Texture à appliquer au rectangle.">tex</a>; 
 <a name="l00046"></a><a class="code" href="class_my_drawable.html#a049b0e03ea369c98b9473dd4c0fdab90">00046</a>                 <a class="code" href="class_bool2.html" title="Stockage de deux booléens.">Bool2</a> <a class="code" href="class_my_drawable.html#a049b0e03ea369c98b9473dd4c0fdab90" title="Indique si la texture doit être répétée horizontalement et/ou verticalement.">repeat_tex</a>; 
-<a name="l00048"></a>00048         <span class="keyword">public</span> :
-<a name="l00049"></a>00049                 
-<a name="l00055"></a>00055                 <a class="code" href="class_my_drawable.html" title="Un rectangle affichable.">MyDrawable</a>();
-<a name="l00056"></a>00056 
-<a name="l00062"></a>00062                 ~<a class="code" href="class_my_drawable.html" title="Un rectangle affichable.">MyDrawable</a>();
-<a name="l00063"></a>00063 
-<a name="l00070"></a>00070                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> display(RenderWindow* window)=0;
-<a name="l00071"></a>00071 
-<a name="l00075"></a>00075                 <span class="keywordtype">void</span> resetAnim();
-<a name="l00076"></a>00076 
-<a name="l00080"></a>00080                 <span class="keywordtype">void</span> addAnimation(<a class="code" href="class_animation.html" title="Stockage d&#39;une animation.">Animation</a> a);
-<a name="l00081"></a>00081 
-<a name="l00085"></a>00085                 <span class="keywordtype">void</span> addAnimations(vector&lt;Animation&gt; v);
-<a name="l00086"></a>00086 
-<a name="l00090"></a>00090                 <span class="keywordtype">void</span> addAnimations(<span class="keywordtype">string</span> filename);
-<a name="l00091"></a>00091 
-<a name="l00100"></a>00100                 <span class="keywordtype">bool</span> changeAnimation(<span class="keywordtype">int</span> i, <span class="keywordtype">bool</span> repeat=<span class="keyword">true</span>, <span class="keywordtype">int</span> next=-1);
-<a name="l00101"></a>00101 
-<a name="l00105"></a>00105                 <span class="keywordtype">void</span> changeFrame(<span class="keywordtype">int</span> i);
-<a name="l00106"></a>00106 
-<a name="l00110"></a>00110                 <a class="code" href="class_frame.html" title="Une frame d&#39;une feuille de sprite.">Frame</a>* getFrame();
-<a name="l00111"></a>00111 
-<a name="l00118"></a>00118                 <span class="keywordtype">bool</span> setNextFrame(<span class="keywordtype">int</span> n=1);
-<a name="l00119"></a>00119 
-<a name="l00127"></a>00127                 <span class="keywordtype">void</span> setTexture(Texture* tex, <a class="code" href="class_bool2.html" title="Stockage de deux booléens.">Bool2</a> r=<a class="code" href="class_bool2.html" title="Stockage de deux booléens.">Bool2</a>(<span class="keyword">false</span>,<span class="keyword">false</span>));
-<a name="l00128"></a>00128                 
-<a name="l00134"></a>00134                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> updateIntRect();
-<a name="l00135"></a>00135 
-<a name="l00141"></a>00141                 <span class="keyword">static</span> vector&lt;Animation&gt; loadSpriteFromFile(<span class="keywordtype">string</span> filename);
-<a name="l00142"></a>00142 
+<a name="l00047"></a><a class="code" href="class_my_drawable.html#a4531071c63942ddb4922e571b959a08a">00047</a>                 <span class="keywordtype">int</span> <a class="code" href="class_my_drawable.html#a4531071c63942ddb4922e571b959a08a" title="Compteur du temps écoulé pour le changement de frame.">cpt_time</a>; 
+<a name="l00049"></a>00049         <span class="keyword">public</span> :
+<a name="l00050"></a>00050                 
+<a name="l00056"></a>00056                 <a class="code" href="class_my_drawable.html" title="Un rectangle affichable.">MyDrawable</a>();
+<a name="l00057"></a>00057 
+<a name="l00063"></a>00063                 ~<a class="code" href="class_my_drawable.html" title="Un rectangle affichable.">MyDrawable</a>();
+<a name="l00064"></a>00064 
+<a name="l00071"></a>00071                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> display(RenderWindow* window)=0;
+<a name="l00072"></a>00072 
+<a name="l00076"></a>00076                 <span class="keywordtype">void</span> resetAnim();
+<a name="l00077"></a>00077 
+<a name="l00081"></a>00081                 <span class="keywordtype">void</span> addAnimation(<a class="code" href="class_animation.html" title="Stockage d&#39;une animation.">Animation</a> a);
+<a name="l00082"></a>00082 
+<a name="l00086"></a>00086                 <span class="keywordtype">void</span> addAnimations(vector&lt;Animation&gt; v);
+<a name="l00087"></a>00087 
+<a name="l00091"></a>00091                 <span class="keywordtype">void</span> addAnimations(<span class="keywordtype">string</span> filename);
+<a name="l00092"></a>00092 
+<a name="l00101"></a>00101                 <span class="keywordtype">bool</span> changeAnimation(<span class="keywordtype">int</span> i, <span class="keywordtype">bool</span> repeat=<span class="keyword">true</span>, <span class="keywordtype">int</span> next=-1);
+<a name="l00102"></a>00102 
+<a name="l00106"></a>00106                 <span class="keywordtype">void</span> changeFrame(<span class="keywordtype">int</span> i);
+<a name="l00107"></a>00107 
+<a name="l00111"></a>00111                 <a class="code" href="class_frame.html" title="Une frame d&#39;une feuille de sprite.">Frame</a>* getFrame();
+<a name="l00112"></a>00112 
+<a name="l00119"></a>00119                 <span class="keywordtype">bool</span> setNextFrame(<span class="keywordtype">int</span> n=1);
+<a name="l00120"></a>00120 
+<a name="l00128"></a>00128                 <span class="keywordtype">void</span> setTexture(Texture* tex, <a class="code" href="class_bool2.html" title="Stockage de deux booléens.">Bool2</a> r=<a class="code" href="class_bool2.html" title="Stockage de deux booléens.">Bool2</a>(<span class="keyword">false</span>,<span class="keyword">false</span>));
+<a name="l00129"></a>00129                 
+<a name="l00135"></a>00135                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> updateIntRect();
+<a name="l00136"></a>00136 
+<a name="l00142"></a>00142                 <span class="keyword">static</span> vector&lt;Animation&gt; loadSpriteFromFile(<span class="keywordtype">string</span> filename);
 <a name="l00143"></a>00143 
-<a name="l00144"></a>00144 };
-<a name="l00145"></a>00145 
+<a name="l00144"></a>00144 
+<a name="l00145"></a>00145 };
 <a name="l00146"></a>00146 
-<a name="l00149"></a>00149 <span class="preprocessor">#endif</span>
+<a name="l00147"></a>00147 
+<a name="l00150"></a>00150 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -184,7 +185,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul>
       <li class="navelem"><a class="el" href="_my_drawable_8h.html">MyDrawable.h</a>      </li>
 
-    <li class="footer">Généré le Mercredi Avril 1 2015 23:21:08 pour Metal Slug par
+    <li class="footer">Généré le Jeudi Avril 2 2015 21:11:57 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

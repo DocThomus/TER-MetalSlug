@@ -39,6 +39,7 @@ class Animation
 
 		vector<Frame> frames; /*!< \brief Liste des frames de l'animation. */
 		int current; /*!< \brief Frame courante lue par l'animation. */
+		int speed; /*!< \brief Temps entre chaque frame en ms. */
 
 		bool repeat; /*!< \brief Indique si l'animation doit se répèter ou non. */
 		int  next_anim; /*!< \brief Indique l'animation a lire après celle-ci si repeat=true. */
@@ -106,9 +107,19 @@ class Animation
 		void setNextAnim(int i);
 
 		/*!
+	     * \brief Définit la vitesse de lecture de l'animation.
+	     */
+		void setSpeed(int s);
+
+		/*!
 	     * \brief Renvoie l'indice de l'animation à lire ensuite.
 	     */
 		int getNextAnim();
+
+		/*!
+	     * \brief Renvoie la vitesse de lesture de l'animation.
+	     */
+		int getSpeed();
 
 		/*!
 	     * \brief Renvoie la frame courante de l'application.

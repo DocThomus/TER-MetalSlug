@@ -1,110 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <document>
-	<animation num="0">
-		<sprite num="0">
-			<position x="5" y="8"/>
-			<size w="22" h="17"/>
-		</sprite>
+	
+	<!-- STAND -->
+	<animation>
+		<sprite x="1" y="0" w="21" h="16"/>
 	</animation>
-	<animation num="1">
-		<sprite num="1">
-			<position x="125" y="5"/>
-			<size w="22" h="21"/>
-		</sprite>
-		<sprite num="2">
-			<position x="148" y="4"/>
-			<size w="29" h="21"/>
-		</sprite>
-		<sprite num="3">
-			<position x="178" y="8"/>
-			<size w="32" h="17"/>
-		</sprite>
-		<sprite num="4">
-			<position x="211" y="5"/>
-			<size w="20" h="21"/>
-		</sprite>
-		<sprite num="5">
-			<position x="250" y="6"/>
-			<size w="17" h="21"/>
-		</sprite>
-		<sprite num="6">
-			<position x="269" y="7"/>
-			<size w="22" h="21"/>
-		</sprite>
-		<sprite num="7">
-			<position x="291" y="8"/>
-			<size w="27" h="21"/>
-		</sprite>
-		<sprite num="8">
-			<position x="320" y="10"/>
-			<size w="32" h="17"/>
-		</sprite>
-		<sprite num="9">
-			<position x="353" y="7"/>
-			<size w="21" h="21"/>
-		</sprite>
-		<sprite num="10">
-			<position x="395" y="7"/>
-			<size w="19" h="21"/>
-		</sprite>
+
+	<!-- RUN -->
+	<animation>
+		<sprite x="1" y="29" w="21" h="20"/>
+		<sprite x="24" y="28" w="28" h="20"/>
+		<sprite x="54" y="32" w="31" h="16"/>
+		<sprite x="87" y="29" w="19" h="20"/>
+		<sprite x="108" y="29" w="15" h="20"/>
+		<sprite x="126" y="30" w="16" h="20"/>
+		<sprite x="145" y="31" w="21" h="20"/>
+		<sprite x="167" y="32" w="26" h="20"/>
+		<sprite x="196" y="34" w="31" h="16"/>
+		<sprite x="229" y="31" w="20" h="20"/>
+		<sprite x="253" y="31" w="15" h="20"/>
+		<sprite x="271" y="31" w="18" h="20"/>
 	</animation>
-	<animation num="2">
-		<sprite num="11">
-			<position x="637" y="4"/>
-			<size w="19" h="26"/>
-		</sprite>
+
+	<!-- JUMP -->
+	<animation>
+		<sprite x="0" y="65" w="27" h="21"/>
+		<sprite x="29" y="65" w="29" h="19"/>
+		<sprite x="59" y="67" w="33" h="17"/>
+		<sprite x="95" y="67" w="30" h="14"/>
+		<sprite x="130" y="68" w="30" h="15"/>
+		<sprite x="162" y="67" w="26" h="16"/>
 	</animation>
-	<animation num="3">
-		<sprite num="11">
-			<position x="637" y="4"/>
-			<size w="19" h="26"/>
-		</sprite>
-		<sprite num="12">
-			<position x="657" y="6"/>
-			<size w="20" h="26"/>
-		</sprite>
-		<sprite num="13">
-			<position x="678" y="6"/>
-			<size w="21" h="26"/>
-		</sprite>
-		<sprite num="14">
-			<position x="701" y="7"/>
-			<size w="21" h="24"/>
-		</sprite>
-		<sprite num="15">
-			<position x="723" y="9"/>
-			<size w="22" h="21"/>
-		</sprite>
-		<sprite num="16">
-			<position x="746" y="9"/>
-			<size w="22" h="20"/>
-		</sprite>
-	</animation>
-	<animation num="4">
-		<sprite num="17">
-			<position x="769" y="7"/>
-			<size w="28" h="23"/>
-		</sprite>
-		<sprite num="18">
-			<position x="798" y="7"/>
-			<size w="30" h="21"/>
-		</sprite>
-		<sprite num="19">
-			<position x="828" y="9"/>
-			<size w="34" h="19"/>
-		</sprite>
-		<sprite num="20">
-			<position x="864" y="10"/>
-			<size w="31" h="15"/>
-		</sprite>
-		<sprite num="21">
-			<position x="899" y="11"/>
-			<size w="31" h="16"/>
-		</sprite>
-		<sprite num="22">
-			<position x="931" y="10"/>
-			<size w="27" h="17"/>
-		</sprite>
-	</animation>
+
+
+
+
+
+	<!--  -->
+	<!-- <animation>
+		<sprite x="" y="" w="" h=""/>
+	</animation> -->
+
 </document>
 

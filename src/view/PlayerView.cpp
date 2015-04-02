@@ -14,17 +14,20 @@ vector<Animation> PlayerView::animations_list[2];
 PlayerView::PlayerView(Int2 pos, Int2 siz, int m, int max_h)
 :Player(pos,siz,m,max_h)
 {
-	if(textures[0] == NULL)
-		loadRessources();
+	loadRessources();
 
 	/* BODY */
 	setTexture(textures[0]);
 	addAnimations(animations_list[0]);
-
+	
 	/* LEGS */
-	setTexture(textures[1]);
-	addAnimations(animations_list[1]);
+	legs.setTexture(textures[1]);
+	legs.addAnimations(animations_list[1]);
 
+	/* ANIMATIONS */
+	changeAnimation(PISTOLRUN);
+	legs.changeAnimation(STAND);
+	
 	/* INITIALISATION TAILLES */
 	legs.setSize(Int2(size.x*0.68,size.y*0.47));
 	body.setSize(Vector2f(size.x,size.y*0.76));
@@ -41,14 +44,18 @@ PlayerView::PlayerView()
 	/* BODY */
 	setTexture(textures[0]);
 	addAnimations(animations_list[0]);
-
+	
 	/* LEGS */
 	legs.setTexture(textures[1]);
 	legs.addAnimations(animations_list[1]);
-
+	
 	/* INITIALISATION TAILLES */
 	legs.setSize(Int2(size.x*0.68,size.y*0.47));
 	body.setSize(Vector2f(size.x,size.y*0.76));
+
+	/* ANIMATIONS */
+	changeAnimation(PISTOLRUN);
+	legs.changeAnimation(STAND);
 }
 
 
@@ -120,35 +127,28 @@ void PlayerView::animate(int dt)
 	Player::animate(dt);
 
 	/* CHANGEMENT DE FRAME : CORPS */
-	int speed = (state_b==NORMAL ? 200 : 80);
-	static int cpt_b = 0;
-	cpt_b += dt;
-	if(cpt_b >= speed)
+	cpt_time += dt;
+	if(cpt_time >= animations[current_anim].getSpeed())
 	{
 		setNextFrame();
-		cpt_b = 0;
+		cpt_time = 0;
 	}
 
 	/* CHANGEMENT DE FRAME : JAMBES */
-	static int cpt_l = 0;
-	cpt_l += dt;
-	if(cpt_l >= 100)
+	legs.cpt_time += dt;
+	if(legs.cpt_time >= legs.animations[current_anim].getSpeed())
 	{
 		legs.setNextFrame();
-		cpt_l = 0;
+		legs.cpt_time = 0;
 	}
 
 
-	/* CHANGEMENT D'ANIMATION : CORPS */
+	/* CHANGEMENT D'ETAT : CORPS */
 	if(state_b == SHOOT || state_b == KNIFE)
 		if(current_anim==PISTOLRUN || current_anim==PISTOLKNEE)
 			state_b = NORMAL;
 
-	/* MISE A JOUR DE LA SELECTION DE LA TEXTURE */
-	updateIntRect();
-
-
-	//cout  << "walkway=" << walkway << "     gunway=" << gunway << endl;
+		updateIntRect();
 }
 
 
@@ -191,7 +191,6 @@ void PlayerView::walk(int way)
 		else
 			legs.changeAnimation(RUN);
 	}
-	updateIntRect();
 }
 
 
@@ -199,7 +198,6 @@ void PlayerView::jump(int h)
 {
 	Character::jump(h);
 	legs.changeAnimation(JUMP,false);
-	updateIntRect();
 }
 
 
@@ -210,7 +208,6 @@ void PlayerView::land(int h)
 		legs.changeAnimation(STAND);
 	else if(state_p == Character::RUN)
 		legs.changeAnimation(RUN);
-	updateIntRect();
 }
 
 
@@ -224,7 +221,6 @@ void PlayerView::kneel(bool b)
 			changeAnimation(i);
 		if(!b && (current_anim==PISTOLKNEESHOOT || current_anim==PISTOLKNEESHOOTUP))
 			changeAnimation(PISTOLRUN);
-		updateIntRect();
 	}
 }
 
@@ -304,6 +300,9 @@ void PlayerView::knife()
 
 void PlayerView::loadRessources()
 {
+	if(textures[0] != NULL)
+		return;
+
 	Texture* tex = new Texture();
     tex->loadFromFile("res/tex/player/body.png");
     textures[0] = tex;
