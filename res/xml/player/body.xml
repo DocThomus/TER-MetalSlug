@@ -109,7 +109,7 @@
 	<!-- SHOTGUNRUN -->
 	<animation>
 		<sprite x="17" y="488" w="37" h="27"/>
-		<sprite x="67" y="487" w="28" h="28"/>
+		<sprite x="67" y="487" w="38" h="28"/>
 		<sprite x="117" y="488" w="38" h="29"/>
 		<sprite x="165" y="488" w="38" h="29"/>
 	</animation>

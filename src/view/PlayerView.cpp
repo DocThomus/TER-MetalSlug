@@ -136,6 +136,7 @@ void PlayerView::animate(int dt)
 
 	/* CHANGEMENT DE FRAME : JAMBES */
 	legs.cpt_time += dt;
+	//cout << legs.animations[current_anim].getSpeed() << endl;
 	if(legs.cpt_time >= legs.animations[current_anim].getSpeed())
 	{
 		legs.setNextFrame();
@@ -145,7 +146,7 @@ void PlayerView::animate(int dt)
 
 	/* CHANGEMENT D'ETAT : CORPS */
 	if(state_b == SHOOT || state_b == KNIFE)
-		if(current_anim==PISTOLRUN || current_anim==PISTOLKNEE)
+		if(current_anim==getAnimRun())
 			state_b = NORMAL;
 
 		updateIntRect();
@@ -216,11 +217,11 @@ void PlayerView::kneel(bool b)
 	Player::kneel(b);
 	if(state_g == Character::GROUND)
 	{
-		int i = (b ? PISTOLKNEE : PISTOLRUN);
+		int i = (b ? PISTOLKNEE : getAnimRun());
 		if(current_anim!=PISTOLKNEESHOOT && current_anim!=PISTOLKNEESHOOTUP)
 			changeAnimation(i);
 		if(!b && (current_anim==PISTOLKNEESHOOT || current_anim==PISTOLKNEESHOOTUP))
-			changeAnimation(PISTOLRUN);
+			changeAnimation(getAnimRun());
 	}
 }
 
@@ -261,10 +262,10 @@ void PlayerView::shoot(list<AmmoView*>* air, Int2 angle)
 		}
 		else
 		{
-			anim_shoot      = PISTOLSHOOT;
-			anim_shoot_up   = PISTOLSHOOTUP;
-			anim_shoot_down = PISTOLSHOOTDOWN;
-			anim_after      = PISTOLRUN;
+			anim_shoot      = getAnimShoot();
+			anim_shoot_up   = getAnimShootUp();
+			anim_shoot_down = getAnimShootDown();
+			anim_after      = getAnimRun();
 		}
 
 		if(gunway.y<0)
@@ -290,11 +291,60 @@ void PlayerView::knife()
     srand(time(NULL));
 
     if(rand()%2)
-    	changeAnimation(knife1,false,PISTOLRUN);
+    	changeAnimation(knife1,false,getAnimRun());
     else
-    	changeAnimation(knife2,false,PISTOLRUN);
+    	changeAnimation(knife2,false,getAnimRun());
 }
 
+
+
+PlayerView::PlayerAnimationsBody PlayerView::getAnimRun()
+{
+	switch(armes[current_weapon].getType())
+	{
+		case Weapon::PISTOL  : return PISTOLRUN;
+		case Weapon::SHOTGUN : return SHOTGUNRUN;
+
+		default              : return PISTOLRUN;
+	}
+}
+
+
+
+PlayerView::PlayerAnimationsBody PlayerView::getAnimShoot()
+{
+	switch(armes[current_weapon].getType())
+	{
+		case Weapon::PISTOL  : return PISTOLSHOOT;
+		case Weapon::SHOTGUN : return SHOTGUNSHOOT;
+
+		default              : return PISTOLSHOOT;
+	}
+}
+
+
+PlayerView::PlayerAnimationsBody PlayerView::getAnimShootUp()
+{
+	switch(armes[current_weapon].getType())
+	{
+		case Weapon::PISTOL  : return PISTOLSHOOTUP;
+		case Weapon::SHOTGUN : return SHOTGUNSHOOTUP;
+
+		default              : return PISTOLSHOOTUP;
+	}
+}
+
+
+PlayerView::PlayerAnimationsBody PlayerView::getAnimShootDown()
+{
+	switch(armes[current_weapon].getType())
+	{
+		case Weapon::PISTOL  : return PISTOLSHOOTDOWN;
+		case Weapon::SHOTGUN : return SHOTGUNSHOOTDOWN;
+
+		default              : return PISTOLSHOOTDOWN;
+	}
+}
 
 
 

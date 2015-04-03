@@ -178,6 +178,26 @@ class PlayerView : public Player, public MyDrawable
 	     * \brief Attaque au corps à corps.
 	     */
 		virtual void knife();
+
+		/*!
+	     * \brief Renvoie un pointeur vers l'animation de course en fonction de l'arme tenue.
+	     */
+		PlayerView::PlayerAnimationsBody getAnimRun();
+
+		/*!
+	     * \brief Renvoie un pointeur vers l'animation de tir en fonction de l'arme tenue.
+	     */
+		PlayerView::PlayerAnimationsBody getAnimShoot();
+
+		/*!
+	     * \brief Renvoie un pointeur vers l'animation de tir vers le haut en fonction de l'arme tenue.
+	     */
+		PlayerView::PlayerAnimationsBody getAnimShootUp();
+
+		/*!
+	     * \brief Renvoie un pointeur vers l'animation de tir vers le bas en fonction de l'arme tenue.
+	     */
+		PlayerView::PlayerAnimationsBody getAnimShootDown();
 };
 
 

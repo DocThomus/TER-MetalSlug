@@ -3,6 +3,7 @@
 
 vector<Texture*> AmmoView::textures;
 vector<Sound*> AmmoView::sounds;
+vector<Animation> AmmoView::animations_list[NB_TYPE_AMMO];
 
 
 AmmoView::AmmoView()
@@ -11,7 +12,8 @@ AmmoView::AmmoView()
 	body.setSize(Vector2f(size.x,size.y));
 	body.setOrigin(size.x/2,size.y/2);
 	initRotation();
-	
+
+	loadRessources();
 	initRessources();
 
 	updateIntRect();
@@ -25,7 +27,8 @@ AmmoView::AmmoView(Ammo a)
 	body.setSize(Vector2f(size.x,size.y));
 	body.setOrigin(size.x/2,size.y/2);
 	initRotation();
-	
+
+	loadRessources();
 	initRessources();
 
 	updateIntRect();
@@ -45,21 +48,21 @@ void AmmoView::initRessources()
 	{
 		case BULLET :
 			setTexture(textures[BULLET]);
-			addAnimations("res/xml/ammo/bullet.xml");
+			addAnimations(animations_list[BULLET]);
 			changeAnimation(0,false);
 			sounds[BULLET]->play();
 			break;
 
 		case HEAVY_BULLET :
 			setTexture(textures[BULLET]);
-			addAnimations("res/xml/ammo/bullet.xml");
+			addAnimations(animations_list[BULLET]);
 			changeAnimation(0,false);
 			sounds[HEAVY_BULLET]->play();
 			break;
 
 		case LIGHT_BULLET :
 			setTexture(textures[BULLET]);
-			addAnimations("res/xml/ammo/bullet.xml");
+			addAnimations(animations_list[BULLET]);
 			changeAnimation(0,false);
 			sounds[BULLET]->play();
 			break;
@@ -127,7 +130,7 @@ void AmmoView::initRotation()
 
 
 void AmmoView::loadRessources()
-{
+{	
 	if(textures.size() > 0)
 		return;
 
@@ -137,6 +140,10 @@ void AmmoView::loadRessources()
 	Texture* tex = new Texture();
     tex->loadFromFile("res/tex/ammo/bullet.png");
     textures.push_back(tex);
+
+
+    /* === ANIMATIONS ===*/
+    animations_list[BULLET] = loadSpriteFromFile("res/xml/ammo/bullet.xml");
 
    
     /* === SONS === */

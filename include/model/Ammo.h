@@ -38,7 +38,8 @@ class Ammo : public ObjetPhysique
 	     * \enum TypeAmmo
 	     * \brief Types possibles de l'objet Ammo.
 	     */
-		enum TypeAmmo {BULLET, HEAVY_BULLET, LIGHT_BULLET, ROCKET, GRENADE, LASER};
+		enum TypeAmmo {BULLET, HEAVY_BULLET, LIGHT_BULLET, ROCKET, GRENADE, LASER,
+						NB_TYPE_AMMO};
 
 		/*!
 	     * \enum StateAmmo

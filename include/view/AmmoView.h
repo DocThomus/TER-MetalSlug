@@ -37,6 +37,7 @@ class AmmoView : public Ammo, public MyDrawable
 
 		static vector<Texture*> textures; /*!< \brief Variable de classe contenant les différentes textures de projectiles. */
 		static vector<Sound*> sounds; /*!< \brief Variable de classe contenant les sons des tirs. */
+		static vector<Animation> animations_list[NB_TYPE_AMMO]; /*!< \brief Variable de classe contenant les différentes animations nécessaires aux ammos. */
 
 
 	public :
