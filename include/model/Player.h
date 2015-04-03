@@ -136,7 +136,7 @@ class Player : public Character
 	     * \brief Modifie l'arme courante.
 	     * \param w : Indice de l'arme à selectionner.
 	     */
-		void setWeapon(int w);
+		virtual void setWeapon(int w);
 
 		/*!
 	     * \brief Renvoie le type de l'arme courante du joueur.

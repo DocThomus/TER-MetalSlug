@@ -10,6 +10,7 @@ var class_ammo_view =
     [ "initRessources", "class_ammo_view.html#a6cd4f2ef795a388af31278807275fe7a", null ],
     [ "initRotation", "class_ammo_view.html#adfcb245219da55d4dee4c8a069dddeff", null ],
     [ "loadRessources", "class_ammo_view.html#aeec183f2c94861457033bbb74ec05acf", null ],
+    [ "animations_list", "class_ammo_view.html#aa83a555ee1e17576b96845c06c207a17", null ],
     [ "sounds", "class_ammo_view.html#a3458ee1fe227248689c93850016b2f52", null ],
     [ "textures", "class_ammo_view.html#ac3b803c90b1683f1630d6bdb9349e899", null ]
 ];

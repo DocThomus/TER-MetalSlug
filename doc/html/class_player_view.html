@@ -144,7 +144,24 @@ Types publics</h2></td></tr>
 <b>SHOTGUNSHOOT</b>, 
 <b>SHOTGUNSHOOTUP</b>, 
 <br/>
-&#160;&#160;<b>SHOTGUNSHOOTDOWN</b>
+&#160;&#160;<b>SHOTGUNSHOOTDOWN</b>, 
+<b>SHOTGUNKNIFE</b>, 
+<b>SHOTGUNKNIFE2</b>, 
+<b>SHOTGUNKNEE</b>, 
+<br/>
+&#160;&#160;<b>SHOTGUNKNEESHOOT</b>, 
+<b>SHOTGUNKNEESHOOTUP</b>, 
+<b>SMGRUN</b>, 
+<b>SMGSHOOT</b>, 
+<br/>
+&#160;&#160;<b>SMGSHOOTUP</b>, 
+<b>SMGSHOOTDOWN</b>, 
+<b>SMGKNIFE</b>, 
+<b>SMGKNIFE2</b>, 
+<br/>
+&#160;&#160;<b>SMGKNEE</b>, 
+<b>SMGKNEESHOOT</b>, 
+<b>SMGKNEESHOOTUP</b>
 <br/>
  }</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Différentes animations du corps du joueur. <br/></td></tr>
@@ -185,6 +202,35 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa1995e7649e00df412647a2f10ac2196"></a><!-- doxytag: member="PlayerView::knife" ref="aa1995e7649e00df412647a2f10ac2196" args="()" -->
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_view.html#aa1995e7649e00df412647a2f10ac2196">knife</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Attaque au corps à corps. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_view.html#ac204ca9fb59ebce8e13fbcb16f1a94ec">setWeapon</a> (int w)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie l'arme courante.  <a href="#ac204ca9fb59ebce8e13fbcb16f1a94ec"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4a837000d7e7b0cab1a3170c15128669"></a><!-- doxytag: member="PlayerView::getAnimRun" ref="a4a837000d7e7b0cab1a3170c15128669" args="()" -->
+<a class="el" href="class_player_view.html#ae8c3e4edb01eb35daadc796287b657b2">PlayerView::PlayerAnimationsBody</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_view.html#a4a837000d7e7b0cab1a3170c15128669">getAnimRun</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie un pointeur vers l'animation de course en fonction de l'arme tenue. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acacd975778e5d6a925491ad938334e82"></a><!-- doxytag: member="PlayerView::getAnimShoot" ref="acacd975778e5d6a925491ad938334e82" args="()" -->
+<a class="el" href="class_player_view.html#ae8c3e4edb01eb35daadc796287b657b2">PlayerView::PlayerAnimationsBody</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_view.html#acacd975778e5d6a925491ad938334e82">getAnimShoot</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie un pointeur vers l'animation de tir en fonction de l'arme tenue. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af9c2c7d6809223ca49748805e969a2f5"></a><!-- doxytag: member="PlayerView::getAnimShootUp" ref="af9c2c7d6809223ca49748805e969a2f5" args="()" -->
+<a class="el" href="class_player_view.html#ae8c3e4edb01eb35daadc796287b657b2">PlayerView::PlayerAnimationsBody</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_view.html#af9c2c7d6809223ca49748805e969a2f5">getAnimShootUp</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie un pointeur vers l'animation de tir vers le haut en fonction de l'arme tenue. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abdc1633c4afacc6d3e3d39b4c6ee8f82"></a><!-- doxytag: member="PlayerView::getAnimShootDown" ref="abdc1633c4afacc6d3e3d39b4c6ee8f82" args="()" -->
+<a class="el" href="class_player_view.html#ae8c3e4edb01eb35daadc796287b657b2">PlayerView::PlayerAnimationsBody</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_view.html#abdc1633c4afacc6d3e3d39b4c6ee8f82">getAnimShootDown</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie un pointeur vers l'animation de tir vers le bas en fonction de l'arme tenue. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aec05d96a96b3790d8bc9b30cbd7bdd34"></a><!-- doxytag: member="PlayerView::getAnimKnife" ref="aec05d96a96b3790d8bc9b30cbd7bdd34" args="()" -->
+<a class="el" href="class_player_view.html#ae8c3e4edb01eb35daadc796287b657b2">PlayerView::PlayerAnimationsBody</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_view.html#aec05d96a96b3790d8bc9b30cbd7bdd34">getAnimKnife</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie un pointeur vers l'animation du corps à corps en fonction de l'arme tenue. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5747c780d9708f11049bd894c9c29881"></a><!-- doxytag: member="PlayerView::getAnimKnife2" ref="a5747c780d9708f11049bd894c9c29881" args="()" -->
+<a class="el" href="class_player_view.html#ae8c3e4edb01eb35daadc796287b657b2">PlayerView::PlayerAnimationsBody</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_view.html#a5747c780d9708f11049bd894c9c29881">getAnimKnife2</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie un pointeur vers l'animation du corps à corps 2 en fonction de l'arme tenue. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae0271fba17b5a76fde0783fc2885af11"></a><!-- doxytag: member="PlayerView::getAnimKnee" ref="ae0271fba17b5a76fde0783fc2885af11" args="()" -->
+<a class="el" href="class_player_view.html#ae8c3e4edb01eb35daadc796287b657b2">PlayerView::PlayerAnimationsBody</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_view.html#ae0271fba17b5a76fde0783fc2885af11">getAnimKnee</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie un pointeur vers l'animation accroupie en fonction de l'arme tenue. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac1759e947feab47663e4e8c6f4ac3b33"></a><!-- doxytag: member="PlayerView::getAnimKneeShoot" ref="ac1759e947feab47663e4e8c6f4ac3b33" args="()" -->
+<a class="el" href="class_player_view.html#ae8c3e4edb01eb35daadc796287b657b2">PlayerView::PlayerAnimationsBody</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_view.html#ac1759e947feab47663e4e8c6f4ac3b33">getAnimKneeShoot</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie un pointeur vers l'animation accroupie de tir en fonction de l'arme tenue. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2a001d72326450357abb25c1be091862"></a><!-- doxytag: member="PlayerView::getAnimKneeShootUp" ref="a2a001d72326450357abb25c1be091862" args="()" -->
+<a class="el" href="class_player_view.html#ae8c3e4edb01eb35daadc796287b657b2">PlayerView::PlayerAnimationsBody</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_view.html#a2a001d72326450357abb25c1be091862">getAnimKneeShootUp</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie un pointeur vers l'animation accroupie de tir vers la haut en fonction de l'arme tenue. <br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Fonctions membres publiques statiques</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_view.html#aada0cfecd68c54d6a21468c36b347299">loadRessources</a> ()</td></tr>
@@ -442,6 +488,33 @@ static vector&lt; <a class="el" href="class_animation.html">Animation</a> &gt;&#
 
 </div>
 </div>
+<a class="anchor" id="ac204ca9fb59ebce8e13fbcb16f1a94ec"></a><!-- doxytag: member="PlayerView::setWeapon" ref="ac204ca9fb59ebce8e13fbcb16f1a94ec" args="(int w)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="class_player_view.html#ac204ca9fb59ebce8e13fbcb16f1a94ec">PlayerView::setWeapon</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>w</em></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Modifie l'arme courante. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">w</td><td>: Indice de l'arme à selectionner. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Réimplémentée à partir de <a class="el" href="class_player.html#a4c5067010a4dea27b6bb9d89ece6a9cf">Player</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a983822a41aa3e161675d25ec9c4bc6ad"></a><!-- doxytag: member="PlayerView::shoot" ref="a983822a41aa3e161675d25ec9c4bc6ad" args="(list&lt; AmmoView * &gt; *air, Int2 angle=Int2(1, 0))" -->
 <div class="memitem">
 <div class="memproto">
@@ -523,7 +596,7 @@ static vector&lt; <a class="el" href="class_animation.html">Animation</a> &gt;&#
     <ul>
       <li class="navelem"><a class="el" href="class_player_view.html">PlayerView</a>      </li>
 
-    <li class="footer">Généré le Jeudi Avril 2 2015 21:11:57 pour Metal Slug par
+    <li class="footer">Généré le Vendredi Avril 3 2015 21:39:19 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -7,7 +7,7 @@ var searchData=
   ['enemy_5ftype',['enemy_type',['../class_event_enemy.html#a2260f6f45d2e143708fe2ff5d568aafb',1,'EventEnemy']]],
   ['enemyview',['EnemyView',['../class_enemy_view.html',1,'EnemyView'],['../class_enemy_view.html#a93ce010ab051b03e64421b2fdd06a1a4',1,'EnemyView::EnemyView(Int2 pos, Int2 siz, int m, int max_h, bool AI, int pow)'],['../class_enemy_view.html#a123d7600ff369389909a9cd2b3962aa0',1,'EnemyView::EnemyView(Int2 pos, TypeEnemy t)'],['../class_enemy_view.html#a988d6526fc9926e3a34ed2137edc6c25',1,'EnemyView::EnemyView()']]],
   ['enemyview_2eh',['EnemyView.h',['../_enemy_view_8h.html',1,'']]],
-  ['environment',['Environment',['../class_environment.html',1,'Environment'],['../class_environment.html#a8b427c4448d8b7536666837521b9e83d',1,'Environment::Environment()'],['../class_level.html#a34659a8c8da9d3102344baa4f02ab6b1',1,'Level::environment()']]],
+  ['environment',['Environment',['../class_environment.html',1,'Environment'],['../class_level.html#a34659a8c8da9d3102344baa4f02ab6b1',1,'Level::environment()'],['../class_environment.html#a8b427c4448d8b7536666837521b9e83d',1,'Environment::Environment()']]],
   ['environment_2eh',['Environment.h',['../_environment_8h.html',1,'']]],
   ['eventenemy',['EventEnemy',['../class_event_enemy.html',1,'EventEnemy'],['../class_event_enemy.html#a5ef91c7dffcf2faca0ff39fb95aa8c01',1,'EventEnemy::EventEnemy()'],['../class_event_enemy.html#a7563a8c3d500ca82773cd2d711a825cf',1,'EventEnemy::EventEnemy(int pos, Int2 pos_e, Enemy::TypeEnemy t)']]],
   ['eventenemy_2eh',['EventEnemy.h',['../_event_enemy_8h.html',1,'']]],

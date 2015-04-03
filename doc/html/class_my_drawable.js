@@ -9,7 +9,7 @@ var class_my_drawable =
     [ "changeFrame", "class_my_drawable.html#abbb1eebda623f481dcaab8f0da21e7b8", null ],
     [ "display", "class_my_drawable.html#a7833de40ca86a4b164f844e50d13c76f", null ],
     [ "getFrame", "class_my_drawable.html#ae214cacfd929774d1b4a67949f0f5098", null ],
-    [ "loadSpriteFromFile", "class_my_drawable.html#a9842c899ee0a704af6e6c669894479e1", null ],
+    [ "loadAnimationsFromFile", "class_my_drawable.html#ad409fa465f1ce328512530631e4c75d1", null ],
     [ "resetAnim", "class_my_drawable.html#a530329a40bbb3497ac94a40006a3e4e9", null ],
     [ "setNextFrame", "class_my_drawable.html#ac71129db833c8d46d303e7fed4150df0", null ],
     [ "setTexture", "class_my_drawable.html#aa832819817385495698bdd8c5f01a3a4", null ],

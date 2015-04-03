@@ -11,7 +11,7 @@ var class_player =
     [ "knife", "class_player.html#a57057617e828c4d1eb453c62abce3660", null ],
     [ "print", "class_player.html#a7a337e9b2394c4c3edd90d8e99832a7c", null ],
     [ "reload", "class_player.html#a9b8265a19fd07e246f8e9c052f291e81", null ],
-    [ "setWeapon", "class_player.html#abe9c24068a098ee6d529032d8f582608", null ],
+    [ "setWeapon", "class_player.html#a4c5067010a4dea27b6bb9d89ece6a9cf", null ],
     [ "shoot", "class_player.html#ad055b223f6de1d39092c2fe4258758c8", null ],
     [ "walk", "class_player.html#ad7ec5bcfae66e275785603eced6bc768", null ],
     [ "armes", "class_player.html#abebadca7f115991934ca776d789ed1d3", null ],

@@ -49,18 +49,12 @@ void Ammo::animate(int dt)
 	if(state_a == GHOST)
 		return;
 
-	if(state_a == STOP)
-	{
-		// static int timeup = 800;
-		// timeup -= dt;
-		// if(timeup <= 0)
-		// 	state_a = GHOST;
-	}
-	else if(type==BULLET || type==HEAVY_BULLET || type==LIGHT_BULLET)
-	{
-		position.x += movement.x*2*dt;
-		position.y += movement.y*2*dt;
-	}
+	if(state_a != STOP)
+		if(type==BULLET || type==HEAVY_BULLET || type==LIGHT_BULLET)
+		{
+			position.x += movement.x*2*dt;
+			position.y += movement.y*2*dt;
+		}
 
 }
 

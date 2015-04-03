@@ -107,7 +107,7 @@
 	</animation>
 
 	<!-- SHOTGUNRUN -->
-	<animation>
+	<animation speed="200">
 		<sprite x="17" y="488" w="37" h="27"/>
 		<sprite x="67" y="487" w="38" h="28"/>
 		<sprite x="117" y="488" w="38" h="29"/>
@@ -135,11 +135,122 @@
 		<sprite x="126" y="658" w="33" h="62"/>
 	</animation>
 
+	<!-- SHOTGUNKNIFE 2 -->
+	<animation>
+		<sprite x="13" y="781" w="33" h="37"/>
+		<sprite x="49" y="781" w="23" h="38"/>
+		<sprite x="75" y="777" w="32" h="36"/>
+		<sprite x="111" y="777" w="48" h="36"/>
+		<sprite x="162" y="777" w="52" h="35"/>
+		<sprite x="217" y="777" w="55" h="34"/>
+	</animation>
+
+	<!-- SHOTGUNKNIFE -->
+	<animation>
+		<sprite x="17" y="730" w="36" h="29"/>
+		<sprite x="56" y="734" w="37" h="25"/>
+		<sprite x="96" y="733" w="51" h="33"/>
+		<sprite x="150" y="722" w="53" h="40"/>
+		<sprite x="206" y="720" w="53" h="39"/>
+		<sprite x="263" y="718" w="52" h="41"/>
+	</animation>
+
+	<!-- SHOTGUNKNEE -->
+	<animation speed="200">
+		<sprite x="21" y="827" w="34" h="36"/>
+		<sprite x="58" y="827" w="34" h="36"/>
+		<sprite x="94" y="827" w="34" h="36"/>
+	</animation>
+
+	<!-- SHOTGUNKNEESHOOT -->
+	<animation>
+		<sprite x="13" y="878" w="67" h="25"/>
+		<sprite x="84" y="877" w="67" h="26"/>
+		<sprite x="155" y="876" w="44" h="27"/>
+		<sprite x="202" y="876" w="44" h="27"/>
+		<sprite x="249" y="876" w="44" h="27"/>
+	</animation>
+
+	<!-- SHOTGUNKNEESHOOTUP -->
+	<animation>
+		<sprite x="15" y="914" w="22" h="76"/>
+		<sprite x="56" y="934" w="22" h="57"/>
+		<sprite x="98" y="934" w="24" h="56"/>
+	</animation>
+
+	<!-- SMGRUN -->
+	<animation speed="200">
+		<sprite x="12" y="1007" w="36" h="44"/>
+		<!-- <sprite x="52" y="1008" w="37" h="42"/>
+		<sprite x="92" y="1008" w="38" h="41"/>
+		<sprite x="132" y="1009" w="39" h="40"/> -->
+	</animation>
+
+	<!-- SMGSHOOT -->
+	<animation>
+		<sprite x="12" y="1069" w="64" h="29"/>
+		<sprite x="79" y="1069" w="64" h="29"/>
+	</animation>
+
+	<!-- SGMSHOOTUP -->
+	<animation>
+		<sprite x="15" y="1107" w="25" h="69"/>
+		<sprite x="44" y="1109" w="29" h="67"/>
+	</animation>
+
+	<!-- SGMSHOOTDOWN -->
+	<animation>
+		<sprite x="13" y="1188" w="29" h="59"/>
+		<sprite x="45" y="1188" w="30" h="59"/>
+	</animation>
+
+	<!-- SMGKNIFE2 -->
+	<animation>
+		<sprite x="16" y="1318" w="32" h="42"/>
+		<sprite x="52" y="1316" w="31" h="48"/>
+		<sprite x="86" y="1318" w="39" h="46"/>
+		<sprite x="128" y="1319" w="50" h="45"/>
+		<sprite x="181" y="1320" w="53" h="43"/>
+		<sprite x="237" y="1322" w="52" h="40"/>
+	</animation>
+
+	<!-- SMGKNIFE -->
+	<animation>
+		<sprite x="16" y="1266" w="40" h="35"/>
+		<sprite x="60" y="1266" w="32" h="33"/>
+		<sprite x="95" y="1266" w="44" h="36"/>
+		<sprite x="143" y="1255" w="43" h="49"/>
+		<sprite x="189" y="1253" w="46" h="52"/>
+		<sprite x="239" y="1251" w="45" h="54"/>
+	</animation>
+
+	<!-- SMGKNEE -->
+	<animation>
+		<sprite x="17" y="1376" w="45" h="32"/>
+		<sprite x="65" y="1377" w="45" h="31"/>
+		<sprite x="114" y="1378" w="45" h="30"/>
+	</animation>
+
+	<!-- SMGKNEESHOOT -->
+	<animation>
+		<sprite x="16" y="1424" w="64" h="27"/>
+		<sprite x="84" y="1424" w="66" h="27"/>
+		<sprite x="153" y="1422" w="37" h="29"/>
+		<sprite x="194" y="1422" w="36" h="29"/>
+		<sprite x="234" y="1421" w="38" h="30"/>
+	</animation>
+
+	<!-- SMGKNEESHOOTUP -->
+	<animation>
+		<sprite x="33" y="1467" w="25" h="77"/>
+		<sprite x="79" y="1469" w="29" h="74"/>
+	</animation>
 
 
 
 
-	
+
+	<!--  -->
 	<!-- <animation>
 		<sprite x="" y="" w="" h=""/>
 	</animation> -->

@@ -180,35 +180,29 @@ void MyDrawable::updateIntRect()
 }
 
 
-vector<Animation> MyDrawable::loadSpriteFromFile(string filename)
+vector<Animation> MyDrawable::loadAnimationsFromFile(string filename)
 {
-    vector<Int2> anim;
-    vector<int> speed;
-    vector<Int2> pos;
-    vector<Int2> siz;
-
-    if(!loadSpriteMap(filename,&anim,&speed,&pos,&siz))
-    {
-        cerr << "Erreur dans le chargement de l'animation : " << filename << endl;
-        exit(-1);
-    }
-
-    vector<Animation> ret;
-
-    for(unsigned int i=0; i<anim.size(); ++i)
-    {
-        Animation a;
-
-        if(speed[i] > 0)
-        	a.setSpeed(speed[i]);
-
-        for(int y=anim[i].x; y<=anim[i].y; ++y)
-        {
-            Frame f(pos[y],siz[y]);
-            a.addFrame(f);
-        }
-        ret.push_back(a);
-    }
-
-    return ret;
+vector<Int2> anim;
+vector<int> speed;
+vector<Int2> pos;
+vector<Int2> siz;
+if(!loadSpriteMap(filename,&anim,&speed,&pos,&siz))
+{
+cerr << "Erreur dans le chargement de l'animation : " << filename << endl;
+exit(-1);
+}
+vector<Animation> ret;
+for(unsigned int i=0; i<anim.size(); ++i)
+{
+Animation a;
+if(speed[i] > 0)
+a.setSpeed(speed[i]);
+for(int y=anim[i].x; y<=anim[i].y; ++y)
+{
+Frame f(pos[y],siz[y]);
+a.addFrame(f);
+}
+ret.push_back(a);
+}
+return ret;
 }

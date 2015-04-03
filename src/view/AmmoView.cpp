@@ -143,7 +143,7 @@ void AmmoView::loadRessources()
 
 
     /* === ANIMATIONS ===*/
-    animations_list[BULLET] = loadSpriteFromFile("res/xml/ammo/bullet.xml");
+    animations_list[BULLET] = loadAnimationsFromFile("res/xml/ammo/bullet.xml");
 
    
     /* === SONS === */

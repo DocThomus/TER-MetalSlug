@@ -135,12 +135,11 @@ class MyDrawable
 		virtual void updateIntRect();
 
 		/*!
-	     * \brief Chargement d'animations
-	     *
-	     * Methode statique permettant de charger des animations à partir d'un fichier.
-	     */
-		static vector<Animation> loadSpriteFromFile(string filename);
-
+		* \brief Chargement d'animations
+		*
+		* Methode statique permettant de charger des animations à partir d'un fichier.
+		*/
+		static vector<Animation> loadAnimationsFromFile(string filename);
 
 };
 

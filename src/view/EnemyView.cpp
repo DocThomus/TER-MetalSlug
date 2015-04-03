@@ -147,7 +147,7 @@ void EnemyView::loadRessources(TypeEnemy t)
 	    textures[REBEL] = tex;
 
 	    // ANIMATION
-	    animations_list[REBEL] = loadSpriteFromFile("res/xml/enemy/rebel.xml");
+	    animations_list[REBEL] = loadAnimationsFromFile("res/xml/enemy/rebel.xml");
 
 	    // SOUNDS
 		buffer = new SoundBuffer();

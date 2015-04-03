@@ -47,7 +47,13 @@ class PlayerView : public Player, public MyDrawable
 			PISTOLKNIFE, PISTOLKNIFE2,
 			PISTOLKNEE, PISTOLKNEESHOOT, PISTOLKNEESHOOTUP,
 
-			SHOTGUNRUN, SHOTGUNSHOOT, SHOTGUNSHOOTUP, SHOTGUNSHOOTDOWN
+			SHOTGUNRUN, SHOTGUNSHOOT, SHOTGUNSHOOTUP, SHOTGUNSHOOTDOWN,
+			SHOTGUNKNIFE, SHOTGUNKNIFE2,
+			SHOTGUNKNEE, SHOTGUNKNEESHOOT, SHOTGUNKNEESHOOTUP,
+
+			SMGRUN, SMGSHOOT, SMGSHOOTUP, SMGSHOOTDOWN,
+			SMGKNIFE, SMGKNIFE2,
+			SMGKNEE, SMGKNEESHOOT, SMGKNEESHOOTUP,
 		};
 
 		/*!
@@ -180,6 +186,12 @@ class PlayerView : public Player, public MyDrawable
 		virtual void knife();
 
 		/*!
+	     * \brief Modifie l'arme courante.
+	     * \param w : Indice de l'arme à selectionner.
+	     */
+		virtual void setWeapon(int w);
+
+		/*!
 	     * \brief Renvoie un pointeur vers l'animation de course en fonction de l'arme tenue.
 	     */
 		PlayerView::PlayerAnimationsBody getAnimRun();
@@ -198,6 +210,31 @@ class PlayerView : public Player, public MyDrawable
 	     * \brief Renvoie un pointeur vers l'animation de tir vers le bas en fonction de l'arme tenue.
 	     */
 		PlayerView::PlayerAnimationsBody getAnimShootDown();
+
+		/*!
+	     * \brief Renvoie un pointeur vers l'animation du corps à corps en fonction de l'arme tenue.
+	     */
+		PlayerView::PlayerAnimationsBody getAnimKnife();
+
+		/*!
+	     * \brief Renvoie un pointeur vers l'animation du corps à corps 2 en fonction de l'arme tenue.
+	     */
+		PlayerView::PlayerAnimationsBody getAnimKnife2();
+
+		/*!
+	     * \brief Renvoie un pointeur vers l'animation accroupie en fonction de l'arme tenue.
+	     */
+		PlayerView::PlayerAnimationsBody getAnimKnee();
+
+		/*!
+	     * \brief Renvoie un pointeur vers l'animation accroupie de tir en fonction de l'arme tenue.
+	     */
+		PlayerView::PlayerAnimationsBody getAnimKneeShoot();
+
+		/*!
+	     * \brief Renvoie un pointeur vers l'animation accroupie de tir vers la haut en fonction de l'arme tenue.
+	     */
+		PlayerView::PlayerAnimationsBody getAnimKneeShootUp();
 };
 
 

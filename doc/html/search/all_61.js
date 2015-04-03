@@ -17,7 +17,7 @@ var searchData=
   ['animation',['Animation',['../class_animation.html',1,'Animation'],['../class_animation.html#a83f0a16cef7117f187ad596de38dd9d6',1,'Animation::Animation()'],['../class_animation.html#aaac1ee4fc09c59c30a81212c6537926c',1,'Animation::Animation(vector&lt; Frame &gt; v)']]],
   ['animation_2eh',['Animation.h',['../_animation_8h.html',1,'']]],
   ['animations',['animations',['../class_my_drawable.html#a006145f0c78fb6ab3ba448a778fc42ef',1,'MyDrawable']]],
-  ['animations_5flist',['animations_list',['../class_enemy_view.html#ae823ab1e84c51fee9ec399c4e5f8eac4',1,'EnemyView::animations_list()'],['../class_player_view.html#a12b2ab03e00e5eb29de4610ebdaa3375',1,'PlayerView::animations_list()']]],
+  ['animations_5flist',['animations_list',['../class_ammo_view.html#aa83a555ee1e17576b96845c06c207a17',1,'AmmoView::animations_list()'],['../class_enemy_view.html#ae823ab1e84c51fee9ec399c4e5f8eac4',1,'EnemyView::animations_list()'],['../class_player_view.html#a12b2ab03e00e5eb29de4610ebdaa3375',1,'PlayerView::animations_list()']]],
   ['applyconfig',['applyConfig',['../class_game.html#af68e607c3b163ebf906c19be8c13505d',1,'Game']]],
   ['armes',['armes',['../class_player.html#abebadca7f115991934ca776d789ed1d3',1,'Player']]]
 ];
