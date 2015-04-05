@@ -203,6 +203,7 @@ bool loadLevelXML(string filename, Config* conf, Environment* env, list<EventGam
         string tmp_file = "";
         bool visible = true;
         Texture* tmp_tex;
+        Bool2 repeat_tex(true,true);
 
         // récupération des données
         xml_node<> *position = platform->first_node("position");
@@ -218,7 +219,16 @@ bool loadLevelXML(string filename, Config* conf, Environment* env, list<EventGam
             visible = atoi(visibleAttr->value());
         xml_node<> *sprite;
         if((sprite=platform->first_node("sprite")))
+        {
             tmp_file = sprite->value();
+            xml_attribute<> *rx;
+            xml_attribute<> *ry;
+            if((rx = sprite->first_attribute("rx")))
+                repeat_tex.x = atoi(rx->value());
+            if((ry = sprite->first_attribute("ry")))
+                repeat_tex.y = atoi(ry->value());
+        }
+
 
         // construction texture
         if(!tmp_file.empty())
@@ -232,7 +242,7 @@ bool loadLevelXML(string filename, Config* conf, Environment* env, list<EventGam
             tmp_tex = NULL;
 
         // construction de l'objet
-        env->addPlatform(tmp_pos,tmp_siz,0,visible,tmp_tex);
+        env->addPlatform(tmp_pos,tmp_siz,0,visible,tmp_tex,repeat_tex);
     }
 
 

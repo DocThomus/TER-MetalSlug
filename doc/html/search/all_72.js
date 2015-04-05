@@ -5,5 +5,6 @@ var searchData=
   ['repeat_5ftex',['repeat_tex',['../class_my_drawable.html#a049b0e03ea369c98b9473dd4c0fdab90',1,'MyDrawable']]],
   ['reset',['reset',['../class_animation.html#a903eb4b61b8c7bc72bbedbdba4cbb501',1,'Animation']]],
   ['resetanim',['resetAnim',['../class_my_drawable.html#a530329a40bbb3497ac94a40006a3e4e9',1,'MyDrawable']]],
-  ['resolution',['resolution',['../class_config.html#a36de80667b940a76564c4acf61c23073',1,'Config']]]
+  ['resolution',['resolution',['../class_config.html#a36de80667b940a76564c4acf61c23073',1,'Config']]],
+  ['ressources_5floaded',['ressources_loaded',['../class_enemy_view.html#a9f783300c66fdac15292eae57372de13',1,'EnemyView']]]
 ];

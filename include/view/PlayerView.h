@@ -43,6 +43,8 @@ class PlayerView : public Player, public MyDrawable
 	     */
 		enum PlayerAnimationsBody
 		{
+			DEATH, DEATH2,
+
 			PISTOLRUN, PISTOLSHOOT, PISTOLSHOOTUP, PISTOLSHOOTDOWN,
 			PISTOLKNIFE, PISTOLKNIFE2,
 			PISTOLKNEE, PISTOLKNEESHOOT, PISTOLKNEESHOOTUP,
@@ -171,6 +173,11 @@ class PlayerView : public Player, public MyDrawable
 	     * \param b : Vrai si le joueur doit se mettre à genoux, Faux s'il doit se lever.
 	     */
 		void kneel(bool b);
+
+		/*!
+	     * \brief Le personnage meurt.
+	     */
+		virtual void die();
 
 		/*!
 	     * \brief Tirer.

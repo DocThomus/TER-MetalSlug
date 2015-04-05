@@ -23,7 +23,7 @@ Enemy::Enemy(Int2 pos, TypeEnemy t)
 	switch(t)
 	{
 		case REBEL :
-			size = Int2(64,120);
+			size = Int2(64,130);
 			mass = 5;
 			health = 10;
 			haveAI = false;

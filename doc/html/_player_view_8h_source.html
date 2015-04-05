@@ -128,86 +128,90 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00039"></a>00039 
 <a name="l00044"></a><a class="code" href="class_player_view.html#ae8c3e4edb01eb35daadc796287b657b2">00044</a>                 <span class="keyword">enum</span> <a class="code" href="class_player_view.html#ae8c3e4edb01eb35daadc796287b657b2" title="Différentes animations du corps du joueur.">PlayerAnimationsBody</a>
 <a name="l00045"></a>00045                 {
-<a name="l00046"></a>00046                         PISTOLRUN, PISTOLSHOOT, PISTOLSHOOTUP, PISTOLSHOOTDOWN,
-<a name="l00047"></a>00047                         PISTOLKNIFE, PISTOLKNIFE2,
-<a name="l00048"></a>00048                         PISTOLKNEE, PISTOLKNEESHOOT, PISTOLKNEESHOOTUP,
-<a name="l00049"></a>00049 
-<a name="l00050"></a>00050                         SHOTGUNRUN, SHOTGUNSHOOT, SHOTGUNSHOOTUP, SHOTGUNSHOOTDOWN,
-<a name="l00051"></a>00051                         SHOTGUNKNIFE, SHOTGUNKNIFE2,
-<a name="l00052"></a>00052                         SHOTGUNKNEE, SHOTGUNKNEESHOOT, SHOTGUNKNEESHOOTUP,
-<a name="l00053"></a>00053 
-<a name="l00054"></a>00054                         SMGRUN, SMGSHOOT, SMGSHOOTUP, SMGSHOOTDOWN,
-<a name="l00055"></a>00055                         SMGKNIFE, SMGKNIFE2,
-<a name="l00056"></a>00056                         SMGKNEE, SMGKNEESHOOT, SMGKNEESHOOTUP,
-<a name="l00057"></a>00057                 };
-<a name="l00058"></a>00058 
-<a name="l00063"></a><a class="code" href="class_player_view.html#acda9c4c9f5026135fb2d37800f30c02f">00063</a>                 <span class="keyword">enum</span> <a class="code" href="class_player_view.html#acda9c4c9f5026135fb2d37800f30c02f" title="Différentes animations des jambes du joueur.">PlayerAnimationsLegs</a>
-<a name="l00064"></a>00064                 {
-<a name="l00065"></a>00065                         STAND, RUN, JUMP
-<a name="l00066"></a>00066                 };
-<a name="l00067"></a>00067 
-<a name="l00068"></a>00068 
-<a name="l00069"></a>00069         <span class="keyword">private</span> :
+<a name="l00046"></a>00046                         DEATH, DEATH2,
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048                         PISTOLRUN, PISTOLSHOOT, PISTOLSHOOTUP, PISTOLSHOOTDOWN,
+<a name="l00049"></a>00049                         PISTOLKNIFE, PISTOLKNIFE2,
+<a name="l00050"></a>00050                         PISTOLKNEE, PISTOLKNEESHOOT, PISTOLKNEESHOOTUP,
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052                         SHOTGUNRUN, SHOTGUNSHOOT, SHOTGUNSHOOTUP, SHOTGUNSHOOTDOWN,
+<a name="l00053"></a>00053                         SHOTGUNKNIFE, SHOTGUNKNIFE2,
+<a name="l00054"></a>00054                         SHOTGUNKNEE, SHOTGUNKNEESHOOT, SHOTGUNKNEESHOOTUP,
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056                         SMGRUN, SMGSHOOT, SMGSHOOTUP, SMGSHOOTDOWN,
+<a name="l00057"></a>00057                         SMGKNIFE, SMGKNIFE2,
+<a name="l00058"></a>00058                         SMGKNEE, SMGKNEESHOOT, SMGKNEESHOOTUP,
+<a name="l00059"></a>00059                 };
+<a name="l00060"></a>00060 
+<a name="l00065"></a><a class="code" href="class_player_view.html#acda9c4c9f5026135fb2d37800f30c02f">00065</a>                 <span class="keyword">enum</span> <a class="code" href="class_player_view.html#acda9c4c9f5026135fb2d37800f30c02f" title="Différentes animations des jambes du joueur.">PlayerAnimationsLegs</a>
+<a name="l00066"></a>00066                 {
+<a name="l00067"></a>00067                         STAND, RUN, JUMP
+<a name="l00068"></a>00068                 };
+<a name="l00069"></a>00069 
 <a name="l00070"></a>00070 
-<a name="l00071"></a><a class="code" href="class_player_view.html#a2d20d1b64088e6141684493f129c67f6">00071</a>                 <span class="keyword">static</span> vector&lt;Sound*&gt; <a class="code" href="class_player_view.html#a2d20d1b64088e6141684493f129c67f6" title="Variable de classe contenant les différents son nécessaires au player.">sounds</a>; 
-<a name="l00072"></a><a class="code" href="class_player_view.html#a0b2a510f8f1b5b509ba3fe3448e4feaf">00072</a>                 <span class="keyword">static</span> Texture* textures[2]; 
-<a name="l00073"></a><a class="code" href="class_player_view.html#a12b2ab03e00e5eb29de4610ebdaa3375">00073</a>                 <span class="keyword">static</span> vector&lt;Animation&gt; animations_list[2]; 
-<a name="l00076"></a>00076         <span class="keyword">public</span> :
-<a name="l00077"></a>00077 
-<a name="l00078"></a><a class="code" href="class_player_view.html#ae7a4f3448d524b3981e59e7c4b3ca627">00078</a>                 <a class="code" href="class_member_view.html" title="Un membre d&#39;un character destiné à être affiché.">MemberView</a> <a class="code" href="class_player_view.html#ae7a4f3448d524b3981e59e7c4b3ca627" title="L&#39;objet symbolisant les jambes du joueur.">legs</a>; 
-<a name="l00089"></a>00089                 <a class="code" href="class_player_view.html" title="Un objet Player affichable.">PlayerView</a>(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> pos, <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> siz, <span class="keywordtype">int</span> m, <span class="keywordtype">int</span> max_h);
-<a name="l00090"></a>00090 
-<a name="l00096"></a>00096                 <a class="code" href="class_player_view.html" title="Un objet Player affichable.">PlayerView</a>();
-<a name="l00097"></a>00097 
-<a name="l00103"></a>00103                 ~<a class="code" href="class_player_view.html" title="Un objet Player affichable.">PlayerView</a>();
-<a name="l00104"></a>00104 
-<a name="l00111"></a>00111                 <span class="keyword">static</span> <span class="keywordtype">void</span> loadRessources();
-<a name="l00112"></a>00112 
-<a name="l00118"></a>00118                 <span class="keyword">static</span> <span class="keywordtype">void</span> deleteRessources();
-<a name="l00119"></a>00119 
-<a name="l00125"></a>00125                 <span class="keywordtype">void</span> init();
-<a name="l00126"></a>00126 
-<a name="l00133"></a>00133                 <span class="keywordtype">void</span> display(RenderWindow* window);
-<a name="l00134"></a>00134 
-<a name="l00141"></a>00141                 <span class="keywordtype">void</span> animate(<span class="keywordtype">int</span> dt);
-<a name="l00142"></a>00142 
-<a name="l00146"></a>00146                 <span class="keywordtype">void</span> updateIntRect();
-<a name="l00147"></a>00147 
-<a name="l00154"></a>00154                 <span class="keywordtype">void</span> walk(<span class="keywordtype">int</span> way);
-<a name="l00155"></a>00155 
-<a name="l00159"></a>00159                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> jump(<span class="keywordtype">int</span> h);
-<a name="l00160"></a>00160 
-<a name="l00164"></a>00164                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> land(<span class="keywordtype">int</span> h);
-<a name="l00165"></a>00165 
-<a name="l00173"></a>00173                 <span class="keywordtype">void</span> kneel(<span class="keywordtype">bool</span> b);
-<a name="l00174"></a>00174 
-<a name="l00181"></a>00181                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> shoot(list&lt;AmmoView*&gt;* air, <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> angle = <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a>(1,0));
-<a name="l00182"></a>00182 
-<a name="l00186"></a>00186                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> knife();
-<a name="l00187"></a>00187 
-<a name="l00192"></a>00192                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> setWeapon(<span class="keywordtype">int</span> w);
-<a name="l00193"></a>00193 
-<a name="l00197"></a>00197                 <a class="code" href="class_player_view.html#ae8c3e4edb01eb35daadc796287b657b2" title="Différentes animations du corps du joueur.">PlayerView::PlayerAnimationsBody</a> getAnimRun();
-<a name="l00198"></a>00198 
-<a name="l00202"></a>00202                 <a class="code" href="class_player_view.html#ae8c3e4edb01eb35daadc796287b657b2" title="Différentes animations du corps du joueur.">PlayerView::PlayerAnimationsBody</a> getAnimShoot();
-<a name="l00203"></a>00203 
-<a name="l00207"></a>00207                 <a class="code" href="class_player_view.html#ae8c3e4edb01eb35daadc796287b657b2" title="Différentes animations du corps du joueur.">PlayerView::PlayerAnimationsBody</a> getAnimShootUp();
-<a name="l00208"></a>00208 
-<a name="l00212"></a>00212                 <a class="code" href="class_player_view.html#ae8c3e4edb01eb35daadc796287b657b2" title="Différentes animations du corps du joueur.">PlayerView::PlayerAnimationsBody</a> getAnimShootDown();
-<a name="l00213"></a>00213 
-<a name="l00217"></a>00217                 <a class="code" href="class_player_view.html#ae8c3e4edb01eb35daadc796287b657b2" title="Différentes animations du corps du joueur.">PlayerView::PlayerAnimationsBody</a> getAnimKnife();
-<a name="l00218"></a>00218 
-<a name="l00222"></a>00222                 <a class="code" href="class_player_view.html#ae8c3e4edb01eb35daadc796287b657b2" title="Différentes animations du corps du joueur.">PlayerView::PlayerAnimationsBody</a> getAnimKnife2();
-<a name="l00223"></a>00223 
-<a name="l00227"></a>00227                 <a class="code" href="class_player_view.html#ae8c3e4edb01eb35daadc796287b657b2" title="Différentes animations du corps du joueur.">PlayerView::PlayerAnimationsBody</a> getAnimKnee();
-<a name="l00228"></a>00228 
-<a name="l00232"></a>00232                 <a class="code" href="class_player_view.html#ae8c3e4edb01eb35daadc796287b657b2" title="Différentes animations du corps du joueur.">PlayerView::PlayerAnimationsBody</a> getAnimKneeShoot();
-<a name="l00233"></a>00233 
-<a name="l00237"></a>00237                 <a class="code" href="class_player_view.html#ae8c3e4edb01eb35daadc796287b657b2" title="Différentes animations du corps du joueur.">PlayerView::PlayerAnimationsBody</a> getAnimKneeShootUp();
-<a name="l00238"></a>00238 };
-<a name="l00239"></a>00239 
+<a name="l00071"></a>00071         <span class="keyword">private</span> :
+<a name="l00072"></a>00072 
+<a name="l00073"></a><a class="code" href="class_player_view.html#a2d20d1b64088e6141684493f129c67f6">00073</a>                 <span class="keyword">static</span> vector&lt;Sound*&gt; <a class="code" href="class_player_view.html#a2d20d1b64088e6141684493f129c67f6" title="Variable de classe contenant les différents son nécessaires au player.">sounds</a>; 
+<a name="l00074"></a><a class="code" href="class_player_view.html#a0b2a510f8f1b5b509ba3fe3448e4feaf">00074</a>                 <span class="keyword">static</span> Texture* textures[2]; 
+<a name="l00075"></a><a class="code" href="class_player_view.html#a12b2ab03e00e5eb29de4610ebdaa3375">00075</a>                 <span class="keyword">static</span> vector&lt;Animation&gt; animations_list[2]; 
+<a name="l00078"></a>00078         <span class="keyword">public</span> :
+<a name="l00079"></a>00079 
+<a name="l00080"></a><a class="code" href="class_player_view.html#ae7a4f3448d524b3981e59e7c4b3ca627">00080</a>                 <a class="code" href="class_member_view.html" title="Un membre d&#39;un character destiné à être affiché.">MemberView</a> <a class="code" href="class_player_view.html#ae7a4f3448d524b3981e59e7c4b3ca627" title="L&#39;objet symbolisant les jambes du joueur.">legs</a>; 
+<a name="l00091"></a>00091                 <a class="code" href="class_player_view.html" title="Un objet Player affichable.">PlayerView</a>(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> pos, <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> siz, <span class="keywordtype">int</span> m, <span class="keywordtype">int</span> max_h);
+<a name="l00092"></a>00092 
+<a name="l00098"></a>00098                 <a class="code" href="class_player_view.html" title="Un objet Player affichable.">PlayerView</a>();
+<a name="l00099"></a>00099 
+<a name="l00105"></a>00105                 ~<a class="code" href="class_player_view.html" title="Un objet Player affichable.">PlayerView</a>();
+<a name="l00106"></a>00106 
+<a name="l00113"></a>00113                 <span class="keyword">static</span> <span class="keywordtype">void</span> loadRessources();
+<a name="l00114"></a>00114 
+<a name="l00120"></a>00120                 <span class="keyword">static</span> <span class="keywordtype">void</span> deleteRessources();
+<a name="l00121"></a>00121 
+<a name="l00127"></a>00127                 <span class="keywordtype">void</span> init();
+<a name="l00128"></a>00128 
+<a name="l00135"></a>00135                 <span class="keywordtype">void</span> display(RenderWindow* window);
+<a name="l00136"></a>00136 
+<a name="l00143"></a>00143                 <span class="keywordtype">void</span> animate(<span class="keywordtype">int</span> dt);
+<a name="l00144"></a>00144 
+<a name="l00148"></a>00148                 <span class="keywordtype">void</span> updateIntRect();
+<a name="l00149"></a>00149 
+<a name="l00156"></a>00156                 <span class="keywordtype">void</span> walk(<span class="keywordtype">int</span> way);
+<a name="l00157"></a>00157 
+<a name="l00161"></a>00161                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> jump(<span class="keywordtype">int</span> h);
+<a name="l00162"></a>00162 
+<a name="l00166"></a>00166                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> land(<span class="keywordtype">int</span> h);
+<a name="l00167"></a>00167 
+<a name="l00175"></a>00175                 <span class="keywordtype">void</span> kneel(<span class="keywordtype">bool</span> b);
+<a name="l00176"></a>00176 
+<a name="l00180"></a>00180                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> die();
+<a name="l00181"></a>00181 
+<a name="l00188"></a>00188                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> shoot(list&lt;AmmoView*&gt;* air, <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> angle = <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a>(1,0));
+<a name="l00189"></a>00189 
+<a name="l00193"></a>00193                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> knife();
+<a name="l00194"></a>00194 
+<a name="l00199"></a>00199                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> setWeapon(<span class="keywordtype">int</span> w);
+<a name="l00200"></a>00200 
+<a name="l00204"></a>00204                 <a class="code" href="class_player_view.html#ae8c3e4edb01eb35daadc796287b657b2" title="Différentes animations du corps du joueur.">PlayerView::PlayerAnimationsBody</a> getAnimRun();
+<a name="l00205"></a>00205 
+<a name="l00209"></a>00209                 <a class="code" href="class_player_view.html#ae8c3e4edb01eb35daadc796287b657b2" title="Différentes animations du corps du joueur.">PlayerView::PlayerAnimationsBody</a> getAnimShoot();
+<a name="l00210"></a>00210 
+<a name="l00214"></a>00214                 <a class="code" href="class_player_view.html#ae8c3e4edb01eb35daadc796287b657b2" title="Différentes animations du corps du joueur.">PlayerView::PlayerAnimationsBody</a> getAnimShootUp();
+<a name="l00215"></a>00215 
+<a name="l00219"></a>00219                 <a class="code" href="class_player_view.html#ae8c3e4edb01eb35daadc796287b657b2" title="Différentes animations du corps du joueur.">PlayerView::PlayerAnimationsBody</a> getAnimShootDown();
+<a name="l00220"></a>00220 
+<a name="l00224"></a>00224                 <a class="code" href="class_player_view.html#ae8c3e4edb01eb35daadc796287b657b2" title="Différentes animations du corps du joueur.">PlayerView::PlayerAnimationsBody</a> getAnimKnife();
+<a name="l00225"></a>00225 
+<a name="l00229"></a>00229                 <a class="code" href="class_player_view.html#ae8c3e4edb01eb35daadc796287b657b2" title="Différentes animations du corps du joueur.">PlayerView::PlayerAnimationsBody</a> getAnimKnife2();
+<a name="l00230"></a>00230 
+<a name="l00234"></a>00234                 <a class="code" href="class_player_view.html#ae8c3e4edb01eb35daadc796287b657b2" title="Différentes animations du corps du joueur.">PlayerView::PlayerAnimationsBody</a> getAnimKnee();
+<a name="l00235"></a>00235 
+<a name="l00239"></a>00239                 <a class="code" href="class_player_view.html#ae8c3e4edb01eb35daadc796287b657b2" title="Différentes animations du corps du joueur.">PlayerView::PlayerAnimationsBody</a> getAnimKneeShoot();
 <a name="l00240"></a>00240 
-<a name="l00243"></a>00243 <span class="preprocessor">#endif</span>
+<a name="l00244"></a>00244                 <a class="code" href="class_player_view.html#ae8c3e4edb01eb35daadc796287b657b2" title="Différentes animations du corps du joueur.">PlayerView::PlayerAnimationsBody</a> getAnimKneeShootUp();
+<a name="l00245"></a>00245 };
+<a name="l00246"></a>00246 
+<a name="l00247"></a>00247 
+<a name="l00250"></a>00250 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -228,7 +232,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul>
       <li class="navelem"><a class="el" href="_player_view_8h.html">PlayerView.h</a>      </li>
 
-    <li class="footer">Généré le Vendredi Avril 3 2015 21:39:18 pour Metal Slug par
+    <li class="footer">Généré le Dimanche Avril 5 2015 16:56:52 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

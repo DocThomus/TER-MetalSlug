@@ -59,7 +59,7 @@ void Weapon::shoot(list<Ammo*>* air, Float2 angle)
 
 	switch(type) // définir la cadence en millisecondes
 	{
-		case PISTOL  : cadence = 0;  break;
+		case PISTOL  : cadence = 150;  break;
 		case SHOTGUN : cadence = 500; break;
 		case SMG     : cadence = 60;  break;
 		default      : cadence = 0;  break;

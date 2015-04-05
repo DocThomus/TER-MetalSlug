@@ -44,6 +44,84 @@
 		<sprite x="1044" y="1184" w="23" h="26"/>
 	</animation>
 
+	<!-- DEATH2 -->
+	<animation speed="40">
+		<sprite x="56" y="779" w="31" h="34"/>
+		<sprite x="93" y="779" w="36" h="34"/>
+		<sprite x="135" y="781" w="37" h="32"/>
+		<sprite x="179" y="784" w="41" h="29"/>
+		<sprite x="229" y="794" w="40" h="19"/>
+		<sprite x="274" y="796" w="45" h="17"/>
+		<sprite x="326" y="798" w="45" h="15"/>
+		<sprite x="377" y="798" w="45" h="15"/>
+	</animation>
+
+	<!-- DEATH3 -->
+	<animation speed="40">
+		<sprite x="238" y="717" w="28" h="38"/>
+		<sprite x="273" y="716" w="29" h="39"/>
+		<sprite x="310" y="716" w="28" h="39"/>
+		<sprite x="346" y="715" w="28" h="40"/>
+		<sprite x="382" y="715" w="27" h="40"/>
+		<sprite x="417" y="717" w="27" h="38"/>
+		<sprite x="452" y="721" w="27" h="34"/>
+		<sprite x="489" y="725" w="27" h="30"/>
+		<sprite x="525" y="728" w="27" h="27"/>
+		<sprite x="560" y="732" w="28" h="23"/>
+		<sprite x="596" y="740" w="31" h="15"/>
+		<sprite x="632" y="739" w="31" h="16"/>
+	</animation>
+
+	<!-- RUN -->
+	<animation>
+		<sprite x="174" y="9" w="20" h="38"/>
+		<sprite x="203" y="7" w="20" h="40"/>
+		<sprite x="234" y="7" w="23" h="40"/>
+		<sprite x="266" y="8" w="26" h="39"/>
+		<sprite x="301" y="9" w="24" h="38"/>
+		<sprite x="332" y="9" w="22" h="38"/>
+		<sprite x="360" y="9" w="21" h="38"/>
+		<sprite x="389" y="7" w="21" h="40"/>
+		<sprite x="419" y="6" w="22" h="41"/>
+		<sprite x="450" y="8" w="25" h="39"/>
+		<sprite x="485" y="9" w="22" h="38"/>
+		<sprite x="516" y="9" w="19" h="38"/>
+	</animation>
+
+	<!-- GRENADE -->
+	<animation>
+		<sprite x="148" y="163" w="31" h="36"/>
+		<sprite x="185" y="163" w="35" h="36"/>
+		<sprite x="227" y="161" w="39" h="38"/>
+		<sprite x="274" y="157" w="40" h="42"/>
+		<sprite x="322" y="158" w="40" h="41"/>
+		<sprite x="372" y="151" w="38" h="48"/>
+		<sprite x="420" y="151" w="40" h="48"/>
+		<sprite x="851" y="164" w="35" h="35"/>
+		<sprite x="892" y="165" w="29" h="34"/>
+		<sprite x="929" y="166" w="28" h="33"/>
+		<sprite x="966" y="163" w="27" h="36"/>
+		<sprite x="1003" y="163" w="29" h="36"/>
+		<sprite x="1038" y="162" w="27" h="37"/>
+		<sprite x="1072" y="161" w="26" h="38"/>
+	</animation>
+
+	<!-- KNIFE -->
+	<animation>
+		<sprite x="583" y="1825" w="25" h="37"/>
+		<sprite x="622" y="1826" w="22" h="36"/>
+		<sprite x="656" y="1827" w="21" h="35"/>
+		<sprite x="694" y="1828" w="22" h="34"/>
+		<sprite x="731" y="1829" w="24" h="33"/>
+		<sprite x="769" y="1830" w="27" h="32"/>
+		<sprite x="807" y="1830" w="29" h="32"/>
+		<sprite x="851" y="1830" w="29" h="32"/>
+		<sprite x="894" y="1830" w="30" h="32"/>
+		<sprite x="937" y="1830" w="43" h="32"/>
+		<sprite x="990" y="1830" w="49" h="32"/>
+		<sprite x="1052" y="1828" w="46" h="34"/>
+	</animation>
+
 
 
 	<!--  -->

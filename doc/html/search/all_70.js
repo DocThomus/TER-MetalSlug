@@ -5,7 +5,7 @@ var searchData=
   ['platforms',['platforms',['../class_environment.html#aa2c58fda55d8068ac4c506f374d69b45',1,'Environment']]],
   ['platformview',['PlatformView',['../class_platform_view.html',1,'PlatformView'],['../class_platform_view.html#a8c777b6c94c069eeb3335cfc5ceb03d1',1,'PlatformView::PlatformView(Int2 pos, Int2 siz, int wl)'],['../class_platform_view.html#acece1f4f9f6813a2dc5a389fc6869f3b',1,'PlatformView::PlatformView()']]],
   ['platformview_2eh',['PlatformView.h',['../_platform_view_8h.html',1,'']]],
-  ['player',['Player',['../class_player.html',1,'Player'],['../class_player.html#afa2bc2cc2a64d438ed40534beff4af62',1,'Player::Player(Int2 pos, Int2 siz, int m, int max_h)'],['../class_player.html#affe0cc3cb714f6deb4e62f0c0d3f1fd8',1,'Player::Player()'],['../class_game.html#ae5a4d25fa9dc07b3889b4b418a73a136',1,'Game::player()']]],
+  ['player',['Player',['../class_player.html',1,'Player'],['../class_game.html#ae5a4d25fa9dc07b3889b4b418a73a136',1,'Game::player()'],['../class_player.html#afa2bc2cc2a64d438ed40534beff4af62',1,'Player::Player(Int2 pos, Int2 siz, int m, int max_h)'],['../class_player.html#affe0cc3cb714f6deb4e62f0c0d3f1fd8',1,'Player::Player()']]],
   ['player_2eh',['Player.h',['../_player_8h.html',1,'']]],
   ['playeranimationsbody',['PlayerAnimationsBody',['../class_player_view.html#ae8c3e4edb01eb35daadc796287b657b2',1,'PlayerView']]],
   ['playeranimationslegs',['PlayerAnimationsLegs',['../class_player_view.html#acda9c4c9f5026135fb2d37800f30c02f',1,'PlayerView']]],

@@ -76,6 +76,9 @@ void Player::addWeapon(Weapon::TypeWeapon t)
 
 void Player::setWeapon(int w)
 {
+    if(state_b == DEAD)
+        return;
+    
 	current_weapon = (w >= int(armes.size()) ? armes.size()-1 : w);
 }
 
@@ -89,7 +92,7 @@ Weapon::TypeWeapon Player::getTypeWeapon()
 
 void Player::shoot(list<Ammo*>* air, Float2 angle)
 {
-	if(armes.size()>0 && state_b!=KNIFE) // si on a une arme
+	if(armes.size()>0 && state_b!=KNIFE && state_b!=DEAD) // si on a une arme
 	{
         if(angle.y<=0 || state_g==AIR)
         {
@@ -110,30 +113,37 @@ void Player::knife()
 
 void Player::die()
 {
-	state_b = DEAD;
-	cout << "Je suis mort." << endl;
+    if(state_b != DEAD)
+	   state_b = DEAD;
 }
 
 
 void Player::reload(int nb)
 {
-	armes[current_weapon].reload(nb);
+    if(state_b != DEAD)
+	   armes[current_weapon].reload(nb);
 }
 
 
 void Player::animate(int dt)
 {
-	Character::animate(dt);
+    if(state_b != DEAD)
+    {
+    	Character::animate(dt);
 
-	/* COURIR */
-	if(state_p == RUN)
-		position.x += dt*walkway/mass*2	;
+    	/* COURIR */
+    	if(state_p == RUN)
+    		position.x += dt*walkway/mass*2	;
+    }
 
 }
 
 
 void Player::walk(int way)
 {
+    if(state_b == DEAD)
+        return;
+
 	if(way != 0)
 	{
 		if(state_p != KNELT)

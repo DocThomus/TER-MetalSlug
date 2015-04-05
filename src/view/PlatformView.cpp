@@ -7,8 +7,8 @@ PlatformView::PlatformView(Int2 pos, Int2 siz, int wl)
 	//body.setFillColor(Color::Black);
 	body.setSize(Vector2f(size.x,size.y));
 	body.setPosition(Vector2f(position.x,position.y));
-	body.setOutlineThickness(2);
-	body.setOutlineColor(Color::Black);
+	// body.setOutlineThickness(2);
+	// body.setOutlineColor(Color::Black);
 }
 
 
@@ -18,8 +18,8 @@ PlatformView::PlatformView()
 {
 	body.setSize(Vector2f(size.x,size.y));
 	body.setPosition(Vector2f(position.x,position.y));
-	body.setOutlineThickness(2);
-	body.setOutlineColor(Color::Black);
+	// body.setOutlineThickness(2);
+	// body.setOutlineColor(Color::Black);
 }
 
 

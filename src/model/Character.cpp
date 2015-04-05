@@ -44,7 +44,7 @@ void Character::animate(int dt)
 
 void Character::jump(int h) 
 {
-    if(state_g==GROUND)
+    if(state_g==GROUND && state_b!=DEAD)
     {
         if(state_p==KNELT)
             kneel(false);
@@ -58,21 +58,26 @@ void Character::jump(int h)
 void Character::land(int h)
 {
     state_g = GROUND;
+    if(state_b==SHOOT and gunway.y>0)
+        state_b = NORMAL;
     position.y = h-size.y;
     movement.y = 0;
 }
 
 
 
-void Character::bumpTop(int h) {
-    if(state_g == AIR) {
+void Character::bumpTop(int h) 
+{
+    if(state_g == AIR) 
+    {
         movement.y = 0;
         position.y = h;
     }
 }
 
 
-void Character::bumpLeft(int x) {
+void Character::bumpLeft(int x) 
+{
     // Le mur est a gauche du perso (le parametre est la droite de ce mur)
     movement.x = 0;
     position.x = x;
@@ -80,7 +85,8 @@ void Character::bumpLeft(int x) {
 
 
 
-void Character::bumpRight(int x) {
+void Character::bumpRight(int x) 
+{
     // Le mur est a droite du perso (le parametre est la gauche de ce mur)
     movement.x = 0;
     position.x = x - size.x; //On prend en compte la taille du perso.
@@ -120,6 +126,9 @@ Character::StateBattle Character::getStateBattle()
 
 void Character::decreaseHealth(int s)
 {
+    if(state_b == DEAD)
+        return;
+
     if(health.x > 0)
     {
         health.x -= s;
@@ -134,6 +143,9 @@ void Character::decreaseHealth(int s)
 
 void Character::increaseHealth(int s)
 {
+    if(state_b == DEAD)
+        return;
+
     health.x += s;
     if(health.x > health.y)
         health.x = health.y;
@@ -142,6 +154,9 @@ void Character::increaseHealth(int s)
 
 void Character::setInvicibility(int seconds)
 {
+    if(state_b == DEAD)
+        return;
+
     state_b = STAR;
     star_cpt = seconds*90;
 }
@@ -149,7 +164,8 @@ void Character::setInvicibility(int seconds)
 
 void Character::shoot(list<Ammo*>* air, Float2 angle)
 {
-    
+    if(state_b == DEAD)
+        return;
 }
 
 
@@ -168,13 +184,16 @@ void Character::die()
 
 void Character::walk(int way)
 {
-    if(state_g==GROUND && state_p!=KNELT)
+    if(state_g==GROUND && state_p!=KNELT && state_b!=DEAD)
         walkway = way;
 }
 
 
 void Character::kneel(bool b)
 {
+    if(state_b == DEAD)
+        return;
+    
     if(state_g != AIR)
         state_p = (b ? KNELT : WAIT);
 }

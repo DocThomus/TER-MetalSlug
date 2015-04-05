@@ -7,6 +7,7 @@ var class_player_view =
     [ "~PlayerView", "class_player_view.html#a95cb7fade4bd8f33b2ac20671048cc40", null ],
     [ "animate", "class_player_view.html#a7077a695549cedcfc5fd2a9e1d311c0e", null ],
     [ "deleteRessources", "class_player_view.html#a3c85038b826cf8c5f8376ab41ee88332", null ],
+    [ "die", "class_player_view.html#ae77dbb86daf16c09a67ef3abe88e283a", null ],
     [ "display", "class_player_view.html#a0efbd8ed8178e7ca08b39a821c0e330f", null ],
     [ "getAnimKnee", "class_player_view.html#ae0271fba17b5a76fde0783fc2885af11", null ],
     [ "getAnimKneeShoot", "class_player_view.html#ac1759e947feab47663e4e8c6f4ac3b33", null ],

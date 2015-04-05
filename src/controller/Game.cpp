@@ -63,6 +63,8 @@ void Game::update(Time dt)
         (*a)->animate(t); // animation des ammos
     }
 
+    //cout << player << endl;
+
 }   
 
 
@@ -110,9 +112,10 @@ void Game::display(RenderWindow* window)
 
 void Game::checkKeyboardEvents(RenderWindow* window)
 { 
+    
+    /* A GENOUX */
     if(Keyboard::isKeyPressed(Keyboard::S))
         player.kneel(true);
-
 
     /* ARMES AUTOMATIQUES */
     if(player.getTypeWeapon() == Weapon::SMG)
@@ -422,6 +425,24 @@ void Game::checkCollisions()
                 }
             }
 
+            /* VS PLAYER */
+            if(checkIntersect((ObjetPhysique*)(*a),(ObjetPhysique*)(&player),-10))
+            {
+                if((*a)->getOwner() != &player && player.getStateBattle() != Character::DEAD)
+                {
+                    player.decreaseHealth((*a)->getDamage());
+
+                    //cout << (*a)->getDamage() << endl;
+                   
+                    Int2 p_pos = player.getPosition();
+                    Int2 p_siz = player.getSize();
+                    
+                    Int2 tmp = Int2(p_pos.x+p_siz.x/2,p_pos.y+p_siz.y/2);
+
+                    (*a)->die(tmp);
+                }
+            }
+
         }
     }
 
@@ -540,7 +561,7 @@ bool Game::checkKnife()
 
     for(list<EnemyView*>::iterator e = enemies.begin(); e!=enemies.end() && (*e)->getStateBattle()!=Character::DEAD; e++)
     {
-        if(checkIntersect((ObjetPhysique*)(&player),(ObjetPhysique*)(*e),30,30))
+        if(checkIntersect((ObjetPhysique*)(&player),(ObjetPhysique*)(*e),300,300))
         {
             (*e)->die();
             tmp = true;
@@ -616,6 +637,7 @@ void Game::applyConfig(RenderWindow* window)
     window->setFramerateLimit(50);
     window->setKeyRepeatEnabled(false);
     window->setVerticalSyncEnabled(config->vsync);
+    window->setMouseCursorVisible(false);
 
 
     /* CONFIG */

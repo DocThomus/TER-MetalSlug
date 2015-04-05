@@ -95,12 +95,11 @@ void AmmoView::animate(int dt)
 	bool change = false;
 
 	/* CHANGEMENT DE FRAME */
-	static int cpt = 0;
-	cpt += dt;
-	if(cpt >= 100)
+	cpt_time += dt;
+	if(cpt_time >= animations[current_anim].getSpeed())
 	{
 		change = setNextFrame();
-		cpt = 0;
+		cpt_time = 0;
 
 		if(!change && state_a==STOP)
 			state_a = GHOST;

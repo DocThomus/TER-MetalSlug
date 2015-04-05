@@ -48,14 +48,14 @@ PlayerView::PlayerView()
 	/* LEGS */
 	legs.setTexture(textures[1]);
 	legs.addAnimations(animations_list[1]);
-	
-	/* INITIALISATION TAILLES */
-	legs.setSize(Int2(size.x*0.68,size.y*0.47));
-	body.setSize(Vector2f(size.x,size.y*0.76));
 
 	/* ANIMATIONS */
 	changeAnimation(PISTOLRUN);
 	legs.changeAnimation(STAND);
+
+	/* INITIALISATION TAILLES */
+	legs.setSize(Int2(size.x*0.68,size.y*0.47));
+	body.setSize(Vector2f(size.x,size.y*0.76));
 }
 
 
@@ -79,7 +79,9 @@ void PlayerView::display(RenderWindow* window)
 	Vector2f body_size = body.getSize();
 	Vector2f legs_pos = legs.getPosition();
 
-	if(state_b==KNIFE && current_anim==getAnimKnife2()) // corps à corps 2
+	if(state_b == DEAD) // mort
+		body.setPosition(Vector2f(position.x,position.y+size.y-body_size.y));
+	else if(state_b==KNIFE && current_anim==getAnimKnife2()) // corps à corps 2
 		body.setPosition(Vector2f(legs_pos.x-((body_size.x-legs_size.x)/2),legs_pos.y-body_size.y+30));
 	else if(state_b == SHOOT) // tirer
 	{
@@ -107,13 +109,57 @@ void PlayerView::display(RenderWindow* window)
 	}
 
 
+	
 	/* FIX D'ANIMATIONS PARTICULIÈRES */
+	
+	// A genoux avec le SMG
 	if(state_p!=KNELT && state_b==NORMAL && armes[current_weapon].getType()==Weapon::SMG)
 	{
 		if(walkway > 0)
 			body.setPosition(Vector2f(position.x+15,position.y-28));
 		else
 			body.setPosition(Vector2f(position.x-45,position.y-28));
+	}
+
+	// Tirer vers le bas en l'air
+	if(state_g==AIR && state_b==SHOOT && gunway.y>0)
+	{
+		Vector2f tmp = body.getPosition();
+		if(armes[current_weapon].getType()==Weapon::SHOTGUN) // avec le shotgun
+		{
+			tmp.x += 15*-walkway ;
+			body.setPosition(tmp);
+		}
+		if(armes[current_weapon].getType()==Weapon::SMG) // avec le smg
+		{
+			tmp.x += 20*-walkway ;
+			body.setPosition(tmp);
+		}
+	}
+
+	// Corps à corps 
+	if(state_b==KNIFE && armes[current_weapon].getType()!=Weapon::PISTOL)
+	{
+		Vector2f tmp = body.getPosition();
+		if(armes[current_weapon].getType()==Weapon::SHOTGUN)
+		{
+			if(current_anim==getAnimKnife())
+				tmp.x = position.x-15;
+			else
+				tmp.x = position.x-50;
+			tmp.y -= 5;
+			body.setPosition(tmp);
+		}
+		if(armes[current_weapon].getType()==Weapon::SMG)
+		{
+			if(current_anim==getAnimKnife())
+				tmp.x = position.x-10;
+			else
+				tmp.x = position.x+(size.x-body_size.x)/2;
+			tmp.y = position.y+(size.y-body_size.y)/2-10;
+			body.setPosition(tmp);
+		}
+
 	}
 
 
@@ -125,7 +171,7 @@ void PlayerView::display(RenderWindow* window)
 
 
 	/* DESSIN */
-	if(state_p != KNELT)
+	if(state_p!=KNELT && state_b!=DEAD)
 		legs.display(window);
 	window->draw(body);
 }
@@ -193,7 +239,11 @@ void PlayerView::updateIntRect()
 
 void PlayerView::walk(int way)
 {
+	if(state_b == DEAD)
+        return;
+
 	Player::walk(way);
+
 	if(state_g == GROUND)
 	{
 		if(way == 0)
@@ -206,7 +256,11 @@ void PlayerView::walk(int way)
 
 void PlayerView::jump(int h)
 {
+	if(state_b == DEAD)
+        return;
+
 	Character::jump(h);
+
 	legs.changeAnimation(JUMP,false);
 }
 
@@ -229,7 +283,11 @@ void PlayerView::land(int h)
 
 void PlayerView::kneel(bool b)
 {
+	if(state_b == DEAD)
+        return;
+
 	Player::kneel(b);
+
 	if(state_g == Character::GROUND)
 	{
 		int i = (b ? getAnimKnee() : getAnimRun());
@@ -245,7 +303,10 @@ void PlayerView::kneel(bool b)
 
 void PlayerView::shoot(list<AmmoView*>* air, Int2 angle)
 {
-	bool change = false;
+	if(state_b == DEAD)
+        return;
+
+    bool change = false;
 
 	/* TIR + RECUPERATION DES MUNITIONS GÉNÉRÉES + CONVERSION AMMO->AMMOVIEW */
 	list<Ammo*> tmp;
@@ -298,6 +359,9 @@ void PlayerView::shoot(list<AmmoView*>* air, Int2 angle)
 
 void PlayerView::knife()
 {
+    if(state_b == DEAD)
+        return;
+
     Player::knife();
 
     PlayerAnimationsBody knife1 = getAnimKnife();
@@ -313,8 +377,33 @@ void PlayerView::knife()
 
 
 
+void PlayerView::die()
+{
+	if(state_b == DEAD)
+        return;
+
+    Player::die();
+
+	PlayerAnimationsBody death1 = DEATH;
+    PlayerAnimationsBody death2 = DEATH2;
+
+    srand(time(NULL));
+
+    if(rand()%2)
+    	changeAnimation(death1,false);
+    else
+    	changeAnimation(death2,false);
+
+    sounds[0]->play();
+}
+
+
+
 void PlayerView::setWeapon(int w)
 {
+	if(state_b == DEAD)
+        return;
+
 	Player::setWeapon(w);
 	changeAnimation(getAnimRun());
 }
@@ -445,6 +534,7 @@ void PlayerView::loadRessources()
 	if(textures[0] != NULL)
 		return;
 
+	// TEXTURES 
 	Texture* tex = new Texture();
     tex->loadFromFile("res/tex/player/body.png");
     textures[0] = tex;
@@ -453,8 +543,19 @@ void PlayerView::loadRessources()
     tex->loadFromFile("res/tex/player/legs.png");
     textures[1] = tex;
 
+    // ANIMATIONS
     animations_list[0] = loadAnimationsFromFile("res/xml/player/body.xml");
     animations_list[1] = loadAnimationsFromFile("res/xml/player/legs.xml");
+
+    // SOUNDS
+    SoundBuffer* buffer;
+	Sound* s;
+
+	buffer = new SoundBuffer();
+	buffer->loadFromFile("res/snd/player/death1.wav"); // DEATH
+    s = new Sound();
+    s->setBuffer(*buffer);
+    sounds.push_back(s);
 }
 
 

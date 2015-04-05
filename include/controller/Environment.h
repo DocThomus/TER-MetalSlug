@@ -90,8 +90,9 @@ class Environment
 	     * \param wl : Hauteur du sol de la plateforme (non traité pour le moment)
 	     * \param v : Vrai si la plate-forme doit être affichée, Faux sinon.
 	     * \param tex : Texture à appliquer à la plate-forme
+	     * \param tex_repeat : Indique si la texture doit être répétée horizontalement et/ou verticalement.
 	     */
-		void addPlatform(Int2 pos, Int2 siz, int wl, bool v=true, Texture* tex=NULL);
+		void addPlatform(Int2 pos, Int2 siz, int wl, bool v=true, Texture* tex=NULL, Bool2 tex_repeat=Bool2(false,false));
 		
 
 		//void addDestructible(); // TODO

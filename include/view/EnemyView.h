@@ -35,11 +35,27 @@ class WeaponView;
 class EnemyView : public Enemy, public MyDrawable
 {
 
+	public :
+
+		/*!
+	     * \enum EnemyAnimations
+	     * \brief Différentes animations des ennemis.
+	     */
+		enum EnemyAnimations
+		{
+			WATCH, DEATH, DEATH2, DEATH3, RUN, GRENADE, KNIFE
+		};
+
+
 	private :
 
-		static vector<Sound*> sounds; /*!< \brief Variable de classe contenant les différents son nécessaires aux ennemis. */
+		static bool ressources_loaded; /*!< \brief Variable de classe indiquant si les ressources sont chargées ou non. */
+
+		static vector<SoundBuffer*> sounds_buffers; /*!< \brief Variable de classe contenant les différents buffers de son nécessaires aux ennemis. */
 		static Texture* textures[NB_TYPE_ENEMY]; /*!< \brief Variable de classe contenant les différentes textures nécessaires aux ennemis. */
 		static vector<Animation> animations_list[NB_TYPE_ENEMY]; /*!< \brief Variable de classe contenant les différents animations nécessaires aux ennemies. */
+
+		vector<Sound*> sounds; /*!< \brief Variable de classe contenant les différents son nécessaires aux ennemis. */
 
 	public :
 
@@ -100,6 +116,13 @@ class EnemyView : public Enemy, public MyDrawable
 	     * Initialise l'affichage de l'ennemi.
 	     */
 		void init();
+
+		/*!
+	     * \brief Initialisation des sons
+	     *
+	     * Initialise les sons de l'ennemi.
+	     */
+		void initSounds();
 
 		/*!
 	     * \brief Affichage

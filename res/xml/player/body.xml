@@ -1,5 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <document>
+
+	<!-- DEATH -->
+	<animation speed="40">
+		<sprite x="27" y="1567" w="28" h="40"/>
+		<sprite x="58" y="1567" w="31" h="40"/>
+		<sprite x="92" y="1567" w="31" h="40"/>
+		<sprite x="126" y="1567" w="30" h="40"/>
+		<sprite x="160" y="1567" w="31" h="40"/>
+		<sprite x="194" y="1568" w="32" h="39"/>
+		<sprite x="228" y="1570" w="32" h="37"/>
+		<sprite x="262" y="1572" w="29" h="35"/>
+		<sprite x="293" y="1574" w="28" h="33"/>
+		<sprite x="323" y="1573" w="27" h="34"/>
+		<sprite x="353" y="1575" w="25" h="32"/>
+		<sprite x="381" y="1576" w="24" h="31"/>
+		<sprite x="409" y="1578" w="21" h="29"/>
+		<sprite x="433" y="1580" w="22" h="27"/>
+		<sprite x="459" y="1582" w="23" h="25"/>
+		<sprite x="485" y="1586" w="27" h="21"/>
+		<sprite x="515" y="1591" w="30" h="16"/>
+		<sprite x="548" y="1590" w="34" h="17"/>
+		<sprite x="585" y="1591" w="38" h="16"/>
+	</animation>
+
+	<!-- DEATH2 -->
+	<animation speed="40">
+		<sprite x="31" y="1631" w="32" h="44"/>
+		<sprite x="66" y="1638" w="38" h="37"/>
+		<sprite x="106" y="1642" w="42" h="33"/>
+		<sprite x="151" y="1646" w="45" h="29"/>
+		<sprite x="199" y="1651" w="45" h="24"/>
+		<sprite x="248" y="1645" w="46" h="30"/>
+		<sprite x="297" y="1643" w="44" h="32"/>
+		<sprite x="344" y="1649" w="45" h="26"/>
+		<sprite x="392" y="1661" w="48" h="14"/>
+		<sprite x="443" y="1660" w="47" h="15"/>
+	</animation>
+
 	<!-- PISTOLRUN -->
 	<animation speed="200">
 		<sprite x="0" y="0"  w="28" h="29"/>
@@ -48,7 +86,7 @@
 	</animation>
 
 	<!-- PISTOLKNIFE -->
-	<animation>
+	<animation speed="50">
 		<sprite x="10" y="215" w="24" h="29"/>
 		<sprite x="44" y="218" w="23" h="26"/>
 		<sprite x="76" y="217" w="26" h="27"/>
@@ -58,7 +96,7 @@
 	</animation>
 
 	<!-- PISTOLKNIFE2 -->
-	<animation>
+	<animation speed="50">
 		<sprite x="12" y="262" w="21" h="30"/>
 		<sprite x="48" y="264" w="26" h="30"/>
 		<sprite x="88" y="262" w="41" h="33"/>
@@ -136,7 +174,7 @@
 	</animation>
 
 	<!-- SHOTGUNKNIFE 2 -->
-	<animation>
+	<animation speed="50">
 		<sprite x="13" y="781" w="33" h="37"/>
 		<sprite x="49" y="781" w="23" h="38"/>
 		<sprite x="75" y="777" w="32" h="36"/>
@@ -146,7 +184,7 @@
 	</animation>
 
 	<!-- SHOTGUNKNIFE -->
-	<animation>
+	<animation speed="50">
 		<sprite x="17" y="730" w="36" h="29"/>
 		<sprite x="56" y="734" w="37" h="25"/>
 		<sprite x="96" y="733" w="51" h="33"/>
@@ -205,7 +243,7 @@
 	</animation>
 
 	<!-- SMGKNIFE2 -->
-	<animation>
+	<animation speed="50">
 		<sprite x="16" y="1318" w="32" h="42"/>
 		<sprite x="52" y="1316" w="31" h="48"/>
 		<sprite x="86" y="1318" w="39" h="46"/>
@@ -215,7 +253,7 @@
 	</animation>
 
 	<!-- SMGKNIFE -->
-	<animation>
+	<animation speed="50">
 		<sprite x="16" y="1266" w="40" h="35"/>
 		<sprite x="60" y="1266" w="32" h="33"/>
 		<sprite x="95" y="1266" w="44" h="36"/>

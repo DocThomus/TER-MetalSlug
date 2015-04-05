@@ -122,8 +122,8 @@ Fonctions membres publiques</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Affichage.  <a href="#abbc38d8e91d2c19336227a7fc9cf878c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_environment.html#a0be12abd292318011bdaecd40756cbf5">addDecor</a> (<a class="el" href="class_int2.html">Int2</a> siz, Texture *tex, int z)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajout d'un <a class="el" href="class_decor.html" title="Modélise un decor.">Decor</a>.  <a href="#a0be12abd292318011bdaecd40756cbf5"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_environment.html#a5b6405cb5ca5d6e91ca48bf102af311a">addPlatform</a> (<a class="el" href="class_int2.html">Int2</a> pos, <a class="el" href="class_int2.html">Int2</a> siz, int wl, bool v=true, Texture *tex=NULL)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajout d'une <a class="el" href="class_platform.html" title="Modélise une plate-forme.">Platform</a>.  <a href="#a5b6405cb5ca5d6e91ca48bf102af311a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_environment.html#a1ea134e1bdff5711a94112cac43f1877">addPlatform</a> (<a class="el" href="class_int2.html">Int2</a> pos, <a class="el" href="class_int2.html">Int2</a> siz, int wl, bool v=true, Texture *tex=NULL, <a class="el" href="class_bool2.html">Bool2</a> tex_repeat=<a class="el" href="class_bool2.html">Bool2</a>(false, false))</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajout d'une <a class="el" href="class_platform.html" title="Modélise une plate-forme.">Platform</a>.  <a href="#a1ea134e1bdff5711a94112cac43f1877"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Attributs privés</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a04e014286725b97704888d626f088faa"></a><!-- doxytag: member="Environment::decors" ref="a04e014286725b97704888d626f088faa" args="" -->
@@ -224,12 +224,12 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Game</b></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a5b6405cb5ca5d6e91ca48bf102af311a"></a><!-- doxytag: member="Environment::addPlatform" ref="a5b6405cb5ca5d6e91ca48bf102af311a" args="(Int2 pos, Int2 siz, int wl, bool v=true, Texture *tex=NULL)" -->
+<a class="anchor" id="a1ea134e1bdff5711a94112cac43f1877"></a><!-- doxytag: member="Environment::addPlatform" ref="a1ea134e1bdff5711a94112cac43f1877" args="(Int2 pos, Int2 siz, int wl, bool v=true, Texture *tex=NULL, Bool2 tex_repeat=Bool2(false, false))" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_environment.html#a5b6405cb5ca5d6e91ca48bf102af311a">Environment::addPlatform</a> </td>
+          <td class="memname">void <a class="el" href="class_environment.html#a1ea134e1bdff5711a94112cac43f1877">Environment::addPlatform</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_int2.html">Int2</a>&#160;</td>
           <td class="paramname"><em>pos</em>, </td>
@@ -256,7 +256,13 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Game</b></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">Texture *&#160;</td>
-          <td class="paramname"><em>tex</em> = <code>NULL</code>&#160;</td>
+          <td class="paramname"><em>tex</em> = <code>NULL</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_bool2.html">Bool2</a>&#160;</td>
+          <td class="paramname"><em>tex_repeat</em> = <code><a class="el" href="class_bool2.html">Bool2</a>(false,&#160;false)</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -276,6 +282,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Game</b></td></tr>
     <tr><td class="paramname">wl</td><td>: Hauteur du sol de la plateforme (non traité pour le moment) </td></tr>
     <tr><td class="paramname">v</td><td>: Vrai si la plate-forme doit être affichée, Faux sinon. </td></tr>
     <tr><td class="paramname">tex</td><td>: Texture à appliquer à la plate-forme </td></tr>
+    <tr><td class="paramname">tex_repeat</td><td>: Indique si la texture doit être répétée horizontalement et/ou verticalement. </td></tr>
   </table>
   </dd>
 </dl>
@@ -331,7 +338,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Game</b></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_environment.html">Environment</a>      </li>
 
-    <li class="footer">Généré le Vendredi Avril 3 2015 21:39:18 pour Metal Slug par
+    <li class="footer">Généré le Dimanche Avril 5 2015 16:56:52 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

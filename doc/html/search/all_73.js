@@ -21,6 +21,7 @@ var searchData=
   ['shoot',['shoot',['../class_character.html#a201f7c26a1637d4604b28a2c128b9309',1,'Character::shoot()'],['../class_enemy.html#a944c2d5ebf4d817ea78d7f5363d192ec',1,'Enemy::shoot()'],['../class_player.html#ad055b223f6de1d39092c2fe4258758c8',1,'Player::shoot()'],['../class_weapon.html#a0fb8fea33ea5d0f12a3f863afc552935',1,'Weapon::shoot()'],['../class_enemy_view.html#aba094d7e8568780bd59bc958690c04bb',1,'EnemyView::shoot()'],['../class_player_view.html#a983822a41aa3e161675d25ec9c4bc6ad',1,'PlayerView::shoot()']]],
   ['size',['size',['../class_objet_physique.html#a8b560415dc0a1f38e8cf3e8a24b1c9aa',1,'ObjetPhysique::size()'],['../class_frame.html#a70239fbd0e78e9046501e494b360a194',1,'Frame::size()']]],
   ['sounds',['sounds',['../class_ammo_view.html#a3458ee1fe227248689c93850016b2f52',1,'AmmoView::sounds()'],['../class_enemy_view.html#aea3cb584316432d9de40235f8a6faf78',1,'EnemyView::sounds()'],['../class_player_view.html#a2d20d1b64088e6141684493f129c67f6',1,'PlayerView::sounds()']]],
+  ['sounds_5fbuffers',['sounds_buffers',['../class_enemy_view.html#a1e4d3fc7c3f62454fee7abcd026235f5',1,'EnemyView']]],
   ['speed',['speed',['../class_animation.html#a6acc16cb5f403416dbc653098f31e9b3',1,'Animation']]],
   ['star_5fcpt',['star_cpt',['../class_character.html#ad8c4d05547d5de6c3b4796803cb004ef',1,'Character']]],
   ['state_5fa',['state_a',['../class_ammo.html#af51f34636337b30b28babbfbca07609b',1,'Ammo']]],

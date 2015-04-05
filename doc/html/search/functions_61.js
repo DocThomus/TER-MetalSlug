@@ -5,7 +5,7 @@ var searchData=
   ['adddecor',['addDecor',['../class_environment.html#a0be12abd292318011bdaecd40756cbf5',1,'Environment::addDecor()'],['../class_level.html#a03d2bce4cb198bcd9f16136561fedddf',1,'Level::addDecor()']]],
   ['addframe',['addFrame',['../class_animation.html#a87fed97acd9d96a676a7c4bd96a5fe22',1,'Animation']]],
   ['addmovement',['addMovement',['../class_objet_physique.html#a34eb4c570856c55dd4a5c3aea3dd2d08',1,'ObjetPhysique']]],
-  ['addplatform',['addPlatform',['../class_environment.html#a5b6405cb5ca5d6e91ca48bf102af311a',1,'Environment::addPlatform()'],['../class_level.html#a9c3c5ef07cc8a8c5f82a0b2c702499d2',1,'Level::addPlatform()']]],
+  ['addplatform',['addPlatform',['../class_environment.html#a1ea134e1bdff5711a94112cac43f1877',1,'Environment::addPlatform()'],['../class_level.html#a9c3c5ef07cc8a8c5f82a0b2c702499d2',1,'Level::addPlatform()']]],
   ['addweapon',['addWeapon',['../class_player.html#a6da3afb09244a96ae1c47c29da654e36',1,'Player']]],
   ['ammo',['Ammo',['../class_ammo.html#a18a5af90b2d0f646404bf1779f6ef11d',1,'Ammo::Ammo(Int2 pos, Int2 siz, int m, TypeAmmo type, Float2 move, Character *c)'],['../class_ammo.html#a6745bf955cceda43c50dc15c76157e64',1,'Ammo::Ammo()']]],
   ['ammoview',['AmmoView',['../class_ammo_view.html#a14bc7ee5815eb23927c02165ed77c196',1,'AmmoView::AmmoView()'],['../class_ammo_view.html#ac09a4f0b1173d995518e5f71a1096c94',1,'AmmoView::AmmoView(Ammo a)']]],
