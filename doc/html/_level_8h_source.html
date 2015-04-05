@@ -127,20 +127,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00042"></a>00042 
 <a name="l00043"></a><a class="code" href="class_level.html#a34659a8c8da9d3102344baa4f02ab6b1">00043</a>                 <a class="code" href="class_environment.html" title="Stocke l&#39;environnement.">Environment</a> <a class="code" href="class_level.html#a34659a8c8da9d3102344baa4f02ab6b1" title="Environnement du niveau (Platform, Decor, Destructible).">environment</a>; 
 <a name="l00044"></a><a class="code" href="class_level.html#a34ee580ab4c16cd5b7efb2244bf0551f">00044</a>                 list&lt;EventGame*&gt; <a class="code" href="class_level.html#a34ee580ab4c16cd5b7efb2244bf0551f" title="Liste des événements du niveau.">events</a>; 
-<a name="l00047"></a>00047         <span class="keyword">public</span> :
-<a name="l00048"></a>00048 
-<a name="l00054"></a>00054                 <a class="code" href="class_level.html" title="Stocke les données du niveau.">Level</a>();
-<a name="l00055"></a>00055 
-<a name="l00061"></a>00061                 ~<a class="code" href="class_level.html" title="Stocke les données du niveau.">Level</a>();
-<a name="l00062"></a>00062 
-<a name="l00069"></a>00069                 <span class="keywordtype">void</span> <a class="code" href="class_game.html#ab268789fc559218dc907e82d34dcf970" title="Affichage.">display</a>(RenderWindow* window);
-<a name="l00070"></a>00070 
-<a name="l00079"></a>00079                 <span class="keywordtype">void</span> addDecor(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> siz, Texture* tex, <span class="keywordtype">int</span> z=0);
-<a name="l00080"></a>00080 
-<a name="l00090"></a>00090                 <span class="keywordtype">void</span> addPlatform(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> pos, <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> siz, <span class="keywordtype">int</span> wl=0, Texture* tex=NULL);
-<a name="l00091"></a>00091 };
-<a name="l00092"></a>00092 
-<a name="l00095"></a>00095 <span class="preprocessor">#endif</span>
+<a name="l00046"></a><a class="code" href="class_level.html#a2f4220daeaa7f27568f317e7f2c7d884">00046</a>                 vector&lt;Music*&gt; <a class="code" href="class_level.html#a2f4220daeaa7f27568f317e7f2c7d884" title="Contient les musiques du niveau.">musics</a>; 
+<a name="l00047"></a><a class="code" href="class_level.html#a2f69af3aad484bc364333458dead74ac">00047</a>                 vector&lt;Texture*&gt; <a class="code" href="class_level.html#a2f69af3aad484bc364333458dead74ac" title="Contient les différents textures de l&#39;environnement.">textures</a>; 
+<a name="l00049"></a>00049         <span class="keyword">public</span> :
+<a name="l00050"></a>00050 
+<a name="l00056"></a>00056                 <a class="code" href="class_level.html" title="Stocke les données du niveau.">Level</a>();
+<a name="l00057"></a>00057 
+<a name="l00063"></a>00063                 ~<a class="code" href="class_level.html" title="Stocke les données du niveau.">Level</a>();
+<a name="l00064"></a>00064 
+<a name="l00071"></a>00071                 <span class="keywordtype">void</span> <a class="code" href="class_game.html#ab268789fc559218dc907e82d34dcf970" title="Affichage.">display</a>(RenderWindow* window);
+<a name="l00072"></a>00072 
+<a name="l00078"></a>00078                 <span class="keywordtype">void</span> loadFromFile(<span class="keywordtype">string</span> filename, <a class="code" href="class_config.html" title="Stocke la configuration du jeu.">Config</a>* <a class="code" href="class_game.html#a4d66eaa503343894c4c11a39f7577dff" title="Configuration du jeu.">config</a>);
+<a name="l00079"></a>00079 
+<a name="l00088"></a>00088                 <span class="keywordtype">void</span> addDecor(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> siz, Texture* tex, <span class="keywordtype">int</span> z=0);
+<a name="l00089"></a>00089 
+<a name="l00099"></a>00099                 <span class="keywordtype">void</span> addPlatform(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> pos, <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> siz, <span class="keywordtype">int</span> wl=0, Texture* tex=NULL);
+<a name="l00100"></a>00100 };
+<a name="l00101"></a>00101 
+<a name="l00104"></a>00104 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -161,7 +165,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul>
       <li class="navelem"><a class="el" href="_level_8h.html">Level.h</a>      </li>
 
-    <li class="footer">Généré le Dimanche Avril 5 2015 16:56:52 pour Metal Slug par
+    <li class="footer">Généré le Dimanche Avril 5 2015 17:32:53 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

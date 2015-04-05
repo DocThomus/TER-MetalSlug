@@ -19,10 +19,6 @@ Game::~Game()
     for(list<EnemyView*>::iterator e = enemies.begin(); e != enemies.end(); e++)
         delete (*e);
     enemies.clear();
-
-    for(unsigned int i=0; i<textures.size(); ++i)
-        delete textures[i];
-    textures.clear();
 }
 
 
@@ -561,7 +557,7 @@ bool Game::checkKnife()
 
     for(list<EnemyView*>::iterator e = enemies.begin(); e!=enemies.end() && (*e)->getStateBattle()!=Character::DEAD; e++)
     {
-        if(checkIntersect((ObjetPhysique*)(&player),(ObjetPhysique*)(*e),300,300))
+        if(checkIntersect((ObjetPhysique*)(&player),(ObjetPhysique*)(*e),30,30))
         {
             (*e)->die();
             tmp = true;
@@ -665,7 +661,7 @@ void Game::init()
 void Game::loadLevel()
 {
 
-    loadLevelXML("res/xml/level/level1.xml",config,&(level.environment),&(level.events),&textures);
+    level.loadFromFile("res/xml/level/level1.xml",config);
 
 
     /* RESSOURCES PLAYER */
@@ -683,7 +679,6 @@ void Game::loadLevel()
 
 
     /* WEAPON */
-    player.addWeapon(Weapon::PISTOL);
     player.addWeapon(Weapon::SHOTGUN);
     player.addWeapon(Weapon::SMG);
     player.setWeapon(0);

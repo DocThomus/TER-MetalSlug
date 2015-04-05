@@ -120,6 +120,8 @@ Fonctions membres publiques</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur.  <a href="#a249eac1e8f19ff44134efa5e986feaca"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_level.html#a5fc89ffc7a85afb624f80ebe18721d49">display</a> (RenderWindow *window)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Affichage.  <a href="#a5fc89ffc7a85afb624f80ebe18721d49"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_level.html#a45c0269a59de2f6c1b378aab50949143">loadFromFile</a> (string filename, <a class="el" href="class_config.html">Config</a> *config)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Chargement.  <a href="#a45c0269a59de2f6c1b378aab50949143"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_level.html#a03d2bce4cb198bcd9f16136561fedddf">addDecor</a> (<a class="el" href="class_int2.html">Int2</a> siz, Texture *tex, int z=0)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajout d'un décor.  <a href="#a03d2bce4cb198bcd9f16136561fedddf"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_level.html#a9c3c5ef07cc8a8c5f82a0b2c702499d2">addPlatform</a> (<a class="el" href="class_int2.html">Int2</a> pos, <a class="el" href="class_int2.html">Int2</a> siz, int wl=0, Texture *tex=NULL)</td></tr>
@@ -132,6 +134,12 @@ Attributs privés</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a34ee580ab4c16cd5b7efb2244bf0551f"></a><!-- doxytag: member="Level::events" ref="a34ee580ab4c16cd5b7efb2244bf0551f" args="" -->
 list&lt; <a class="el" href="class_event_game.html">EventGame</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_level.html#a34ee580ab4c16cd5b7efb2244bf0551f">events</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Liste des événements du niveau. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2f4220daeaa7f27568f317e7f2c7d884"></a><!-- doxytag: member="Level::musics" ref="a2f4220daeaa7f27568f317e7f2c7d884" args="" -->
+vector&lt; Music * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_level.html#a2f4220daeaa7f27568f317e7f2c7d884">musics</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Contient les musiques du niveau. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2f69af3aad484bc364333458dead74ac"></a><!-- doxytag: member="Level::textures" ref="a2f69af3aad484bc364333458dead74ac" args="" -->
+vector&lt; Texture * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_level.html#a2f69af3aad484bc364333458dead74ac">textures</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Contient les différents textures de l'environnement. <br/></td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
 Amis</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa2fab026580d6f14280c2ffb8063a314"></a><!-- doxytag: member="Level::Game" ref="aa2fab026580d6f14280c2ffb8063a314" args="" -->
@@ -305,6 +313,36 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Game</b></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a45c0269a59de2f6c1b378aab50949143"></a><!-- doxytag: member="Level::loadFromFile" ref="a45c0269a59de2f6c1b378aab50949143" args="(string filename, Config *config)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_level.html#a45c0269a59de2f6c1b378aab50949143">Level::loadFromFile</a> </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_config.html">Config</a> *&#160;</td>
+          <td class="paramname"><em>config</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Chargement. </p>
+<p>Charge un niveau à partir d'un fichier. </p>
+
+</div>
+</div>
 <hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
 <li>include/controller/<a class="el" href="_level_8h_source.html">Level.h</a></li>
 </ul>
@@ -328,7 +366,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Game</b></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_level.html">Level</a>      </li>
 
-    <li class="footer">Généré le Dimanche Avril 5 2015 16:56:52 pour Metal Slug par
+    <li class="footer">Généré le Dimanche Avril 5 2015 17:32:53 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

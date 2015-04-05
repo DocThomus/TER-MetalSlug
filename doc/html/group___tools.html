@@ -114,8 +114,8 @@ template&lt;typename T &gt; </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Construire spritemap.  <a href="#gaa5e7f899837783646961bf7235e09af6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___tools.html#ga081cc6eab982abb1f4904dbc8324e4cf">loadSpriteMap</a> (string filename, vector&lt; <a class="el" href="class_int2.html">Int2</a> &gt; *animations, vector&lt; int &gt; *speeds, vector&lt; <a class="el" href="class_int2.html">Int2</a> &gt; *positions, vector&lt; <a class="el" href="class_int2.html">Int2</a> &gt; *tailles)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Charger spritemap.  <a href="#ga081cc6eab982abb1f4904dbc8324e4cf"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___tools.html#ga0e87577e822e17bee09050989265f422">loadLevelXML</a> (string filename, <a class="el" href="class_config.html">Config</a> *conf, <a class="el" href="class_environment.html">Environment</a> *env, list&lt; <a class="el" href="class_event_game.html">EventGame</a> * &gt; *events, vector&lt; Texture * &gt; *tex)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Chargement d'un <a class="el" href="class_level.html" title="Stocke les données du niveau.">Level</a>.  <a href="#ga0e87577e822e17bee09050989265f422"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___tools.html#ga5a7bc1729203ede3296832e192163a1c">loadLevelXML</a> (string filename, <a class="el" href="class_config.html">Config</a> *conf, <a class="el" href="class_environment.html">Environment</a> *env, list&lt; <a class="el" href="class_event_game.html">EventGame</a> * &gt; *events, vector&lt; Texture * &gt; *tex, vector&lt; Music * &gt; *mus)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Chargement d'un <a class="el" href="class_level.html" title="Stocke les données du niveau.">Level</a>.  <a href="#ga5a7bc1729203ede3296832e192163a1c"></a><br/></td></tr>
 </table>
 <hr/><h2>Documentation des fonctions</h2>
 <a class="anchor" id="gaa5e7f899837783646961bf7235e09af6"></a><!-- doxytag: member="XMLtools.h::buildSpriteMap" ref="gaa5e7f899837783646961bf7235e09af6" args="(string filename, vector&lt; Int2 &gt;animations, vector&lt; Int2 &gt; positions, vector&lt; Int2 &gt; tailles)" -->
@@ -169,12 +169,12 @@ template&lt;typename T &gt; </td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ga0e87577e822e17bee09050989265f422"></a><!-- doxytag: member="XMLtools.h::loadLevelXML" ref="ga0e87577e822e17bee09050989265f422" args="(string filename, Config *conf, Environment *env, list&lt; EventGame * &gt; *events, vector&lt; Texture * &gt; *tex)" -->
+<a class="anchor" id="ga5a7bc1729203ede3296832e192163a1c"></a><!-- doxytag: member="XMLtools.h::loadLevelXML" ref="ga5a7bc1729203ede3296832e192163a1c" args="(string filename, Config *conf, Environment *env, list&lt; EventGame * &gt; *events, vector&lt; Texture * &gt; *tex, vector&lt; Music * &gt; *mus)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="group___tools.html#ga0e87577e822e17bee09050989265f422">loadLevelXML</a> </td>
+          <td class="memname">bool <a class="el" href="group___tools.html#ga5a7bc1729203ede3296832e192163a1c">loadLevelXML</a> </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>filename</em>, </td>
@@ -201,7 +201,13 @@ template&lt;typename T &gt; </td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">vector&lt; Texture * &gt; *&#160;</td>
-          <td class="paramname"><em>tex</em>&#160;</td>
+          <td class="paramname"><em>tex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vector&lt; Music * &gt; *&#160;</td>
+          <td class="paramname"><em>mus</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -221,6 +227,7 @@ template&lt;typename T &gt; </td></tr>
     <tr><td class="paramname">env</td><td>: Environnement à complèter </td></tr>
     <tr><td class="paramname">events</td><td>: Liste d'événements à remplir </td></tr>
     <tr><td class="paramname">tex</td><td>: Conteneur pour les textures </td></tr>
+    <tr><td class="paramname">mus</td><td>: Conteneur pour les musiques </td></tr>
   </table>
   </dd>
 </dl>
@@ -304,7 +311,7 @@ template&lt;typename T &gt; </td></tr>
   <div id="nav-path" class="navpath">
     <ul>
 
-    <li class="footer">Généré le Dimanche Avril 5 2015 16:56:52 pour Metal Slug par
+    <li class="footer">Généré le Dimanche Avril 5 2015 17:32:53 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

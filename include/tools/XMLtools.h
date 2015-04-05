@@ -18,6 +18,7 @@
 #include <stdlib.h>
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 
 #include "rapidxml/rapidxml.hpp"
 #include "rapidxml/rapidxml_print.hpp"
@@ -79,8 +80,9 @@ bool loadSpriteMap(string filename, vector<Int2>*animations, vector<int>*speeds,
  * \param env : Environnement à complèter
  * \param events : Liste d'événements à remplir
  * \param tex : Conteneur pour les textures
+ * \param mus : Conteneur pour les musiques
  */
-bool loadLevelXML(string filename, Config* conf, Environment* env, list<EventGame*>* events, vector<Texture*>* tex);
+bool loadLevelXML(string filename, Config* conf, Environment* env, list<EventGame*>* events, vector<Texture*>* tex, vector<Music*>* mus);
 
 
 

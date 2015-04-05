@@ -70,9 +70,7 @@ class Game
 		PlayerView player; /*!< \brief Joueur */
 		list<EnemyView*> enemies; /*!< \brief Liste des ennemis à l'écran */
 		list<AmmoView*> ammo; /*!< \brief Liste des projectiles à l'écran */
-
-		vector<Texture*> textures; /*!< \brief Stockage des textures utilisée par les objets du jeu pour suppression à la fin du niveau */
-
+	
 
 	public :
 

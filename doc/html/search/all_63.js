@@ -12,7 +12,7 @@ var searchData=
   ['checkintersect',['checkIntersect',['../class_game.html#aa3618ff76df0d054fa778fb6ab169cba',1,'Game']]],
   ['checkkeyboardevents',['checkKeyboardEvents',['../class_game.html#af57ecf47190bba6e37edc9cb11522f52',1,'Game']]],
   ['checkknife',['checkKnife',['../class_game.html#a2dd7c1e94edb0ea51c6164529b141ab5',1,'Game']]],
-  ['config',['Config',['../class_config.html',1,'Config'],['../class_config.html#abd0c571c116924871e30444b192b792a',1,'Config::Config()'],['../class_game.html#a4d66eaa503343894c4c11a39f7577dff',1,'Game::config()'],['../class_master_class.html#a1b5e05561e168c27462612b6e41aeaae',1,'MasterClass::config()']]],
+  ['config',['Config',['../class_config.html',1,'Config'],['../class_game.html#a4d66eaa503343894c4c11a39f7577dff',1,'Game::config()'],['../class_master_class.html#a1b5e05561e168c27462612b6e41aeaae',1,'MasterClass::config()'],['../class_config.html#abd0c571c116924871e30444b192b792a',1,'Config::Config()']]],
   ['config_2eh',['Config.h',['../_config_8h.html',1,'']]],
   ['cpt_5ftime',['cpt_time',['../class_my_drawable.html#a4531071c63942ddb4922e571b959a08a',1,'MyDrawable']]],
   ['current',['current',['../class_animation.html#a7a227e4e4c8275326560492663bf7fb8',1,'Animation']]],

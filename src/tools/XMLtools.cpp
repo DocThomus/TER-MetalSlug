@@ -140,7 +140,7 @@ bool loadSpriteMap(string filename, vector<Int2>* v_anim, vector<int>* v_speed, 
 
 
 
-bool loadLevelXML(string filename, Config* conf, Environment* env, list<EventGame*>* evts, vector<Texture*>* tex)
+bool loadLevelXML(string filename, Config* conf, Environment* env, list<EventGame*>* evts, vector<Texture*>* tex, vector<Music*>* mus)
 {   
     xml_document<> doc;
 
@@ -164,11 +164,28 @@ bool loadLevelXML(string filename, Config* conf, Environment* env, list<EventGam
     /* NOEUX PRINCIPAUX */
     xml_node<> *document    = doc.first_node();
     xml_node<> *level       = document->first_node("level");
+    xml_node<> *musics      = level->first_node("musics");
     xml_node<> *environment = level->first_node("environment");
     xml_node<> *decors      = environment->first_node("decors");
     xml_node<> *platforms   = environment->first_node("platforms");
     xml_node<> *events      = level->first_node("events");
 
+
+    /* MUSICS */
+    for(xml_node<> *music=musics->first_node("music"); music; music=music->next_sibling())
+    {
+        // déclaration
+        Music* tmp_mus;
+        string tmp_file;
+
+        // récupération des données
+        tmp_file = music->value();
+        
+        // construction musique 
+        tmp_mus = new Music();
+        tmp_mus->openFromFile("res/snd/level/"+tmp_file);
+        mus->push_back(tmp_mus);
+    }
 
     /* DECORS */
     for(xml_node<> *decor=decors->first_node("decor"); decor; decor=decor->next_sibling())

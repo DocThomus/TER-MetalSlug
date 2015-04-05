@@ -26,7 +26,6 @@ var class_game =
     [ "enemies", "class_game.html#ad3050dcb35ca3f41ae61cb0beaedd871", null ],
     [ "level", "class_game.html#a675e1f674712dfccdd02db95b6105173", null ],
     [ "player", "class_game.html#ae5a4d25fa9dc07b3889b4b418a73a136", null ],
-    [ "textures", "class_game.html#a95312ba25ca3fcd1298d6b06c7b75f8c", null ],
     [ "view", "class_game.html#a1d678c453e15653e04f2008d113ba973", null ],
     [ "view_target", "class_game.html#ac73432b9b071f84088db4c896dfcb22d", null ]
 ];

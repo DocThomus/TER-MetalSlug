@@ -43,6 +43,8 @@ class Level
 		Environment environment; /*!< \brief Environnement du niveau (Platform, Decor, Destructible). */
 		list<EventGame*> events; /*!< \brief Liste des événements du niveau. */
 
+		vector<Music*> musics; /*!< \brief Contient les musiques du niveau. */
+		vector<Texture*> textures; /*!< \brief Contient les différents textures de l'environnement. */
 
 	public :
 
@@ -67,6 +69,13 @@ class Level
 	     * \param window : Fenêtre de rendu dans laquelle afficher les objets
 	     */
 		void display(RenderWindow* window);
+
+		/*!
+	     * \brief Chargement
+	     *
+	     * Charge un niveau à partir d'un fichier.
+	     */
+		void loadFromFile(string filename, Config* config);
 
 		/*!
 	     * \brief Ajout d'un décor

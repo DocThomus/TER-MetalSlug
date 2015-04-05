@@ -21,6 +21,18 @@ void Level::display(RenderWindow* window)
 }
 
 
+void Level::loadFromFile(string filename, Config* config)
+{
+	if(!loadLevelXML(filename,config,&environment,&events,&textures,&musics))
+	{
+		cerr << "Chargement du niveau : le fichier " << filename << " n'existe pas." << endl;
+		exit(-1);
+	}
+
+	musics[0]->play();
+}
+
+
 void Level::addDecor(Int2 siz, Texture* tex, int z)
 {
 	environment.addDecor(siz,tex,z);
