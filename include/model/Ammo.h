@@ -38,7 +38,7 @@ class Ammo : public ObjetPhysique
 	     * \enum TypeAmmo
 	     * \brief Types possibles de l'objet Ammo.
 	     */
-		enum TypeAmmo {BULLET, HEAVY_BULLET, LIGHT_BULLET, ROCKET, GRENADE, LASER,
+		enum TypeAmmo {BULLET, HEAVY_BULLET, LIGHT_BULLET, FLAME, ROCKET, GRENADE, LASER,
 						NB_TYPE_AMMO};
 
 		/*!
@@ -114,6 +114,13 @@ class Ammo : public ObjetPhysique
 	     * Renvoie le nombre de point de dégâts qu'inflique le projectile en fonction de son type.
 	     */
 		int getDamage();
+
+		/*!
+	     * \brief Type
+	     *
+	     * Renvoie le type de la munition.
+	     */
+		TypeAmmo getType();
 
 		/*!
 	     * \brief État

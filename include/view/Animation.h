@@ -122,6 +122,11 @@ class Animation
 		int getSpeed();
 
 		/*!
+	     * \brief Renvoie l'indice de la frame courante.
+	     */
+		int getIndFrame();
+
+		/*!
 	     * \brief Renvoie la frame courante de l'application.
 	     */
 		Frame* getFrame();

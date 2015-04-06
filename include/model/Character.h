@@ -49,7 +49,7 @@ class Character : public ObjetPhysique
 	     * \enum StateBattle
 	     * \brief Actions pouvant être effectuée par un personnage.
 	     */
-		enum StateBattle {NORMAL, SHOOT, DEAD, KNIFE, STAR};
+		enum StateBattle {NORMAL, PRESHOOT, SHOOT, DEAD, KNIFE, STAR};
 
 
 	protected :
@@ -57,6 +57,8 @@ class Character : public ObjetPhysique
 		StatePosition state_p; /*!< \brief Position du personnage. */
 		StateGround state_g; /*!< \brief Indique si le personnage est au sol ou en l'air. */
 		StateBattle state_b; /*!< \brief Indique quelle action effectue le personnage. */
+
+		Int2 initial_size; /*!< \brief Taille initiale du personnage. */
 
 		Int2 health; /*!< \brief Santé du personnage. */
 

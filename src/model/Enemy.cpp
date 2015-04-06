@@ -29,6 +29,14 @@ Enemy::Enemy(Int2 pos, TypeEnemy t)
 			haveAI = false;
 			power = 10;
 			break;
+
+		case BOWSER :
+			size = Int2(250,350);
+			mass = 2;
+			health = 200;
+			haveAI = false;
+			power = 30;
+			break;
 	}
 }
 
@@ -48,29 +56,43 @@ void Enemy::print(ostream& os) const
 
 void Enemy::shoot(list<Ammo*>* air, Float2 angle)
 {
+	state_b = SHOOT;
+
 	/* POSITION DES BALLES */
 	Int2 pos = getPosition();
 	Int2 siz = getSize();
-	
-	// X
-	if(angle.x > 0)
-		pos.x += siz.x+10;
-	else if(angle.x == 0)
-		pos.x += siz.x/2;
-	else
-		pos.x -= 10;
-	
-	// Y
-	if(angle.y > 0)
-		pos.y += siz.y;
-	else if(angle.y == 0)
-		pos.y += siz.y/3;
-	if(angle.x==0 && angle.y<0)
-		pos.y -= 50;
+
+	if(type == REBEL)
+	{
+		// X
+		if(angle.x > 0)
+			pos.x += siz.x+10;
+		else if(angle.x == 0)
+			pos.x += siz.x/2;
+		else
+			pos.x -= 10;
+		
+		// Y
+		if(angle.y > 0)
+			pos.y += siz.y;
+		else if(angle.y == 0)
+			pos.y += siz.y/3;
+		if(angle.x==0 && angle.y<0)
+			pos.y -= 50;
 
 
-	/* CREATION BALLES */
-	air->push_back(new Ammo(pos,siz,0,Ammo::BULLET,angle,this));
+		/* CREATION BALLES */
+		air->push_back(new Ammo(pos,siz,0,Ammo::BULLET,angle,this));
+	}
+
+	else if(type == BOWSER)
+	{
+		/* POSITION */
+		pos.y += size.y*0.3;
+
+		/* CREATION BALLES */
+		air->push_back(new Ammo(pos,siz,0,Ammo::FLAME,angle,this));
+	}
 
 }
 

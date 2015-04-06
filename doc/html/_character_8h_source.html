@@ -123,7 +123,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00041"></a>00041 
 <a name="l00046"></a><a class="code" href="class_character.html#a13feb8dcd3af1c802c2b1f545c955561">00046</a>                 <span class="keyword">enum</span> <a class="code" href="class_character.html#a13feb8dcd3af1c802c2b1f545c955561" title="États du personnage vis-a-vis du sol.">StateGround</a> {GROUND, AIR};
 <a name="l00047"></a>00047 
-<a name="l00052"></a><a class="code" href="class_character.html#a8251340f461ab396f975b18dce58229d">00052</a>                 <span class="keyword">enum</span> <a class="code" href="class_character.html#a8251340f461ab396f975b18dce58229d" title="Actions pouvant être effectuée par un personnage.">StateBattle</a> {NORMAL, SHOOT, DEAD, KNIFE, STAR};
+<a name="l00052"></a><a class="code" href="class_character.html#a8251340f461ab396f975b18dce58229d">00052</a>                 <span class="keyword">enum</span> <a class="code" href="class_character.html#a8251340f461ab396f975b18dce58229d" title="Actions pouvant être effectuée par un personnage.">StateBattle</a> {NORMAL, PRESHOOT, SHOOT, DEAD, KNIFE, STAR};
 <a name="l00053"></a>00053 
 <a name="l00054"></a>00054 
 <a name="l00055"></a>00055         <span class="keyword">protected</span> :
@@ -131,59 +131,60 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00057"></a><a class="code" href="class_character.html#a0148c0bd360d714612b7c36d0a2a0c1b">00057</a>                 <a class="code" href="class_character.html#a0504a5097fb6ff7679bb4f5408386bf2" title="Positions possibles du personnage.">StatePosition</a> <a class="code" href="class_character.html#a0148c0bd360d714612b7c36d0a2a0c1b" title="Position du personnage.">state_p</a>; 
 <a name="l00058"></a><a class="code" href="class_character.html#a8da74e8541c2181f8253b35d8a4eb845">00058</a>                 <a class="code" href="class_character.html#a13feb8dcd3af1c802c2b1f545c955561" title="États du personnage vis-a-vis du sol.">StateGround</a> <a class="code" href="class_character.html#a8da74e8541c2181f8253b35d8a4eb845" title="Indique si le personnage est au sol ou en l&#39;air.">state_g</a>; 
 <a name="l00059"></a><a class="code" href="class_character.html#aedc1f0aca3aad0427052dd934cf4d849">00059</a>                 <a class="code" href="class_character.html#a8251340f461ab396f975b18dce58229d" title="Actions pouvant être effectuée par un personnage.">StateBattle</a> <a class="code" href="class_character.html#aedc1f0aca3aad0427052dd934cf4d849" title="Indique quelle action effectue le personnage.">state_b</a>; 
-<a name="l00061"></a><a class="code" href="class_character.html#a89b23cab52a6d29a0496d07b45004425">00061</a>                 <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> <a class="code" href="class_character.html#a89b23cab52a6d29a0496d07b45004425" title="Santé du personnage.">health</a>; 
-<a name="l00063"></a><a class="code" href="class_character.html#a4ac650b90756ad804b9c6b88c7d9504c">00063</a>                 <span class="keywordtype">int</span> <a class="code" href="class_character.html#a4ac650b90756ad804b9c6b88c7d9504c" title="Indique le sens dans lequel le personnage se dirige.">walkway</a>; 
-<a name="l00064"></a><a class="code" href="class_character.html#a24d2b958ff3168646af13858641ae3fe">00064</a>                 <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> <a class="code" href="class_character.html#a24d2b958ff3168646af13858641ae3fe" title="Indique le sens dans lequel le personnage tire.">gunway</a>; 
-<a name="l00066"></a><a class="code" href="class_character.html#ad8c4d05547d5de6c3b4796803cb004ef">00066</a>                 <span class="keywordtype">int</span> <a class="code" href="class_character.html#ad8c4d05547d5de6c3b4796803cb004ef" title="Compteur de l&#39;état STAR temporaire.">star_cpt</a>; 
-<a name="l00069"></a>00069         <span class="keyword">public</span> :
-<a name="l00070"></a>00070 
-<a name="l00080"></a>00080                 <a class="code" href="class_character.html" title="Modélise un personnage.">Character</a>(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> pos, <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> siz, <span class="keywordtype">int</span> m, <span class="keywordtype">int</span> max_h);
-<a name="l00081"></a>00081 
-<a name="l00087"></a>00087                 <a class="code" href="class_character.html" title="Modélise un personnage.">Character</a>();
-<a name="l00088"></a>00088 
-<a name="l00094"></a>00094                 ~<a class="code" href="class_character.html" title="Modélise un personnage.">Character</a>();
-<a name="l00095"></a>00095 
-<a name="l00102"></a>00102                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> animate(<span class="keywordtype">int</span> dt);
-<a name="l00103"></a>00103 
-<a name="l00110"></a>00110                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> print(ostream&amp; os) <span class="keyword">const</span>;
-<a name="l00111"></a>00111 
-<a name="l00115"></a>00115                 <a class="code" href="class_character.html#a0504a5097fb6ff7679bb4f5408386bf2" title="Positions possibles du personnage.">StatePosition</a> getStatePosition();
-<a name="l00116"></a>00116 
-<a name="l00120"></a>00120                 <a class="code" href="class_character.html#a13feb8dcd3af1c802c2b1f545c955561" title="États du personnage vis-a-vis du sol.">StateGround</a> getStateGround();
-<a name="l00121"></a>00121 
-<a name="l00125"></a>00125                 <a class="code" href="class_character.html#a8251340f461ab396f975b18dce58229d" title="Actions pouvant être effectuée par un personnage.">StateBattle</a> getStateBattle();
-<a name="l00126"></a>00126 
-<a name="l00132"></a>00132                 <span class="keywordtype">void</span> decreaseHealth(<span class="keywordtype">int</span> s);
-<a name="l00133"></a>00133 
-<a name="l00139"></a>00139                 <span class="keywordtype">void</span> increaseHealth(<span class="keywordtype">int</span> s);
-<a name="l00140"></a>00140 
-<a name="l00144"></a>00144                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> setInvicibility(<span class="keywordtype">int</span> seconds);
-<a name="l00145"></a>00145 
-<a name="l00149"></a>00149                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> jump(<span class="keywordtype">int</span> h);
-<a name="l00150"></a>00150 
-<a name="l00154"></a>00154                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> land(<span class="keywordtype">int</span> h);
-<a name="l00155"></a>00155 
-<a name="l00159"></a>00159                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> bumpTop(<span class="keywordtype">int</span> h);
-<a name="l00160"></a>00160 
-<a name="l00164"></a>00164                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> bumpLeft(<span class="keywordtype">int</span> x);
-<a name="l00165"></a>00165 
-<a name="l00169"></a>00169                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> bumpRight(<span class="keywordtype">int</span> x);
-<a name="l00170"></a>00170 
-<a name="l00177"></a>00177                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> shoot(list&lt;Ammo*&gt;* air, <a class="code" href="class_float2.html" title="Stockage de deux flottants.">Float2</a> angle = <a class="code" href="class_float2.html" title="Stockage de deux flottants.">Float2</a>(1.,0.));
-<a name="l00178"></a>00178 
-<a name="l00182"></a>00182                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> knife();
-<a name="l00183"></a>00183 
-<a name="l00187"></a>00187                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> die();
-<a name="l00188"></a>00188 
-<a name="l00194"></a>00194                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> walk(<span class="keywordtype">int</span> way);
-<a name="l00195"></a>00195 
-<a name="l00202"></a>00202                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> kneel(<span class="keywordtype">bool</span> b);
-<a name="l00203"></a>00203                 
-<a name="l00204"></a>00204 };
-<a name="l00205"></a>00205 
-<a name="l00206"></a>00206 
+<a name="l00061"></a><a class="code" href="class_character.html#a93604a5f7533a83ba2335c50455d6147">00061</a>                 <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> <a class="code" href="class_character.html#a93604a5f7533a83ba2335c50455d6147" title="Taille initiale du personnage.">initial_size</a>; 
+<a name="l00063"></a><a class="code" href="class_character.html#a89b23cab52a6d29a0496d07b45004425">00063</a>                 <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> <a class="code" href="class_character.html#a89b23cab52a6d29a0496d07b45004425" title="Santé du personnage.">health</a>; 
+<a name="l00065"></a><a class="code" href="class_character.html#a4ac650b90756ad804b9c6b88c7d9504c">00065</a>                 <span class="keywordtype">int</span> <a class="code" href="class_character.html#a4ac650b90756ad804b9c6b88c7d9504c" title="Indique le sens dans lequel le personnage se dirige.">walkway</a>; 
+<a name="l00066"></a><a class="code" href="class_character.html#a24d2b958ff3168646af13858641ae3fe">00066</a>                 <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> <a class="code" href="class_character.html#a24d2b958ff3168646af13858641ae3fe" title="Indique le sens dans lequel le personnage tire.">gunway</a>; 
+<a name="l00068"></a><a class="code" href="class_character.html#ad8c4d05547d5de6c3b4796803cb004ef">00068</a>                 <span class="keywordtype">int</span> <a class="code" href="class_character.html#ad8c4d05547d5de6c3b4796803cb004ef" title="Compteur de l&#39;état STAR temporaire.">star_cpt</a>; 
+<a name="l00071"></a>00071         <span class="keyword">public</span> :
+<a name="l00072"></a>00072 
+<a name="l00082"></a>00082                 <a class="code" href="class_character.html" title="Modélise un personnage.">Character</a>(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> pos, <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> siz, <span class="keywordtype">int</span> m, <span class="keywordtype">int</span> max_h);
+<a name="l00083"></a>00083 
+<a name="l00089"></a>00089                 <a class="code" href="class_character.html" title="Modélise un personnage.">Character</a>();
+<a name="l00090"></a>00090 
+<a name="l00096"></a>00096                 ~<a class="code" href="class_character.html" title="Modélise un personnage.">Character</a>();
+<a name="l00097"></a>00097 
+<a name="l00104"></a>00104                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> animate(<span class="keywordtype">int</span> dt);
+<a name="l00105"></a>00105 
+<a name="l00112"></a>00112                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> print(ostream&amp; os) <span class="keyword">const</span>;
+<a name="l00113"></a>00113 
+<a name="l00117"></a>00117                 <a class="code" href="class_character.html#a0504a5097fb6ff7679bb4f5408386bf2" title="Positions possibles du personnage.">StatePosition</a> getStatePosition();
+<a name="l00118"></a>00118 
+<a name="l00122"></a>00122                 <a class="code" href="class_character.html#a13feb8dcd3af1c802c2b1f545c955561" title="États du personnage vis-a-vis du sol.">StateGround</a> getStateGround();
+<a name="l00123"></a>00123 
+<a name="l00127"></a>00127                 <a class="code" href="class_character.html#a8251340f461ab396f975b18dce58229d" title="Actions pouvant être effectuée par un personnage.">StateBattle</a> getStateBattle();
+<a name="l00128"></a>00128 
+<a name="l00134"></a>00134                 <span class="keywordtype">void</span> decreaseHealth(<span class="keywordtype">int</span> s);
+<a name="l00135"></a>00135 
+<a name="l00141"></a>00141                 <span class="keywordtype">void</span> increaseHealth(<span class="keywordtype">int</span> s);
+<a name="l00142"></a>00142 
+<a name="l00146"></a>00146                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> setInvicibility(<span class="keywordtype">int</span> seconds);
+<a name="l00147"></a>00147 
+<a name="l00151"></a>00151                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> jump(<span class="keywordtype">int</span> h);
+<a name="l00152"></a>00152 
+<a name="l00156"></a>00156                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> land(<span class="keywordtype">int</span> h);
+<a name="l00157"></a>00157 
+<a name="l00161"></a>00161                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> bumpTop(<span class="keywordtype">int</span> h);
+<a name="l00162"></a>00162 
+<a name="l00166"></a>00166                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> bumpLeft(<span class="keywordtype">int</span> x);
+<a name="l00167"></a>00167 
+<a name="l00171"></a>00171                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> bumpRight(<span class="keywordtype">int</span> x);
+<a name="l00172"></a>00172 
+<a name="l00179"></a>00179                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> shoot(list&lt;Ammo*&gt;* air, <a class="code" href="class_float2.html" title="Stockage de deux flottants.">Float2</a> angle = <a class="code" href="class_float2.html" title="Stockage de deux flottants.">Float2</a>(1.,0.));
+<a name="l00180"></a>00180 
+<a name="l00184"></a>00184                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> knife();
+<a name="l00185"></a>00185 
+<a name="l00189"></a>00189                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> die();
+<a name="l00190"></a>00190 
+<a name="l00196"></a>00196                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> walk(<span class="keywordtype">int</span> way);
+<a name="l00197"></a>00197 
+<a name="l00204"></a>00204                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> kneel(<span class="keywordtype">bool</span> b);
+<a name="l00205"></a>00205                 
+<a name="l00206"></a>00206 };
 <a name="l00207"></a>00207 
-<a name="l00210"></a>00210 <span class="preprocessor">#endif</span>
+<a name="l00208"></a>00208 
+<a name="l00209"></a>00209 
+<a name="l00212"></a>00212 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -204,7 +205,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul>
       <li class="navelem"><a class="el" href="_character_8h.html">Character.h</a>      </li>
 
-    <li class="footer">Généré le Lundi Avril 6 2015 15:59:10 pour Metal Slug par
+    <li class="footer">Généré le Lundi Avril 6 2015 20:54:57 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

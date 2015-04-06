@@ -1,7 +1,7 @@
 #include "view/EnemyView.h"
 
-bool EnemyView::ressources_loaded = false;
-vector<SoundBuffer*> EnemyView::sounds_buffers;
+
+vector<SoundBuffer*> EnemyView::sounds_buffers[NB_TYPE_ENEMY];
 Texture* EnemyView::textures[NB_TYPE_ENEMY];
 vector<Animation> EnemyView::animations_list[NB_TYPE_ENEMY];
 
@@ -20,12 +20,24 @@ EnemyView::EnemyView(Int2 pos, TypeEnemy t)
 	/* REBEL */
 	if(type == REBEL)
 	{
-
+		loadRessources(REBEL);
 		initSounds();
 		setTexture(textures[REBEL]);
 		addAnimations(animations_list[REBEL]);
-		changeAnimation(WATCH);
+		changeAnimation(REBEL_WATCH);
+		updateIntRect();
 	}
+
+	/* BOWSER */
+	else if(type == BOWSER)
+	{
+		loadRessources(BOWSER);
+		initSounds();
+		setTexture(textures[BOWSER]);
+		addAnimations(animations_list[BOWSER]);
+		changeAnimation(BOWSER_STAND);
+		updateIntRect();
+	} 
 
 	body.setSize(Vector2f(size.x,size.y));
 }
@@ -51,14 +63,8 @@ void EnemyView::init()
 
 void EnemyView::initSounds()
 {
-	switch(type)
-	{
-		case REBEL :
-			sounds.push_back(new Sound(*sounds_buffers[0]));
-			sounds.push_back(new Sound(*sounds_buffers[1]));
-			sounds.push_back(new Sound(*sounds_buffers[2]));
-			break;
-	}
+	for(unsigned int i=0; i<sounds_buffers[type].size(); ++i)
+		sounds.push_back(new Sound(*(sounds_buffers[type])[i]));
 }
 
 
@@ -91,6 +97,12 @@ void EnemyView::animate(int dt)
 		cpt_time = 0;
 	}
 
+	if(type == BOWSER)
+	{
+		if(state_b==PRESHOOT && animations[current_anim].getIndFrame() == 4)
+			shoot(save_air,save_angle);
+	}
+
 }
 
 
@@ -120,14 +132,36 @@ void EnemyView::walk(int way)
 void EnemyView::shoot(list<AmmoView*>* air, Int2 angle)
 {	
 	list<Ammo*> tmp;
-	Enemy::shoot(&tmp,angle);
 	AmmoView* av;
+	
+	if(type == REBEL)
+	{
+		Enemy::shoot(&tmp,angle);
+	}
+
+	else if(type == BOWSER)
+	{
+		if(current_anim==BOWSER_FIRE && state_b==PRESHOOT)
+		{
+			Enemy::shoot(&tmp,angle);
+		}
+		else
+		{
+			state_b = PRESHOOT;
+			save_air = air;
+			save_angle = angle;
+			changeAnimation(BOWSER_FIRE,false,BOWSER_STAND);
+		}
+	}
+	
+
 	for(list<Ammo*>::iterator a = tmp.begin(); a != tmp.end(); a++)
     {
     	av = new AmmoView(**a);
     	air->push_back(av);
     	tmp.erase(a++);
     }
+
 }
 
 
@@ -135,10 +169,25 @@ void EnemyView::die()
 {
 	state_b = DEAD;
 
-	changeAnimation(DEATH,false);
+	switch(type)
+	{
+		case REBEL  : changeAnimation(REBEL_DEATH,false);  break;
+		case BOWSER : changeAnimation(BOWSER_DEATH,false); break;
+	}
     
     srand(time(NULL));
-    sounds[rand()%3]->play();
+    
+    if(type == REBEL)
+    {
+		RebelSounds tmp_snd[3] = {REBEL_DEATH_SND, REBEL_DEATH2_SND, REBEL_DEATH3_SND};
+		sounds[tmp_snd[rand()%3]]->play();
+    }
+    else if(type == BOWSER)
+	{
+		sounds[BOWSER_DEATH_SND]->play();
+		sounds[BOWSER_DEATH2_SND]->play();
+    }
+    
 }
 
 
@@ -148,7 +197,7 @@ void EnemyView::die()
 
 void EnemyView::loadRessources(TypeEnemy t)
 {
-	if(ressources_loaded)
+	if(textures[t] != NULL)
 		return;
 
 	/* REBEL */
@@ -166,19 +215,40 @@ void EnemyView::loadRessources(TypeEnemy t)
 	    SoundBuffer* buffer;
 
 	    buffer = new SoundBuffer;
-		buffer->loadFromFile("res/snd/enemy/death1.wav"); // DEATH
-	    sounds_buffers.push_back(buffer);
+		buffer->loadFromFile("res/snd/enemy/rebel/death1.wav"); // DEATH
+	    sounds_buffers[REBEL].push_back(buffer);
 
 	    buffer = new SoundBuffer;
-		buffer->loadFromFile("res/snd/enemy/death2.wav"); // DEATH2
-	    sounds_buffers.push_back(buffer); 
+		buffer->loadFromFile("res/snd/enemy/rebel/death2.wav"); // DEATH2
+	    sounds_buffers[REBEL].push_back(buffer); 
 
 	    buffer = new SoundBuffer;
-		buffer->loadFromFile("res/snd/enemy/death3.wav"); // DEATH3
-	    sounds_buffers.push_back(buffer); 
+		buffer->loadFromFile("res/snd/enemy/rebel/death3.wav"); // DEATH3
+	    sounds_buffers[REBEL].push_back(buffer); 
 	}
 
-	ressources_loaded = true;
+	/* BOWSER */
+	else if(t == BOWSER)
+	{
+		// TEXTURE
+		Texture* tex = new Texture();
+	    tex->loadFromFile("res/tex/enemy/bowser.png");
+	    textures[BOWSER] = tex;
+
+	    // ANIMATION
+	    animations_list[BOWSER] = loadAnimationsFromFile("res/xml/enemy/bowser.xml");
+
+	    // SOUNDS
+	    SoundBuffer* buffer;
+
+	    buffer = new SoundBuffer;
+		buffer->loadFromFile("res/snd/enemy/bowser/death.wav"); // DEATH
+	    sounds_buffers[BOWSER].push_back(buffer);
+
+	    buffer = new SoundBuffer;
+		buffer->loadFromFile("res/snd/enemy/bowser/death2.wav"); // DEATH2
+	    sounds_buffers[BOWSER].push_back(buffer);
+	}
 }
 
 
@@ -188,6 +258,4 @@ void EnemyView::deleteRessources()
 
  //    for(int i=0; i<NB_TYPE_ENEMY; ++i)
  //    	animations_list[i].clear();
-
-    ressources_loaded = false;
 }

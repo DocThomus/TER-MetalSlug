@@ -15,6 +15,7 @@ Player::Player()
 {
     position = Int2(100,530);
     size = Int2(100,120);
+    initial_size = size;
     mass = 5;
     health = Int2(10,10);
 
@@ -131,10 +132,10 @@ void Player::reload(int nb)
 
 void Player::animate(int dt)
 {
+	Character::animate(dt);
+
     if(state_b != DEAD)
     {
-    	Character::animate(dt);
-
     	/* COURIR */
     	if(state_p == RUN)
     		position.x += dt*walkway/mass*2	;

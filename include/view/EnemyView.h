@@ -38,24 +38,53 @@ class EnemyView : public Enemy, public MyDrawable
 	public :
 
 		/*!
-	     * \enum EnemyAnimations
-	     * \brief Différentes animations des ennemis.
+	     * \enum RebelAnimations
+	     * \brief Différentes animations des ennemis de type REBEL.
 	     */
-		enum EnemyAnimations
+		enum RebelAnimations
 		{
-			WATCH, DEATH, DEATH2, DEATH3, RUN, GRENADE, KNIFE
+			REBEL_WATCH, REBEL_DEATH, REBEL_DEATH2, REBEL_DEATH3, REBEL_RUN, REBEL_GRENADE, REBEL_KNIFE
+		};
+
+		/*!
+	     * \enum RebelSounds
+	     * \brief Différentes animations des ennemis de type REBEL.
+	     */
+		enum RebelSounds
+		{
+			REBEL_DEATH_SND, REBEL_DEATH2_SND, REBEL_DEATH3_SND
+		};
+
+		/*!
+	     * \enum BowserAnimations
+	     * \brief Différentes animations des ennemis de type BOWSER.
+	     */
+		enum BowserAnimations
+		{
+			BOWSER_STAND, BOWSER_WALK, BOWSER_FIRE, BOWSER_DEATH
+		};
+
+		/*!
+	     * \enum BowserSounds
+	     * \brief Différentes animations des ennemis de type BOWSER.
+	     */
+		enum BowserSounds
+		{
+			BOWSER_DEATH_SND, BOWSER_DEATH2_SND
 		};
 
 
 	private :
 
-		static bool ressources_loaded; /*!< \brief Variable de classe indiquant si les ressources sont chargées ou non. */
-
-		static vector<SoundBuffer*> sounds_buffers; /*!< \brief Variable de classe contenant les différents buffers de son nécessaires aux ennemis. */
+		static vector<SoundBuffer*> sounds_buffers[NB_TYPE_ENEMY]; /*!< \brief Variable de classe contenant les différents buffers de son nécessaires aux ennemis. */
 		static Texture* textures[NB_TYPE_ENEMY]; /*!< \brief Variable de classe contenant les différentes textures nécessaires aux ennemis. */
 		static vector<Animation> animations_list[NB_TYPE_ENEMY]; /*!< \brief Variable de classe contenant les différents animations nécessaires aux ennemies. */
 
-		vector<Sound*> sounds; /*!< \brief Variable de classe contenant les différents son nécessaires aux ennemis. */
+		vector<Sound*> sounds; /*!< \brief Contient les différents son nécessaires à une instance. */
+
+		list<AmmoView*>* save_air; /*!< \brief Sauvegarde la liste dans laquelle insérer les Ammo. */
+		Int2 save_angle;  /*!< \brief Sauvegarde l'angle de tir pour les tirs à retardement. */
+
 
 	public :
 

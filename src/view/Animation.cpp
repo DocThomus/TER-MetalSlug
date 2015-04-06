@@ -93,6 +93,11 @@ void Animation::setSpeed(int s)
 	speed = s;
 }
 
+int Animation::getIndFrame()
+{
+	return current;
+}
+
 
 int Animation::getNextAnim()
 {

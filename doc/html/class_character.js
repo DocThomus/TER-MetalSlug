@@ -26,6 +26,7 @@ var class_character =
     [ "walk", "class_character.html#a211bbf81a9ef429793cc00dfa8d15c4c", null ],
     [ "gunway", "class_character.html#a24d2b958ff3168646af13858641ae3fe", null ],
     [ "health", "class_character.html#a89b23cab52a6d29a0496d07b45004425", null ],
+    [ "initial_size", "class_character.html#a93604a5f7533a83ba2335c50455d6147", null ],
     [ "star_cpt", "class_character.html#ad8c4d05547d5de6c3b4796803cb004ef", null ],
     [ "state_b", "class_character.html#aedc1f0aca3aad0427052dd934cf4d849", null ],
     [ "state_g", "class_character.html#a8da74e8541c2181f8253b35d8a4eb845", null ],

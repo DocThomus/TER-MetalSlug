@@ -9,8 +9,16 @@ vector<Animation> AmmoView::animations_list[NB_TYPE_AMMO];
 AmmoView::AmmoView()
 :Ammo(),MyDrawable()
 {
-	body.setSize(Vector2f(size.x,size.y));
+	Int2 tmp_siz;
+
+	if(type==BULLET || type==HEAVY_BULLET || type==LIGHT_BULLET)
+		tmp_siz = Int2(50,12);
+
+	if(type==FLAME)
+		tmp_siz = Int2(300,150);
+
 	body.setOrigin(size.x/2,size.y/2);
+	body.setSize(Vector2f(tmp_siz.x,tmp_siz.y));
 	initRotation();
 
 	loadRessources();
@@ -24,7 +32,15 @@ AmmoView::AmmoView()
 AmmoView::AmmoView(Ammo a)
 :Ammo(a),MyDrawable()
 {
-	body.setSize(Vector2f(size.x,size.y));
+	Int2 tmp_siz;
+
+	if(type==BULLET || type==HEAVY_BULLET || type==LIGHT_BULLET)
+		tmp_siz = Int2(50,12);
+
+	if(type==FLAME)
+		tmp_siz = Int2(300,150);
+
+	body.setSize(Vector2f(tmp_siz.x,tmp_siz.y));
 	body.setOrigin(size.x/2,size.y/2);
 	initRotation();
 
@@ -49,24 +65,31 @@ void AmmoView::initRessources()
 		case BULLET :
 			setTexture(textures[BULLET]);
 			addAnimations(animations_list[BULLET]);
-			changeAnimation(0,false);
 			sounds[BULLET]->play();
 			break;
 
 		case HEAVY_BULLET :
 			setTexture(textures[BULLET]);
 			addAnimations(animations_list[BULLET]);
-			changeAnimation(0,false);
 			sounds[HEAVY_BULLET]->play();
 			break;
 
 		case LIGHT_BULLET :
 			setTexture(textures[BULLET]);
 			addAnimations(animations_list[BULLET]);
-			changeAnimation(0,false);
 			sounds[BULLET]->play();
 			break;
+
+		case FLAME :
+			setTexture(textures[FLAME]);
+			addAnimations(animations_list[FLAME]);
+			//sounds[FLAME]->play();
+			break;
 	}
+
+	changeAnimation(1,false);
+	changeAnimation(0,false);
+	updateIntRect();
 }
 
 
@@ -78,8 +101,22 @@ void AmmoView::display(RenderWindow* window)
 	/* DEBUG */
 	// body.setOutlineThickness(3);
 	// body.setOutlineColor(Color::Black);
+	// RectangleShape debug(Vector2f(size.x,size.y));
+	// debug.setPosition(Vector2f(position.x,position.y));
+	// debug.setOutlineThickness(3);
+	// debug.setOutlineColor(Color::Black);
+	// window->draw(debug);
 
-	body.setPosition(Vector2f(position.x,position.y-size.y/2));
+	if(movement.x > 0)
+		body.setPosition(Vector2f(position.x,position.y+size.y*0.5));
+	else if(movement.x < 0)
+		body.setPosition(Vector2f(position.x+size.x,position.y+size.y*0.5));
+	else if(movement.y > 0)
+		body.setPosition(Vector2f(position.x+size.x*0.5,position.y));
+	else if(movement.y < 0)
+		body.setPosition(Vector2f(position.x+size.x*0.5,position.y+size.y));
+	
+
 	window->draw(body);
 }
 
@@ -101,13 +138,15 @@ void AmmoView::animate(int dt)
 		change = setNextFrame();
 		cpt_time = 0;
 
-		if(!change && state_a==STOP)
+		if(type==FLAME && !change)
+			state_a = GHOST;
+		else if(!change && state_a==STOP)
 			state_a = GHOST;
 	}
 
 
 	/* MISE A JOUR DE LA SELECTION DE LA TEXTURE */
-	if(change)
+	//if(change)
 		updateIntRect();	
 }
 
@@ -115,7 +154,9 @@ void AmmoView::animate(int dt)
 void AmmoView::die(Int2 pos)
 {
 	Ammo::die(pos);
-	changeAnimation(1,false);
+
+	if(type==BULLET || type==HEAVY_BULLET || type==LIGHT_BULLET)
+		changeAnimation(1,false);
 }
 
 
@@ -134,15 +175,25 @@ void AmmoView::loadRessources()
 		return;
 
 	/* === TEXTURES === */
+	Texture* tex;
 
 	/* BULLET */
-	Texture* tex = new Texture();
+	tex = new Texture();
     tex->loadFromFile("res/tex/ammo/bullet.png");
+    textures.push_back(tex);
+
+    textures.push_back(NULL);
+    textures.push_back(NULL);
+
+    /* FLAME */
+	tex = new Texture();
+    tex->loadFromFile("res/tex/ammo/flame.png");
     textures.push_back(tex);
 
 
     /* === ANIMATIONS ===*/
     animations_list[BULLET] = loadAnimationsFromFile("res/xml/ammo/bullet.xml");
+    animations_list[FLAME] = loadAnimationsFromFile("res/xml/ammo/flame.xml");
 
    
     /* === SONS === */

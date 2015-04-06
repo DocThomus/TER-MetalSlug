@@ -253,7 +253,8 @@ void Game::checkKeyboardEvents(RenderWindow* window)
 
                 /* TEST */
                 case Keyboard::P :
-                    (*enemies.begin())->shoot(&ammo,Int2(-1,0));
+                    //(*enemies.begin())->shoot(&ammo,Int2(-1,0));
+                    (*enemies.begin())->walk(1);
                     break;
             }
         }
@@ -398,23 +399,29 @@ void Game::checkCollisions()
                         }
                         else
                         {
-                            if(a_mov.y > 0) // vers la bas
+                            if(a_mov.y > 0) // vers le bas
                                 a_pos.y = p_pos.y;
                             else // vers le haut
                                 //a_pos.y = p_pos.y+p_siz.y;
                                 ok = false;
                         }
 
-                        if(ok)
+                        Ammo::TypeAmmo tmp_type = (*a)->getType();
+
+                        if(ok && tmp_type!=Ammo::FLAME)
                             (*a)->die(a_pos);
                     }
                 }
             }
 
             /* VS ENEMY */
+            int epsilon = -10;
+            if((*a)->getType() == Ammo::FLAME)
+                epsilon = 0;
+
             for(list<EnemyView*>::iterator e = enemies.begin(); e != enemies.end(); e++)
             {
-                if(checkIntersect((ObjetPhysique*)(*a),(ObjetPhysique*)(*e),-10))
+                if(checkIntersect((ObjetPhysique*)(*a),(ObjetPhysique*)(*e),epsilon))
                 {
                     if((*a)->getOwner() != (*e) && (*e)->getStateBattle() != Character::DEAD)
                     {
@@ -427,13 +434,16 @@ void Game::checkCollisions()
                         
                         Int2 tmp = Int2(e_pos.x+e_siz.x/2,e_pos.y+e_siz.y/2);
 
-                        (*a)->die(tmp);
+                        Ammo::TypeAmmo tmp_type = (*a)->getType();
+
+                        if(tmp_type!=Ammo::FLAME)
+                            (*a)->die(a_pos);
                     }
                 }
             }
 
             /* VS PLAYER */
-            if(checkIntersect((ObjetPhysique*)(*a),(ObjetPhysique*)(&player),-10))
+            if(checkIntersect((ObjetPhysique*)(*a),(ObjetPhysique*)(&player),epsilon))
             {
                 if((*a)->getOwner() != &player && player.getStateBattle() != Character::DEAD)
                 {
@@ -446,7 +456,10 @@ void Game::checkCollisions()
                     
                     Int2 tmp = Int2(p_pos.x+p_siz.x/2,p_pos.y+p_siz.y/2);
 
-                    (*a)->die(tmp);
+                    Ammo::TypeAmmo tmp_type = (*a)->getType();
+
+                    if(tmp_type!=Ammo::FLAME)
+                        (*a)->die(tmp);
 
                     if(player.getStateBattle() == Character::DEAD)
                         level.playMusic(0);

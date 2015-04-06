@@ -1,6 +1,9 @@
 var class_enemy_view =
 [
-    [ "EnemyAnimations", "class_enemy_view.html#a880b21df5a848d62e73447a1681b0345", null ],
+    [ "BowserAnimations", "class_enemy_view.html#a4b496fe0525172a0a81e6c3c29566d0e", null ],
+    [ "BowserSounds", "class_enemy_view.html#aee049224082d8aee8c5d402a878b3a28", null ],
+    [ "RebelAnimations", "class_enemy_view.html#add2035cb32ef7c2587dee9626f265b0d", null ],
+    [ "RebelSounds", "class_enemy_view.html#a98ad4d96e882dd34a943a3e921e0ae8a", null ],
     [ "EnemyView", "class_enemy_view.html#a93ce010ab051b03e64421b2fdd06a1a4", null ],
     [ "EnemyView", "class_enemy_view.html#a123d7600ff369389909a9cd2b3962aa0", null ],
     [ "EnemyView", "class_enemy_view.html#a988d6526fc9926e3a34ed2137edc6c25", null ],
@@ -16,8 +19,9 @@ var class_enemy_view =
     [ "updateIntRect", "class_enemy_view.html#a1b225f456235e3bac12e02865b980405", null ],
     [ "walk", "class_enemy_view.html#a51f6486de640df3a25d4ba7e42849505", null ],
     [ "animations_list", "class_enemy_view.html#ae823ab1e84c51fee9ec399c4e5f8eac4", null ],
-    [ "ressources_loaded", "class_enemy_view.html#a9f783300c66fdac15292eae57372de13", null ],
+    [ "save_air", "class_enemy_view.html#a378705174883647b4fd4bc90698fb66f", null ],
+    [ "save_angle", "class_enemy_view.html#a7378c89a6c5c30b96475e58875f8ad76", null ],
     [ "sounds", "class_enemy_view.html#aea3cb584316432d9de40235f8a6faf78", null ],
-    [ "sounds_buffers", "class_enemy_view.html#a1e4d3fc7c3f62454fee7abcd026235f5", null ],
+    [ "sounds_buffers", "class_enemy_view.html#a15afd2f2a8dcc52078141fe833d1fc28", null ],
     [ "textures", "class_enemy_view.html#aa6bd0110d6c761c24251ca3e705f58b3", null ]
 ];

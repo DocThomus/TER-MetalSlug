@@ -5,7 +5,6 @@ var searchData=
   ['enemy_2eh',['Enemy.h',['../_enemy_8h.html',1,'']]],
   ['enemy_5fpos',['enemy_pos',['../class_event_enemy.html#a2666b52015a0875120837eb11140d4a6',1,'EventEnemy']]],
   ['enemy_5ftype',['enemy_type',['../class_event_enemy.html#a2260f6f45d2e143708fe2ff5d568aafb',1,'EventEnemy']]],
-  ['enemyanimations',['EnemyAnimations',['../class_enemy_view.html#a880b21df5a848d62e73447a1681b0345',1,'EnemyView']]],
   ['enemyview',['EnemyView',['../class_enemy_view.html',1,'EnemyView'],['../class_enemy_view.html#a93ce010ab051b03e64421b2fdd06a1a4',1,'EnemyView::EnemyView(Int2 pos, Int2 siz, int m, int max_h, bool AI, int pow)'],['../class_enemy_view.html#a123d7600ff369389909a9cd2b3962aa0',1,'EnemyView::EnemyView(Int2 pos, TypeEnemy t)'],['../class_enemy_view.html#a988d6526fc9926e3a34ed2137edc6c25',1,'EnemyView::EnemyView()']]],
   ['enemyview_2eh',['EnemyView.h',['../_enemy_view_8h.html',1,'']]],
   ['environment',['Environment',['../class_environment.html',1,'Environment'],['../class_level.html#a34659a8c8da9d3102344baa4f02ab6b1',1,'Level::environment()'],['../class_environment.html#a8b427c4448d8b7536666837521b9e83d',1,'Environment::Environment()']]],

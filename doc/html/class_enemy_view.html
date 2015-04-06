@@ -128,18 +128,33 @@ Graphe d'héritage de EnemyView:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-types"></a>
 Types publics</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_view.html#a880b21df5a848d62e73447a1681b0345">EnemyAnimations</a> { <br/>
-&#160;&#160;<b>WATCH</b>, 
-<b>DEATH</b>, 
-<b>DEATH2</b>, 
-<b>DEATH3</b>, 
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_view.html#add2035cb32ef7c2587dee9626f265b0d">RebelAnimations</a> { <br/>
+&#160;&#160;<b>REBEL_WATCH</b>, 
+<b>REBEL_DEATH</b>, 
+<b>REBEL_DEATH2</b>, 
+<b>REBEL_DEATH3</b>, 
 <br/>
-&#160;&#160;<b>RUN</b>, 
-<b>GRENADE</b>, 
-<b>KNIFE</b>
+&#160;&#160;<b>REBEL_RUN</b>, 
+<b>REBEL_GRENADE</b>, 
+<b>REBEL_KNIFE</b>
 <br/>
  }</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Différentes animations des ennemis. <br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Différentes animations des ennemis de type REBEL. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_view.html#a98ad4d96e882dd34a943a3e921e0ae8a">RebelSounds</a> { <b>REBEL_DEATH_SND</b>, 
+<b>REBEL_DEATH2_SND</b>, 
+<b>REBEL_DEATH3_SND</b>
+ }</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Différentes animations des ennemis de type REBEL. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_view.html#a4b496fe0525172a0a81e6c3c29566d0e">BowserAnimations</a> { <b>BOWSER_STAND</b>, 
+<b>BOWSER_WALK</b>, 
+<b>BOWSER_FIRE</b>, 
+<b>BOWSER_DEATH</b>
+ }</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Différentes animations des ennemis de type BOWSER. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_view.html#aee049224082d8aee8c5d402a878b3a28">BowserSounds</a> { <b>BOWSER_DEATH_SND</b>, 
+<b>BOWSER_DEATH2_SND</b>
+ }</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Différentes animations des ennemis de type BOWSER. <br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_view.html#a93ce010ab051b03e64421b2fdd06a1a4">EnemyView</a> (<a class="el" href="class_int2.html">Int2</a> pos, <a class="el" href="class_int2.html">Int2</a> siz, int m, int max_h, bool AI, int pow)</td></tr>
@@ -177,14 +192,17 @@ Fonctions membres publiques statiques</h2></td></tr>
 Attributs privés</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aea3cb584316432d9de40235f8a6faf78"></a><!-- doxytag: member="EnemyView::sounds" ref="aea3cb584316432d9de40235f8a6faf78" args="" -->
 vector&lt; Sound * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_view.html#aea3cb584316432d9de40235f8a6faf78">sounds</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable de classe contenant les différents son nécessaires aux ennemis. <br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Contient les différents son nécessaires à une instance. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a378705174883647b4fd4bc90698fb66f"></a><!-- doxytag: member="EnemyView::save_air" ref="a378705174883647b4fd4bc90698fb66f" args="" -->
+list&lt; <a class="el" href="class_ammo_view.html">AmmoView</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_view.html#a378705174883647b4fd4bc90698fb66f">save_air</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sauvegarde la liste dans laquelle insérer les <a class="el" href="class_ammo.html" title="Modélise un projectile.">Ammo</a>. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7378c89a6c5c30b96475e58875f8ad76"></a><!-- doxytag: member="EnemyView::save_angle" ref="a7378c89a6c5c30b96475e58875f8ad76" args="" -->
+<a class="el" href="class_int2.html">Int2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_view.html#a7378c89a6c5c30b96475e58875f8ad76">save_angle</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sauvegarde l'angle de tir pour les tirs à retardement. <br/></td></tr>
 <tr><td colspan="2"><h2><a name="pri-static-attribs"></a>
 Attributs privés statiques</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9f783300c66fdac15292eae57372de13"></a><!-- doxytag: member="EnemyView::ressources_loaded" ref="a9f783300c66fdac15292eae57372de13" args="" -->
-static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_view.html#a9f783300c66fdac15292eae57372de13">ressources_loaded</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable de classe indiquant si les ressources sont chargées ou non. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1e4d3fc7c3f62454fee7abcd026235f5"></a><!-- doxytag: member="EnemyView::sounds_buffers" ref="a1e4d3fc7c3f62454fee7abcd026235f5" args="" -->
-static vector&lt; SoundBuffer * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_view.html#a1e4d3fc7c3f62454fee7abcd026235f5">sounds_buffers</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a15afd2f2a8dcc52078141fe833d1fc28"></a><!-- doxytag: member="EnemyView::sounds_buffers" ref="a15afd2f2a8dcc52078141fe833d1fc28" args="[NB_TYPE_ENEMY]" -->
+static vector&lt; SoundBuffer * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_view.html#a15afd2f2a8dcc52078141fe833d1fc28">sounds_buffers</a> [NB_TYPE_ENEMY]</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable de classe contenant les différents buffers de son nécessaires aux ennemis. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa6bd0110d6c761c24251ca3e705f58b3"></a><!-- doxytag: member="EnemyView::textures" ref="aa6bd0110d6c761c24251ca3e705f58b3" args="[NB_TYPE_ENEMY]" -->
 static Texture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_view.html#aa6bd0110d6c761c24251ca3e705f58b3">textures</a> [NB_TYPE_ENEMY]</td></tr>
@@ -572,7 +590,7 @@ static vector&lt; <a class="el" href="class_animation.html">Animation</a> &gt;&#
     <ul>
       <li class="navelem"><a class="el" href="class_enemy_view.html">EnemyView</a>      </li>
 
-    <li class="footer">Généré le Lundi Avril 6 2015 15:59:10 pour Metal Slug par
+    <li class="footer">Généré le Lundi Avril 6 2015 20:54:57 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -96,23 +96,32 @@ void Weapon::shoot(list<Ammo*>* air, Float2 angle)
 		
 		// X
 		if(angle.x > 0)
-			pos.x += siz.x+10;
+			pos.x += siz.x+30;
 		else if(angle.x == 0)
-			pos.x += siz.x/2;
+			pos.x += siz.x*0.5;
 		else
-			pos.x -= 10;
+			pos.x -= 30;
 		
 		// Y
 		if(angle.y > 0)
 			pos.y += siz.y;
 		else if(angle.y == 0)
-			pos.y += siz.y/3;
+			pos.y += siz.y*0.2;
 		if(angle.x==0 && angle.y<0)
 			pos.y -= 50;
 
 		if(owner->getStatePosition() == Character::KNELT)
 		{
-			pos.y += siz.y/4;
+			pos.y += siz.y*0.3;
+		}
+
+		// FIX
+		if(type_ammo == Ammo::FLAME)
+		{
+			if(angle.x != 0)
+				pos.y -= siz.y*0.7;
+			else
+				pos.x -= siz.x*0.7;
 		}
 
 

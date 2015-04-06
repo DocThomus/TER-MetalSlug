@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<document>
+	<level num="1">
+
+		<!-- MUSIQUES -->
+		<musics>
+			<music>gameover.wav</music>
+			<music>omnishred.wav</music>
+		</musics>
+
+		<!-- ENVIRONNEMENT -->
+		<environment>
+
+			<!-- DECORS -->
+			<decors>
+				<decor z="-6">city.png</decor>
+				<decor z="0">road.png</decor>
+			</decors>
+
+			<!-- PLATE-FORMES -->
+			<platforms>
+				<!-- SOL -->
+				<platform visible="0">
+					<position x="-10" y="650"/>
+					<size w="10000" h="100"/>
+				</platform>
+			</platforms>
+
+		</environment>
+
+		<!-- EVENTS -->
+		<events>
+
+			<event type="enemy" pos="0" enemy_type="BOWSER" x="700" y="160"/>
+		
+		</events>
+
+	</level>
+</document>

@@ -164,10 +164,13 @@ void PlayerView::display(RenderWindow* window)
 
 
 	/* DEBUG */
-	// body.setOutlineThickness(5);
+	// body.setOutlineThickness(3);
 	// body.setOutlineColor(Color::Black);
-	// legs.body.setOutlineThickness(5);
-	// legs.body.setOutlineColor(Color::Black);
+	// RectangleShape debug(Vector2f(size.x,size.y));
+	// debug.setPosition(Vector2f(position.x,position.y));
+	// debug.setOutlineThickness(3);
+	// debug.setOutlineColor(Color::Black);
+	// window->draw(debug);
 
 
 	/* DESSIN */
@@ -204,7 +207,7 @@ void PlayerView::animate(int dt)
 		if(current_anim==getAnimRun())
 			state_b = NORMAL;
 
-		updateIntRect();
+	updateIntRect();
 }
 
 

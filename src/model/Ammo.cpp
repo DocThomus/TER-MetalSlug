@@ -8,7 +8,16 @@ Ammo::Ammo(Int2 pos, Int2 siz, int m, TypeAmmo type, Float2 movement, Character*
 	addMovement(movement);
 	
 	if(type==BULLET || type==HEAVY_BULLET || type==LIGHT_BULLET)
-		size = Int2(50,12);
+		size = Int2(20,20);
+
+	if(type==FLAME)
+		size = Int2(150,150);
+
+	if(movement.x<0)
+		position.x -= size.x;
+
+	if(movement.y<0)
+		position.y -= size.y;
 }
 
 
@@ -18,8 +27,14 @@ Ammo::Ammo()
 :ObjetPhysique(), type(BULLET)
 {
 	state_a = FLY; 
-
+	size = Int2(50,12);
 	addMovement(Int2(0,0));
+
+	if(movement.x<0)
+		position.x -= size.x;
+
+	if(movement.y<0)
+		position.y -= size.y;
 }
 
 
@@ -50,18 +65,26 @@ void Ammo::animate(int dt)
 		return;
 
 	if(state_a != STOP)
+	{
 		if(type==BULLET || type==HEAVY_BULLET || type==LIGHT_BULLET)
 		{
 			position.x += movement.x*2*dt;
 			position.y += movement.y*2*dt;
 		}
+		else if(type == FLAME)
+		{
+			position.x += movement.x*dt*0.5;
+			position.y += movement.y*dt*0.5;
+		}
+	}
 
 }
 
 
 void Ammo::die(Int2 pos)
 {
-	position = pos;
+	if(type == FLAME)
+		position = pos;
 	state_a = STOP;
 }
 
@@ -74,12 +97,19 @@ int Ammo::getDamage()
 		case BULLET       :
 		case HEAVY_BULLET : d = 10; break;
 		case LIGHT_BULLET : d = 5;  break;
+		case FLAME        : d = 20;  break;
 		case ROCKET       : d = 75; break;
 		case GRENADE      : d = 50; break;
 		case LASER        : d = 5;  break;
 	}
 
 	return d;
+}
+
+
+Ammo::TypeAmmo Ammo::getType()
+{
+	return type;
 }
 
 

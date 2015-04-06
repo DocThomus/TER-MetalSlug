@@ -3,7 +3,8 @@
 Character::Character(Int2 pos, Int2 siz, int m, int max_h)
 :ObjetPhysique(pos,siz,m)
 {
-	health = Int2(max_h,max_h);
+	initial_size = siz;
+    health = Int2(max_h,max_h);
     walkway = 1;
     gunway = Int2(1,0);
     state_p = WAIT;
@@ -14,7 +15,9 @@ Character::Character(Int2 pos, Int2 siz, int m, int max_h)
 
 
 Character::Character()
+:ObjetPhysique()
 {
+    initial_size = size;
     health = Int2(100,100);
     walkway = 1;
 	gunway = Int2(1,0);
@@ -193,6 +196,15 @@ void Character::kneel(bool b)
 {
     if(state_b == DEAD)
         return;
+
+    if(state_g!=AIR && b && state_p!=KNELT)
+    {
+        size.y = 0.5*initial_size.y;
+        position.y += initial_size.y-size.y;
+        cout << initial_size.y-size.y << endl;;
+    }
+    else if(!b)
+        size.y = initial_size.y;
     
     if(state_g != AIR)
         state_p = (b ? KNELT : WAIT);

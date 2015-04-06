@@ -10,6 +10,7 @@ var class_ammo =
     [ "getDamage", "class_ammo.html#aa70ceafd9b113751bb3aec8ea151c252", null ],
     [ "getOwner", "class_ammo.html#a23113ac697aafbe38864f994325881dc", null ],
     [ "getState", "class_ammo.html#a5553e8de086d171880433f611716c34a", null ],
+    [ "getType", "class_ammo.html#ae3a847679a4d03f1d7e9ef8f3afc85dd", null ],
     [ "print", "class_ammo.html#a1ebdc43a62c3ed0207cf01602caf9a6f", null ],
     [ "Enemy", "class_ammo.html#a9ba957cf9e4de656159d394db64f7086", null ],
     [ "Weapon", "class_ammo.html#ab356dbee0f1e915287732c65e8ef61e1", null ],

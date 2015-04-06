@@ -138,11 +138,12 @@ Types publics</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">États du personnage vis-a-vis du sol. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character.html#a8251340f461ab396f975b18dce58229d">StateBattle</a> { <br/>
 &#160;&#160;<b>NORMAL</b>, 
+<b>PRESHOOT</b>, 
 <b>SHOOT</b>, 
 <b>DEAD</b>, 
-<b>KNIFE</b>, 
 <br/>
-&#160;&#160;<b>STAR</b>
+&#160;&#160;<b>KNIFE</b>, 
+<b>STAR</b>
 <br/>
  }</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Actions pouvant être effectuée par un personnage. <br/></td></tr>
@@ -212,6 +213,9 @@ Attributs protégés</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aedc1f0aca3aad0427052dd934cf4d849"></a><!-- doxytag: member="Character::state_b" ref="aedc1f0aca3aad0427052dd934cf4d849" args="" -->
 <a class="el" href="class_character.html#a8251340f461ab396f975b18dce58229d">StateBattle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character.html#aedc1f0aca3aad0427052dd934cf4d849">state_b</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique quelle action effectue le personnage. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a93604a5f7533a83ba2335c50455d6147"></a><!-- doxytag: member="Character::initial_size" ref="a93604a5f7533a83ba2335c50455d6147" args="" -->
+<a class="el" href="class_int2.html">Int2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character.html#a93604a5f7533a83ba2335c50455d6147">initial_size</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Taille initiale du personnage. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a89b23cab52a6d29a0496d07b45004425"></a><!-- doxytag: member="Character::health" ref="a89b23cab52a6d29a0496d07b45004425" args="" -->
 <a class="el" href="class_int2.html">Int2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character.html#a89b23cab52a6d29a0496d07b45004425">health</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Santé du personnage. <br/></td></tr>
@@ -345,7 +349,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 
 <p>Réimplémentée à partir de <a class="el" href="class_objet_physique.html#a5990e1ae209e40dfefd008947c8c475d">ObjetPhysique</a>.</p>
 
-<p>Réimplémentée dans <a class="el" href="class_player_view.html#a7077a695549cedcfc5fd2a9e1d311c0e">PlayerView</a>, <a class="el" href="class_enemy_view.html#a9cddea2cb12e4abd5f9fb27acd00c1d5">EnemyView</a>, <a class="el" href="class_enemy.html#acebf7090d998b062d9c3c59c49e0627c">Enemy</a>, et <a class="el" href="class_player.html#a7a4cd01baf9751a32129da6160ee8684">Player</a>.</p>
+<p>Réimplémentée dans <a class="el" href="class_enemy_view.html#a9cddea2cb12e4abd5f9fb27acd00c1d5">EnemyView</a>, <a class="el" href="class_player_view.html#a7077a695549cedcfc5fd2a9e1d311c0e">PlayerView</a>, <a class="el" href="class_enemy.html#acebf7090d998b062d9c3c59c49e0627c">Enemy</a>, et <a class="el" href="class_player.html#a7a4cd01baf9751a32129da6160ee8684">Player</a>.</p>
 
 </div>
 </div>
@@ -503,7 +507,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <p>Courir. </p>
 <p>Fait courir le personnage dans une direction passée en paramètre. </p>
 
-<p>Réimplémentée dans <a class="el" href="class_player_view.html#a047bc57a2ad872a028464889fdc46e8c">PlayerView</a>, <a class="el" href="class_enemy_view.html#a51f6486de640df3a25d4ba7e42849505">EnemyView</a>, et <a class="el" href="class_player.html#ad7ec5bcfae66e275785603eced6bc768">Player</a>.</p>
+<p>Réimplémentée dans <a class="el" href="class_enemy_view.html#a51f6486de640df3a25d4ba7e42849505">EnemyView</a>, <a class="el" href="class_player_view.html#a047bc57a2ad872a028464889fdc46e8c">PlayerView</a>, et <a class="el" href="class_player.html#ad7ec5bcfae66e275785603eced6bc768">Player</a>.</p>
 
 </div>
 </div>
@@ -530,7 +534,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
     <ul>
       <li class="navelem"><a class="el" href="class_character.html">Character</a>      </li>
 
-    <li class="footer">Généré le Lundi Avril 6 2015 15:59:10 pour Metal Slug par
+    <li class="footer">Généré le Lundi Avril 6 2015 20:54:57 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

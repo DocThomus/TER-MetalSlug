@@ -121,7 +121,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00034"></a>00034 
 <a name="l00035"></a>00035         <span class="keyword">public</span> :
 <a name="l00036"></a>00036         
-<a name="l00041"></a><a class="code" href="class_ammo.html#af8e34cdcc780ef90b0708f097fc7acea">00041</a>                 <span class="keyword">enum</span> <a class="code" href="class_ammo.html#af8e34cdcc780ef90b0708f097fc7acea" title="Types possibles de l&#39;objet Ammo.">TypeAmmo</a> {BULLET, HEAVY_BULLET, LIGHT_BULLET, ROCKET, GRENADE, LASER,
+<a name="l00041"></a><a class="code" href="class_ammo.html#af8e34cdcc780ef90b0708f097fc7acea">00041</a>                 <span class="keyword">enum</span> <a class="code" href="class_ammo.html#af8e34cdcc780ef90b0708f097fc7acea" title="Types possibles de l&#39;objet Ammo.">TypeAmmo</a> {BULLET, HEAVY_BULLET, LIGHT_BULLET, FLAME, ROCKET, GRENADE, LASER,
 <a name="l00042"></a>00042                                                 NB_TYPE_AMMO};
 <a name="l00043"></a>00043 
 <a name="l00048"></a><a class="code" href="class_ammo.html#ab1e5316640ed98513039385b82ef4b07">00048</a>                 <span class="keyword">enum</span> <a class="code" href="class_ammo.html#ab1e5316640ed98513039385b82ef4b07" title="États possibles de l&#39;objet Ammo.">StateAmmo</a>{FLY,STOP,GHOST};
@@ -148,15 +148,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00110"></a>00110 
 <a name="l00116"></a>00116                 <span class="keywordtype">int</span> getDamage();
 <a name="l00117"></a>00117 
-<a name="l00123"></a>00123                 <a class="code" href="class_ammo.html#ab1e5316640ed98513039385b82ef4b07" title="États possibles de l&#39;objet Ammo.">StateAmmo</a> getState();
+<a name="l00123"></a>00123                 <a class="code" href="class_ammo.html#af8e34cdcc780ef90b0708f097fc7acea" title="Types possibles de l&#39;objet Ammo.">TypeAmmo</a> getType();
 <a name="l00124"></a>00124 
-<a name="l00130"></a>00130                 <a class="code" href="class_character.html" title="Modélise un personnage.">Character</a>* getOwner();
+<a name="l00130"></a>00130                 <a class="code" href="class_ammo.html#ab1e5316640ed98513039385b82ef4b07" title="États possibles de l&#39;objet Ammo.">StateAmmo</a> getState();
 <a name="l00131"></a>00131 
-<a name="l00132"></a>00132 };
-<a name="l00133"></a>00133 
-<a name="l00134"></a>00134 
-<a name="l00135"></a>00135 
-<a name="l00138"></a>00138 <span class="preprocessor">#endif</span>
+<a name="l00137"></a>00137                 <a class="code" href="class_character.html" title="Modélise un personnage.">Character</a>* getOwner();
+<a name="l00138"></a>00138 
+<a name="l00139"></a>00139 };
+<a name="l00140"></a>00140 
+<a name="l00141"></a>00141 
+<a name="l00142"></a>00142 
+<a name="l00145"></a>00145 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -177,7 +179,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul>
       <li class="navelem"><a class="el" href="_ammo_8h.html">Ammo.h</a>      </li>
 
-    <li class="footer">Généré le Lundi Avril 6 2015 15:59:10 pour Metal Slug par
+    <li class="footer">Généré le Lundi Avril 6 2015 20:54:57 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
