@@ -2,6 +2,7 @@
 #include <controller/MasterClass.h>
 #include <controller/EventGame.h>
 #include <controller/EventEnemy.h>
+#include <controller/EventItem.h>
 
 
 /* CONVERSION VERS STRING */
@@ -274,7 +275,7 @@ bool loadLevelXML(string filename, Config* conf, Environment* env, list<EventGam
         type = event->first_attribute("type")->value();
         pos = atoi(event->first_attribute("pos")->value());
 
-        if(type == "enemy")
+        if(type == "enemy") // EventEnemy
         {
             Int2 tmp_pos(
                 atoi(event->first_attribute("x")->value()),
@@ -285,6 +286,25 @@ bool loadLevelXML(string filename, Config* conf, Environment* env, list<EventGam
 
             if(type_e == "REBEL")
                 evts->push_back(new EventEnemy(pos, tmp_pos, Enemy::REBEL));
+        }
+        else if(type == "item") // EventItem
+        {
+            Int2 tmp_pos(
+                atoi(event->first_attribute("x")->value()),
+                atoi(event->first_attribute("y")->value())
+            );
+
+            string type_i = event->first_attribute("item_type")->value();
+
+            if(type_i == "WEAPON")
+            {
+                string type_w = event->first_attribute("weapon_type")->value();
+
+                if(type_w == "SHOTGUN")
+                    evts->push_back(new EventItem(pos, tmp_pos, Item::WEAPON, Weapon::SHOTGUN));
+                else if(type_w == "SMG")
+                    evts->push_back(new EventItem(pos, tmp_pos, Item::WEAPON, Weapon::SMG));
+            }
         }
     }
 

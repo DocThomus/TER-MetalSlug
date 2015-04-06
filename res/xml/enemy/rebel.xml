@@ -28,7 +28,7 @@
 	</animation>
 
 	<!-- DEATH -->
-	<animation speed="40">
+	<animation speed="30">
 		<sprite x="379" y="1138" w="32" h="38"/>
 		<sprite x="422" y="1136" w="36" h="40"/>
 		<sprite x="471" y="1132" w="40" h="44"/>

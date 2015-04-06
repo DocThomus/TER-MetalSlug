@@ -1,9 +1,12 @@
 #include "model/Item.h"
 
-Item::Item(Int2 pos, TypeItem type)
-:ObjetPhysique(), type(type), type_weapon(Weapon::PISTOL)
+
+
+Item::Item(Int2 pos, TypeItem type_i, Weapon::TypeWeapon type_w)
+:ObjetPhysique(), type(type_i), type_weapon(type_w)
 {
 	setPosition(pos);
+	state = WAIT;
 
 	/* TRAITEMENT EN FONCTION DU TYPE */
 }
@@ -43,10 +46,18 @@ void Item::trigger(Player* p)
 			break;
 			
 	}
+
+	state = TAKEN;
 }
 
 
 void Item::setTypeWeapon(Weapon::TypeWeapon type)
 {
 	type_weapon = type;
+}
+
+
+Item::StateItem Item::getState()
+{
+	return state;
 }

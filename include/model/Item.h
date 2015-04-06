@@ -40,11 +40,18 @@ class Item : public ObjetPhysique
 	     * \brief Types possibles de l'objet Item.
 	     */
 		enum TypeItem {HEALTH, WEAPON, INVINCIBLE, CHICKEN, INVERT, AMMO};
+
+		/*!
+	     * \enum StateItem
+	     * \brief États possibles de l'objet Item.
+	     */
+		enum StateItem {WAIT, TAKEN};
 	
 	
 	protected :
 
 		TypeItem type; /*!< \brief Type de l'item. */
+		StateItem state; /*!< \brief Etat courant de l'item. */
 		Weapon::TypeWeapon type_weapon; /*!< \brief Type de l'arme donnée par l'item. */
 
 
@@ -55,9 +62,10 @@ class Item : public ObjetPhysique
 	     *
 	     * Constructeur complet de la classe Item
 	     * \param pos : Position de l'item.
-	     * \param type : TYpe de l'item.
+	     * \param type_i : Type de l'item.
+	     * \param type_w : Type de l'arme donnée par l'item.
 	     */
-		Item(Int2 pos, TypeItem type);
+		Item(Int2 pos, TypeItem type_i, Weapon::TypeWeapon type_w=Weapon::SHOTGUN);
 
 		/*!
 	     * \brief Constructeur
@@ -86,12 +94,17 @@ class Item : public ObjetPhysique
 	     *
 	     * Applique l'effet de l'item sur le joueur qui le ramasse.
 	     */
-		void trigger(Player* p);
+		virtual void trigger(Player* p);
 
 		/*!
 	     * \brief Définit le type d'arme que donne l'item lorsqu'il est de type WEAPON.
 	     */
 		void setTypeWeapon(Weapon::TypeWeapon type);
+
+		/*!
+	     * \brief Retourne l'état courant de l'item.
+	     */
+		StateItem getState();
 
 
 };

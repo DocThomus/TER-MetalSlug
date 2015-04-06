@@ -19,7 +19,7 @@ var searchData=
   ['getposition',['getPosition',['../class_event_game.html#aa237ce4f8f84cb54f06d9f96edae8ff2',1,'EventGame::getPosition()'],['../class_objet_physique.html#ae537adf900a2bb5eb82a9e36195bf4a5',1,'ObjetPhysique::getPosition()'],['../class_frame.html#afafa5291ee3556e78e549881fccdd0ab',1,'Frame::getPosition()'],['../class_member_view.html#a5e334b3d0d5a389e6ee9fb1db55efb36',1,'MemberView::getPosition()']]],
   ['getsize',['getSize',['../class_objet_physique.html#a0e8595a25635537949c301b1bcf62d3f',1,'ObjetPhysique::getSize()'],['../class_frame.html#a0c43381117c7cfb87803641fa1b220e6',1,'Frame::getSize()'],['../class_member_view.html#a2a72a417dae73ffaa4dfcff8cc6f4de6',1,'MemberView::getSize()']]],
   ['getspeed',['getSpeed',['../class_animation.html#a370635a5eab451e71e63f97ceee3d7a7',1,'Animation']]],
-  ['getstate',['getState',['../class_ammo.html#a5553e8de086d171880433f611716c34a',1,'Ammo']]],
+  ['getstate',['getState',['../class_ammo.html#a5553e8de086d171880433f611716c34a',1,'Ammo::getState()'],['../class_item.html#aa9924c01d33423e583d5056082579c87',1,'Item::getState()']]],
   ['getstatebattle',['getStateBattle',['../class_character.html#a3af9b69041599702685b6867280ba00c',1,'Character']]],
   ['getstateground',['getStateGround',['../class_character.html#afb7e6ae7deb4d323a67f857f6e58168d',1,'Character']]],
   ['getstateposition',['getStatePosition',['../class_character.html#aa3b9db208793ec001c15c1ea8f13e388',1,'Character']]],

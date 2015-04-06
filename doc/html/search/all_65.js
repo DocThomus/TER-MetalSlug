@@ -14,5 +14,7 @@ var searchData=
   ['eventenemy_2eh',['EventEnemy.h',['../_event_enemy_8h.html',1,'']]],
   ['eventgame',['EventGame',['../class_event_game.html',1,'EventGame'],['../class_event_game.html#a336740d94f66beeb994a46394b0daaaf',1,'EventGame::EventGame()'],['../class_event_game.html#ad29c8251e1645aee2f5720fba05da184',1,'EventGame::EventGame(int pos)']]],
   ['eventgame_2eh',['EventGame.h',['../_event_game_8h.html',1,'']]],
+  ['eventitem',['EventItem',['../class_event_item.html',1,'EventItem'],['../class_event_item.html#aebfd4dde37a8f2f3006b3750b94c7fe0',1,'EventItem::EventItem()'],['../class_event_item.html#a515c196daeb161cb27c9e656df938808',1,'EventItem::EventItem(int pos, Int2 pos_e, Item::TypeItem t_i, Weapon::TypeWeapon t_w=Weapon::SHOTGUN)']]],
+  ['eventitem_2eh',['EventItem.h',['../_event_item_8h.html',1,'']]],
   ['events',['events',['../class_level.html#a34ee580ab4c16cd5b7efb2244bf0551f',1,'Level']]]
 ];

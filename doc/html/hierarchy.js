@@ -5,7 +5,8 @@ var hierarchy =
     [ "Config", "class_config.html", null ],
     [ "Environment", "class_environment.html", null ],
     [ "EventGame", "class_event_game.html", [
-      [ "EventEnemy", "class_event_enemy.html", null ]
+      [ "EventEnemy", "class_event_enemy.html", null ],
+      [ "EventItem", "class_event_item.html", null ]
     ] ],
     [ "Float2", "class_float2.html", null ],
     [ "Frame", "class_frame.html", null ],
@@ -17,6 +18,7 @@ var hierarchy =
       [ "AmmoView", "class_ammo_view.html", null ],
       [ "DecorView", "class_decor_view.html", null ],
       [ "EnemyView", "class_enemy_view.html", null ],
+      [ "ItemView", "class_item_view.html", null ],
       [ "MemberView", "class_member_view.html", null ],
       [ "PlatformView", "class_platform_view.html", null ],
       [ "PlayerView", "class_player_view.html", null ]
@@ -36,7 +38,9 @@ var hierarchy =
       [ "Decor", "class_decor.html", [
         [ "DecorView", "class_decor_view.html", null ]
       ] ],
-      [ "Item", "class_item.html", null ],
+      [ "Item", "class_item.html", [
+        [ "ItemView", "class_item_view.html", null ]
+      ] ],
       [ "Platform", "class_platform.html", [
         [ "PlatformView", "class_platform_view.html", null ]
       ] ]

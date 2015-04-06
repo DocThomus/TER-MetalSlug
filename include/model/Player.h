@@ -36,7 +36,6 @@ class Ammo;
  */
 class Player : public Character
 {
-	
 	protected :
 		
 		vector<Weapon> armes; /*!< \brief Armes possédées par le joueur. */

@@ -7,5 +7,6 @@ var searchData=
   ['initrotation',['initRotation',['../class_ammo_view.html#adfcb245219da55d4dee4c8a069dddeff',1,'AmmoView']]],
   ['initsounds',['initSounds',['../class_enemy_view.html#a395cfca059a6d147f82c058b3de2dcff',1,'EnemyView']]],
   ['int2',['Int2',['../class_int2.html#a591d75d7b11e2be85456246b41c4419d',1,'Int2::Int2(int i=0, int j=0)'],['../class_int2.html#aba3a66c3f4cb085adbbd176331c947ce',1,'Int2::Int2(const Int2 &amp;u)']]],
-  ['item',['Item',['../class_item.html#af2acb1f19880785ae0ff57777ea533d8',1,'Item::Item(Int2 pos, TypeItem type)'],['../class_item.html#a297720c02984eab37332ae795d22189d',1,'Item::Item()']]]
+  ['item',['Item',['../class_item.html#a1c989e37e041dcad8bdc5e833c478a86',1,'Item::Item(Int2 pos, TypeItem type_i, Weapon::TypeWeapon type_w=Weapon::SHOTGUN)'],['../class_item.html#a297720c02984eab37332ae795d22189d',1,'Item::Item()']]],
+  ['itemview',['ItemView',['../class_item_view.html#a7ea170841775f2165250cf7b1df99652',1,'ItemView::ItemView(Int2 pos, TypeItem type_i, Weapon::TypeWeapon type_w=Weapon::SHOTGUN)'],['../class_item_view.html#a329aaf5b5a91a1ac63cef492647d0b54',1,'ItemView::ItemView()']]]
 ];

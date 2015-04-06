@@ -29,7 +29,8 @@ void Level::loadFromFile(string filename, Config* config)
 		exit(-1);
 	}
 
-	musics[0]->play();
+	if(musics.size() > 0)
+		musics[0]->play();
 }
 
 

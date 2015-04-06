@@ -35,6 +35,8 @@ class WeaponView;
  */
 class PlayerView : public Player, public MyDrawable
 {
+	friend class ItemView;
+	
 	public :
 
 		/*!

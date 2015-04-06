@@ -69,29 +69,26 @@
 					<size w="120" h="180"/>
 					<sprite rx="0" ry="0">caisse.png</sprite>
 				</platform>
-				
-
-				<!-- <platform>
-					<position x="760" y="320"/>
-					<size w="400" h="40"/>
-					<sprite>wall.png</sprite>
-				</platform>
 				<platform>
-					<position x="1360" y="320"/>
-					<size w="400" h="40"/>
-					<sprite>wall.png</sprite>
-				</platform> -->
+					<position x="2800" y="650"/>
+					<size w="400" h="150"/>
+					<sprite rx="0" ry="0">taxi.png</sprite>
+				</platform>
 			</platforms>
 
-			<!-- ITEMS -->
-			<!-- ... -->
 		</environment>
 
 		<!-- EVENTS -->
 		<events>
 			<event type="enemy" pos="0" enemy_type="REBEL" x="700" y="560"/>
+			
+			<event type="item" pos="0" item_type="WEAPON" weapon_type="SHOTGUN" x="1150" y="550"/>
+			
 			<event type="enemy" pos="0" enemy_type="REBEL" x="1420" y="240"/>
 			<event type="enemy" pos="0" enemy_type="REBEL" x="1800" y="240"/>
+
+			<event type="item" pos="0" item_type="WEAPON" weapon_type="SMG" x="1960" y="150"/>
+
 			<event type="enemy" pos="0" enemy_type="REBEL" x="2000" y="240"/>
 			<event type="enemy" pos="500" enemy_type="REBEL" x="2500" y="240"/>
 			<event type="enemy" pos="600" enemy_type="REBEL" x="2600" y="240"/>

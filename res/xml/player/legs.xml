@@ -7,7 +7,7 @@
 	</animation>
 
 	<!-- RUN -->
-	<animation>
+	<animation speed="80">
 		<sprite x="1" y="29" w="21" h="20"/>
 		<sprite x="24" y="28" w="28" h="20"/>
 		<sprite x="54" y="32" w="31" h="16"/>

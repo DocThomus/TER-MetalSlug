@@ -101,6 +101,9 @@ void Game::display(RenderWindow* window)
     
     for(list<AmmoView*>::iterator a = ammo.begin(); a != ammo.end(); a++)
         (*a)->display(window);
+
+    for(list<ItemView*>::iterator i = items.begin(); i != items.end(); i++)
+        (*i)->display(window);
 }
 
 
@@ -326,6 +329,14 @@ void Game::checkCollisions()
     }
     if(!collision) { // Si il n'y a collision avec aucune plateforme, le personnage est en l'air et tombe
         player.jump(0);
+    }
+
+
+    /* PLAYER / ITEMS */
+    for(list<ItemView*>::iterator i = items.begin(); i != items.end(); i++) // On check les collisions avec TOUTES les plateformes (on peut etre en collision avec le sol et un mur...)
+    {
+       if((*i)->getState()==Item::WAIT && checkIntersect((ObjetPhysique*)(&player),(ObjetPhysique*)((*i))))
+            (*i)->trigger(&player);
     }
 
 
@@ -679,13 +690,18 @@ void Game::loadLevel()
 
 
     /* WEAPON */
-    player.addWeapon(Weapon::SHOTGUN);
-    player.addWeapon(Weapon::SMG);
-    player.setWeapon(0);
+    // player.addWeapon(Weapon::SHOTGUN);
+    // player.addWeapon(Weapon::SMG);
+    // player.setWeapon(0);
 
 
-    /* AMMO */
+    /* RESSOURCES AMMO */
     AmmoView::loadRessources();
+
+
+    /* RESSOURCES ITEMS */
+    ItemView::loadRessources();
+    //items.push_back(new ItemView(Int2(1000,500),Item::WEAPON,Weapon::SMG));
 
 }
 

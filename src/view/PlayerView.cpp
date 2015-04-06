@@ -405,7 +405,12 @@ void PlayerView::setWeapon(int w)
         return;
 
 	Player::setWeapon(w);
-	changeAnimation(getAnimRun());
+
+	if(state_p == KNELT)
+		changeAnimation(getAnimKnee());
+	else
+		changeAnimation(getAnimRun());
+	;
 }
 
 

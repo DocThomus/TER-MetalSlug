@@ -30,6 +30,7 @@
 #include <view/PlayerView.h>
 #include <view/EnemyView.h>
 #include <view/AmmoView.h>
+#include <view/ItemView.h>
 
 using namespace std;
 using namespace sf;
@@ -57,6 +58,7 @@ class Game
 {
 	friend class EventGame;
 	friend class EventEnemy;
+	friend class EventItem;
 	
 	private :
 
@@ -70,6 +72,7 @@ class Game
 		PlayerView player; /*!< \brief Joueur */
 		list<EnemyView*> enemies; /*!< \brief Liste des ennemis à l'écran */
 		list<AmmoView*> ammo; /*!< \brief Liste des projectiles à l'écran */
+		list<ItemView*> items; /*!< \brief Liste des items à l'écran */
 	
 
 	public :

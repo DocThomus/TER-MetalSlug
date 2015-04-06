@@ -108,10 +108,11 @@ Liste complète des membres de <a class="el" href="class_item.html">Item</a>, y 
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#a7c18118de257e51a3784debad9d62df0">getMovement</a>()</td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#ae537adf900a2bb5eb82a9e36195bf4a5">getPosition</a>()</td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td><code> [inline]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#a0e8595a25635537949c301b1bcf62d3f">getSize</a>()</td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_item.html#aa9924c01d33423e583d5056082579c87">getState</a>()</td><td><a class="el" href="class_item.html">Item</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>HEALTH</b> valeur énumérée (défini dans <a class="el" href="class_item.html">Item</a>)</td><td><a class="el" href="class_item.html">Item</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>INVERT</b> valeur énumérée (défini dans <a class="el" href="class_item.html">Item</a>)</td><td><a class="el" href="class_item.html">Item</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>INVINCIBLE</b> valeur énumérée (défini dans <a class="el" href="class_item.html">Item</a>)</td><td><a class="el" href="class_item.html">Item</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_item.html#af2acb1f19880785ae0ff57777ea533d8">Item</a>(Int2 pos, TypeItem type)</td><td><a class="el" href="class_item.html">Item</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_item.html#a1c989e37e041dcad8bdc5e833c478a86">Item</a>(Int2 pos, TypeItem type_i, Weapon::TypeWeapon type_w=Weapon::SHOTGUN)</td><td><a class="el" href="class_item.html">Item</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_item.html#a297720c02984eab37332ae795d22189d">Item</a>()</td><td><a class="el" href="class_item.html">Item</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#ad9aecb9f29d4bf704d8a536d32081664">mass</a></td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#abca9fd07d93028f52251d5a9bbad0f50">movement</a></td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td><code> [protected]</code></td></tr>
@@ -124,10 +125,14 @@ Liste complète des membres de <a class="el" href="class_item.html">Item</a>, y 
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#a41fa31e44e9fa53f15446865c73a2d43">setSize</a>(Int2 siz)</td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_item.html#a0ef1f1b5f066c14225d2af49795d566b">setTypeWeapon</a>(Weapon::TypeWeapon type)</td><td><a class="el" href="class_item.html">Item</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#a8b560415dc0a1f38e8cf3e8a24b1c9aa">size</a></td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td><code> [protected]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="class_item.html#ab596e007031a85aad5c9903af5e8473c">trigger</a>(Player *p)</td><td><a class="el" href="class_item.html">Item</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_item.html#ad5ddc6e08d206c4c76d6fc56fe30b7e4">state</a></td><td><a class="el" href="class_item.html">Item</a></td><td><code> [protected]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_item.html#ae7741f1e84d5d918f4875eda4c37ad77">StateItem</a> énumération</td><td><a class="el" href="class_item.html">Item</a></td><td></td></tr>
+  <tr bgcolor="#f0f0f0"><td><b>TAKEN</b> valeur énumérée (défini dans <a class="el" href="class_item.html">Item</a>)</td><td><a class="el" href="class_item.html">Item</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_item.html#a863ddcc09e28971108111add681dae69">trigger</a>(Player *p)</td><td><a class="el" href="class_item.html">Item</a></td><td><code> [virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_item.html#ae92dc62097380acdf02ca1dda7766395">type</a></td><td><a class="el" href="class_item.html">Item</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_item.html#ab2031aa97673760e2a3a3c90fee03e15">type_weapon</a></td><td><a class="el" href="class_item.html">Item</a></td><td><code> [protected]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="class_item.html#a3636d9623ed7b945c9de6a2a8e032676">TypeItem</a> énumération</td><td><a class="el" href="class_item.html">Item</a></td><td></td></tr>
+  <tr bgcolor="#f0f0f0"><td><b>WAIT</b> valeur énumérée (défini dans <a class="el" href="class_item.html">Item</a>)</td><td><a class="el" href="class_item.html">Item</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>WEAPON</b> valeur énumérée (défini dans <a class="el" href="class_item.html">Item</a>)</td><td><a class="el" href="class_item.html">Item</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_item.html#a11663c84075b78c3ae5e30fdfcd7c458">~Item</a>()</td><td><a class="el" href="class_item.html">Item</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="class_objet_physique.html#aa9e349c3dce60cf112b2093466843c09">~ObjetPhysique</a>()</td><td><a class="el" href="class_objet_physique.html">ObjetPhysique</a></td><td></td></tr>
@@ -150,7 +155,7 @@ Liste complète des membres de <a class="el" href="class_item.html">Item</a>, y 
   <div id="nav-path" class="navpath">
     <ul>
 
-    <li class="footer">Généré le Dimanche Avril 5 2015 17:32:53 pour Metal Slug par
+    <li class="footer">Généré le Lundi Avril 6 2015 12:12:57 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
