@@ -26,7 +26,6 @@ class Decor;
 class Platform;
 
 
-
 /*!\class Environment
  * \brief Stocke l'environnement.
  *

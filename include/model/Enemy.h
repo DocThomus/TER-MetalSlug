@@ -14,6 +14,7 @@
 #include <vector>
 
 #include <model/Character.h>
+#include <model/Platform.h>
 
 using namespace std;
 
@@ -42,8 +43,10 @@ class Enemy : public Character
 
 		TypeEnemy type; /*!< \brief Type de l'ennemi. */
 		bool haveAI; /*!< \brief Indique si l'ennemi doit posséder une intelligence ou non. */
+		bool orienteGauche; /*!< \brief Si vrai, le perso va a gauche, sinon a droite */
 		int power; /*!< \brief Indique la puissance des attaques de l'ennemi. */
-
+		Platform plateformeAParcourir; /*!< \brief Plateforme sur laquelle l'ennemi est censé faire des allers-retours */
+		bool enDeplacement;
 
 	public :
 		
@@ -115,6 +118,13 @@ class Enemy : public Character
 	     */
 		void die();
 
+		void setPlateformeAParcourir(Platform pf);
+
+		void setOrientation(bool gauche);
+
+		void setDeplacement(bool dpl);
+
+		bool estIntelligent();
 };
 
 

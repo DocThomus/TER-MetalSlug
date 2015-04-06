@@ -74,14 +74,24 @@
 					<size w="400" h="150"/>
 					<sprite rx="0" ry="0">taxi.png</sprite>
 				</platform>
+				<platform> <!-- Test IA -->
+					<position x="200" y="350"/>
+					<size w="500" h="10"/>
+				</platform>
+				<platform> <!-- Test IA -->
+					<position x="250" y="320"/>
+					<size w="10" h="10"/>
+				</platform>
 			</platforms>
 
 		</environment>
 
 		<!-- EVENTS -->
 		<events>
+			<event type="enemy" pos="0" enemy_type="REBEL" x="600" y="250"/> <!-- Test IA -->
+			<!--
 			<event type="enemy" pos="0" enemy_type="REBEL" x="700" y="560"/>
-			
+
 			<event type="item" pos="0" item_type="WEAPON" weapon_type="SHOTGUN" x="1150" y="550"/>
 			
 			<event type="enemy" pos="0" enemy_type="REBEL" x="1420" y="240"/>
@@ -101,6 +111,8 @@
 			<event type="enemy" pos="1300" enemy_type="REBEL" x="3300" y="240"/>
 			<event type="enemy" pos="1400" enemy_type="REBEL" x="3400" y="240"/>
 			<event type="enemy" pos="1500" enemy_type="REBEL" x="3500" y="240"/>
+		-->
+			
 		</events>
 
 	</level>

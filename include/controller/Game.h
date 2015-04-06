@@ -234,6 +234,7 @@ class Game
 	     */
 		vector<Animation> loadSpriteFromFile(string filename);
 
+		void checkIAEnnemis();
 };
 
 /** @}*/

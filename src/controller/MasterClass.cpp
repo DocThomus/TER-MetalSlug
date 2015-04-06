@@ -33,6 +33,7 @@ void MasterClass::playGame()
         game.checkKeyboardEvents(window);
         game.update(clock.restart());
         game.checkCollisions();
+        game.checkIAEnnemis();
 
         window->clear();
         game.display(window);

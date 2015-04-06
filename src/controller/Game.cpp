@@ -353,8 +353,16 @@ void Game::checkCollisions()
             if(checkIntersect(e_ptr,pl_ptr))
             {
                 collision = true; 
-                if(checkCollisionTop(e_ptr,pl_ptr))
-                    (*e)->land((*pl).getPosition().y);              
+                if(checkCollisionTop(e_ptr,pl_ptr)) {
+                    (*e)->land((*pl).getPosition().y);
+                    (*e)->setPlateformeAParcourir((Platform) *pl);
+                } else if (checkCollisionLeft(e_ptr,pl_ptr)) {
+                    (*e)->bumpRight((*e)->getPosition().x + 20);
+                    (*e)->setOrientation(true);
+                } else if (checkCollisionRight(e_ptr,pl_ptr)) {
+                    (*e)->bumpLeft((*e)->getPosition().x + (*e)->getSize().x - 20);
+                    (*e)->setOrientation(false);
+                }
             }
         }
         if(!collision) { // Si il n'y a collision avec aucune plateforme, le personnage est en l'air et tombe
@@ -739,4 +747,25 @@ vector<Animation> Game::loadSpriteFromFile(string filename)
     }
 
     return ret;
+}
+
+void Game::checkIAEnnemis() {
+    // Parcours total sur les ennemis.
+    // Pour chaque ennemi, s'il est suffisamment pret du joueur, il lui tire dessus.
+
+    for(list<EnemyView*>::iterator e = enemies.begin(); e != enemies.end(); e++) {
+        if((*e)->getPosition().x - player.getPosition().x < 500) {
+            (*e)->setDeplacement(false);
+            if((*e)->getPosition().x > player.getPosition().x) {
+                (*e)->setOrientation(true);
+                (*e)->shoot(&ammo, Int2(-1,0));
+            } else {
+                (*e)->setOrientation(false);
+                (*e)->shoot(&ammo, Int2(1,0));
+            }            
+        } else {
+            if((*e)->estIntelligent())
+                (*e)->setDeplacement(true);
+        }
+    }
 }
