@@ -447,6 +447,9 @@ void Game::checkCollisions()
                     Int2 tmp = Int2(p_pos.x+p_siz.x/2,p_pos.y+p_siz.y/2);
 
                     (*a)->die(tmp);
+
+                    if(player.getStateBattle() == Character::DEAD)
+                        level.playMusic(0);
                 }
             }
 

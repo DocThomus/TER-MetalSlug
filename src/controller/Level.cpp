@@ -30,7 +30,7 @@ void Level::loadFromFile(string filename, Config* config)
 	}
 
 	if(musics.size() > 0)
-		musics[0]->play();
+		playMusic(1);
 }
 
 
@@ -43,4 +43,14 @@ void Level::addDecor(Int2 siz, Texture* tex, int z)
 void Level::addPlatform(Int2 pos, Int2 siz, int wl, Texture* tex)
 {
 	environment.addPlatform(pos,siz,wl,tex);
+}
+
+
+void Level::playMusic(int id)
+{
+	for(unsigned int i=0; i<musics.size(); ++i)
+		musics[i]->stop();
+
+	if(int(musics.size()) >= id)
+		musics[id]->play();
 }

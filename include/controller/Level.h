@@ -46,6 +46,7 @@ class Level
 		vector<Music*> musics; /*!< \brief Contient les musiques du niveau. */
 		vector<Texture*> textures; /*!< \brief Contient les différents textures de l'environnement. */
 
+
 	public :
 
 		/*!
@@ -97,6 +98,13 @@ class Level
 	     * \param tex : texture à appliquer à la plate-forme, facultatif.
 	     */
 		void addPlatform(Int2 pos, Int2 siz, int wl=0, Texture* tex=NULL);
+
+		/*!
+	     * \brief Joue une musique du level
+	     * \param id : Indice de la musique à jouer dans le vecteur musics.
+	     */
+		void playMusic(int id);
+
 };
 
 /** @}*/

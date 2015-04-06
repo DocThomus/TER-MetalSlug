@@ -4,6 +4,7 @@
 
 		<!-- MUSIQUES -->
 		<musics>
+			<music>gameover.wav</music>
 			<music>omnishred.wav</music>
 		</musics>
 

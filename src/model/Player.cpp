@@ -16,6 +16,7 @@ Player::Player()
     position = Int2(100,530);
     size = Int2(100,120);
     mass = 5;
+    health = Int2(10,10);
 
     addWeapon(Weapon::PISTOL);
 }
