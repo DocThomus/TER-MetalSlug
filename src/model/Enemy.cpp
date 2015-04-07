@@ -34,7 +34,7 @@ Enemy::Enemy(Int2 pos, TypeEnemy t, bool AI)
 		case BOWSER :
 			size = Int2(250,350);
 			mass = 15;
-			health = 200;
+			health = 500;
 			power = 30;
 			break;
 	}
