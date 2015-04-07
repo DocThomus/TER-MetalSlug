@@ -14,6 +14,7 @@
 #include <vector>
 
 #include <model/Character.h>
+#include <model/Platform.h>
 
 using namespace std;
 
@@ -44,6 +45,7 @@ class Enemy : public Character
 		bool haveAI; /*!< \brief Indique si l'ennemi doit posséder une intelligence ou non. */
 		int power; /*!< \brief Indique la puissance des attaques de l'ennemi. */
 		int cpt_shoot; /*!< \brief Compteur pour la cadence de tir. */
+		Platform* ground; /*!< \brief Plateform sur laquelle l'ennemi marche. */
 
 	public :
 		
@@ -145,6 +147,16 @@ class Enemy : public Character
 		 * \brief Retourne le type de l'ennemi.
 		 */
 		TypeEnemy getType();
+
+		/*!
+		 * \brief Retourne la platform sur laquelle marche l'ennemi.
+		 */
+		Platform* getGround();
+
+		/*!
+		 * \brief Définit la platform sur laquelle marche l'ennemi.
+		 */
+		void setGround(Platform* p);
 
 };
 

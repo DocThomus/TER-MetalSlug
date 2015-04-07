@@ -112,7 +112,7 @@ void Weapon::shoot(list<Ammo*>* air, Float2 angle)
 
 		if(owner->getStatePosition() == Character::KNELT)
 		{
-			pos.y += siz.y*0.3;
+			pos.y -= siz.y*0.2;
 		}
 
 		// FIX

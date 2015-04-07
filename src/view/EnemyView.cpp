@@ -76,8 +76,13 @@ void EnemyView::display(RenderWindow* window)
 	body.setPosition(Vector2f(position.x+(size.x-body_siz.x)/2,position.y+size.y-body_siz.y));
 
 	/* DEBUG */
-	// body.setOutlineThickness(5);
+	// body.setOutlineThickness(3);
 	// body.setOutlineColor(Color::Black);
+	// RectangleShape debug(Vector2f(size.x,size.y));
+	// debug.setPosition(Vector2f(position.x,position.y));
+	// debug.setOutlineThickness(3);
+	// debug.setOutlineColor(Color::Black);
+	// window->draw(debug);
 
 	/* DESSIN */
 	window->draw(body);
