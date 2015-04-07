@@ -188,6 +188,10 @@ void Character::walk(int way)
         walkway = way;
 }
 
+int Character::getWalkway() {
+    return walkway;
+}
+
 
 void Character::kneel(bool b)
 {

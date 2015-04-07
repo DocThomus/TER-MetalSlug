@@ -193,6 +193,8 @@ class Character : public ObjetPhysique
 	     */
 		virtual void walk(int way);
 
+		int getWalkway();
+
 		/*!
 	     * \brief À genoux.
 	     *

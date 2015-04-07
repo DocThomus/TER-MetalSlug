@@ -5,8 +5,8 @@ Enemy::Enemy(Int2 pos, Int2 siz, int m, int max_h, bool AI, int pow)
 :Character(pos,siz,m,max_h), haveAI(AI), power(pow)
 {
 	type = REBEL;
-	orienteGauche = true; // TEST
-	enDeplacement = true; // TEST
+	walkway = 1;
+	enDeplacement = false;
 }
 
 
@@ -14,8 +14,8 @@ Enemy::Enemy()
 :Character()
 {
 	type = REBEL;
-	orienteGauche = true; // TEST
-	enDeplacement = true; // TEST
+	walkway = 1;
+	enDeplacement = false;
 }
 
 Enemy::Enemy(Int2 pos, TypeEnemy t, bool AI)
@@ -25,8 +25,8 @@ Enemy::Enemy(Int2 pos, TypeEnemy t, bool AI)
 	type = t;
 	haveAI = AI;
 
-	orienteGauche = true; // TEST
-	enDeplacement = true; // TEST
+	walkway = 1;
+	enDeplacement = false;
 
 	switch(t)
 	{
@@ -55,30 +55,58 @@ void Enemy::print(ostream& os) const
 
 void Enemy::shoot(list<Ammo*>* air, Float2 angle)
 {
-	/* POSITION DES BALLES */
-	Int2 pos = getPosition();
-	Int2 siz = getSize();
-	
-	// X
-	if(angle.x > 0)
-		pos.x += siz.x+10;
-	else if(angle.x == 0)
-		pos.x += siz.x/2;
-	else
-		pos.x -= 10;
-	
-	// Y
-	if(angle.y > 0)
-		pos.y += siz.y;
-	else if(angle.y == 0)
-		pos.y += siz.y/3;
-	if(angle.x==0 && angle.y<0)
-		pos.y -= 50;
+	if(state_b!=DEAD) {
+		/* CADENCE DE TIR */
+		double cadence = 1000;
+
+		bool cadence_ok = true;
+
+		static int elapsed = -1;	
+		static sf::Clock clock;
+		
+		if(cadence > 0)
+		{
+			if(elapsed == -1)
+			{
+				elapsed = 0;
+				clock.restart();
+			}
+			else
+			{	
+				elapsed = clock.getElapsedTime().asMilliseconds();
+				if(elapsed >= cadence)
+					clock.restart();
+				else
+					cadence_ok = false;
+			}
+		}
+
+		if(cadence_ok) {
+			/* POSITION DES BALLES */
+			Int2 pos = getPosition();
+			Int2 siz = getSize();
+			
+			// X
+			if(angle.x > 0)
+				pos.x += siz.x+10;
+			else if(angle.x == 0)
+				pos.x += siz.x/2;
+			else
+				pos.x -= 10;
+			
+			// Y
+			if(angle.y > 0)
+				pos.y += siz.y;
+			else if(angle.y == 0)
+				pos.y += siz.y/3;
+			if(angle.x==0 && angle.y<0)
+				pos.y -= 50;
 
 
-	/* CREATION BALLES */
-	air->push_back(new Ammo(pos,siz,0,Ammo::BULLET,angle,this));
-
+			/* CREATION BALLES */
+			air->push_back(new Ammo(pos,siz,0,Ammo::BULLET,angle,this));
+		}
+	}
 }
 
 void Enemy::die()
@@ -92,16 +120,16 @@ void Enemy::animate(int dt)
 {
 	Character::animate(dt);
 
-	if(true && enDeplacement) { // if(haveAI && enDeplacement)
+	if(getIA() && enDeplacement) {
 		if(orienteGauche) {
 			if(position.x < plateformeAParcourir.getPosition().x + 10) {
-				setOrientation(false);
+				walk(-1);
 			} else {
-				position.x -= dt*walkway/mass;
+				position.x += dt*walkway/mass;
 			}
 		} else {
 			if(position.x + size.x > plateformeAParcourir.getPosition().x + plateformeAParcourir.getSize().x - 10) {
-				setOrientation(true);
+				walk(1);
 			} else {
 				position.x += dt*walkway/mass;
 			}
@@ -111,10 +139,6 @@ void Enemy::animate(int dt)
 
 void Enemy::setPlateformeAParcourir(Platform pf) {
 	plateformeAParcourir = pf;
-}
-
-void Enemy::setOrientation(bool gauche) {
-	orienteGauche = gauche;
 }
 
 void Enemy::setDeplacement(bool dpl) {

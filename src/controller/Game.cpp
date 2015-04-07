@@ -358,10 +358,10 @@ void Game::checkCollisions()
                     (*e)->setPlateformeAParcourir((Platform) *pl);
                 } else if (checkCollisionLeft(e_ptr,pl_ptr)) {
                     (*e)->bumpRight((*e)->getPosition().x + 20);
-                    (*e)->setOrientation(true);
+                    (*e)->Character::walk(-1);
                 } else if (checkCollisionRight(e_ptr,pl_ptr)) {
                     (*e)->bumpLeft((*e)->getPosition().x + (*e)->getSize().x - 20);
-                    (*e)->setOrientation(false);
+                    (*e)->Character::walk(1);
                 }
             }
         }
@@ -754,18 +754,19 @@ void Game::checkIAEnnemis() {
     // Pour chaque ennemi, s'il est suffisamment pret du joueur, il lui tire dessus.
 
     for(list<EnemyView*>::iterator e = enemies.begin(); e != enemies.end(); e++) {
-        if((*e)->getPosition().x - player.getPosition().x < 500) {
-            (*e)->setDeplacement(false);
-            if((*e)->getPosition().x > player.getPosition().x) {
-                (*e)->setOrientation(true);
-                (*e)->shoot(&ammo, Int2(-1,0));
+        if((*e)->getIA()) { 
+            if((*e)->getPosition().x - player.getPosition().x < 500) {
+                (*e)->setDeplacement(false);
+                if((*e)->getPosition().x > player.getPosition().x) {
+                    (*e)->Character::walk(-1);
+                    (*e)->shoot(&ammo, Int2(-1,0));
+                } else {
+                    (*e)->Character::walk(1);
+                    (*e)->shoot(&ammo, Int2(1,0));
+                }            
             } else {
-                (*e)->setOrientation(false);
-                (*e)->shoot(&ammo, Int2(1,0));
-            }            
-        } else {
-            if((*e)->estIntelligent())
-                (*e)->setDeplacement(true);
+                    (*e)->setDeplacement(true);
+            }
         }
     }
 }

@@ -291,7 +291,7 @@ bool loadLevelXML(string filename, Config* conf, Environment* env, list<EventGam
         
             xml_attribute<> *ia;
             if((ia = event->first_attribute("ia")))
-                tmp_event->setEnemyIA(ia->value());
+                tmp_event->setEnemyIA(atoi(ia->value()));
 
             evts->push_back(tmp_event);
         }

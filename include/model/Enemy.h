@@ -13,6 +13,8 @@
 #include <sstream>
 #include <vector>
 
+#include <SFML/System.hpp>
+
 #include <model/Character.h>
 #include <model/Platform.h>
 
