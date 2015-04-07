@@ -108,7 +108,7 @@ class EnemyView : public Enemy, public MyDrawable
 	     * \param pos : Position initiale de l'ennemi.
 	     * \param t : TYpe de l'ennemi.
 	     */
-		EnemyView(Int2 pos, TypeEnemy t);
+		EnemyView(Int2 pos, TypeEnemy t, bool AI=false);
 
 		/*!
 	     * \brief Constructeur

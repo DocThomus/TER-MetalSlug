@@ -14,11 +14,12 @@ Enemy::Enemy()
 	type = REBEL;
 }
 
-Enemy::Enemy(Int2 pos, TypeEnemy t)
+Enemy::Enemy(Int2 pos, TypeEnemy t, bool AI)
 :Character()
 {
 	position = pos;
 	type = t;
+	haveAI = AI;
 
 	switch(t)
 	{
@@ -26,7 +27,6 @@ Enemy::Enemy(Int2 pos, TypeEnemy t)
 			size = Int2(64,130);
 			mass = 5;
 			health = 10;
-			haveAI = false;
 			power = 10;
 			break;
 
@@ -34,7 +34,6 @@ Enemy::Enemy(Int2 pos, TypeEnemy t)
 			size = Int2(250,350);
 			mass = 2;
 			health = 200;
-			haveAI = false;
 			power = 30;
 			break;
 	}
@@ -106,4 +105,10 @@ void Enemy::die()
 void Enemy::animate(int dt)
 {
 	Character::animate(dt);
+}
+
+
+bool Enemy::getIA()
+{
+	return haveAI;
 }

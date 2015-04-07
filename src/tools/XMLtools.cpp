@@ -277,6 +277,8 @@ bool loadLevelXML(string filename, Config* conf, Environment* env, list<EventGam
 
         if(type == "enemy") // EventEnemy
         {
+            EventEnemy* tmp_event;
+
             Int2 tmp_pos(
                 atoi(event->first_attribute("x")->value()),
                 atoi(event->first_attribute("y")->value())
@@ -285,9 +287,16 @@ bool loadLevelXML(string filename, Config* conf, Environment* env, list<EventGam
             string type_e = event->first_attribute("enemy_type")->value();
 
             if(type_e == "REBEL")
-                evts->push_back(new EventEnemy(pos, tmp_pos, Enemy::REBEL));
+                tmp_event = new EventEnemy(pos, tmp_pos, Enemy::REBEL);
             else if(type_e == "BOWSER")
-                evts->push_back(new EventEnemy(pos, tmp_pos, Enemy::BOWSER));
+                tmp_event = new EventEnemy(pos, tmp_pos, Enemy::BOWSER);
+
+            xml_attribute<> *ia;
+            if((ia = event->first_attribute("ia")))
+                tmp_event->setEnemyIA(ia->value());
+
+            evts->push_back(tmp_event);
+
         }
         else if(type == "item") // EventItem
         {

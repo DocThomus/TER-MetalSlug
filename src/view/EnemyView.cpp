@@ -14,8 +14,8 @@ EnemyView::EnemyView(Int2 pos, Int2 siz, int m, int max_h, bool AI, int pow)
 }
 
 
-EnemyView::EnemyView(Int2 pos, TypeEnemy t)
-:Enemy(pos,t)
+EnemyView::EnemyView(Int2 pos, TypeEnemy t, bool AI)
+:Enemy(pos,t,AI)
 {
 	/* REBEL */
 	if(type == REBEL)
