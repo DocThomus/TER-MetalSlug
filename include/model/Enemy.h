@@ -70,7 +70,7 @@ class Enemy : public Character
 	     * \param pos : Position initiale de l'ennemi.
 	     * \param t : TYpe de l'ennemi.
 	     */
-		Enemy(Int2 pos, TypeEnemy t);
+		Enemy(Int2 pos, TypeEnemy t, bool AI=false);
 
 		/*!
 	     * \brief Constructeur
@@ -118,13 +118,16 @@ class Enemy : public Character
 	     */
 		void die();
 
+		/*!
+		 * \brief Accesseur IA
+		 */
+		bool getIA();
+
 		void setPlateformeAParcourir(Platform pf);
 
 		void setOrientation(bool gauche);
 
 		void setDeplacement(bool dpl);
-
-		bool estIntelligent();
 };
 
 

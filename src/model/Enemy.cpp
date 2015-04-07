@@ -18,11 +18,12 @@ Enemy::Enemy()
 	enDeplacement = true; // TEST
 }
 
-Enemy::Enemy(Int2 pos, TypeEnemy t)
+Enemy::Enemy(Int2 pos, TypeEnemy t, bool AI)
 :Character()
 {
 	position = pos;
 	type = t;
+	haveAI = AI;
 
 	orienteGauche = true; // TEST
 	enDeplacement = true; // TEST
@@ -33,7 +34,6 @@ Enemy::Enemy(Int2 pos, TypeEnemy t)
 			size = Int2(64,130);
 			mass = 5;
 			health = 10;
-			haveAI = false;
 			power = 10;
 			break;
 	}
@@ -121,6 +121,8 @@ void Enemy::setDeplacement(bool dpl) {
 	enDeplacement = dpl;
 }
 
-bool Enemy::estIntelligent() {
-	return true; // return haveAI;
+bool Enemy::getIA()
+{
+ 	return haveAI;
 }
+
