@@ -360,9 +360,18 @@ void Game::checkCollisions()
 
             if(checkIntersect(e_ptr,pl_ptr))
             {
+                // detection bords de la plateforme
+                // if((*e)->getWalkway()>0 && e_pos.x+e_siz.x>pl_pos.x+pl_siz.x-20)
+                //     (*e)->walk(-1);
+                // else if((*e)->getWalkway()<0 && e_pos.x<pl_pos.x+20)
+                //     (*e)->walk(1);
+
                 collision = true; 
                 if(checkCollisionTop(e_ptr,pl_ptr))
+                {
                     (*e)->land((*pl).getPosition().y);
+                    (*e)->setGround(&(*pl));
+                }
                 
                 else if((*e)->getIA())
                 {
@@ -376,7 +385,8 @@ void Game::checkCollisions()
                         (*e)->bumpLeft(pl_pos.x+pl_siz.x+20);
                         (*e)->walk(1); 
                     }    
-                }        
+                }
+
             }
         }
         if(!collision) { // Si il n'y a collision avec aucune plateforme, le personnage est en l'air et tombe
@@ -589,7 +599,6 @@ bool Game::checkIntersect(ObjetPhysique* obj1, ObjetPhysique* obj2, int epsilon_
     Int2 pos2 = obj2->getPosition();
     Int2 siz1 = obj1->getSize();
     Int2 siz2 = obj2->getSize();
-    Float2 mov1 = obj1->getMovement();
 
     if(pos1.x - epsilon_x > pos2.x + siz2.x  // p1(gauche) a droite de   p2(droite)
     || pos1.x + siz1.x < pos2.x - epsilon_x  // p1(droite) a gauche de   p2(gauche)
@@ -687,11 +696,11 @@ bool Game::checkKnife()
 {
     bool tmp = false;
 
-    for(list<EnemyView*>::iterator e = enemies.begin(); e!=enemies.end() && (*e)->getStateBattle()!=Character::DEAD; e++)
+    for(list<EnemyView*>::iterator e = enemies.begin(); e!=enemies.end(); e++)
     {
-        if(checkIntersect((ObjetPhysique*)(&player),(ObjetPhysique*)(*e),30,30))
+        if((*e)->getStateBattle()!=Character::DEAD && checkIntersect((ObjetPhysique*)(&player),(ObjetPhysique*)(*e),30,30))
         {
-            (*e)->die();
+            (*e)->decreaseHealth(100);
             tmp = true;
         }
     }

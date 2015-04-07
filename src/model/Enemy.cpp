@@ -164,3 +164,15 @@ Enemy::TypeEnemy Enemy::getType()
 {
 	return type;
 }
+
+
+Platform* Enemy::getGround()
+{
+	return ground;
+}
+
+
+void Enemy::setGround(Platform* p)
+{
+	ground = p;
+}

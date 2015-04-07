@@ -82,14 +82,14 @@
 		<!-- EVENTS -->
 		<events>
 
-			<event type="enemy" pos="0" enemy_type="REBEL" ia="0" x="700" y="560"/>
+			<event type="enemy" pos="0" enemy_type="REBEL" x="700" y="560"/>
 			
 			<event type="item" pos="0" item_type="WEAPON" weapon_type="SHOTGUN" x="1150" y="550"/>
 			
 			<event type="enemy" pos="0" enemy_type="REBEL" ia="1" x="1420" y="240"/>
 			<event type="enemy" pos="0" enemy_type="REBEL" ia="1" x="1800" y="240"/>
 
-			<event type="item" pos="0" item_type="WEAPON" weapon_type="SMG" x="1960" y="150"/>
+			<event type="item" pos="0" item_type="WEAPON" weapon_type="SMG" x="1960" y="550"/>
 
 			<event type="enemy" pos="0" enemy_type="REBEL" ia="1" x="2000" y="240"/>
 			<event type="enemy" pos="500" enemy_type="REBEL" ia="1" x="2500" y="240"/>

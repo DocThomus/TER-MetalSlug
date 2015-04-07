@@ -83,7 +83,7 @@ void AmmoView::initRessources()
 		case FLAME :
 			setTexture(textures[FLAME]);
 			addAnimations(animations_list[FLAME]);
-			//sounds[FLAME]->play();
+			sounds[FLAME]->play();
 			break;
 	}
 
@@ -200,14 +200,24 @@ void AmmoView::loadRessources()
 
     /* BULLET */
 	SoundBuffer* buffer = new SoundBuffer();
-	buffer->loadFromFile("res/snd/weapon/bullet.wav");
+	buffer->loadFromFile("res/snd/ammo/bullet.wav");
     Sound* s = new Sound();
     s->setBuffer(*buffer);
     sounds.push_back(s);
 
     /* HEAVY_BULLET */
     buffer = new SoundBuffer();
-	buffer->loadFromFile("res/snd/weapon/shotgun.wav");
+	buffer->loadFromFile("res/snd/ammo/shotgun.wav");
+    s = new Sound();
+    s->setBuffer(*buffer);
+    sounds.push_back(s);
+
+    /* LIGHT_BULLET */
+    sounds.push_back(NULL);
+
+    /* FLAME */
+    buffer = new SoundBuffer();
+	buffer->loadFromFile("res/snd/ammo/flame.wav");
     s = new Sound();
     s->setBuffer(*buffer);
     sounds.push_back(s);
