@@ -10,7 +10,7 @@ Weapon::Weapon(TypeWeapon t)
 	{
 		case PISTOL :
 			ammos = Int2(9999999,9999999);
-			type_ammo = Ammo::FLAME;
+			type_ammo = Ammo::BULLET;
 			break;
 
 		case SHOTGUN :

@@ -124,28 +124,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00043"></a><a class="code" href="class_enemy.html#a53f4c66c8dbc8213f9273126b67f80cf">00043</a>                 <a class="code" href="class_enemy.html#a0810e4ccd9dc6845273cb027a1436044" title="Énumération des différents types d&#39;ennemis.">TypeEnemy</a> <a class="code" href="class_enemy.html#a53f4c66c8dbc8213f9273126b67f80cf" title="Type de l&#39;ennemi.">type</a>; 
 <a name="l00044"></a><a class="code" href="class_enemy.html#a544944c62e4be948574a090f55002e54">00044</a>                 <span class="keywordtype">bool</span> <a class="code" href="class_enemy.html#a544944c62e4be948574a090f55002e54" title="Indique si l&#39;ennemi doit posséder une intelligence ou non.">haveAI</a>; 
 <a name="l00045"></a><a class="code" href="class_enemy.html#a81af68c2c35ebba124036e880b19cbfe">00045</a>                 <span class="keywordtype">int</span> <a class="code" href="class_enemy.html#a81af68c2c35ebba124036e880b19cbfe" title="Indique la puissance des attaques de l&#39;ennemi.">power</a>; 
+<a name="l00046"></a><a class="code" href="class_enemy.html#a9f82c6a2c3e3111e5ff7836436f3e782">00046</a>                 <span class="keywordtype">int</span> <a class="code" href="class_enemy.html#a9f82c6a2c3e3111e5ff7836436f3e782" title="Compteur pour la cadence de tir.">cpt_shoot</a>; 
 <a name="l00048"></a>00048         <span class="keyword">public</span> :
 <a name="l00049"></a>00049                 
 <a name="l00061"></a>00061                 <a class="code" href="class_enemy.html" title="Modélise un ennemi.">Enemy</a>(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> pos, <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> siz, <span class="keywordtype">int</span> m, <span class="keywordtype">int</span> max_h, <span class="keywordtype">bool</span> AI, <span class="keywordtype">int</span> pow);
 <a name="l00062"></a>00062 
-<a name="l00070"></a>00070                 <a class="code" href="class_enemy.html" title="Modélise un ennemi.">Enemy</a>(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> pos, <a class="code" href="class_enemy.html#a0810e4ccd9dc6845273cb027a1436044" title="Énumération des différents types d&#39;ennemis.">TypeEnemy</a> t);
-<a name="l00071"></a>00071 
-<a name="l00077"></a>00077                 <a class="code" href="class_enemy.html" title="Modélise un ennemi.">Enemy</a>();
-<a name="l00078"></a>00078 
-<a name="l00084"></a>00084                 ~<a class="code" href="class_enemy.html" title="Modélise un ennemi.">Enemy</a>();
-<a name="l00085"></a>00085 
-<a name="l00092"></a>00092                 <span class="keywordtype">void</span> print(ostream&amp; os) <span class="keyword">const</span>;  
-<a name="l00093"></a>00093 
-<a name="l00100"></a>00100                 <span class="keywordtype">void</span> animate (<span class="keywordtype">int</span> dt);
-<a name="l00101"></a>00101 
-<a name="l00109"></a>00109                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> shoot(list&lt;Ammo*&gt;* air, <a class="code" href="class_float2.html" title="Stockage de deux flottants.">Float2</a> angle = <a class="code" href="class_float2.html" title="Stockage de deux flottants.">Float2</a>(1.,0.));
+<a name="l00071"></a>00071                 <a class="code" href="class_enemy.html" title="Modélise un ennemi.">Enemy</a>(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> pos, <a class="code" href="class_enemy.html#a0810e4ccd9dc6845273cb027a1436044" title="Énumération des différents types d&#39;ennemis.">TypeEnemy</a> t, <span class="keywordtype">bool</span> AI=<span class="keyword">false</span>);
+<a name="l00072"></a>00072 
+<a name="l00078"></a>00078                 <a class="code" href="class_enemy.html" title="Modélise un ennemi.">Enemy</a>();
+<a name="l00079"></a>00079 
+<a name="l00085"></a>00085                 ~<a class="code" href="class_enemy.html" title="Modélise un ennemi.">Enemy</a>();
+<a name="l00086"></a>00086 
+<a name="l00093"></a>00093                 <span class="keywordtype">void</span> print(ostream&amp; os) <span class="keyword">const</span>;  
+<a name="l00094"></a>00094 
+<a name="l00101"></a>00101                 <span class="keywordtype">void</span> animate (<span class="keywordtype">int</span> dt);
+<a name="l00102"></a>00102 
+<a name="l00109"></a>00109                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> walk(<span class="keywordtype">int</span> way);
 <a name="l00110"></a>00110 
-<a name="l00116"></a>00116                 <span class="keywordtype">void</span> die();
-<a name="l00117"></a>00117 
-<a name="l00118"></a>00118 };
+<a name="l00118"></a>00118                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> shoot(list&lt;Ammo*&gt;* air, <a class="code" href="class_float2.html" title="Stockage de deux flottants.">Float2</a> angle = <a class="code" href="class_float2.html" title="Stockage de deux flottants.">Float2</a>(1.,0.));
 <a name="l00119"></a>00119 
-<a name="l00120"></a>00120 
-<a name="l00123"></a>00123 <span class="preprocessor">#endif</span>
+<a name="l00125"></a>00125                 <span class="keyword">virtual</span> <span class="keywordtype">bool</span> canShoot();
+<a name="l00126"></a>00126 
+<a name="l00132"></a>00132                 <span class="keywordtype">void</span> die();
+<a name="l00133"></a>00133 
+<a name="l00137"></a>00137                 <span class="keywordtype">bool</span> getIA();
+<a name="l00138"></a>00138 
+<a name="l00142"></a>00142                 <span class="keywordtype">int</span> getPower();
+<a name="l00143"></a>00143 
+<a name="l00147"></a>00147                 <a class="code" href="class_enemy.html#a0810e4ccd9dc6845273cb027a1436044" title="Énumération des différents types d&#39;ennemis.">TypeEnemy</a> getType();
+<a name="l00148"></a>00148 
+<a name="l00149"></a>00149 };
+<a name="l00150"></a>00150 
+<a name="l00151"></a>00151 
+<a name="l00154"></a>00154 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -166,7 +177,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul>
       <li class="navelem"><a class="el" href="_enemy_8h.html">Enemy.h</a>      </li>
 
-    <li class="footer">Généré le Lundi Avril 6 2015 20:54:57 pour Metal Slug par
+    <li class="footer">Généré le Mardi Avril 7 2015 19:06:09 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

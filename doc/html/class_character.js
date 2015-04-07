@@ -15,6 +15,7 @@ var class_character =
     [ "getStateBattle", "class_character.html#a3af9b69041599702685b6867280ba00c", null ],
     [ "getStateGround", "class_character.html#afb7e6ae7deb4d323a67f857f6e58168d", null ],
     [ "getStatePosition", "class_character.html#aa3b9db208793ec001c15c1ea8f13e388", null ],
+    [ "getWalkway", "class_character.html#a039fe9928e0e5df181db50200c1f8dc7", null ],
     [ "increaseHealth", "class_character.html#a4181640e5e5375fa0eb8667f9887bdb3", null ],
     [ "jump", "class_character.html#a03919943ec22c86d4734bfef710a34f0", null ],
     [ "kneel", "class_character.html#ab0bb62cadb18af5a44c965e6b2ef95d8", null ],

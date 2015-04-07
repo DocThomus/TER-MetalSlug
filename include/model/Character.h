@@ -127,6 +127,11 @@ class Character : public ObjetPhysique
 		StateBattle getStateBattle();
 
 		/*!
+	     * \brief Renvoie le sens de marche du personnage
+	     */
+		int getWalkway();
+
+		/*!
 	     * \brief Diminution de santé
 	     *
 	     * Retire de la santé au personnage. Si celle-ci atteint 0, la méthode die est appelée.

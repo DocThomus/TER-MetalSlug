@@ -43,7 +43,7 @@ class Enemy : public Character
 		TypeEnemy type; /*!< \brief Type de l'ennemi. */
 		bool haveAI; /*!< \brief Indique si l'ennemi doit posséder une intelligence ou non. */
 		int power; /*!< \brief Indique la puissance des attaques de l'ennemi. */
-
+		int cpt_shoot; /*!< \brief Compteur pour la cadence de tir. */
 
 	public :
 		
@@ -65,7 +65,8 @@ class Enemy : public Character
 	     *
 	     * Construit un ennemi du type indiqué.
 	     * \param pos : Position initiale de l'ennemi.
-	     * \param t : TYpe de l'ennemi.
+	     * \param t : Type de l'ennemi.
+	     * \param AI : Indique si l'ennemi doit être intelligent ou non.
 	     */
 		Enemy(Int2 pos, TypeEnemy t, bool AI=false);
 
@@ -100,6 +101,14 @@ class Enemy : public Character
 		void animate (int dt);
 
 		/*!
+	     * \brief Courir
+	     *
+	     * Fait courir l'ennemi.
+	     * \param way : Sens dans lequel l'ennemi doit se déplacer.
+	     */
+		virtual void walk(int way);
+
+		/*!
 	     * \brief Tirer
 	     *
 	     * L'ennemi tire.
@@ -109,17 +118,33 @@ class Enemy : public Character
 		virtual void shoot(list<Ammo*>* air, Float2 angle = Float2(1.,0.));
 
 		/*!
+	     * \brief Possibilité de tirer
+	     *
+	     * Indique si l'ennemi est en état de tirer ou non.
+	     */
+		virtual bool canShoot();
+
+		/*!
 	     * \brief Mourir
 	     *
 	     * L'ennemi meurt, méthode déclenchée lorsque sa santé atteint 0.
 	     */
 		void die();
 
-
 		/*!
 		 * \brief Accesseur IA
 		 */
 		bool getIA();
+
+		/*!
+		 * \brief Accesseur power
+		 */
+		int getPower();
+
+		/*!
+		 * \brief Retourne le type de l'ennemi.
+		 */
+		TypeEnemy getType();
 
 };
 

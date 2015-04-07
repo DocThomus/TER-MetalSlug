@@ -2,6 +2,7 @@ var searchData=
 [
   ['savetoxml',['saveToXML',['../class_config.html#ac42f95c68ac875f4069854425ea8be44',1,'Config']]],
   ['setconfig',['setConfig',['../class_game.html#a5f58f15f1ef2638e719b2a8b7a0ed946',1,'Game']]],
+  ['setenemyia',['setEnemyIA',['../class_event_enemy.html#a12028b94a8d43b73a6a1b6d6b8e30996',1,'EventEnemy']]],
   ['setenemyposition',['setEnemyPosition',['../class_event_enemy.html#aea743d5f74acdd2ff844b1abc738353a',1,'EventEnemy']]],
   ['setenemytype',['setEnemyType',['../class_event_enemy.html#a7e40fce8a937153c081d5a027869c9d4',1,'EventEnemy']]],
   ['setinvicibility',['setInvicibility',['../class_character.html#ab9f0c66cb8fc37d804e9bf9a568abf97',1,'Character']]],

@@ -121,27 +121,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00032"></a>00032 
 <a name="l00033"></a><a class="code" href="class_event_enemy.html#a2666b52015a0875120837eb11140d4a6">00033</a>                 <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> <a class="code" href="class_event_enemy.html#a2666b52015a0875120837eb11140d4a6" title="Position de l&#39;ennemi à générer.">enemy_pos</a>; 
 <a name="l00034"></a><a class="code" href="class_event_enemy.html#a2260f6f45d2e143708fe2ff5d568aafb">00034</a>                 <a class="code" href="class_enemy.html#a0810e4ccd9dc6845273cb027a1436044" title="Énumération des différents types d&#39;ennemis.">Enemy::TypeEnemy</a> <a class="code" href="class_event_enemy.html#a2260f6f45d2e143708fe2ff5d568aafb" title="Type de l&#39;ennemi à générer.">enemy_type</a>; 
-<a name="l00037"></a>00037         <span class="keyword">public</span> :
-<a name="l00038"></a>00038 
+<a name="l00035"></a><a class="code" href="class_event_enemy.html#a1745debade92625b2445eb6b221522b4">00035</a>                 <span class="keywordtype">bool</span> <a class="code" href="class_event_enemy.html#a1745debade92625b2445eb6b221522b4" title="Indique si l&#39;ennemi à générer doit être intelligent ou non.">have_IA</a>; 
+<a name="l00038"></a>00038         <span class="keyword">public</span> :
 <a name="l00039"></a>00039 
-<a name="l00045"></a>00045                 <a class="code" href="class_event_enemy.html" title="Un EventGame déclenchant l&#39;apparition d&#39;un ennemi.">EventEnemy</a>();
-<a name="l00046"></a>00046 
-<a name="l00055"></a>00055                 <a class="code" href="class_event_enemy.html" title="Un EventGame déclenchant l&#39;apparition d&#39;un ennemi.">EventEnemy</a>(<span class="keywordtype">int</span> pos, <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> pos_e, <a class="code" href="class_enemy.html#a0810e4ccd9dc6845273cb027a1436044" title="Énumération des différents types d&#39;ennemis.">Enemy::TypeEnemy</a> t);
-<a name="l00056"></a>00056 
-<a name="l00062"></a>00062                 ~<a class="code" href="class_event_enemy.html" title="Un EventGame déclenchant l&#39;apparition d&#39;un ennemi.">EventEnemy</a>();
-<a name="l00063"></a>00063 
-<a name="l00067"></a>00067                 <span class="keywordtype">void</span> setEnemyType(<a class="code" href="class_enemy.html#a0810e4ccd9dc6845273cb027a1436044" title="Énumération des différents types d&#39;ennemis.">Enemy::TypeEnemy</a> t);
-<a name="l00068"></a>00068 
-<a name="l00072"></a>00072                 <span class="keywordtype">void</span> setEnemyPosition(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> pos);
-<a name="l00073"></a>00073 
-<a name="l00078"></a>00078                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> trigger(<a class="code" href="class_game.html" title="Gère le jeu.">Game</a>* g);
+<a name="l00040"></a>00040 
+<a name="l00046"></a>00046                 <a class="code" href="class_event_enemy.html" title="Un EventGame déclenchant l&#39;apparition d&#39;un ennemi.">EventEnemy</a>();
+<a name="l00047"></a>00047 
+<a name="l00056"></a>00056                 <a class="code" href="class_event_enemy.html" title="Un EventGame déclenchant l&#39;apparition d&#39;un ennemi.">EventEnemy</a>(<span class="keywordtype">int</span> pos, <a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> pos_e, <a class="code" href="class_enemy.html#a0810e4ccd9dc6845273cb027a1436044" title="Énumération des différents types d&#39;ennemis.">Enemy::TypeEnemy</a> t);
+<a name="l00057"></a>00057 
+<a name="l00063"></a>00063                 ~<a class="code" href="class_event_enemy.html" title="Un EventGame déclenchant l&#39;apparition d&#39;un ennemi.">EventEnemy</a>();
+<a name="l00064"></a>00064 
+<a name="l00068"></a>00068                 <span class="keywordtype">void</span> setEnemyType(<a class="code" href="class_enemy.html#a0810e4ccd9dc6845273cb027a1436044" title="Énumération des différents types d&#39;ennemis.">Enemy::TypeEnemy</a> t);
+<a name="l00069"></a>00069 
+<a name="l00073"></a>00073                 <span class="keywordtype">void</span> setEnemyPosition(<a class="code" href="class_int2.html" title="Stockage de deux entiers.">Int2</a> pos);
+<a name="l00074"></a>00074 
+<a name="l00078"></a>00078                 <span class="keywordtype">void</span> setEnemyIA(<span class="keywordtype">bool</span> b);
 <a name="l00079"></a>00079 
-<a name="l00080"></a>00080 
-<a name="l00081"></a>00081 };
-<a name="l00082"></a>00082 
-<a name="l00083"></a>00083 
-<a name="l00084"></a>00084 
-<a name="l00087"></a>00087 <span class="preprocessor">#endif</span>
+<a name="l00084"></a>00084                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> trigger(<a class="code" href="class_game.html" title="Gère le jeu.">Game</a>* g);
+<a name="l00085"></a>00085 
+<a name="l00086"></a>00086 
+<a name="l00087"></a>00087 };
+<a name="l00088"></a>00088 
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090 
+<a name="l00093"></a>00093 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -162,7 +165,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul>
       <li class="navelem"><a class="el" href="_event_enemy_8h.html">EventEnemy.h</a>      </li>
 
-    <li class="footer">Généré le Lundi Avril 6 2015 20:54:57 pour Metal Slug par
+    <li class="footer">Généré le Mardi Avril 7 2015 19:06:09 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

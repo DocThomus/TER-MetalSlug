@@ -159,8 +159,8 @@ Types publics</h2></td></tr>
 Fonctions membres publiques</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_view.html#a93ce010ab051b03e64421b2fdd06a1a4">EnemyView</a> (<a class="el" href="class_int2.html">Int2</a> pos, <a class="el" href="class_int2.html">Int2</a> siz, int m, int max_h, bool AI, int pow)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#a93ce010ab051b03e64421b2fdd06a1a4"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_view.html#a123d7600ff369389909a9cd2b3962aa0">EnemyView</a> (<a class="el" href="class_int2.html">Int2</a> pos, <a class="el" href="class_enemy.html#a0810e4ccd9dc6845273cb027a1436044">TypeEnemy</a> t)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#a123d7600ff369389909a9cd2b3962aa0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_view.html#ad28fac8580b4ea3b989185ab89c0868f">EnemyView</a> (<a class="el" href="class_int2.html">Int2</a> pos, <a class="el" href="class_enemy.html#a0810e4ccd9dc6845273cb027a1436044">TypeEnemy</a> t, bool AI=false)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#ad28fac8580b4ea3b989185ab89c0868f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_view.html#a988d6526fc9926e3a34ed2137edc6c25">EnemyView</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#a988d6526fc9926e3a34ed2137edc6c25"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_view.html#ac846d5bd0d6d91e1cbc1fbd3e90bcd07">~EnemyView</a> ()</td></tr>
@@ -182,6 +182,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Mourir.  <a href="#aac9438ba6a30071e7dc4236f71425667"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_view.html#aba094d7e8568780bd59bc958690c04bb">shoot</a> (list&lt; <a class="el" href="class_ammo_view.html">AmmoView</a> * &gt; *air, <a class="el" href="class_int2.html">Int2</a> angle=<a class="el" href="class_int2.html">Int2</a>(1, 0))</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Tirer.  <a href="#aba094d7e8568780bd59bc958690c04bb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_view.html#a3af6a09c1cb6299e9a6bccb07a6995bb">canShoot</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Possibilité de tirer.  <a href="#a3af6a09c1cb6299e9a6bccb07a6995bb"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Fonctions membres publiques statiques</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy_view.html#afcf992879ef7e35c3d155b98057d3e0b">loadRessources</a> (<a class="el" href="class_enemy.html#a0810e4ccd9dc6845273cb027a1436044">TypeEnemy</a> t)</td></tr>
@@ -279,7 +281,7 @@ static vector&lt; <a class="el" href="class_animation.html">Animation</a> &gt;&#
 
 </div>
 </div>
-<a class="anchor" id="a123d7600ff369389909a9cd2b3962aa0"></a><!-- doxytag: member="EnemyView::EnemyView" ref="a123d7600ff369389909a9cd2b3962aa0" args="(Int2 pos, TypeEnemy t)" -->
+<a class="anchor" id="ad28fac8580b4ea3b989185ab89c0868f"></a><!-- doxytag: member="EnemyView::EnemyView" ref="ad28fac8580b4ea3b989185ab89c0868f" args="(Int2 pos, TypeEnemy t, bool AI=false)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -293,7 +295,13 @@ static vector&lt; <a class="el" href="class_animation.html">Animation</a> &gt;&#
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="class_enemy.html#a0810e4ccd9dc6845273cb027a1436044">TypeEnemy</a>&#160;</td>
-          <td class="paramname"><em>t</em>&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>AI</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -309,7 +317,8 @@ static vector&lt; <a class="el" href="class_animation.html">Animation</a> &gt;&#
 <dl class="params"><dt><b>Paramètres:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">pos</td><td>: Position initiale de l'ennemi.  </td></tr>
-    <tr><td class="paramname">t</td><td>: TYpe de l'ennemi. </td></tr>
+    <tr><td class="paramname">t</td><td>: Type de l'ennemi.  </td></tr>
+    <tr><td class="paramname">AI</td><td>: Indique si l'ennemi doit être intelligent ou non. </td></tr>
   </table>
   </dd>
 </dl>
@@ -380,6 +389,27 @@ static vector&lt; <a class="el" href="class_animation.html">Animation</a> &gt;&#
 </dl>
 
 <p>Réimplémentée à partir de <a class="el" href="class_enemy.html#acebf7090d998b062d9c3c59c49e0627c">Enemy</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3af6a09c1cb6299e9a6bccb07a6995bb"></a><!-- doxytag: member="EnemyView::canShoot" ref="a3af6a09c1cb6299e9a6bccb07a6995bb" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool <a class="el" href="class_enemy_view.html#a3af6a09c1cb6299e9a6bccb07a6995bb">EnemyView::canShoot</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Possibilité de tirer. </p>
+<p>Indique si l'ennemi est en état de tirer ou non. </p>
+
+<p>Réimplémentée à partir de <a class="el" href="class_enemy.html#ada1c06d8b832d2a4ca4ce7c12fcdae6e">Enemy</a>.</p>
 
 </div>
 </div>
@@ -563,7 +593,7 @@ static vector&lt; <a class="el" href="class_animation.html">Animation</a> &gt;&#
 <p>Courir. </p>
 <p>Fait courir l'ennemi dans une direction passée en paramètre. </p>
 
-<p>Réimplémentée à partir de <a class="el" href="class_character.html#a211bbf81a9ef429793cc00dfa8d15c4c">Character</a>.</p>
+<p>Réimplémentée à partir de <a class="el" href="class_enemy.html#a250a662b5d16d3fb2e7c4a5896d551ad">Enemy</a>.</p>
 
 </div>
 </div>
@@ -590,7 +620,7 @@ static vector&lt; <a class="el" href="class_animation.html">Animation</a> &gt;&#
     <ul>
       <li class="navelem"><a class="el" href="class_enemy_view.html">EnemyView</a>      </li>
 
-    <li class="footer">Généré le Lundi Avril 6 2015 20:54:57 pour Metal Slug par
+    <li class="footer">Généré le Mardi Avril 7 2015 19:06:09 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

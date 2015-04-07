@@ -97,12 +97,29 @@ void EnemyView::animate(int dt)
 		cpt_time = 0;
 	}
 
+	if(type == REBEL)
+	{
+		if(state_b==PRESHOOT && animations[current_anim].getIndFrame() == 10)
+			shoot(save_air,save_angle);
+		else if(state_b==KNIFE && current_anim==REBEL_WATCH)
+		{
+			state_b = NORMAL;
+			walk(walkway);
+		}
+	}
+
 	if(type == BOWSER)
 	{
 		if(state_b==PRESHOOT && animations[current_anim].getIndFrame() == 4)
 			shoot(save_air,save_angle);
+		else if(state_b==SHOOT && current_anim==BOWSER_STAND)
+		{
+			state_b = NORMAL;
+			state_p = RUN;
+		}
 	}
 
+	updateIntRect();
 }
 
 
@@ -115,8 +132,18 @@ void EnemyView::updateIntRect()
 		Int2 pos = f->getPosition();
 		Int2 siz = f->getSize();
 
+		if(state_b == SHOOT)
+		{
+			if(gunway.x > 0)
+				body.setTextureRect(IntRect(pos.x+siz.x,pos.y,-siz.x,siz.y));
+			else
+				body.setTextureRect(IntRect(pos.x,pos.y,siz.x,siz.y));
+		}
 
-		body.setTextureRect(IntRect(pos.x,pos.y,siz.x,siz.y));
+		if(walkway > 0)
+			body.setTextureRect(IntRect(pos.x+siz.x,pos.y,-siz.x,siz.y));
+		else
+			body.setTextureRect(IntRect(pos.x,pos.y,siz.x,siz.y));
 	}
 }
 
@@ -124,19 +151,44 @@ void EnemyView::updateIntRect()
 
 void EnemyView::walk(int way)
 {
-	
+	if(state_b == DEAD)
+		return;
+
+	Enemy::walk(way);
+
+	switch(type)
+	{
+		case REBEL : changeAnimation(REBEL_RUN); break;
+		case BOWSER : changeAnimation(BOWSER_WALK); break;
+	}
+
+	updateIntRect();
 }
 
 
 
 void EnemyView::shoot(list<AmmoView*>* air, Int2 angle)
 {	
+	if(state_b == DEAD)
+		return;
+
 	list<Ammo*> tmp;
 	AmmoView* av;
 	
 	if(type == REBEL)
 	{
-		Enemy::shoot(&tmp,angle);
+		if(current_anim==REBEL_KNIFE && state_b==PRESHOOT)
+		{
+			Enemy::knife();
+		}
+		else
+		{
+			state_b = PRESHOOT;
+			state_p = WAIT;
+			save_air = air;
+			save_angle = angle;
+			changeAnimation(REBEL_KNIFE,false,REBEL_WATCH);
+		}
 	}
 
 	else if(type == BOWSER)
@@ -148,6 +200,7 @@ void EnemyView::shoot(list<AmmoView*>* air, Int2 angle)
 		else
 		{
 			state_b = PRESHOOT;
+			state_p = WAIT;
 			save_air = air;
 			save_angle = angle;
 			changeAnimation(BOWSER_FIRE,false,BOWSER_STAND);
@@ -162,6 +215,26 @@ void EnemyView::shoot(list<AmmoView*>* air, Int2 angle)
     	tmp.erase(a++);
     }
 
+}
+
+
+bool EnemyView::canShoot()
+{
+	if(!Enemy::canShoot())
+		return false;
+
+	if(type == REBEL)
+	{
+		if(current_anim!=REBEL_KNIFE)
+			return true;
+	}
+	else if(type==BOWSER)
+	{
+		if(current_anim!=BOWSER_FIRE)
+			return true;
+	}
+
+	return false;
 }
 
 

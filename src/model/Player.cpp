@@ -33,12 +33,11 @@ Player::~Player()
 void Player::print(ostream& os) const  
 {  
     os << "======Player======" << endl;
-    // os << "=== Position  : " << position << endl;  
-    // os << "=== Taille    : " << size << endl;  
-    // os << "=== Z-index   : " << z << endl;  
-    // os << "=== Masse     : " << mass << endl;  
-    // os << "=== Mouvement : " << movement << endl;
-    // os << "=== Santé     : " << health << endl;
+    os << "=== Position  : " << position << endl;  
+    os << "=== Taille    : " << size << endl;  
+    os << "=== Masse     : " << mass << endl;  
+    os << "=== Mouvement : " << movement << endl;
+    os << "=== Santé     : " << health << endl;
     string tmp;
     switch(state_p)
     {
@@ -133,14 +132,6 @@ void Player::reload(int nb)
 void Player::animate(int dt)
 {
 	Character::animate(dt);
-
-    if(state_b != DEAD)
-    {
-    	/* COURIR */
-    	if(state_p == RUN)
-    		position.x += dt*walkway/mass*2	;
-    }
-
 }
 
 
@@ -152,7 +143,7 @@ void Player::walk(int way)
 	if(way != 0)
 	{
 		if(state_p != KNELT)
-		state_p = RUN;
+		  state_p = RUN;
 		walkway = way;
 	}
 	else if(state_p != KNELT)

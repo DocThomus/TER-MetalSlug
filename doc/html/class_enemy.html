@@ -134,8 +134,8 @@ Types publics</h2></td></tr>
 Fonctions membres publiques</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a06989122c9391af1d13ee913d137f298">Enemy</a> (<a class="el" href="class_int2.html">Int2</a> pos, <a class="el" href="class_int2.html">Int2</a> siz, int m, int max_h, bool AI, int pow)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#a06989122c9391af1d13ee913d137f298"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a7017edb12833d56e6d39a5bf574912f6">Enemy</a> (<a class="el" href="class_int2.html">Int2</a> pos, <a class="el" href="class_enemy.html#a0810e4ccd9dc6845273cb027a1436044">TypeEnemy</a> t)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#a7017edb12833d56e6d39a5bf574912f6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#ab3daa618601c65da490fa8808156bdb9">Enemy</a> (<a class="el" href="class_int2.html">Int2</a> pos, <a class="el" href="class_enemy.html#a0810e4ccd9dc6845273cb027a1436044">TypeEnemy</a> t, bool AI=false)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#ab3daa618601c65da490fa8808156bdb9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a94f30d348b6d2840fd71675472ba38dd">Enemy</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#a94f30d348b6d2840fd71675472ba38dd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#ac0eec4755e28c02688065f9657150ac3">~Enemy</a> ()</td></tr>
@@ -144,10 +144,23 @@ Fonctions membres publiques</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug.  <a href="#ad8c8e48b7fc9ac2b62482516a742e1a4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#acebf7090d998b062d9c3c59c49e0627c">animate</a> (int dt)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Animer.  <a href="#acebf7090d998b062d9c3c59c49e0627c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a250a662b5d16d3fb2e7c4a5896d551ad">walk</a> (int way)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Courir.  <a href="#a250a662b5d16d3fb2e7c4a5896d551ad"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a944c2d5ebf4d817ea78d7f5363d192ec">shoot</a> (list&lt; <a class="el" href="class_ammo.html">Ammo</a> * &gt; *air, <a class="el" href="class_float2.html">Float2</a> angle=<a class="el" href="class_float2.html">Float2</a>(1., 0.))</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Tirer.  <a href="#a944c2d5ebf4d817ea78d7f5363d192ec"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#ada1c06d8b832d2a4ca4ce7c12fcdae6e">canShoot</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Possibilité de tirer.  <a href="#ada1c06d8b832d2a4ca4ce7c12fcdae6e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a04c451624958712b36546037fc25c601">die</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Mourir.  <a href="#a04c451624958712b36546037fc25c601"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8ef1f5878648844da5bf3d3c4161e6fd"></a><!-- doxytag: member="Enemy::getIA" ref="a8ef1f5878648844da5bf3d3c4161e6fd" args="()" -->
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a8ef1f5878648844da5bf3d3c4161e6fd">getIA</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur IA. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad3ccfa369850ccdb4eca7451c69bc6c7"></a><!-- doxytag: member="Enemy::getPower" ref="ad3ccfa369850ccdb4eca7451c69bc6c7" args="()" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#ad3ccfa369850ccdb4eca7451c69bc6c7">getPower</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur power. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9ea31fb576780a87e2b7849f0e3065f8"></a><!-- doxytag: member="Enemy::getType" ref="a9ea31fb576780a87e2b7849f0e3065f8" args="()" -->
+<a class="el" href="class_enemy.html#a0810e4ccd9dc6845273cb027a1436044">TypeEnemy</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a9ea31fb576780a87e2b7849f0e3065f8">getType</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le type de l'ennemi. <br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Attributs protégés</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a53f4c66c8dbc8213f9273126b67f80cf"></a><!-- doxytag: member="Enemy::type" ref="a53f4c66c8dbc8213f9273126b67f80cf" args="" -->
@@ -159,6 +172,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a81af68c2c35ebba124036e880b19cbfe"></a><!-- doxytag: member="Enemy::power" ref="a81af68c2c35ebba124036e880b19cbfe" args="" -->
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a81af68c2c35ebba124036e880b19cbfe">power</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique la puissance des attaques de l'ennemi. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9f82c6a2c3e3111e5ff7836436f3e782"></a><!-- doxytag: member="Enemy::cpt_shoot" ref="a9f82c6a2c3e3111e5ff7836436f3e782" args="" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_enemy.html#a9f82c6a2c3e3111e5ff7836436f3e782">cpt_shoot</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Compteur pour la cadence de tir. <br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Description détaillée</h2>
 <div class="textblock"><p>Modélise un ennemi. </p>
@@ -229,7 +245,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 
 </div>
 </div>
-<a class="anchor" id="a7017edb12833d56e6d39a5bf574912f6"></a><!-- doxytag: member="Enemy::Enemy" ref="a7017edb12833d56e6d39a5bf574912f6" args="(Int2 pos, TypeEnemy t)" -->
+<a class="anchor" id="ab3daa618601c65da490fa8808156bdb9"></a><!-- doxytag: member="Enemy::Enemy" ref="ab3daa618601c65da490fa8808156bdb9" args="(Int2 pos, TypeEnemy t, bool AI=false)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -243,7 +259,13 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="class_enemy.html#a0810e4ccd9dc6845273cb027a1436044">TypeEnemy</a>&#160;</td>
-          <td class="paramname"><em>t</em>&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>AI</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -259,7 +281,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <dl class="params"><dt><b>Paramètres:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">pos</td><td>: Position initiale de l'ennemi.  </td></tr>
-    <tr><td class="paramname">t</td><td>: TYpe de l'ennemi. </td></tr>
+    <tr><td class="paramname">t</td><td>: Type de l'ennemi.  </td></tr>
+    <tr><td class="paramname">AI</td><td>: Indique si l'ennemi doit être intelligent ou non. </td></tr>
   </table>
   </dd>
 </dl>
@@ -332,6 +355,27 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <p>Réimplémentée à partir de <a class="el" href="class_character.html#abc8b0f2d5d69cd9a5cdd1634e69b10f3">Character</a>.</p>
 
 <p>Réimplémentée dans <a class="el" href="class_enemy_view.html#a9cddea2cb12e4abd5f9fb27acd00c1d5">EnemyView</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ada1c06d8b832d2a4ca4ce7c12fcdae6e"></a><!-- doxytag: member="Enemy::canShoot" ref="ada1c06d8b832d2a4ca4ce7c12fcdae6e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool <a class="el" href="class_enemy.html#ada1c06d8b832d2a4ca4ce7c12fcdae6e">Enemy::canShoot</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Possibilité de tirer. </p>
+<p>Indique si l'ennemi est en état de tirer ou non. </p>
+
+<p>Réimplémentée dans <a class="el" href="class_enemy_view.html#a3af6a09c1cb6299e9a6bccb07a6995bb">EnemyView</a>.</p>
 
 </div>
 </div>
@@ -425,6 +469,36 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 
 </div>
 </div>
+<a class="anchor" id="a250a662b5d16d3fb2e7c4a5896d551ad"></a><!-- doxytag: member="Enemy::walk" ref="a250a662b5d16d3fb2e7c4a5896d551ad" args="(int way)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="class_enemy.html#a250a662b5d16d3fb2e7c4a5896d551ad">Enemy::walk</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>way</em></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Courir. </p>
+<p>Fait courir l'ennemi. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">way</td><td>: Sens dans lequel l'ennemi doit se déplacer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Réimplémentée à partir de <a class="el" href="class_character.html#a211bbf81a9ef429793cc00dfa8d15c4c">Character</a>.</p>
+
+<p>Réimplémentée dans <a class="el" href="class_enemy_view.html#a51f6486de640df3a25d4ba7e42849505">EnemyView</a>.</p>
+
+</div>
+</div>
 <hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
 <li>include/model/<a class="el" href="_enemy_8h_source.html">Enemy.h</a></li>
 </ul>
@@ -448,7 +522,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
     <ul>
       <li class="navelem"><a class="el" href="class_enemy.html">Enemy</a>      </li>
 
-    <li class="footer">Généré le Lundi Avril 6 2015 20:54:57 pour Metal Slug par
+    <li class="footer">Généré le Mardi Avril 7 2015 19:06:09 pour Metal Slug par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

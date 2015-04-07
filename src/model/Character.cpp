@@ -36,6 +36,11 @@ void Character::animate(int dt)
 {
     ObjetPhysique::animate(dt);
 
+    /* COURIR */
+    if(state_b != DEAD)
+        if(state_p == RUN)
+            position.x += dt*walkway/mass*2 ;
+
     /* GRAVITÉ */
     if(state_g == AIR)
     {
@@ -127,6 +132,12 @@ Character::StateBattle Character::getStateBattle()
 }
 
 
+int Character::getWalkway()
+{
+    return walkway;
+}
+
+
 void Character::decreaseHealth(int s)
 {
     if(state_b == DEAD)
@@ -174,7 +185,7 @@ void Character::shoot(list<Ammo*>* air, Float2 angle)
 
 void Character::knife()
 {
-    if(state_b == NORMAL)
+    if(state_b == NORMAL || state_b == PRESHOOT)
         state_b = KNIFE;
 }
 
@@ -188,7 +199,10 @@ void Character::die()
 void Character::walk(int way)
 {
     if(state_g==GROUND && state_p!=KNELT && state_b!=DEAD)
+    {
         walkway = way;
+        state_p = RUN;
+    }
 }
 
 
@@ -201,7 +215,6 @@ void Character::kneel(bool b)
     {
         size.y = 0.5*initial_size.y;
         position.y += initial_size.y-size.y;
-        cout << initial_size.y-size.y << endl;;
     }
     else if(!b)
         size.y = initial_size.y;

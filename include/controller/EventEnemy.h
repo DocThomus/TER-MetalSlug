@@ -32,7 +32,7 @@ class EventEnemy : public EventGame
 
 		Int2 enemy_pos; /*!< \brief Position de l'ennemi à générer. */
 		Enemy::TypeEnemy enemy_type; /*!< \brief Type de l'ennemi à générer. */
-		bool have_IA;
+		bool have_IA; /*!< \brief Indique si l'ennemi à générer doit être intelligent ou non. */
 
 
 	public :

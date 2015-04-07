@@ -31,7 +31,7 @@
 		<!-- EVENTS -->
 		<events>
 
-			<event type="enemy" pos="0" enemy_type="BOWSER" x="700" y="160"/>
+			<event type="enemy" pos="0" enemy_type="BOWSER" ia="1" x="1000" y="160"/>
 		
 		</events>
 

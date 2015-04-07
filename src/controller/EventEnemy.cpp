@@ -42,5 +42,7 @@ void EventEnemy::setEnemyIA(bool b)
 void EventEnemy::trigger(Game* g)
 {
 	EnemyView* enemy = new EnemyView(enemy_pos, enemy_type, have_IA);
+	if(have_IA)
+		enemy->walk(-1);
 	g->enemies.push_back(enemy);
 }

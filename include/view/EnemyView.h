@@ -84,7 +84,7 @@ class EnemyView : public Enemy, public MyDrawable
 
 		list<AmmoView*>* save_air; /*!< \brief Sauvegarde la liste dans laquelle insérer les Ammo. */
 		Int2 save_angle;  /*!< \brief Sauvegarde l'angle de tir pour les tirs à retardement. */
-
+		
 
 	public :
 
@@ -106,7 +106,8 @@ class EnemyView : public Enemy, public MyDrawable
 	     *
 	     * Construit un ennemi du type indiqué.
 	     * \param pos : Position initiale de l'ennemi.
-	     * \param t : TYpe de l'ennemi.
+	     * \param t : Type de l'ennemi.
+	     * \param AI : Indique si l'ennemi doit être intelligent ou non.
 	     */
 		EnemyView(Int2 pos, TypeEnemy t, bool AI=false);
 
@@ -196,6 +197,13 @@ class EnemyView : public Enemy, public MyDrawable
 	     * \param angle : Direction dans laquelle le personnage tire.
 	     */
 		virtual void shoot(list<AmmoView*>* air, Int2 angle = Int2(1,0));
+
+		/*!
+	     * \brief Possibilité de tirer
+	     *
+	     * Indique si l'ennemi est en état de tirer ou non.
+	     */
+		virtual bool canShoot();
 };
 
 

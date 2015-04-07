@@ -253,8 +253,8 @@ void Game::checkKeyboardEvents(RenderWindow* window)
 
                 /* TEST */
                 case Keyboard::P :
-                    //(*enemies.begin())->shoot(&ammo,Int2(-1,0));
-                    (*enemies.begin())->walk(1);
+                    (*enemies.begin())->shoot(&ammo,Int2(-1,0));
+                    //(*enemies.begin())->walk(-1);
                     break;
             }
         }
@@ -345,22 +345,128 @@ void Game::checkCollisions()
     /* ENNEMIS */
     for(list<EnemyView*>::iterator e = enemies.begin(); e != enemies.end(); e++)
     {
+        Int2 e_pos = (*e)->getPosition();
+        Int2 e_siz = (*e)->getSize();
+
+        /* VS PLATFORM */
         collision = false;
         for(list<PlatformView>::iterator pl=pltf->begin(); pl!=pltf->end(); pl++) // On check les collisions avec TOUTES les plateformes (on peut etre en collision avec le sol et un mur...)
         {
             ObjetPhysique* e_ptr = (ObjetPhysique*)(*e);
             ObjetPhysique* pl_ptr = (ObjetPhysique*)(&*pl);
 
+            Int2 pl_pos = (*pl).getPosition();
+            Int2 pl_siz = (*pl).getSize();
+
             if(checkIntersect(e_ptr,pl_ptr))
             {
                 collision = true; 
                 if(checkCollisionTop(e_ptr,pl_ptr))
-                    (*e)->land((*pl).getPosition().y);              
+                    (*e)->land((*pl).getPosition().y);
+                
+                else if((*e)->getIA())
+                {
+                    if(checkCollisionLeft(e_ptr,pl_ptr))
+                    {
+                        (*e)->bumpRight(pl_pos.x-20);
+                        (*e)->walk(-1);
+                    }
+                    else if (checkCollisionRight(e_ptr,pl_ptr))
+                    {
+                        (*e)->bumpLeft(pl_pos.x+pl_siz.x+20);
+                        (*e)->walk(1); 
+                    }    
+                }        
             }
         }
         if(!collision) { // Si il n'y a collision avec aucune plateforme, le personnage est en l'air et tombe
             (*e)->jump(0);
         }
+
+        /* VS VIEW */
+        if((*e)->getIA() && (*e)->getStateBattle()!=Character::DEAD  && (*e)->getWalkway()<0 && e_pos.x<=view.getCenter().x-view.getSize().x/2)
+        {   
+            (*e)->bumpLeft(view.getCenter().x-view.getSize().x/2);
+            (*e)->walk(1);
+        }
+
+        if((*e)->getIA() && (*e)->getStateBattle() && (*e)->getWalkway()>0 && e_pos.x+e_siz.x>=view.getCenter().x+view.getSize().x/2)
+        {   
+            (*e)->bumpLeft(view.getCenter().x+view.getSize().x/2-e_siz.x);
+            (*e)->walk(-1);
+        }
+
+        /* VS PLAYER */
+        Int2 p_pos = player.getPosition();
+        Int2 p_siz = player.getSize();
+
+        bool check = false;
+
+        // si le joueur est mort 
+        if(player.getStateBattle() != Character::DEAD)
+            check = true;
+
+        // si l'ennemi est intelligent
+        if(check && (*e)->getIA())
+            check = true;
+
+        // si l'ennemi peut tirer
+        if(check && !(*e)->canShoot())
+            check = false;
+
+        // si l'ennemi est sur la même "ligne" que le player
+        if( check
+        && ((e_pos.y>=p_pos.y && e_pos.y<=p_pos.y+p_siz.y)
+        || (e_pos.y+e_siz.y>=p_pos.y && e_pos.y+e_siz.y<=p_pos.y+p_siz.y) 
+        || (e_pos.y<=p_pos.y && e_pos.y+e_siz.y>=p_pos.y+p_siz.y)))
+        {
+            // si l'ennemi regarde en direction du player
+            if((e_pos.x<p_pos.x && (*e)->getWalkway()>0)
+            || (e_pos.x>p_pos.x && (*e)->getWalkway()<0))
+            {
+               check = true;
+            }
+            else
+                check = false;
+        }
+        else
+            check = false;
+
+        if((*e)->getType() == Enemy::BOWSER)
+        {
+            // si il n'y a aucune plateforme entre eux
+            for(list<PlatformView>::iterator pl=pltf->begin(); check && pl!=pltf->end(); pl++) // On check les collisions avec TOUTES les plateformes (on peut etre en collision avec le sol et un mur...)
+            {
+                Int2 pl_pos = (*pl).getPosition();
+                Int2 pl_siz = (*pl).getSize();
+
+                // si l'ennemi est sur la même "ligne" que la plateforme
+                if((e_pos.y>=pl_pos.y && e_pos.y<=pl_pos.y+pl_siz.y)
+                || (e_pos.y+e_siz.y>=pl_pos.y && e_pos.y+e_siz.y<=pl_pos.y+pl_siz.y) 
+                || (e_pos.y<=pl_pos.y && e_pos.y+e_siz.y>=pl_pos.y+pl_siz.y))
+                {
+                    // si la plateforme est entre le player et l'ennemi
+                    if((pl_pos.x>=e_pos.x && pl_pos.x<=e_pos.x)
+                    || (pl_pos.x<=e_pos.x && pl_pos.x>=e_pos.x))
+                        check = false;
+                }
+            }
+        }
+
+        else if((*e)->getType() == Enemy::REBEL)
+        {
+            if(!(e_pos.x+e_siz.x>=p_pos.x-20 && e_pos.x<=p_pos.x+p_siz.x+20))
+                check = false;
+            else if((*e)->getStateBattle() == Character::KNIFE)
+            {
+                player.decreaseHealth((*e)->getPower());
+            }
+        }
+
+        // si check, l'ennemi tire !!
+        if(check)
+            (*e)->shoot(&ammo,Int2((*e)->getWalkway(),0));
+
     }
 
 
@@ -416,28 +522,31 @@ void Game::checkCollisions()
 
             /* VS ENEMY */
             int epsilon = -10;
-            if((*a)->getType() == Ammo::FLAME)
-                epsilon = 0;
+                if((*a)->getType() == Ammo::FLAME)
+                    epsilon = 0;
 
-            for(list<EnemyView*>::iterator e = enemies.begin(); e != enemies.end(); e++)
+            if((*a)->getOwner() == &player)
             {
-                if(checkIntersect((ObjetPhysique*)(*a),(ObjetPhysique*)(*e),epsilon))
+                for(list<EnemyView*>::iterator e = enemies.begin(); e != enemies.end(); e++)
                 {
-                    if((*a)->getOwner() != (*e) && (*e)->getStateBattle() != Character::DEAD)
+                    if(checkIntersect((ObjetPhysique*)(*a),(ObjetPhysique*)(*e),epsilon))
                     {
-                        (*e)->decreaseHealth((*a)->getDamage());
+                        if((*a)->getOwner() != (*e) && (*e)->getStateBattle() != Character::DEAD)
+                        {
+                            (*e)->decreaseHealth((*a)->getDamage());
 
-                        //cout << (*a)->getDamage() << endl;
-                       
-                        Int2 e_pos = (*e)->getPosition();
-                        Int2 e_siz = (*e)->getSize();
-                        
-                        Int2 tmp = Int2(e_pos.x+e_siz.x/2,e_pos.y+e_siz.y/2);
+                            //cout << (*a)->getDamage() << endl;
+                           
+                            Int2 e_pos = (*e)->getPosition();
+                            Int2 e_siz = (*e)->getSize();
+                            
+                            Int2 tmp = Int2(e_pos.x+e_siz.x/2,e_pos.y+e_siz.y/2);
 
-                        Ammo::TypeAmmo tmp_type = (*a)->getType();
+                            Ammo::TypeAmmo tmp_type = (*a)->getType();
 
-                        if(tmp_type!=Ammo::FLAME)
-                            (*a)->die(a_pos);
+                            if(tmp_type!=Ammo::FLAME)
+                                (*a)->die(a_pos);
+                        }
                     }
                 }
             }
@@ -469,10 +578,6 @@ void Game::checkCollisions()
         }
     }
 
-    
-
-    /* ENNEMIS / SOL */
-        // TODO
 
 }
 
