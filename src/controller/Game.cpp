@@ -680,7 +680,7 @@ void Game::init()
 void Game::loadLevel()
 {
 
-    level.loadFromFile("res/xml/level/level1.xml",config);
+    level.loadFromFile("res/xml/level/level3.xml",config);
 
 
     /* RESSOURCES PLAYER */
