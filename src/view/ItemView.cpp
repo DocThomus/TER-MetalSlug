@@ -18,6 +18,8 @@ ItemView::ItemView(Int2 pos, TypeItem type_i, Weapon::TypeWeapon type_w)
 			size = Int2(60,60);
 			if(type_weapon==Weapon::SHOTGUN)  setTexture(textures[0]);
 			else if(type_weapon==Weapon::SMG) setTexture(textures[1]);
+			else if(type_weapon==Weapon::FLAMETHROWER) setTexture(textures[2]);
+
 			break;
 	}
 
@@ -79,6 +81,11 @@ void ItemView::loadRessources()
     /* SMG */
     tex = new Texture();
     tex->loadFromFile("res/tex/item/smg.png");
+    textures.push_back(tex);
+
+    /* FLAMETHROWER */
+    tex = new Texture();
+    tex->loadFromFile("res/tex/item/flamethrower.png");
     textures.push_back(tex);
    
     /* === SONS === */

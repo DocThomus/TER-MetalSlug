@@ -315,6 +315,8 @@ bool loadLevelXML(string filename, Config* conf, Environment* env, list<EventGam
                     evts->push_back(new EventItem(pos, tmp_pos, Item::WEAPON, Weapon::SHOTGUN));
                 else if(type_w == "SMG")
                     evts->push_back(new EventItem(pos, tmp_pos, Item::WEAPON, Weapon::SMG));
+                else if(type_w == "FLAMETHROWER")
+                    evts->push_back(new EventItem(pos, tmp_pos, Item::WEAPON, Weapon::FLAMETHROWER));
             }
         }
     }

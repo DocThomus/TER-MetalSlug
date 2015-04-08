@@ -46,7 +46,7 @@ class Weapon
 	     * \enum TypeWeapon
 	     * \brief Énumération des différents types d'armes.
 	     */
-		enum TypeWeapon {PISTOL,SMG,SHOTGUN,ROCKET_LAUNCHER,GRENADE_LAUNCHER,CANARDATOR};
+		enum TypeWeapon {PISTOL,SMG,SHOTGUN,ROCKET_LAUNCHER,GRENADE_LAUNCHER,CANARDATOR,FLAMETHROWER};
 	
 	
 	protected :

@@ -23,6 +23,11 @@ Weapon::Weapon(TypeWeapon t)
 			type_ammo = Ammo::LIGHT_BULLET;
 			break;
 
+		case FLAMETHROWER :
+			ammos = Int2(200,200);
+			type_ammo = Ammo::FLAME;
+			break;
+
 		default :
 			type = PISTOL;
 			ammos = Int2(9999999,9999999);
@@ -62,6 +67,7 @@ void Weapon::shoot(list<Ammo*>* air, Float2 angle)
 		case PISTOL  : cadence = 150;  break;
 		case SHOTGUN : cadence = 500; break;
 		case SMG     : cadence = 60;  break;
+		case FLAMETHROWER : cadence = 100; break;
 		default      : cadence = 0;  break;
 	}
 
@@ -158,6 +164,11 @@ void Weapon::shoot(list<Ammo*>* air, Float2 angle)
 						tmp.x-=i*2;
 					air->push_back(new Ammo(pos,siz,0,type_ammo,tmp,owner));
 				}
+				ammos.x--;
+				break;
+
+			case FLAMETHROWER : 
+				air->push_back(new Ammo(pos,siz,0,type_ammo,angle,owner));
 				ammos.x--;
 				break;
 		}
