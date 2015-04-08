@@ -257,6 +257,11 @@ void Game::checkKeyboardEvents(RenderWindow* window)
                     (*enemies.begin())->shoot(&ammo,Int2(-1,0));
                     //(*enemies.begin())->walk(-1);
                     break;
+
+                /* GRENADE */
+                case Keyboard::G :
+                    player.throwGrenade(&ammo);
+                    break;
             }
         }
 

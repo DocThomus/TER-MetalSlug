@@ -358,7 +358,59 @@ void PlayerView::shoot(list<AmmoView*>* air, Int2 angle)
     }
 }
 
+void PlayerView::throwGrenade(list<AmmoView*>* air) {
+	if(state_b == DEAD)
+        return;
 
+    bool change = false;
+
+    /* LANCEMENT DE LA GRENADE + RECUPERATION DES MUNITIONS GÉNÉRÉES + CONVERSION AMMO->AMMOVIEW */
+	list<Ammo*> tmp;
+	Player::throwGrenade(&tmp);
+	AmmoView* av;
+
+	for(list<Ammo*>::iterator a = tmp.begin(); a != tmp.end(); a++)
+    {
+    	av = new AmmoView(**a);
+    	air->push_back(av);
+    	change = true;
+    	delete *a;
+    }
+    tmp.clear();
+
+    if(change) // si le joueur a pu tirer
+    {
+    	/* ANIMATION */ // TODO
+    	gunway = walkway;
+		PlayerAnimationsBody anim_shoot;
+		PlayerAnimationsBody anim_shoot_up;
+		PlayerAnimationsBody anim_shoot_down;
+		PlayerAnimationsBody anim_after;
+
+		if(state_p == KNELT)
+		{
+			anim_shoot    = getAnimKneeShoot();
+			anim_shoot_up = getAnimKneeShootUp();
+			anim_after    = getAnimKnee();
+		}
+		else
+		{
+			anim_shoot      = getAnimShoot();
+			anim_shoot_up   = getAnimShootUp();
+			anim_shoot_down = getAnimShootDown();
+			anim_after      = getAnimRun();
+		}
+
+		if(gunway.y<0)
+			changeAnimation(anim_shoot_up,false,anim_after);
+		else if(gunway.y>0)
+			changeAnimation(anim_shoot_down,false,anim_after);
+		else
+			changeAnimation(anim_shoot,false,anim_after);	
+
+		resetAnim();
+    }
+}
 
 void PlayerView::knife()
 {

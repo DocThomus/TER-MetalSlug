@@ -142,6 +142,10 @@ class Player : public Character
 	     */
 		Weapon::TypeWeapon getTypeWeapon();
 
+		/*!
+		 * \brief Lance une grenade dans la direction où le joueur va
+		 */
+		virtual void throwGrenade(list<Ammo*>* air);
 };
 
 

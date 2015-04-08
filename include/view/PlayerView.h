@@ -190,6 +190,11 @@ class PlayerView : public Player, public MyDrawable
 		virtual void shoot(list<AmmoView*>* air, Int2 angle = Int2(1,0));
 
 		/*!
+		 * \brief Lance une grenade
+		 */
+		virtual void throwGrenade(list<AmmoView*>* air);
+
+		/*!
 	     * \brief Attaque au corps à corps.
 	     */
 		virtual void knife();

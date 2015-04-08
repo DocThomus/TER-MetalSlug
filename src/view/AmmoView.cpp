@@ -17,6 +17,9 @@ AmmoView::AmmoView()
 	if(type==FLAME)
 		tmp_siz = Int2(300,150);
 
+	if(type==GRENADE)
+		tmp_siz = Int2(50,12);
+
 	body.setOrigin(size.x/2,size.y/2);
 	body.setSize(Vector2f(tmp_siz.x,tmp_siz.y));
 	initRotation();
@@ -39,6 +42,9 @@ AmmoView::AmmoView(Ammo a)
 
 	if(type==FLAME)
 		tmp_siz = Int2(300,150);
+
+	if(type==GRENADE)
+		tmp_siz = Int2(50,12);
 
 	body.setSize(Vector2f(tmp_siz.x,tmp_siz.y));
 	body.setOrigin(size.x/2,size.y/2);
@@ -84,6 +90,11 @@ void AmmoView::initRessources()
 			setTexture(textures[FLAME]);
 			addAnimations(animations_list[FLAME]);
 			sounds[FLAME]->play();
+			break;
+
+		case GRENADE :
+			setTexture(textures[BULLET]); // Provisoire, besoin d'un sprite de grenade
+			addAnimations(animations_list[BULLET]);
 			break;
 	}
 

@@ -13,6 +13,9 @@ Ammo::Ammo(Int2 pos, Int2 siz, int m, TypeAmmo type, Float2 movement, Character*
 	if(type==FLAME)
 		size = Int2(150,150);
 
+	if(type==GRENADE)
+		size = Int2(30,30);
+
 	if(movement.x<0)
 		position.x -= size.x;
 
@@ -75,6 +78,13 @@ void Ammo::animate(int dt)
 		{
 			position.x += movement.x*dt*0.5;
 			position.y += movement.y*dt*0.5;
+		}
+		else if(type == GRENADE) 
+		{
+			position.x += movement.x*dt*1.0;
+			position.y += movement.y*dt*1.0;
+			movement.y -= dt/5;
+			//addMovement(Float2(0.0,dt/5.0)); // Effet Parabole
 		}
 	}
 

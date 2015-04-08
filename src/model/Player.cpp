@@ -156,4 +156,27 @@ void Player::kneel(bool b)
 	Character::kneel(b);
 }
 
+void Player::throwGrenade(list<Ammo*>* air) {
+    if(state_b != DEAD) // TODO Prendre en compte les munitions
+    {
+        Int2 pos = getPosition();
+        Int2 siz = getSize();
 
+        // X
+        if(walkway>0)   // A droite
+            pos.x += siz.x+30;
+        else            // A gauche
+            pos.x -= 30;
+
+        // Y
+        pos.y -=50; // A mi-hauteur
+        if(getStatePosition() == Character::KNELT)
+            pos.y -= siz.y*0.2;
+
+        // CREATION DE LA GRENADE
+        if(walkway>0)
+            air->push_back(new Ammo(pos,siz,0,Ammo::GRENADE,Int2(1,-1),this));
+        else
+            air->push_back(new Ammo(pos,siz,0,Ammo::GRENADE,Int2(-1,-1),this));
+    }
+}

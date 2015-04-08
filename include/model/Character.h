@@ -208,6 +208,13 @@ class Character : public ObjetPhysique
 	     */
 		virtual void kneel(bool b);
 		
+		/*!
+		 * \brief Lance une grenade.
+		 *
+		 * La direction de la grenade est la direction vers laquelle le perso regarde
+		 */
+		virtual void throwGrenade(list<Ammo*>* air);
+
 };
 
 

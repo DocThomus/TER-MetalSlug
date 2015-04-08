@@ -222,3 +222,8 @@ void Character::kneel(bool b)
     if(state_g != AIR)
         state_p = (b ? KNELT : WAIT);
 }
+
+void Character::throwGrenade(list<Ammo*>* air) {
+    if(state_b == DEAD)
+        return;
+}
