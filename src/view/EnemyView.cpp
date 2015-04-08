@@ -109,7 +109,8 @@ void EnemyView::animate(int dt)
 		else if(state_b==KNIFE && current_anim==REBEL_WATCH)
 		{
 			state_b = NORMAL;
-			walk(walkway);
+			if(haveAI)
+				walk(walkway);
 		}
 	}
 

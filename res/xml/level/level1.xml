@@ -30,11 +30,13 @@
 					<size w="120" h="180"/>
 					<sprite rx="0" ry="0">caisse.png</sprite>
 				</platform>
+
 				<platform>
 					<position x="1000" y="650"/>
 					<size w="400" h="150"/>
 					<sprite rx="0" ry="0">taxi.png</sprite>
 				</platform>
+
 				<platform> 
 					<position x="1400" y="470"/>
 					<size w="120" h="180"/>
@@ -70,11 +72,95 @@
 					<size w="120" h="180"/>
 					<sprite rx="0" ry="0">caisse.png</sprite>
 				</platform>
+
 				<platform>
 					<position x="2800" y="650"/>
 					<size w="400" h="150"/>
 					<sprite rx="0" ry="0">taxi.png</sprite>
 				</platform>
+
+				<platform> 
+					<position x="4200" y="470"/>
+					<size w="120" h="180"/>
+					<sprite rx="0" ry="0">caisse.png</sprite>
+				</platform>
+				<platform> 
+					<position x="4325" y="470"/>
+					<size w="120" h="180"/>
+					<sprite rx="0" ry="0">caisse.png</sprite>
+				</platform>
+				<platform> 
+					<position x="4450" y="470"/>
+					<size w="120" h="180"/>
+					<sprite rx="0" ry="0">caisse.png</sprite>
+				</platform>
+				<platform> 
+					<position x="4575" y="470"/>
+					<size w="120" h="180"/>
+					<sprite rx="0" ry="0">caisse.png</sprite>
+				</platform>
+				<platform> 
+					<position x="4700" y="470"/>
+					<size w="120" h="180"/>
+					<sprite rx="0" ry="0">caisse.png</sprite>
+				</platform>
+				<platform> 
+					<position x="4825" y="470"/>
+					<size w="120" h="180"/>
+					<sprite rx="0" ry="0">caisse.png</sprite>
+				</platform>
+				<platform> 
+					<position x="4950" y="470"/>
+					<size w="120" h="180"/>
+					<sprite rx="0" ry="0">caisse.png</sprite>
+				</platform><platform> 
+					<position x="5075" y="470"/>
+					<size w="120" h="180"/>
+					<sprite rx="0" ry="0">caisse.png</sprite>
+				</platform>
+				<platform> 
+					<position x="5200" y="470"/>
+					<size w="120" h="180"/>
+					<sprite rx="0" ry="0">caisse.png</sprite>
+				</platform>
+				<platform> 
+					<position x="5325" y="470"/>
+					<size w="120" h="180"/>
+					<sprite rx="0" ry="0">caisse.png</sprite>
+				</platform>
+				<platform> 
+					<position x="5450" y="470"/>
+					<size w="120" h="180"/>
+					<sprite rx="0" ry="0">caisse.png</sprite>
+				</platform>
+				<platform> 
+					<position x="5575" y="470"/>
+					<size w="120" h="180"/>
+					<sprite rx="0" ry="0">caisse.png</sprite>
+				</platform>
+				<platform> 
+					<position x="5700" y="470"/>
+					<size w="120" h="180"/>
+					<sprite rx="0" ry="0">caisse.png</sprite>
+				</platform>
+				<platform> 
+					<position x="5825" y="470"/>
+					<size w="120" h="180"/>
+					<sprite rx="0" ry="0">caisse.png</sprite>
+				</platform>
+				<platform> 
+					<position x="5950" y="470"/>
+					<size w="120" h="180"/>
+					<sprite rx="0" ry="0">caisse.png</sprite>
+				</platform>
+
+				<platform>
+					<position x="6700" y="650"/>
+					<size w="400" h="150"/>
+					<sprite rx="0" ry="0">taxi.png</sprite>
+				</platform>
+
+
 			</platforms>
 
 		</environment>
@@ -90,33 +176,26 @@
 
 			<event type="enemy" pos="0" enemy_type="REBEL" ia="0" x="1950" y="560"/>
 
-			<event type="enemy" pos="2000" enemy_type="REBEL" ia="1" x="3500" y="560"/>
-			<event type="enemy" pos="2000" enemy_type="REBEL" ia="1" x="3550" y="560"/>
-			<event type="enemy" pos="2000" enemy_type="REBEL" ia="1" x="3600" y="560"/>
-			<event type="enemy" pos="2000" enemy_type="REBEL" ia="1" x="3650" y="560"/>
-			<event type="enemy" pos="2000" enemy_type="REBEL" ia="1" x="3700" y="560"/>
+			<event type="enemy" pos="1500" enemy_type="REBEL" ia="1" x="3500" y="560"/>
+			<event type="enemy" pos="1500" enemy_type="REBEL" ia="1" x="3550" y="560"/>
+			<event type="enemy" pos="1500" enemy_type="REBEL" ia="1" x="3600" y="560"/>
+			<event type="enemy" pos="1500" enemy_type="REBEL" ia="1" x="3650" y="560"/>
+			<event type="enemy" pos="1500" enemy_type="REBEL" ia="1" x="3700" y="560"/>
 
-			<event type="enemy" pos="2000" enemy_type="REBEL" ia="1" x="3800" y="560"/>
-			<event type="enemy" pos="2000" enemy_type="REBEL" ia="1" x="3850" y="560"/>
-			<event type="enemy" pos="2000" enemy_type="REBEL" ia="1" x="3900" y="560"/>
-			<event type="enemy" pos="2000" enemy_type="REBEL" ia="1" x="3950" y="560"/>
-			<event type="enemy" pos="2000" enemy_type="REBEL" ia="1" x="4000" y="560"/>
-
-			<event type="enemy" pos="2000" enemy_type="REBEL" ia="1" x="4100" y="560"/>
-			<event type="enemy" pos="2000" enemy_type="REBEL" ia="1" x="4150" y="560"/>
-			<event type="enemy" pos="2000" enemy_type="REBEL" ia="1" x="4200" y="560"/>
-			<event type="enemy" pos="2000" enemy_type="REBEL" ia="1" x="4250" y="560"/>
-			<event type="enemy" pos="2000" enemy_type="REBEL" ia="1" x="4300" y="560"/>
+			<event type="enemy" pos="1800" enemy_type="REBEL" ia="1" x="3800" y="560"/>
+			<event type="enemy" pos="1800" enemy_type="REBEL" ia="1" x="3850" y="560"/>
+			<event type="enemy" pos="1800" enemy_type="REBEL" ia="1" x="3900" y="560"/>
+			<event type="enemy" pos="1800" enemy_type="REBEL" ia="1" x="3950" y="560"/>
+			<event type="enemy" pos="1800" enemy_type="REBEL" ia="1" x="4000" y="560"/>
 			
-			<event type="item" pos="0" item_type="WEAPON" weapon_type="SMG" x="3500" y="550"/>
+			<event type="item" pos="1500" item_type="WEAPON" weapon_type="SMG" x="3500" y="550"/>
 
-			<event type="enemy" pos="2000" enemy_type="REBEL" ia="1" x="4800" y="560"/>
-			<event type="enemy" pos="2000" enemy_type="REBEL" ia="1" x="4850" y="560"/>
-			<event type="enemy" pos="2000" enemy_type="REBEL" ia="1" x="4900" y="560"/>
-			<event type="enemy" pos="2000" enemy_type="REBEL" ia="1" x="4950" y="560"/>
-			<event type="enemy" pos="2000" enemy_type="REBEL" ia="1" x="5000" y="560"/>
+			<event type="enemy" pos="3500" enemy_type="REBEL" ia="0" x="4500" y="380"/>
+			<event type="enemy" pos="4750" enemy_type="REBEL" ia="1" x="5750" y="380"/>
+			<event type="enemy" pos="4750" enemy_type="REBEL" ia="1" x="5850" y="380"/>
+			<event type="enemy" pos="4750" enemy_type="REBEL" ia="1" x="5950" y="380"/>
 
-			<event type="enemy" pos="0" enemy_type="BOWSER" ia="1" x="5500" y="240"/>
+			<event type="enemy" pos="6500" enemy_type="BOWSER" ia="1" x="7500" y="240"/>
 		</events>
 
 	</level>

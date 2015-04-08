@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<document>
+	<level num="1">
+
+		<!-- MUSIQUES -->
+		<musics>
+			<music>gameover.wav</music>
+			<music>omnishred.wav</music>
+		</musics>
+
+		<!-- ENVIRONNEMENT -->
+		<environment>
+
+			<!-- DECORS -->
+			<decors>
+				<decor z="-6">city.png</decor>
+				<decor z="0">road.png</decor>
+			</decors>
+
+			<!-- PLATE-FORMES -->
+			<platforms>
+				<!-- SOL -->
+				<platform visible="0">
+					<position x="-10" y="650"/>
+					<size w="10000" h="100"/>
+				</platform>
+				<!-- AUTRES -->
+				<platform> 
+					<position x="800" y="470"/>
+					<size w="120" h="180"/>
+					<sprite rx="0" ry="0">caisse.png</sprite>
+				</platform>
+				<platform>
+					<position x="1000" y="650"/>
+					<size w="400" h="150"/>
+					<sprite rx="0" ry="0">taxi.png</sprite>
+				</platform>
+				<platform> 
+					<position x="1400" y="470"/>
+					<size w="120" h="180"/>
+					<sprite rx="0" ry="0">caisse.png</sprite>
+				</platform>
+				<platform> 
+					<position x="1525" y="470"/>
+					<size w="120" h="180"/>
+					<sprite rx="0" ry="0">caisse.png</sprite>
+				</platform>
+				<platform> 
+					<position x="1525" y="310"/>
+					<size w="120" h="180"/>
+					<sprite rx="0" ry="0">caisse.png</sprite>
+				</platform>
+				<platform> 
+					<position x="1650" y="470"/>
+					<size w="120" h="180"/>
+					<sprite rx="0" ry="0">caisse.png</sprite>
+				</platform>
+				<platform> 
+					<position x="1650" y="310"/>
+					<size w="120" h="180"/>
+					<sprite rx="0" ry="0">caisse.png</sprite>
+				</platform>
+				<platform> 
+					<position x="1775" y="470"/>
+					<size w="120" h="180"/>
+					<sprite rx="0" ry="0">caisse.png</sprite>
+				</platform>
+				<platform> 
+					<position x="1775" y="310"/>
+					<size w="120" h="180"/>
+					<sprite rx="0" ry="0">caisse.png</sprite>
+				</platform>
+				<platform>
+					<position x="2800" y="650"/>
+					<size w="400" h="150"/>
+					<sprite rx="0" ry="0">taxi.png</sprite>
+				</platform>
+			</platforms>
+
+		</environment>
+
+		<!-- EVENTS -->
+		<events>
+
+			<event type="enemy" pos="0" enemy_type="REBEL" x="700" y="560"/>
+			
+			<event type="item" pos="0" item_type="WEAPON" weapon_type="SHOTGUN" x="1150" y="550"/>
+			
+			<event type="enemy" pos="0" enemy_type="REBEL" ia="1" x="1420" y="240"/>
+			<event type="enemy" pos="0" enemy_type="REBEL" ia="1" x="1800" y="240"/>
+
+			<event type="item" pos="0" item_type="WEAPON" weapon_type="SMG" x="1960" y="550"/>
+
+			<event type="enemy" pos="0" enemy_type="REBEL" ia="1" x="2000" y="240"/>
+			<event type="enemy" pos="500" enemy_type="REBEL" ia="1" x="2500" y="240"/>
+			<event type="enemy" pos="600" enemy_type="REBEL" ia="1" x="2600" y="240"/>
+			<event type="enemy" pos="700" enemy_type="REBEL" ia="1" x="2700" y="240"/>
+			<event type="enemy" pos="800" enemy_type="REBEL" ia="1" x="2800" y="240"/>
+			<event type="enemy" pos="900" enemy_type="REBEL" ia="1" x="2900" y="240"/>
+			<event type="enemy" pos="1000" enemy_type="REBEL" ia="1" x="3000" y="240"/>
+			<event type="enemy" pos="1100" enemy_type="REBEL" ia="1" x="3100" y="240"/>
+			<event type="enemy" pos="1200" enemy_type="REBEL" ia="1" x="3200" y="240"/>
+			<event type="enemy" pos="1300" enemy_type="REBEL" ia="1" x="3300" y="240"/>
+			<event type="enemy" pos="1400" enemy_type="REBEL" ia="1" x="3400" y="240"/>
+			<event type="enemy" pos="1500" enemy_type="REBEL" ia="1" x="3500" y="240"/>
+
+			<event type="enemy" pos="0" enemy_type="BOWSER" ia="1" x="4500" y="240"/>
+		</events>
+
+	</level>
+</document>

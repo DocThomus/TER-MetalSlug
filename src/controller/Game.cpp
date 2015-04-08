@@ -400,7 +400,7 @@ void Game::checkCollisions()
             (*e)->walk(1);
         }
 
-        if((*e)->getIA() && (*e)->getStateBattle() && (*e)->getWalkway()>0 && e_pos.x+e_siz.x>=view.getCenter().x+view.getSize().x/2)
+        if((*e)->getIA() && (*e)->getStateBattle()!=Character::DEAD && (*e)->getWalkway()>0 && e_pos.x+e_siz.x>=view.getCenter().x+view.getSize().x/2)
         {   
             (*e)->bumpLeft(view.getCenter().x+view.getSize().x/2-e_siz.x);
             (*e)->walk(-1);
@@ -416,9 +416,13 @@ void Game::checkCollisions()
         if(player.getStateBattle() != Character::DEAD)
             check = true;
 
+        // si l'ennemi n'est pas mort
+        if(check && (*e)->getStateBattle() == Character::DEAD)
+            check = false;
+
         // si l'ennemi est intelligent
-        if(check && (*e)->getIA())
-            check = true;
+        if(check && !(*e)->getIA())
+            check = false;
 
         // si l'ennemi peut tirer
         if(check && !(*e)->canShoot())
@@ -460,6 +464,15 @@ void Game::checkCollisions()
                     || (pl_pos.x<=e_pos.x && pl_pos.x>=e_pos.x))
                         check = false;
                 }
+
+                // si le player est proche de l'ennemi
+                if((e_pos.x+e_siz.x>=p_pos.x-20 && e_pos.x<=p_pos.x+p_siz.x+20))
+                {
+                    check = false;
+                    player.decreaseHealth(100);
+                    if(player.getStateBattle() == Character::DEAD)
+                        level.playMusic(0);
+                }
             }
         }
 
@@ -470,6 +483,8 @@ void Game::checkCollisions()
             else if((*e)->getStateBattle() == Character::KNIFE)
             {
                 player.decreaseHealth((*e)->getPower());
+                if(player.getStateBattle() == Character::DEAD)
+                    level.playMusic(0);
             }
         }
 
