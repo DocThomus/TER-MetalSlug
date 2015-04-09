@@ -83,7 +83,8 @@ void Ammo::animate(int dt)
 		{
 			position.x += movement.x*dt*1.0;
 			position.y += movement.y*dt*1.0;
-			movement.y -= dt/5;
+			float dy = dt*0.0015*mass;
+       		movement.y += dy;
 			//addMovement(Float2(0.0,dt/5.0)); // Effet Parabole
 		}
 	}
