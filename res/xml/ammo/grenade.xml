@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<document>
+	<!-- FLY -->
+	<animation>
+		<sprite x="22" y="5" w="13" h="20"/>
+		<sprite x="53" y="6" w="16" h="18"/>
+		<sprite x="91" y="8" w="19" h="15"/>
+		<sprite x="134" y="10" w="20" h="12"/>
+		<sprite x="177" y="9" w="20" h="13"/>
+		<sprite x="220" y="7" w="18" h="16"/>
+		<sprite x="260" y="5" w="16" h="20"/>
+		<sprite x="294" y="5" w="12" h="20"/>
+	</animation>
+	
+	<!-- DEAD -->
+	<animation>
+		<sprite x="25" y="131" w="25" h="6"/>
+		<sprite x="81" y="128" w="31" h="9"/>
+		<sprite x="153" y="94" w="39" h="45"/>
+		<sprite x="194" y="68" w="35" h="71"/>
+		<sprite x="231" y="50" w="42" h="89"/>
+		<sprite x="275" y="45" w="48" h="94"/>
+		<sprite x="325" y="44" w="48" h="95"/>
+		<sprite x="375" y="42" w="49" h="97"/>
+		<sprite x="426" y="40" w="49" h="99"/>
+		<sprite x="477" y="39" w="48" h="100"/>
+		<sprite x="527" y="37" w="49" h="101"/>
+		<sprite x="580" y="40" w="48" h="102"/>
+		<sprite x="630" y="39" w="48" h="100"/>
+		<sprite x="680" y="39" w="49" h="93"/>
+		<sprite x="731" y="38" w="49" h="87"/>
+		<sprite x="782" y="37" w="49" h="82"/>
+		<sprite x="833" y="37" w="49" h="79"/>
+		<sprite x="884" y="37" w="49" h="72"/>
+		<sprite x="935" y="36" w="49" h="66"/>
+	</animation>
+</document>
+
