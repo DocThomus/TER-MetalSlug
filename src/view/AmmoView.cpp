@@ -18,7 +18,7 @@ AmmoView::AmmoView()
 		tmp_siz = Int2(300,150);
 
 	if(type==GRENADE)
-		tmp_siz = Int2(50,12);
+		tmp_siz = Int2(25,45);
 
 	body.setOrigin(size.x/2,size.y/2);
 	body.setSize(Vector2f(tmp_siz.x,tmp_siz.y));
@@ -44,7 +44,7 @@ AmmoView::AmmoView(Ammo a)
 		tmp_siz = Int2(300,150);
 
 	if(type==GRENADE)
-		tmp_siz = Int2(50,12);
+		tmp_siz = Int2(25,45);
 
 	body.setSize(Vector2f(tmp_siz.x,tmp_siz.y));
 	body.setOrigin(size.x/2,size.y/2);
@@ -93,8 +93,8 @@ void AmmoView::initRessources()
 			break;
 
 		case GRENADE :
-			setTexture(textures[BULLET]); // Provisoire, besoin d'un sprite de grenade
-			addAnimations(animations_list[BULLET]);
+			setTexture(textures[GRENADE]); // Provisoire, besoin d'un sprite de grenade
+			addAnimations(animations_list[GRENADE]);
 			break;
 	}
 
@@ -126,7 +126,9 @@ void AmmoView::display(RenderWindow* window)
 		body.setPosition(Vector2f(position.x+size.x*0.5,position.y));
 	else if(movement.y < 0)
 		body.setPosition(Vector2f(position.x+size.x*0.5,position.y+size.y));
-	
+	Vector2f body_siz = body.getSize();
+
+	body.setPosition(Vector2f(position.x+(size.x-body_siz.x)/2,position.y+size.y-body_siz.y));
 
 	window->draw(body);
 }
@@ -168,6 +170,11 @@ void AmmoView::die(Int2 pos)
 
 	if(type==BULLET || type==HEAVY_BULLET || type==LIGHT_BULLET)
 		changeAnimation(1,false);
+	else if(type==GRENADE)
+	{
+		initRotation();
+		changeAnimation(1,false);
+	}
 }
 
 
@@ -200,11 +207,20 @@ void AmmoView::loadRessources()
 	tex = new Texture();
     tex->loadFromFile("res/tex/ammo/flame.png");
     textures.push_back(tex);
-
-
+    
+    textures.push_back(NULL);
+    
+    /* GRENADE */
+	tex = new Texture();
+    tex->loadFromFile("res/tex/ammo/grenade.png");
+    textures.push_back(tex);
+    
+	
     /* === ANIMATIONS ===*/
     animations_list[BULLET] = loadAnimationsFromFile("res/xml/ammo/bullet.xml");
     animations_list[FLAME] = loadAnimationsFromFile("res/xml/ammo/flame.xml");
+    animations_list[GRENADE] = loadAnimationsFromFile("res/xml/ammo/grenade.xml");
+    
 
    
     /* === SONS === */

@@ -14,7 +14,7 @@ Ammo::Ammo(Int2 pos, Int2 siz, int m, TypeAmmo type, Float2 movement, Character*
 		size = Int2(150,150);
 
 	if(type==GRENADE)
-		size = Int2(30,30);
+		size = Int2(25,45);
 
 	if(movement.x<0)
 		position.x -= size.x;
@@ -96,6 +96,11 @@ void Ammo::die(Int2 pos)
 {
 	if(type == FLAME)
 		position = pos;
+	if(type == GRENADE)
+	{
+		movement.x = 0;
+		movement.y = 0;
+	}
 	state_a = STOP;
 }
 

@@ -175,8 +175,8 @@ void Player::throwGrenade(list<Ammo*>* air) {
 
         // CREATION DE LA GRENADE
         if(walkway>0)
-            air->push_back(new Ammo(pos,siz,5,Ammo::GRENADE,Int2(1,-1),this));
+            air->push_back(new Ammo(pos,siz,4,Ammo::GRENADE,Int2(1,-1),this));
         else
-            air->push_back(new Ammo(pos,siz,5,Ammo::GRENADE,Int2(-1,-1),this));
+            air->push_back(new Ammo(pos,siz,4,Ammo::GRENADE,Int2(-1,-1),this));
     }
 }
