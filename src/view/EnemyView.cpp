@@ -39,6 +39,17 @@ EnemyView::EnemyView(Int2 pos, TypeEnemy t, bool AI)
 		updateIntRect();
 	} 
 
+	/* FLYING */
+	else if(type == FLYING)
+	{
+		loadRessources(FLYING);
+		initSounds();
+		setTexture(textures[FLYING]);
+		addAnimations(animations_list[FLYING]);
+		changeAnimation(FLYING);
+		updateIntRect();
+	}
+
 	body.setSize(Vector2f(size.x,size.y));
 }
 
@@ -327,6 +338,25 @@ void EnemyView::loadRessources(TypeEnemy t)
 	    buffer = new SoundBuffer;
 		buffer->loadFromFile("res/snd/enemy/bowser/death2.wav"); // DEATH2
 	    sounds_buffers[BOWSER].push_back(buffer);
+	}
+
+	/* FLYING */
+	else if(t == FLYING)
+	{
+		// TEXTURE
+		Texture* tex = new Texture();
+	    tex->loadFromFile("res/tex/enemy/flying.png");
+	    textures[FLYING] = tex;
+
+	    // ANIMATION
+	    animations_list[FLYING] = loadAnimationsFromFile("res/xml/enemy/flying.xml");
+
+	    // SOUNDS
+	    SoundBuffer* buffer;
+
+	    buffer = new SoundBuffer;
+		buffer->loadFromFile("res/snd/enemy/flying/death.wav"); // DEATH
+	    sounds_buffers[FLYING].push_back(buffer);
 	}
 }
 

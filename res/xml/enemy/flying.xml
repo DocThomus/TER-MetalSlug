@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<document>
+
+	<!-- FLY -->
+	<animation speed="50">
+		<sprite x="4" y="28" w="53" h="31"/>
+		<sprite x="60" y="28" w="53" h="31"/>
+		<sprite x="116" y="28" w="53" h="31"/>
+		<sprite x="172" y="28" w="53" h="31"/>
+		<sprite x="228" y="28" w="53" h="31"/>
+		<sprite x="4" y="71" w="53" h="30"/>
+		<sprite x="60" y="71" w="53" h="30"/>
+		<sprite x="116" y="71" w="53" h="30"/>
+		<sprite x="172" y="71" w="53" h="30"/>
+		<sprite x="228" y="71" w="53" h="30"/>
+		<sprite x="4" y="112" w="53" h="30"/>
+		<sprite x="60" y="112" w="53" h="31"/>
+	</animation>
+
+</document>

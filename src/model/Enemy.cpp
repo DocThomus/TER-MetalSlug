@@ -37,6 +37,12 @@ Enemy::Enemy(Int2 pos, TypeEnemy t, bool AI)
 			health = 500;
 			power = 30;
 			break;
+
+		case FLYING :
+			size = Int2(55,35);
+			mass = 0;
+			health = 30;
+			power = 5;
 	}
 }
 
