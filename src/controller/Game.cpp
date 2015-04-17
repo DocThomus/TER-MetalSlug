@@ -347,7 +347,6 @@ void Game::checkCollisions()
     }
 
 
-
     /* ENNEMIS */
     for(list<EnemyView*>::iterator e = enemies.begin(); e != enemies.end(); e++)
     {
@@ -356,60 +355,65 @@ void Game::checkCollisions()
 
         /* VS PLATFORM */
         collision = false;
-        for(list<PlatformView>::iterator pl=pltf->begin(); pl!=pltf->end(); pl++) // On check les collisions avec TOUTES les plateformes (on peut etre en collision avec le sol et un mur...)
+        if((*e)->getType() != Enemy::FLYING) 
         {
-            ObjetPhysique* e_ptr = (ObjetPhysique*)(*e);
-            ObjetPhysique* pl_ptr = (ObjetPhysique*)(&*pl);
-
-            Int2 pl_pos = (*pl).getPosition();
-            Int2 pl_siz = (*pl).getSize();
-
-            if(checkIntersect(e_ptr,pl_ptr))
+            for(list<PlatformView>::iterator pl=pltf->begin(); pl!=pltf->end(); pl++) // On check les collisions avec TOUTES les plateformes (on peut etre en collision avec le sol et un mur...)
             {
-                // detection bords de la plateforme
-                // if((*e)->getWalkway()>0 && e_pos.x+e_siz.x>pl_pos.x+pl_siz.x-20)
-                //     (*e)->walk(-1);
-                // else if((*e)->getWalkway()<0 && e_pos.x<pl_pos.x+20)
-                //     (*e)->walk(1);
+                ObjetPhysique* e_ptr = (ObjetPhysique*)(*e);
+                ObjetPhysique* pl_ptr = (ObjetPhysique*)(&*pl);
 
-                collision = true; 
-                if(checkCollisionTop(e_ptr,pl_ptr))
+                Int2 pl_pos = (*pl).getPosition();
+                Int2 pl_siz = (*pl).getSize();
+
+                if(checkIntersect(e_ptr,pl_ptr))
                 {
-                    (*e)->land((*pl).getPosition().y);
-                    (*e)->setGround(&(*pl));
-                }
-                
-                else if((*e)->getIA())
-                {
-                    if(checkCollisionLeft(e_ptr,pl_ptr))
+                    // detection bords de la plateforme
+                    // if((*e)->getWalkway()>0 && e_pos.x+e_siz.x>pl_pos.x+pl_siz.x-20)
+                    //     (*e)->walk(-1);
+                    // else if((*e)->getWalkway()<0 && e_pos.x<pl_pos.x+20)
+                    //     (*e)->walk(1);
+
+                    collision = true; 
+                    if(checkCollisionTop(e_ptr,pl_ptr))
                     {
-                        (*e)->bumpRight(pl_pos.x-20);
-                        (*e)->walk(-1);
+                        (*e)->land((*pl).getPosition().y);
+                        (*e)->setGround(&(*pl));
                     }
-                    else if (checkCollisionRight(e_ptr,pl_ptr))
+                    
+                    else if((*e)->getIA())
                     {
-                        (*e)->bumpLeft(pl_pos.x+pl_siz.x+20);
-                        (*e)->walk(1); 
-                    }    
+                        if(checkCollisionLeft(e_ptr,pl_ptr))
+                        {
+                            (*e)->bumpRight(pl_pos.x-20);
+                            (*e)->walk(-1);
+                        }
+                        else if (checkCollisionRight(e_ptr,pl_ptr))
+                        {
+                            (*e)->bumpLeft(pl_pos.x+pl_siz.x+20);
+                            (*e)->walk(1); 
+                        } 
+                    }
+
                 }
-
             }
-        }
-        if(!collision) { // Si il n'y a collision avec aucune plateforme, le personnage est en l'air et tombe
-            (*e)->jump(0);
-        }
 
-        /* VS VIEW */
-        if((*e)->getIA() && (*e)->getStateBattle()!=Character::DEAD  && (*e)->getWalkway()<0 && e_pos.x<=view.getCenter().x-view.getSize().x/2)
-        {   
-            (*e)->bumpLeft(view.getCenter().x-view.getSize().x/2);
-            (*e)->walk(1);
-        }
+            if(!collision && (*e)->getType()) { // Si il n'y a collision avec aucune plateforme, le personnage est en l'air et tombe
+                (*e)->jump(0);
+            }
 
-        if((*e)->getIA() && (*e)->getStateBattle()!=Character::DEAD && (*e)->getWalkway()>0 && e_pos.x+e_siz.x>=view.getCenter().x+view.getSize().x/2)
-        {   
-            (*e)->bumpLeft(view.getCenter().x+view.getSize().x/2-e_siz.x);
-            (*e)->walk(-1);
+            /* VS VIEW */
+            if((*e)->getIA() && (*e)->getStateBattle()!=Character::DEAD  && (*e)->getWalkway()<0 && e_pos.x<=view.getCenter().x-view.getSize().x/2)
+            {   
+                (*e)->bumpLeft(view.getCenter().x-view.getSize().x/2);
+                (*e)->walk(1);
+            }
+
+            if((*e)->getIA() && (*e)->getStateBattle()!=Character::DEAD && (*e)->getWalkway()>0 && e_pos.x+e_siz.x>=view.getCenter().x+view.getSize().x/2)
+            {   
+                (*e)->bumpLeft(view.getCenter().x+view.getSize().x/2-e_siz.x);
+                (*e)->walk(-1);
+            }
+
         }
 
         /* VS PLAYER */
@@ -418,39 +422,41 @@ void Game::checkCollisions()
 
         bool check = false;
 
-        // si le joueur est mort 
-        if(player.getStateBattle() != Character::DEAD)
-            check = true;
+        if((*e)->getType() != Enemy::FLYING) {
+            // si le joueur est mort 
+            if(player.getStateBattle() != Character::DEAD)
+                check = true;
 
-        // si l'ennemi n'est pas mort
-        if(check && (*e)->getStateBattle() == Character::DEAD)
-            check = false;
+            // si l'ennemi n'est pas mort
+            if(check && (*e)->getStateBattle() == Character::DEAD)
+                check = false;
 
-        // si l'ennemi est intelligent
-        if(check && !(*e)->getIA())
-            check = false;
+            // si l'ennemi est intelligent
+            if(check && !(*e)->getIA())
+                check = false;
 
-        // si l'ennemi peut tirer
-        if(check && !(*e)->canShoot())
-            check = false;
+            // si l'ennemi peut tirer
+            if(check && !(*e)->canShoot())
+                check = false;
 
-        // si l'ennemi est sur la même "ligne" que le player
-        if( check
-        && ((e_pos.y>=p_pos.y && e_pos.y<=p_pos.y+p_siz.y)
-        || (e_pos.y+e_siz.y>=p_pos.y && e_pos.y+e_siz.y<=p_pos.y+p_siz.y) 
-        || (e_pos.y<=p_pos.y && e_pos.y+e_siz.y>=p_pos.y+p_siz.y)))
-        {
-            // si l'ennemi regarde en direction du player
-            if((e_pos.x<p_pos.x && (*e)->getWalkway()>0)
-            || (e_pos.x>p_pos.x && (*e)->getWalkway()<0))
+            // si l'ennemi est sur la même "ligne" que le player
+            if( check
+            && ((e_pos.y>=p_pos.y && e_pos.y<=p_pos.y+p_siz.y)
+            || (e_pos.y+e_siz.y>=p_pos.y && e_pos.y+e_siz.y<=p_pos.y+p_siz.y) 
+            || (e_pos.y<=p_pos.y && e_pos.y+e_siz.y>=p_pos.y+p_siz.y)))
             {
-               check = true;
+                // si l'ennemi regarde en direction du player
+                if((e_pos.x<p_pos.x && (*e)->getWalkway()>0)
+                || (e_pos.x>p_pos.x && (*e)->getWalkway()<0))
+                {
+                   check = true;
+                }
+                else
+                    check = false;
             }
             else
                 check = false;
-        }
-        else
-            check = false;
+        }        
 
         if((*e)->getType() == Enemy::BOWSER)
         {
@@ -494,10 +500,27 @@ void Game::checkCollisions()
             }
         }
 
-        // si check, l'ennemi tire !!
-        if(check)
-            (*e)->shoot(&ammo,Int2((*e)->getWalkway(),0));
+        else if((*e)->getType() == Enemy::FLYING && (*e)->getIA())
+        {
+            if(e_pos.x + e_siz.x/2 > p_pos.x + p_siz.x/2 + 50) {
+                (*e)->walk(-1);
+            }
+            else if (e_pos.x + e_siz.x/2 < p_pos.x + p_siz.x/2 - 50){
+                (*e)->walk(1);
+            }
+            if ((e_pos.x + e_siz.x/2 < p_pos.x + p_siz.x/2 + 50) && (e_pos.x + e_siz.x/2 > p_pos.x + p_siz.x/2 - 50)) {
+                check = true;
+            } 
+        }
 
+        // si check, l'ennemi tire !!
+        if(check) { 
+            if((*e)->getType() == Enemy::FLYING) {
+                (*e)->shoot(&ammo,Int2(0,1));
+            } else {
+                (*e)->shoot(&ammo,Int2((*e)->getWalkway(),0));
+            }
+        }
     }
 
 

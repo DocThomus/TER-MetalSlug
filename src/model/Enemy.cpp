@@ -40,9 +40,9 @@ Enemy::Enemy(Int2 pos, TypeEnemy t, bool AI)
 
 		case FLYING :
 			size = Int2(55,35);
-			mass = 0;
+			mass = 6;
 			health = 30;
-			power = 5;
+			power = 1;
 	}
 }
 
@@ -103,6 +103,10 @@ void Enemy::shoot(list<Ammo*>* air, Float2 angle)
 		air->push_back(new Ammo(pos,siz,0,Ammo::FLAME,angle,this));
 	}
 
+	else if(type == FLYING) {	
+		air->push_back(new Ammo(pos,siz,0,Ammo::BULLET,angle,this));
+	}
+
 }
 
 
@@ -114,6 +118,11 @@ bool Enemy::canShoot()
 			return true;
 	}
 	else if(type==BOWSER)
+	{
+		if(cpt_shoot >= 1000)
+			return true;
+	}
+	else if(type==FLYING)
 	{
 		if(cpt_shoot >= 1000)
 			return true;

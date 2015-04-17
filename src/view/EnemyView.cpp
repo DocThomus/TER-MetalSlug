@@ -223,7 +223,13 @@ void EnemyView::shoot(list<AmmoView*>* air, Int2 angle)
 			changeAnimation(BOWSER_FIRE,false,BOWSER_STAND);
 		}
 	}
-	
+
+	else if(type == FLYING)
+	{
+		if(canShoot()) {
+			Enemy::shoot(&tmp,angle);
+		}
+	}	
 
 	for(list<Ammo*>::iterator a = tmp.begin(); a != tmp.end(); a++)
     {
@@ -250,6 +256,9 @@ bool EnemyView::canShoot()
 		if(current_anim!=BOWSER_FIRE)
 			return true;
 	}
+	else if(type==FLYING) {
+		return true;
+	}
 
 	return false;
 }
@@ -263,6 +272,7 @@ void EnemyView::die()
 	{
 		case REBEL  : changeAnimation(REBEL_DEATH,false);  break;
 		case BOWSER : changeAnimation(BOWSER_DEATH,false); break;
+		// TODO : Animation du FLYING qui explose.
 	}
     
     srand(time(NULL));
@@ -276,6 +286,10 @@ void EnemyView::die()
 	{
 		sounds[BOWSER_DEATH_SND]->play();
 		sounds[BOWSER_DEATH2_SND]->play();
+    }
+    else if(type == FLYING)
+    {
+    	sounds[FLYING_DEATH_SND]->play();
     }
     
 }
