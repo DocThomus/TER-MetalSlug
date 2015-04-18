@@ -43,7 +43,7 @@ class EnemyView : public Enemy, public MyDrawable
 	     */
 		enum RebelAnimations
 		{
-			REBEL_WATCH, REBEL_DEATH, REBEL_DEATH2, REBEL_DEATH3, REBEL_RUN, REBEL_GRENADE, REBEL_KNIFE
+			REBEL_WATCH, REBEL_DEATH, REBEL_DEATH2, REBEL_DEATH3, REBEL_RUN, REBEL_GRENADE, REBEL_KNIFE, REBEL_SIREN
 		};
 
 		/*!
@@ -79,6 +79,7 @@ class EnemyView : public Enemy, public MyDrawable
 		static vector<SoundBuffer*> sounds_buffers[NB_TYPE_ENEMY]; /*!< \brief Variable de classe contenant les différents buffers de son nécessaires aux ennemis. */
 		static Texture* textures[NB_TYPE_ENEMY]; /*!< \brief Variable de classe contenant les différentes textures nécessaires aux ennemis. */
 		static vector<Animation> animations_list[NB_TYPE_ENEMY]; /*!< \brief Variable de classe contenant les différents animations nécessaires aux ennemies. */
+		static float volume; /*!< \brief Variable de classe contenant le volume des bruitages. */
 
 		vector<Sound*> sounds; /*!< \brief Contient les différents son nécessaires à une instance. */
 
@@ -204,6 +205,35 @@ class EnemyView : public Enemy, public MyDrawable
 	     * Indique si l'ennemi est en état de tirer ou non.
 	     */
 		virtual bool canShoot();
+		
+		/*!
+	     * \brief Mise à jour du volume
+	     *
+	     * Met à jour le volumle des bruitages d'un Eneview.
+	     */
+		void updateVolume();
+		
+		/*!
+	     * \brief Modifier volume
+	     *
+	     * Modifie le volume des bruitages de la classe EnemyView.
+	     * \param volume : Nouveau volume des bruitages  de la classe EnemyView.
+	     */
+		static void setVolume(float volume);
+		
+		/*!
+	     * \brief Reprendre
+	     *
+	     * Relance tous les éléments/sons d'un EnemyView.
+	     */
+		void resume();
+		
+		/*!
+	     * \brief Pause
+	     *
+	     * Met en pause tous les éléments/sons d'un EnemyView.
+	     */
+		void pause();
 };
 
 

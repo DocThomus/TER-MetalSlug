@@ -61,7 +61,7 @@ class ObjetPhysique
 	     *
 	     * Destructeur de la classe ObjetPhysique
 	     */
-		~ObjetPhysique();
+		virtual ~ObjetPhysique();
 
 		/*!
 	     * \brief Animer

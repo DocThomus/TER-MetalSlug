@@ -98,6 +98,8 @@ void Ammo::die(Int2 pos)
 		position = pos;
 	if(type == GRENADE)
 	{
+		position = pos;
+		position.y -= 20;
 		movement.x = 0;
 		movement.y = 0;
 	}

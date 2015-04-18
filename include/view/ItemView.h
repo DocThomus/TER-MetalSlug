@@ -87,6 +87,27 @@ class ItemView : public Item, public MyDrawable
 	     */
 		void trigger(PlayerView* p);
 		
+		/*!
+	     * \brief Modifier volume
+	     *
+	     * Modifie le volume des items.
+	     * \param volume : Nouveau volume des items.
+	     */
+		static void setVolume(float volume);
+		
+		/*!
+	     * \brief Reprendre
+	     *
+	     * Relance tous les éléments/sons de la classe ItemView.
+	     */
+		static void resume();
+		
+		/*!
+	     * \brief Pause
+	     *
+	     * Met en pause tous les éléments/sons de la classe ItemView.
+	     */
+		static void pause();
 };
 
 

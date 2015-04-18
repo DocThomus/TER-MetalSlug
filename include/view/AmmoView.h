@@ -114,6 +114,28 @@ class AmmoView : public Ammo, public MyDrawable
 	     * Effectue la rotation du projectile en fonction de son vecteur de déplacemement.
 	     */
 		void initRotation();
+		
+		/*!
+	     * \brief Modifier volume
+	     *
+	     * Modifie le volume des projectiles.
+	     * \param volume : Nouveau volume des projectiles.
+	     */
+		static void setVolume(float volume);
+		
+		/*!
+	     * \brief Reprendre
+	     *
+	     * Relance tous les éléments/sons de la classe AmmoView.
+	     */
+		static void resume();
+		
+		/*!
+	     * \brief Pause
+	     *
+	     * Met en pause tous les éléments/sons de la classe AmmoView.
+	     */
+		static void pause();
 
 };
 

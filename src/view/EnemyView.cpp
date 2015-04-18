@@ -4,6 +4,7 @@
 vector<SoundBuffer*> EnemyView::sounds_buffers[NB_TYPE_ENEMY];
 Texture* EnemyView::textures[NB_TYPE_ENEMY];
 vector<Animation> EnemyView::animations_list[NB_TYPE_ENEMY];
+float EnemyView::volume;
 
 
 
@@ -65,6 +66,7 @@ void EnemyView::initSounds()
 {
 	for(unsigned int i=0; i<sounds_buffers[type].size(); ++i)
 		sounds.push_back(new Sound(*(sounds_buffers[type])[i]));
+	updateVolume();
 }
 
 
@@ -337,4 +339,33 @@ void EnemyView::deleteRessources()
 
  //    for(int i=0; i<NB_TYPE_ENEMY; ++i)
  //    	animations_list[i].clear();
+}
+
+void EnemyView::updateVolume()
+{
+	for(unsigned int i=0; i<sounds.size(); ++i)
+		sounds[i]->setVolume(EnemyView::volume);
+}
+
+void EnemyView::setVolume(float volume)
+{
+	EnemyView::volume = volume;
+}
+
+void EnemyView::resume()
+{
+	for(unsigned int i=0; i<sounds.size(); ++i)
+	{
+		if(sounds[i]->getStatus() == SoundSource::Paused)
+			sounds[i]->play();
+	}
+}
+
+void EnemyView::pause()
+{
+	for(unsigned int i=0; i<sounds.size(); ++i)
+	{
+		if(sounds[i]->getStatus() == SoundSource::Playing)
+			sounds[i]->pause();
+	}
 }

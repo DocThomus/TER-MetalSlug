@@ -117,7 +117,7 @@ void AmmoView::display(RenderWindow* window)
 	// debug.setOutlineThickness(3);
 	// debug.setOutlineColor(Color::Black);
 	// window->draw(debug);
-
+	
 	if(movement.x > 0)
 		body.setPosition(Vector2f(position.x,position.y+size.y*0.5));
 	else if(movement.x < 0)
@@ -126,10 +126,12 @@ void AmmoView::display(RenderWindow* window)
 		body.setPosition(Vector2f(position.x+size.x*0.5,position.y));
 	else if(movement.y < 0)
 		body.setPosition(Vector2f(position.x+size.x*0.5,position.y+size.y));
-	Vector2f body_siz = body.getSize();
-
-	body.setPosition(Vector2f(position.x+(size.x-body_siz.x)/2,position.y+size.y-body_siz.y));
-
+	
+	if(type==GRENADE)
+	{
+		Vector2f body_siz = body.getSize();
+		body.setPosition(Vector2f(position.x+(size.x-body_siz.x)/2,position.y+size.y-body_siz.y));
+	}
 	window->draw(body);
 }
 
@@ -261,4 +263,33 @@ void AmmoView::deleteRessources()
     for(vector<Sound*>::iterator s = sounds.begin(); s != sounds.end(); s++)
         delete (*s);
     sounds.clear();
+}
+
+void AmmoView::setVolume(float volume)
+{
+	for(unsigned int i=0; i<sounds.size(); ++i)
+	{
+		if(sounds[i] != NULL)
+		{
+			sounds[i]->setVolume(volume);
+		}
+	}
+}
+
+void AmmoView::resume()
+{
+	for(unsigned int i=0; i<sounds.size(); ++i)
+	{
+		if(sounds[i] != NULL && sounds[i]->getStatus() == SoundSource::Paused)
+			sounds[i]->play();
+	}
+}
+
+void AmmoView::pause()
+{
+	for(unsigned int i=0; i<sounds.size(); ++i)
+	{
+		if(sounds[i] != NULL && sounds[i]->getStatus() == SoundSource::Playing)
+			sounds[i]->pause();
+	}
 }

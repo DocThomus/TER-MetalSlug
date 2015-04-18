@@ -106,13 +106,9 @@ void Game::display(RenderWindow* window)
         (*i)->display(window);
 }
 
-
-
-
-void Game::checkKeyboardEvents(RenderWindow* window)
-{ 
-    
-    /* A GENOUX */
+void Game::checkKeyPressed()
+{
+	 /* A GENOUX */
     if(Keyboard::isKeyPressed(Keyboard::S))
         player.kneel(true);
 
@@ -152,148 +148,140 @@ void Game::checkKeyboardEvents(RenderWindow* window)
                 player.knife();
         }
     }
+}
 
 
-    Event event;
-    while (window->pollEvent(event))
+void Game::checkKeyboardEvents(Event event, RenderWindow* window)
+{
+    /* EVENEMENTS CLAVIER TOUCHE APPUYÉE */
+    if (event.type == Event::KeyPressed)
     {
-        /* EVENEMENTS CLAVIER TOUCHE APPUYÉE */
-        if (event.type == Event::KeyPressed)
+    	switch(event.key.code)
         {
-        	switch(event.key.code)
-            {
-                /* QUITTER */
-                case Keyboard::Escape :
-                    window->close();
-                    break;
+            /* PLEIN ECRAN */
+            case Keyboard::F :
+                if(Keyboard::isKeyPressed(Keyboard::LControl))
+                {
+                    config->fullscreen = !config->fullscreen;
+                    applyConfig(window);
+                }
+                break;
 
 
-                /* PLEIN ECRAN */
-                case Keyboard::F :
-                    if(Keyboard::isKeyPressed(Keyboard::LControl))
-                    {
-                        config->fullscreen = !config->fullscreen;
-                        applyConfig(window);
-                    }
-                    break;
+            /* CHANGEMENT D'ARME */
+            case Keyboard::Num1 :
+            case Keyboard::Numpad1 :
+                player.setWeapon(0);
+                break;
+
+            case Keyboard::Num2 :
+            case Keyboard::Numpad2 :
+                player.setWeapon(1);
+                break;
+
+            case Keyboard::Num3 :
+            case Keyboard::Numpad3 :
+                player.setWeapon(2);
+                break;
+
+            case Keyboard::Num4 :
+            case Keyboard::Numpad4 :
+                player.setWeapon(3);
+                break;
 
 
-                /* CHANGEMENT D'ARME */
-                case Keyboard::Num1 :
-                case Keyboard::Numpad1 :
-                    player.setWeapon(0);
-                    break;
+            /* MARCHER */
+            case Keyboard::D :
+                player.walk(1);
+                break;
 
-                case Keyboard::Num2 :
-                case Keyboard::Numpad2 :
-                    player.setWeapon(1);
-                    break;
-
-                case Keyboard::Num3 :
-                case Keyboard::Numpad3 :
-                    player.setWeapon(2);
-                    break;
-
-                case Keyboard::Num4 :
-                case Keyboard::Numpad4 :
-                    player.setWeapon(3);
-                    break;
+            case Keyboard::Q :
+                player.walk(-1);
+                break;
 
 
-                /* MARCHER */
-                case Keyboard::D :
-                    player.walk(1);
-                    break;
+            /* TIRER */
+            case Keyboard::Right :
+                if(!checkKnife())
+                    player.shoot(&ammo, Int2(1,0));
+                else
+                    player.knife();
+                break;
 
-                case Keyboard::Q :
-                    player.walk(-1);
-                    break;
+            case Keyboard::Left :
+                if(!checkKnife())
+                    player.shoot(&ammo, Int2(-1,0));
+                else
+                    player.knife();
+                break;
 
+            case Keyboard::Up :
+                if(!checkKnife())
+                    player.shoot(&ammo, Int2(0,-1));
+                else
+                    player.knife();
+                break;
 
-                /* TIRER */
-                case Keyboard::Right :
-                    if(!checkKnife())
-                        player.shoot(&ammo, Int2(1,0));
-                    else
-                        player.knife();
-                    break;
-
-                case Keyboard::Left :
-                    if(!checkKnife())
-                        player.shoot(&ammo, Int2(-1,0));
-                    else
-                        player.knife();
-                    break;
-
-                case Keyboard::Up :
-                    if(!checkKnife())
-                        player.shoot(&ammo, Int2(0,-1));
-                    else
-                        player.knife();
-                    break;
-
-                case Keyboard::Down :
-                    if(!checkKnife())
-                        player.shoot(&ammo, Int2(0,1));
-                    else
-                        player.knife();
-                    break;
+            case Keyboard::Down :
+                if(!checkKnife())
+                    player.shoot(&ammo, Int2(0,1));
+                else
+                    player.knife();
+                break;
 
 
-                /* RECHARGER */
-                case Keyboard::R :
-                    player.reload(100);
-                    break;
+            /* RECHARGER */
+            case Keyboard::R :
+                player.reload(100);
+                break;
 
 
-                /* SAUTER */
-                case Keyboard::Space :
-                    player.jump(250);
-                    break;
+            /* SAUTER */
+            case Keyboard::Space :
+                player.jump(250);
+                break;
 
 
-                /* TEST */
-                case Keyboard::P :
-                    (*enemies.begin())->shoot(&ammo,Int2(-1,0));
-                    //(*enemies.begin())->walk(-1);
-                    break;
+            /* TEST */
+            case Keyboard::P :
+                (*enemies.begin())->shoot(&ammo,Int2(-1,0));
+                //(*enemies.begin())->walk(-1);
+                break;
 
-                /* GRENADE */
-                case Keyboard::G :
-                    player.throwGrenade(&ammo);
-                    break;
-            }
+            /* GRENADE */
+            case Keyboard::G :
+                player.throwGrenade(&ammo);
+                break;
         }
-
-
-        /* EVENEMENTS CLAVIER TOUCHE RELÂCHÉE */
-        if(event.type == Event::KeyReleased)
-            switch(event.key.code)
-            {
-                case Keyboard::Q :
-                    if(Keyboard::isKeyPressed(Keyboard::D))
-                        player.walk(1);
-                    else
-                        player.walk(0);
-                    break;
-
-                case Keyboard::D :
-                    if(Keyboard::isKeyPressed(Keyboard::Q))
-                        player.walk(-1);
-                    else
-                        player.walk(0);
-                    break;
-
-                case Keyboard::S :
-                    player.kneel(false);
-                    if(Keyboard::isKeyPressed(Keyboard::Q) && !Keyboard::isKeyPressed(Keyboard::D))
-                        player.walk(-1);
-                    else if(Keyboard::isKeyPressed(Keyboard::D) && !Keyboard::isKeyPressed(Keyboard::Q))
-                        player.walk(1);
-                    break;
-            }
     }
 
+
+    /* EVENEMENTS CLAVIER TOUCHE RELÂCHÉE */
+    if(event.type == Event::KeyReleased)
+        switch(event.key.code)
+        {
+            case Keyboard::Q :
+                if(Keyboard::isKeyPressed(Keyboard::D))
+                    player.walk(1);
+                else
+                    player.walk(0);
+                break;
+
+            case Keyboard::D :
+                if(Keyboard::isKeyPressed(Keyboard::Q))
+                    player.walk(-1);
+                else
+                    player.walk(0);
+                break;
+
+            case Keyboard::S :
+                player.kneel(false);
+                if(Keyboard::isKeyPressed(Keyboard::Q) && !Keyboard::isKeyPressed(Keyboard::D))
+                    player.walk(-1);
+                else if(Keyboard::isKeyPressed(Keyboard::D) && !Keyboard::isKeyPressed(Keyboard::Q))
+                    player.walk(1);
+                break;
+        }
 }
 
 
@@ -776,6 +764,7 @@ void Game::deleteDeadObjects()
 
 void Game::applyConfig(RenderWindow* window)
 {
+	/*
     VideoMode mode;
     Uint32 style;
 
@@ -790,14 +779,17 @@ void Game::applyConfig(RenderWindow* window)
         style = Style::Titlebar;
     }
    
-
+	
     window->create(mode,"Metal Slug !!!",style);
     window->setFramerateLimit(50);
     window->setKeyRepeatEnabled(false);
     window->setVerticalSyncEnabled(config->vsync);
     window->setMouseCursorVisible(false);
-
-
+	*/
+	
+	VideoMode mode;
+	mode = VideoMode::getDesktopMode();
+	
     /* CONFIG */
     config->resolution = Int2(mode.width,mode.height);
 
@@ -822,13 +814,10 @@ void Game::init()
 
 void Game::loadLevel()
 {
-
     level.loadFromFile("res/xml/level/level1.xml",config);
-
 
     /* RESSOURCES PLAYER */
     PlayerView::loadRessources();
-
 
     /* RESSOURCES ENNEMIS */
     EventEnemy* tmp = new EventEnemy();
@@ -853,7 +842,9 @@ void Game::loadLevel()
     /* RESSOURCES ITEMS */
     ItemView::loadRessources();
     //items.push_back(new ItemView(Int2(1000,500),Item::WEAPON,Weapon::SMG));
-
+    
+    updateVolume();
+	level.playMusic(1);
 }
 
 
@@ -890,4 +881,35 @@ vector<Animation> Game::loadSpriteFromFile(string filename)
     }
 
     return ret;
+}
+
+void Game::updateVolume()
+{
+	level.setVolume(config->musicsVolume);
+    PlayerView::setVolume(config->soundEffectsVolume);
+	ItemView::setVolume(config->soundEffectsVolume);
+	AmmoView::setVolume(config->soundEffectsVolume);
+	EnemyView::setVolume(config->soundEffectsVolume);
+	for(list<EnemyView*>::iterator e = enemies.begin(); e != enemies.end(); e++)
+		(*e)->updateVolume();
+}
+
+void Game::resume()
+{
+	level.resume();
+    PlayerView::resume();
+	ItemView::resume();
+	AmmoView::resume();
+	for(list<EnemyView*>::iterator e = enemies.begin(); e != enemies.end(); e++)
+		(*e)->resume();
+}
+
+void Game::pause()
+{
+	level.pause();
+    PlayerView::pause();
+	ItemView::pause();
+	AmmoView::pause();
+	for(list<EnemyView*>::iterator e = enemies.begin(); e != enemies.end(); e++)
+		(*e)->pause();
 }

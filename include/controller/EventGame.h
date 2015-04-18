@@ -50,7 +50,7 @@ class EventGame
 	     *
 	     * Destructeur de la classe EventGame
 	     */
-		~EventGame();
+		virtual ~EventGame();
 
 		/*!
 		 * \brief Retourne la position de l'événement.

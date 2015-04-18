@@ -630,3 +630,27 @@ void PlayerView::deleteRessources()
     delete textures[0];
     delete textures[1];
 }
+
+void PlayerView::setVolume(float volume)
+{
+	for(unsigned int i=0; i<sounds.size(); ++i)
+		sounds[i]->setVolume(volume);
+}
+
+void PlayerView::resume()
+{
+	for(unsigned int i=0; i<sounds.size(); ++i)
+	{
+		if(sounds[i]->getStatus() == SoundSource::Paused)
+			sounds[i]->play();
+	}
+}
+
+void PlayerView::pause()
+{
+	for(unsigned int i=0; i<sounds.size(); ++i)
+	{
+		if(sounds[i]->getStatus() == SoundSource::Playing)
+			sounds[i]->pause();
+	}
+}

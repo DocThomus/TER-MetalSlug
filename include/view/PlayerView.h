@@ -249,6 +249,28 @@ class PlayerView : public Player, public MyDrawable
 	     * \brief Renvoie un pointeur vers l'animation accroupie de tir vers la haut en fonction de l'arme tenue.
 	     */
 		PlayerView::PlayerAnimationsBody getAnimKneeShootUp();
+		
+		/*!
+	     * \brief Modifier volume
+	     *
+	     * Modifie le volume des bruitages du personnage.
+	     * \param volume : Nouveau volume des bruitages du personnage.
+	     */
+		static void setVolume(float volume);
+		
+		/*!
+	     * \brief Reprendre
+	     *
+	     * Relance tous les éléments/sons de la classe PlayerView.
+	     */
+		static void resume();
+		
+		/*!
+	     * \brief Pause
+	     *
+	     * Met en pause tous les éléments/sons de la classe PlayerView.
+	     */
+		static void pause();
 };
 
 

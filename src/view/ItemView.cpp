@@ -97,3 +97,27 @@ void ItemView::loadRessources()
     s->setBuffer(*buffer);
     sounds.push_back(s);
 }
+
+void ItemView::setVolume(float volume)
+{
+	for(unsigned int i=0; i<sounds.size(); ++i)
+		sounds[i]->setVolume(volume);
+}
+
+void ItemView::resume()
+{
+	for(unsigned int i=0; i<sounds.size(); ++i)
+	{
+		if(sounds[i]->getStatus() == SoundSource::Paused)
+			sounds[i]->play();
+	}
+}
+
+void ItemView::pause()
+{
+	for(unsigned int i=0; i<sounds.size(); ++i)
+	{
+		if(sounds[i]->getStatus() == SoundSource::Playing)
+			sounds[i]->pause();
+	}
+}

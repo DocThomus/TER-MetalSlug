@@ -115,14 +115,22 @@ class Game
 	     * \param window : Fenêtre de rendu dans laquelle afficher les objets
 	     */
 		void display(RenderWindow* window);
-
+		
+		/*!
+	     * \brief Gestion des actions non-évènementielles
+	     *
+	     * Gère les actions continus ne nécessitant pas d'évènement clavier et déjà en cours
+	     */
+		void checkKeyPressed();
+		
 		/*!
 	     * \brief Gestion des événements clavier
 	     *
 	     * Gère les événements clavier.
+	     * \param event : Évènement de la fenêtre à vérifier
 	     * \param window : Fenêtre de rendu pour laquelle on doit vérifier les événements
 	     */
-		void checkKeyboardEvents(RenderWindow* window);
+		void checkKeyboardEvents(Event event, RenderWindow* window);
 
 		/*!
 	     * \brief Gestion des collisions
@@ -233,6 +241,27 @@ class Game
 	     * Charge une animation à partir d'un fichier XML (cette fonction doit être déplacée dans "tools").
 	     */
 		vector<Animation> loadSpriteFromFile(string filename);
+		
+		/*!
+	     * \brief Mise à jour du volume
+	     *
+	     * Met à jour le volume des musiques et des bruitages du Game.
+	     */
+		void updateVolume();
+		
+		/*!
+	     * \brief Reprendre
+	     *
+	     * Relance tous les éléments de Game mis en pause (bruitages, musics, autres ?...).
+	     */
+		void resume();
+		
+		/*!
+	     * \brief Pause
+	     *
+	     * Met en pause tous les éléments de Game(bruitages, musics, autres ?...).
+	     */
+		void pause();
 
 };
 

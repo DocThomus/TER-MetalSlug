@@ -32,6 +32,9 @@ class Config
 		bool fullscreen; /*!< \brief Vrai si le jeu est en plein écran */
 		Int2 resolution; /*!< \brief Résolution de l'écran */
 		bool vsync; /*!< \brief Vrai si la synchronisation verticale est activée. */
+		
+		float musicsVolume; /*!< \brief Volume des musiques. */
+		float soundEffectsVolume; /*!< \brief Volume des bruitages */
 
 	
 	public :

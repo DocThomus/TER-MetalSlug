@@ -104,6 +104,28 @@ class Level
 	     * \param id : Indice de la musique à jouer dans le vecteur musics.
 	     */
 		void playMusic(int id);
+		
+		/*!
+	     * \brief Modifier volume
+	     *
+	     * Modifie le volume des musiques du level
+	     * \param volume : Nouveau volume des musiques du level.
+	     */
+		void setVolume(float volume);
+		
+		/*!
+	     * \brief Reprendre
+	     *
+	     * Relance la musique du Level.
+	     */
+		void resume();
+		
+		/*!
+	     * \brief Pause
+	     *
+	     * Met en pause la musique du Level.
+	     */
+		void pause();
 
 };
 

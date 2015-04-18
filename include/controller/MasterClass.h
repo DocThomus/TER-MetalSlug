@@ -18,6 +18,7 @@
 
 #include <controller/Game.h>
 #include <controller/Config.h>
+#include <controller/Menu.h>
 
 using namespace std;
 using namespace sf;
@@ -35,8 +36,20 @@ class MasterClass
 {
 	
 	private :
-
-		Game game; /*!< \brief Objet de gestion du jeu. */
+		
+		/*!
+	     * \enum ScreenPositions
+	     * \brief Les cinq positions possibles
+	     */
+		enum MasterClassState
+		{
+			MAINMENU, NEWGAME, GAME, SETTINGS, HIGHSCORES, EXIT
+		};
+		
+		MasterClassState state; /*!< \brief Etat du programme. */
+		MasterClassState previousState; /*!< \brief Etat du programme. */
+		
+		Game* game; /*!< \brief Objet de gestion du jeu. */
 		Config config; /*!< \brief Stockage de la configuration. */
  
 		RenderWindow* window; /*!< \brief Fenêtre de rendu. */
@@ -65,6 +78,27 @@ class MasterClass
 	     */
 		void initGame();
 
+		/*!
+	     * \brief Lance le programme
+	     *
+	     * Méthode principale qui selon l'état de MasterClass lance le menu principal, le jeu, ...
+	     */
+		void playApp();
+		
+		/*!
+	     * \brief Lance le menu principal
+	     *
+	     * Lance le menu principal qui va modifier le state de MasterClass selon le choix
+	     */
+		void playMainMenu();
+		
+		/*!
+	     * \brief Lance le menu des réglages
+	     *
+	     * Lance le menu des réglages du sons uniquement pour le moment
+	     */
+		void playSettings();
+		
 		/*!
 	     * \brief Jouer !
 	     *
