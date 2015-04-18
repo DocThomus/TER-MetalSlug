@@ -9,6 +9,7 @@ MasterClass::MasterClass()
     window->setKeyRepeatEnabled(false);
     window->setVerticalSyncEnabled(true);
     window->setMouseCursorVisible(false);
+    window->setSize(Vector2u(800,600));
 }
 
 
