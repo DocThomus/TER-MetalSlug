@@ -118,7 +118,7 @@ void Game::checkKeyboardEvents(RenderWindow* window)
 
     /* ARMES AUTOMATIQUES */
     Weapon::TypeWeapon playerWeapon = player.getTypeWeapon();
-    if(playerWeapon == Weapon::SMG || playerWeapon == Weapon::FLAMETHROWER)
+    if(playerWeapon == Weapon::SMG /*|| playerWeapon == Weapon::FLAMETHROWER*/)
     {
         bool have_shoot = false;
         Int2 tmp_angle;

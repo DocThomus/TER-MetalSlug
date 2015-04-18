@@ -110,13 +110,13 @@ void AmmoView::display(RenderWindow* window)
 		return;
 
 	/* DEBUG */
-	// body.setOutlineThickness(3);
-	// body.setOutlineColor(Color::Black);
-	// RectangleShape debug(Vector2f(size.x,size.y));
-	// debug.setPosition(Vector2f(position.x,position.y));
-	// debug.setOutlineThickness(3);
-	// debug.setOutlineColor(Color::Black);
-	// window->draw(debug);
+	body.setOutlineThickness(3);
+	body.setOutlineColor(Color::Black);
+	RectangleShape debug(Vector2f(size.x,size.y));
+	debug.setPosition(Vector2f(position.x,position.y));
+	debug.setOutlineThickness(3);
+	debug.setOutlineColor(Color::Black);
+	window->draw(debug);
 
 	if(movement.x > 0)
 		body.setPosition(Vector2f(position.x,position.y+size.y*0.5));
@@ -126,9 +126,9 @@ void AmmoView::display(RenderWindow* window)
 		body.setPosition(Vector2f(position.x+size.x*0.5,position.y));
 	else if(movement.y < 0)
 		body.setPosition(Vector2f(position.x+size.x*0.5,position.y+size.y));
-	Vector2f body_siz = body.getSize();
+	// Vector2f body_siz = body.getSize();
 
-	body.setPosition(Vector2f(position.x+(size.x-body_siz.x)/2,position.y+size.y-body_siz.y));
+	// body.setPosition(Vector2f(position.x+(size.x-body_siz.x)/2,position.y+size.y-body_siz.y));
 
 	window->draw(body);
 }
