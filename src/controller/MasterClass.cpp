@@ -102,7 +102,7 @@ void MasterClass::playMainMenu()
     
     // Chargement et lecture de la musique du menu principal
     Music music;
-    music.openFromFile("res/snd/level/Main_Theme_From_Metal_Slug.ogg");
+    music.openFromFile("res/snd/level/Main_Theme_From_Metal_Slug.wav");
     music.setVolume(config.musicsVolume);
     music.setLoop(true);
     music.play();
@@ -167,10 +167,11 @@ void MasterClass::playSettings()
 	Vector2u window_size = window->getSize();
 	Image img = window->capture();
 	Texture texture;
-	texture.loadFromImage(img);
+	//texture.loadFromImage(img);
+	texture.loadFromFile("res/tex/decor/settings_menu.png");
 	Vector2u texture_size = texture.getSize();
 	Sprite sprite(texture);
-	sprite.setColor(sf::Color(255, 255, 255, 128));
+	//sprite.setColor(sf::Color(255, 255, 255, 128));
 	sprite.scale((float)window_size.x/texture_size.x, (float)window_size.y/texture_size.y);
 	View view = window->getView();
 	sprite.setPosition(view.getCenter().x - (float)window_size.x/2, 0);
@@ -194,7 +195,7 @@ void MasterClass::playSettings()
 	s.setBuffer(buffer);
 	
 	Music music;
-    music.openFromFile("res/snd/level/The_Military_System.ogg");
+    music.openFromFile("res/snd/level/The_Military_System.wav");
     music.setVolume(config.musicsVolume);
     music.setLoop(true);
     music.play();
