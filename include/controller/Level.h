@@ -69,7 +69,7 @@ class Level
 	     * Affichage des objets du niveau
 	     * \param window : Fenêtre de rendu dans laquelle afficher les objets
 	     */
-		void display(RenderWindow* window);
+		void display(RenderWindow* window, Color color = Color(0,0,0,255));
 
 		/*!
 	     * \brief Chargement

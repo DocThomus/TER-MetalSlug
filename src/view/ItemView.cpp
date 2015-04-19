@@ -98,6 +98,17 @@ void ItemView::loadRessources()
     sounds.push_back(s);
 }
 
+void ItemView::deleteRessources()
+{	
+	for(vector<Texture*>::iterator t = textures.begin(); t != textures.end(); t++)
+        delete (*t);
+    textures.clear();
+
+    for(vector<Sound*>::iterator s = sounds.begin(); s != sounds.end(); s++)
+        delete (*s);
+    sounds.clear();
+}
+
 void ItemView::setVolume(float volume)
 {
 	for(unsigned int i=0; i<sounds.size(); ++i)

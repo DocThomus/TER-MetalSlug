@@ -262,6 +262,8 @@ class Game
 	     * Met en pause tous les éléments de Game(bruitages, musics, autres ?...).
 	     */
 		void pause();
+		
+		bool isGameOver();
 
 };
 

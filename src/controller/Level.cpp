@@ -12,6 +12,10 @@ Level::Level()
 
 Level::~Level()
 {
+	for(list<EventGame*>::iterator e = events.begin(); e != events.end(); e++)
+        delete (*e);
+    events.clear();
+
 	for(unsigned int i = 0; i < musics.size(); i++)
 		delete(musics[i]);
 		
@@ -21,8 +25,9 @@ Level::~Level()
 
 
 
-void Level::display(RenderWindow* window)
+void Level::display(RenderWindow* window, Color color)
 {
+	
 	environment.display(window);
 }
 

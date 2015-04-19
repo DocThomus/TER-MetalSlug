@@ -9,9 +9,11 @@ Game::Game()
 
 Game::~Game()
 {
-    AmmoView::deleteRessources();
+	AmmoView::deleteRessources();
     EnemyView::deleteRessources();
-
+    ItemView::deleteRessources();
+    PlayerView::deleteRessources();
+    
     for(list<AmmoView*>::iterator a = ammo.begin(); a != ammo.end(); a++)
         delete (*a);
     ammo.clear();
@@ -19,6 +21,9 @@ Game::~Game()
     for(list<EnemyView*>::iterator e = enemies.begin(); e != enemies.end(); e++)
         delete (*e);
     enemies.clear();
+    
+    
+    
 }
 
 
@@ -912,4 +917,9 @@ void Game::pause()
 	AmmoView::pause();
 	for(list<EnemyView*>::iterator e = enemies.begin(); e != enemies.end(); e++)
 		(*e)->pause();
+}
+
+bool Game::isGameOver()
+{
+	return player.getStateBattle() == Character::DEAD;
 }

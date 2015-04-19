@@ -43,7 +43,7 @@ class MasterClass
 	     */
 		enum MasterClassState
 		{
-			MAINMENU, NEWGAME, GAME, SETTINGS, HIGHSCORES, EXIT
+			MAINMENU, NEWGAME, GAME, GAMEOVER, SETTINGS, HIGHSCORES, EXIT
 		};
 		
 		MasterClassState state; /*!< \brief Etat du programme. */
@@ -106,7 +106,12 @@ class MasterClass
 	     */
 		void playGame();
 
-
+		/*!
+	     * \brief Game over
+	     *
+	     * Lance le game over
+	     */
+		void playGameOver();
 };
 
 /** @}*/

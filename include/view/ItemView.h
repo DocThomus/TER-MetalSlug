@@ -71,6 +71,13 @@ class ItemView : public Item, public MyDrawable
 	     * ATTENTION : Cette méthode doit impérativement être appelée avant d'afficher des items !
 	     */
 		static void loadRessources();
+		
+		/*!
+	     * \brief Deletion des ressources 
+	     *
+	     * Methode statique permettant de libérer la mémoire allouée aux ressources de la classe.
+	     */
+		static void deleteRessources();
 
 		/*!
 	     * \brief Affichage

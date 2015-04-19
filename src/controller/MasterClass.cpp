@@ -48,6 +48,10 @@ void MasterClass::playApp()
         		playGame();
         		break;
         		
+        	case GAMEOVER :
+        		playGameOver();
+        		break;
+        		
         	case SETTINGS :
         		playSettings();
         		break;
@@ -171,6 +175,7 @@ void MasterClass::playSettings()
 	texture.loadFromFile("res/tex/decor/settings_menu.png");
 	Vector2u texture_size = texture.getSize();
 	Sprite sprite(texture);
+	// 0 -> pas transparent et 255 -> transparent
 	//sprite.setColor(sf::Color(255, 255, 255, 128));
 	sprite.scale((float)window_size.x/texture_size.x, (float)window_size.y/texture_size.y);
 	View view = window->getView();
@@ -296,11 +301,6 @@ void MasterClass::playSettings()
 	}
 }
 
-
-// Modifier le volume des musiques et des bruitages du game
-// 		-> Créer méthode setVolume(float, float)
-//		-> Créer méthode pause() : pour mettre la musique du game/level en pause (peut etre plus...)
-//		-> Créer méthode play() : pour (re)lancer musique (peut etre plus...)
 void MasterClass::playGame()
 {
     Clock clock;
@@ -308,7 +308,68 @@ void MasterClass::playGame()
     game->resume();
 	while (window->isOpen() && state == GAME)
     {
-    	game->checkKeyPressed();
+    	if(!game->isGameOver())
+    	{
+			game->checkKeyPressed();
+			Event event;
+			while(window->pollEvent(event))
+			{
+				if(event.type == Event::KeyPressed && event.key.code == Keyboard::Escape)
+				{
+					game->pause();
+					previousState = state;
+					state = SETTINGS;
+				}
+				else
+					game->checkKeyboardEvents(event, window);
+			}
+		    game->update(clock.restart());
+		    game->checkCollisions();
+
+		    window->clear();
+		    game->display(window);
+
+		    window->display();
+		}
+		else
+		{
+			game->pause();
+			previousState = state;
+			state = GAMEOVER;
+		}
+    }
+}
+
+void MasterClass::playGameOver()
+{
+	
+	View view = window->getView();
+	Vector2u window_size = window->getSize();
+	Color darkColor(0,0,0,0);
+	Color redColor(6,0,0,6);
+	RectangleShape darkenedScreen(Vector2f(window_size.x, window_size.y));
+	darkenedScreen.setPosition(view.getCenter().x - (float)window_size.x/2, 0);
+	darkenedScreen.setFillColor(darkColor);
+	
+	RectangleShape redScreen(Vector2f(window_size.x, window_size.y));
+	redScreen.setPosition(view.getCenter().x - (float)window_size.x/2, 0);
+	redScreen.setFillColor(redColor);
+
+    Clock clock;
+    Time time;
+    int t = 0, cpt = 0, dt = 0;
+    
+    Texture gameOverTex;
+	gameOverTex.loadFromFile("res/tex/decor/game_over.png");
+	Sprite gameOverSprite(gameOverTex);
+	Vector2u texture_size = gameOverTex.getSize();
+	gameOverSprite.scale((float)window_size.x/texture_size.x, (float)window_size.y/texture_size.y);
+	gameOverSprite.setPosition(view.getCenter().x - (float)window_size.x/2, 0);
+    
+    game->updateVolume();
+    game->resume();
+	while (window->isOpen() && state == GAMEOVER)
+    {
     	Event event;
     	while(window->pollEvent(event))
     	{
@@ -316,16 +377,56 @@ void MasterClass::playGame()
     		{
     			game->pause();
     			previousState = state;
-				state = SETTINGS;
+				state = MAINMENU;
 			}
-    		else
-    			game->checkKeyboardEvents(event, window);
     	}
-        game->update(clock.restart());
+    	time = clock.restart();
+    	dt = time.asMilliseconds();
+    	t += dt;
+    	cpt += dt;
+        game->update(time);
         game->checkCollisions();
-
+        
+        if(t < 2550 && cpt >= 50)
+        {
+        	cpt = 0;
+        	if(redColor.r < 250)
+        	{
+        		redColor.r += 6;
+        		redColor.a += 6;
+        	}
+        	else
+        	{
+        		redColor.r = 255;
+        		redColor.a = 255;
+        	}
+        	
+        	if(darkColor.a < 250)
+        		darkColor.a += 6;
+        	else
+        		darkColor.a = 255;
+        }
+		
+		if(t > 2550)
+			redColor.a = 0;
+		
+		if(t > 2550 && cpt >= 50)
+        {
+        	cpt = 0;
+        	if(darkColor.a > 5)
+        		darkColor.a -= 6;
+        	else
+        		darkColor.a = 0;
+        }
+        
+        darkenedScreen.setFillColor(darkColor);
+        redScreen.setFillColor(redColor);
         window->clear();
         game->display(window);
+        if(t > 2550)
+        	window->draw(gameOverSprite);
+        window->draw(redScreen);
+        window->draw(darkenedScreen);
 
         window->display();
     }

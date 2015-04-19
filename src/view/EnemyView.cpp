@@ -54,6 +54,8 @@ EnemyView::EnemyView()
 
 EnemyView::~EnemyView()
 {
+	for(unsigned int i=0; i != sounds.size(); i++)
+        delete sounds[i];
 }
 
 
@@ -335,8 +337,15 @@ void EnemyView::loadRessources(TypeEnemy t)
 
 void EnemyView::deleteRessources()
 {
-	// sounds_buffers.clear();
-
+	/*
+	for(unsigned int i=0; i<NB_TYPE_ENEMY; i++)
+	{
+		for(unsigned int j=0; j<sounds_buffers[i].size(); j++)
+		{
+			delete sounds_buffers[i][j];
+		}
+	}
+	*/
  //    for(int i=0; i<NB_TYPE_ENEMY; ++i)
  //    	animations_list[i].clear();
 }

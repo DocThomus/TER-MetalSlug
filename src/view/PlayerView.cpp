@@ -627,8 +627,8 @@ void PlayerView::deleteRessources()
         delete (*s);
     sounds.clear();
 
-    delete textures[0];
-    delete textures[1];
+    //delete textures[0];
+    //delete textures[1];
 }
 
 void PlayerView::setVolume(float volume)
