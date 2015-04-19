@@ -79,7 +79,7 @@ class EnemyView : public Enemy, public MyDrawable
 	     */
 		enum FlyingAnimations
 		{
-			FLYING_FLY
+			FLYING_FLY, FLYING_DEATH
 		};
 
 		/*!

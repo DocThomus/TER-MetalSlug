@@ -46,7 +46,7 @@ EnemyView::EnemyView(Int2 pos, TypeEnemy t, bool AI)
 		initSounds();
 		setTexture(textures[FLYING]);
 		addAnimations(animations_list[FLYING]);
-		changeAnimation(FLYING);
+		changeAnimation(FLYING_FLY);
 		updateIntRect();
 	}
 
@@ -272,7 +272,7 @@ void EnemyView::die()
 	{
 		case REBEL  : changeAnimation(REBEL_DEATH,false);  break;
 		case BOWSER : changeAnimation(BOWSER_DEATH,false); break;
-		// TODO : Animation du FLYING qui explose.
+		case FLYING : changeAnimation(FLYING_DEATH,false); break;
 	}
     
     srand(time(NULL));

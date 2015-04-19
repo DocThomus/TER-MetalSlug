@@ -17,4 +17,22 @@
 		<sprite x="60" y="112" w="53" h="31"/>
 	</animation>
 
+	<animation speed="50">
+		<sprite x="325" y="30" w="77" h="78" />
+		<sprite x="445" y="21" w="97" h="109" />
+		<sprite x="567" y="12" w="110" h="123" />
+		<sprite x="695" y="15" w="115" h="121" />
+		<sprite x="315" y="146" w="108" h="115" />
+		<sprite x="445" y="145" w="104" h="116" />
+		<sprite x="574" y="149" w="96" h="107" />
+		<sprite x="702" y="153" w="95" h="93" />
+		<sprite x="319" y="284" w="90" h="90" />
+		<sprite x="469" y="305" w="49" h="55" />
+		<sprite x="596" y="305" w="50" h="53" />
+		<sprite x="726" y="307" w="45" h="51" />
+		<sprite x="342" y="435" w="45" h="51" />
+		<sprite x="469" y="436" w="44" h="51" />
+		<sprite x="1" y="1" w="1" h="1" />
+	</animation>
+
 </document>
