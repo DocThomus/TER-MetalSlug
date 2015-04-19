@@ -375,7 +375,6 @@ void MasterClass::playGameOver()
     	{
     		if(event.type == Event::KeyPressed && event.key.code == Keyboard::Escape)
     		{
-    			game->pause();
     			previousState = state;
 				state = MAINMENU;
 			}

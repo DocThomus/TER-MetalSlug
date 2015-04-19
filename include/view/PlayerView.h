@@ -73,7 +73,7 @@ class PlayerView : public Player, public MyDrawable
 	private :
 
 		static vector<Sound*> sounds; /*!< \brief Variable de classe contenant les différents son nécessaires au player. */
-		static Texture* textures[2]; /*!< \brief Variable de classe contenant les différentes textures nécessaires au player. */
+		static vector<Texture*> textures; /*!< \brief Variable de classe contenant les différentes textures nécessaires au player. */
 		static vector<Animation> animations_list[2]; /*!< \brief Variable de classe contenant les différentes animations nécessaires au player. */
 
 

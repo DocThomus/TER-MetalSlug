@@ -56,12 +56,19 @@ void Level::addPlatform(Int2 pos, Int2 siz, int wl, Texture* tex)
 
 void Level::playMusic(int id)
 {
-	if(musics.size() > 0)
+	if(musics.size() > 0 && int(musics.size()) >= id)
 	{
+		int playingMusic = -1;
 		for(unsigned int i=0; i<musics.size(); ++i)
-			musics[i]->stop();
-
-		if(int(musics.size()) >= id)
+		{
+			if(musics[i]->getStatus() == SoundSource::Playing)
+			{
+				playingMusic = i;
+				if(int(i) != id)
+					musics[i]->stop();
+			}
+		}
+		if(playingMusic != id)
 			musics[id]->play();
 	}
 }

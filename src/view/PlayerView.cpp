@@ -4,7 +4,7 @@
 
 vector<Sound*> PlayerView::sounds;
 
-Texture* PlayerView::textures[2];
+vector<Texture*> PlayerView::textures;
 
 vector<Animation> PlayerView::animations_list[2];
 
@@ -14,7 +14,8 @@ vector<Animation> PlayerView::animations_list[2];
 PlayerView::PlayerView(Int2 pos, Int2 siz, int m, int max_h)
 :Player(pos,siz,m,max_h)
 {
-	loadRessources();
+	if(textures.size() <= 0)
+		loadRessources();
 
 	/* BODY */
 	setTexture(textures[0]);
@@ -38,7 +39,7 @@ PlayerView::PlayerView(Int2 pos, Int2 siz, int m, int max_h)
 PlayerView::PlayerView()
 :Player()
 {
-	if(textures[0] == NULL)
+	if(textures.size() <= 0)
 		loadRessources();
 
 	/* BODY */
@@ -591,17 +592,17 @@ PlayerView::PlayerAnimationsBody PlayerView::getAnimKneeShootUp()
 
 void PlayerView::loadRessources()
 {
-	if(textures[0] != NULL)
+	if(textures.size() > 0)
 		return;
-
+	
 	// TEXTURES 
 	Texture* tex = new Texture();
     tex->loadFromFile("res/tex/player/body.png");
-    textures[0] = tex;
+    textures.push_back(tex);
 
     tex = new Texture();
     tex->loadFromFile("res/tex/player/legs.png");
-    textures[1] = tex;
+    textures.push_back(tex);
 
     // ANIMATIONS
     animations_list[0] = loadAnimationsFromFile("res/xml/player/body.xml");
@@ -627,8 +628,9 @@ void PlayerView::deleteRessources()
         delete (*s);
     sounds.clear();
 
-    //delete textures[0];
-    //delete textures[1];
+    for(vector<Texture*>::iterator t = textures.begin(); t != textures.end(); t++)
+        delete (*t);
+    textures.clear();
 }
 
 void PlayerView::setVolume(float volume)
