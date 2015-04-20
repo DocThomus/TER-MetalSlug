@@ -13,7 +13,7 @@
 	</animation>
 	
 	<!-- DEAD -->
-	<animation>
+	<animation speed="30">
 		<sprite x="25" y="131" w="25" h="6"/>
 		<sprite x="81" y="128" w="31" h="9"/>
 		<sprite x="153" y="94" w="39" h="45"/>
@@ -27,12 +27,12 @@
 		<sprite x="527" y="37" w="49" h="101"/>
 		<sprite x="580" y="40" w="48" h="102"/>
 		<sprite x="630" y="39" w="48" h="100"/>
-		<sprite x="680" y="39" w="49" h="93"/>
-		<sprite x="731" y="38" w="49" h="87"/>
-		<sprite x="782" y="37" w="49" h="82"/>
-		<sprite x="833" y="37" w="49" h="79"/>
-		<sprite x="884" y="37" w="49" h="72"/>
-		<sprite x="935" y="36" w="49" h="66"/>
+		<sprite x="680" y="39" w="49" h="100"/>
+		<sprite x="731" y="38" w="49" h="100"/>
+		<sprite x="782" y="37" w="49" h="100"/>
+		<sprite x="833" y="37" w="49" h="100"/>
+		<sprite x="884" y="37" w="49" h="100"/>
+		<sprite x="935" y="36" w="49" h="100"/>
 	</animation>
 </document>
 

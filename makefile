@@ -49,8 +49,9 @@ init :
 	mkdir -p obj obj/model obj/controller obj/view obj/tools
 
 clean :
-	@echo "Suppression des .o"
+	@echo "Suppression des .o et fichiers temporaires"
 	@find . -name '*.o' -exec rm  {} \;
+	@find . -name '*~' -exec rm  {} \;
 
 install : 
 	sudo apt-get install g++ build-essential udev libudev-dev libpthread-stubs0-dev libgl1-mesa-dev libx11-dev libxrandr-dev libfreetype6-dev libglew-dev libjpeg-dev libsndfile1-dev libopenal-dev

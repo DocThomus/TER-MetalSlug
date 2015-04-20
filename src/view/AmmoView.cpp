@@ -178,6 +178,7 @@ void AmmoView::die(Int2 pos)
 	{
 		initRotation();
 		changeAnimation(1,false);
+		sounds[GRENADE]->play();
 	}
 }
 
@@ -252,6 +253,17 @@ void AmmoView::loadRessources()
     s = new Sound();
     s->setBuffer(*buffer);
     sounds.push_back(s);
+
+    /* ROCKET */
+    sounds.push_back(NULL);
+
+    /* GRENADE */
+    buffer = new SoundBuffer();
+	buffer->loadFromFile("res/snd/ammo/grenade.wav");
+    s = new Sound();
+    s->setBuffer(*buffer);
+    sounds.push_back(s);
+
 }
 
 

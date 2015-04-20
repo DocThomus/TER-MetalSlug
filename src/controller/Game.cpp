@@ -416,7 +416,8 @@ void Game::checkCollisions()
         bool check = false;
 
         if((*e)->getType() != Enemy::FLYING) {
-            // si le joueur est mort 
+            
+            // si le joueur est vivant 
             if(player.getStateBattle() != Character::DEAD)
                 check = true;
 

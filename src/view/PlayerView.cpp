@@ -475,9 +475,10 @@ PlayerView::PlayerAnimationsBody PlayerView::getAnimRun()
 {
 	switch(armes[current_weapon].getType())
 	{
-		case Weapon::PISTOL  : return PISTOLRUN;
-		case Weapon::SHOTGUN : return SHOTGUNRUN;
-		case Weapon::SMG     : return SMGRUN;
+		case Weapon::PISTOL       : return PISTOLRUN;
+		case Weapon::SHOTGUN      : return SHOTGUNRUN;
+		case Weapon::SMG          : return SMGRUN;
+		case Weapon::FLAMETHROWER : return SHOTGUNRUN;
 
 		default              : return PISTOLRUN;
 	}
@@ -489,9 +490,10 @@ PlayerView::PlayerAnimationsBody PlayerView::getAnimShoot()
 {
 	switch(armes[current_weapon].getType())
 	{
-		case Weapon::PISTOL  : return PISTOLSHOOT;
-		case Weapon::SHOTGUN : return SHOTGUNSHOOT;
-		case Weapon::SMG     : return SMGSHOOT;
+		case Weapon::PISTOL       : return PISTOLSHOOT;
+		case Weapon::SHOTGUN      : return SHOTGUNSHOOT;
+		case Weapon::SMG          : return SMGSHOOT;
+		case Weapon::FLAMETHROWER : return SHOTGUNSHOOT;
 
 		default              : return PISTOLSHOOT;
 	}
@@ -502,9 +504,10 @@ PlayerView::PlayerAnimationsBody PlayerView::getAnimShootUp()
 {
 	switch(armes[current_weapon].getType())
 	{
-		case Weapon::PISTOL  : return PISTOLSHOOTUP;
-		case Weapon::SHOTGUN : return SHOTGUNSHOOTUP;
-		case Weapon::SMG     : return SMGSHOOTUP;
+		case Weapon::PISTOL       : return PISTOLSHOOTUP;
+		case Weapon::SHOTGUN      : return SHOTGUNSHOOTUP;
+		case Weapon::SMG          : return SMGSHOOTUP;
+		case Weapon::FLAMETHROWER : return SHOTGUNSHOOTUP;
 
 		default              : return PISTOLSHOOTUP;
 	}
@@ -515,9 +518,10 @@ PlayerView::PlayerAnimationsBody PlayerView::getAnimShootDown()
 {
 	switch(armes[current_weapon].getType())
 	{
-		case Weapon::PISTOL  : return PISTOLSHOOTDOWN;
-		case Weapon::SHOTGUN : return SHOTGUNSHOOTDOWN;
-		case Weapon::SMG     : return SMGSHOOTDOWN;
+		case Weapon::PISTOL       : return PISTOLSHOOTDOWN;
+		case Weapon::SHOTGUN      : return SHOTGUNSHOOTDOWN;
+		case Weapon::SMG          : return SMGSHOOTDOWN;
+		case Weapon::FLAMETHROWER : return SHOTGUNSHOOTDOWN;
 
 		default              : return PISTOLSHOOTDOWN;
 	}
@@ -528,9 +532,10 @@ PlayerView::PlayerAnimationsBody PlayerView::getAnimKnife()
 {
 	switch(armes[current_weapon].getType())
 	{
-		case Weapon::PISTOL  : return PISTOLKNIFE;
-		case Weapon::SHOTGUN : return SHOTGUNKNIFE;
-		case Weapon::SMG     : return SMGKNIFE;
+		case Weapon::PISTOL       : return PISTOLKNIFE;
+		case Weapon::SHOTGUN      : return SHOTGUNKNIFE;
+		case Weapon::SMG          : return SMGKNIFE;
+		case Weapon::FLAMETHROWER : return SHOTGUNKNIFE;
 
 		default              : return PISTOLKNIFE;
 	}
@@ -541,9 +546,10 @@ PlayerView::PlayerAnimationsBody PlayerView::getAnimKnife2()
 {
 	switch(armes[current_weapon].getType())
 	{
-		case Weapon::PISTOL  : return PISTOLKNIFE2;
-		case Weapon::SHOTGUN : return SHOTGUNKNIFE2;
-		case Weapon::SMG     : return SMGKNIFE2;
+		case Weapon::PISTOL       : return PISTOLKNIFE2;
+		case Weapon::SHOTGUN      : return SHOTGUNKNIFE2;
+		case Weapon::SMG          : return SMGKNIFE2;
+		case Weapon::FLAMETHROWER : return SHOTGUNKNIFE2;
 
 		default              : return PISTOLKNIFE2;
 	}
@@ -554,9 +560,10 @@ PlayerView::PlayerAnimationsBody PlayerView::getAnimKnee()
 {
 	switch(armes[current_weapon].getType())
 	{
-		case Weapon::PISTOL  : return PISTOLKNEE;
-		case Weapon::SHOTGUN : return SHOTGUNKNEE;
-		case Weapon::SMG     : return SMGKNEE;
+		case Weapon::PISTOL       : return PISTOLKNEE;
+		case Weapon::SHOTGUN      : return SHOTGUNKNEE;
+		case Weapon::SMG          : return SMGKNEE;
+		case Weapon::FLAMETHROWER : return SHOTGUNKNEE;
 
 		default              : return PISTOLKNEE;
 	}
@@ -567,9 +574,10 @@ PlayerView::PlayerAnimationsBody PlayerView::getAnimKneeShoot()
 {
 	switch(armes[current_weapon].getType())
 	{
-		case Weapon::PISTOL  : return PISTOLKNEESHOOT;
-		case Weapon::SHOTGUN : return SHOTGUNKNEESHOOT;
-		case Weapon::SMG     : return SMGKNEESHOOT;
+		case Weapon::PISTOL       : return PISTOLKNEESHOOT;
+		case Weapon::SHOTGUN      : return SHOTGUNKNEESHOOT;
+		case Weapon::SMG          : return SMGKNEESHOOT;
+		case Weapon::FLAMETHROWER : return SHOTGUNKNEESHOOT;
 
 		default              : return PISTOLKNEESHOOT;
 	}
@@ -580,9 +588,10 @@ PlayerView::PlayerAnimationsBody PlayerView::getAnimKneeShootUp()
 {
 	switch(armes[current_weapon].getType())
 	{
-		case Weapon::PISTOL  : return PISTOLKNEESHOOTUP;
-		case Weapon::SHOTGUN : return SHOTGUNKNEESHOOTUP;
-		case Weapon::SMG     : return SMGKNEESHOOTUP;
+		case Weapon::PISTOL       : return PISTOLKNEESHOOTUP;
+		case Weapon::SHOTGUN      : return SHOTGUNKNEESHOOTUP;
+		case Weapon::SMG          : return SMGKNEESHOOTUP;
+		case Weapon::FLAMETHROWER : return SHOTGUNKNEESHOOTUP;
 
 		default              : return PISTOLKNEESHOOTUP;
 	}

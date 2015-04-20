@@ -168,17 +168,20 @@
 		<!-- EVENTS -->
 		<events>
 
-			<event type="item" pos="0" item_type="WEAPON" weapon_type="FLAMETHROWER" x="2000" y="560"/>
-
 			<event type="enemy" pos="0" enemy_type="FLYING" ia="1" x="830" y="30"/>
 
 			<event type="enemy" pos="0" enemy_type="REBEL" ia="0" x="700" y="560"/>
 			<event type="enemy" pos="0" enemy_type="REBEL" ia="1" x="1300" y="560"/>
 			<event type="enemy" pos="0" enemy_type="REBEL" ia="0" x="1600" y="180"/>
 
+			<event type="enemy" pos="400" enemy_type="FLYING" ia="1" x="1400" y="30"/>
+
 			<event type="item" pos="0" item_type="WEAPON" weapon_type="SHOTGUN" x="1800" y="170"/>
 
 			<event type="enemy" pos="0" enemy_type="REBEL" ia="0" x="1950" y="560"/>
+			<event type="enemy" pos="1000" enemy_type="FLYING" ia="1" x="1950" y="30"/>
+
+			<event type="item" pos="1500" item_type="WEAPON" weapon_type="FLAMETHROWER" x="3000" y="560"/>
 
 			<event type="enemy" pos="1500" enemy_type="REBEL" ia="1" x="3500" y="560"/>
 			<event type="enemy" pos="1500" enemy_type="REBEL" ia="1" x="3550" y="560"/>
@@ -192,12 +195,16 @@
 			<event type="enemy" pos="1800" enemy_type="REBEL" ia="1" x="3950" y="560"/>
 			<event type="enemy" pos="1800" enemy_type="REBEL" ia="1" x="4000" y="560"/>
 			
-			<event type="item" pos="1500" item_type="WEAPON" weapon_type="SMG" x="3500" y="550"/>
+			<event type="item" pos="1800" item_type="WEAPON" weapon_type="SMG" x="4000" y="550"/>
 
 			<event type="enemy" pos="3500" enemy_type="REBEL" ia="0" x="4500" y="380"/>
+
 			<event type="enemy" pos="4750" enemy_type="REBEL" ia="1" x="5750" y="380"/>
 			<event type="enemy" pos="4750" enemy_type="REBEL" ia="1" x="5850" y="380"/>
 			<event type="enemy" pos="4750" enemy_type="REBEL" ia="1" x="5950" y="380"/>
+
+			<event type="enemy" pos="4750" enemy_type="FLYING" ia="1" x="6000" y="30"/>
+			<event type="enemy" pos="4950" enemy_type="FLYING" ia="1" x="6000" y="30"/>
 
 			<event type="enemy" pos="6500" enemy_type="BOWSER" ia="1" x="7500" y="240"/>
 		</events>
