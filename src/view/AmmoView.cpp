@@ -118,6 +118,7 @@ void AmmoView::display(RenderWindow* window)
 	// debug.setOutlineColor(Color::Black);
 	// window->draw(debug);
 	
+
 	if(movement.x > 0)
 		body.setPosition(Vector2f(position.x,position.y+size.y*0.5));
 	else if(movement.x < 0)
@@ -132,6 +133,7 @@ void AmmoView::display(RenderWindow* window)
 		Vector2f body_siz = body.getSize();
 		body.setPosition(Vector2f(position.x+(size.x-body_siz.x)/2,position.y+size.y-body_siz.y));
 	}
+
 	window->draw(body);
 }
 

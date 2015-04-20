@@ -39,7 +39,9 @@ void Character::animate(int dt)
     /* COURIR */
     if(state_b != DEAD)
         if(state_p == RUN)
-            position.x += dt*walkway/mass*2 ;
+            if(mass != 0) {
+                position.x += dt*walkway/mass*2 ;
+            }
 
     /* GRAVITÉ */
     if(state_g == AIR)

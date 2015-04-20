@@ -73,6 +73,24 @@ class EnemyView : public Enemy, public MyDrawable
 			BOWSER_DEATH_SND, BOWSER_DEATH2_SND
 		};
 
+		/*!
+	     * \enum FlyingAnimations
+	     * \brief Différentes animations des ennemis de type FLYING.
+	     */
+		enum FlyingAnimations
+		{
+			FLYING_FLY, FLYING_DEATH
+		};
+
+		/*!
+	     * \enum FlyingSounds
+	     * \brief Différentes animations des ennemis de type FLYING.
+	     */
+		enum FlyingSounds
+		{
+			FLYING_DEATH_SND
+		};
+
 
 	private :
 

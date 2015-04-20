@@ -40,6 +40,17 @@ EnemyView::EnemyView(Int2 pos, TypeEnemy t, bool AI)
 		updateIntRect();
 	} 
 
+	/* FLYING */
+	else if(type == FLYING)
+	{
+		loadRessources(FLYING);
+		initSounds();
+		setTexture(textures[FLYING]);
+		addAnimations(animations_list[FLYING]);
+		changeAnimation(FLYING_FLY);
+		updateIntRect();
+	}
+
 	body.setSize(Vector2f(size.x,size.y));
 }
 
@@ -216,7 +227,13 @@ void EnemyView::shoot(list<AmmoView*>* air, Int2 angle)
 			changeAnimation(BOWSER_FIRE,false,BOWSER_STAND);
 		}
 	}
-	
+
+	else if(type == FLYING)
+	{
+		if(canShoot()) {
+			Enemy::shoot(&tmp,angle);
+		}
+	}	
 
 	for(list<Ammo*>::iterator a = tmp.begin(); a != tmp.end(); a++)
     {
@@ -243,6 +260,9 @@ bool EnemyView::canShoot()
 		if(current_anim!=BOWSER_FIRE)
 			return true;
 	}
+	else if(type==FLYING) {
+		return true;
+	}
 
 	return false;
 }
@@ -256,6 +276,7 @@ void EnemyView::die()
 	{
 		case REBEL  : changeAnimation(REBEL_DEATH,false);  break;
 		case BOWSER : changeAnimation(BOWSER_DEATH,false); break;
+		case FLYING : changeAnimation(FLYING_DEATH,false); break;
 	}
     
     srand(time(NULL));
@@ -269,6 +290,10 @@ void EnemyView::die()
 	{
 		sounds[BOWSER_DEATH_SND]->play();
 		sounds[BOWSER_DEATH2_SND]->play();
+    }
+    else if(type == FLYING)
+    {
+    	sounds[FLYING_DEATH_SND]->play();
     }
     
 }
@@ -331,6 +356,25 @@ void EnemyView::loadRessources(TypeEnemy t)
 	    buffer = new SoundBuffer;
 		buffer->loadFromFile("res/snd/enemy/bowser/death2.wav"); // DEATH2
 	    sounds_buffers[BOWSER].push_back(buffer);
+	}
+
+	/* FLYING */
+	else if(t == FLYING)
+	{
+		// TEXTURE
+		Texture* tex = new Texture();
+	    tex->loadFromFile("res/tex/enemy/flying.png");
+	    textures[FLYING] = tex;
+
+	    // ANIMATION
+	    animations_list[FLYING] = loadAnimationsFromFile("res/xml/enemy/flying.xml");
+
+	    // SOUNDS
+	    SoundBuffer* buffer;
+
+	    buffer = new SoundBuffer;
+		buffer->loadFromFile("res/snd/enemy/flying/death.wav"); // DEATH
+	    sounds_buffers[FLYING].push_back(buffer);
 	}
 }
 

@@ -36,7 +36,7 @@ class Enemy : public Character
 		/*!\enum TypeEnemy
 		 * \brief Énumération des différents types d'ennemis.
 		 */
-		enum TypeEnemy{ REBEL, BOWSER, NB_TYPE_ENEMY };
+		enum TypeEnemy{ REBEL, BOWSER, FLYING, NB_TYPE_ENEMY };
 
 	
 	protected :

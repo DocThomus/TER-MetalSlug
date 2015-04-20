@@ -290,6 +290,8 @@ bool loadLevelXML(string filename, Config* conf, Environment* env, list<EventGam
                 tmp_event = new EventEnemy(pos, tmp_pos, Enemy::REBEL);
             else if(type_e == "BOWSER")
                 tmp_event = new EventEnemy(pos, tmp_pos, Enemy::BOWSER);
+            else if(type_e == "FLYING")
+                tmp_event = new EventEnemy(pos, tmp_pos, Enemy::FLYING);
 
             xml_attribute<> *ia;
             if((ia = event->first_attribute("ia")))

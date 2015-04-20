@@ -168,7 +168,9 @@
 		<!-- EVENTS -->
 		<events>
 
-			<event type="item" pos="0" item_type="WEAPON" weapon_type="FLAMETHROWER" x="500" y="560"/>
+			<event type="item" pos="0" item_type="WEAPON" weapon_type="FLAMETHROWER" x="2000" y="560"/>
+
+			<event type="enemy" pos="0" enemy_type="FLYING" ia="1" x="830" y="30"/>
 
 			<event type="enemy" pos="0" enemy_type="REBEL" ia="0" x="700" y="560"/>
 			<event type="enemy" pos="0" enemy_type="REBEL" ia="1" x="1300" y="560"/>
